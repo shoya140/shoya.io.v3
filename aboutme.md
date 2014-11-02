@@ -5,7 +5,7 @@ permalink: /aboutme/
 ---
 <img src="/assets/img/birthday.png" class="image-on-frame image-trimmed-by-circle" width="150px" alt="Shoya Ishimaru">
 
-## Shoya Ishimaru
+## Shoya Ishimaru [[jp](/aboutme/jp/)]
 
 I'm a graduate student studying CS in [OPU](http://www.osakafu-u.ac.jp/english/index.html).<br>
 I'm also a [mobile application](/development/) developer.
