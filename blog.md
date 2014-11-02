@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Shoya Ishimaru
+title: Blog - Shoya Ishimaru
+permalink: /blog/
 ---
 
 <ul class="post-list">

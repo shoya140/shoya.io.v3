@@ -2,10 +2,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    {% if page.keywords != nil %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="{{ page.name }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {% if page.eyecatch  != nil %}
+        <meta property="og:image" content="{{ page.eyecatch }}">
+    {% else %}
+        <meta property="og:image" content="{{ site.url }}/assets/img/icon_laptop.png">
+    {% endif %}
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
 
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="alternate" type="application/rss+xml" title="Write once, run anywhere" href="{{ site.url }}/feed.xml">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
 </head>
