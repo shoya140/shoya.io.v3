@@ -348,7 +348,7 @@ pre {
 .footer-icon {
   padding: 5px;
   opacity: 0.8;
-  width: 60px;
+  width: 55px;
   filter: alpha(opacity=80);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -423,6 +423,10 @@ a:hover .footer-icon {
 .post-link {
   display: block;
   font-size: 24px; }
+  @media screen and (max-width: 500px) {
+    .post-link {
+      font-size: 18px;
+      line-height: 1.2; } }
 
 .post-header {
   margin-bottom: 30px; }
@@ -431,6 +435,10 @@ a:hover .footer-icon {
   font-size: 28px;
   letter-spacing: -1px;
   line-height: 1; }
+  @media screen and (max-width: 500px) {
+    .post-title {
+      font-size: 20px;
+      line-height: 1.4; } }
 
 .post-content {
   margin-bottom: 30px; }
@@ -518,13 +526,13 @@ a:hover .footer-icon {
 .page-button {
   background-color: #ffffff;
   border-radius: 3px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: inline-block;
   position: relative;
-  width: 44%;
+  width: 42%;
   font-size: 16px;
   padding: 10px;
-  margin: 2px; }
+  margin: 0px; }
   .page-button a {
     display: block;
     width: 100%;
@@ -539,10 +547,10 @@ a:hover .footer-icon {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: inline-block;
   position: relative;
-  width: 44%;
+  width: 42%;
   font-size: 16px;
   padding: 10px;
-  margin: 2px; }
+  margin: 0px; }
 
 .hatena-star-user {
   border-radius: 4px;
