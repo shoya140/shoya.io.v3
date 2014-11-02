@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shoya Ishimaru</title>
+    <description></description>
+    <link>http://shoya.io/</link>
+    <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 03 Nov 2014 05:41:18 +0900</pubDate>
+    <lastBuildDate>Mon, 03 Nov 2014 05:41:18 +0900</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>クックパッドのサマーインターンシップに参加しました</title>
+        <description>&lt;p&gt;課題解決型の5-daysインターンシップに参加して、スマートフォンアプリを開発しました。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;インターン修了しました。楽しかったー！ &lt;a href=&quot;http://t.co/AmkZVaX4qs&quot;&gt;pic.twitter.com/AmkZVaX4qs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Shoya Ishimaru (@shoya140) &lt;a href=&quot;https://twitter.com/shoya140/status/507864832872153088&quot;&gt;2014, 9月 5&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;span-classlsfrightspan-&quot;&gt;&lt;span class=&quot;lsf&quot;&gt;right&lt;/span&gt; 内容&lt;/h4&gt;
+
+&lt;p&gt;初日の午前中に「クックパッドのサービス開発」に関する講義を受けて、それからディレクター+エンジニアの2人1組のチームを組み、5日間でテーマに沿ったアプリを開発するという内容でした。完成したアプリは個人でリリースできないので発表資料を載せておきます。&lt;/p&gt;
+
+&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;42a7685017f40132350b2ae5b5e9153b&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;span-classlsfrightspan--1&quot;&gt;&lt;span class=&quot;lsf&quot;&gt;right&lt;/span&gt; 課題解決駆動開発&lt;/h4&gt;
+
+&lt;p&gt;インターンの最初に言われたことは「&lt;strong&gt;クックパッドは課題解決の会社である&lt;/strong&gt;」ということです。クックパッドは基盤技術力の高さで有名なことから技術至上主義な雰囲気の会社だと思っていたのですが、インターンを通じて感じた印象は少し異なっていて、技術を使いたいからサービスを作るのではなく、まずユーザの抱える課題があり、それを解決するための手段として技術がある、という文化をもっているようでした。&lt;/p&gt;
+&lt;pre&gt;
+(ユーザ)は
+(欲求)したいが
+(課題)できないので
+(製品の特徴)ことに価値がある
+&lt;/pre&gt;
+&lt;p&gt;という価値仮説シートをもとに、ユーザの欲求を満たせない理由である課題とその解決策を明確にし、課題解決のために技術を使います。&lt;/p&gt;
+
+&lt;p&gt;インターン期間中には定期的に進捗報告・フィードバックタイムがあるのですが、実装手段よりも、自分たちの考えた価値仮説について鋭い指摘や質問をいただき、課題解決について深く深く考えることができました。&lt;/p&gt;
+
+&lt;h4 id=&quot;span-classlsfrightspan--2&quot;&gt;&lt;span class=&quot;lsf&quot;&gt;right&lt;/span&gt; いかに実装しないか&lt;/h4&gt;
+
+&lt;p&gt;今回のインターンでは&lt;a href=&quot;http://mrk1869.com/blog/hatena_intern/&quot;&gt;はてなインターン&lt;/a&gt;(2年前！)で経験した技術力不足に対する悔しさをバネに、持てる技術力を出し惜しみなく発揮することができました。(時間に余裕をもって開発したり、レシピのレコメンドに自然言語処理を使ったり、操作性やUIを作りこんだり、チーム内でアプリの開発進捗をTestFlightで共有した。)&lt;/p&gt;
+
+&lt;p&gt;一方で、技術的面白さを求めすぎて課題解決に直接関係ない機能を盛り込んでしまったという反省があります。最終日には「実装は可能な限り小さな労力と少ない時間でできるもの(MVP)に絞って、アプリの価値仮説検証をもっと練ればよかったのでは」という意見をいただきました。僕の開発スタイルは「とにかく作ってみたほうが早い」に寄りすぎている感じがあるので、インターンを通じて、できるだけ「実装しない」なかで仮説の検証を繰り返す大切さを認識しました。&lt;/p&gt;
+
+&lt;h4 id=&quot;span-classlsfrightspan--3&quot;&gt;&lt;span class=&quot;lsf&quot;&gt;right&lt;/span&gt; おわりに&lt;/h4&gt;
+
+&lt;p&gt;クックパッドの短期インターンシップは「ユーザの課題を解決するとはどういうことか」を学ぶことができる濃い5日間でした。&lt;strong&gt;ものづくりが好きな人にはぜひ参加することをおすすめします！&lt;/strong&gt;(技術的な刺激にはやや物足りなかった印象もあるので、バリバリ開発したい・技術的に成長したい人は&lt;a href=&quot;http://staffblog.cookpad.com/entry/2014/07/01/184000&quot;&gt;長期インターンシップやアルバイト&lt;/a&gt;に応募すると良いかもしれません。)&lt;/p&gt;
+
+&lt;p&gt;サポートしていただいた社員の方々、参加者のみんな、そしてチームメンバーの辻くん、5日間お世話になりました！ありがとうございました！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/cookpad_internship02.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(おまけ)miyagawaさんに会えてテンション最高潮の&lt;a href=&quot;http://rebuild.fm/&quot;&gt;rebuild.fm&lt;/a&gt;リスナーインターン&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Sep 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/cookpad_internship/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/cookpad_internship/</guid>
+        
+        <category>Event</category>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
+    
+      <item>
+        <title>Tornadoのデバッグモードを有効にする</title>
+        <description>&lt;p&gt;Tornadoには多くのWebアプリフレームワーク同様にデバックモードがある。これを有効にすることで、pythonコードの更新をサーバの再起動なしに反映させたり、ファイルのキャッシュを無効にしたり、tracebackをブラウザ上に表示したりといった機能を利用することができる。&lt;/p&gt;
+
+&lt;p&gt;デバッグモードを有効にするには、tornado.web.Applicationのインスタンス作成時にhandlersと一緒にdebug=Trueを付加すれば良い。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;IndexHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Applicationクラスを作る場合はsettingsにディクショナリで指定する。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IndexHander&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r&amp;quot;/socket&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SocketHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;debug&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;自分は下記のようにtornado.optionsを使ってport, debugの２つをコマンドラインから入力できるようにしておき、本番環境と開発環境を簡単に切り替えられるようにしている。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tornado.options&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;run on the given port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;debug&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;run the server in debug mode&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_command_line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;IndexHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;http_server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpserver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTTPServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;http_server&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tornado&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ioloop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOLoop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 26 Aug 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/tornado_debug/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/tornado_debug/</guid>
+        
+        <category>Programming</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>Nginxの静的ファイル配信でハマった</title>
+        <description>&lt;p&gt;静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873115764/&quot;&gt;概説Tornado&lt;/a&gt;の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定をNginxに書いた。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/static/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/path/to/app/static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;上記のように書きたいところだがこれは間違いで&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/static/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/path/to/app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;正しくはこちら。&lt;/p&gt;
+
+&lt;p&gt;rootはstaticディレクトリのrootを指すのではなく、アプリケーションのroot。/static/はURLとして生きているので、/static/を含めたパスでファイルへ届くように書く必要がある。&lt;/p&gt;
+
+&lt;p&gt;(備考)アプリケーション全体のnginx設定ファイルはこんな感じ。各アプリケーションごとに設定ファイルを分けてconf.d/以下に保存しておき、nginx.confでそれらをインポートしている。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;upstream&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;paletta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8011&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8012&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8013&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8014&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;paletta.mrk1869.com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;access_log&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;/home/web/log/nginx/paletta.mrk1869.com/access.log&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ltsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/static/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/home/web/paletta/app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_pass_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-IP&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Scheme&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://paletta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 25 Aug 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/nginx_root/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/nginx_root/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>GitHubの学割クーポンを延長する</title>
+        <description>&lt;p&gt;GitHubにはプライベートリポジトリが無料で使える(billing planが1つ上がる)学割があります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://education.github.com/&quot;&gt;GitHub Education&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;申し込んでから2年が経って「もうすぐクーポン切れるよ」という内容のメールが来ました。「今も学生なので学割クーポンを延長したい」と問い合わせたところ「有効期限が切れてからもう一度WebからアプライすればOKだよ。もし学割が反映される前に次の支払が発生したら連絡してね。」とのことでした。以下、回答です。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you’re still a student, you’re welcome to reapply! Check out our shiny new Education page:&lt;/p&gt;
+
+  &lt;p&gt;https://education.github.com/&lt;/p&gt;
+
+  &lt;p&gt;You might get a message about not being able to apply the new coupon. That’s because you can’t have two simultaneous coupons on your account. Once your old coupon expires, you can apply the new coupon. There’s usually a “grace period” of a few days between the expiration and the first charge, but if you do get charged before you add your new coupon, just let us know! Please don’t hesitate to let us know if you have any questions or concerns.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;あと学割が切れても既に作成してあるプライベートリポジトリはプライベートのままらしい。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/alpaca_taichou&quot;&gt;@alpaca_taichou&lt;/a&gt; 突然勝手にpublicになるんですか?&lt;/p&gt;&amp;mdash; Kazuki Yoshida (@101kaz) &lt;a href=&quot;https://twitter.com/101kaz/statuses/486756076776214528&quot;&gt;2014, 7月 9&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/alpaca_taichou&quot;&gt;@alpaca_taichou&lt;/a&gt; &lt;a href=&quot;https://twitter.com/101kaz&quot;&gt;@101kaz&lt;/a&gt; あれ切れてもプライベートリポジトリ保持されますよ、新しいのが作れないだけですね。&lt;/p&gt;&amp;mdash; Takehiro Adachi (@takehiro0740) &lt;a href=&quot;https://twitter.com/takehiro0740/statuses/486901860544946176&quot;&gt;2014, 7月 9&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Sat, 12 Jul 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/github_academic/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/github_academic/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
+    
+      <item>
+        <title>doctestを使ってpythonの簡単な単体テストを書く</title>
+        <description>&lt;p&gt;doctestはpythonに標準で搭載されているテストツールで、docstring(“&quot;”で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;記述例&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;doctest&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;doctest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;上記のコードを実行すると&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python hello.py
+**********************************************************************
+File &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello.py&amp;quot;&lt;/span&gt;, line 6, in __main__.average
+Failed example:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Expected:
+    0.5
+Got:
+    1
+**********************************************************************
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had failures:
+   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; of   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; in __main__.average
+***Test Failed*** &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failures.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;doctest&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;doctest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python hello.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$python&lt;/span&gt; hello.py -v
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Expecting:
+    1.5
+ok
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
+    __main__
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items passed all tests:
+   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in __main__.average
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; failed.
+Test passed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;python--m-doctest--v-&quot;&gt;python -m doctest -v [ファイル名]&lt;/h4&gt;
+
+&lt;p&gt;Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;main関数を空にしてコマンドラインからテストします。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python -m doctest -v hello.py
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Expecting:
+    1.5
+ok
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
+    hello
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items passed all tests:
+   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in hello.average
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; failed.
+Test passed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;テストが実行されました。&lt;/p&gt;
+
+&lt;p&gt;注意点として、doctestは出力の完全一致を求めるので、スペースの有無や辞書の順序に気を配ってテストを書く必要があります。詳しくはドキュメントをご覧ください。&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&quot;http://docs.python.jp/2/library/doctest.html&quot;&gt;25.2. doctest — 対話的な実行例をテストする&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;2014.07.08 追記&lt;/h4&gt;
+
+&lt;p&gt;出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of numbers.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) #failed&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    1&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) #ok&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    1.0&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 1 #ok&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    True&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 1.0 #ok&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    True&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 2.0 #ok&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    False&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python -m doctest -v hello.py
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#failed&lt;/span&gt;
+Expecting:
+    1
+**********************************************************************
+File &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello.py&amp;quot;&lt;/span&gt;, line 4, in hello.average
+Failed example:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#failed&lt;/span&gt;
+Expected:
+    1
+Got:
+    1.0
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
+Expecting:
+    1.0
+ok
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
+Expecting:
+    True
+ok
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 1.0 &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
+Expecting:
+    True
+ok
+Trying:
+    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 2.0 &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
+Expecting:
+    False
+ok
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
+    hello
+**********************************************************************
+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had failures:
+   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; of   &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; in hello.average
+&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
+&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failed.
+***Test Failed*** &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failures.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 07 Jul 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/python_doctest/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/python_doctest/</guid>
+        
+        <category>Programming</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>brew doctorのwarningを解決する</title>
+        <description>&lt;p&gt;brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。&lt;/p&gt;
+
+&lt;h4 id=&quot;warning1&quot;&gt;Warning1&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Some directories in /usr/local/share/man aren&lt;span class=&quot;s1&quot;&gt;&amp;#39;t writable.&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;This can happen if you &amp;quot;sudo make install&amp;quot; software that isn&amp;#39;&lt;/span&gt;t managed
+by Homebrew. If a brew tries to add locale information to one of these
+directories, &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; the install will fail during the link step.
+You should probably &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;chown&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; them:
+
+    /usr/local/share/man/de
+    /usr/local/share/man/de/man1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;一部のディレクトリの所有者がbrewを使うユーザになっていない問題。chownコマンドで所有者を変更します。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/share/man/de&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;warning2&quot;&gt;Warning2&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: &lt;span class=&quot;s2&quot;&gt;&amp;quot;config&amp;quot;&lt;/span&gt; scripts exist outside your system or Homebrew directories.
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;./configure&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; scripts often look &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; *-config scripts to determine &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;
+software packages are installed, and what additional flags to use when
+compiling and linking.
+
+Having additional scripts in your path can confuse software installed via
+Homebrew &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; the config script overrides a system or Homebrew provided
+script of the same name. We found the following &lt;span class=&quot;s2&quot;&gt;&amp;quot;config&amp;quot;&lt;/span&gt; scripts:
+
+    /Users/shoya/.pyenv/shims/python-config
+    /Users/shoya/.pyenv/shims/python2-config
+    /Users/shoya/.pyenv/shims/python2.7-config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;homebrewの管理外かつPATHが通っているところにconfigスクリプトが存在する問題。深刻な問題ではないようなので、このWarningが表示されないよう回避する方向で。brewコマンドを実行するときだけ~/.pyenv/shims/をPATHから取り除くエイリアスを.bashrcに追記した。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;brew&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考:&lt;a href=&quot;http://qiita.com/takc923/items/45386905f70fde9af0e7&quot;&gt;phpenv入れてる時brew doctorしたら出るWarning消した&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;warning3&quot;&gt;Warning3&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Some directories in your path end in a slash.
+Directories in your path should not end in a slash. This can &lt;span class=&quot;nb&quot;&gt;break &lt;/span&gt;other
+doctor checks. The following directories should be edited:
+    /Applications/MacVim.app/Contents/MacOS/    /Users/shoya/software/android-ndk/    /Users/shoya/software/android-sdk/platform-tools/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。&lt;/p&gt;
+
+&lt;h4 id=&quot;warning4&quot;&gt;Warning4&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: /usr/bin occurs before /usr/local/bin
+This means that system-provided programs will be used instead of those
+provided by Homebrew. The following tools exist at both paths:
+
+    git
+    git-cvsserver
+    git-receive-pack
+    git-shell
+    git-upload-archive
+    git-upload-pack
+
+Consider setting your PATH so that /usr/local/bin
+occurs before /usr/bin. Here is a one-liner:
+    &lt;span class=&quot;nb&quot;&gt;echo export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/usr/local/bin:$PATH&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。&lt;/p&gt;
+
+&lt;h4 id=&quot;warning5&quot;&gt;Warning5&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Your Homebrew is outdated.
+You haven&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;t updated &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; at least &lt;span class=&quot;m&quot;&gt;24&lt;/span&gt; hours, this is a long &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;in brewland!
+To update Homebrew, run &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;brew update&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;homebrewをアップデートします。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;warning&quot;&gt;すべてのWarningを取り除いたので&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew doctor
+&amp;gt;&amp;gt; Your system is ready to brew.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;診断結果が正常になりました。めでたい。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Jul 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/brew_doctor/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/brew_doctor/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>プロセスが完了しました</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/terminal01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;問題&lt;/h4&gt;
+
+&lt;p&gt;Macのターミナルが起動しない。起動するとすぐに[プロセスが完了しました]と表示される。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;原因&lt;/h4&gt;
+
+&lt;p&gt;ユーザ名が - から始まっている&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;解決策&lt;/h4&gt;
+
+&lt;p&gt;ユーザ名を変更する(システム環境設定&amp;gt;ユーザとグループ&amp;gt;詳細オプション)。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ユーザ名の変更は多くのアプリケーションの動作に影響を及ぼす可能性があります。バックアップをとったのち、慎重に実行してください。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/terminal02.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Macのターミナルが動かないという報告を受けたのだけれど、原因はユーザ名がマイナスから始まっていたことだった。-piyoのようなユーザ名はloginコマンドのプションとして認識されてしまうので(もちろんそんなオプションはない)ターミナルでログインできない。なんだそれ…&lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 Jun 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/terminal_login/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/terminal_login/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>クックパッドのデザイン講演会に参加しました</title>
+        <description>&lt;p&gt;京都のCAMPHOR-HOUSEにて、クックパッドのデザイン責任者・池田さんによる講演会が開催されました。「クックパッドのサービス開発とデザイン」というタイトルで、「決してインターネットに詳しいわけではない方にまでに幅広く支持されているデザインの裏側には、どういった工夫やこだわりがあるか」というお話をしていただきました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;デザインの原則&lt;/h4&gt;
+
+&lt;p&gt;クックパッドでは、サービス開発の軸がぶれないように、いくつかの「デザインの原則」を設けているとのこと。例えば&lt;strong&gt;全体最適の原則&lt;/strong&gt;。各自が作ったデザインをライブラリ化して共有したり、アイコンをWebフォントにして、クックパッド全体のブランドデザインを保つためのルールです。&lt;strong&gt;無言語化の原則&lt;/strong&gt;。機能を説明するのにできるだけ言葉を使わず、ぱっと見て分かるデザインを心がけるルールです。&lt;strong&gt;無言実行の原則&lt;/strong&gt;。プロダクトの概念やコンセプトを利用者にいちいち説明するのではなく、利用者にはプロダクトそのもので評価してもらうべきというルールです。ほかにもBEST集中の原則、競合を知る原則、顧客中心の原則などがあり、勉強になりました。&lt;/p&gt;
+
+&lt;h4 id=&quot;ab&quot;&gt;A/Bテストの指標&lt;/h4&gt;
+
+&lt;p&gt;A/Bテストについての話がでたので、「定量的に評価できる数字とユーザ体験は時としてトレードオフの関係にあるが、どうやって折り合いをつけているか」という質問をしました。「例えばあるボタンを大きくすれば新規会員数は増えるとしても、もちろん大きすぎるボタンにはNGをだす」との回答でした。「その(大きすぎるなどの)感覚値的な指標はどうやって測っているか」という質問には、「私(池田さん)の主観で決めます」という回答をいただきました。(ここでデザインの原則に繋がると思っていたので少し残念。) 利用者や利用シーンを具体的に想定して、それぞれの人にとって馴染みやすいデザインを考えることで、良し悪しを決めるとのことでした。&lt;/p&gt;
+
+&lt;p&gt;属人的になりがちなデザインの知見を社内でどうやって共有するかといった、興味深いお話を聞くことができました。ありがとうございました！&lt;/p&gt;
+</description>
+        <pubDate>Sat, 14 Jun 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/cookpad_design/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/cookpad_design/</guid>
+        
+        <category>Event</category>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
+    
+      <item>
+        <title>Jawbone UPのちょっと変わった使い方</title>
+        <description>&lt;p&gt;UPを使い始めて1年が経つ。UPは運動・睡眠・食事を記録するライフログツールなんだけど、生活の記録以外にも、振動するデバイスを腕につけるっていうところに面白みを感じている。ということでちょっと変わった使い方をしているので、それらを紹介しようと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/up2.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;ポモドーロテクニック&lt;/h4&gt;
+
+&lt;p&gt;UPにはパワーナップ(お昼寝)という機能がついていて、セットした時間がたつと振動で起こしてくれる。自分はこの機能をポモドーロテクニックのタイマーとして使っている。一般的なタイマー、気に入らない点がふたつある。まず、画面が視界に入ると残り時間が気になってしかたがないこと。そして、音で知らせてくれるものは周りが気になる静かな場所では使えないこと。その点UPは時間経過を表示する画面がないし振動で自分にしか通知されないっていうのがいい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akio0911.net/archives/18848&quot;&gt;UP by Jawboneでポモドーロテクニックしたら作業に集中できた - 拡張現実ライフ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;「UPでポモドーロ」というアイデアはこちらの記事を参考にさせていただいた。でもアイドルアラートに割り当てると毎回iPhoneと接続してアプリから開始する必要があるので、パワーナップに割り当てることにした。パワーナップだとUPのボタン入力だけでタイマーをセットできて便利。&lt;/p&gt;
+
+&lt;p&gt;作業用のタイマーをパワーナップに割り当てると、作業時間が睡眠として記録されてしまうのでログが乱れるというデメリットもある。自分は日中の睡眠ログを見ていないので問題ないけれど、お昼寝のログをとりたい人にはこの方法は向かないかもしれない。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;寝落ちを防止する&lt;/h4&gt;
+
+&lt;p&gt;アイドルアラートをポモドーロに使わないのには、夜中にセットしたいからという理由もある。アイドルアラートとは、日中にしばらく体を動かしていないとそれを検知して運動を促す機能。このアラートが動く時間帯を0:00 ~ 3:00にセットしている。この設定で、夜中にうとうとしてしまっても振動で起こしてくれて、ちゃんと布団に入って寝ようっていう気にさせてくれる。&lt;/p&gt;
+
+&lt;p&gt;睡眠ログを記録するためには寝る前にUPをスリープモードに切り替える必要がある。スリープモードになっている間はアイドルアラートは鳴らないので、普通に寝ているときは睡眠を邪魔されなくてすむ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/up.jpg&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jawbone UP、日常生活に馴染んでいてすごい。体に身につけているという実感すら感じさせなくなった時、そのデバイスはウェアラブルになれるのだと思う。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 16 May 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/up/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/up/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
+    
+      <item>
+        <title>Chefのknife solo prepareで404</title>
+        <description>&lt;h4 id=&quot;section&quot;&gt;問題&lt;/h4&gt;
+
+&lt;p&gt;Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;shoya@tornado&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;knife solo prepare dev_debian
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15934&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15934&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2238&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;  0:00:07  0:00:07 --:--:--  9674
+Downloading Chef 11.14.0.alpha.2 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; debian...
+downloading https://www.opscode.com/chef/metadata?v&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;11.14.0.alpha.2&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;prerelease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nightlies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;debian&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;x86_64
+  to file /tmp/install.sh.2565/metadata.txt
+trying wget...
+ERROR 404
+Unable to retrieve a valid package!
+Please file a bug report at http://tickets.opscode.com
+Project: Chef
+Component: Packages
+Label: Omnibus
+Version: 11.14.0.alpha.2
+
+Please detail your operating system &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;, version and any other relevant details
+Metadata URL: https://www.opscode.com/chef/metadata?v&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;11.14.0.alpha.2&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;prerelease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nightlies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;debian&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;x86_64
+Generating node config &lt;span class=&quot;s1&quot;&gt;&amp;#39;nodes/dev_debian.json&amp;#39;&lt;/span&gt;...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;解決&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/23591190/knife-solo-prepare-fails&quot;&gt;Knife-solo prepare fails - stackoverflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;opscode(version 11.14.0.alpha.2)側の問題なので、オプションでchefのバージョンを指定してあげるといいよとの回答。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;shoya@tornado&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;knife solo prepare dev_debian --bootstrap-version 11.12.0
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15934&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15934&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2345&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;  0:00:06  0:00:06 --:--:-- 14026
+Downloading Chef 11.12.0 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; debian...
+downloading https://www.opscode.com/chef/metadata?v&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;11.12.0&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;prerelease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nightlies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;debian&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;x86_64
+  to file /tmp/install.sh.2608/metadata.txt
+trying wget...
+url    https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+md5    e3cefe75258f5d737b729ed549cadfc5
+sha256    3707bb7781317ce2928378564b95675291b9c3daa10a879bc77bea1333c83a9b
+downloaded metadata file looks valid...
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+  to file /tmp/install.sh.2608/chef_11.12.0-1_amd64.deb
+trying wget...
+Comparing checksum with sha256sum...
+Installing Chef 11.12.0
+installing with dpkg...
+Selecting previously unselected package chef.
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Reading database ... &lt;span class=&quot;m&quot;&gt;39953&lt;/span&gt; files and directories currently installed.&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Unpacking chef &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;from .../chef_11.12.0-1_amd64.deb&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ...
+Setting up chef &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;11.12.0-1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ...
+Thank you &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; installing Chef!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;新しいバージョンが提供されるまではこれが応急処置みたい。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 May 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/chef_prepare/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/chef_prepare/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+  </channel>
+</rss>

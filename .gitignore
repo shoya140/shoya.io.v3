@@ -1,4 +1,5 @@
-_site
-.sass-cache
 *.swp
 .DS_Store
+_drafts/
+.sass-cache/
+.tweet-cache/
