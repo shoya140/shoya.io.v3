@@ -22,7 +22,7 @@ $grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 35%);
 
-$on-palm: 500px;
+$on-palm: 600px;
 $on-laptop: 800px;
 
 // Using media queries with like this:
@@ -226,6 +226,11 @@ pre {
     &,
     &:visited {
         color: $grey-color-dark;
+    }
+
+    @include media-query($on-laptop) {
+        font-size: 20px;
+        line-height: 56px;
     }
 }
 

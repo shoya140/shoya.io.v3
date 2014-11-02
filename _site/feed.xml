@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shoya Ishimaru</title>
+    <title>Write once, run anywhere.</title>
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 03 Nov 2014 06:34:31 +0900</pubDate>
-    <lastBuildDate>Mon, 03 Nov 2014 06:34:31 +0900</lastBuildDate>
+    <pubDate>Mon, 03 Nov 2014 06:48:39 +0900</pubDate>
+    <lastBuildDate>Mon, 03 Nov 2014 06:48:39 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>

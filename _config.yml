@@ -1,5 +1,5 @@
 # Site settings
-title: Shoya Ishimaru
+title: Write once, run anywhere.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://shoya.io" # the base hostname & protocol for your site
 permalink: /blog/:title/
