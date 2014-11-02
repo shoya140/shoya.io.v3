@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me - Shoya Ishimaru
-permalink: /about/
+permalink: /aboutme/
 ---
 <img src="/assets/img/birthday.png" class="image-on-frame image-trimmed-by-circle" width="150px" alt="Shoya Ishimaru">
 
