@@ -9,7 +9,7 @@ $base-font-family: Oxygen, 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, '
 $nav-font-family: Oxygen, 'Open Sans', Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
-$letter-spacing: 0.3px;
+$letter-spacing: 0.4px;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.8;
 
@@ -17,6 +17,7 @@ $spacing-unit: 30px;
 
 $text-color: #4a4a46;
 $background-color: #fdfdfd;
+$background-gray-color: #e1e6e8;
 $brand-color: #2a7ae2;
 
 $white-color: #fcfcfc;
@@ -25,7 +26,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 35%);
 
 $on-palm: 500px;
-$on-laptop: 800px;
+$on-laptop: 1000px;
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -72,7 +73,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $spacing-unit;
 }
 
 img {
@@ -153,8 +154,8 @@ pre {
 }
 
 .wrapper {
-    max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
-    max-width:         calc(800px - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(1100px - (#{$spacing-unit} * 2));
+    max-width:         calc(1100px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -162,15 +163,26 @@ pre {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(800px - (#{$spacing-unit}));
-        max-width:         calc(800px - (#{$spacing-unit}));
-        padding-right: $spacing-unit*1.4;
-        padding-left: $spacing-unit*1.4;
+        max-width: -webkit-calc(900px - (#{$spacing-unit}));
+        max-width:         calc(900px - (#{$spacing-unit}));
+        padding-right: 0;
+        padding-left: 0;
     }
+}
 
+.wrapper-inside{
+	background-color: $background-color;
+	padding-top: $spacing-unit*2;
+    padding-bottom: $spacing-unit*2;
+	padding-right: $spacing-unit*4;
+    padding-left: $spacing-unit*4;
+    @include media-query($on-laptop) {
+    	padding-right: $spacing-unit*1.2;
+    	padding-left: $spacing-unit*1.2;
+    }
     @include media-query($on-palm) {
-        padding-right: $spacing-unit/2;
-        padding-left: $spacing-unit/2;
+    	padding-right: $spacing-unit*0.5;
+    	padding-left: $spacing-unit*0.5;
     }
 }
 
@@ -223,6 +235,13 @@ pre {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+
+    @include media-query($on-palm) {
+    	padding-left: $spacing-unit*0.3;
+    	padding-right: $spacing-unit*0.3;
+    }
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -273,7 +292,7 @@ pre {
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
-        right: 30px;
+        right: $spacing-unit*0.4;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
@@ -426,7 +445,7 @@ a:hover .footer-icon{
 }
 
 .page-content {
-    padding: $spacing-unit*2 0 $spacing-unit 0;
+    background-color: $background-gray-color;
 }
 
 .page-heading {
