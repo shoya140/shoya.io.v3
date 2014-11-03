@@ -78,7 +78,7 @@
   <article class="post-content">
     <p>MongoDBから条件に合うオブジェクトを取り出して, エンコードされたJSONを返すapiを作成しようとしたところ, つまずいたのでメモ.</p>
 
-<h4 id="section">問題</h4>
+<h2 id="section">問題</h2>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># DB接続確立</span>
 <span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
@@ -95,7 +95,7 @@
 <p>MongoDBから得られたオブジェクトをjsonモジュールのdumpus関数に直接渡すとエラーが生じる.
 この問題は, PythonのJSONモジュールがMongoDBの特殊なObjectID型をJSONに変換する方法を知らないことによる.</p>
 
-<h4 id="section-1">解決策</h4>
+<h2 id="section-1">解決策</h2>
 
 <p>JSONエンコードする前にディクショナリから_idキーを削除する.</p>
 
@@ -106,14 +106,14 @@
 
 <p>実行結果:正しくエンコードされる.</p>
 
-<h4 id="section-2">参考文献</h4>
+<h2 id="section-2">参考文献</h2>
 
 <p><a href="http://www.oreilly.co.jp/books/9784873115764/">O’Reilly Japan - 概説Tornado</a> MongoDBドキュメントとJSON</p>
 
   </article>
 
   <div class="article-relations">
-  	
+      
   </div>
 
   <div class="pagenation">

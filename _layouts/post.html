@@ -17,8 +17,8 @@ layout: default
   </article>
 
   <div class="article-relations">
-  	{% if page.relations %}
-    <h4><span class="lsf">check</span> 関連記事</h5>
+      {% if page.relations %}
+    <h3><span class="lsf">check</span> 関連記事</h5>
     <ul>
     {% for relation in page.relations %}
       <li><a href="/blog/{{relation}}/" class="linkedTitle">Now loading..</a></li>

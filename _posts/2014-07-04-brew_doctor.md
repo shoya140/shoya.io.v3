@@ -9,7 +9,7 @@ keywords: homebrew, brew, doctor, pyenv
 
 brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。
 
-#### Warning1
+## Warning1
 
 {% highlight bash %}
 Warning: Some directories in /usr/local/share/man aren't writable.
@@ -28,7 +28,7 @@ You should probably `chown` them:
 $ sudo chown -R $USER /usr/local/share/man/de
 {% endhighlight %}
 
-#### Warning2
+## Warning2
 
 {% highlight bash %}
 Warning: "config" scripts exist outside your system or Homebrew directories.
@@ -53,7 +53,7 @@ alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew"
 
 参考:[phpenv入れてる時brew doctorしたら出るWarning消した](http://qiita.com/takc923/items/45386905f70fde9af0e7)
 
-#### Warning3
+## Warning3
 
 {% highlight bash %}
 Warning: Some directories in your path end in a slash.
@@ -64,7 +64,7 @@ doctor checks. The following directories should be edited:
 
 PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。
 
-#### Warning4
+## Warning4
 
 {% highlight bash %}
 Warning: /usr/bin occurs before /usr/local/bin
@@ -85,7 +85,7 @@ occurs before /usr/bin. Here is a one-liner:
 
 PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。
 
-#### Warning5
+## Warning5
 
 {% highlight bash %}
 Warning: Your Homebrew is outdated.
@@ -99,7 +99,7 @@ homebrewをアップデートします。
 $ brew update
 {% endhighlight %}
 
-#### すべてのWarningを取り除いたので
+## すべてのWarningを取り除いたので
 
 {% highlight bash %}
 $ brew doctor

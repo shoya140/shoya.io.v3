@@ -11,7 +11,7 @@ keywords: GitLab, Git, インストール, セットアップ
 
 今回は大学の計算機にGit/GitLab環境を構築したので、その手順メモを記しました。[インストールガイド](https://github.com/gitlabhq/gitlabhq/blob/6-0-stable/doc/install/installation.md)を参考に、redisの起動など足りないところを補完してあります。<br>GitLabのインストール方法はバージョンによって少しずつ異なります。6.1, 6.2はsidekiqの立ち上げに問題があるので、2013年11月現在は6.0を導入するのが最善かと思われます。
 
-#### <span class="lsf">setup</span> 環境
+## <span class="lsf">setup</span> 環境
 * Debian 6.0.8
 * GitLab 6.0
 * git 1.8.4
@@ -21,7 +21,7 @@ keywords: GitLab, Git, インストール, セットアップ
 * mysql 14.14
 * nginx 0.7.67
 
-#### 1. 導入準備 (必要に応じて)
+## 1. 導入準備 (必要に応じて)
 GitLabを導入する前に、sudoコマンド、エディタ(Vim)、Git、Python、Ruby、MySQLをインストールします。既にインストールしている場合は<strong>手順2</strong>まで読み飛ばしてください。
 
 {% highlight bash %}
@@ -32,7 +32,7 @@ apt-get install sudo -y
 
 {% endhighlight %}
 
-#### 1.1. Vimインストール
+## 1.1. Vimインストール
 
 Vimをインストールして、標準のエディタとして設定。
 
@@ -42,7 +42,7 @@ sudo apt-get install -y vim
 sudo update-alternatives --set editor /usr/bin/vim.basic
 {% endhighlight %}
 
-#### 1.2. Gitインストール
+## 1.2. Gitインストール
 
 {% highlight bash %}
 # Install git
@@ -74,7 +74,7 @@ sudo make prefix=/usr/local install
 
 ※Gitを/usr/local/bin/gitにインストールしたので、<strong>手順8</strong>でconfig/gitlab.ymlを編集するときにbin_pathを/usr/local/bin/gitに書き換えること。
 
-#### 1.3. Pythonインストール
+## 1.3. Pythonインストール
 
 "python2"でpython2.xが起動するように設定する。
 
@@ -98,7 +98,7 @@ sudo ln -s /usr/bin/python /usr/bin/python2
 sudo apt-get install -y python-docutils
 {% endhighlight %}
 
-#### 1.4. Ruby インストール
+## 1.4. Ruby インストール
 
 システムデフォルトのRubyは1.9.3より古い可能性大なのでアップデート。
 
@@ -123,7 +123,7 @@ Bandlerインストール
 sudo gem install bundler --no-ri --no-rdoc
 {% endhighlight %}
 
-#### 1.5 MySQLインストール
+## 1.5 MySQLインストール
 
 {% highlight bash %}
 # Install the database packages
@@ -153,7 +153,7 @@ mysql> GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, A
 mysql> \q
 {% endhighlight %}
 
-#### 2. Gitユーザの作成
+## 2. Gitユーザの作成
 
 {% highlight bash %}
 sudo adduser --disabled-login --gecos 'GitLab' git
@@ -161,13 +161,13 @@ sudo adduser --disabled-login --gecos 'GitLab' git
 
 以降の手順はGitユーザで行います。
 
-#### 3. 必要パッケージのインストール
+## 3. 必要パッケージのインストール
 
 {% highlight bash %}
 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate
 {% endhighlight %}
 
-#### 4. GitLab shellインストール
+## 4. GitLab shellインストール
 
 {% highlight bash %}
 cd /home/git
@@ -209,7 +209,7 @@ sudo vim /etc/hosts
 sudo -u git -H ./bin/install
 {% endhighlight %}
 
-#### 5. GitLabインストール
+## 5. GitLabインストール
 
 {% highlight bash %}
 cd /home/git
@@ -270,7 +270,7 @@ sudo -u git -H cp config/unicorn.rb.example config/unicorn.rb
 sudo -u git -H editor config/unicorn.rb
 {% endhighlight %}
 
-#### 6. MySQLとの接続確認
+## 6. MySQLとの接続確認
 {% highlight bash %}
 # Mysql
 sudo -u git cp config/database.yml.mysql config/database.yml
@@ -286,21 +286,21 @@ sudo -u git -H editor config/database.yml
 sudo -u git -H chmod o-rwx config/database.yml
 {% endhighlight %}
 
-#### 7. Gemインストール
+## 7. Gemインストール
 {% highlight bash %}
 cd /home/git/gitlab
 
 sudo -u git -H bundle install --deployment --without development test postgres aws
 {% endhighlight %}
 
-#### 8. データベース初期化
+## 8. データベース初期化
 
 {% highlight bash %}
 # Type 'yes' to create the database.
 sudo -u git -H bundle exec rake gitlab:setup RAILS_ENV=production
 {% endhighlight %}
 
-#### 9. 起動ファイル導入
+## 9. 起動ファイル導入
 
 {% highlight bash %}
 sudo rm /etc/init.d/gitlab
@@ -314,13 +314,13 @@ sudo chmod +x /etc/init.d/gitlab
 sudo update-rc.d gitlab defaults 21
 {% endhighlight %}
 
-#### 10. Redis起動
+## 10. Redis起動
 
 {% highlight bash %}
 sudo /etc/init.d/redis-server start
 {% endhighlight %}
 
-#### 11. GitLabの起動
+## 11. GitLabの起動
 
 {% highlight bash %}
 /etc/init.d/gitlab start
@@ -333,7 +333,7 @@ sudo /etc/init.d/redis-server start
 /etc/init.d/gitlab restart
 {% endhighlight %}
 
-#### 12. Nginx(リバースプロキシ)の設定
+## 12. Nginx(リバースプロキシ)の設定
 {% highlight bash %}
 # Install nginx
 sudo apt-get install -y nginx
@@ -365,9 +365,9 @@ User: admin@local.host
 Pass: 5iveL!fe
 </pre>
 
-#### トラブルシューティング
+## トラブルシューティング
 
-##### <span class="lsf">check</span> httpsプロトコルでgit cloneできない
+### <span class="lsf">check</span> httpsプロトコルでgit cloneできない
 
 {% highlight bash %}
 git config –global http.sslVerify false
@@ -375,7 +375,7 @@ git config –global http.sslVerify false
 を実行して、証明書チェックを外す。<br>
 参考：[GIT:リポジトリにHTTPSでアクセスしてみる - 自転車で通勤しましょ♪ブログ](http://319ring.net/blog/archives/1164)
 
-##### <span class="lsf">check</span> Can't save project. Please try again later
+### <span class="lsf">check</span> Can't save project. Please try again later
 
 redis-serverをアップデートする
 {% highlight bash %}
@@ -385,7 +385,7 @@ apt-get -t squeeze-backports install redis-server
 {% endhighlight %}
 参考：["Can't save project. Please try again later" - GitHub issues](https://github.com/gitlabhq/gitlabhq/issues/3328)
 
-##### <span class="lsf">check</span> 502 Bad Gateway ページが見つからない
+### <span class="lsf">check</span> 502 Bad Gateway ページが見つからない
 
 タイムアウト値を30から180くらいに変更する
 {% highlight bash %}
@@ -393,7 +393,7 @@ sudo -u git -H editor config/unicorn.rb
 {% endhighlight %}
 参考：[502 Bad Gateway from Nginx for large GitLab fork - stackoverflow](http://stackoverflow.com/questions/18501406/502-bad-gateway-from-nginx-for-large-gitlab-fork)
 
-##### <span class="lsf">check</span> gitlab-shell self-check failed
+### <span class="lsf">check</span> gitlab-shell self-check failed
 
 virtual hostsの設定を取りこぼしてないか確認する
 
@@ -405,7 +405,7 @@ sudo vim /etc/hosts
 127.0.0.1    YOUR_DOMAIN.COM
 {% endhighlight %}
 
-##### <span class="lsf">check</span> その他の問題解決
+### <span class="lsf">check</span> その他の問題解決
 
 おかしいなと思ったら、以下のコマンドを実行。<br>
 エラーメッセージから原因を見つけて修復する。

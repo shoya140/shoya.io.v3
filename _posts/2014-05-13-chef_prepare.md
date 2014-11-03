@@ -7,7 +7,7 @@ tags: ['Infrastructure']
 keywords: chef, vagrant, prepare, 404, error
 ---
 
-#### 問題
+## 問題
 
 Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。
 
@@ -36,7 +36,7 @@ Generating node config 'nodes/dev_debian.json'...
 
 {% endhighlight %}
 
-#### 解決
+## 解決
 
 [Knife-solo prepare fails - stackoverflow](http://stackoverflow.com/questions/23591190/knife-solo-prepare-fails)
 

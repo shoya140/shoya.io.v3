@@ -78,7 +78,7 @@
   <article class="post-content">
     <p>brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。</p>
 
-<h4 id="warning1">Warning1</h4>
+<h2 id="warning1">Warning1</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in /usr/local/share/man aren<span class="s1">&#39;t writable.</span>
 <span class="s1">This can happen if you &quot;sudo make install&quot; software that isn&#39;</span>t managed
@@ -93,7 +93,7 @@ You should probably <span class="sb">`</span>chown<span class="sb">`</span> them
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></div>
 
-<h4 id="warning2">Warning2</h4>
+<h2 id="warning2">Warning2</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">&quot;config&quot;</span> scripts exist outside your system or Homebrew directories.
 <span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> *-config scripts to determine <span class="k">if</span>
@@ -114,7 +114,7 @@ script of the same name. We found the following <span class="s2">&quot;config&qu
 
 <p>参考:<a href="http://qiita.com/takc923/items/45386905f70fde9af0e7">phpenv入れてる時brew doctorしたら出るWarning消した</a></p>
 
-<h4 id="warning3">Warning3</h4>
+<h2 id="warning3">Warning3</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in your path end in a slash.
 Directories in your path should not end in a slash. This can <span class="nb">break </span>other
@@ -123,7 +123,7 @@ doctor checks. The following directories should be edited:
 
 <p>PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。</p>
 
-<h4 id="warning4">Warning4</h4>
+<h2 id="warning4">Warning4</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: /usr/bin occurs before /usr/local/bin
 This means that system-provided programs will be used instead of those
@@ -142,7 +142,7 @@ occurs before /usr/bin. Here is a one-liner:
 
 <p>PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。</p>
 
-<h4 id="warning5">Warning5</h4>
+<h2 id="warning5">Warning5</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Your Homebrew is outdated.
 You haven<span class="err">&#39;</span>t updated <span class="k">for</span> at least <span class="m">24</span> hours, this is a long <span class="nb">time </span>in brewland!
@@ -152,7 +152,7 @@ To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew update</code></pre></div>
 
-<h4 id="warning">すべてのWarningを取り除いたので</h4>
+<h2 id="warning">すべてのWarningを取り除いたので</h2>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew doctor
 &gt;&gt; Your system is ready to brew.</code></pre></div>
@@ -162,7 +162,7 @@ To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</
   </article>
 
   <div class="article-relations">
-  	
+      
   </div>
 
   <div class="pagenation">

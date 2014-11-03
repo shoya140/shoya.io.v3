@@ -9,7 +9,7 @@ keywords: python, test, doctest
 
 doctestはpythonに標準で搭載されているテストツールで、docstring("""で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。
 
-#### 記述例
+## 記述例
 
 {% highlight python %}
 import doctest
@@ -84,7 +84,7 @@ ok
 Test passed.
 {% endhighlight %}
 
-#### python -m doctest -v [ファイル名]
+## python -m doctest -v [ファイル名]
 
 Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。
 
@@ -126,7 +126,7 @@ Test passed.
 
 参考: [25.2. doctest — 対話的な実行例をテストする](http://docs.python.jp/2/library/doctest.html)
 
-#### 2014.07.08 追記
+## 2014.07.08 追記
 
 出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。
 

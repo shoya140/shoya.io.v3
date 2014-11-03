@@ -462,6 +462,10 @@ a:hover .footer-icon{
     h2{
     	margin-bottom: 0;
     }
+    @include media-query($on-palm) {
+        padding-left: 0;
+        padding-right: 0;
+    }
   	a{
   		position: absolute;
   		display: block;
@@ -483,9 +487,6 @@ a:hover .footer-icon{
     font-size: 24px;
     line-height: 1.2;
     color: darken($grey-color, 20%);
-    a:hover{
-    	color: $brand-color;
-    }
     @include media-query($on-palm) {
         font-size: 18px;
         line-height: 1.2;
