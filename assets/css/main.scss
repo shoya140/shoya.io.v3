@@ -6,21 +6,21 @@
 // Our variables
 //$base-font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-family: Oxygen, 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$nav-font-family: Oxygen, 'Open Sans', Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
-$letter-spacing: 0.4px;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.8;
+$letter-spacing: 0.4px;
 
 $spacing-unit: 30px;
 
 $text-color: #4a4a46;
 $background-color: #fdfdfd;
 $background-gray-color: #e1e6e8;
-$brand-color: #2a7ae2;
 
-$white-color: #fcfcfc;
+$brand-color: #9694b1;
+$brand-color-dark: darken($brand-color, 15%);
+
 $grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 35%);
@@ -109,7 +109,7 @@ a {
     text-decoration: none;
 
     &:hover{
-        color: darken($brand-color, 15%);
+        color: $brand-color-dark;
     }
 }
 
@@ -135,7 +135,7 @@ code {
     font-size: 14px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: $white-color;
+    background-color: $background-color;
 }
 
 code {
@@ -231,7 +231,7 @@ pre {
  * layout
  */
 .site-header {
-    font-family: $nav-font-family;
+    font-family: $base-font-family;
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
@@ -452,19 +452,30 @@ a:hover .footer-icon{
     font-size: 20px;
 }
 
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
+.post-list-item{
+	position:relative;
+	padding-top: $spacing-unit*0.4;
+	padding-bottom: $spacing-unit*0.4;
+	padding-left: $spacing-unit*0.4;
+	padding-right: $spacing-unit*0.4;
+    border-top: 1px solid $grey-color-light;
+    h2{
+    	margin-bottom: 0;
     }
+  	a{
+  		position: absolute;
+  		display: block;
+  		width: 100%;
+  		height: 100%;
+  		left: 0;
+  		top: 0;
+	}
 }
 
 .post-meta {
     font-size: $small-font-size;
     margin-bottom: 3px;
-    padding-left: 4px;
+    padding-left: 3px;
 }
 
 .post-link {
@@ -580,25 +591,6 @@ a:hover .footer-icon{
     text-align:center;
     font-weight:600;
 }
-
-// .item{
-//   position:relative;
-//   background-color:#ffffff;
-//   color:"#333333";
-//   border-radius:3px;
-//   padding: 10px 20px 10px 20px;
-//   margin: 0px 0px 10px 0px;
-//   box-shadow: 0 0 10px rgba(0,0,0,.1);
-// }
-
-// .item a{
-//   position: absolute;
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   left: 0;
-//   top: 0;
-// }
 
 .pagenation{
     text-align: center;

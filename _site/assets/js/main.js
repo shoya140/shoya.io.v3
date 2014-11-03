@@ -1,12 +1,12 @@
 $(function(){
 
   // entry fade
-  $(".entries-body").hover(function(){
+  $(".post-list-item").hover(function(){
     rollIn($(this));
   }, function(){
     rollOut($(this));
   });
-  $(".entries-body").click(function(){
+  $(".post-list-item").click(function(){
     rollOut($(this));
   });
 
@@ -50,11 +50,11 @@ $(function(){
 });
 
 function rollIn(body){
-  body.stop().animate({backgroundColor:"#386ca5", color:"#ffffff"}, 150);
-  body.children(".entries-title").stop().animate({color:"#ffffff"}, 150);
+  body.stop().animate({backgroundColor:"#9694b1", color:"#fdfdfd"}, 50);
+  body.children(".post-link").stop().animate({color:"#fdfdfd"}, 50);
 }
 
 function rollOut(body){
-  body.stop().animate({backgroundColor:"#ffffff", color:"#333333"}, 200);
-  body.children(".entries-title").stop().animate({color:"#007edf"}, 200);
+  body.stop().animate({backgroundColor:"#fdfdfd", color:"#4a4a46"}, 100);
+  body.children(".post-link").stop().animate({color:"#4a4a46"}, 100);
 }
