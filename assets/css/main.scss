@@ -4,7 +4,9 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//$base-font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-family: Oxygen, 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$nav-font-family: Oxygen, 'Open Sans', Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
 $letter-spacing: 0.3px;
@@ -22,7 +24,7 @@ $grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 35%);
 
-$on-palm: 600px;
+$on-palm: 500px;
 $on-laptop: 800px;
 
 // Using media queries with like this:
@@ -61,9 +63,9 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
-        @include media-query($on-palm) {
-            font-size: $palm-font-size;
-        }
+    @include media-query($on-palm) {
+        font-size: $palm-font-size;
+    }
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -114,18 +116,22 @@ blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    font-size: $base-font-size;
     letter-spacing: -1px;
     font-style: italic;
 
     > :last-child {
         margin-bottom: 0;
     }
+
+    @include media-query($on-palm) {
+        font-size: $palm-font-size;
+    }
 }
 
 pre,
 code {
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
     background-color: $white-color;
@@ -158,8 +164,13 @@ pre {
     @include media-query($on-laptop) {
         max-width: -webkit-calc(800px - (#{$spacing-unit}));
         max-width:         calc(800px - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit*1.4;
+        padding-left: $spacing-unit*1.4;
+    }
+
+    @include media-query($on-palm) {
+        padding-right: $spacing-unit/2;
+        padding-left: $spacing-unit/2;
     }
 }
 
@@ -208,6 +219,7 @@ pre {
  * layout
  */
 .site-header {
+    font-family: $nav-font-family;
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
@@ -367,7 +379,7 @@ a:hover .footer-icon{
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
     @include media-query($on-palm) {
-    	font-size: 13px;
+    	font-size: 14px;
     }
 }
 
@@ -414,7 +426,7 @@ a:hover .footer-icon{
 }
 
 .page-content {
-    padding: $spacing-unit*1.5 0 $spacing-unit 0;
+    padding: $spacing-unit*2 0 $spacing-unit 0;
 }
 
 .page-heading {
@@ -432,19 +444,15 @@ a:hover .footer-icon{
 
 .post-meta {
     font-size: $small-font-size;
-    color: $grey-color;
-    a{
-    	color: $grey-color;
-    	&:hover{
-    		color: $brand-color;
-    	}
-    }
+    margin-bottom: 3px;
+    padding-left: 4px;
 }
 
 .post-link {
     display: block;
     font-size: 24px;
-    color: $grey-color-dark;
+    line-height: 1.2;
+    color: darken($grey-color, 20%);
     a:hover{
     	color: $brand-color;
     }
@@ -455,22 +463,23 @@ a:hover .footer-icon{
 }
 
 .post-header {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit*1.6;
 }
 
 .post-title {
-    font-size: 28px;
-    letter-spacing: -1px;
-    line-height: 1;
+    font-size: 24px;
+    line-height: 1.2;
     @include media-query($on-palm) {
-        font-size: 20px;
-        line-height: 1.4;
+        font-size: 18px;
+        line-height: 1.2;
     }
 }
 
 .post-content {
     margin-bottom: $spacing-unit;
-
+    @include media-query($on-laptop) {
+    	text-align: justify;
+    }
     h2 {
         font-size: 22px;
     }
@@ -582,10 +591,10 @@ a:hover .footer-icon{
     box-shadow: 0 0 3px rgba(0,0,0,.1);
     display: inline-block;
     position:relative;
-    width: 42%;
+    width: 40%;
     font-size: 16px;
     padding: 10px;
-    margin: 0px;
+    margin: 2px;
     
     a{
         display: block;
@@ -603,10 +612,10 @@ a:hover .footer-icon{
     box-shadow: 0 0 3px rgba(0,0,0,.1);
     display: inline-block;
     position:relative;
-    width: 42%;
+    width: 40%;
     font-size: 16px;
     padding: 10px;
-    margin: 0px;
+    margin: 2px;
 }
 
 .hatena-star-user{
