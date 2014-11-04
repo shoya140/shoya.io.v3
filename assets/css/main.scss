@@ -271,6 +271,7 @@ pre {
 .site-nav {
     float: right;
     line-height: 56px;
+    z-index: 10;
 
     .menu-icon {
         display: none;
@@ -339,6 +340,7 @@ pre {
     p{
         color: $background-color;
         line-height: 1.0;
+        margin-bottom: $spacing-unit*0.33;
     }
     a{
         color: $background-color;
@@ -602,17 +604,33 @@ a:hover .footer-icon{
     text-align: center;
 }
 
-.page-button{
-    background-color:#ffffff;
+.page-button-base{
     border-radius:3px;
     box-shadow: 0 0 3px rgba(0,0,0,.1);
     display: inline-block;
     position:relative;
-    width: 40%;
+    width: 46%;
     font-size: 16px;
     padding: 10px;
     margin: 2px;
-    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;    
+    @include media-query($on-laptop) {
+        width: 44%;
+        font-size: $small-font-size;
+    }
+    @include media-query($on-palm) {
+        width: 90%;
+        font-size: $small-font-size*0.9;
+    }
+}
+
+.page-button{
+    @extend .page-button-base;
+    background-color:#ffffff;
     a{
         display: block;
         width: 100%;
@@ -624,15 +642,41 @@ a:hover .footer-icon{
 }
 
 .page-button-disabled{
+    @extend .page-button-base;
     background-color:#f8f8f8;
+}
+
+.social-button-base{
+    float: left;
+    line-height: 16px;
+    padding: 8px 16px;
+    margin-right: 6px;
+    margin-bottom: 5px;
     border-radius:3px;
-    box-shadow: 0 0 3px rgba(0,0,0,.1);
     display: inline-block;
-    position:relative;
-    width: 40%;
-    font-size: 16px;
-    padding: 10px;
-    margin: 2px;
+    border: 1px solid $grey-color-light;
+    @include media-query($on-palm) {
+        padding: 6px 12px;
+        margin-right: 4px;
+    }
+}
+
+.tweet-button{
+    @extend .social-button-base;
+}
+
+.facebook-button{
+    @extend .social-button-base;
+}
+
+.hatenabookmark-button{
+    @extend .social-button-base;
+    margin-right: 0px;
+}
+
+.hatena-star{
+    clear: both;
+    margin-bottom: $spacing-unit;
 }
 
 .hatena-star-user{

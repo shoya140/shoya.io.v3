@@ -311,7 +311,8 @@ pre {
 
 .site-nav {
   float: right;
-  line-height: 56px; }
+  line-height: 56px;
+  z-index: 10; }
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
@@ -358,7 +359,8 @@ pre {
   color: #fdfdfd; }
   .site-footer p {
     color: #fdfdfd;
-    line-height: 1.0; }
+    line-height: 1.0;
+    margin-bottom: 9.9px; }
   .site-footer a {
     color: #fdfdfd; }
     .site-footer a:hover {
@@ -567,16 +569,31 @@ a:hover .footer-icon {
 .pagenation {
   text-align: center; }
 
-.page-button {
-  background-color: #ffffff;
+.page-button-base, .page-button, .page-button-disabled {
   border-radius: 3px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: inline-block;
   position: relative;
-  width: 40%;
+  width: 46%;
   font-size: 16px;
   padding: 10px;
-  margin: 2px; }
+  margin: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; }
+  @media screen and (max-width: 1000px) {
+    .page-button-base, .page-button, .page-button-disabled {
+      width: 44%;
+      font-size: 13.6px; } }
+  @media screen and (max-width: 500px) {
+    .page-button-base, .page-button, .page-button-disabled {
+      width: 90%;
+      font-size: 12.24px; } }
+
+.page-button {
+  background-color: #ffffff; }
   .page-button a {
     display: block;
     width: 100%;
@@ -586,15 +603,28 @@ a:hover .footer-icon {
     top: 0px; }
 
 .page-button-disabled {
-  background-color: #f8f8f8;
+  background-color: #f8f8f8; }
+
+.social-button-base, .tweet-button, .facebook-button, .hatenabookmark-button {
+  float: left;
+  line-height: 16px;
+  padding: 8px 16px;
+  margin-right: 6px;
+  margin-bottom: 5px;
   border-radius: 3px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  position: relative;
-  width: 40%;
-  font-size: 16px;
-  padding: 10px;
-  margin: 2px; }
+  border: 1px solid #e8e8e8; }
+  @media screen and (max-width: 500px) {
+    .social-button-base, .tweet-button, .facebook-button, .hatenabookmark-button {
+      padding: 6px 12px;
+      margin-right: 4px; } }
+
+.hatenabookmark-button {
+  margin-right: 0px; }
+
+.hatena-star {
+  clear: both;
+  margin-bottom: 30px; }
 
 .hatena-star-user {
   border-radius: 4px;

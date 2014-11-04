@@ -1,5 +1,5 @@
 # Site settings
-title: SHOYA.I/O
+title: SHOYA.IO
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://shoya.io" # the base hostname & protocol for your site
 permalink: /blog/:title/

@@ -2,21 +2,48 @@ $(function(){
 
   // entry fade
   $(".post-list-item").hover(function(){
-    rollIn($(this));
+    rollIn($(this), "#9694b1");
   }, function(){
-    rollOut($(this));
+    rollOut($(this), "#4a4a46");
   });
   $(".post-list-item").click(function(){
     rollOut($(this));
   });
 
   $(".page-button").hover(function(){
-    rollIn($(this));
+    rollIn($(this), "#9694b1");
   }, function(){
-    rollOut($(this));
+    rollOut($(this), "#4a4a46");
   });
   $(".page-button").click(function(){
-    rollOut($(this));
+    rollOut($(this), "#4a4a46");
+  });
+
+  $(".tweet-button").hover(function(){
+    rollIn($(this), "#55acee");
+  }, function(){
+    rollOut($(this), "#9694b1");
+  });
+  $(".tweet-button").click(function(){
+    rollOut($(this), "#9694b1");
+  });
+
+  $(".facebook-button").hover(function(){
+    rollIn($(this), "#3b5998");
+  }, function(){
+    rollOut($(this), "#9694b1");
+  });
+  $(".facebook-button").click(function(){
+    rollOut($(this), "#9694b1");
+  });
+
+  $(".hatenabookmark-button").hover(function(){
+    rollIn($(this), "#00a8df");
+  }, function(){
+    rollOut($(this), "#9694b1");
+  });
+  $(".hatenabookmark-button").click(function(){
+    rollOut($(this), "#9694b1");
   });
 
 
@@ -49,12 +76,14 @@ $(function(){
   });
 });
 
-function rollIn(body){
-  body.stop().animate({backgroundColor:"#9694b1", color:"#fdfdfd"}, 50);
-  body.children(".post-link").stop().animate({color:"#fdfdfd"}, 50);
+function rollIn(body, color){
+  body.stop().animate({backgroundColor:color, color:"#fdfdfd"}, 50);
+  body.children("a").stop().animate({color:"#fdfdfd"}, 50);
+  body.children("h2").stop().animate({color:"#fdfdfd"}, 50);
 }
 
-function rollOut(body){
-  body.stop().animate({backgroundColor:"#fdfdfd", color:"#4a4a46"}, 100);
-  body.children(".post-link").stop().animate({color:"#4a4a46"}, 100);
+function rollOut(body, color){
+  body.stop().animate({backgroundColor:"#fdfdfd", color:color}, 100);
+  body.children("a").stop().animate({color:color}, 100);
+  body.children("h2").stop().animate({color:color}, 100);
 }

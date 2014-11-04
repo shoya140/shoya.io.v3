@@ -3603,7 +3603,7 @@ Hatena.Star.Star = new Ten.Class({
         img.setAttribute('height', '20px');
         img.className = 'hatena-star-user';
         var s = img.style;
-        s.margin = '0px 2px -6px 2px';
+        s.margin = '0px 2px 1px 2px';
         s.border = 'none';
         this.anchor.appendChild(img);
         this.anchor.appendChild(this.img);
@@ -3627,7 +3627,7 @@ Hatena.Star.Star = new Ten.Class({
             img.setAttribute('height', '10px');
             img.className = 'hatena-star-star';
             var s = img.style;
-            s.margin = '0px 12px -6px -22px';
+            s.margin = '0px 12px -9px -22px';
             s.border = 'none';
             this.gotImage[color.ImgSrc] = img;
         }
