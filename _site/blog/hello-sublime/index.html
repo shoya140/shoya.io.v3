@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Sublime Text3">
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://shoya.io/blog/hello-sublime/">
+    
+        <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>Sublime Text3導入メモ</title>
+
+    <link rel="alternate" type="application/rss+xml" title="Write once, run anywhere" href="http://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://shoya.io/blog/hello-sublime/">
+    <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/research/">Research</a>
+          <a class="page-link" href="/development/">Development</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          <div class="post">
+
+  <header class="post-header">
+    <p class="post-meta">Oct 28, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <h1 class="post-title">Sublime Text3導入メモ</h1>
+  </header>
+
+  <article class="post-content">
+    <p>最近VimからSublime Text3に乗り換えました。この記事は導入方法についてのメモです。</p>
+
+<h2 id="span-classlsfrightspan-homebrew-cask"><span class="lsf">right</span> homebrew-caskからインストール</h2>
+
+<p>アプリケーションはAppStore &gt; homebrew-cask &gt; 手動で管理する主義なので、Sublime Textをhomebrew-caskからインストール。デフォルトのbrew caskからインストールできるSublime Textのversionは2なので注意。version3を追加する。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew tap caskroom/homebrew-versions
+brew cask install sublime-text3</code></pre></div>
+
+<h2 id="span-classlsfrightspan-package-control"><span class="lsf">right</span> Package Control</h2>
+
+<p>プラグイン管理ツールであるPackage Controlをインストールする。<br />
+メニューバーから View &gt; Show Consoleを開く。下記を入力して実行する。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib<span class="p">;</span> <span class="nv">h</span> <span class="o">=</span> <span class="s1">&#39;7183a2d3e96f11eeadd761d777e62404&#39;</span> + <span class="s1">&#39;e330c659d4bb41d3bdf022e94cab3cd0&#39;</span><span class="p">;</span> <span class="nv">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span> <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span><span class="p">;</span> <span class="nv">by</span> <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">&#39;http://sublime.wbond.net/&#39;</span> + pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>, <span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">()</span><span class="p">;</span> <span class="nv">dh</span> <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span><span class="p">;</span> print<span class="o">(</span><span class="s1">&#39;Error validating download (got %s instead of %s), please try manual install&#39;</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if</span> dh !<span class="o">=</span> h <span class="k">else</span> open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">&#39;wb&#39;</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></div>
+
+<p>インストールが完了したらcommand+shift+p &gt; install packageで起動できる。パッケージ名を検索して選択するとインストールされる。インストールしたパッケージリストは以下に作成される。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/Package<span class="se">\ </span>Control.sublime-settings</code></pre></div>
+
+<p>とりあえず入れたパッケージ</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+	<span class="s2">&quot;installed_packages&quot;</span>:
+	<span class="o">[</span>
+		<span class="s2">&quot;ColorPicker&quot;</span>,
+		<span class="s2">&quot;Gist&quot;</span>,
+		<span class="s2">&quot;Git&quot;</span>,
+		<span class="s2">&quot;HTML5&quot;</span>,
+		<span class="s2">&quot;Jekyll&quot;</span>,
+		<span class="s2">&quot;Markdown Preview&quot;</span>,
+		<span class="s2">&quot;SCSS&quot;</span>,
+		<span class="s2">&quot;Theme - itg.flat&quot;</span>,
+		<span class="s2">&quot;Theme - Soda&quot;</span>
+	<span class="o">]</span>
+<span class="o">}</span></code></pre></div>
+
+<p>参考: <a href="https://sublime.wbond.net/installation">Installation - Package Control</a></p>
+
+<h2 id="span-classlsfrightspan-pc"><span class="lsf">right</span> 複数PC間での設定ファイル同期</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/</code></pre></div>
+<p>に作成されるファイルをDropboxなどに入れてシンボリックリンクを貼れば良い。</p>
+
+<p>1台目</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
+mkdir ~/Dropbox/Sublime
+mv User ~/Dropbox/Sublime/
+ln -s ~/Dropbox/Sublime/Use</code></pre></div>
+
+<p>2台目</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
+rm -r User
+ln -s ~/Dropbox/Sublime/User</code></pre></div>
+
+<p>Gitで管理してgithubに置く場合はアクセスキーやトークンの取り扱いに注意。プライベートリポジトリ推奨。また下記のファイルは.gitignoreに書いて同期しないように設定する。</p>
+
+<ul>
+  <li>Package Control.last-run</li>
+  <li>Package Control.ca-list</li>
+  <li>Package Control.ca-bundle</li>
+  <li>Package Control.system-ca-bundle</li>
+  <li>Package Control.cache/</li>
+  <li>Package Control.ca-certs/</li>
+</ul>
+
+<p>参考: <a href="https://sublime.wbond.net/docs/syncing">Syncing - Package Control</a></p>
+
+<h2 id="span-classlsfrightspan-"><span class="lsf">right</span> ターミナルから起動</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>subl <span class="o">[</span>ファイル名<span class="o">]</span> <span class="c"># ファイル名を開く</span>
+<span class="nv">$ </span>subl . <span class="c"># カレントディレクトリを開く</span></code></pre></div>
+
+<h2 id="span-classlsfrightspan--1"><span class="lsf">right</span> 利用者の声</h2>
+
+<blockquote class="twitter-tweet" lang="ja"><p>Sublime Textのおかげで楽しく論文を書けるようになりました！(23歳・大学生)</p>&mdash; Shoya Ishimaru (@shoya140) <a href="https://twitter.com/shoya140/status/526782092554694658">2014, 10月 27</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+  </article>
+
+  <div class="post-relations">
+    
+  </div>
+
+  <div class="post-social">
+  	<div class="tweet-button"><a href="https://twitter.com/share?text=Sublime Text3導入メモ"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/hello-sublime/&amp;t=Sublime Text3導入メモ" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/hello-sublime/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+  	<div class="hatena-star"><a href="http://shoya.io/blog/hello-sublime/" style="display: none;">hatena</a></div>
+  </div>
+
+  <div class="pagenation">
+    
+      <div class="page-button"><a href="/blog/cookpad_internship/"></a><span class="lsf">left</span> クックパッドのサマーインターンシップに参加しました</div>
+    
+    
+      <div class="page-button"><a href="/blog/how-google-works/"></a>「How Google Works」読んだ <span class="lsf">right</span></div>
+    
+  </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> New Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/how-google-works/">「How Google Works」読んだ</a></li>
+        
+          <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
+        
+          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
+        
+          <li>- <a href="/blog/nginx_root/">Nginxの静的ファイル配信でハマった</a></li>
+        
+          <li>- <a href="/blog/github_academic/">GitHubの学割クーポンを延長する</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> Popular Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/life_in_germany/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> Tags</p>
+        
+        [<a href="/tag/Event/">Event</a>]
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Programming/">Programming</a>]
+        
+        [<a href="/tag/Infrastructure/">Infrastructure</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <a href = "https://docs.google.com/forms/d/1oEXmb1m7QMJeorhI99NFCTKlXcQ0O5AP4B9qoaDmcl8/viewform"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>
+      <a href = "http://mrk1869.com/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a> 2014</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </body>
+
+</html>

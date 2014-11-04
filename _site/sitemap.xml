@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/how-google-works/</loc>
+    </url>
+    
+    <url>
+        <loc>http://shoya.io/blog/hello-sublime/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/cookpad_internship/</loc>
     </url>
     
@@ -324,6 +332,14 @@
     
     
     <url>
+        <loc>http://shoya.io/blog/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>http://shoya.io/tag/Event/</loc>
     </url>
     
@@ -373,14 +389,6 @@
     
     <url>
         <loc>http://shoya.io/tag/Design/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/blog/</loc>
     </url>
     
     
