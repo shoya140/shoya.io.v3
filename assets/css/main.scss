@@ -8,7 +8,7 @@
 $base-font-family: Oxygen, 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
-$small-font-size: $base-font-size * 0.875;
+$small-font-size: $base-font-size * 0.8;
 $base-line-height: 1.8;
 $letter-spacing: 0.4px;
 
@@ -117,22 +117,20 @@ blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: $base-font-size;
-    letter-spacing: -1px;
-    font-style: italic;
+    font-size: $small-font-size;
 
     > :last-child {
         margin-bottom: 0;
     }
 
     @include media-query($on-palm) {
-        font-size: $palm-font-size;
+        font-size: $palm-font-size*0.9;
     }
 }
 
 pre,
 code {
-    font-size: 14px;
+    font-size: $small-font-size;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
     background-color: $background-color;
@@ -181,8 +179,8 @@ pre {
     	padding-left: $spacing-unit*1.2;
     }
     @include media-query($on-palm) {
-    	padding-right: $spacing-unit*0.5;
-    	padding-left: $spacing-unit*0.5;
+    	padding-right: $spacing-unit*0.4;
+    	padding-left: $spacing-unit*0.4;
     }
 }
 
@@ -479,7 +477,11 @@ a:hover .footer-icon{
 .post-meta {
     font-size: $small-font-size;
     margin-bottom: 3px;
-    padding-left: 3px;
+    padding-left: 2px;
+    @include media-query($on-palm) {
+    	font-size: 14px;
+    	padding-left: 0px;
+    }
 }
 
 .post-link {
@@ -508,9 +510,6 @@ a:hover .footer-icon{
 
 .post-content {
     margin-bottom: $spacing-unit;
-    @include media-query($on-laptop) {
-    	text-align: justify;
-    }
     h2 {
         font-size: 22px;
     }
@@ -521,6 +520,12 @@ a:hover .footer-icon{
 
     h4 {
         font-size: 18px;
+    }
+    @include media-query($on-palm) {
+    	text-align: justify;
+    	h2{
+    		font-size: 15px;
+    	}
     }
 }
 

@@ -173,7 +173,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14.875px; }
+  font-size: 13.6px; }
 
 ul, ol {
   margin-left: 30px; }
@@ -195,18 +195,16 @@ blockquote {
   color: #828282;
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
-  font-size: 17px;
-  letter-spacing: -1px;
-  font-style: italic; }
+  font-size: 13.6px; }
   blockquote > :last-child {
     margin-bottom: 0; }
   @media screen and (max-width: 500px) {
     blockquote {
-      font-size: 14px; } }
+      font-size: 12.6px; } }
 
 pre,
 code {
-  font-size: 14px;
+  font-size: 13.6px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
   background-color: #fdfdfd; }
@@ -248,8 +246,8 @@ pre {
       padding-left: 36px; } }
   @media screen and (max-width: 500px) {
     .wrapper-inside {
-      padding-right: 15px;
-      padding-left: 15px; } }
+      padding-right: 12px;
+      padding-left: 12px; } }
 
 .wrapper-footer {
   max-width: -webkit-calc(1000px - (30px * 2));
@@ -469,9 +467,13 @@ a:hover .footer-icon {
     top: 0; }
 
 .post-meta {
-  font-size: 14.875px;
+  font-size: 13.6px;
   margin-bottom: 3px;
-  padding-left: 3px; }
+  padding-left: 2px; }
+  @media screen and (max-width: 500px) {
+    .post-meta {
+      font-size: 14px;
+      padding-left: 0px; } }
 
 .post-link {
   display: block;
@@ -496,15 +498,17 @@ a:hover .footer-icon {
 
 .post-content {
   margin-bottom: 30px; }
-  @media screen and (max-width: 1000px) {
-    .post-content {
-      text-align: justify; } }
   .post-content h2 {
     font-size: 22px; }
   .post-content h3 {
     font-size: 20px; }
   .post-content h4 {
     font-size: 18px; }
+  @media screen and (max-width: 500px) {
+    .post-content {
+      text-align: justify; }
+      .post-content h2 {
+        font-size: 15px; } }
 
 .image-on-frame, .image-on-frame-medium, .image-on-frame-small, .image-on-frame-mini {
   max-width: 90%;
