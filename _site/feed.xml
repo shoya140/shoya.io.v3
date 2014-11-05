@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SHOYA.IO</title>
+    <title>shoya.io</title>
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 05 Nov 2014 20:34:05 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Nov 2014 20:34:05 +0900</lastBuildDate>
+    <pubDate>Thu, 06 Nov 2014 00:23:36 +0900</pubDate>
+    <lastBuildDate>Thu, 06 Nov 2014 00:23:36 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>実験を始める前のチェックリスト</title>
+        <description>&lt;p&gt;被験者を募ってデータをとることがよくある。やり直しがきかないので、実験(データの記録)を始める前にはいつも細心の注意を払っている。この「気をつけていることリスト」を研究室のwikiに書いておこうと思ったのだけれど、非公開にすることでもないような気がするので、ここにまとめてみた。「体にセンサを取り付けて決められた行動(タスク)をとる」という実験を想定して項目をあげる。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;タスクをまず自分で体験して記録の漏れをなくす。&lt;/li&gt;
+  &lt;li&gt;実験手順をプロトコルとして記述しておく。&lt;/li&gt;
+  &lt;li&gt;実験中は全景が分かるground truth videoをWebカメラで撮影する。&lt;/li&gt;
+  &lt;li&gt;各センサの同期に使うユニークな動きをタスクの開始前に入れる。&lt;/li&gt;
+  &lt;li&gt;記録されたデータをテストにかけて、データの欠損がないか確認する。&lt;/li&gt;
+  &lt;li&gt;データの記録時間は必要よりやや長めに設定しておく。&lt;/li&gt;
+  &lt;li&gt;記録装置のバッテリ切れに注意する。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 06 Nov 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/protocol/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/protocol/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
     
       <item>
         <title>「How Google Works」読んだ</title>
@@ -639,35 +664,6 @@ To update Homebrew, run &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;brew upda
         
         
         <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>クックパッドのデザイン講演会に参加しました</title>
-        <description>&lt;p&gt;京都のCAMPHOR-HOUSEにて、クックパッドのデザイン責任者・池田さんによる講演会が開催されました。「クックパッドのサービス開発とデザイン」というタイトルで、「決してインターネットに詳しいわけではない方にまでに幅広く支持されているデザインの裏側には、どういった工夫やこだわりがあるか」というお話をしていただきました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;デザインの原則&lt;/h2&gt;
-
-&lt;p&gt;クックパッドでは、サービス開発の軸がぶれないように、いくつかの「デザインの原則」を設けているとのこと。例えば&lt;strong&gt;全体最適の原則&lt;/strong&gt;。各自が作ったデザインをライブラリ化して共有したり、アイコンをWebフォントにして、クックパッド全体のブランドデザインを保つためのルールです。&lt;strong&gt;無言語化の原則&lt;/strong&gt;。機能を説明するのにできるだけ言葉を使わず、ぱっと見て分かるデザインを心がけるルールです。&lt;strong&gt;無言実行の原則&lt;/strong&gt;。プロダクトの概念やコンセプトを利用者にいちいち説明するのではなく、利用者にはプロダクトそのもので評価してもらうべきというルールです。ほかにもBEST集中の原則、競合を知る原則、顧客中心の原則などがあり、勉強になりました。&lt;/p&gt;
-
-&lt;h2 id=&quot;ab&quot;&gt;A/Bテストの指標&lt;/h2&gt;
-
-&lt;p&gt;A/Bテストについての話がでたので、「定量的に評価できる数字とユーザ体験は時としてトレードオフの関係にあるが、どうやって折り合いをつけているか」という質問をしました。「例えばあるボタンを大きくすれば新規会員数は増えるとしても、もちろん大きすぎるボタンにはNGをだす」との回答でした。「その(大きすぎるなどの)感覚値的な指標はどうやって測っているか」という質問には、「私(池田さん)の主観で決めます」という回答をいただきました。(ここでデザインの原則に繋がると思っていたので少し残念。) 利用者や利用シーンを具体的に想定して、それぞれの人にとって馴染みやすいデザインを考えることで、良し悪しを決めるとのことでした。&lt;/p&gt;
-
-&lt;p&gt;属人的になりがちなデザインの知見を社内でどうやって共有するかといった、興味深いお話を聞くことができました。ありがとうございました！&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Jun 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/cookpad_design/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/cookpad_design/</guid>
-        
-        <category>Event</category>
-        
-        <category>Note</category>
-        
-        
-        <category>coffee</category>
         
       </item>
     

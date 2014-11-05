@@ -65,7 +65,7 @@ $(function(){
       url:$(this).attr("href"),
       dataType:'html',
       success:function(data, textStatus, jqXHR){
-        var title = data.match(/<title>(.*) - SHOYA.IO<\/title>/)[1];
+        var title = data.match(/<title>(.*) - shoya.io<\/title>/)[1];
         if(title != ""){
           $($titles[i]).text(title);
         }else{
