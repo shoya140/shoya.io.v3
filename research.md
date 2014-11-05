@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Research - Shoya Ishimaru
+title: Research
 permalink: /research/
 ---
 

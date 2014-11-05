@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me - 石丸 翔也
+title: 石丸 翔也
 permalink: /aboutme/jp/
 ---
 <img src="/assets/img/birthday.png" class="image-on-frame image-trimmed-by-circle" width="150px" alt="Shoya Ishimaru">

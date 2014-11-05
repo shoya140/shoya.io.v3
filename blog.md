@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog - Shoya Ishimaru
+title: Blog
 permalink: /blog/
 ---
 

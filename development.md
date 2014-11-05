@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Development - Shoya Ishimaru
+title: Development
 permalink: /development/
 ---
 

@@ -10,7 +10,6 @@ module Jekyll
       self.read_yaml(File.join(base, '_layouts'), 'entries.html')
       self.data['posts'] = site.tags[tag]
       self.data['tag'] = tag
-      self.data['page_name'] = "tag:"+tag
     end
   end
 
