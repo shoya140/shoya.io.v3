@@ -11,7 +11,7 @@ permalink: /aboutme/jp/
 
 偉大な研究を成し遂げて世界中の人を幸せにすることが目標. カメラやセンサーを利用して人間の行動を認識する研究に取り組んでいます. コンピュータビジョン・パターン認識・データ解析に興味があります. [iOS Android Webアプリ開発](/development/)が趣味です.
 
-### <span class="lsf">check</span> Activities
+### Activities
 
 * <a href ="https://info.cookpad.com/"><span style="font-weight: 600;">クックパッド株式会社</span></a> サマーインターンシップ (09.2014)
 * <a href ="https://sites.google.com/site/miru2014okayama/wakate"><span style="font-weight: 600;">MIRU2014 若手プログラム</span></a> Best Wakate Presentation Award, Audience Award (06.2014)

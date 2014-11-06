@@ -12,15 +12,15 @@ I'm also a [mobile application](/development/) developer.
 
 My research theme is "Activity Recognition", which involves recognizing and classifying human activities by using data from several sensors.
 
-### <span class="lsf">check</span> Objective
+### Objective
 
 Inventing amazing software and satisfying people all over the world.
 
-### <span class="lsf">check</span> Interests
+### Interests
 
 Mobile applications, Activity recognition, Image processing, Data analysis.
 
-### <span class="lsf">check</span> Work Experience
+### Work Experience
 
 * 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc</a>, 09.2014
 * Research internship, <a href="http://www.dfki.de/web/">DFKI</a>, 10.2013 - 03.2014
@@ -29,11 +29,11 @@ Mobile applications, Activity recognition, Image processing, Data analysis.
 * Part-time software engineer, <a href="http://www.paperboy.co.jp/">Paperboy&co. Inc</a>, 06.2012 - 12.2012
 * Software engineer, <a href="http://campus-inc.org/">Campus. Inc</a>, 05.2012 - 04.2013
 
-### <span class="lsf">check</span> Education
+### Education
 
 * BS CS, Osaka Prefecture University, Osaka Japan, 04.2010 - 03.2014
 
-### <span class="lsf">check</span> Activities
+### Activities
 
 * <a href="https://sites.google.com/site/miru2014okayama/wakate">MIRU2014 Young Researchers' Program</a>: Best Wakate Presentation Award, Audience Award, 2014
 * <a href="http://jp.startup-dating.com/2013/05/super-hackathon-2013-in-osak">Super Hackathon 2013 in Osaka</a>: Third place, 2013

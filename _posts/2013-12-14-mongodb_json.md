@@ -9,7 +9,7 @@ keywords: MongoDB, Python, JSON
 
 MongoDBから条件に合うオブジェクトを取り出して, エンコードされたJSONを返すapiを作成しようとしたところ, つまずいたのでメモ.
 
-## 問題
+### 問題
 
 {% highlight python %}
 
@@ -34,7 +34,7 @@ TypeError: ObjectId('52aa539a86d00a0fac59fb10') is not JSON serializable
 MongoDBから得られたオブジェクトをjsonモジュールのdumpus関数に直接渡すとエラーが生じる.
 この問題は, PythonのJSONモジュールがMongoDBの特殊なObjectID型をJSONに変換する方法を知らないことによる.
 
-## 解決策
+### 解決策
 
 JSONエンコードする前にディクショナリから_idキーを削除する.
 
@@ -49,6 +49,6 @@ json.dumps(item)
 
 実行結果:正しくエンコードされる.
 
-## 参考文献
+### 参考文献
 
 [O'Reilly Japan - 概説Tornado](http://www.oreilly.co.jp/books/9784873115764/) MongoDBドキュメントとJSON

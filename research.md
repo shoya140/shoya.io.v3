@@ -6,7 +6,7 @@ permalink: /research/
 
 Here are some pre-print versions of a couple of my publications.
 
-### Proceedings
+## Proceedings
 
 石丸 翔也, クンツェ カイ, 黄瀬 浩一, <span style="font-weight: 700;">眼電位を用いたみんなのための眼球運動認識</span>, 信学技報, vol. 114, no. 230, PRMU2014-62, pp. 45-48, October 2014.
 

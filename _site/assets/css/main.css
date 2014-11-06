@@ -202,6 +202,12 @@ blockquote {
     blockquote {
       font-size: 12.6px; } }
 
+cite {
+  font-style: normal; }
+  cite:before {
+    content: "external";
+    color: #9694b1; }
+
 pre,
 code {
   font-size: 13.6px;
@@ -502,15 +508,17 @@ a:hover .footer-icon {
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
-    font-size: 22px; }
+    font-size: 20px; }
   .post-content h3 {
     font-size: 20px; }
+    .post-content h3:before {
+      content: "rightright "; }
   .post-content h4 {
-    font-size: 18px; }
+    font-size: 20px; }
   @media screen and (max-width: 500px) {
     .post-content {
       text-align: justify; }
-      .post-content h2 {
+      .post-content h2, .post-content h3 {
         font-size: 15px; } }
 
 .image-on-frame, .image-on-frame-medium, .image-on-frame-small, .image-on-frame-mini {
@@ -643,7 +651,7 @@ a:hover .footer-icon {
   font-weight: normal;
   font-style: normal; }
 
-.lsf, .lsf-icon:before {
+.lsf, cite:before, .post-content h3:before, .lsf-icon:before {
   font-family: 'LigatureSymbols';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
