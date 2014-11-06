@@ -5,8 +5,8 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 07 Nov 2014 03:13:12 +0900</pubDate>
-    <lastBuildDate>Fri, 07 Nov 2014 03:13:12 +0900</lastBuildDate>
+    <pubDate>Fri, 07 Nov 2014 06:48:25 +0900</pubDate>
+    <lastBuildDate>Fri, 07 Nov 2014 06:48:25 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「&lt;strong&gt;過去の状態に戻しやすくする&lt;/strong&gt;」「&lt;strong&gt;任意のタイミングで同期できる&lt;/strong&gt;」というメリットがある。&lt;/p&gt;
+&lt;p&gt;設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「&lt;strong&gt;過去の状態に戻しやすくなる&lt;/strong&gt;」「&lt;strong&gt;任意のタイミングで同期できる&lt;/strong&gt;」というメリットがある。&lt;/p&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;1台目の手順&lt;/h3&gt;
 
@@ -36,6 +36,8 @@
 	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.ca-certs/
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git remote add origin ~/Dropbox/Git/sublime.git
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;2台目の手順&lt;/h3&gt;

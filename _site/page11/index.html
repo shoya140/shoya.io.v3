@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="Shoya Ishimaru (shoya140)'s weblog about his input/output.">
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="shoya.io">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://shoya.io/page11/index.html">
+    
+        <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://shoya.io/page11/">
+    <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/research/">Research</a>
+          <a class="page-link" href="/development/">Development</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Dec 24, 2013
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/locate/"><h1 class="post-title">locateとupdatedbでファイルを高速検索</h1></a>
+  </header>
+  <article class="post-content">
+    <p>シェル上でファイルを検索するときfindを使っていたのだけれど</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>find DIRECTORY -name <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
+
+<p>locate コマンドを使ったほうが早くて便利だよと教えてもらった。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>locate <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
+
+<p>locateはあらかじめ作成しておいたデータベースを使って検索するため、コマンドが叩かれる度に検索を実行するfindより早いらしい。</p>
+
+<p>データベースは定期的に更新されるが、下記のコマンドで手動で更新できる。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo updatedb</code></pre></div>
+
+<p>Mac OSXの場合は</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo /usr/libexec/locate.updatedb</code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Dec 18, 2013
+    
+    [<a href="/tag/Design/">Design</a>]
+    
+    </p>
+    <a href="/blog/long_shadow/"><h1 class="post-title">5分で完成！イラレで作るロングシャドウアイコン</h1></a>
+  </header>
+  <article class="post-content">
+    <p>フラットデザインの台頭と素材サイトの恩恵によって、アプリのデザインにかかる工数はどんどん削減されていく傾向にあります。今回はそれらを組み合わせることで、ノンデザイナーでもさくっと作れるロングシャドウアイコンの作成方法をお伝えします。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow00.png" class="image-on-frame-mini" /></p>
+
+<h3 id="section">用意するもの</h3>
+
+<ul>
+  <li>単色アイコン</li>
+  <li>色相が同じ２つの色</li>
+</ul>
+
+<p>ロングシャドウを作成するために、あらかじめシンボルとなるアイコン画像と２つの色を用意しておきます。単色アイコンを自分で描くことが難しい場合は<a href="http://iconmonstr.com/">iconmonstr</a>などの素材サイトを利用すると良いです。色に関しては<a href="http://paletta.mrk1869.com/">Paletta</a>を使って、ひとつのパレットから「明るくて淡い色」と「暗くて濃い色」の2色を選んでおきます。</p>
+
+<h3 id="section-1">手順</h3>
+
+<p>まずは薄い色で塗られた正方形を作成し、その上に単色アイコンを置きます。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow01.png" class="image-on-frame" /></p>
+
+<p>それらを別の場所にコピーして、さらにアイコンのコピーを正方形の枠外にも配置します。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow02.png" class="image-on-frame" /></p>
+
+<p>画面左に見える「ツール」から「ブレンドツール」を見つけてダブルクリックします。<br />
+今回はステップ数を大きな数にして、オブジェクトの間をブレンドで埋め尽くします。OKを押すとマウスカーソルが変わるので、ふたつのアイコンを順番にクリックしてください。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow03.png" class="image-on-frame" /></p>
+
+<p>ふたつのアイコンが繋がったら、その状態で「オブジェクト &gt; 分割・拡張」を選択します。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow04.png" class="image-on-frame" /></p>
+
+<p>無数のアイコンが作成されるので、それらを「パスファインダー &gt; 合体」でひとつにします。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow05.png" class="image-on-frame" /></p>
+
+<p>パスファインダーで作られた長いアイコンと正方形を選択して「オブジェクト &gt; クリッピングマスク &gt; 作成」をクリックします。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow06.png" class="image-on-frame" /></p>
+
+<p>ロングシャドウができました。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow07.png" class="image-on-frame" /></p>
+
+<p>影をアイコンの下に配置して、「暗くて濃い色」とグラデーションを適用してください。グラデーションは角度135度・終端の不透明率20%くらいに設定するといい感じに仕上がります。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow08.png" class="image-on-frame" /></p>
+
+<p>以上、5分で作る簡単ロングシャドウアイコンでした。</p>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Dec 15, 2013
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/microsoft_translator/"><h1 class="post-title">PythonでMicrosoft Translator APIを使ってみる</h1></a>
+  </header>
+  <article class="post-content">
+    <p>自動翻訳APIであるMicrosoft Translator APIを導入してみました。</p>
+
+<h2 id="section">1. アプリケーションの登録</h2>
+
+<p><a href="https://datamarket.azure.com/developer/applications/">Windows Azure Marketplace</a>にアクセスしてアプリケーションを登録します。</p>
+
+<p>Windows accountでのサインインを求められるので、持っていない場合は”新規登録”ボタンをクリックしてアカウントを作成します。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/microsoft_translator01.png" class="image-on-frame" /></p>
+
+<h2 id="section-1">2. ライブラリのインストール</h2>
+
+<p>Python用のSDKがGitHubで公開されているので<a href="https://github.com/openlabs/Microsoft-Translator-Python-API">リポジトリ</a>をcloneします。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone git@github.com:openlabs/Microsoft-Translator-Python-API.git</code></pre></div>
+
+<p>セットアップスクリプトを実行します.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>Microsoft-Translator-Python-API
+<span class="nv">$ </span>sudo python setup.py install</code></pre></div>
+
+<p>以上で導入は終わりです. 簡単ですね.</p>
+
+<h2 id="section-2">3. 実際に使ってみる</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">microsofttranslator</span> <span class="kn">import</span> <span class="n">Translator</span>
+<span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">(</span><span class="s">&#39;&lt;Your Client ID&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;Your Client Secret&gt;&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;ja&quot;</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">こんにちは</code></pre></div>
+
+<h2 id="section-3">所感</h2>
+
+<p>自動翻訳APIは数多く存在しますが, 対応言語が多い・安定してサービスが継続されそうという理由で今回はMicrosoft Translator APIを選択しました。
+(Google Translate APIの無料版v1は2011年12月1日をもってサービスを終了している)</p>
+
+<p>連続してリクエストを送り続けるとエラーが返ってくることがあります。複数の文章を翻訳したいときは、一文ずつ送信するのではなく、文章を連結してひとつのリクエストにまとめて送信することで、この問題を解消することができます。</p>
+
+  </article>
+</div>
+<hr>
+
+
+<div class="pagenation">
+    
+        <div class="page-button"><a href="/page12"></a><span class="lsf">left</span> Previous</div>
+    
+    
+        
+            <div class="page-button"><a href="/page10"></a>Next <span class="lsf">right</span></div>
+        
+    
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> New Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
+        
+          <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
+        
+          <li>- <a href="/blog/how-google-works/">「How Google Works」読んだ</a></li>
+        
+          <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
+        
+          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> Popular Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/life_in_germany/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> Tags</p>
+        
+        [<a href="/tag/Event/">Event</a>]
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Programming/">Programming</a>]
+        
+        [<a href="/tag/Infrastructure/">Infrastructure</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <a href = "https://docs.google.com/forms/d/1oEXmb1m7QMJeorhI99NFCTKlXcQ0O5AP4B9qoaDmcl8/viewform"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>
+      <a href = "http://mrk1869.com/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a> 2014</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </body>
+
+</html>

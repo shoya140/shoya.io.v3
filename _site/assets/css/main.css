@@ -226,6 +226,23 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
+hr {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 0;
+  border: 0;
+  border-bottom: 1px dashed #9694b1;
+  text-align: center; }
+  hr:after {
+    content: "smile";
+    display: inline-block;
+    position: relative;
+    top: -21px;
+    font-size: 24px;
+    padding: 0 10px;
+    color: #9694b1;
+    background: #fdfdfd; }
+
 .wrapper {
   max-width: -webkit-calc(1100px - (30px * 2));
   max-width: calc(1100px - (30px * 2));
@@ -499,7 +516,8 @@ a:hover .footer-icon {
 
 .post-title {
   font-size: 24px;
-  line-height: 1.2; }
+  line-height: 1.2;
+  color: #4a4a46; }
   @media screen and (max-width: 500px) {
     .post-title {
       font-size: 18px;
@@ -651,7 +669,7 @@ a:hover .footer-icon {
   font-weight: normal;
   font-style: normal; }
 
-.lsf, cite:before, .post-content h3:before, .lsf-icon:before {
+.lsf, cite:before, hr:after, .post-content h3:before, .lsf-icon:before {
   font-family: 'LigatureSymbols';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

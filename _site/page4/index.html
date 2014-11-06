@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="Shoya Ishimaru (shoya140)'s weblog about his input/output.">
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="shoya.io">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://shoya.io/page4/index.html">
+    
+        <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://shoya.io/page4/">
+    <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/research/">Research</a>
+          <a class="page-link" href="/development/">Development</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Jul 4, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/brew_doctor/"><h1 class="post-title">brew doctorのwarningを解決する</h1></a>
+  </header>
+  <article class="post-content">
+    <p>brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。</p>
+
+<h3 id="warning1">Warning1</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in /usr/local/share/man aren<span class="s1">&#39;t writable.</span>
+<span class="s1">This can happen if you &quot;sudo make install&quot; software that isn&#39;</span>t managed
+by Homebrew. If a brew tries to add locale information to one of these
+directories, <span class="k">then</span> the install will fail during the link step.
+You should probably <span class="sb">`</span>chown<span class="sb">`</span> them:
+
+    /usr/local/share/man/de
+    /usr/local/share/man/de/man1</code></pre></div>
+
+<p>一部のディレクトリの所有者がbrewを使うユーザになっていない問題。chownコマンドで所有者を変更します。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></div>
+
+<h3 id="warning2">Warning2</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">&quot;config&quot;</span> scripts exist outside your system or Homebrew directories.
+<span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> *-config scripts to determine <span class="k">if</span>
+software packages are installed, and what additional flags to use when
+compiling and linking.
+
+Having additional scripts in your path can confuse software installed via
+Homebrew <span class="k">if</span> the config script overrides a system or Homebrew provided
+script of the same name. We found the following <span class="s2">&quot;config&quot;</span> scripts:
+
+    /Users/shoya/.pyenv/shims/python-config
+    /Users/shoya/.pyenv/shims/python2-config
+    /Users/shoya/.pyenv/shims/python2.7-config</code></pre></div>
+
+<p>homebrewの管理外かつPATHが通っているところにconfigスクリプトが存在する問題。深刻な問題ではないようなので、このWarningが表示されないよう回避する方向で。brewコマンドを実行するときだけ~/.pyenv/shims/をPATHから取り除くエイリアスを.bashrcに追記した。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">brew</span><span class="o">=</span><span class="s2">&quot;env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew&quot;</span></code></pre></div>
+
+<p>参考:<a href="http://qiita.com/takc923/items/45386905f70fde9af0e7">phpenv入れてる時brew doctorしたら出るWarning消した</a></p>
+
+<h3 id="warning3">Warning3</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in your path end in a slash.
+Directories in your path should not end in a slash. This can <span class="nb">break </span>other
+doctor checks. The following directories should be edited:
+    /Applications/MacVim.app/Contents/MacOS/    /Users/shoya/software/android-ndk/    /Users/shoya/software/android-sdk/platform-tools/</code></pre></div>
+
+<p>PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。</p>
+
+<h3 id="warning4">Warning4</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: /usr/bin occurs before /usr/local/bin
+This means that system-provided programs will be used instead of those
+provided by Homebrew. The following tools exist at both paths:
+
+    git
+    git-cvsserver
+    git-receive-pack
+    git-shell
+    git-upload-archive
+    git-upload-pack
+
+Consider setting your PATH so that /usr/local/bin
+occurs before /usr/bin. Here is a one-liner:
+    <span class="nb">echo export </span><span class="nv">PATH</span><span class="o">=</span><span class="s1">&#39;/usr/local/bin:$PATH&#39;</span> &gt;&gt; ~/.bash_profile</code></pre></div>
+
+<p>PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。</p>
+
+<h3 id="warning5">Warning5</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Your Homebrew is outdated.
+You haven<span class="err">&#39;</span>t updated <span class="k">for</span> at least <span class="m">24</span> hours, this is a long <span class="nb">time </span>in brewland!
+To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</span>.</code></pre></div>
+
+<p>homebrewをアップデートします。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew update</code></pre></div>
+
+<h3 id="warning">すべてのWarningを取り除いたので</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew doctor
+&gt;&gt; Your system is ready to brew.</code></pre></div>
+
+<p>診断結果が正常になりました。めでたい。</p>
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Jun 21, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/terminal_login/"><h1 class="post-title">プロセスが完了しました</h1></a>
+  </header>
+  <article class="post-content">
+    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal01.png" class="image-on-frame-medium" /></p>
+
+<h3 id="section">問題</h3>
+
+<p>Macのターミナルが起動しない。起動するとすぐに[プロセスが完了しました]と表示される。</p>
+
+<h3 id="section-1">原因</h3>
+
+<p>ユーザ名が - から始まっている</p>
+
+<h3 id="section-2">解決策</h3>
+
+<p>ユーザ名を変更する(システム環境設定&gt;ユーザとグループ&gt;詳細オプション)。</p>
+
+<p><strong>ユーザ名の変更は多くのアプリケーションの動作に影響を及ぼす可能性があります。バックアップをとったのち、慎重に実行してください。</strong></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal02.png" class="image-on-frame-medium" /></p>
+
+<p>Macのターミナルが動かないという報告を受けたのだけれど、原因はユーザ名がマイナスから始まっていたことだった。-piyoのようなユーザ名はloginコマンドのプションとして認識されてしまうので(もちろんそんなオプションはない)ターミナルでログインできない。なんだそれ…</p>
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Jun 14, 2014
+    
+    [<a href="/tag/Event/">Event</a>]
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/cookpad_design/"><h1 class="post-title">クックパッドのデザイン講演会に参加しました</h1></a>
+  </header>
+  <article class="post-content">
+    <p>京都のCAMPHOR-HOUSEにて、クックパッドのデザイン責任者・池田さんによる講演会が開催されました。「クックパッドのサービス開発とデザイン」というタイトルで、「決してインターネットに詳しいわけではない方にまでに幅広く支持されているデザインの裏側には、どういった工夫やこだわりがあるか」というお話をしていただきました。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg" class="image-on-frame-medium" /></p>
+
+<h3 id="section">デザインの原則</h3>
+
+<p>クックパッドでは、サービス開発の軸がぶれないように、いくつかの「デザインの原則」を設けているとのこと。例えば<strong>全体最適の原則</strong>。各自が作ったデザインをライブラリ化して共有したり、アイコンをWebフォントにして、クックパッド全体のブランドデザインを保つためのルールです。<strong>無言語化の原則</strong>。機能を説明するのにできるだけ言葉を使わず、ぱっと見て分かるデザインを心がけるルールです。<strong>無言実行の原則</strong>。プロダクトの概念やコンセプトを利用者にいちいち説明するのではなく、利用者にはプロダクトそのもので評価してもらうべきというルールです。ほかにもBEST集中の原則、競合を知る原則、顧客中心の原則などがあり、勉強になりました。</p>
+
+<h3 id="ab">A/Bテストの指標</h3>
+
+<p>A/Bテストについての話がでたので、「定量的に評価できる数字とユーザ体験は時としてトレードオフの関係にあるが、どうやって折り合いをつけているか」という質問をしました。「例えばあるボタンを大きくすれば新規会員数は増えるとしても、もちろん大きすぎるボタンにはNGをだす」との回答でした。「その(大きすぎるなどの)感覚値的な指標はどうやって測っているか」という質問には、「私(池田さん)の主観で決めます」という回答をいただきました。(ここでデザインの原則に繋がると思っていたので少し残念。) 利用者や利用シーンを具体的に想定して、それぞれの人にとって馴染みやすいデザインを考えることで、良し悪しを決めるとのことでした。</p>
+
+<p>属人的になりがちなデザインの知見を社内でどうやって共有するかといった、興味深いお話を聞くことができました。ありがとうございました！</p>
+
+  </article>
+</div>
+<hr>
+
+
+<div class="pagenation">
+    
+        <div class="page-button"><a href="/page5"></a><span class="lsf">left</span> Previous</div>
+    
+    
+        
+            <div class="page-button"><a href="/page3"></a>Next <span class="lsf">right</span></div>
+        
+    
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> New Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
+        
+          <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
+        
+          <li>- <a href="/blog/how-google-works/">「How Google Works」読んだ</a></li>
+        
+          <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
+        
+          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> Popular Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/life_in_germany/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> Tags</p>
+        
+        [<a href="/tag/Event/">Event</a>]
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Programming/">Programming</a>]
+        
+        [<a href="/tag/Infrastructure/">Infrastructure</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <a href = "https://docs.google.com/forms/d/1oEXmb1m7QMJeorhI99NFCTKlXcQ0O5AP4B9qoaDmcl8/viewform"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>
+      <a href = "http://mrk1869.com/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a> 2014</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </body>
+
+</html>

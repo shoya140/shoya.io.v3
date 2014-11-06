@@ -64,644 +64,128 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="wrapper-inside">
-          <div class="post">
-
-  <article class="post-content">
+          
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Nov 7, 2014
     
-<div class="post-list-item">
-    <a href="/blog/sublime-sync/"></a>
-    <span class="post-meta">
-        Nov 7, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">Sublime Text3の設定をGit+Dropboxで安全に同期する</h2>
-</div>
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/sublime-sync/"><h1 class="post-title">Sublime Text3の設定をGit+Dropboxで安全に同期する</h1></a>
+  </header>
+  <article class="post-content">
+    <p><a href="http://shoya.io/blog/hello-sublime/">Sublime Text3導入メモ</a>で設定ファイルをDropboxで同期する方法を書いたのだけれど、意図しないタイミングで設定が同期されてコンフリクトが頻繁に発生するので、設定をGitで管理することにした。</p>
 
-<div class="post-list-item">
-    <a href="/blog/protocol/"></a>
-    <span class="post-meta">
-        Nov 6, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">実験を始める前のチェックリスト</h2>
-</div>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png" class="image-on-frame-small" /></p>
 
-<div class="post-list-item">
-    <a href="/blog/how-google-works/"></a>
-    <span class="post-meta">
-        Nov 5, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">「How Google Works」読んだ</h2>
-</div>
+<p>設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「<strong>過去の状態に戻しやすくなる</strong>」「<strong>任意のタイミングで同期できる</strong>」というメリットがある。</p>
 
-<div class="post-list-item">
-    <a href="/blog/hello-sublime/"></a>
-    <span class="post-meta">
-        Oct 28, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">Sublime Text3導入メモ</h2>
-</div>
+<h3 id="section">1台目の手順</h3>
 
-<div class="post-list-item">
-    <a href="/blog/cookpad_internship/"></a>
-    <span class="post-meta">
-        Sep 7, 2014
-        [Event][Note]
-    </span>
-    <h2 class="post-link">クックパッドのサマーインターンシップに参加しました</h2>
-</div>
+<p>まずはDropbox上にリモートリポジトリを作成する。</p>
 
-<div class="post-list-item">
-    <a href="/blog/tornado_debug/"></a>
-    <span class="post-meta">
-        Aug 26, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">Tornadoのデバッグモードを有効にする</h2>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir -p ~/Dropbox/Git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/Dropbox/Git
+<span class="nv">$ </span>git init —bare sublime.git</code></pre></div>
 
-<div class="post-list-item">
-    <a href="/blog/nginx_root/"></a>
-    <span class="post-meta">
-        Aug 25, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">Nginxの静的ファイル配信でハマった</h2>
-</div>
+<p>次にSublimeの設定フォルダへ移動してgit initを実行。ignoreするファイルは<cite><a href="https://sublime.wbond.net/docs/syncing">Syncing - Package Control</a></cite>を参考にした。Dropboxのシンボリックリンクにしている場合は元に戻してから行うこと。</p>
 
-<div class="post-list-item">
-    <a href="/blog/github_academic/"></a>
-    <span class="post-meta">
-        Jul 12, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">GitHubの学割クーポンを延長する</h2>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User
+<span class="nv">$ </span>subl .gitignore <span class="c"># 下記のファイルを.gitignoreに書く</span>
+	Package<span class="se">\ </span>Control.last-run
+	Package<span class="se">\ </span>Control.ca-list
+	Package<span class="se">\ </span>Control.ca-bundle
+	Package<span class="se">\ </span>Control.system-ca-bundle
+	Package<span class="se">\ </span>Control.cache/
+	Package<span class="se">\ </span>Control.ca-certs/
+<span class="nv">$ </span>git init
+<span class="nv">$ </span>git remote add origin ~/Dropbox/Git/sublime.git
+<span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;init&quot;</span>
+<span class="nv">$ </span>git push origin master</code></pre></div>
 
-<div class="post-list-item">
-    <a href="/blog/python_doctest/"></a>
-    <span class="post-meta">
-        Jul 7, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">doctestを使ってpythonの簡単な単体テストを書く</h2>
-</div>
+<h3 id="section-1">2台目の手順</h3>
 
-<div class="post-list-item">
-    <a href="/blog/brew_doctor/"></a>
-    <span class="post-meta">
-        Jul 4, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">brew doctorのwarningを解決する</h2>
-</div>
+<p>既存の設定フォルダを削除してからgit clone.</p>
 
-<div class="post-list-item">
-    <a href="/blog/terminal_login/"></a>
-    <span class="post-meta">
-        Jun 21, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">プロセスが完了しました</h2>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages
+<span class="nv">$ </span>rm -rf User
+<span class="nv">$ </span>git clone ~/Dropbox/Git/sublime.git User</code></pre></div>
 
-<div class="post-list-item">
-    <a href="/blog/cookpad_design/"></a>
-    <span class="post-meta">
-        Jun 14, 2014
-        [Event][Note]
-    </span>
-    <h2 class="post-link">クックパッドのデザイン講演会に参加しました</h2>
-</div>
+<p>以後は変更の度にcommitして、push/pullで同期すれば良い。設定ファイルのありかを毎回タイプするのは面倒なので、自分は下記のエイリアスを作成している。.zshrcや.bashrcに書いておけばcd_sublime_userで楽に移動できる。</p>
 
-<div class="post-list-item">
-    <a href="/blog/up/"></a>
-    <span class="post-meta">
-        May 16, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">Jawbone UPのちょっと変わった使い方</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/chef_prepare/"></a>
-    <span class="post-meta">
-        May 13, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">Chefのknife solo prepareで404</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/updraft/"></a>
-    <span class="post-meta">
-        May 9, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">Grunt+BowerでつくるWebアプリケーションひな形</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/mac_tex/"></a>
-    <span class="post-meta">
-        May 3, 2014
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">2014年におけるMac TeX環境</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/quick_response/"></a>
-    <span class="post-meta">
-        Apr 29, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">Quick Response</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/book_shelf/"></a>
-    <span class="post-meta">
-        Apr 28, 2014
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">心に響いた一節を、いつでも読み返せるように。</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/eclipse/"></a>
-    <span class="post-meta">
-        Apr 17, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">Eclipseの環境設定まとめ</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/internet_black_market/"></a>
-    <span class="post-meta">
-        Apr 12, 2014
-        [Event][Note]
-    </span>
-    <h2 class="post-link">石と空気を買いにベルリンまで行った話[インターネット闇市]</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/transmediale/"></a>
-    <span class="post-meta">
-        Apr 11, 2014
-        [Event][Note]
-    </span>
-    <h2 class="post-link">トランスメディアーレに行ってきました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/roma/"></a>
-    <span class="post-meta">
-        Apr 8, 2014
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">イタリア旅行記2[ローマ]</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/naples/"></a>
-    <span class="post-meta">
-        Apr 7, 2014
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">イタリア旅行記1[ナポリ・イタリア南部]</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/various_styles/"></a>
-    <span class="post-meta">
-        Feb 25, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">文体にまつわる話</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/pplog/"></a>
-    <span class="post-meta">
-        Feb 24, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">pplogおもしろい</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/programming_is_fun/"></a>
-    <span class="post-meta">
-        Feb 22, 2014
-        [Note]
-    </span>
-    <h2 class="post-link">プログラミングしてて楽しいと感じる３つの瞬間</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/div_a_fade/"></a>
-    <span class="post-meta">
-        Feb 21, 2014
-        [Programming][Design]
-    </span>
-    <h2 class="post-link">div全体をaタグで囲ってふんわりメニューをつくる</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/category_next/"></a>
-    <span class="post-meta">
-        Jan 12, 2014
-        [Programming]
-    </span>
-    <h2 class="post-link">Jekyllのカテゴリ内で「次の記事」ボタンを設置する</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/hamburg/"></a>
-    <span class="post-meta">
-        Jan 2, 2014
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ハンブルクを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/berlin/"></a>
-    <span class="post-meta">
-        Dec 26, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ベルリンを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/locate/"></a>
-    <span class="post-meta">
-        Dec 24, 2013
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">locateとupdatedbでファイルを高速検索</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/long_shadow/"></a>
-    <span class="post-meta">
-        Dec 18, 2013
-        [Design]
-    </span>
-    <h2 class="post-link">5分で完成！イラレで作るロングシャドウアイコン</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/microsoft_translator/"></a>
-    <span class="post-meta">
-        Dec 15, 2013
-        [Programming]
-    </span>
-    <h2 class="post-link">PythonでMicrosoft Translator APIを使ってみる</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/mongodb_json/"></a>
-    <span class="post-meta">
-        Dec 14, 2013
-        [Programming]
-    </span>
-    <h2 class="post-link">MongoDBのObjectID型をJSONに変換する[pymongo]</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/frankfurt/"></a>
-    <span class="post-meta">
-        Dec 3, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">産業の中心地フランクフルト</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/gitlab_installation/"></a>
-    <span class="post-meta">
-        Nov 25, 2013
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">GitLab 6.0をインストールする</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/writing/"></a>
-    <span class="post-meta">
-        Nov 12, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">文章を書く習慣をつけようと思う</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/versailles/"></a>
-    <span class="post-meta">
-        Nov 7, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ヴェルサイユ宮殿</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/mont_saint_michel/"></a>
-    <span class="post-meta">
-        Nov 6, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">モン・サン・ミッシェル</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/paris/"></a>
-    <span class="post-meta">
-        Nov 5, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">芸術の街パリ</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/london/"></a>
-    <span class="post-meta">
-        Nov 4, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">伝統と革新が同居する街ロンドン</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/mac_display_trouble/"></a>
-    <span class="post-meta">
-        Oct 23, 2013
-        [Infrastructure]
-    </span>
-    <h2 class="post-link">Mac起動後の画面が真っ暗</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/karlsruhe/"></a>
-    <span class="post-meta">
-        Oct 19, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">司法の都カールスルーエ</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/saturday_market/"></a>
-    <span class="post-meta">
-        Oct 12, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">Saturday Market</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/ranking_plugin/"></a>
-    <span class="post-meta">
-        Oct 12, 2013
-        [Programming]
-    </span>
-    <h2 class="post-link">Jekyllの記事を人気順にソートする</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/delicious_pizza/"></a>
-    <span class="post-meta">
-        Oct 11, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">ピザを焼く</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/asian_food/"></a>
-    <span class="post-meta">
-        Oct 11, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">Asian Food</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/hello_glass/"></a>
-    <span class="post-meta">
-        Oct 10, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">Hello, Glass.</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/facebook_spam/"></a>
-    <span class="post-meta">
-        Oct 10, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">スパムアカウントからの友達申請をブロックした</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/blau/"></a>
-    <span class="post-meta">
-        Oct 9, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">ドイツでblau.deを契約する</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/life_in_germany/"></a>
-    <span class="post-meta">
-        Oct 8, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">こちらの生活にもずいぶん慣れた</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/hatena_star/"></a>
-    <span class="post-meta">
-        Oct 7, 2013
-        [Programming]
-    </span>
-    <h2 class="post-link">Jekyllにはてなスター導入した</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/cologne/"></a>
-    <span class="post-meta">
-        Oct 6, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ケルンを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/deidesheim/"></a>
-    <span class="post-meta">
-        Oct 5, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ダイデスハイムを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/imabari/"></a>
-    <span class="post-meta">
-        Sep 30, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">今治東中等教育学校で講演しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/paletta_code/"></a>
-    <span class="post-meta">
-        Sep 20, 2013
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">コードからベースカラーを指定できるようになりました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/heidelberg/"></a>
-    <span class="post-meta">
-        Sep 16, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">ハイデルベルクを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/zurich/"></a>
-    <span class="post-meta">
-        Sep 13, 2013
-        [Sightseeing]
-    </span>
-    <h2 class="post-link">チューリッヒを観光しました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/Paletta/"></a>
-    <span class="post-meta">
-        Aug 20, 2013
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">プログラマのためのカラーパレットツールを作りました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/DFKI/"></a>
-    <span class="post-meta">
-        Jul 30, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">近況報告</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/ToJekyll/"></a>
-    <span class="post-meta">
-        Jul 29, 2013
-        [Note]
-    </span>
-    <h2 class="post-link">Jekyllでブログを始めました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/swiper/"></a>
-    <span class="post-meta">
-        Apr 11, 2013
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">ToDo/タスク管理アプリSwiperをリリースしました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/quuize/"></a>
-    <span class="post-meta">
-        Dec 31, 2012
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">キーワードをもとにクイズを生成Quuize.comリリース</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/paperboy/"></a>
-    <span class="post-meta">
-        Dec 21, 2012
-        [Note]
-    </span>
-    <h2 class="post-link">株式会社Paperboy&co.に半年ほどお世話になりました</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/kotodama/"></a>
-    <span class="post-meta">
-        Dec 6, 2012
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">Twitter好きによるTwitter好きのための寝坊防止ツールkotodamaリリース</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/google_games/"></a>
-    <span class="post-meta">
-        Nov 25, 2012
-        [Event][Note]
-    </span>
-    <h2 class="post-link">GoogleGamesに参加して人生変わった</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/racolta/"></a>
-    <span class="post-meta">
-        Nov 12, 2012
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">Webスクラップブックアプリracolta for Androidリリース</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/honor/"></a>
-    <span class="post-meta">
-        Nov 2, 2012
-        [Note]
-    </span>
-    <h2 class="post-link">学長顕彰</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/spam_museum/"></a>
-    <span class="post-meta">
-        Oct 18, 2012
-        [ReleaseNote]
-    </span>
-    <h2 class="post-link">メイワクメールをワクワクに変えるSpam Museum</h2>
-</div>
-
-<div class="post-list-item">
-    <a href="/blog/hatena_intern/"></a>
-    <span class="post-meta">
-        Sep 26, 2012
-        [Event][Note]
-    </span>
-    <h2 class="post-link">はてなのサマーインターンに参加しました</h2>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">cd_sublime_user</span><span class="o">=</span><span class="s2">&quot;cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User&quot;</span></code></pre></div>
 
   </article>
-
 </div>
+<hr>
 
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Nov 6, 2014
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/protocol/"><h1 class="post-title">実験を始める前のチェックリスト</h1></a>
+  </header>
+  <article class="post-content">
+    <p>被験者を募ってデータをとることがよくある。やり直しがきかないので、実験(データの記録)を始める前にはいつも細心の注意を払っている。この「気をつけていることリスト」を研究室のwikiに書いておこうと思ったのだけれど、非公開にすることでもないような気がするので、ここにまとめてみた。「体にセンサを取り付けて決められた行動(タスク)をとる」という実験を想定して項目をあげる。</p>
+
+<ul>
+  <li>タスクをまず自分で体験して記録の漏れをなくす。</li>
+  <li>実験手順をプロトコルとして記述しておく。</li>
+  <li>実験中は全景が分かるground truth videoをWebカメラで撮影する。</li>
+  <li>各センサの同期に使うユニークな動きをタスクの開始前に入れる。</li>
+  <li>記録されたデータをテストにかけて、データの欠損がないか確認する。</li>
+  <li>データの記録時間は必要よりやや長めに設定しておく。</li>
+  <li>記録装置のバッテリ切れに注意する。</li>
+</ul>
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Nov 5, 2014
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/how-google-works/"><h1 class="post-title">「How Google Works」読んだ</h1></a>
+  </header>
+  <article class="post-content">
+    <p>組織を成功に導く人材として、「ビジネスセンス」「専門知識」「クリエイティブなエネルギー」「自分で手を動かして業務を遂行しようとする姿勢」を兼ね揃えた人たちがいる。この本ではそういった人たちを「<strong>スマート・クリエイティブ</strong>」と呼び、<strong>彼らにとって働きやすい環境とは何か、その環境をどうやってマネジメントすればよいか</strong>について述べている。</p>
+
+<div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/41wP3LRm7QL._SL75_.jpg" width="52" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/" rel="nofollow" target="_blank">How Google Works (ハウ・グーグル・ワークス)  ―私たちの働き方とマネジメント</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">エリック・シュミット, ジョナサン・ローゼンバーグ, アラン・イーグル</div></div><div class="booklink-footer" style="clear: left"></div></div>
+
+<p>スマート・クリエイティブについては本から(ほぼ1節まるごと)引用している記事があるのでこちらを読むのがおすすめ。<a href="http://www.lifehacker.jp/2014/10/141014book_to_read.html">Googleの現場には何が起きていたか。前CEOたちが語る「スマート・クリエイティブ」の成功論 - lifehacker</a> 自分もやがてはこのようなセンスを身につけた人になりたいし、スマート・クリエイティブの働き方を尊重してくれる文化に出会えたらいいなと思う。</p>
+
+<p>特に感銘をうけたのが<strong>良い意味の“働きすぎ”</strong>という節。社員に責任と自由を与えることで、社員が自分に最適なワークライフ・バランスを見つけ実現できると書かれている。</p>
+
+<blockquote>
+  <p>2012年にヤフーCEOになった直後に、シリコンバレーで最も有名なワーキングマザーのひとりになったマリッサ・メイヤーは、燃え尽き症候群の原因は働きすぎではなく、自分にとって本当に大切なことを諦めなければならなくなったときに起こる、と語っている。スマート・クリエイティブに決定権を与えよう。そうすれば、自分にとって好ましい働き方はどんなものか、最適な判断を下すだろう。
+<cite>How Google Works</cite></p>
+</blockquote>
+
+<p>とても共感できる。自分はいま半年ほどいわゆるバーンアウトで体調を崩している。そのきっかけになった時期というのが、確かにやるべきことに追われてやりたいことを犠牲にし始めた頃だった気がする。時間は有限でありやるべきことを優先すべきなのは分かる。でもいろんなことに挑戦したい性分なのでついたくさん抱えてしまう。今の悩みは、多忙自体ではなく、やる気がでないことによるパフォーマンスの低下と、限られた時間内にタスクそれぞれに対して満足のいく成果が出せない葛藤にあると思う。この半年間で<strong>やるべきこととやりたいことのバランスは大事</strong>ということを痛感した。</p>
+
+<p>話がそれたので元に戻そう。この本を通じて、ワークライフ・バランス、ナレッジマネジメント、コミュニケーションなど、働きやすい環境をどういう視点で見つけるか(あるいは作るか)ということを学んだ。もちろん、やや過酷ではあるが目標を実現するための近道になる環境もあると思う。今後就職するならばどのようなバランスでどういった職場を渡るべきか、選択肢になる一冊だった。</p>
+
+  </article>
+</div>
+<hr>
+
+
+<div class="pagenation">
+    
+        <div class="page-button"><a href="/page2"></a><span class="lsf">left</span> Previous</div>
+    
+    
+        <div class="page-button-disabled">Next <span class="lsf">right</span></div>
+    
+</div>
         </div>
       </div>
     </div>

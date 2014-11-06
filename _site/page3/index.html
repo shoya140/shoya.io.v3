@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="Shoya Ishimaru (shoya140)'s weblog about his input/output.">
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="shoya.io">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://shoya.io/page3/index.html">
+    
+        <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://shoya.io/page3/">
+    <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/research/">Research</a>
+          <a class="page-link" href="/development/">Development</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Aug 25, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/nginx_root/"><h1 class="post-title">Nginxの静的ファイル配信でハマった</h1></a>
+  </header>
+  <article class="post-content">
+    <p>静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。<a href="http://www.oreilly.co.jp/books/9784873115764/">概説Tornado</a>の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定をNginxに書いた。</p>
+
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="s">/path/to/app/static</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>上記のように書きたいところだがこれは間違いで</p>
+
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="s">/path/to/app</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>正しくはこちら。</p>
+
+<p>rootはstaticディレクトリのrootを指すのではなく、アプリケーションのroot。/static/はURLとして生きているので、/static/を含めたパスでファイルへ届くように書く必要がある。</p>
+
+<p>(備考)アプリケーション全体のnginx設定ファイルはこんな感じ。各アプリケーションごとに設定ファイルを分けてconf.d/以下に保存しておき、nginx.confでそれらをインポートしている。</p>
+
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">upstream</span> <span class="s">paletta</span><span class="p">{</span>
+    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8011</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8012</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8013</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8014</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">paletta.mrk1869.com</span><span class="p">;</span>
+
+    <span class="kn">access_log</span>  <span class="s">/home/web/log/nginx/paletta.mrk1869.com/access.log</span> <span class="s">ltsv</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="s">/static/</span> <span class="p">{</span>
+        <span class="kn">root</span> <span class="s">/home/web/paletta/app</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">proxy_pass_header</span> <span class="s">Server</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
+        <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span> <span class="nv">$scheme</span><span class="p">;</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://paletta</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Jul 12, 2014
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/github_academic/"><h1 class="post-title">GitHubの学割クーポンを延長する</h1></a>
+  </header>
+  <article class="post-content">
+    <p>GitHubにはプライベートリポジトリが無料で使える(billing planが1つ上がる)学割があります。</p>
+
+<p><a href="https://education.github.com/">GitHub Education</a></p>
+
+<p>申し込んでから2年が経って「もうすぐクーポン切れるよ」という内容のメールが来ました。「今も学生なので学割クーポンを延長したい」と問い合わせたところ「有効期限が切れてからもう一度WebからアプライすればOKだよ。もし学割が反映される前に次の支払が発生したら連絡してね。」とのことでした。以下、回答です。</p>
+
+<blockquote>
+  <p>If you’re still a student, you’re welcome to reapply! Check out our shiny new Education page:</p>
+
+  <p>https://education.github.com/</p>
+
+  <p>You might get a message about not being able to apply the new coupon. That’s because you can’t have two simultaneous coupons on your account. Once your old coupon expires, you can apply the new coupon. There’s usually a “grace period” of a few days between the expiration and the first charge, but if you do get charged before you add your new coupon, just let us know! Please don’t hesitate to let us know if you have any questions or concerns.</p>
+</blockquote>
+
+<p>あと学割が切れても既に作成してあるプライベートリポジトリはプライベートのままらしい。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/alpaca_taichou">@alpaca_taichou</a> 突然勝手にpublicになるんですか?</p>&mdash; Kazuki Yoshida (@101kaz) <a href="https://twitter.com/101kaz/statuses/486756076776214528">2014, 7月 9</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/alpaca_taichou">@alpaca_taichou</a> <a href="https://twitter.com/101kaz">@101kaz</a> あれ切れてもプライベートリポジトリ保持されますよ、新しいのが作れないだけですね。</p>&mdash; Takehiro Adachi (@takehiro0740) <a href="https://twitter.com/takehiro0740/statuses/486901860544946176">2014, 7月 9</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Jul 7, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/python_doctest/"><h1 class="post-title">doctestを使ってpythonの簡単な単体テストを書く</h1></a>
+  </header>
+  <article class="post-content">
+    <p>doctestはpythonに標準で搭載されているテストツールで、docstring(“"”で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。</p>
+
+<h2 id="section">記述例</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+
+<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+
+<p>上記のコードを実行すると</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py
+**********************************************************************
+File <span class="s2">&quot;hello.py&quot;</span>, line 6, in __main__.average
+Failed example:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expected:
+    0.5
+Got:
+    1
+**********************************************************************
+<span class="m">1</span> items had failures:
+   <span class="m">1</span> of   <span class="m">1</span> in __main__.average
+***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+
+<p>テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+
+<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py</code></pre></div>
+
+<p>実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
+Trying:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expecting:
+    1.5
+ok
+<span class="m">1</span> items had no tests:
+    __main__
+<span class="m">1</span> items passed all tests:
+   <span class="m">1</span> tests in __main__.average
+<span class="m">1</span> tests in <span class="m">2</span> items.
+<span class="m">1</span> passed and <span class="m">0</span> failed.
+Test passed.</code></pre></div>
+
+<h2 id="python--m-doctest--v-">python -m doctest -v [ファイル名]</h2>
+
+<p>Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></div>
+
+<p>main関数を空にしてコマンドラインからテストします。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+Trying:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expecting:
+    1.5
+ok
+<span class="m">1</span> items had no tests:
+    hello
+<span class="m">1</span> items passed all tests:
+   <span class="m">1</span> tests in hello.average
+<span class="m">1</span> tests in <span class="m">2</span> items.
+<span class="m">1</span> passed and <span class="m">0</span> failed.
+Test passed.</code></pre></div>
+
+<p>テストが実行されました。</p>
+
+<p>注意点として、doctestは出力の完全一致を求めるので、スペースの有無や辞書の順序に気を配ってテストを書く必要があります。詳しくはドキュメントをご覧ください。</p>
+
+<p>参考: <a href="http://docs.python.jp/2/library/doctest.html">25.2. doctest — 対話的な実行例をテストする</a></p>
+
+<h2 id="section-1">2014.07.08 追記</h2>
+
+<p>出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of numbers.</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) #failed</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) #ok</span>
+<span class="sd">    1.0</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1 #ok</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1.0 #ok</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 2.0 #ok</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
+Expecting:
+    1
+**********************************************************************
+File <span class="s2">&quot;hello.py&quot;</span>, line 4, in hello.average
+Failed example:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
+Expected:
+    1
+Got:
+    1.0
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#ok</span>
+Expecting:
+    1.0
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="c">#ok</span>
+Expecting:
+    True
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 1.0 <span class="c">#ok</span>
+Expecting:
+    True
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 2.0 <span class="c">#ok</span>
+Expecting:
+    False
+ok
+<span class="m">1</span> items had no tests:
+    hello
+**********************************************************************
+<span class="m">1</span> items had failures:
+   <span class="m">1</span> of   <span class="m">5</span> in hello.average
+<span class="m">5</span> tests in <span class="m">2</span> items.
+<span class="m">4</span> passed and <span class="m">1</span> failed.
+***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+
+<div class="pagenation">
+    
+        <div class="page-button"><a href="/page4"></a><span class="lsf">left</span> Previous</div>
+    
+    
+        
+            <div class="page-button"><a href="/page2"></a>Next <span class="lsf">right</span></div>
+        
+    
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> New Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
+        
+          <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
+        
+          <li>- <a href="/blog/how-google-works/">「How Google Works」読んだ</a></li>
+        
+          <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
+        
+          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> Popular Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/life_in_germany/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> Tags</p>
+        
+        [<a href="/tag/Event/">Event</a>]
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Programming/">Programming</a>]
+        
+        [<a href="/tag/Infrastructure/">Infrastructure</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <a href = "https://docs.google.com/forms/d/1oEXmb1m7QMJeorhI99NFCTKlXcQ0O5AP4B9qoaDmcl8/viewform"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>
+      <a href = "http://mrk1869.com/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a> 2014</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </body>
+
+</html>

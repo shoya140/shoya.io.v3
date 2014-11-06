@@ -11,7 +11,7 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png" class="image-on-frame-small">
 
-設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「**過去の状態に戻しやすくする**」「**任意のタイミングで同期できる**」というメリットがある。
+設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「**過去の状態に戻しやすくなる**」「**任意のタイミングで同期できる**」というメリットがある。
 
 ### 1台目の手順
 
@@ -35,6 +35,8 @@ $ subl .gitignore # 下記のファイルを.gitignoreに書く
 	Package\ Control.ca-certs/
 $ git init
 $ git remote add origin ~/Dropbox/Git/sublime.git
+$ git add .
+$ git commit -m "init"
 $ git push origin master
 {% endhighlight %}
 
