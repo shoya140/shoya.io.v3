@@ -67,6 +67,54 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Aug 26, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/tornado_debug/"><h1 class="post-title">Tornadoのデバッグモードを有効にする</h1></a>
+  </header>
+  <article class="post-content">
+    <p>Tornadoには多くのWebアプリフレームワーク同様にデバックモードがある。これを有効にすることで、pythonコードの更新をサーバの再起動なしに反映させたり、ファイルのキャッシュを無効にしたり、tracebackをブラウザ上に表示したりといった機能を利用することができる。</p>
+
+<p>デバッグモードを有効にするには、tornado.web.Applicationのインスタンス作成時にhandlersと一緒にdebug=Trueを付加すれば良い。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">app</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">(</span><span class="n">handlers</span> <span class="o">=</span> <span class="p">[(</span><span class="s">r&quot;/&quot;</span><span class="p">,</span>  <span class="n">IndexHandler</span><span class="p">)],</span> <span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span></code></pre></div>
+
+<p>Applicationクラスを作る場合はsettingsにディクショナリで指定する。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Application</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">()</span>
+        <span class="n">handlers</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s">r&quot;/&quot;</span><span class="p">,</span> <span class="n">IndexHander</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">r&quot;/socket&quot;</span><span class="p">,</span> <span class="n">SocketHandler</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;debug&quot;</span><span class="p">:</span><span class="n">options</span><span class="o">.</span><span class="n">debug</span><span class="p">}</span>
+        <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handlers</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">)</span></code></pre></div>
+
+<p>自分は下記のようにtornado.optionsを使ってport, debugの２つをコマンドラインから入力できるようにしておき、本番環境と開発環境を簡単に切り替えられるようにしている。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">tornado.options</span> <span class="kn">import</span> <span class="n">define</span><span class="p">,</span> <span class="n">options</span>
+<span class="n">define</span><span class="p">(</span><span class="s">&quot;port&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;run on the given port&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">define</span><span class="p">(</span><span class="s">&quot;debug&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;run the server in debug mode&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">tornado</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">parse_command_line</span><span class="p">()</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">(</span><span class="n">handlers</span> <span class="o">=</span> <span class="p">[(</span><span class="s">r&quot;/&quot;</span><span class="p">,</span>  <span class="n">IndexHandler</span><span class="p">)],</span> <span class="n">debug</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
+    <span class="n">http_server</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpserver</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="n">http_server</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+    <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">IOLoop</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Aug 25, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -160,192 +208,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Jul 7, 2014
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/python_doctest/"><h1 class="post-title">doctestを使ってpythonの簡単な単体テストを書く</h1></a>
-  </header>
-  <article class="post-content">
-    <p>doctestはpythonに標準で搭載されているテストツールで、docstring(“"”で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。</p>
-
-<h2 id="section">記述例</h2>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
-
-<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
-
-<p>上記のコードを実行すると</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py
-**********************************************************************
-File <span class="s2">&quot;hello.py&quot;</span>, line 6, in __main__.average
-Failed example:
-    average<span class="o">(</span>1, 2<span class="o">)</span>
-Expected:
-    0.5
-Got:
-    1
-**********************************************************************
-<span class="m">1</span> items had failures:
-   <span class="m">1</span> of   <span class="m">1</span> in __main__.average
-***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
-
-<p>テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
-
-<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py</code></pre></div>
-
-<p>実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
-Trying:
-    average<span class="o">(</span>1, 2<span class="o">)</span>
-Expecting:
-    1.5
-ok
-<span class="m">1</span> items had no tests:
-    __main__
-<span class="m">1</span> items passed all tests:
-   <span class="m">1</span> tests in __main__.average
-<span class="m">1</span> tests in <span class="m">2</span> items.
-<span class="m">1</span> passed and <span class="m">0</span> failed.
-Test passed.</code></pre></div>
-
-<h2 id="python--m-doctest--v-">python -m doctest -v [ファイル名]</h2>
-
-<p>Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">pass</span></code></pre></div>
-
-<p>main関数を空にしてコマンドラインからテストします。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
-Trying:
-    average<span class="o">(</span>1, 2<span class="o">)</span>
-Expecting:
-    1.5
-ok
-<span class="m">1</span> items had no tests:
-    hello
-<span class="m">1</span> items passed all tests:
-   <span class="m">1</span> tests in hello.average
-<span class="m">1</span> tests in <span class="m">2</span> items.
-<span class="m">1</span> passed and <span class="m">0</span> failed.
-Test passed.</code></pre></div>
-
-<p>テストが実行されました。</p>
-
-<p>注意点として、doctestは出力の完全一致を求めるので、スペースの有無や辞書の順序に気を配ってテストを書く必要があります。詳しくはドキュメントをご覧ください。</p>
-
-<p>参考: <a href="http://docs.python.jp/2/library/doctest.html">25.2. doctest — 対話的な実行例をテストする</a></p>
-
-<h2 id="section-1">2014.07.08 追記</h2>
-
-<p>出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of numbers.</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) #failed</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) #ok</span>
-<span class="sd">    1.0</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1 #ok</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1.0 #ok</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 2.0 #ok</span>
-<span class="sd">    False</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">pass</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
-Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
-Expecting:
-    1
-**********************************************************************
-File <span class="s2">&quot;hello.py&quot;</span>, line 4, in hello.average
-Failed example:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
-Expected:
-    1
-Got:
-    1.0
-Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#ok</span>
-Expecting:
-    1.0
-ok
-Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="c">#ok</span>
-Expecting:
-    True
-ok
-Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 1.0 <span class="c">#ok</span>
-Expecting:
-    True
-ok
-Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 2.0 <span class="c">#ok</span>
-Expecting:
-    False
-ok
-<span class="m">1</span> items had no tests:
-    hello
-**********************************************************************
-<span class="m">1</span> items had failures:
-   <span class="m">1</span> of   <span class="m">5</span> in hello.average
-<span class="m">5</span> tests in <span class="m">2</span> items.
-<span class="m">4</span> passed and <span class="m">1</span> failed.
-***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
-
-
-  </article>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -368,6 +230,8 @@ ok
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/sublime-split/">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</a></li>
+        
           <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
         
           <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
@@ -377,8 +241,6 @@ ok
           <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
         
           <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
-        
-          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
         
         </ul>
       </div>

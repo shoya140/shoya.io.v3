@@ -67,6 +67,192 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Jul 7, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/python_doctest/"><h1 class="post-title">doctestを使ってpythonの簡単な単体テストを書く</h1></a>
+  </header>
+  <article class="post-content">
+    <p>doctestはpythonに標準で搭載されているテストツールで、docstring(“"”で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。</p>
+
+<h2 id="section">記述例</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+
+<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+
+<p>上記のコードを実行すると</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py
+**********************************************************************
+File <span class="s2">&quot;hello.py&quot;</span>, line 6, in __main__.average
+Failed example:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expected:
+    0.5
+Got:
+    1
+**********************************************************************
+<span class="m">1</span> items had failures:
+   <span class="m">1</span> of   <span class="m">1</span> in __main__.average
+***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+
+<p>テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+
+<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py</code></pre></div>
+
+<p>実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
+Trying:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expecting:
+    1.5
+ok
+<span class="m">1</span> items had no tests:
+    __main__
+<span class="m">1</span> items passed all tests:
+   <span class="m">1</span> tests in __main__.average
+<span class="m">1</span> tests in <span class="m">2</span> items.
+<span class="m">1</span> passed and <span class="m">0</span> failed.
+Test passed.</code></pre></div>
+
+<h2 id="python--m-doctest--v-">python -m doctest -v [ファイル名]</h2>
+
+<p>Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of args.</span>
+<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
+<span class="sd">    1.5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></div>
+
+<p>main関数を空にしてコマンドラインからテストします。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+Trying:
+    average<span class="o">(</span>1, 2<span class="o">)</span>
+Expecting:
+    1.5
+ok
+<span class="m">1</span> items had no tests:
+    hello
+<span class="m">1</span> items passed all tests:
+   <span class="m">1</span> tests in hello.average
+<span class="m">1</span> tests in <span class="m">2</span> items.
+<span class="m">1</span> passed and <span class="m">0</span> failed.
+Test passed.</code></pre></div>
+
+<p>テストが実行されました。</p>
+
+<p>注意点として、doctestは出力の完全一致を求めるので、スペースの有無や辞書の順序に気を配ってテストを書く必要があります。詳しくはドキュメントをご覧ください。</p>
+
+<p>参考: <a href="http://docs.python.jp/2/library/doctest.html">25.2. doctest — 対話的な実行例をテストする</a></p>
+
+<h2 id="section-1">2014.07.08 追記</h2>
+
+<p>出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method returns the average value of numbers.</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) #failed</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) #ok</span>
+<span class="sd">    1.0</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1 #ok</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1.0 #ok</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; average(0, 2) == 2.0 #ok</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
+Expecting:
+    1
+**********************************************************************
+File <span class="s2">&quot;hello.py&quot;</span>, line 4, in hello.average
+Failed example:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
+Expected:
+    1
+Got:
+    1.0
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#ok</span>
+Expecting:
+    1.0
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="c">#ok</span>
+Expecting:
+    True
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 1.0 <span class="c">#ok</span>
+Expecting:
+    True
+ok
+Trying:
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 2.0 <span class="c">#ok</span>
+Expecting:
+    False
+ok
+<span class="m">1</span> items had no tests:
+    hello
+**********************************************************************
+<span class="m">1</span> items had failures:
+   <span class="m">1</span> of   <span class="m">5</span> in hello.average
+<span class="m">5</span> tests in <span class="m">2</span> items.
+<span class="m">4</span> passed and <span class="m">1</span> failed.
+***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Jul 4, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -196,36 +382,6 @@ To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Jun 14, 2014
-    
-    [<a href="/tag/Event/">Event</a>]
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/cookpad_design/"><h1 class="post-title">クックパッドのデザイン講演会に参加しました</h1></a>
-  </header>
-  <article class="post-content">
-    <p>京都のCAMPHOR-HOUSEにて、クックパッドのデザイン責任者・池田さんによる講演会が開催されました。「クックパッドのサービス開発とデザイン」というタイトルで、「決してインターネットに詳しいわけではない方にまでに幅広く支持されているデザインの裏側には、どういった工夫やこだわりがあるか」というお話をしていただきました。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg" class="image-on-frame-medium" /></p>
-
-<h3 id="section">デザインの原則</h3>
-
-<p>クックパッドでは、サービス開発の軸がぶれないように、いくつかの「デザインの原則」を設けているとのこと。例えば<strong>全体最適の原則</strong>。各自が作ったデザインをライブラリ化して共有したり、アイコンをWebフォントにして、クックパッド全体のブランドデザインを保つためのルールです。<strong>無言語化の原則</strong>。機能を説明するのにできるだけ言葉を使わず、ぱっと見て分かるデザインを心がけるルールです。<strong>無言実行の原則</strong>。プロダクトの概念やコンセプトを利用者にいちいち説明するのではなく、利用者にはプロダクトそのもので評価してもらうべきというルールです。ほかにもBEST集中の原則、競合を知る原則、顧客中心の原則などがあり、勉強になりました。</p>
-
-<h3 id="ab">A/Bテストの指標</h3>
-
-<p>A/Bテストについての話がでたので、「定量的に評価できる数字とユーザ体験は時としてトレードオフの関係にあるが、どうやって折り合いをつけているか」という質問をしました。「例えばあるボタンを大きくすれば新規会員数は増えるとしても、もちろん大きすぎるボタンにはNGをだす」との回答でした。「その(大きすぎるなどの)感覚値的な指標はどうやって測っているか」という質問には、「私(池田さん)の主観で決めます」という回答をいただきました。(ここでデザインの原則に繋がると思っていたので少し残念。) 利用者や利用シーンを具体的に想定して、それぞれの人にとって馴染みやすいデザインを考えることで、良し悪しを決めるとのことでした。</p>
-
-<p>属人的になりがちなデザインの知見を社内でどうやって共有するかといった、興味深いお話を聞くことができました。ありがとうございました！</p>
-
-  </article>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -248,6 +404,8 @@ To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/sublime-split/">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</a></li>
+        
           <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
         
           <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
@@ -257,8 +415,6 @@ To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</
           <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
         
           <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
-        
-          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
         
         </ul>
       </div>

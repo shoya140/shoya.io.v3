@@ -5,9 +5,68 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 07 Nov 2014 06:48:25 +0900</pubDate>
-    <lastBuildDate>Fri, 07 Nov 2014 06:48:25 +0900</lastBuildDate>
+    <pubDate>Sun, 09 Nov 2014 03:07:25 +0900</pubDate>
+    <lastBuildDate>Sun, 09 Nov 2014 03:07:25 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</title>
+        <description>&lt;p&gt;Sublimeの慣れないキーバインドに、「shift+option+command+数字」で画面を上下分割、「option+command+数字」で画面を左右分割にするものがある。Vimを使っていた名残でこれらの機能をsp(split)とvs(vsplit)に割り当てたいと思ったので、キーバインドを変更することにした。&lt;/p&gt;
+
+&lt;p&gt;デフォルトのキーバインドを変更するには、
+1.「Key Bindings - Default」から対象のキーバインドを見つける。
+2.「Key Bindings - User」にコピーしてキーの部分を書き換える。
+の手順を踏めばいい。commandはsuper, controlはctrlと書く。&lt;/p&gt;
+
+&lt;p&gt;今回は「Key Bindings - User」に以下の設定を記入した。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;keys&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+v&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;command&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;set_layout&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;args&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cols&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;rows&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cells&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;keys&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+p&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;command&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;set_layout&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;args&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cols&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;rows&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cells&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;keys&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ctrl+s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;command&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;set_layout&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;args&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cols&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;rows&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;cells&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;この設定で「control+v, control+s」で画面を左右分割、「control+s, control+p」で画面を上下分割、「control+s, control+s」で1画面に戻せる。3, 4つに分割する機会は少ないので今のところはそれぞれ2分割まで。現在の状態からさらに縦横に分割していくにはどうしたらいいんだろう…&lt;/p&gt;
+
+&lt;p&gt;もっと良い方法をご存じの方はぜひ教えてください。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Nov 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/sublime-split/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/sublime-split/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
     
       <item>
         <title>Sublime Text3の設定をGit+Dropboxで安全に同期する</title>
@@ -586,102 +645,6 @@ ok
         <guid isPermaLink="true">http://shoya.io/blog/python_doctest/</guid>
         
         <category>Programming</category>
-        
-        
-        <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>brew doctorのwarningを解決する</title>
-        <description>&lt;p&gt;brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。&lt;/p&gt;
-
-&lt;h3 id=&quot;warning1&quot;&gt;Warning1&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Some directories in /usr/local/share/man aren&lt;span class=&quot;s1&quot;&gt;&amp;#39;t writable.&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;This can happen if you &amp;quot;sudo make install&amp;quot; software that isn&amp;#39;&lt;/span&gt;t managed
-by Homebrew. If a brew tries to add locale information to one of these
-directories, &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; the install will fail during the link step.
-You should probably &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;chown&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; them:
-
-    /usr/local/share/man/de
-    /usr/local/share/man/de/man1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;一部のディレクトリの所有者がbrewを使うユーザになっていない問題。chownコマンドで所有者を変更します。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/share/man/de&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;warning2&quot;&gt;Warning2&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: &lt;span class=&quot;s2&quot;&gt;&amp;quot;config&amp;quot;&lt;/span&gt; scripts exist outside your system or Homebrew directories.
-&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;./configure&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; scripts often look &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; *-config scripts to determine &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;
-software packages are installed, and what additional flags to use when
-compiling and linking.
-
-Having additional scripts in your path can confuse software installed via
-Homebrew &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; the config script overrides a system or Homebrew provided
-script of the same name. We found the following &lt;span class=&quot;s2&quot;&gt;&amp;quot;config&amp;quot;&lt;/span&gt; scripts:
-
-    /Users/shoya/.pyenv/shims/python-config
-    /Users/shoya/.pyenv/shims/python2-config
-    /Users/shoya/.pyenv/shims/python2.7-config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;homebrewの管理外かつPATHが通っているところにconfigスクリプトが存在する問題。深刻な問題ではないようなので、このWarningが表示されないよう回避する方向で。brewコマンドを実行するときだけ~/.pyenv/shims/をPATHから取り除くエイリアスを.bashrcに追記した。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;brew&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;参考:&lt;a href=&quot;http://qiita.com/takc923/items/45386905f70fde9af0e7&quot;&gt;phpenv入れてる時brew doctorしたら出るWarning消した&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;warning3&quot;&gt;Warning3&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Some directories in your path end in a slash.
-Directories in your path should not end in a slash. This can &lt;span class=&quot;nb&quot;&gt;break &lt;/span&gt;other
-doctor checks. The following directories should be edited:
-    /Applications/MacVim.app/Contents/MacOS/    /Users/shoya/software/android-ndk/    /Users/shoya/software/android-sdk/platform-tools/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。&lt;/p&gt;
-
-&lt;h3 id=&quot;warning4&quot;&gt;Warning4&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: /usr/bin occurs before /usr/local/bin
-This means that system-provided programs will be used instead of those
-provided by Homebrew. The following tools exist at both paths:
-
-    git
-    git-cvsserver
-    git-receive-pack
-    git-shell
-    git-upload-archive
-    git-upload-pack
-
-Consider setting your PATH so that /usr/local/bin
-occurs before /usr/bin. Here is a one-liner:
-    &lt;span class=&quot;nb&quot;&gt;echo export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/usr/local/bin:$PATH&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。&lt;/p&gt;
-
-&lt;h3 id=&quot;warning5&quot;&gt;Warning5&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Your Homebrew is outdated.
-You haven&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;t updated &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; at least &lt;span class=&quot;m&quot;&gt;24&lt;/span&gt; hours, this is a long &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;in brewland!
-To update Homebrew, run &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;brew update&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;homebrewをアップデートします。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;warning&quot;&gt;すべてのWarningを取り除いたので&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew doctor
-&amp;gt;&amp;gt; Your system is ready to brew.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;診断結果が正常になりました。めでたい。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 04 Jul 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/brew_doctor/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/brew_doctor/</guid>
-        
-        <category>Infrastructure</category>
         
         
         <category>server</category>

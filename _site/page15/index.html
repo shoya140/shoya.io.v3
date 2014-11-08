@@ -67,6 +67,64 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Oct 23, 2013
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/mac_display_trouble/"><h1 class="post-title">Mac起動後の画面が真っ暗</h1></a>
+  </header>
+  <article class="post-content">
+    <p>MacBookPro Retina 15inch(2012)でディスプレイ関連のトラブルが度々発生しているので、備忘録として問題と解決策を記します。</p>
+
+<h3 id="section">問題</h3>
+
+<ul>
+  <li>蓋を閉じてもスリープ状態にならない</li>
+  <li>外部ディスプレイを認識しない</li>
+  <li>起動後の画面が真っ暗</li>
+</ul>
+
+<p>この問題が発生するとMacの電源を入れた時の画面が真っ暗で、何度か開け閉めするうちに画面が青くなってログイン画面が現れるようになります。
+そのとき表示が別画面から本体の画面へ戻ってくるような挙動を示すことから、最後に接続したディスプレイの情報が残っていて悪さをしているのではないかと考えられます。</p>
+
+<h3 id="section-1">解決策</h3>
+
+<p>以下の手順によってこの問題を解決することができます。</p>
+
+<p><strong>1.ディスプレイに関する設定ファイルを削除</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo rm /Library/Preferences/com.apple.windowserver.plist
+rm ~/Library/Preferences/ByHost/com.apple.windowserver.*</code></pre></div>
+
+<p><strong>2.PRAMリセット</strong></p>
+
+<p>PRAMと呼ばれる不揮発メモリに保存されたシステムの設定(指定起動ディスク、表示解像度、スピーカーの音量、その他の情報)を初期化します。</p>
+
+<p><a href="http://support.apple.com/kb/PH11243?viewlocale=ja_JP">OS X Mountain Lion: コンピュータのPRAMをリセットする</a></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">本体の電源を切り、option + <span class="nb">command</span> + P + Rボタンを押した状態で電源を入れます。
+2度目の起動音が鳴るまでこれらのキーを押したままにします。</code></pre></div>
+
+<p>PRAMリセットがかかり、画面が正常に表示されます。</p>
+
+<p><strong>3.SMCリセット</strong></p>
+
+<p>PRAMリセットで解決しない場合は、照明や電源周りのトラブルである可能性があるため、SMCリセットを行います。</p>
+
+<p><a href="http://support.apple.com/kb/ht3964?viewlocale=ja_JP">Intel-based Macs：SMC (システム管理コントローラ) のリセット</a></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">本体の電源を切り、MagSafe電源アダプタをMacに接続します。
+<span class="nb">shift</span> + control + option キーを押しながら電源ボタンを押し続けます。
+電源アダプタのLEDの色が変わったらボタンから手を離し、再度電源を入れます。</code></pre></div>
+
+
+  </article>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Oct 19, 2013
     
     [<a href="/tag/Sightseeing/">Sightseeing</a>]
@@ -141,54 +199,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Oct 12, 2013
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/ranking_plugin/"><h1 class="post-title">Jekyllの記事を人気順にソートする</h1></a>
-  </header>
-  <article class="post-content">
-    <p>各記事のはてなブックマーク数・Facebookいいね数・tweet数を取得してスコアの高い順にソートするプラグインを書いた。</p>
-
-<p><a href="https://github.com/Mrk1869/source-mrk1869.github.com/blob/master/_plugins/ranking.rb">ranking.rb</a></p>
-
-<p>それぞれ数値を取得するためのapiと取り出し方は以下のとおり。</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;net/http&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URL_OF_YOUR_ENTRY</span>
-
-<span class="c1"># hatena 文字列で返ってくる. 0は&quot;&quot;.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://api.b.st-hatena.com/entry.count?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">body</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="p">?</span> <span class="n">body</span><span class="o">.</span><span class="n">to_i</span> <span class="p">:</span> <span class="mi">0</span>
-
-<span class="c1"># facebook jsonで返ってくる. 0は0.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://graph.facebook.com/</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;shares&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;shares&#39;</span><span class="o">]</span> <span class="p">:</span> <span class="mi">0</span>
-
-<span class="c1"># tweet jsonで返ってくる. 0は0.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://urls.api.twitter.com/1/urls/count.json?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;count&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;count&#39;</span><span class="o">]</span> <span class="p">:</span> <span class="mi">0</span></code></pre></div>
-
-<p>buildの度に取得すると記事を書く際に不便なので、jekyll server に –drafts オプションをつけているときは評価をスキップする。–draftsオプションが付いているかどうかは</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;show_drafts&#39;</span><span class="o">]</span></code></pre></div>
-
-<p>を確認すれば良い。</p>
-
-  </article>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -211,6 +221,8 @@
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/sublime-split/">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</a></li>
+        
           <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
         
           <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
@@ -220,8 +232,6 @@
           <li>- <a href="/blog/hello-sublime/">Sublime Text3導入メモ</a></li>
         
           <li>- <a href="/blog/cookpad_internship/">クックパッドのサマーインターンシップに参加しました</a></li>
-        
-          <li>- <a href="/blog/tornado_debug/">Tornadoのデバッグモードを有効にする</a></li>
         
         </ul>
       </div>
