@@ -5,9 +5,34 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 12 Nov 2014 13:34:26 +0900</pubDate>
-    <lastBuildDate>Wed, 12 Nov 2014 13:34:26 +0900</lastBuildDate>
+    <pubDate>Thu, 13 Nov 2014 06:21:41 +0900</pubDate>
+    <lastBuildDate>Thu, 13 Nov 2014 06:21:41 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>なんで科学者を目指すようになったか</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg&quot; class=&quot;image-on-frame-mini&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で&lt;strong&gt;科学体験フェスティバル&lt;/strong&gt;を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。&lt;/p&gt;
+
+&lt;p&gt;それから中学・高校と理科の授業を受ける中で、興味の対象は物理学・化学・生物学の広く深い方向に伸びていった。高校生の頃に&lt;strong&gt;国際生物学オリンピック&lt;/strong&gt;の日本代表を決める選考会に出たことがあって、惜しいところまでいった。(余談だけどサマーウォーズの「あと少しで日本代表になれたのに。」というセリフは聞く度に心に刺さるものがある。)そこで競った同期がとにかく賢く変わり者揃いだった。懇親会のときにひとりが「俺、東大に行こうと思う。」とつぶやいて、僕も私もといった具合に皆が声をあげた。ものすごく盛り上がり、「大学でまた会おう。」と言い合った。たぶん皆そういった刺激を与え合う相手に飢えていたのだと思う。研究の道に進むなら面白い人がたくさんいる環境で過ごしたい思い、僕も&lt;a href=&quot;/blog/imabari/&quot;&gt;難関校を目指すことを強く決めた&lt;/a&gt;。結果、最初に発言した彼は東大に合格し、僕は阪大を受けるが落ちて府大に進学することになった。&lt;/p&gt;
+
+&lt;p&gt;阪大には基礎工学部という工学と理学を織り交ぜた研究をしているところがある。僕の幅広い興味や視野と合うと思ったのが、進路に阪大を選んだ理由だった。入学したら&lt;strong&gt;脳科学&lt;/strong&gt;の研究をしようと思っていた。第2希望の府大のことはよく知らなかったので、名前をみて知能情報工学科を受験した。脳と能の漢字違いで学部を選んだことを、僕は入学してから知ることになる。&lt;/p&gt;
+
+&lt;p&gt;勘違いで選んだ学部も運命で、僕はそのおかげで&lt;strong&gt;情報工学&lt;/strong&gt;に出会うことになる。プログラミング、あるいは企画やデザインまで含めたソフトウェア開発は、僕の適正にとてもマッチしていると思う。アイデアを形にして公開するまでのスピードは他分野のものづくりを圧倒するものがある。学部3年生の頃にその面白さに気付き、プログラミングを通じて&lt;a href=&quot;/development/&quot;&gt;いろんな(変な)ものを生み出して&lt;/a&gt;、楽しい経験を積むことができた。その結果、もっと情報工学を学びたいと考え、大学や学術分野を変えることなく大学院へ進学した。巡り巡って僕は現在の研究テーマを&lt;strong&gt;情報工学の視点から見た脳科学や認知的行動&lt;/strong&gt;に設定していて、今までの意思決定は間違っていなかったと確信してる。&lt;/p&gt;
+
+&lt;p&gt;僕らの世代も就職活動が始まり、進学するか就職するか、いよいよ選択を先延ばしにできない時期になった。&lt;cite&gt;&lt;a href=&quot;http://memo.sanographix.net/post/69496511652&quot;&gt;なんでデザイナーになったか - MEMOGRAPHIX&lt;/a&gt;&lt;/cite&gt;に影響を受けて、科学者になる道を後押しする材料について書いてみたのでした。(開発者になる道を後押しする材料もたくさんあるので、また改めて書くことになると思う。)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Nov 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/towards-a-scientist/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/towards-a-scientist/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
     
       <item>
         <title>HomebrewでOz開発環境を整える[Mozart2][Emacs]</title>
@@ -466,42 +491,6 @@ ln -s ~/Dropbox/Sublime/User&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHubの学割クーポンを延長する</title>
-        <description>&lt;p&gt;GitHubにはプライベートリポジトリが無料で使える(billing planが1つ上がる)学割があります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://education.github.com/&quot;&gt;GitHub Education&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;申し込んでから2年が経って「もうすぐクーポン切れるよ」という内容のメールが来ました。「今も学生なので学割クーポンを延長したい」と問い合わせたところ「有効期限が切れてからもう一度WebからアプライすればOKだよ。もし学割が反映される前に次の支払が発生したら連絡してね。」とのことでした。以下、回答です。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If you’re still a student, you’re welcome to reapply! Check out our shiny new Education page:&lt;/p&gt;
-
-  &lt;p&gt;https://education.github.com/&lt;/p&gt;
-
-  &lt;p&gt;You might get a message about not being able to apply the new coupon. That’s because you can’t have two simultaneous coupons on your account. Once your old coupon expires, you can apply the new coupon. There’s usually a “grace period” of a few days between the expiration and the first charge, but if you do get charged before you add your new coupon, just let us know! Please don’t hesitate to let us know if you have any questions or concerns.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;あと学割が切れても既に作成してあるプライベートリポジトリはプライベートのままらしい。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/alpaca_taichou&quot;&gt;@alpaca_taichou&lt;/a&gt; 突然勝手にpublicになるんですか?&lt;/p&gt;&amp;mdash; Kazuki Yoshida (@101kaz) &lt;a href=&quot;https://twitter.com/101kaz/statuses/486756076776214528&quot;&gt;2014, 7月 9&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/alpaca_taichou&quot;&gt;@alpaca_taichou&lt;/a&gt; &lt;a href=&quot;https://twitter.com/101kaz&quot;&gt;@101kaz&lt;/a&gt; あれ切れてもプライベートリポジトリ保持されますよ、新しいのが作れないだけですね。&lt;/p&gt;&amp;mdash; Takehiro Adachi (@takehiro0740) &lt;a href=&quot;https://twitter.com/takehiro0740/statuses/486901860544946176&quot;&gt;2014, 7月 9&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Sat, 12 Jul 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/github_academic/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/github_academic/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>coffee</category>
         
       </item>
     
