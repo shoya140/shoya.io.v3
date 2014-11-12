@@ -5,9 +5,48 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Nov 2014 03:07:25 +0900</pubDate>
-    <lastBuildDate>Sun, 09 Nov 2014 03:07:25 +0900</lastBuildDate>
+    <pubDate>Wed, 12 Nov 2014 13:34:26 +0900</pubDate>
+    <lastBuildDate>Wed, 12 Nov 2014 13:34:26 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>HomebrewでOz開発環境を整える[Mozart2][Emacs]</title>
+        <description>&lt;p&gt;「コンピュータプログラミングの概念・技法・モデル」(ガウディ本)のサンプルコードを実行するためにOz言語の環境を整えた。Ozは開発環境であるMozartシステムやEmacsを必要とし、それらはウェブサイト上で無料で公開されているのだけれど、パッケージをダウンロードしてくるのが面倒なのですべてHomebrewで管理することにした。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# emacs&lt;/span&gt;
+brew install emacs --japanese --cocoa --srgb --with-gnutls -v
+brew linkapps
+
+&lt;span class=&quot;c&quot;&gt;# homebrew-cask&lt;/span&gt;
+brew tap caskroom/homebrew-cask
+brew install brew-cask
+
+&lt;span class=&quot;c&quot;&gt;# mozart&lt;/span&gt;
+brew tap caskroom/homebrew-versions
+brew cask install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;補足&lt;/h3&gt;
+
+&lt;p&gt;Emacsについてはインストール方法やパッチが様々のようなので、&lt;cite&gt;&lt;a href=&quot;http://www.sevencredit.com/2014/07/02/580/&quot;&gt;Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット&lt;/a&gt;を参考にさせていただきインストールオプションを上記に選んだ。&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;動作確認&lt;/h3&gt;
+
+&lt;p&gt;Mozart2.appを起動して2フレームのEmacsが起動すればOKです。&lt;/p&gt;
+
+&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/51iXhiKTamL._SL75_.jpg&quot; width=&quot;59&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;コンピュータプログラミングの概念・技法・モデル(IT Architect&#39; Archiveクラシックモダン・コンピューティング6) (IT Architects’Archive CLASSIC MODER)&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;セイフ・ハリディ, ピーター・ヴァン・ロイ, Peter Van-Roy, Seif Haridi&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 12 Nov 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/brew-mozart/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/brew-mozart/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
     
       <item>
         <title>Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</title>
@@ -463,191 +502,6 @@ ln -s ~/Dropbox/Sublime/User&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>coffee</category>
-        
-      </item>
-    
-      <item>
-        <title>doctestを使ってpythonの簡単な単体テストを書く</title>
-        <description>&lt;p&gt;doctestはpythonに標準で搭載されているテストツールで、docstring(“&quot;”で囲まれたドキュメンテーション文字列)に書かれた対話実行例をテストとして実行します。入力と出力をコメントに記述するだけという非常にシンプルな仕組みなので、ちょっとした処理の確認に役立ちます。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;記述例&lt;/h2&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;doctest&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;doctest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;上記のコードを実行すると&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python hello.py
-**********************************************************************
-File &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello.py&amp;quot;&lt;/span&gt;, line 6, in __main__.average
-Failed example:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Expected:
-    0.5
-Got:
-    1
-**********************************************************************
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had failures:
-   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; of   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; in __main__.average
-***Test Failed*** &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failures.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;doctest&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;doctest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python hello.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$python&lt;/span&gt; hello.py -v
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Expecting:
-    1.5
-ok
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
-    __main__
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items passed all tests:
-   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in __main__.average
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; failed.
-Test passed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;python--m-doctest--v-&quot;&gt;python -m doctest -v [ファイル名]&lt;/h2&gt;
-
-&lt;p&gt;Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of args.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(1, 2)&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    1.5&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;main関数を空にしてコマンドラインからテストします。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python -m doctest -v hello.py
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Expecting:
-    1.5
-ok
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
-    hello
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items passed all tests:
-   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in hello.average
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; failed.
-Test passed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;テストが実行されました。&lt;/p&gt;
-
-&lt;p&gt;注意点として、doctestは出力の完全一致を求めるので、スペースの有無や辞書の順序に気を配ってテストを書く必要があります。詳しくはドキュメントをご覧ください。&lt;/p&gt;
-
-&lt;p&gt;参考: &lt;a href=&quot;http://docs.python.jp/2/library/doctest.html&quot;&gt;25.2. doctest — 対話的な実行例をテストする&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;2014.07.08 追記&lt;/h2&gt;
-
-&lt;p&gt;出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;average&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    This method returns the average value of numbers.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) #failed&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    1&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) #ok&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    1.0&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 1 #ok&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    True&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 1.0 #ok&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    True&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;gt;&amp;gt;&amp;gt; average(0, 2) == 2.0 #ok&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    False&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python -m doctest -v hello.py
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#failed&lt;/span&gt;
-Expecting:
-    1
-**********************************************************************
-File &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello.py&amp;quot;&lt;/span&gt;, line 4, in hello.average
-Failed example:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#failed&lt;/span&gt;
-Expected:
-    1
-Got:
-    1.0
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
-Expecting:
-    1.0
-ok
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
-Expecting:
-    True
-ok
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 1.0 &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
-Expecting:
-    True
-ok
-Trying:
-    average&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 2.0 &lt;span class=&quot;c&quot;&gt;#ok&lt;/span&gt;
-Expecting:
-    False
-ok
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had no tests:
-    hello
-**********************************************************************
-&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; items had failures:
-   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; of   &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; in hello.average
-&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; tests in &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; items.
-&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; passed and &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failed.
-***Test Failed*** &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; failures.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 07 Jul 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/python_doctest/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/python_doctest/</guid>
-        
-        <category>Programming</category>
-        
-        
-        <category>server</category>
         
       </item>
     
