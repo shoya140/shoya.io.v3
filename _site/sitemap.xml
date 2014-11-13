@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/sublime-latex/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/towards-a-scientist/</loc>
     </url>
     
@@ -352,6 +356,14 @@
     
     
     <url>
+        <loc>http://shoya.io/blog/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>http://shoya.io/tag/Event/</loc>
     </url>
     
@@ -401,14 +413,6 @@
     
     <url>
         <loc>http://shoya.io/tag/Design/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/blog/</loc>
     </url>
     
     

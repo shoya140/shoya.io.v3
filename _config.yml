@@ -5,4 +5,4 @@ url: "http://shoya.io" # the base hostname & protocol for your site
 permalink: /blog/:title/
 markdown: kramdown
 paginate: 3
-popular: ["Paletta", "cookpad_internship", "long_shadow", "hatena_intern", "life_in_germany", "internet_black_market"]
+popular: ["Paletta", "cookpad_internship", "hatena_intern", "towards-a-scientist", "internet_black_market", "long_shadow"]
