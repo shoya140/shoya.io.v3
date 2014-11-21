@@ -13,7 +13,8 @@ permalink: /aboutme/jp/
 
 ### Activities
 
-* <a href ="https://info.cookpad.com/"><span style="font-weight: 600;">クックパッド株式会社</span></a> サマーインターンシップ (09.2014)
+* <a href = "http://www.kmd.keio.ac.jp/jp/"><span style="font-weight: 600;">慶應義塾大学大学院メディアデザイン研究科附属メディアデザイン研究所</span></a> リサーチャー (11.2014 - )
+* <a href = "https://info.cookpad.com/"><span style="font-weight: 600;">クックパッド株式会社</span></a> サマーインターンシップ (09.2014)
 * <a href ="https://sites.google.com/site/miru2014okayama/wakate"><span style="font-weight: 600;">MIRU2014 若手プログラム</span></a> Best Wakate Presentation Award, Audience Award (06.2014)
 * <a href = "http://www.dfki.de/web"><span style="font-weight: 600;">ドイツ カイザースラウテルン工科大学・人工知能研究センター</span></a> 留学 (10.2013 - 03.2014)
 * <a href = "http://jp.startup-dating.com/2013/05/super-hackathon-2013-in-osak"><span style="font-weight: 600;">スーパーハッカソン2013</span></a> 3位・審査委員賞 (05.2013)

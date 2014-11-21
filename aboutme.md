@@ -22,6 +22,7 @@ Mobile applications, Activity recognition, Image processing, Data analysis.
 
 ### Work Experience
 
+* Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
 * 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc</a>, 09.2014
 * Research internship, <a href="http://www.dfki.de/web/">DFKI</a>, 10.2013 - 03.2014
 * Engineering mentor, <a href="http://life-is-tech.com/">Life is Tech, Inc</a>, 03.2013 - *
@@ -31,7 +32,8 @@ Mobile applications, Activity recognition, Image processing, Data analysis.
 
 ### Education
 
-* BS CS, Osaka Prefecture University, Osaka Japan, 04.2010 - 03.2014
+* MS CS, Graduate School of Engineering, Osaka Prefecture University, 04.2014 - *
+* BS CS, Osaka Prefecture University, 04.2010 - 03.2014
 
 ### Activities
 
