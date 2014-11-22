@@ -16,6 +16,15 @@ description: Shoya Ishimaru (shoya140)'s weblog about his input/output.
   <article class="post-content">
     {{ post.content }}
   </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text={% if post.title %}{{ post.title | uri_escape }}%20-%20{{ site.title | uri_escape }}{% else %}{{ site.title | uri_escape }}{% endif %}"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ post.url }}&amp;t={% if post.title %}{{ post.title | uri_escape }}{% else %}{{ site.title | uri_escape }}{% endif %}" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/{{ site.url }}{{ post.url }}"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="{{ site.url }}{{ post.url }}" style="display: none;">hatena</a></div>
+  </div>
 </div>
 <hr>
 {% endfor %}
