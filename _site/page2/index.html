@@ -67,6 +67,55 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Nov 12, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/brew-mozart/"><h1 class="post-title">HomebrewでOz開発環境を整える[Mozart2][Emacs]</h1></a>
+  </header>
+  <article class="post-content">
+    <p>「コンピュータプログラミングの概念・技法・モデル」(ガウディ本)のサンプルコードを実行するためにOz言語の環境を整えた。Ozは開発環境であるMozartシステムやEmacsを必要とし、それらはウェブサイト上で無料で公開されているのだけれど、パッケージをダウンロードしてくるのが面倒なのですべてHomebrewで管理することにした。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># emacs</span>
+brew install emacs --japanese --cocoa --srgb --with-gnutls -v
+brew linkapps
+
+<span class="c"># homebrew-cask</span>
+brew tap caskroom/homebrew-cask
+brew install brew-cask
+
+<span class="c"># mozart</span>
+brew tap caskroom/homebrew-versions
+brew cask install mozart2</code></pre></div>
+
+<h3 id="section">補足</h3>
+
+<p>Emacsについてはインストール方法やパッチが様々のようなので、<cite><a href="http://www.sevencredit.com/2014/07/02/580/">Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット</a>を参考にさせていただきインストールオプションを上記に選んだ。</cite></p>
+
+<p>homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)</p>
+
+<h3 id="section-1">動作確認</h3>
+
+<p>Mozart2.appを起動して2フレームのEmacsが起動すればOKです。</p>
+
+<div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/51iXhiKTamL._SL75_.jpg" width="59" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="margin-bottom: 2px; line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank">コンピュータプログラミングの概念・技法・モデル(IT Architect' Archiveクラシックモダン・コンピューティング6) (IT Architects’Archive CLASSIC MODER)</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">セイフ・ハリディ, ピーター・ヴァン・ロイ, Peter Van-Roy, Seif Haridi</div></div><div class="booklink-footer" style="clear: left"></div></div>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/brew-mozart/&amp;t=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/brew-mozart/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/brew-mozart/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Nov 8, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -198,41 +247,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 6, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/protocol/"><h1 class="post-title">実験を始める前のチェックリスト</h1></a>
-  </header>
-  <article class="post-content">
-    <p>被験者を募ってデータをとることがよくある。やり直しがきかないので、実験(データの記録)を始める前にはいつも細心の注意を払っている。この「気をつけていることリスト」を研究室のwikiに書いておこうと思ったのだけれど、非公開にすることでもないような気がするので、ここにまとめてみた。「体にセンサを取り付けて決められた行動(タスク)をとる」という実験を想定して項目をあげる。</p>
-
-<ul>
-  <li>タスクをまず自分で体験して記録の漏れをなくす。</li>
-  <li>実験手順をプロトコルとして記述しておく。</li>
-  <li>実験中は全景が分かるground truth videoをWebカメラで撮影する。</li>
-  <li>各センサの同期に使うユニークな動きをタスクの開始前に入れる。</li>
-  <li>記録されたデータをテストにかけて、データの欠損がないか確認する。</li>
-  <li>データの記録時間は必要よりやや長めに設定しておく。</li>
-  <li>記録装置のバッテリ切れに注意する。</li>
-</ul>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E5%AE%9F%E9%A8%93%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/protocol/&amp;t=%E5%AE%9F%E9%A8%93%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/protocol/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/protocol/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -255,6 +269,8 @@
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/hakuryuen/">白龍園観覧</a></li>
+        
           <li>- <a href="/blog/sublime-latex/">Sublime Text3でLaTeXをコンパイルする[Mac]</a></li>
         
           <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
@@ -264,8 +280,6 @@
           <li>- <a href="/blog/sublime-split/">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</a></li>
         
           <li>- <a href="/blog/sublime-sync/">Sublime Text3の設定をGit+Dropboxで安全に同期する</a></li>
-        
-          <li>- <a href="/blog/protocol/">実験を始める前のチェックリスト</a></li>
         
         </ul>
       </div>
