@@ -5,9 +5,58 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Dec 2014 01:59:29 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Dec 2014 01:59:29 +0900</lastBuildDate>
+    <pubDate>Mon, 01 Dec 2014 21:25:38 +0900</pubDate>
+    <lastBuildDate>Mon, 01 Dec 2014 21:25:38 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>ペアプログラミングを支える技術</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/607&quot;&gt;LiT!関西 Advent Calendar 2014&lt;/a&gt; 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプログラミングとそれを支えるMacの便利機能について書きます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;ペアプログラミングとは&lt;/h3&gt;
+
+&lt;p&gt;2人が1台のPCを使ってプログラミングすることです。キーボードを操作してコードを書く人(&lt;strong&gt;ドライバー&lt;/strong&gt;)とその様子を眺める人(&lt;strong&gt;ナビゲーター&lt;/strong&gt;)の役割に分かれて交代でプログラムを書きます。ドライバーは今何をしようとしているか、ナビゲーターは気になるところや別解について積極的に話しながら作業を進めます。&lt;/p&gt;
+
+&lt;p&gt;2人で1つの作業を行うので生産性が落ちるという欠点がありますが、それ以上に&lt;strong&gt;綺麗なコードが書ける&lt;/strong&gt;・&lt;strong&gt;互いの知識を共有できる&lt;/strong&gt;などの利点があります。特に上級者と初心者がペアを組んでプログラムを書くと、上級者のコードの書き方や&lt;a href=&quot;http://blog.shibayu36.org/entry/2013/01/19/202049&quot;&gt;開発環境&lt;/a&gt;を実際に見て学べる、リアルタイムに助言を受けられる、といった効率のよい学習を行うことができます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;画面共有しよう&lt;/h3&gt;
+
+&lt;p&gt;一緒にコードを書いていると「ちょっと貸して！」みたいな状況が多々あると思います。その度に席を入れ替えたり身を乗り出すのも面倒なので、2人のPCから1つの画面を操作できると便利です。Macはデフォルトで画面を共有する機能を搭載しているので、その使い方について説明します。以下、画面共有を受け入れる側をドライバーPC、申請する側をナビゲーターPCとします。&lt;/p&gt;
+
+&lt;p&gt;まずはドライバーPCのシステム環境設定&amp;gt;共有を開きます。1.画面共有にチェックを入れ、2.コンピュータ設定を選択して、3.ほかのユーザが画面操作の権限を要求することを許可にチェックを入れます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair01.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次にナビゲーターPCでFinder&amp;gt;移動&amp;gt;サーバへ接続(ショートカットキー:⌘+K)を開き、ドライバーPCに表示されているvnc://(IPアドレス)を入力します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair02.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;画面操作の権限に関する選択画面が現れるので、アクセス権を要求を選んで接続ボタンを押します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair03.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;するとドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair04.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプログラミングを開始しましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair05.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;なお、Macの画面共有を使用するには2つのPCが同じネットワークに接続されている必要があります。離れた環境で画面を共有する場合は&lt;a href=&quot;https://screenhero.com/&quot;&gt;Screenhero&lt;/a&gt;・&lt;a href=&quot;http://www.teamviewer.com/ja/&quot;&gt;TeamViewer&lt;/a&gt;・&lt;a href=&quot;https://plus.google.com/hangouts&quot;&gt;Googleハングアウト&lt;/a&gt;のリモートデスクトップ機能を使うことをおすすめします。アカウント作成やソフトウェアのインストールが不要で簡単という理由で、今回は画面共有を紹介しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/607&quot;&gt;LiT!関西 Advent Calendar 2014&lt;/a&gt;次回はほっしゃん(&lt;a href=&quot;https://twitter.com/Recursible&quot;&gt;@Recursible&lt;/a&gt;)がAndroidのioschedライブラリの解析に関する記事を書いてくれます。お楽しみに！&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Dec 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/pair-programming/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/pair-programming/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>server</category>
+        
+      </item>
     
       <item>
         <title>白龍園観覧</title>
@@ -409,65 +458,10 @@ ln -s ~/Dropbox/Sublime/User&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <link>http://shoya.io/blog/hello-sublime/</link>
         <guid isPermaLink="true">http://shoya.io/blog/hello-sublime/</guid>
         
-        <category>Programming</category>
+        <category>Infrastructure</category>
         
         
         <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>クックパッドのサマーインターンシップに参加しました</title>
-        <description>&lt;p&gt;課題解決型の5-daysインターンシップに参加して、スマートフォンアプリを開発しました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;インターン修了しました。楽しかったー！ &lt;a href=&quot;http://t.co/AmkZVaX4qs&quot;&gt;pic.twitter.com/AmkZVaX4qs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Shoya Ishimaru (@shoya140) &lt;a href=&quot;https://twitter.com/shoya140/status/507864832872153088&quot;&gt;2014, 9月 5&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;内容&lt;/h3&gt;
-
-&lt;p&gt;初日の午前中に「クックパッドのサービス開発」に関する講義を受けて、それからディレクター+エンジニアの2人1組のチームを組み、5日間でテーマに沿ったアプリを開発するという内容でした。完成したアプリは個人でリリースできないので発表資料を載せておきます。&lt;/p&gt;
-
-&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;42a7685017f40132350b2ae5b5e9153b&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;課題解決駆動開発&lt;/h3&gt;
-
-&lt;p&gt;インターンの最初に言われたことは「&lt;strong&gt;クックパッドは課題解決の会社である&lt;/strong&gt;」ということです。クックパッドは基盤技術力の高さで有名なことから技術至上主義な雰囲気の会社だと思っていたのですが、インターンを通じて感じた印象は少し異なっていて、技術を使いたいからサービスを作るのではなく、まずユーザの抱える課題があり、それを解決するための手段として技術がある、という文化をもっているようでした。&lt;/p&gt;
-&lt;pre&gt;
-(ユーザ)は
-(欲求)したいが
-(課題)できないので
-(製品の特徴)ことに価値がある
-&lt;/pre&gt;
-&lt;p&gt;という価値仮説シートをもとに、ユーザの欲求を満たせない理由である課題とその解決策を明確にし、課題解決のために技術を使います。&lt;/p&gt;
-
-&lt;p&gt;インターン期間中には定期的に進捗報告・フィードバックタイムがあるのですが、実装手段よりも、自分たちの考えた価値仮説について鋭い指摘や質問をいただき、課題解決について深く深く考えることができました。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;いかに実装しないか&lt;/h3&gt;
-
-&lt;p&gt;今回のインターンでは&lt;a href=&quot;http://mrk1869.com/blog/hatena_intern/&quot;&gt;はてなインターン&lt;/a&gt;(2年前！)で経験した技術力不足に対する悔しさをバネに、持てる技術力を出し惜しみなく発揮することができました。(時間に余裕をもって開発したり、レシピのレコメンドに自然言語処理を使ったり、操作性やUIを作りこんだり、チーム内でアプリの開発進捗をTestFlightで共有した。)&lt;/p&gt;
-
-&lt;p&gt;一方で、技術的面白さを求めすぎて課題解決に直接関係ない機能を盛り込んでしまったという反省があります。最終日には「実装は可能な限り小さな労力と少ない時間でできるもの(MVP)に絞って、アプリの価値仮説検証をもっと練ればよかったのでは」という意見をいただきました。僕の開発スタイルは「とにかく作ってみたほうが早い」に寄りすぎている感じがあるので、インターンを通じて、できるだけ「実装しない」なかで仮説の検証を繰り返す大切さを認識しました。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;おわりに&lt;/h3&gt;
-
-&lt;p&gt;クックパッドの短期インターンシップは「ユーザの課題を解決するとはどういうことか」を学ぶことができる濃い5日間でした。&lt;strong&gt;ものづくりが好きな人にはぜひ参加することをおすすめします！&lt;/strong&gt;(技術的な刺激にはやや物足りなかった印象もあるので、バリバリ開発したい・技術的に成長したい人は&lt;a href=&quot;http://staffblog.cookpad.com/entry/2014/07/01/184000&quot;&gt;長期インターンシップやアルバイト&lt;/a&gt;に応募すると良いかもしれません。)&lt;/p&gt;
-
-&lt;p&gt;サポートしていただいた社員の方々、参加者のみんな、そしてチームメンバーの辻くん、5日間お世話になりました！ありがとうございました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/cookpad_internship02.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;(おまけ)miyagawaさんに会えてテンション最高潮の&lt;a href=&quot;http://rebuild.fm/&quot;&gt;rebuild.fm&lt;/a&gt;リスナーインターン&lt;/p&gt;
-</description>
-        <pubDate>Sun, 07 Sep 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/cookpad_internship/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/cookpad_internship/</guid>
-        
-        <category>Event</category>
-        
-        <category>Note</category>
-        
-        
-        <category>coffee</category>
         
       </item>
     

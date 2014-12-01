@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3導入メモ
 categories: ['server']
-tags: ['Programming']
+tags: ['Infrastructure']
 published: True
 keywords: Sublime Text3
 ---
