@@ -67,6 +67,75 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Nov 8, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/sublime-split/"><h1 class="post-title">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</h1></a>
+  </header>
+  <article class="post-content">
+    <p>Sublimeの慣れないキーバインドに、「shift+option+command+数字」で画面を上下分割、「option+command+数字」で画面を左右分割にするものがある。Vimを使っていた名残でこれらの機能をsp(split)とvs(vsplit)に割り当てたいと思ったので、キーバインドを変更することにした。</p>
+
+<p>デフォルトのキーバインドを変更するには、
+1.「Key Bindings - Default」から対象のキーバインドを見つける。
+2.「Key Bindings - User」にコピーしてキーの部分を書き換える。
+の手順を踏めばいい。commandはsuper, controlはctrlと書く。</p>
+
+<p>今回は「Key Bindings - User」に以下の設定を記入した。</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+v&quot;</span><span class="p">,</span> <span class="s2">&quot;ctrl+s&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;set_layout&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;args&quot;</span><span class="o">:</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;cols&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;rows&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;cells&quot;</span><span class="o">:</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+s&quot;</span><span class="p">,</span> <span class="s2">&quot;ctrl+p&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;set_layout&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;args&quot;</span><span class="o">:</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;cols&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;rows&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;cells&quot;</span><span class="o">:</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+s&quot;</span><span class="p">,</span> <span class="s2">&quot;ctrl+s&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;set_layout&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;args&quot;</span><span class="o">:</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;cols&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;rows&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+            <span class="s2">&quot;cells&quot;</span><span class="o">:</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">]</span></code></pre></div>
+
+<p>この設定で「control+v, control+s」で画面を左右分割、「control+s, control+p」で画面を上下分割、「control+s, control+s」で1画面に戻せる。3, 4つに分割する機会は少ないので今のところはそれぞれ2分割まで。現在の状態からさらに縦横に分割していくにはどうしたらいいんだろう…</p>
+
+<p>もっと良い方法をご存じの方はぜひ教えてください。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E3%81%AE%E7%94%BB%E9%9D%A2%E3%82%92ctrl+sp,vs%E3%81%A7%E5%88%86%E5%89%B2%E3%81%99%E3%82%8B[Mac]%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/sublime-split/&amp;t=Sublime%20Text3%E3%81%AE%E7%94%BB%E9%9D%A2%E3%82%92ctrl+sp,vs%E3%81%A7%E5%88%86%E5%89%B2%E3%81%99%E3%82%8B[Mac]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/sublime-split/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/sublime-split/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Nov 7, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -164,46 +233,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 5, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/how-google-works/"><h1 class="post-title">「How Google Works」読んだ</h1></a>
-  </header>
-  <article class="post-content">
-    <p>組織を成功に導く人材として、「ビジネスセンス」「専門知識」「クリエイティブなエネルギー」「自分で手を動かして業務を遂行しようとする姿勢」を兼ね揃えた人たちがいる。この本ではそういった人たちを「<strong>スマート・クリエイティブ</strong>」と呼び、<strong>彼らにとって働きやすい環境とは何か、その環境をどうやってマネジメントすればよいか</strong>について述べている。</p>
-
-<div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/41wP3LRm7QL._SL75_.jpg" width="52" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/" rel="nofollow" target="_blank">How Google Works (ハウ・グーグル・ワークス)  ―私たちの働き方とマネジメント</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">エリック・シュミット, ジョナサン・ローゼンバーグ, アラン・イーグル</div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-<p>スマート・クリエイティブについては本から(ほぼ1節まるごと)引用している記事があるのでこちらを読むのがおすすめ。<a href="http://www.lifehacker.jp/2014/10/141014book_to_read.html">Googleの現場には何が起きていたか。前CEOたちが語る「スマート・クリエイティブ」の成功論 - lifehacker</a> 自分もやがてはこのようなセンスを身につけた人になりたいし、スマート・クリエイティブの働き方を尊重してくれる文化に出会えたらいいなと思う。</p>
-
-<p>特に感銘をうけたのが<strong>良い意味の“働きすぎ”</strong>という節。社員に責任と自由を与えることで、社員が自分に最適なワークライフ・バランスを見つけ実現できると書かれている。</p>
-
-<blockquote>
-  <p>2012年にヤフーCEOになった直後に、シリコンバレーで最も有名なワーキングマザーのひとりになったマリッサ・メイヤーは、燃え尽き症候群の原因は働きすぎではなく、自分にとって本当に大切なことを諦めなければならなくなったときに起こる、と語っている。スマート・クリエイティブに決定権を与えよう。そうすれば、自分にとって好ましい働き方はどんなものか、最適な判断を下すだろう。
-<cite>How Google Works</cite></p>
-</blockquote>
-
-<p>とても共感できる。自分はいま半年ほどいわゆるバーンアウトで体調を崩している。そのきっかけになった時期というのが、確かにやるべきことに追われてやりたいことを犠牲にし始めた頃だった気がする。時間は有限でありやるべきことを優先すべきなのは分かる。でもいろんなことに挑戦したい性分なのでついたくさん抱えてしまう。今の悩みは、多忙自体ではなく、やる気がでないことによるパフォーマンスの低下と、限られた時間内にタスクそれぞれに対して満足のいく成果が出せない葛藤にあると思う。この半年間で<strong>やるべきこととやりたいことのバランスは大事</strong>ということを痛感した。</p>
-
-<p>話がそれたので元に戻そう。この本を通じて、ワークライフ・バランス、ナレッジマネジメント、コミュニケーションなど、働きやすい環境をどういう視点で見つけるか(あるいは作るか)ということを学んだ。もちろん、やや過酷ではあるが目標を実現するための近道になる環境もあると思う。今後就職するならばどのようなバランスでどういった職場を渡るべきか、選択肢になる一冊だった。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%80%8CHow%20Google%20Works%E3%80%8D%E8%AA%AD%E3%82%93%E3%81%A0%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/how-google-works/&amp;t=%E3%80%8CHow%20Google%20Works%E3%80%8D%E8%AA%AD%E3%82%93%E3%81%A0" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/how-google-works/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/how-google-works/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -226,6 +255,8 @@
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/looking-back-at-2014/">2014年振り返り</a></li>
+        
           <li>- <a href="/blog/pair-programming/">ペアプログラミングを支える技術</a></li>
         
           <li>- <a href="/blog/hakuryuen/">白龍園観覧</a></li>
@@ -235,8 +266,6 @@
           <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
         
           <li>- <a href="/blog/brew-mozart/">HomebrewでOz開発環境を整える[Mozart2][Emacs]</a></li>
-        
-          <li>- <a href="/blog/sublime-split/">Sublime Text3の画面をctrl+sp,vsで分割する[Mac]</a></li>
         
         </ul>
       </div>

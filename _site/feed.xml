@@ -5,9 +5,46 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Dec 2014 21:25:38 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Dec 2014 21:25:38 +0900</lastBuildDate>
+    <pubDate>Tue, 02 Dec 2014 20:30:02 +0900</pubDate>
+    <lastBuildDate>Tue, 02 Dec 2014 20:30:02 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>2014年振り返り</title>
+        <description>&lt;p&gt;今年ももう終わりに近づいたので、2014年の良かったこと・良くなかったことの振り返りや2015年から意識したいことについて書きました。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;良かったこと&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;多くの学会に参加した。&lt;/strong&gt; 昨年参加したUbicomp2013が大勢の人の前でシステムのデモをやったり世界中の研究者と交流したり初めてヨーロッパの文化に触れる機会だったりとても思い入れのある学会だったので、今年もUbicomp2014に論文を通すことを目標にして研究を続けてきた。結果として今年も参加することができ、刺激的なフィードバックを得たり初めてアメリカを訪れるという経験ができた。また、主導で取り組んだ研究がAugmented Human2014に採択された(その頃自分はドイツ留学中だったので代理発表をお願いした)。MIRUやPRMUといった国内の研究会でもデモ発表や口頭発表を行って、同世代や少し上の世代の方々と繋がりができた。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;良いものにたくさん触れた。&lt;/strong&gt; 良いものを作るという作業、AとBという2つのうち良い方を選択することの連続だと思っている。その意思決定はデータとセンスに基づいて行われるべきで、センスを磨く一番の方法は良いものに触れることだと思う。留学中はChaos Communication Congress・&lt;a href=&quot;/blog/transmediale/&quot;&gt;Transmediale&lt;/a&gt;・&lt;a href=&quot;/blog/internet_black_market/&quot;&gt;インターネット闇市&lt;/a&gt;といったお祭りに参加したり、&lt;a href=&quot;/tag/Sightseeing/&quot;&gt;いろんな国や都市を観光した&lt;/a&gt;。最近だと&lt;a href=&quot;/blog/hakuryuen/&quot;&gt;白龍園でとても綺麗な紅葉を見た&lt;/a&gt;。映画もたくさん観た。これらの経験によって自分の中での面白いとか綺麗といった感覚を研ぎ澄ますことができたと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ブログ書くようになった。&lt;/strong&gt; 行った場所とか経験とか環境設定とかなんでもいいので文章にして公開してきた。これはsanographixさん(&lt;cite&gt;&lt;a href=&quot;http://memo.sanographix.net/post/69851358523&quot;&gt;なんで日記書いたほうがいいか&lt;/a&gt;&lt;/cite&gt;)やdd_otsuさん(&lt;cite&gt;&lt;a href=&quot;http://dd-otsu.tumblr.com/post/96688840406&quot;&gt;承認情報と研究日誌&lt;/a&gt;&lt;/cite&gt;)の影響で、自分の行動や思考は記録しておいて後から再利用したいと思うようになったから。Evernoteの走り書きは本当に雑な記録になりがちだけど、ブログだと最低限人に話せるレベルでまとまった文章が保証されて良い。誰かに情報を伝えるときも「この記事読んで」の一言でお互いの時間を短縮できる。あと文章は書く習慣つけてないといざ書こうと思った時にいい感じの言葉が出てこなくて困る。&lt;cite&gt;&lt;a href=&quot;http://autobiography0.blog82.fc2.com/blog-entry-79.html&quot;&gt;No.15 クリエイティビティについて - 99%のひらめき&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;運動するようになった。&lt;/strong&gt; 体力の衰えを感じるようになったので、なるべく外に出て体を動かすことを心がけた。9月頃からは時々ジムに通うようにもなって筋力をつけたり泳いだりしてる。ジム、科学的に体を鍛える話が聞けるので一人で運動するよりも面白い。夜遅くまでやっているので大学帰りに寄れるのも良い。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;進路について考えた。&lt;/strong&gt; これまで先延ばしにしてきた卒業後の進路について真剣に考えて、修士卒業後の3年間の計画を立てることができた。(このあたりは直接会った時に聞いてください。)3年で力をつけた後は、自分の適正とかその時にやりたいことを考えて、研究と開発のどちらに進むかもう一度決めようと思う。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;良くなかったこと&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;体調崩した。&lt;/strong&gt; 大学院生、こんなに忙しいとは思っていなくて、昼は講義に出席して夕方は実験と雑務、夜は論文書いて朝はレポート課題やって昼の講義へ、みたいな生活を続けていたので、めでたさが減っていくのも無理はなかった。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;2015年&lt;/h3&gt;
+
+&lt;p&gt;やりたいこともやるべきこともたくさんな1年で、全部に100%の力でコミットすることは不可能であることを痛感した。2015年は重要度や緊急度から優先順位を意識して、やるべきことをなるべく効果的に達成していきたいと思う。また、一人でできることには限りがあるので、もっと周りの人を頼ったり、作業手順やノウハウを&lt;a href=&quot;/blog/protocol/&quot;&gt;ドキュメント化&lt;/a&gt;して後輩に引き継ぎたい。あと研究室生活はオーバーワークになりがちなので、家に研究を持ち帰らないようにして意識的に余暇の時間をとりたい。&lt;/p&gt;
+
+&lt;p&gt;2015年もどうぞよろしくお願い致します。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Dec 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/looking-back-at-2014/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/looking-back-at-2014/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
     
       <item>
         <title>ペアプログラミングを支える技術</title>
@@ -368,100 +405,6 @@ brew cask install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>coffee</category>
-        
-      </item>
-    
-      <item>
-        <title>Sublime Text3導入メモ</title>
-        <description>&lt;p&gt;最近VimからSublime Text3に乗り換えました。この記事は導入方法についてのメモです。&lt;/p&gt;
-
-&lt;h3 id=&quot;homebrew-cask&quot;&gt;homebrew-caskからインストール&lt;/h3&gt;
-
-&lt;p&gt;アプリケーションはAppStore &amp;gt; homebrew-cask &amp;gt; 手動で管理する主義なので、Sublime Textをhomebrew-caskからインストール。デフォルトのbrew caskからインストールできるSublime Textのversionは2なので注意。version3を追加する。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew tap caskroom/homebrew-versions
-brew cask install sublime-text3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;package-control&quot;&gt;Package Control&lt;/h3&gt;
-
-&lt;p&gt;プラグイン管理ツールであるPackage Controlをインストールする。&lt;br /&gt;
-メニューバーから View &amp;gt; Show Consoleを開く。下記を入力して実行する。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import urllib.request,os,hashlib&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;7183a2d3e96f11eeadd761d777e62404&amp;#39;&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;&amp;#39;e330c659d4bb41d3bdf022e94cab3cd0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Package Control.sublime-package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ipp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sublime.installed_packages_path&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urllib.request.install_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib.request.build_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib.request.ProxyHandler&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; urllib.request.urlopen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://sublime.wbond.net/&amp;#39;&lt;/span&gt; + pf.replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;%20&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; hashlib.sha256&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.hexdigest&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Error validating download (got %s instead of %s), please try manual install&amp;#39;&lt;/span&gt; % &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;dh, h&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; dh !&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; h &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;os.path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; ipp, pf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;インストールが完了したらcommand+shift+p &amp;gt; install packageで起動できる。パッケージ名を検索して選択するとインストールされる。インストールしたパッケージリストは以下に作成される。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages/User/Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.sublime-settings&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;とりあえず入れたパッケージ&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;s2&quot;&gt;&amp;quot;installed_packages&amp;quot;&lt;/span&gt;:
-	&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;ColorPicker&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Gist&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Git&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;HTML5&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Jekyll&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Markdown Preview&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;SCSS&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Theme - itg.flat&amp;quot;&lt;/span&gt;,
-		&lt;span class=&quot;s2&quot;&gt;&amp;quot;Theme - Soda&amp;quot;&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;参考: &lt;a href=&quot;https://sublime.wbond.net/installation&quot;&gt;Installation - Package Control&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;pc&quot;&gt;複数PC間での設定ファイル同期&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages/User/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;に作成されるファイルをDropboxなどに入れてシンボリックリンクを貼れば良い。&lt;/p&gt;
-
-&lt;p&gt;1台目&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages/
-mkdir ~/Dropbox/Sublime
-mv User ~/Dropbox/Sublime/
-ln -s ~/Dropbox/Sublime/Use&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;2台目&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages/
-rm -r User
-ln -s ~/Dropbox/Sublime/User&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Gitで管理してgithubに置く場合はアクセスキーやトークンの取り扱いに注意。プライベートリポジトリ推奨。また下記のファイルは.gitignoreに書いて同期しないように設定する。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Package Control.last-run&lt;/li&gt;
-  &lt;li&gt;Package Control.ca-list&lt;/li&gt;
-  &lt;li&gt;Package Control.ca-bundle&lt;/li&gt;
-  &lt;li&gt;Package Control.system-ca-bundle&lt;/li&gt;
-  &lt;li&gt;Package Control.cache/&lt;/li&gt;
-  &lt;li&gt;Package Control.ca-certs/&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考: &lt;a href=&quot;https://sublime.wbond.net/docs/syncing&quot;&gt;Syncing - Package Control&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;ターミナルから起動&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;subl &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ファイル名&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ファイル名を開く&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;subl . &lt;span class=&quot;c&quot;&gt;# カレントディレクトリを開く&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;利用者の声&lt;/h3&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;ja&quot;&gt;&lt;p&gt;Sublime Textのおかげで楽しく論文を書けるようになりました！(23歳・大学生)&lt;/p&gt;&amp;mdash; Shoya Ishimaru (@shoya140) &lt;a href=&quot;https://twitter.com/shoya140/status/526782092554694658&quot;&gt;2014, 10月 27&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Tue, 28 Oct 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/hello-sublime/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/hello-sublime/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>server</category>
         
       </item>
     
