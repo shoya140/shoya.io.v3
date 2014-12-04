@@ -20,7 +20,7 @@ brew install brew-cask
 
 # mozart
 brew tap caskroom/homebrew-versions
-brew cask install mozart2
+brew install mozart2
 {% endhighlight %}
 
 ### 補足
@@ -28,6 +28,15 @@ brew cask install mozart2
 Emacsについてはインストール方法やパッチが様々のようなので、<cite>[Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット](http://www.sevencredit.com/2014/07/02/580/)を参考にさせていただきインストールオプションを上記に選んだ。
 
 homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)
+
+### 2014.12.04 追記
+
+mozart2がhomebrew-caskではなくhomevrewで管理されるようになったので現在は以下のコマンドでインストールできます。
+
+{% highlight bash %}
+brew install emacs --japanese --cocoa --srgb --with-gnutls -v
+brew install mozart2
+{% endhighlight %}
 
 ### 動作確認
 

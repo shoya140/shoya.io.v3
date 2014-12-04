@@ -5,8 +5,8 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 02 Dec 2014 20:30:02 +0900</pubDate>
-    <lastBuildDate>Tue, 02 Dec 2014 20:30:02 +0900</lastBuildDate>
+    <pubDate>Thu, 04 Dec 2014 20:00:14 +0900</pubDate>
+    <lastBuildDate>Thu, 04 Dec 2014 20:00:14 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -215,7 +215,7 @@ brew install brew-cask
 
 &lt;span class=&quot;c&quot;&gt;# mozart&lt;/span&gt;
 brew tap caskroom/homebrew-versions
-brew cask install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+brew install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;補足&lt;/h3&gt;
 
@@ -223,7 +223,14 @@ brew cask install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;動作確認&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;2014.12.04 追記&lt;/h3&gt;
+
+&lt;p&gt;mozart2がhomebrew-caskではなくhomevrewで管理されるようになったので現在は以下のコマンドでインストールできます。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install emacs --japanese --cocoa --srgb --with-gnutls -v
+brew install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;動作確認&lt;/h3&gt;
 
 &lt;p&gt;Mozart2.appを起動して2フレームのEmacsが起動すればOKです。&lt;/p&gt;
 
