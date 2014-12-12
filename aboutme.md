@@ -22,6 +22,7 @@ Mobile applications, Activity recognition, Image processing, Data analysis.
 
 ### Work Experience
 
+* Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc</a>, 12.2014
 * Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
 * 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc</a>, 09.2014
 * Research internship, <a href="http://www.dfki.de/web/">DFKI</a>, 10.2013 - 03.2014
