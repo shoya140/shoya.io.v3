@@ -3,7 +3,7 @@ layout: page
 title: Shoya Ishimaru
 permalink: /aboutme/
 ---
-<img src="/assets/img/birthday.png" class="image-on-frame image-trimmed-by-circle" width="150px" alt="Shoya Ishimaru">
+<img src="/assets/img/icon-dot.png" class="image-center" width="150px" alt="Shoya Ishimaru">
 
 ## Shoya Ishimaru [[jp](/aboutme/jp/)]
 
