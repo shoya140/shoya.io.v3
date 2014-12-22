@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="Pythonライブラリを作成してPyPIに登録する">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://shoya.io/blog/pypi/">
+    
+        <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>Pythonライブラリを作成してPyPIに登録する - shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://shoya.io/blog/pypi/">
+    <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
+
+    <script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/star.js"></script>
+    <script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+    <script src="/assets/js/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/research/">Research</a>
+          <a class="page-link" href="/development/">Development</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          <div class="post">
+
+  <header class="post-header">
+    <p class="post-meta">Dec 22, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/pypi/"><h1 class="post-title">Pythonライブラリを作成してPyPIに登録する</h1></a>
+  </header>
+
+  <article class="post-content">
+    <p><a href="https://pypi.python.org/pypi/dalmatian/"><img src="https://dl.dropboxusercontent.com/u/12208857/img/pypi01.png" class="image-on-frame-medium image-fade" /></a></p>
+
+<p>Confusion Matrix(混同行列)を視覚的に描画する<a href="https://pypi.python.org/pypi/dalmatian/">dalmatian</a>というライブラリを作成してPyPIに登録しました(<a href="https://github.com/shoya140/dalmatian">ソースコードはGitHubで公開</a>)。パッケージの作成とPyPIへの登録、情報が少なくて苦労したので、必要なファイルと公開手順についてメモを残しておきます。</p>
+
+<h3 id="section">ファイル構成</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dalmatian
+├── README.md
+├── dalmatian
+│   ├── __init__.py
+│   ├── matrix.py
+│   └── test.py
+├── register.py
+└── setup.py</code></pre></div>
+
+<p>dalmatian/dalmatian/matrix.pyがモジュールの実体でtest.pyがテストファイルです。必要なファイルはsetup.pyと__init__.py。register.pyやREADME.mdは任意。</p>
+
+<h3 id="setuppy">setup.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># coding: utf-8</span>
+
+try:
+    import setuptools
+    from setuptools import setup, find_packages
+except ImportError:
+    print<span class="o">(</span><span class="s2">&quot;Please install setuptools.&quot;</span><span class="o">)</span>
+
+import os
+<span class="nv">long_description</span> <span class="o">=</span> <span class="s1">&#39;Visualizing a confusion matrix with gradations&#39;</span>
+<span class="k">if</span> os.path.exists<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span>:
+    <span class="nv">long_description</span> <span class="o">=</span> open<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span>.read<span class="o">()</span>
+
+setup<span class="o">(</span>
+    <span class="nv">name</span>  <span class="o">=</span> <span class="s1">&#39;dalmatian&#39;</span>,
+    <span class="nv">version</span> <span class="o">=</span> <span class="s1">&#39;0.1.3&#39;</span>,
+    <span class="nv">description</span> <span class="o">=</span> <span class="s1">&#39;Visualizing a confusion matrix with gradations&#39;</span>,
+    <span class="nv">long_description</span> <span class="o">=</span> long_description,
+    <span class="nv">license</span> <span class="o">=</span> <span class="s1">&#39;MIT&#39;</span>,
+    <span class="nv">author</span> <span class="o">=</span> <span class="s1">&#39;Shoya Ishimaru&#39;</span>,
+    <span class="nv">author_email</span> <span class="o">=</span> <span class="s1">&#39;shoya.ishimaru@gmail.com&#39;</span>,
+    <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shoya140/dalmatian&#39;</span>,
+    <span class="nv">keywords</span> <span class="o">=</span> <span class="s1">&#39;confusion matrix&#39;</span>,
+    <span class="nv">packages</span> <span class="o">=</span> find_packages<span class="o">()</span>,
+    <span class="nv">install_requires</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;numpy&#39;</span>, <span class="s1">&#39;reportlab&#39;</span><span class="o">]</span>,
+    <span class="nv">classifiers</span> <span class="o">=</span> <span class="o">[</span>
+      <span class="s1">&#39;Programming Language :: Python :: 2.7&#39;</span>,
+      <span class="s1">&#39;Intended Audience :: Science/Research&#39;</span>,
+      <span class="s1">&#39;License :: OSI Approved :: MIT License&#39;</span>
+    <span class="o">]</span>
+<span class="o">)</span></code></pre></div>
+
+<p>上から順に説明します。ライブラリのインストールにはsetuptoolsを使用するのでimport。setuptoolsがインストールされていないときは警告を出して終了します。</p>
+
+<p>PyPIのWebサイトにはreStructuredTextで書いたREADMEドキュメントを表示できるところがあります。やっぱりMarkdownで書きたいので、後述するregister.pyでREADME.mdの内容を変換します。config.pyでは変換によって出力されたテキストをlong_descriptionに代入しています。<cite><a href="https://coderwall.com/p/qawuyq/use-markdown-readme-s-in-python-modules">Use Markdown README’s in Python modules</a></cite></p>
+
+<p>setup()の中にはライブラリの名前・バージョン・ライセンス形態・依存ライブラリなどを記入します。classifiersは<a href="https://pypi.python.org/pypi?%3Aaction=list_classifiers">PyPIのWebサイト</a>から適しているものを見つけて設定します。<cite><a href="http://qiita.com/futoase/items/fb7400bfa8c956336ff1">今どきのPythonのライブラリ自作からPyPIへの登録</a></cite></p>
+
+<h3 id="registerpy">register.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">import os
+import pypandoc
+
+<span class="nv">f</span> <span class="o">=</span> open<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span>,<span class="s1">&#39;w+&#39;</span><span class="o">)</span>
+f.write<span class="o">(</span>pypandoc.convert<span class="o">(</span><span class="s1">&#39;README.md&#39;</span>, <span class="s1">&#39;rst&#39;</span><span class="o">))</span>
+f.close<span class="o">()</span>
+os.system<span class="o">(</span><span class="s2">&quot;python setup.py sdist upload&quot;</span><span class="o">)</span>
+os.remove<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span></code></pre></div>
+
+<p>Markdownで書かれたREADME.mdをreStructuredTextに変換するスクリプトです。python setup.py sdist uploadも含めることで、python register.pyのコマンドひとつで公開までできるようにしました。</p>
+
+<h3 id="initpy">__init__.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># coding:utf-8</span>
+
+from matrix import Matrix</code></pre></div>
+
+<p>モジュールの実体と同じ階層に__init__.pyという名前でファイルを作成します。中身は空でも良いのですが、ここでクラスを列挙してimportすることで、ライブラリを使用するときにLIBRARY_NAME.CLASS_NAMEの形でクラスを扱うことができるようになります。</p>
+
+<h3 id="gitignore">.gitignore</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">.DS_Store
+*.swp
+*.swo
+*.pyc
+*.egg-info/
+dist/</code></pre></div>
+
+<p>ソースコードをGitHubなどで公開する場合は、パッケージ作成にともなって作られるファイルを.gitignoreに書いておくことを忘れないようにしましょう。</p>
+
+<h3 id="section-1">公開</h3>
+
+<p>まず<a href="https://pypi.python.org/pypi">PyPI</a> &gt; Registerでアカウントを作成します。次に下記のコマンドを実行します。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># register.pyを作成している場合</span>
+<span class="nv">$ </span>python register.py
+
+<span class="c"># 作成していない場合</span>
+<span class="nv">$ </span>python setup.py sdist upload</code></pre></div>
+
+<p>最初のアップロードではアカウント情報を入力します(.pypircに保存される)。結果出力が200でエラーがなければライブラリの公開は完了です。</p>
+
+<p>今日からあなたもpypi author!!</p>
+
+  </article>
+
+  <div class="post-relations">
+    
+  </div>
+
+  <div class="post-social">
+  	<div class="tweet-button"><a href="https://twitter.com/share?text=Python%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6PyPI%E3%81%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pypi/&amp;t=Python%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6PyPI%E3%81%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/pypi/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+  	<div class="hatena-star"><a href="http://shoya.io/blog/pypi/" style="display: none;">hatena</a></div>
+  </div>
+
+  <div class="pagenation">
+    
+      <div class="page-button"><a href="/blog/looking-back-at-2014/"></a><span class="lsf">left</span> 2014年振り返り</div>
+    
+    
+      <div class="page-button-disabled">Next <span class="lsf">right</span></div>
+    
+  </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> New Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/pypi/">Pythonライブラリを作成してPyPIに登録する</a></li>
+        
+          <li>- <a href="/blog/looking-back-at-2014/">2014年振り返り</a></li>
+        
+          <li>- <a href="/blog/pair-programming/">ペアプログラミングを支える技術</a></li>
+        
+          <li>- <a href="/blog/hakuryuen/">白龍園観覧</a></li>
+        
+          <li>- <a href="/blog/sublime-latex/">Sublime Text3でLaTeXをコンパイルする[Mac]</a></li>
+        
+          <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> Popular Posts</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/towards-a-scientist/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> Tags</p>
+        
+        [<a href="/tag/Event/">Event</a>]
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Programming/">Programming</a>]
+        
+        [<a href="/tag/Infrastructure/">Infrastructure</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <a href = "https://docs.google.com/forms/d/1oEXmb1m7QMJeorhI99NFCTKlXcQ0O5AP4B9qoaDmcl8/viewform"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>
+      <a href = "http://mrk1869.com/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a> 2014</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </body>
+
+</html>

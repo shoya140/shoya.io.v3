@@ -28,4 +28,4 @@ permalink: /development/
 
 ## Library
 
-* <a href = "https://github.com/Mrk1869/SIGraphicsKit"><span style="font-weight: 700;">SIGraphicsKit</span></a><br>研究者のためのグラフ描画ライブラリ
+* <a href = "https://pypi.python.org/pypi/dalmatian/"><span style="font-weight: 700;">dalmatian</span></a><br>Confusion Matrix(混同行列)を視覚的に描画するpythonライブラリ

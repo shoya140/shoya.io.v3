@@ -67,6 +67,87 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">May 13, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/chef_prepare/"><h1 class="post-title">Chefのknife solo prepareで404</h1></a>
+  </header>
+  <article class="post-content">
+    <h3 id="section">問題</h3>
+
+<p>Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2238</span>      <span class="m">0</span>  0:00:07  0:00:07 --:--:--  9674
+Downloading Chef 11.14.0.alpha.2 <span class="k">for</span> debian...
+downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+  to file /tmp/install.sh.2565/metadata.txt
+trying wget...
+ERROR 404
+Unable to retrieve a valid package!
+Please file a bug report at http://tickets.opscode.com
+Project: Chef
+Component: Packages
+Label: Omnibus
+Version: 11.14.0.alpha.2
+
+Please detail your operating system <span class="nb">type</span>, version and any other relevant details
+Metadata URL: https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+Generating node config <span class="s1">&#39;nodes/dev_debian.json&#39;</span>...</code></pre></div>
+
+<h3 id="section-1">解決</h3>
+
+<p><a href="http://stackoverflow.com/questions/23591190/knife-solo-prepare-fails">Knife-solo prepare fails - stackoverflow</a></p>
+
+<p>opscode(version 11.14.0.alpha.2)側の問題なので、オプションでchefのバージョンを指定してあげるといいよとの回答。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian --bootstrap-version 11.12.0
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2345</span>      <span class="m">0</span>  0:00:06  0:00:06 --:--:-- 14026
+Downloading Chef 11.12.0 <span class="k">for</span> debian...
+downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.12.0<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+  to file /tmp/install.sh.2608/metadata.txt
+trying wget...
+url    https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+md5    e3cefe75258f5d737b729ed549cadfc5
+sha256    3707bb7781317ce2928378564b95675291b9c3daa10a879bc77bea1333c83a9b
+downloaded metadata file looks valid...
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+  to file /tmp/install.sh.2608/chef_11.12.0-1_amd64.deb
+trying wget...
+Comparing checksum with sha256sum...
+Installing Chef 11.12.0
+installing with dpkg...
+Selecting previously unselected package chef.
+<span class="o">(</span>Reading database ... <span class="m">39953</span> files and directories currently installed.<span class="o">)</span>
+Unpacking chef <span class="o">(</span>from .../chef_11.12.0-1_amd64.deb<span class="o">)</span> ...
+Setting up chef <span class="o">(</span>11.12.0-1<span class="o">)</span> ...
+Thank you <span class="k">for</span> installing Chef!</code></pre></div>
+
+<p>新しいバージョンが提供されるまではこれが応急処置みたい。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/chef_prepare/&amp;t=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/chef_prepare/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/chef_prepare/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">May 9, 2014
     
     [<a href="/tag/Programming/">Programming</a>]
@@ -316,64 +397,6 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Apr 29, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/quick_response/"><h1 class="post-title">Quick Response</h1></a>
-  </header>
-  <article class="post-content">
-    <p>メールをできるだけ早く返すように心がけている。そう思うようになったきっかけは「<a href="http://book-mrk1869.tumblr.com/post/83999920951">MITメディアラボ  魔法のイノベーション・パワー</a>」という本のなかのこの一節。簡潔な返事が良い。</p>
-
-<blockquote>
-  <p>ある日の午後、私はリハビリ・セッションを終えた母親に会うためにリハビリ病棟の食堂で待っているあいだ、ヒュー・ハーにメールを送った。「ヒュー、この高齢化社会で、お年寄りの転倒を減らすことができれば、これまでのがん研究なんかよりもずっと、人々の生活向上に貢献できると思うんだけれどね。ぜひその方法を考えるべきだ」<br />
-すぐにヒューからメールが返ってきた。「今スキー中。あとで考えてみる」</p>
-</blockquote>
-
-<p>時間のかかるタスクを含むメールが来た時を考える。タスクをすべて終わらせてか返信すると、時間がかかってよくない。こちらのメールが届くまで相手の作業を止めていることもあるので、自分がそれらにいつ取り掛かれるか、今どれくらい終えているのかを先に知らせるべきである。手がふさがっている場合は読んだことだけ伝えることも大切だと考えている。</p>
-
-<p>また、返信が遅れるとこんなスパイラルに陥ってしまうことがある。</p>
-
-<pre>
-メールが来る
---&gt;返信が遅れる
---&gt;遅れたぶん, きちんとした文章で返信しよう
---&gt;文面悩む
---&gt;返信が遅れる
---&gt;(繰り返し)
-</pre>
-
-<p>進捗報告の遅延と同じである。</p>
-
-<pre>
-進捗どうですか
---&gt;報告が遅れる
---&gt;遅れたぶん, 期待値を上回る成果を出してから報告しよう
---&gt;成果まだ足りない
---&gt;報告が遅れる
---&gt;(繰り返し)
-</pre>
-
-<p>誰かを待たせることで、自分の中で(勝手に)期待値を上げてしまうのよくない。</p>
-
-<p>一方で、最近は(物理的にも社会的にも)窓口が増えて、取りこぼしてしまう連絡も増えた。ということで、送ってから2日ほど経っても何の連絡がない場合は、見逃している可能性が高いので遠慮なく催促してください。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Quick%20Response%20-%20shoya.io"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/quick_response/&amp;t=Quick%20Response" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/entry/http://shoya.io/blog/quick_response/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/quick_response/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -396,6 +419,8 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/pypi/">Pythonライブラリを作成してPyPIに登録する</a></li>
+        
           <li>- <a href="/blog/looking-back-at-2014/">2014年振り返り</a></li>
         
           <li>- <a href="/blog/pair-programming/">ペアプログラミングを支える技術</a></li>
@@ -405,8 +430,6 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
           <li>- <a href="/blog/sublime-latex/">Sublime Text3でLaTeXをコンパイルする[Mac]</a></li>
         
           <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
-        
-          <li>- <a href="/blog/brew-mozart/">HomebrewでOz開発環境を整える[Mozart2][Emacs]</a></li>
         
         </ul>
       </div>

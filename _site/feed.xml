@@ -5,9 +5,125 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Dec 2014 12:39:43 +0900</pubDate>
-    <lastBuildDate>Thu, 18 Dec 2014 12:39:43 +0900</lastBuildDate>
+    <pubDate>Tue, 23 Dec 2014 05:44:38 +0900</pubDate>
+    <lastBuildDate>Tue, 23 Dec 2014 05:44:38 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Pythonライブラリを作成してPyPIに登録する</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://pypi.python.org/pypi/dalmatian/&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pypi01.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Confusion Matrix(混同行列)を視覚的に描画する&lt;a href=&quot;https://pypi.python.org/pypi/dalmatian/&quot;&gt;dalmatian&lt;/a&gt;というライブラリを作成してPyPIに登録しました(&lt;a href=&quot;https://github.com/shoya140/dalmatian&quot;&gt;ソースコードはGitHubで公開&lt;/a&gt;)。パッケージの作成とPyPIへの登録、情報が少なくて苦労したので、必要なファイルと公開手順についてメモを残しておきます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;ファイル構成&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;dalmatian
+├── README.md
+├── dalmatian
+│   ├── __init__.py
+│   ├── matrix.py
+│   └── test.py
+├── register.py
+└── setup.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;dalmatian/dalmatian/matrix.pyがモジュールの実体でtest.pyがテストファイルです。必要なファイルはsetup.pyと__init__.py。register.pyやREADME.mdは任意。&lt;/p&gt;
+
+&lt;h3 id=&quot;setuppy&quot;&gt;setup.py&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# coding: utf-8&lt;/span&gt;
+
+try:
+    import setuptools
+    from setuptools import setup, find_packages
+except ImportError:
+    print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Please install setuptools.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+import os
+&lt;span class=&quot;nv&quot;&gt;long_description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Visualizing a confusion matrix with gradations&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; os.path.exists&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.txt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+    &lt;span class=&quot;nv&quot;&gt;long_description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.txt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+setup&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;dalmatian&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;0.1.3&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Visualizing a confusion matrix with gradations&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;long_description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; long_description,
+    &lt;span class=&quot;nv&quot;&gt;license&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MIT&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;author&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Shoya Ishimaru&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;author_email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;shoya.ishimaru@gmail.com&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://github.com/shoya140/dalmatian&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;keywords&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;confusion matrix&amp;#39;&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;packages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; find_packages&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;install_requires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;numpy&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;reportlab&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
+    &lt;span class=&quot;nv&quot;&gt;classifiers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;Programming Language :: Python :: 2.7&amp;#39;&lt;/span&gt;,
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;Intended Audience :: Science/Research&amp;#39;&lt;/span&gt;,
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;License :: OSI Approved :: MIT License&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;上から順に説明します。ライブラリのインストールにはsetuptoolsを使用するのでimport。setuptoolsがインストールされていないときは警告を出して終了します。&lt;/p&gt;
+
+&lt;p&gt;PyPIのWebサイトにはreStructuredTextで書いたREADMEドキュメントを表示できるところがあります。やっぱりMarkdownで書きたいので、後述するregister.pyでREADME.mdの内容を変換します。config.pyでは変換によって出力されたテキストをlong_descriptionに代入しています。&lt;cite&gt;&lt;a href=&quot;https://coderwall.com/p/qawuyq/use-markdown-readme-s-in-python-modules&quot;&gt;Use Markdown README’s in Python modules&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;setup()の中にはライブラリの名前・バージョン・ライセンス形態・依存ライブラリなどを記入します。classifiersは&lt;a href=&quot;https://pypi.python.org/pypi?%3Aaction=list_classifiers&quot;&gt;PyPIのWebサイト&lt;/a&gt;から適しているものを見つけて設定します。&lt;cite&gt;&lt;a href=&quot;http://qiita.com/futoase/items/fb7400bfa8c956336ff1&quot;&gt;今どきのPythonのライブラリ自作からPyPIへの登録&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;registerpy&quot;&gt;register.py&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import os
+import pypandoc
+
+&lt;span class=&quot;nv&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.txt&amp;#39;&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+f.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pypandoc.convert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.md&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;rst&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+f.close&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+os.system&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;python setup.py sdist upload&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+os.remove&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;README.txt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Markdownで書かれたREADME.mdをreStructuredTextに変換するスクリプトです。python setup.py sdist uploadも含めることで、python register.pyのコマンドひとつで公開までできるようにしました。&lt;/p&gt;
+
+&lt;h3 id=&quot;initpy&quot;&gt;__init__.py&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# coding:utf-8&lt;/span&gt;
+
+from matrix import Matrix&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;モジュールの実体と同じ階層に__init__.pyという名前でファイルを作成します。中身は空でも良いのですが、ここでクラスを列挙してimportすることで、ライブラリを使用するときにLIBRARY_NAME.CLASS_NAMEの形でクラスを扱うことができるようになります。&lt;/p&gt;
+
+&lt;h3 id=&quot;gitignore&quot;&gt;.gitignore&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;.DS_Store
+*.swp
+*.swo
+*.pyc
+*.egg-info/
+dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ソースコードをGitHubなどで公開する場合は、パッケージ作成にともなって作られるファイルを.gitignoreに書いておくことを忘れないようにしましょう。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;公開&lt;/h3&gt;
+
+&lt;p&gt;まず&lt;a href=&quot;https://pypi.python.org/pypi&quot;&gt;PyPI&lt;/a&gt; &amp;gt; Registerでアカウントを作成します。次に下記のコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# register.pyを作成している場合&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python register.py
+
+&lt;span class=&quot;c&quot;&gt;# 作成していない場合&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python setup.py sdist upload&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;最初のアップロードではアカウント情報を入力します(.pypircに保存される)。結果出力が200でエラーがなければライブラリの公開は完了です。&lt;/p&gt;
+
+&lt;p&gt;今日からあなたもpypi author!!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Dec 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/pypi/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/pypi/</guid>
+        
+        <category>Programming</category>
+        
+        
+        <category>server</category>
+        
+      </item>
     
       <item>
         <title>2014年振り返り</title>
@@ -377,36 +493,6 @@ brew install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <pubDate>Thu, 06 Nov 2014 00:00:00 +0900</pubDate>
         <link>http://shoya.io/blog/protocol/</link>
         <guid isPermaLink="true">http://shoya.io/blog/protocol/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>coffee</category>
-        
-      </item>
-    
-      <item>
-        <title>「How Google Works」読んだ</title>
-        <description>&lt;p&gt;組織を成功に導く人材として、「ビジネスセンス」「専門知識」「クリエイティブなエネルギー」「自分で手を動かして業務を遂行しようとする姿勢」を兼ね揃えた人たちがいる。この本ではそういった人たちを「&lt;strong&gt;スマート・クリエイティブ&lt;/strong&gt;」と呼び、&lt;strong&gt;彼らにとって働きやすい環境とは何か、その環境をどうやってマネジメントすればよいか&lt;/strong&gt;について述べている。&lt;/p&gt;
-
-&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/41wP3LRm7QL._SL75_.jpg&quot; width=&quot;52&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4532319552/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;How Google Works (ハウ・グーグル・ワークス)  ―私たちの働き方とマネジメント&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;エリック・シュミット, ジョナサン・ローゼンバーグ, アラン・イーグル&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;スマート・クリエイティブについては本から(ほぼ1節まるごと)引用している記事があるのでこちらを読むのがおすすめ。&lt;a href=&quot;http://www.lifehacker.jp/2014/10/141014book_to_read.html&quot;&gt;Googleの現場には何が起きていたか。前CEOたちが語る「スマート・クリエイティブ」の成功論 - lifehacker&lt;/a&gt; 自分もやがてはこのようなセンスを身につけた人になりたいし、スマート・クリエイティブの働き方を尊重してくれる文化に出会えたらいいなと思う。&lt;/p&gt;
-
-&lt;p&gt;特に感銘をうけたのが&lt;strong&gt;良い意味の“働きすぎ”&lt;/strong&gt;という節。社員に責任と自由を与えることで、社員が自分に最適なワークライフ・バランスを見つけ実現できると書かれている。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;2012年にヤフーCEOになった直後に、シリコンバレーで最も有名なワーキングマザーのひとりになったマリッサ・メイヤーは、燃え尽き症候群の原因は働きすぎではなく、自分にとって本当に大切なことを諦めなければならなくなったときに起こる、と語っている。スマート・クリエイティブに決定権を与えよう。そうすれば、自分にとって好ましい働き方はどんなものか、最適な判断を下すだろう。
-&lt;cite&gt;How Google Works&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とても共感できる。自分はいま半年ほどいわゆるバーンアウトで体調を崩している。そのきっかけになった時期というのが、確かにやるべきことに追われてやりたいことを犠牲にし始めた頃だった気がする。時間は有限でありやるべきことを優先すべきなのは分かる。でもいろんなことに挑戦したい性分なのでついたくさん抱えてしまう。今の悩みは、多忙自体ではなく、やる気がでないことによるパフォーマンスの低下と、限られた時間内にタスクそれぞれに対して満足のいく成果が出せない葛藤にあると思う。この半年間で&lt;strong&gt;やるべきこととやりたいことのバランスは大事&lt;/strong&gt;ということを痛感した。&lt;/p&gt;
-
-&lt;p&gt;話がそれたので元に戻そう。この本を通じて、ワークライフ・バランス、ナレッジマネジメント、コミュニケーションなど、働きやすい環境をどういう視点で見つけるか(あるいは作るか)ということを学んだ。もちろん、やや過酷ではあるが目標を実現するための近道になる環境もあると思う。今後就職するならばどのようなバランスでどういった職場を渡るべきか、選択肢になる一冊だった。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 05 Nov 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/how-google-works/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/how-google-works/</guid>
         
         <category>Note</category>
         
