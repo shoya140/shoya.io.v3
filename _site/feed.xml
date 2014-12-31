@@ -5,9 +5,34 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 Dec 2014 20:21:22 +0900</pubDate>
-    <lastBuildDate>Wed, 24 Dec 2014 20:21:22 +0900</lastBuildDate>
+    <pubDate>Wed, 31 Dec 2014 20:28:17 +0900</pubDate>
+    <lastBuildDate>Wed, 31 Dec 2014 20:28:17 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>「心の脳科学」読んだ</title>
+        <description>&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4121019725/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/31%2BneIEVCcL._SL75_.jpg&quot; width=&quot;48&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/4121019725/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;心の脳科学―「わたし」は脳から生まれる (中公新書)&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;坂井 克之&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;今日はT大学入学試験の初日、これから二日間が本当の戦いの始まりだ。一ヶ月間前に行われた脳構造評価では、僕の前頭葉皮質体積の偏差値は八〇、海馬体積の偏差値は七五だった。全国共通脳評価でかなり上位に入るってことは確かだけど、所詮これは脳の形や大きさの評価にすぎない。肝心の脳の働きの評価は、各大学で施行される脳機能試験で評価されるってわけだ。ここでは各大学の評価基準に基づいて問題が出題され、その解答成績だけでなく、問題を解いているときの脳活動も評価の対象となる。 &lt;cite&gt;坂井克之「心の脳科学」&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なかなか衝撃的な未来の脳社会のフィクションから始まる坂井克之著「心の脳科学」を読んだ。この本では&lt;strong&gt;脳画像研究によって解明されてきた脳の仕組み&lt;/strong&gt;を紹介し、脳のメカニズムが解明されるにしたがって浮かび上がってくる&lt;strong&gt;「わたしとは何か」という問題&lt;/strong&gt;を読者に投げかける。&lt;/p&gt;
+
+&lt;p&gt;面白いのはこの本を読み進めているうちに「『わたし』が意識して『脳』を操作している」のか「『脳』の活動によって『わたし』という意識が存在している」のかが分からなくなっていくところ。後者が正しければ、&lt;strong&gt;脳活動の測定によって人の心を理解・操作する&lt;/strong&gt;ことができる日が来るかもしれない。脳を治療して心を良い状態に保ったり、筆記テストに変わる知力の測定方法が生まれたり、脳の診断から潜在的な犯罪傾向を測定したり。同時に治療者や社会という名のもとに個人の心や思考が操作されてしまう危険性もある。&lt;/p&gt;
+
+&lt;p&gt;一方で脳の研究というと(上記のような)可能性や怖さが人目を惹く傾向にあり、脳科学の進歩によってどんなことができないと明らかになったかについて目を向ける人は少ない。僕たちは予備知識を身につけて、安易な情報に流されず自身の未来を選択しなければならない。その点において、この本は脳機能の解明を目的とする多くの研究を&lt;strong&gt;明確な引用&lt;/strong&gt;とともに紹介しているのが良い。研究から導かれた結果のすぐ後ろに著者名を書き、章の終わりには参考文献として引用元の論文を記してある。ここを起点に興味のある研究を掘り下げていくことができる。脳科学の入門書として最適な一冊だと思う。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 31 Dec 2014 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/brain-science-for-the-mind/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/brain-science-for-the-mind/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
     
       <item>
         <title>Pythonライブラリを作成してPyPIに登録する</title>
@@ -470,31 +495,6 @@ brew install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <guid isPermaLink="true">http://shoya.io/blog/sublime-sync/</guid>
         
         <category>Infrastructure</category>
-        
-        
-        <category>coffee</category>
-        
-      </item>
-    
-      <item>
-        <title>実験を始める前のチェックリスト</title>
-        <description>&lt;p&gt;被験者を募ってデータをとることがよくある。やり直しがきかないので、実験(データの記録)を始める前にはいつも細心の注意を払っている。この「気をつけていることリスト」を研究室のwikiに書いておこうと思ったのだけれど、非公開にすることでもないような気がするので、ここにまとめてみた。「体にセンサを取り付けて決められた行動(タスク)をとる」という実験を想定して項目をあげる。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;タスクをまず自分で体験して記録の漏れをなくす。&lt;/li&gt;
-  &lt;li&gt;実験手順をプロトコルとして記述しておく。&lt;/li&gt;
-  &lt;li&gt;実験中は全景が分かるground truth videoをWebカメラで撮影する。&lt;/li&gt;
-  &lt;li&gt;各センサの同期に使うユニークな動きをタスクの開始前に入れる。&lt;/li&gt;
-  &lt;li&gt;記録されたデータをテストにかけて、データの欠損がないか確認する。&lt;/li&gt;
-  &lt;li&gt;データの記録時間は必要よりやや長めに設定しておく。&lt;/li&gt;
-  &lt;li&gt;記録装置のバッテリ切れに注意する。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 06 Nov 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/protocol/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/protocol/</guid>
-        
-        <category>Note</category>
         
         
         <category>coffee</category>

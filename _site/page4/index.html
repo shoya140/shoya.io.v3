@@ -67,6 +67,70 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Nov 7, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/sublime-sync/"><h1 class="post-title">Sublime Text3の設定をGit+Dropboxで安全に同期する</h1></a>
+  </header>
+  <article class="post-content">
+    <p><a href="http://shoya.io/blog/hello-sublime/">Sublime Text3導入メモ</a>で設定ファイルをDropboxで同期する方法を書いたのだけれど、意図しないタイミングで設定が同期されてコンフリクトが頻繁に発生するので、設定をGitで管理することにした。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png" class="image-on-frame-small" /></p>
+
+<p>設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「<strong>過去の状態に戻しやすくなる</strong>」「<strong>任意のタイミングで同期できる</strong>」というメリットがある。</p>
+
+<h3 id="section">1台目の手順</h3>
+
+<p>まずはDropbox上にリモートリポジトリを作成する。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir -p ~/Dropbox/Git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/Dropbox/Git
+<span class="nv">$ </span>git init —bare sublime.git</code></pre></div>
+
+<p>次にSublimeの設定フォルダへ移動してgit initを実行。ignoreするファイルは<cite><a href="https://sublime.wbond.net/docs/syncing">Syncing - Package Control</a></cite>を参考にした。Dropboxのシンボリックリンクにしている場合は元に戻してから行うこと。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User
+<span class="nv">$ </span>subl .gitignore <span class="c"># 下記のファイルを.gitignoreに書く</span>
+	Package<span class="se">\ </span>Control.last-run
+	Package<span class="se">\ </span>Control.ca-list
+	Package<span class="se">\ </span>Control.ca-bundle
+	Package<span class="se">\ </span>Control.system-ca-bundle
+	Package<span class="se">\ </span>Control.cache/
+	Package<span class="se">\ </span>Control.ca-certs/
+<span class="nv">$ </span>git init
+<span class="nv">$ </span>git remote add origin ~/Dropbox/Git/sublime.git
+<span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;init&quot;</span>
+<span class="nv">$ </span>git push origin master</code></pre></div>
+
+<h3 id="section-1">2台目の手順</h3>
+
+<p>既存の設定フォルダを削除してからgit clone.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages
+<span class="nv">$ </span>rm -rf User
+<span class="nv">$ </span>git clone ~/Dropbox/Git/sublime.git User</code></pre></div>
+
+<p>以後は変更の度にcommitして、push/pullで同期すれば良い。設定ファイルのありかを毎回タイプするのは面倒なので、自分は下記のエイリアスを作成している。.zshrcや.bashrcに書いておけばcd_sublime_userで楽に移動できる。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">cd_sublime_user</span><span class="o">=</span><span class="s2">&quot;cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User&quot;</span></code></pre></div>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92Git+Dropbox%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E5%90%8C%E6%9C%9F%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/sublime-sync/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/sublime-sync/&amp;t=Sublime%20Text3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92Git+Dropbox%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E5%90%8C%E6%9C%9F%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/sublime-sync/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/sublime-sync/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Nov 6, 2014
     
     [<a href="/tag/Note/">Note</a>]
@@ -140,110 +204,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Oct 28, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/hello-sublime/"><h1 class="post-title">Sublime Text3導入メモ</h1></a>
-  </header>
-  <article class="post-content">
-    <p>最近VimからSublime Text3に乗り換えました。この記事は導入方法についてのメモです。</p>
-
-<h3 id="homebrew-cask">homebrew-caskからインストール</h3>
-
-<p>アプリケーションはAppStore &gt; homebrew-cask &gt; 手動で管理する主義なので、Sublime Textをhomebrew-caskからインストール。デフォルトのbrew caskからインストールできるSublime Textのversionは2なので注意。version3を追加する。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew tap caskroom/homebrew-versions
-brew cask install sublime-text3</code></pre></div>
-
-<h3 id="package-control">Package Control</h3>
-
-<p>プラグイン管理ツールであるPackage Controlをインストールする。<br />
-メニューバーから View &gt; Show Consoleを開く。下記を入力して実行する。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib<span class="p">;</span> <span class="nv">h</span> <span class="o">=</span> <span class="s1">&#39;7183a2d3e96f11eeadd761d777e62404&#39;</span> + <span class="s1">&#39;e330c659d4bb41d3bdf022e94cab3cd0&#39;</span><span class="p">;</span> <span class="nv">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span> <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span><span class="p">;</span> <span class="nv">by</span> <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">&#39;http://sublime.wbond.net/&#39;</span> + pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>, <span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">()</span><span class="p">;</span> <span class="nv">dh</span> <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span><span class="p">;</span> print<span class="o">(</span><span class="s1">&#39;Error validating download (got %s instead of %s), please try manual install&#39;</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if</span> dh !<span class="o">=</span> h <span class="k">else</span> open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">&#39;wb&#39;</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></div>
-
-<p>インストールが完了したらcommand+shift+p &gt; install packageで起動できる。パッケージ名を検索して選択するとインストールされる。インストールしたパッケージリストは以下に作成される。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/Package<span class="se">\ </span>Control.sublime-settings</code></pre></div>
-
-<p>とりあえず入れたパッケージ</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-	<span class="s2">&quot;installed_packages&quot;</span>:
-	<span class="o">[</span>
-		<span class="s2">&quot;ColorPicker&quot;</span>,
-		<span class="s2">&quot;Gist&quot;</span>,
-		<span class="s2">&quot;Git&quot;</span>,
-		<span class="s2">&quot;HTML5&quot;</span>,
-		<span class="s2">&quot;Jekyll&quot;</span>,
-		<span class="s2">&quot;Markdown Preview&quot;</span>,
-		<span class="s2">&quot;SCSS&quot;</span>,
-		<span class="s2">&quot;Theme - itg.flat&quot;</span>,
-		<span class="s2">&quot;Theme - Soda&quot;</span>
-	<span class="o">]</span>
-<span class="o">}</span></code></pre></div>
-
-<p>参考: <a href="https://sublime.wbond.net/installation">Installation - Package Control</a></p>
-
-<h3 id="pc">複数PC間での設定ファイル同期</h3>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/</code></pre></div>
-<p>に作成されるファイルをDropboxなどに入れてシンボリックリンクを貼れば良い。</p>
-
-<p>1台目</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
-mkdir ~/Dropbox/Sublime
-mv User ~/Dropbox/Sublime/
-ln -s ~/Dropbox/Sublime/Use</code></pre></div>
-
-<p>2台目</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
-rm -r User
-ln -s ~/Dropbox/Sublime/User</code></pre></div>
-
-<p>Gitで管理してgithubに置く場合はアクセスキーやトークンの取り扱いに注意。プライベートリポジトリ推奨。また下記のファイルは.gitignoreに書いて同期しないように設定する。</p>
-
-<ul>
-  <li>Package Control.last-run</li>
-  <li>Package Control.ca-list</li>
-  <li>Package Control.ca-bundle</li>
-  <li>Package Control.system-ca-bundle</li>
-  <li>Package Control.cache/</li>
-  <li>Package Control.ca-certs/</li>
-</ul>
-
-<p>参考: <a href="https://sublime.wbond.net/docs/syncing">Syncing - Package Control</a></p>
-
-<h3 id="section">ターミナルから起動</h3>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>subl <span class="o">[</span>ファイル名<span class="o">]</span> <span class="c"># ファイル名を開く</span>
-<span class="nv">$ </span>subl . <span class="c"># カレントディレクトリを開く</span></code></pre></div>
-
-<h3 id="section-1">利用者の声</h3>
-
-<blockquote class="twitter-tweet" lang="ja"><p>Sublime Textのおかげで楽しく論文を書けるようになりました！(23歳・大学生)</p>&mdash; Shoya Ishimaru (@shoya140) <a href="https://twitter.com/shoya140/status/526782092554694658">2014, 10月 27</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E5%B0%8E%E5%85%A5%E3%83%A1%E3%83%A2%20-%20shoya.io&amp;url=http://shoya.io/blog/hello-sublime/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/hello-sublime/&amp;t=Sublime%20Text3%E5%B0%8E%E5%85%A5%E3%83%A1%E3%83%A2" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/hello-sublime/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/hello-sublime/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -266,6 +226,8 @@ ln -s ~/Dropbox/Sublime/User</code></pre></div>
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/brain-science-for-the-mind/">「心の脳科学」読んだ</a></li>
+        
           <li>- <a href="/blog/pypi/">Pythonライブラリを作成してPyPIに登録する</a></li>
         
           <li>- <a href="/blog/looking-back-at-2014/">2014年振り返り</a></li>
@@ -275,8 +237,6 @@ ln -s ~/Dropbox/Sublime/User</code></pre></div>
           <li>- <a href="/blog/hakuryuen/">白龍園観覧</a></li>
         
           <li>- <a href="/blog/sublime-latex/">Sublime Text3でLaTeXをコンパイルする[Mac]</a></li>
-        
-          <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
         
         </ul>
       </div>

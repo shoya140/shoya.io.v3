@@ -67,6 +67,65 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Dec 1, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/pair-programming/"><h1 class="post-title">ペアプログラミングを支える技術</h1></a>
+  </header>
+  <article class="post-content">
+    <p><a href="http://www.adventar.org/calendars/607">LiT!関西 Advent Calendar 2014</a> 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプログラミングとそれを支えるMacの便利機能について書きます。</p>
+
+<h3 id="section">ペアプログラミングとは</h3>
+
+<p>2人が1台のPCを使ってプログラミングすることです。キーボードを操作してコードを書く人(<strong>ドライバー</strong>)とその様子を眺める人(<strong>ナビゲーター</strong>)の役割に分かれて交代でプログラムを書きます。ドライバーは今何をしようとしているか、ナビゲーターは気になるところや別解について積極的に話しながら作業を進めます。</p>
+
+<p>2人で1つの作業を行うので生産性が落ちるという欠点がありますが、それ以上に<strong>綺麗なコードが書ける</strong>・<strong>互いの知識を共有できる</strong>などの利点があります。特に上級者と初心者がペアを組んでプログラムを書くと、上級者のコードの書き方や<a href="http://blog.shibayu36.org/entry/2013/01/19/202049">開発環境</a>を実際に見て学べる、リアルタイムに助言を受けられる、といった効率のよい学習を行うことができます。</p>
+
+<h3 id="section-1">画面共有しよう</h3>
+
+<p>一緒にコードを書いていると「ちょっと貸して！」みたいな状況が多々あると思います。その度に席を入れ替えたり身を乗り出すのも面倒なので、2人のPCから1つの画面を操作できると便利です。Macはデフォルトで画面を共有する機能を搭載しているので、その使い方について説明します。以下、画面共有を受け入れる側をドライバーPC、申請する側をナビゲーターPCとします。</p>
+
+<p>まずはドライバーPCのシステム環境設定&gt;共有を開きます。1.画面共有にチェックを入れ、2.コンピュータ設定を選択して、3.ほかのユーザが画面操作の権限を要求することを許可にチェックを入れます。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair01.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>次にナビゲーターPCでFinder&gt;移動&gt;サーバへ接続(ショートカットキー:⌘+K)を開き、ドライバーPCに表示されているvnc://(IPアドレス)を入力します。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair02.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>画面操作の権限に関する選択画面が現れるので、アクセス権を要求を選んで接続ボタンを押します。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair03.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>するとドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair04.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプログラミングを開始しましょう。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair05.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>なお、Macの画面共有を使用するには2つのPCが同じネットワークに接続されている必要があります。離れた環境で画面を共有する場合は<a href="https://screenhero.com/">Screenhero</a>・<a href="http://www.teamviewer.com/ja/">TeamViewer</a>・<a href="https://plus.google.com/hangouts">Googleハングアウト</a>のリモートデスクトップ機能を使うことをおすすめします。アカウント作成やソフトウェアのインストールが不要で簡単という理由で、今回は画面共有を紹介しました。</p>
+
+<p><a href="http://www.adventar.org/calendars/607">LiT!関西 Advent Calendar 2014</a>次回はほっしゃん(<a href="https://twitter.com/Recursible">@Recursible</a>)がAndroidのioschedライブラリの解析に関する記事を書いてくれます。お楽しみに！</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%83%9A%E3%82%A2%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93%20-%20shoya.io&amp;url=http://shoya.io/blog/pair-programming/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pair-programming/&amp;t=%E3%83%9A%E3%82%A2%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/pair-programming/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/pair-programming/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Nov 30, 2014
     
     [<a href="/tag/Sightseeing/">Sightseeing</a>]
@@ -166,41 +225,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 13, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/towards-a-scientist/"><h1 class="post-title">なんで科学者を目指すようになったか</h1></a>
-  </header>
-  <article class="post-content">
-    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg" class="image-on-frame-mini" /></p>
-
-<p>幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で<strong>科学体験フェスティバル</strong>を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。</p>
-
-<p>それから中学・高校と理科の授業を受ける中で、興味の対象は物理学・化学・生物学の広く深い方向に伸びていった。高校生の頃に<strong>国際生物学オリンピック</strong>の日本代表を決める選考会に出たことがあって、惜しいところまでいった。(余談だけどサマーウォーズの「あと少しで日本代表になれたのに。」というセリフは聞く度に心に刺さるものがある。)そこで競った同期がとにかく賢く変わり者揃いだった。懇親会のときにひとりが「俺、東大に行こうと思う。」とつぶやいて、僕も私もといった具合に皆が声をあげた。ものすごく盛り上がり、「大学でまた会おう。」と言い合った。たぶん皆そういった刺激を与え合う相手に飢えていたのだと思う。研究の道に進むなら面白い人がたくさんいる環境で過ごしたい思い、僕も<a href="/blog/imabari/">難関校を目指すことを強く決めた</a>。結果、最初に発言した彼は東大に合格し、僕は阪大を受けるが落ちて府大に進学することになった。</p>
-
-<p>阪大には基礎工学部という工学と理学を織り交ぜた研究をしているところがある。僕の幅広い興味や視野と合うと思ったのが、進路に阪大を選んだ理由だった。入学したら<strong>脳科学</strong>の研究をしようと思っていた。第2希望の府大のことはよく知らなかったので、名前をみて知能情報工学科を受験した。脳と能の漢字違いで学部を選んだことを、僕は入学してから知ることになる。</p>
-
-<p>勘違いで選んだ学部も運命で、僕はそのおかげで<strong>情報工学</strong>に出会うことになる。プログラミング、あるいは企画やデザインまで含めたソフトウェア開発は、僕の適正にとてもマッチしていると思う。アイデアを形にして公開するまでのスピードは他分野のものづくりを圧倒するものがある。学部3年生の頃にその面白さに気付き、プログラミングを通じて<a href="/development/">いろんな(変な)ものを生み出して</a>、楽しい経験を積むことができた。その結果、もっと情報工学を学びたいと考え、大学や学術分野を変えることなく大学院へ進学した。巡り巡って僕は現在の研究テーマを<strong>情報工学の視点から見た脳科学や認知的行動</strong>に設定していて、今までの意思決定は間違っていなかったと確信してる。</p>
-
-<p>僕らの世代も就職活動が始まり、進学するか就職するか、いよいよ選択を先延ばしにできない時期になった。<cite><a href="http://memo.sanographix.net/post/69496511652">なんでデザイナーになったか - MEMOGRAPHIX</a></cite>に影響を受けて、科学者になる道を後押しする材料について書いてみたのでした。(開発者になる道を後押しする材料もたくさんあるので、また改めて書くことになると思う。)</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/towards-a-scientist/&amp;t=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/towards-a-scientist/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -223,6 +247,8 @@
         <p><span class="lsf">list</span> New Posts</p>
         <ul>
         
+          <li>- <a href="/blog/brain-science-for-the-mind/">「心の脳科学」読んだ</a></li>
+        
           <li>- <a href="/blog/pypi/">Pythonライブラリを作成してPyPIに登録する</a></li>
         
           <li>- <a href="/blog/looking-back-at-2014/">2014年振り返り</a></li>
@@ -232,8 +258,6 @@
           <li>- <a href="/blog/hakuryuen/">白龍園観覧</a></li>
         
           <li>- <a href="/blog/sublime-latex/">Sublime Text3でLaTeXをコンパイルする[Mac]</a></li>
-        
-          <li>- <a href="/blog/towards-a-scientist/">なんで科学者を目指すようになったか</a></li>
         
         </ul>
       </div>
