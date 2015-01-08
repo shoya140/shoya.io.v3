@@ -5,9 +5,32 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 01 Jan 2015 15:28:01 +0900</pubDate>
-    <lastBuildDate>Thu, 01 Jan 2015 15:28:01 +0900</lastBuildDate>
+    <pubDate>Fri, 09 Jan 2015 03:13:46 +0900</pubDate>
+    <lastBuildDate>Fri, 09 Jan 2015 03:13:46 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>ベイマックス観た</title>
+        <description>&lt;p&gt;感想の前に物語の核心に触れない程度のネタバレがあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bighero6.jpg&quot; class=&quot;image-on-frame-mini image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ヒロ(主人公)はロボット工学の若き天才。大学進学に興味を示さずロボットファイトに興じるヒロ。その様子を見かねた兄タダシは、ヒロを大学の研究室に連れていく。科学オタクのおもしろ研究やロボット工学界の権威キャラハン教授に魅せられて、ヒロは大学進学を決意する。入学するにはキャラハン教授をあっと驚かせることをすれば良い。ヒロは知恵を絞ってオリジナルロボットを開発し、展示会でのデモンストレーションに成功する。&lt;/p&gt;
+
+&lt;p&gt;ここまでの展開が特に良い。訪問者に研究成果を見せたくてたまらない仲間たちや面白いデモを作って展示会の参加者をあっと驚かせてやろうと気持ちを昂ぶらせるヒロの姿は、理系大学院生なら誰もが共感できるところなんじゃないだろうか。僕の2014年は前半頑張りすぎて後半失速気味なところがあって、研究に対するモチベーションを失いかけていたのだけれど、ベイマックス観たおかげで研究を始めた頃の気持ちを思い出すことができた。&lt;/p&gt;
+
+&lt;p&gt;ここから先は王道のヒーローアクション+ヒロとベイマックスの成長といった感じで、物語の最後まで神経伝達物質を増加させてくれた。ベイマックスもう大丈夫だよ。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Jan 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/bighero6/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/bighero6/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
     
       <item>
         <title>「心の脳科学」読んだ</title>
@@ -444,60 +467,6 @@ brew install mozart2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>Sublime Text3の設定をGit+Dropboxで安全に同期する</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://shoya.io/blog/hello-sublime/&quot;&gt;Sublime Text3導入メモ&lt;/a&gt;で設定ファイルをDropboxで同期する方法を書いたのだけれど、意図しないタイミングで設定が同期されてコンフリクトが頻繁に発生するので、設定をGitで管理することにした。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「&lt;strong&gt;過去の状態に戻しやすくなる&lt;/strong&gt;」「&lt;strong&gt;任意のタイミングで同期できる&lt;/strong&gt;」というメリットがある。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;1台目の手順&lt;/h3&gt;
-
-&lt;p&gt;まずはDropbox上にリモートリポジトリを作成する。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir -p ~/Dropbox/Git &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Dropbox/Git
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init —bare sublime.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;次にSublimeの設定フォルダへ移動してgit initを実行。ignoreするファイルは&lt;cite&gt;&lt;a href=&quot;https://sublime.wbond.net/docs/syncing&quot;&gt;Syncing - Package Control&lt;/a&gt;&lt;/cite&gt;を参考にした。Dropboxのシンボリックリンクにしている場合は元に戻してから行うこと。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages/User
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;subl .gitignore &lt;span class=&quot;c&quot;&gt;# 下記のファイルを.gitignoreに書く&lt;/span&gt;
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.last-run
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.ca-list
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.ca-bundle
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.system-ca-bundle
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.cache/
-	Package&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.ca-certs/
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git remote add origin ~/Dropbox/Git/sublime.git
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;2台目の手順&lt;/h3&gt;
-
-&lt;p&gt;既存の設定フォルダを削除してからgit clone.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3/Packages
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rm -rf User
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone ~/Dropbox/Git/sublime.git User&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以後は変更の度にcommitして、push/pullで同期すれば良い。設定ファイルのありかを毎回タイプするのは面倒なので、自分は下記のエイリアスを作成している。.zshrcや.bashrcに書いておけばcd_sublime_userで楽に移動できる。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cd_sublime_user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</description>
-        <pubDate>Fri, 07 Nov 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/sublime-sync/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/sublime-sync/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>coffee</category>
         
       </item>
     
