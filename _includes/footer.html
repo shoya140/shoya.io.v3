@@ -2,23 +2,23 @@
   <div class="wrapper-footer">
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-3">
-        <p><span class="lsf">list</span> New Posts</p>
-        <ul>
-        {% for post in site.posts limit:6 %}
-          <li>- <a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-      </div>
-      <div class="footer-col  footer-col-3">
-        <p><span class="lsf">crown</span> Popular Posts</p>
+        <p><span class="lsf">crown</span> 人気の記事</p>
         <ul>
         {% for popular in site.popular %}
           <li>- <a href="/blog/{{popular}}/" class="linkedTitle">Now loading..</a></li>
         {% endfor %}
         </ul>
       </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> 最近の記事</p>
+        <ul>
+        {% for post in site.posts limit:6 %}
+          <li>- <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
       <div class="footer-col  footer-col-1">
-        <p><span class="lsf">tag</span> Tags</p>
+        <p><span class="lsf">tag</span> 記事のタグ</p>
         {% for tag in site.tags %}
         [<a href="/tag/{{ tag | first }}/">{{ tag | first }}</a>]
         {% endfor %}
