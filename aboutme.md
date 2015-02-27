@@ -22,14 +22,15 @@ Mobile applications, Activity recognition, Image processing, Data analysis.
 
 ### Work Experience
 
-* Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc</a>, 12.2014
+* Data analysis internship, <a href="http://www.recruit.jp/">Recruit Holdings Co.</a>, 02.2015
+* Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc.</a>, 12.2014
 * Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
-* 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc</a>, 09.2014
+* 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc.</a>, 09.2014
 * Research internship, <a href="http://www.dfki.de/web/">DFKI</a>, 10.2013 - 03.2014
-* Engineering mentor, <a href="http://life-is-tech.com/">Life is Tech, Inc</a>, 03.2013 - *
+* Engineering mentor, <a href="http://life-is-tech.com/">Life is Tech, Inc.</a>, 03.2013 - *
 * Engineering internship, <a href="http://www.hatena.ne.jp/">Hatena Co.</a>, 08.2012 - 09.2012
 * Part-time software engineer, <a href="http://www.paperboy.co.jp/">Paperboy&co. Inc</a>, 06.2012 - 12.2012
-* Software engineer, <a href="http://campus-inc.org/">Campus. Inc</a>, 05.2012 - 04.2013
+* Software engineer, <a href="http://campus-inc.org/">Campus. Inc.</a>, 05.2012 - 04.2013
 
 ### Education
 
