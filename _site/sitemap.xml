@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/bootcamp_hyperv/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/recruit_internship/</loc>
     </url>
     
@@ -649,6 +653,14 @@
     
     <url>
         <loc>http://shoya.io/page27/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/page28/</loc>
     </url>
     
     
