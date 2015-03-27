@@ -13,6 +13,7 @@ permalink: /aboutme/jp/
 
 ### Activities
 
+* <a href = "http://recruit-jinji.jp/adf_fes2015/"><span style="font-weight: 600;">APPLICATION DEVELOPER FESTIVAL</span></a> 運営スタッフ (03.2015)
 * <a href = "http://www.recruit.jp/"><span style="font-weight: 600;">株式会社リクルートホールディングス</span></a> ウィンターインターンシップ データ解析コース (02.2015)
 * <a href = "http://www.livesense.co.jp/"><span style="font-weight: 600;">株式会社リブセンス</span></a> インターンシップ (12.2014)
 * <a href = "http://www.kmd.keio.ac.jp/jp/"><span style="font-weight: 600;">慶應義塾大学大学院メディアデザイン研究科附属メディアデザイン研究所</span></a> リサーチャー (11.2014 - )
