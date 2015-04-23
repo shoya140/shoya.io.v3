@@ -13,6 +13,7 @@ permalink: /aboutme/jp/
 
 ### Activities
 
+* <a href = "http://www.microsoft.com/ja-jp/education/imagine-cup.aspx"><span style="font-weight: 600;">Imagine Cup 2015</span></a> イノベーション部門 日本予選大会出場 (04.2015)
 * <a href = "http://recruit-jinji.jp/adf_fes2015/"><span style="font-weight: 600;">APPLICATION DEVELOPER FESTIVAL</span></a> 運営スタッフ (03.2015)
 * <a href = "http://www.recruit.jp/"><span style="font-weight: 600;">株式会社リクルートホールディングス</span></a> ウィンターインターンシップ データ解析コース (02.2015)
 * <a href = "http://www.livesense.co.jp/"><span style="font-weight: 600;">株式会社リブセンス</span></a> インターンシップ (12.2014)
