@@ -6,7 +6,7 @@ permalink: /research/
 
 ## Publications
 
-Shoya Ishimaru, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Smart Eyewear for Interaction and Activity Recognition</span>. Proceedings of the 2015 ACM Conference on Computer Human Interaction (CHI2015). April 2015.
+Shoya Ishimaru, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Smart Eyewear for Interaction and Activity Recognition</span>. Proceedings of the 2015 ACM Conference on Human Factors in Computing Systems (CHI2015). April 2015.
 
 石丸 翔也, クンツェ カイ, 黄瀬 浩一, <span style="font-weight: 700;">眼電位を用いたみんなのための眼球運動認識</span>, 信学技報, vol. 114, no. 230, PRMU2014-62, pp. 45-48, October 2014.
 
