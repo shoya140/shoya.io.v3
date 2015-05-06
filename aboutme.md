@@ -10,7 +10,7 @@ permalink: /aboutme/
 I'm a graduate student studying CS in [OPU](http://www.osakafu-u.ac.jp/english/index.html).<br>
 I'm also a [mobile application](/development/) developer.
 
-My research theme is "Activity Recognition", which involves recognizing and classifying human activities by using data from several sensors.
+My research theme is "Activity Recognition", which involves recognizing and classifying human activities by using data from several sensors. [[publications](/research/)]
 
 ### Objective
 
