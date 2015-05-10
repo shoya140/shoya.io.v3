@@ -4,8 +4,7 @@
 @charset "utf-8";
 
 // Our variables
-//$base-font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font-family: Oxygen, 'Avenir Next', 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-family:'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
 $small-font-size: $base-font-size * 0.8;
@@ -172,7 +171,7 @@ hr{
         @extend .lsf;
         content: "smile";
         display: inline-block;
-        position: relative; 
+        position: relative;
         top: -21px;
         font-size: 24px;
         padding: 0 10px;
@@ -651,7 +650,7 @@ a:hover .footer-icon{
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;    
+    -o-text-overflow: ellipsis;
     @include media-query($on-laptop) {
         width: 44%;
         font-size: $small-font-size;

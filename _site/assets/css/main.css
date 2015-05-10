@@ -147,7 +147,7 @@ dl, dd, ol, ul, figure {
   padding: 0; }
 
 body {
-  font-family: Oxygen, "Avenir Next", "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.8;
   letter-spacing: 0.4px;
@@ -303,7 +303,7 @@ hr {
  * layout
  */
 .site-header {
-  font-family: Oxygen, "Avenir Next", "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-top: 5px solid #292929;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
