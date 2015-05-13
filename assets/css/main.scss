@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family:'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-family: Oxygen, 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-size: 17px;
 $palm-font-size: 14px;
 $small-font-size: $base-font-size * 0.8;
@@ -200,9 +200,9 @@ hr{
 .wrapper-inside{
 	background-color: $background-color;
 	padding-top: $spacing-unit*2;
-    padding-bottom: $spacing-unit*2;
-	padding-right: $spacing-unit*4;
-    padding-left: $spacing-unit*4;
+  padding-bottom: $spacing-unit*2;
+	padding-right: $spacing-unit*3.5;
+  padding-left: $spacing-unit*3.5;
     @include media-query($on-laptop) {
     	padding-right: $spacing-unit*1.2;
     	padding-left: $spacing-unit*1.2;

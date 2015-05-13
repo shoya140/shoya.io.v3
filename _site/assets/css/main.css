@@ -147,7 +147,7 @@ dl, dd, ol, ul, figure {
   padding: 0; }
 
 body {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Oxygen, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.8;
   letter-spacing: 0.4px;
@@ -261,8 +261,8 @@ hr {
   background-color: #fdfdfd;
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-right: 120px;
-  padding-left: 120px; }
+  padding-right: 105px;
+  padding-left: 105px; }
   @media screen and (max-width: 1000px) {
     .wrapper-inside {
       padding-right: 36px;
@@ -303,7 +303,7 @@ hr {
  * layout
  */
 .site-header {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Oxygen, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-top: 5px solid #292929;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
