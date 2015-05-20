@@ -24,6 +24,9 @@ $grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 35%);
 
+$yellow-color: #fcffce;
+$yellow-color-dark: darken($yellow-color, 30%);
+
 $on-palm: 500px;
 $on-laptop: 1000px;
 
@@ -265,6 +268,7 @@ hr{
     min-height: 56px;
     padding-left: $spacing-unit;
     padding-right: $spacing-unit;
+    background-color: rgba(255,255,255,0.9);
 
     @include media-query($on-palm) {
     	padding-left: $spacing-unit*0.3;
@@ -750,4 +754,49 @@ a:hover .footer-icon{
     content: attr(title);
     margin-right: .3em;
     font-size: 130%;
+}
+
+.background{
+    background-image: url("/assets/img/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: $background-color;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 20px;
+        &:before{
+            content: "rightright ";
+            @extend .lsf;
+        }
+    }
+    a{
+        color: $yellow-color;
+        text-decoration: none;
+        &:hover{
+            color: $yellow-color-dark;
+        }
+    }
+    @include media-query($on-palm) {
+        text-align: justify;
+        h2, h3{
+            font-size: 15px;
+        }
+    }
+}
+
+.profile-image{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-size: contain;
+
+    position: relative;
+    display: block;
+    max-width: 90%;
+    margin: 10px auto 50px auto;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
 }

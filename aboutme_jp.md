@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: background
 title: 石丸 翔也
 permalink: /aboutme/jp/
 ---
-<img src="/assets/img/icon-dot.png" class="image-center" width="150px" alt="Shoya Ishimaru">
+<img src="/assets/img/myglass2_ex3_mini.jpg" class="profile-image" width="150px" alt="Shoya Ishimaru">
 
 ## 石丸 翔也 [[en](/aboutme/)]
 
