@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Development
-permalink: /development/
+title: Applications - Shoya Ishimaru
+permalink: /applications/
 ---
 
 ## iPhone

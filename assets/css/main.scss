@@ -800,3 +800,19 @@ a:hover .footer-icon{
     margin: 10px auto 50px auto;
     box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
 }
+
+
+.error-content{
+    padding-top: $spacing-unit*5;
+    padding-bottom: $spacing-unit*5;
+    text-align: center;
+}
+
+.error-number{
+    font-size: 120px;
+    line-height: 0.8;
+}
+
+.error-text{
+    font-size: 24px;
+}

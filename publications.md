@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Research
-permalink: /research/
+title: Publications - Shoya Ishimaru
+permalink: /publications/
 ---
-
-## Publications
 
 ### International Conference
 
@@ -14,7 +12,7 @@ Shoya Ishimaru, Kai Kunze, Koichi Kise and Masahiko Inami. <a href = "http://kai
 
 Shoya Ishimaru, Kai Kunze, Katsuma Tanaka, Yuji Uema, Koichi Kise and Masahiko Inami. <a href = "http://ubicomp.org/ubicomp2014/proceedings/ubicomp_adjunct/demos/p239-ishimaru.pdf"><span style="font-weight: 700;">Smarter Eyewear – Using Commercial EOG Glasses for Activity Recognition</span></a>. Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
 
-Shoya Ishimaru, Jens Weppner, Andreas Poxrucker, Paul Lukowicz, Kai Kunze and Koichi Kise. <a href = "http://ubicomp.org/ubicomp2014/proceedings/ubicomp_adjunct/demos/p283-weppner.pdf"><span style="font-weight: 700;">Shiny - An Activity Logging Platform for Google Glass</span></a>. Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
+Jens Weppner, Andreas Poxrucker, Paul Lukowicz, Shoya Ishimaru, Kai Kunze and Koichi Kise. <a href = "http://ubicomp.org/ubicomp2014/proceedings/ubicomp_adjunct/demos/p283-weppner.pdf"><span style="font-weight: 700;">Shiny - An Activity Logging Platform for Google Glass</span></a>. Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
 
 Shoya Ishimaru, Jens Weppner, Kai Kunze, Andreas Bulling, Koichi Kise, Andreas Dengel and Paul Lukowicz. <a href="http://kaikunze.de/papers/ishimaru2014blink.pdf"><span style="font-weight: 700;">In the Blink of an Eye - Combining Head Motion and Eye Blink Frequency for Activity Recognition with Google Glass</span></a>. Proceedings of the 5th Augmented Human International Conference (AH2014). March 2014.
 

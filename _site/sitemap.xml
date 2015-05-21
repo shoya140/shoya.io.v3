@@ -334,6 +334,14 @@
     
     
     <url>
+        <loc>http://shoya.io/404.html</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>http://shoya.io/aboutme/</loc>
     </url>
     
@@ -350,7 +358,7 @@
     
     
     <url>
-        <loc>http://shoya.io/blog/</loc>
+        <loc>http://shoya.io/applications/</loc>
     </url>
     
     
@@ -358,7 +366,7 @@
     
     
     <url>
-        <loc>http://shoya.io/development/</loc>
+        <loc>http://shoya.io/blog/</loc>
     </url>
     
     
@@ -378,10 +386,18 @@
     
     
     <url>
-        <loc>http://shoya.io/research/</loc>
+        <loc>http://shoya.io/publications/</loc>
     </url>
     
     
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/blog/</loc>
+    </url>
     
     
     
@@ -437,14 +453,6 @@
     
     <url>
         <loc>http://shoya.io/tag/Design/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/blog/</loc>
     </url>
     
     
