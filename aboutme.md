@@ -1,9 +1,9 @@
 ---
-layout: background
+layout: page
 title: Shoya Ishimaru
 permalink: /aboutme/
 ---
-<img src="/assets/img/myglass2_ex3_mini.jpg" class="profile-image" width="150px" alt="Shoya Ishimaru">
+<img src="/assets/img/myglass2_ex3_mini.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="Shoya Ishimaru">
 
 ## Shoya Ishimaru [[jp](/aboutme/jp/)]
 
