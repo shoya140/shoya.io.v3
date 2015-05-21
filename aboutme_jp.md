@@ -3,11 +3,11 @@ layout: page
 title: 石丸 翔也
 permalink: /aboutme/jp/
 ---
-<img src="/assets/img/myglass2_ex3_mini.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="Shoya Ishimaru">
+<img src="/assets/img/myglass2_ex3_mini.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="石丸 翔也">
 
-## 石丸 翔也 [[en](/aboutme/)]
+## 石丸 翔也 [[EN](/aboutme/)/JP]
 
-大阪府立大学 大学院工学研究科 電気・情報系専攻 知能情報工学分野 2年
+大阪府立大学 大学院工学研究科 電気・情報系専攻 知能情報工学分野 修士2年
 
 偉大な研究を成し遂げて世界中の人を幸せにすることが目標. カメラやセンサーを利用して人間の行動を認識する研究に取り組んでいます. コンピュータビジョン・パターン認識・データ解析に興味があります. [iOS Android Webアプリ開発](/applications/)が趣味です.
 

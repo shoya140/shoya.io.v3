@@ -5,20 +5,15 @@ permalink: /aboutme/
 ---
 <img src="/assets/img/myglass2_ex3_mini.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="Shoya Ishimaru">
 
-## Shoya Ishimaru [[jp](/aboutme/jp/)]
+## Shoya Ishimaru [EN/[JP](/aboutme/jp/)]
 
-I'm a graduate student studying CS in [OPU](http://www.osakafu-u.ac.jp/english/index.html).<br>
-I'm also a [mobile application](/applications/) developer.
+I'm a second year graduate student (M2) in Osaka Prefecture University. My current research interest is activity recognition, which involves recognizing and quantifying human activities by using data from several sensors. [[publications](/publications/)]
 
-My research theme is "Activity Recognition", which involves recognizing and classifying human activities by using data from several sensors. [[publications](/publications/)]
-
-### Objective
-
-Inventing amazing software and satisfying people all over the world.
+I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is inventing amazing applications on the basis of research results and satisfying people all over the world. [[applications](/applications/)]
 
 ### Interests
 
-Mobile applications, Activity recognition, Image processing, Data analysis.
+Activity recognition, Eye tracking, Mobile applications, Image processing.
 
 ### Work Experience
 
