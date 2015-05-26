@@ -5,9 +5,41 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 22 May 2015 23:13:40 +0900</pubDate>
-    <lastBuildDate>Fri, 22 May 2015 23:13:40 +0900</lastBuildDate>
+    <pubDate>Tue, 26 May 2015 14:55:46 +0900</pubDate>
+    <lastBuildDate>Tue, 26 May 2015 14:55:46 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>SlackのIncoming WebhooksをHubotで拾う</title>
+        <description>&lt;p&gt;Hubotがチャット上の投稿を拾うにはhear(全てに反応)とrespond(呼ばれたら反応)という2つの方法があるのだけれど、無限ループを防ぐためか、どちらもbotの発言を拾うことができない。botの発言にも反応させたいときはcatchAllを使う。catchAllで投稿を一旦受け取り、正規表現で発言が必要か判断すれば良い。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-coffeescript&quot; data-lang=&quot;coffeescript&quot;&gt;&lt;span class=&quot;nv&quot;&gt;module.exports = &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;(robot) -&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;catchAll&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;(msg) -&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;r = &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;RegExp&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;(.*)(どーなつ|ドーナツ)(.*)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;i&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;matches = &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;どーんと行こう！&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;この方法はIncoming Webhooksをトリガーに発言させたい時に役に立つ。例えばうちのbotには下記の仕組みで夜になったら日報を作成してもらっている。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;日が沈むとIFTTTが「今日も一日お疲れさまです」と投稿する&lt;/li&gt;
+  &lt;li&gt;「お疲れさまです」というキーワードに反応して、botがtodoistから今日一日に完了したタスクを取得して投稿する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;他にもテストの結果に応じて一喜一憂させてみるなど、合いの手をひとつ入れるだけで会話が盛り上がって楽しいと思う。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 May 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/hubot_listens_webhook/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/hubot_listens_webhook/</guid>
+        
+        <category>Programming</category>
+        
+        
+        <category>server</category>
+        
+      </item>
     
       <item>
         <title>BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</title>
@@ -419,31 +451,6 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>server</category>
-        
-      </item>
-    
-      <item>
-        <title>なんで科学者を目指すようになったか</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg&quot; class=&quot;image-on-frame-mini&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で&lt;strong&gt;科学体験フェスティバル&lt;/strong&gt;を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。&lt;/p&gt;
-
-&lt;p&gt;それから中学・高校と理科の授業を受ける中で、興味の対象は物理学・化学・生物学の広く深い方向に伸びていった。高校生の頃に&lt;strong&gt;国際生物学オリンピック&lt;/strong&gt;の日本代表を決める選考会に出たことがあって、惜しいところまでいった。(余談だけどサマーウォーズの「あと少しで日本代表になれたのに。」というセリフは聞く度に心に刺さるものがある。)そこで競った同期がとにかく賢く変わり者揃いだった。懇親会のときにひとりが「俺、東大に行こうと思う。」とつぶやいて、僕も私もといった具合に皆が声をあげた。ものすごく盛り上がり、「大学でまた会おう。」と言い合った。たぶん皆そういった刺激を与え合う相手に飢えていたのだと思う。研究の道に進むなら面白い人がたくさんいる環境で過ごしたい思い、僕も&lt;a href=&quot;/blog/imabari/&quot;&gt;難関校を目指すことを強く決めた&lt;/a&gt;。結果、最初に発言した彼は東大に合格し、僕は阪大を受けるが落ちて府大に進学することになった。&lt;/p&gt;
-
-&lt;p&gt;阪大には基礎工学部という工学と理学を織り交ぜた研究をしているところがある。僕の幅広い興味や視野と合うと思ったのが、進路に阪大を選んだ理由だった。入学したら&lt;strong&gt;脳科学&lt;/strong&gt;の研究をしようと思っていた。第2希望の府大のことはよく知らなかったので、名前をみて知能情報工学科を受験した。脳と能の漢字違いで学部を選んだことを、僕は入学してから知ることになる。&lt;/p&gt;
-
-&lt;p&gt;勘違いで選んだ学部も運命で、僕はそのおかげで&lt;strong&gt;情報工学&lt;/strong&gt;に出会うことになる。プログラミング、あるいは企画やデザインまで含めたソフトウェア開発は、僕の適正にとてもマッチしていると思う。アイデアを形にして公開するまでのスピードは他分野のものづくりを圧倒するものがある。学部3年生の頃にその面白さに気付き、プログラミングを通じて&lt;a href=&quot;/development/&quot;&gt;いろんな(変な)ものを生み出して&lt;/a&gt;、楽しい経験を積むことができた。その結果、もっと情報工学を学びたいと考え、大学や学術分野を変えることなく大学院へ進学した。巡り巡って僕は現在の研究テーマを&lt;strong&gt;情報工学の視点から見た脳科学や認知的行動&lt;/strong&gt;に設定していて、今までの意思決定は間違っていなかったと確信してる。&lt;/p&gt;
-
-&lt;p&gt;僕らの世代も就職活動が始まり、進学するか就職するか、いよいよ選択を先延ばしにできない時期になった。&lt;cite&gt;&lt;a href=&quot;http://memo.sanographix.net/post/69496511652&quot;&gt;なんでデザイナーになったか - MEMOGRAPHIX&lt;/a&gt;&lt;/cite&gt;に影響を受けて、科学者になる道を後押しする材料について書いてみたのでした。(開発者になる道を後押しする材料もたくさんあるので、また改めて書くことになると思う。)&lt;/p&gt;
-</description>
-        <pubDate>Thu, 13 Nov 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/towards-a-scientist/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/towards-a-scientist/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>coffee</category>
         
       </item>
     

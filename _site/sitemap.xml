@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/hubot_listens_webhook/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/bootcamp_hyperv/</loc>
     </url>
     
