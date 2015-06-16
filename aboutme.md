@@ -17,6 +17,7 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 
 ### Work Experience
 
+* Creator, <a href = "https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html">IPA MITOH Program</a>, 06.2015 - *
 * Data analysis internship, <a href="http://www.recruit.jp/">Recruit Holdings Co.</a>, 02.2015
 * Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc.</a>, 12.2014
 * Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
