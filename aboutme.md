@@ -9,7 +9,7 @@ permalink: /aboutme/
 
 I'm a second year graduate student (M2) in Osaka Prefecture University. My current research interest is activity recognition, which involves recognizing and quantifying human activities by using data from several sensors. [[publications](/publications/)]
 
-I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is inventing amazing applications on the basis of research results and satisfying people all over the world. [[applications](/applications/)]
+I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is inventing amazing applications and satisfying people all over the world. [[applications](/applications/)]
 
 ### Interests
 
