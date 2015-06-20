@@ -8,6 +8,25 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Alfredを使って論文を最速で検索する</title>
+        <description>&lt;p&gt;Alfredのcustom web searchesにGoogle Scholar &lt;code&gt;https://scholar.google.com/scholar?q={query}&lt;/code&gt; を登録して、いつどこからでも素早く論文を検索できるようにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/alfred_google_scholar.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;検索結果をAlfred内に表示したりbibをクリップボードにコピーするworkflowを作ると面白いかもしれない(いつか時間ができたら作る)。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/alfred_google_scholar/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/alfred_google_scholar/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>coffee</category>
+        
+      </item>
+    
+      <item>
         <title>SlackのIncoming WebhooksをHubotで拾う</title>
         <description>&lt;p&gt;Hubotがチャット上の投稿を拾うにはhear(全てに反応)とrespond(呼ばれたら反応)という2つの方法があるのだけれど、無限ループを防ぐためか、どちらもbotの投稿を拾うことができない。botの投稿にも反応させたいときはcatchAllを使う。catchAllで投稿を一旦受け取り、正規表現で発言が必要か判断すれば良い。&lt;/p&gt;
 
@@ -409,46 +428,6 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>coffee</category>
-        
-      </item>
-    
-      <item>
-        <title>Sublime Text3でLaTeXをコンパイルする[Mac]</title>
-        <description>&lt;p&gt;Sublime Textにはcommand+bでコードを実行する機能(Build System)がある。今回はビルドできるファイルにLaTeXを加えてみた。Sublime TextでLaTeXを扱う方法、調べたらLaTeXToolsとかを入れていろいろ頑張る方法が出てくるのだけれど、既にMacTeXの環境(ターミナルからplatexコマンドなどが使える状態)があるのならもっと簡単に構築できると思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/sublime_latex_01.png&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;手順&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tools&amp;gt;Build System&amp;gt;New Build System…(上図参照)を選択してBuild Systemを作成する。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;新規ファイルが開かれるので、下記の設定を記入して保存する。ファイル名がメニューバーに表示されるBuild Systemの名前になる。保存場所はデフォルトで ~/Library/Application Support/Sublime Text 3/Packages/User になる。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;shell&amp;quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;,
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;cmd&amp;quot;&lt;/span&gt;:&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;/bin/sh&amp;quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&amp;quot;-c&amp;quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/texbin/platex $file_base_name.tex &amp;amp;&amp;amp; /usr/texbin/pbibtex $file_base_name.aux &amp;amp;&amp;amp; /usr/texbin/platex $file_base_name.tex &amp;amp;&amp;amp; /usr/texbin/dvipdfmx -p a4 $file_base_name.dvi &amp;amp;&amp;amp; /usr/bin/open $file_base_name.pdf&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;selector&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;source.tex&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;補足&lt;/h3&gt;
-
-&lt;p&gt;LaTeXからPDFを作成するには、複数回のコンパイルが必要になる。標準で提供されている仕組みではBuild Systemに複数のコマンドを登録することができないので、上記のような黒魔術を使用する。Macの場合は”shell”をfalseに、”cmd”にshとその引数として実行したいコマンドを&amp;amp;&amp;amp;で続けていけばうまく動作するらしい。Windowsの場合は書き方がやや異なる。&lt;cite&gt;&lt;a href=&quot;http://blog.pcitron.fr/2013/02/08/multiple-command-in-sublime-build-system/&quot;&gt;Multiple commands in Sublime Build System&lt;/a&gt;&lt;/cite&gt;を参考に設定した。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 14 Nov 2014 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/sublime-latex/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/sublime-latex/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>server</category>
         
       </item>
     
