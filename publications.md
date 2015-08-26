@@ -6,6 +6,12 @@ permalink: /publications/
 
 ### International Conference
 
+1. Shoya Ishimaru and Koichi Kise. <span style="font-weight: 700;">Quantifying the Mental State on the Basis of Physical and Social Activities</span>. Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015. to appear.
+
+1. Kai Kunze, Ömer Sacakli, Shoya Ishimaru, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Quantifying Reading Habits – Counting How Many Words You Read</span>. Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Publication (UbiComp2015). September 2015. to appear.
+
+1. Kai Kunze, Yuji Uema, Katsuma Tanaka, Shoya Ishimaru, Koichi Kise and Masahiko Inami  <span style="font-weight: 700;">MEME – Eye Wear Computing to Explore Human Behavior</span>. Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015. to appear.
+
 1. Shoya Ishimaru, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Smart Eyewear for Interaction and Activity Recognition</span>. Proceedings of the 33rd Annual ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI2015). April 2015.
 
 1. Shoya Ishimaru, Kai Kunze, Koichi Kise and Masahiko Inami. <a href = "http://kaikunze.de/papers/ishimaru2014brain.pdf"><span style="font-weight: 700;">Position Paper: Brain Teasers - Toward Wearable Computing that Engages Our Mind</span></a>. Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
