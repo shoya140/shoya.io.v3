@@ -13,6 +13,7 @@ permalink: /aboutme/jp/
 
 ### Activities
 
+* <a href="http://recruit-jinji.jp/workshop2015/"><span style="font-weight: 600;">株式会社リクルートホールディングス 2Weeks US Workshop 2015</span></a> 優勝 (08.2015)
 * <a href="https://mashupawards.doorkeeper.jp/events/25862"><span style="font-weight: 600;">Mashup Awards主催 JINS MEME HACKATHON</span></a> 最優秀賞 (07.2015)
 * <a href="https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html"><span style="font-weight: 600;">2015年度 未踏IT人材発掘・育成事業</span></a> 採択 (06.2015)
 * <a href="http://www.microsoft.com/ja-jp/education/imagine-cup.aspx"><span style="font-weight: 600;">Imagine Cup 2015</span></a> イノベーション部門 日本予選大会Best3 (04.2015)
