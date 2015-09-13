@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Alfredを使って論文を最速で検索する
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 published: True
 ---

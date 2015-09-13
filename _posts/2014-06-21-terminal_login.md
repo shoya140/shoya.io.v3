@@ -2,7 +2,7 @@
 layout: post
 title: プロセスが完了しました
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 keywords: Mac, ターミナル, プロセスが完了しました, ログイン
 ---

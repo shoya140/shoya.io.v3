@@ -2,7 +2,7 @@
 layout: post
 title: 産業の中心地フランクフルト
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Sightseeing']
 keywords: Sightseeing
 relations:

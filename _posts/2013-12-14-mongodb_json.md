@@ -2,7 +2,7 @@
 layout: post
 title: MongoDBのObjectID型をJSONに変換する[pymongo]
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Programming']
 keywords: MongoDB, Python, JSON
 ---

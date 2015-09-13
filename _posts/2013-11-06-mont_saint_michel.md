@@ -2,7 +2,7 @@
 layout: post
 title: モン・サン・ミッシェル
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Sightseeing']
 keywords: モン・サン・ミッシェル, 観光
 relations:

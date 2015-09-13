@@ -2,7 +2,7 @@
 layout: post
 title: 5分で完成！イラレで作るロングシャドウアイコン
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Design']
 keywords: ロングシャドウ, イラレ, アイコン, 作成
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/long_shadow00.png

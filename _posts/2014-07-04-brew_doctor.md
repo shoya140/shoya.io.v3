@@ -2,7 +2,7 @@
 layout: post
 title: brew doctorのwarningを解決する
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 keywords: homebrew, brew, doctor, pyenv
 ---

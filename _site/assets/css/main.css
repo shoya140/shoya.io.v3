@@ -343,9 +343,9 @@ hr {
   .site-nav .page-link {
     color: #4a4a46;
     line-height: 1.8;
-    font-size: 20px; }
+    font-size: 18px; }
     .site-nav .page-link:not(:first-child) {
-      margin-left: 20px; }
+      margin-left: 14px; }
   @media screen and (max-width: 500px) {
     .site-nav {
       position: absolute;

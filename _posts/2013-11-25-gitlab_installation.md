@@ -2,7 +2,7 @@
 layout: post
 title: GitLab 6.0をインストールする
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 keywords: GitLab, Git, インストール, セットアップ
 ---

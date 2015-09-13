@@ -15,14 +15,14 @@
 
 &lt;p&gt;検索結果をAlfred内に表示したりbibをクリップボードにコピーするworkflowを作ると面白いかもしれない(いつか時間ができたら作る)。&lt;/p&gt;
 </description>
-        <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 21 Jun 2015 00:00:00 +0200</pubDate>
         <link>http://shoya.io/blog/alfred_google_scholar/</link>
         <guid isPermaLink="true">http://shoya.io/blog/alfred_google_scholar/</guid>
         
         <category>Note</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     
@@ -47,14 +47,14 @@
 
 &lt;p&gt;他にもテストの結果に応じて一喜一憂させてみるなど、合いの手をひとつ入れるだけで会話が盛り上がって楽しいと思う。&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 May 2015 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 26 May 2015 00:00:00 +0200</pubDate>
         <link>http://shoya.io/blog/hubot_listens_webhook/</link>
         <guid isPermaLink="true">http://shoya.io/blog/hubot_listens_webhook/</guid>
         
         <category>Programming</category>
         
         
-        <category>server</category>
+        <category>tech</category>
         
       </item>
     
@@ -82,14 +82,14 @@
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv03.png&quot; class=&quot;image-on-frame&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 19 Mar 2015 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 19 Mar 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/bootcamp_hyperv/</link>
         <guid isPermaLink="true">http://shoya.io/blog/bootcamp_hyperv/</guid>
         
         <category>Infrastructure</category>
         
         
-        <category>server</category>
+        <category>tech</category>
         
       </item>
     
@@ -127,7 +127,7 @@
 
 &lt;p&gt;&lt;a href=&quot;http://recruit-jinji.jp/adf_fes2015/&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship04.png&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 17 Mar 2015 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 17 Mar 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/recruit_internship/</link>
         <guid isPermaLink="true">http://shoya.io/blog/recruit_internship/</guid>
         
@@ -136,7 +136,7 @@
         <category>Note</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     
@@ -152,14 +152,14 @@
 
 &lt;p&gt;ここから先は王道のヒーローアクション+ヒロとベイマックスの成長といった感じで、物語の最後まで楽しめた。ベイマックスもう大丈夫だよ。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 09 Jan 2015 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/bighero6/</link>
         <guid isPermaLink="true">http://shoya.io/blog/bighero6/</guid>
         
         <category>Note</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     
@@ -177,14 +177,14 @@
 
 &lt;p&gt;一方で脳の研究というと(上記のような)可能性や怖さが人目を惹く傾向にあり、脳科学の進歩によってどんなことができないと明らかになったかについて目を向ける人は少ない。僕たちは予備知識を身につけて、安易な情報に流されず自身の未来を選択しなければならない。その点において、この本は脳機能の解明を目的とする多くの研究を&lt;strong&gt;明確な引用&lt;/strong&gt;とともに紹介しているのが良い。研究から導かれた結果のすぐ後ろに著者名を書き、章の終わりには参考文献として引用元の論文を記してある。ここを起点に興味のある研究を掘り下げていくことができる。脳科学の入門書として最適な一冊だと思う。&lt;/p&gt;
 </description>
-        <pubDate>Wed, 31 Dec 2014 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 31 Dec 2014 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/brain-science-for-the-mind/</link>
         <guid isPermaLink="true">http://shoya.io/blog/brain-science-for-the-mind/</guid>
         
         <category>Note</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     
@@ -293,14 +293,14 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;今日からあなたもpypi author!!&lt;/p&gt;
 </description>
-        <pubDate>Mon, 22 Dec 2014 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 22 Dec 2014 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/pypi/</link>
         <guid isPermaLink="true">http://shoya.io/blog/pypi/</guid>
         
         <category>Programming</category>
         
         
-        <category>server</category>
+        <category>tech</category>
         
       </item>
     
@@ -330,14 +330,14 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2015年もどうぞよろしくお願い致します。&lt;/p&gt;
 </description>
-        <pubDate>Tue, 02 Dec 2014 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 02 Dec 2014 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/looking-back-at-2014/</link>
         <guid isPermaLink="true">http://shoya.io/blog/looking-back-at-2014/</guid>
         
         <category>Note</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     
@@ -379,14 +379,14 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/607&quot;&gt;LiT!関西 Advent Calendar 2014&lt;/a&gt;次回はほっしゃん(&lt;a href=&quot;https://twitter.com/Recursible&quot;&gt;@Recursible&lt;/a&gt;)がAndroidのioschedライブラリの解析に関する記事を書いてくれます。お楽しみに！&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 Dec 2014 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 01 Dec 2014 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/pair-programming/</link>
         <guid isPermaLink="true">http://shoya.io/blog/pair-programming/</guid>
         
         <category>Infrastructure</category>
         
         
-        <category>server</category>
+        <category>tech</category>
         
       </item>
     
@@ -420,14 +420,14 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;滞在時間はゆっくり2巡して90分ほど。春にまた一般公開されるかもしれないので、今度は桜の咲く頃に来れたらいいなぁ。何度も足を運びたくなる美しい庭園でした。&lt;/p&gt;
 </description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 30 Nov 2014 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/hakuryuen/</link>
         <guid isPermaLink="true">http://shoya.io/blog/hakuryuen/</guid>
         
         <category>Sightseeing</category>
         
         
-        <category>coffee</category>
+        <category>diary</category>
         
       </item>
     

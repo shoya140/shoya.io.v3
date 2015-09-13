@@ -2,7 +2,7 @@
 layout: post
 title: なんで科学者を目指すようになったか
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg
 ---

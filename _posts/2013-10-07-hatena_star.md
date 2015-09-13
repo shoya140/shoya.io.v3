@@ -2,7 +2,7 @@
 layout: post
 title: Jekyllにはてなスター導入した
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Programming']
 keywords: Jekyll, はてなスター
 relations:

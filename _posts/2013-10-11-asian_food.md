@@ -2,7 +2,7 @@
 layout: post
 title: Asian Food
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: ドイツ, インスタントラーメン, カイザースラウテルン
 relations:

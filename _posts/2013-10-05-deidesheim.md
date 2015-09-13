@@ -2,7 +2,7 @@
 layout: post
 title: ダイデスハイムを観光しました
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Sightseeing']
 keywords: ダイデスハイム, 観光, ニューワイン
 relations:

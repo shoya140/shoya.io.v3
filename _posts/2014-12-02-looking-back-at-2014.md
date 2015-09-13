@@ -2,7 +2,7 @@
 layout: post
 title: 2014年振り返り
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 ---
 

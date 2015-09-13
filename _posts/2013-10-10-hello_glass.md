@@ -2,7 +2,7 @@
 layout: post
 title: Hello, Glass.
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: Google Glass
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: プログラミングしてて楽しいと感じる３つの瞬間
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: プログラミング, 意義, 楽しい
 ---

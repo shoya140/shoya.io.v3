@@ -2,7 +2,7 @@
 layout: post
 title: GitHubの学割クーポンを延長する
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: GitHub, 学割, 学生, プライベートリポジトリ, academic
 ---

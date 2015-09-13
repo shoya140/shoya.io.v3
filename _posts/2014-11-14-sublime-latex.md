@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3でLaTeXをコンパイルする[Mac]
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 ---
 

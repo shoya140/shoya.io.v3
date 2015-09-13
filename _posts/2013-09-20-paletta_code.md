@@ -2,7 +2,7 @@
 layout: post
 title: コードからベースカラーを指定できるようになりました
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['ReleaseNote']
 keywords: Paletta, HSV, カラーパレット, 顕色系
 relations:

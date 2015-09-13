@@ -2,7 +2,7 @@
 layout: post
 title: スパムアカウントからの友達申請をブロックした
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: facebook, 友達申請, スパム, ブロック
 ---

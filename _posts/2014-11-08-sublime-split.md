@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3の画面をctrl+sp,vsで分割する[Mac]
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 ---
 

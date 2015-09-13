@@ -2,7 +2,7 @@
 layout: post
 title: メイワクメールをワクワクに変えるSpam Museum
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['ReleaseNote']
 keywords: Spam Museum
 relations:

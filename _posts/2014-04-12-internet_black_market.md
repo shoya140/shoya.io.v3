@@ -2,7 +2,7 @@
 layout: post
 title: 石と空気を買いにベルリンまで行った話[インターネット闇市]
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Event', 'Note']
 keywords: インターネット闇市, internet black market, トランスメディアーレ
 ---

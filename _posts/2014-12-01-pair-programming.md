@@ -2,7 +2,7 @@
 layout: post
 title: ペアプログラミングを支える技術
 published: True
-categories: ['server']
+categories: ['tech']
 tags: ['Infrastructure']
 ---
 

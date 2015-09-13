@@ -2,7 +2,7 @@
 layout: post
 title: 司法の都カールスルーエ
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Sightseeing']
 keywords: カールスルーエ, 観光
 relations:

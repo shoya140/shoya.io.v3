@@ -2,7 +2,7 @@
 layout: post
 title: ヴェルサイユ宮殿
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Sightseeing']
 keywords: ベルサイユ宮殿, 観光
 relations:

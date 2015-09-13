@@ -2,7 +2,7 @@
 layout: post
 title: GoogleGamesに参加して人生変わった
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Event', 'Note']
 keywords: Google Games
 relations:

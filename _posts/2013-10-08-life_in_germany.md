@@ -2,7 +2,7 @@
 layout: post
 title: こちらの生活にもずいぶん慣れた
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Note']
 keywords: ドイツ, 留学
 relations:

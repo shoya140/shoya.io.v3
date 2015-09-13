@@ -2,7 +2,7 @@
 layout: post
 title: はてなのサマーインターンに参加しました
 published: True
-categories: ['coffee']
+categories: ['diary']
 tags: ['Event', 'Note']
 keywords: はてなインターン2012
 relations:
