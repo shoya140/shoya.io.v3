@@ -22,7 +22,6 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 * Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc.</a>, 12.2014
 * Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
 * 5-days engineering internship, <a href="https://info.cookpad.com/">Cookpad Inc.</a>, 09.2014
-* Research internship, <a href="http://www.dfki.de/web/">DFKI</a>, 10.2013 - 03.2014
 * Engineering mentor, <a href="http://life-is-tech.com/">Life is Tech, Inc.</a>, 03.2013 - 04.2015
 * Engineering internship, <a href="http://www.hatena.ne.jp/">Hatena Co.</a>, 08.2012 - 09.2012
 * Part-time software engineer, <a href="http://www.paperboy.co.jp/">Paperboy&co. Inc</a>, 06.2012 - 12.2012
@@ -33,8 +32,14 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 * MS CS, Graduate School of Engineering, Osaka Prefecture University, 04.2014 - *
 * BS CS, Osaka Prefecture University, 04.2010 - 03.2014
 
+### Study Abroad
+
+* University of La Rochelle, France, 09.2015 - 10.2015
+* DFKI (Kaiserslautern University of Technology), Germany, 10.2013 - 03.2014
+
 ### Activities
 
+* <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
 * <a href="http://recruit-jinji.jp/workshop2015/">2Weeks US Workshop 2015 by Recruit Holdings Co.</a>: Champion, 2015
 * <a href="https://mashupawards.doorkeeper.jp/events/25862">JINS MEME HACKATHON Powered by Mashup Awards</a>: Champion, 2015
 * <a href="https://www.imaginecup.com/">Imagine Cup 2015 Inovation Path</a>: Best 3 at Japan preliminary round, 2015
