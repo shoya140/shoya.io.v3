@@ -8,6 +8,31 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>フランスで暮らし始めて1週間</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/1st_week_in_france01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらでの生活にも慣れてきた。いつもだいたい朝6時に目が覚めて朝食をとる。10時頃に研究室へ向かい研究を始める。12時から14時くらいまでは研究室のみんなとご飯を食べて休憩。それから19時頃まで研究して帰宅。夕食を食べてシャワーを浴びて24時に寝るみたいな日々を繰り返している。こちらの生活リズムで驚いたのは、みんな昼休憩を長くとること(デザート食べたりコーヒー飲んでる)や割と夜遅くまで研究室に残っていること。ドイツ・DFKIの研究者は短時間集中して17時で帰っていたのでそのイメージで来たのだけれど、そもそも研究機関と大学の違いなのかもしれない。&lt;/p&gt;
+
+&lt;p&gt;大学の敷地内にあるアパートホテルに滞在していてとにかく快適。毎週掃除してくれるしキッチンが広いし食器や調理器具が充実しているので日本の下宿より過ごしやすい。部屋にコーヒーメーカーが備え付けてあるのがなんとなくフランスを感じさせる。&lt;/p&gt;
+
+&lt;p&gt;食事についても全く心配ない。スーパーで買えるチーズやパスタソースの数がかなり豊富なので、いろいろ試すのが楽しい。おそらく1ヶ月では制覇できないと思う。昼は大学内のカフェテリアだと5ユーロ、市街まで足を運ぶと少し高いが10+ユーロで美味しい料理を食べることができる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/1st_week_in_france02.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ブルターニュ地方のシードル(リンゴ酒)。昼から美味しいお酒が飲めるのはやはり最高。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Sep 2015 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/1st_week_in_france/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/1st_week_in_france/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>誕生日&amp;&amp;留学初日</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/birthday_in_paris.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -366,55 +391,6 @@ dist/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         
         <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>ペアプログラミングを支える技術</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/607&quot;&gt;LiT!関西 Advent Calendar 2014&lt;/a&gt; 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプログラミングとそれを支えるMacの便利機能について書きます。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;ペアプログラミングとは&lt;/h3&gt;
-
-&lt;p&gt;2人が1台のPCを使ってプログラミングすることです。キーボードを操作してコードを書く人(&lt;strong&gt;ドライバー&lt;/strong&gt;)とその様子を眺める人(&lt;strong&gt;ナビゲーター&lt;/strong&gt;)の役割に分かれて交代でプログラムを書きます。ドライバーは今何をしようとしているか、ナビゲーターは気になるところや別解について積極的に話しながら作業を進めます。&lt;/p&gt;
-
-&lt;p&gt;2人で1つの作業を行うので生産性が落ちるという欠点がありますが、それ以上に&lt;strong&gt;綺麗なコードが書ける&lt;/strong&gt;・&lt;strong&gt;互いの知識を共有できる&lt;/strong&gt;などの利点があります。特に上級者と初心者がペアを組んでプログラムを書くと、上級者のコードの書き方や&lt;a href=&quot;http://blog.shibayu36.org/entry/2013/01/19/202049&quot;&gt;開発環境&lt;/a&gt;を実際に見て学べる、リアルタイムに助言を受けられる、といった効率のよい学習を行うことができます。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;画面共有しよう&lt;/h3&gt;
-
-&lt;p&gt;一緒にコードを書いていると「ちょっと貸して！」みたいな状況が多々あると思います。その度に席を入れ替えたり身を乗り出すのも面倒なので、2人のPCから1つの画面を操作できると便利です。Macはデフォルトで画面を共有する機能を搭載しているので、その使い方について説明します。以下、画面共有を受け入れる側をドライバーPC、申請する側をナビゲーターPCとします。&lt;/p&gt;
-
-&lt;p&gt;まずはドライバーPCのシステム環境設定&amp;gt;共有を開きます。1.画面共有にチェックを入れ、2.コンピュータ設定を選択して、3.ほかのユーザが画面操作の権限を要求することを許可にチェックを入れます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair01.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;次にナビゲーターPCでFinder&amp;gt;移動&amp;gt;サーバへ接続(ショートカットキー:⌘+K)を開き、ドライバーPCに表示されているvnc://(IPアドレス)を入力します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair02.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;画面操作の権限に関する選択画面が現れるので、アクセス権を要求を選んで接続ボタンを押します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair03.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;するとドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair04.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプログラミングを開始しましょう。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/pair05.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;なお、Macの画面共有を使用するには2つのPCが同じネットワークに接続されている必要があります。離れた環境で画面を共有する場合は&lt;a href=&quot;https://screenhero.com/&quot;&gt;Screenhero&lt;/a&gt;・&lt;a href=&quot;http://www.teamviewer.com/ja/&quot;&gt;TeamViewer&lt;/a&gt;・&lt;a href=&quot;https://plus.google.com/hangouts&quot;&gt;Googleハングアウト&lt;/a&gt;のリモートデスクトップ機能を使うことをおすすめします。アカウント作成やソフトウェアのインストールが不要で簡単という理由で、今回は画面共有を紹介しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/607&quot;&gt;LiT!関西 Advent Calendar 2014&lt;/a&gt;次回はほっしゃん(&lt;a href=&quot;https://twitter.com/Recursible&quot;&gt;@Recursible&lt;/a&gt;)がAndroidのioschedライブラリの解析に関する記事を書いてくれます。お楽しみに！&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Dec 2014 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/pair-programming/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/pair-programming/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>tech</category>
         
       </item>
     
