@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/orange/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/1st_week_in_france/</loc>
     </url>
     
@@ -468,14 +472,6 @@
     
     
     <url>
-        <loc>http://shoya.io/blog/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
         <loc>http://shoya.io/category/diary/</loc>
     </url>
     
@@ -485,6 +481,14 @@
     
     <url>
         <loc>http://shoya.io/category/tech/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/blog/</loc>
     </url>
     
     

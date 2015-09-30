@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Nginx, location, root, static">
+    
     
     <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
-    <meta property="og:title" content="Nginxの静的ファイル配信でハマった">
+    <meta property="og:title" content="フランスでOrangeを契約する">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://shoya.io/blog/nginx_root/">
+    <meta property="og:url" content="http://shoya.io/blog/orange/">
     
         <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
     
-    <title>Nginxの静的ファイル配信でハマった - shoya.io</title>
+    <title>フランスでOrangeを契約する - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://shoya.io/blog/nginx_root/">
+    <link rel="canonical" href="http://shoya.io/blog/orange/">
     <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 
@@ -65,58 +65,32 @@
           <div class="post">
 
   <header class="post-header">
-    <p class="post-meta">Aug 25, 2014
+    <p class="post-meta">Sep 30, 2015
     
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    [<a href="/tag/Note/">Note</a>]
     
     </p>
-    <a href="/blog/nginx_root/"><h1 class="post-title">Nginxの静的ファイル配信でハマった</h1></a>
+    <a href="/blog/orange/"><h1 class="post-title">フランスでOrangeを契約する</h1></a>
   </header>
 
   <article class="post-content">
-    <p>静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。<a href="http://www.oreilly.co.jp/books/9784873115764/">概説Tornado</a>の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定をNginxに書いた。</p>
+    <p>Orangeのプリペイドsimカードを購入してインターネットを手に入れました。プランは以下のとおり。2015年9月の情報です。</p>
 
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
-    <span class="kn">root</span> <span class="s">/path/to/app/static</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<ul>
+  <li>通話・SMS: 定額(フランス国内)</li>
+  <li>インターネット: 定額(上限2GB)</li>
+  <li>値段: 30euro(30日定額料金) + 9.9euro(simカード)</li>
+</ul>
 
-<p>上記のように書きたいところだがこれは間違いで</p>
+<p>Orangeのショップにいき, simカード(Mobicarte)が欲しいことを伝えると購入できる。持ってきた端末を見せながら説明するとsimカードのサイズなど含めてスムーズに進む。用途に応じて <strong>電話とインターネット or インターネットのみ のいずれかのsimカード</strong>と<strong>最初のチャージ量</strong>を選択できる。チャージする量によって使える期間が決まっており、大きな金額を入れるほど多くの通信を長く使用することができる。(semaine:週, jours:日, mois:月, Mo:メガバイト, Go:ギガバイト)</p>
 
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
-    <span class="kn">root</span> <span class="s">/path/to/app</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<p>電話とインターネット
+<img src="https://dl.dropboxusercontent.com/u/12208857/img/orange01.png" class="image-center" /></p>
 
-<p>正しくはこちら。</p>
+<p>インターネットのみ
+<img src="https://dl.dropboxusercontent.com/u/12208857/img/orange02.png" class="image-center" /></p>
 
-<p>rootはstaticディレクトリのrootを指すのではなく、アプリケーションのroot。/static/はURLとして生きているので、/static/を含めたパスでファイルへ届くように書く必要がある。</p>
-
-<p>(備考)アプリケーション全体のnginx設定ファイルはこんな感じ。各アプリケーションごとに設定ファイルを分けてconf.d/以下に保存しておき、nginx.confでそれらをインポートしている。</p>
-
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">upstream</span> <span class="s">paletta</span><span class="p">{</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8011</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8012</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8013</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8014</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">paletta.mrk1869.com</span><span class="p">;</span>
-
-    <span class="kn">access_log</span>  <span class="s">/home/web/log/nginx/paletta.mrk1869.com/access.log</span> <span class="s">ltsv</span><span class="p">;</span>
-    <span class="kn">location</span> <span class="s">/static/</span> <span class="p">{</span>
-        <span class="kn">root</span> <span class="s">/home/web/paletta/app</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
-        <span class="kn">proxy_pass_header</span> <span class="s">Server</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
-        <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span> <span class="nv">$scheme</span><span class="p">;</span>
-        <span class="kn">proxy_pass</span> <span class="s">http://paletta</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
+<p>電話番号があると何かと便利なので電話ができるものを選択したのだけれど、こちらのプランではテザリングが別料金。200MB:8euro, 1GB:25euroを別途チャージする日宇用があるようなので要注意。(知人はインターネットのみを選んで追加料金なくテザリングできている。) 後者を選択すればよかった…</p>
 
   </article>
 
@@ -125,21 +99,21 @@
   </div>
 
   <div class="post-social">
-  	<div class="tweet-button"><a href="https://twitter.com/share?text=Nginx%E3%81%AE%E9%9D%99%E7%9A%84%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E9%85%8D%E4%BF%A1%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/nginx_root/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  	<div class="tweet-button"><a href="https://twitter.com/share?text=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%81%A7Orange%E3%82%92%E5%A5%91%E7%B4%84%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/orange/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
   </a></div>
-  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/nginx_root/&amp;t=Nginx%E3%81%AE%E9%9D%99%E7%9A%84%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E9%85%8D%E4%BF%A1%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/orange/&amp;t=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%81%A7Orange%E3%82%92%E5%A5%91%E7%B4%84%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
   </a></div>
-  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/nginx_root/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/orange/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
   </a></div>
-  	<div class="hatena-star"><a href="http://shoya.io/blog/nginx_root/" style="display: none;">hatena</a></div>
+  	<div class="hatena-star"><a href="http://shoya.io/blog/orange/" style="display: none;">hatena</a></div>
   </div>
 
   <div class="pagenation">
     
-      <div class="page-button"><a href="/blog/github_academic/"></a><span class="lsf">left</span> GitHubの学割クーポンを延長する</div>
+      <div class="page-button"><a href="/blog/1st_week_in_france/"></a><span class="lsf">left</span> フランスで暮らし始めて1週間</div>
     
     
-      <div class="page-button"><a href="/blog/tornado_debug/"></a>Tornadoのデバッグモードを有効にする <span class="lsf">right</span></div>
+      <div class="page-button-disabled">Next <span class="lsf">right</span></div>
     
   </div>
 
