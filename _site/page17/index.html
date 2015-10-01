@@ -65,6 +65,48 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Dec 24, 2013
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/locate/"><h1 class="post-title">locateとupdatedbでファイルを高速検索</h1></a>
+  </header>
+  <article class="post-content">
+    <p>シェル上でファイルを検索するときfindを使っていたのだけれど</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>find DIRECTORY -name <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
+
+<p>locate コマンドを使ったほうが早くて便利だよと教えてもらった。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>locate <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
+
+<p>locateはあらかじめ作成しておいたデータベースを使って検索するため、コマンドが叩かれる度に検索を実行するfindより早いらしい。</p>
+
+<p>データベースは定期的に更新されるが、下記のコマンドで手動で更新できる。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo updatedb</code></pre></div>
+
+<p>Mac OSXの場合は</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo /usr/libexec/locate.updatedb</code></pre></div>
+
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=locate%E3%81%A8updatedb%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%AB%98%E9%80%9F%E6%A4%9C%E7%B4%A2%20-%20shoya.io&amp;url=http://shoya.io/blog/locate/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/locate/&amp;t=locate%E3%81%A8updatedb%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%AB%98%E9%80%9F%E6%A4%9C%E7%B4%A2" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/locate/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/locate/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Dec 18, 2013
     
     [<a href="/tag/Design/">Design</a>]
@@ -198,63 +240,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Dec 14, 2013
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/mongodb_json/"><h1 class="post-title">MongoDBのObjectID型をJSONに変換する[pymongo]</h1></a>
-  </header>
-  <article class="post-content">
-    <p>MongoDBから条件に合うオブジェクトを取り出して, エンコードされたJSONを返すapiを作成しようとしたところ, つまずいたのでメモ.</p>
-
-<h3 id="section">問題</h3>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># DB接続確立</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">conn</span><span class="p">[</span><span class="s">&quot;restaurant&quot;</span><span class="p">]</span>
-
-<span class="c"># 取り出しとエンコード</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">&quot;date&quot;</span><span class="p">:</span><span class="s">&quot;13.12.2013&quot;</span><span class="p">})</span>
-<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code></pre></div>
-
-<p>実行結果:エラー</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="ne">TypeError</span><span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s">&#39;52aa539a86d00a0fac59fb10&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">JSON</span> <span class="n">serializable</span></code></pre></div>
-
-<p>MongoDBから得られたオブジェクトをjsonモジュールのdumpus関数に直接渡すとエラーが生じる.
-この問題は, PythonのJSONモジュールがMongoDBの特殊なObjectID型をJSONに変換する方法を知らないことによる.</p>
-
-<h3 id="section-1">解決策</h3>
-
-<p>JSONエンコードする前にディクショナリから_idキーを削除する.</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># 取り出しとエンコード</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">&quot;date&quot;</span><span class="p">:</span><span class="s">&quot;13.12.2013&quot;</span><span class="p">})</span>
-<span class="k">del</span> <span class="n">item</span><span class="p">[</span><span class="s">&quot;_id&quot;</span><span class="p">]</span>
-<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code></pre></div>
-
-<p>実行結果:正しくエンコードされる.</p>
-
-<h3 id="section-2">参考文献</h3>
-
-<p><a href="http://www.oreilly.co.jp/books/9784873115764/">O’Reilly Japan - 概説Tornado</a> MongoDBドキュメントとJSON</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=MongoDB%E3%81%AEObjectID%E5%9E%8B%E3%82%92JSON%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B[pymongo]%20-%20shoya.io&amp;url=http://shoya.io/blog/mongodb_json/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/mongodb_json/&amp;t=MongoDB%E3%81%AEObjectID%E5%9E%8B%E3%82%92JSON%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B[pymongo]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/mongodb_json/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/mongodb_json/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -294,6 +279,8 @@
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/carcassonne/">歴史的城塞都市カルカソンヌ</a></li>
+        
           <li>- <a href="/blog/orange/">フランスでOrangeを契約する</a></li>
         
           <li>- <a href="/blog/1st_week_in_france/">フランスで暮らし始めて1週間</a></li>
@@ -303,8 +290,6 @@
           <li>- <a href="/blog/alfred_google_scholar/">Alfredを使って論文を最速で検索する</a></li>
         
           <li>- <a href="/blog/hubot_listens_webhook/">SlackのIncoming WebhooksをHubotで拾う</a></li>
-        
-          <li>- <a href="/blog/bootcamp_hyperv/">BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</a></li>
         
         </ul>
       </div>

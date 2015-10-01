@@ -65,6 +65,39 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Feb 24, 2014
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/pplog/"><h1 class="post-title">pplogおもしろい</h1></a>
+  </header>
+  <article class="post-content">
+    <p><a href="https://www.pplog.net/">pplog - ゆるふわインターネットにポエムを刻もう</a></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pplog.png" class="image-on-frame-small" /></p>
+
+<p>pplog, 普段前向きな人がたまに吐く闇みたいなものが垣間見えるのが良い。そういうのtwitterやブログに書いてもいいんだけど、誰でも読めたり引用できるとトラブルの種になりがちなので、ひとつネストされたところで書けるのが良い。</p>
+
+<p>トラブルを避けたいなら外に書かなきゃいいじゃないと思うかもしれないけど、リアルのコミュニティから離れたごく一部のひとに知ってもらえると満足みたいな気持ちがあるのだと思う。</p>
+
+<p>日常の小さな発見や嬉しい出来事を綴ったポエムもたくさんあって、読むと温かい気持ちになる。同じ一日でもいろんな過ごし方があるのだなぁと感じる。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=pplog%E3%81%8A%E3%82%82%E3%81%97%E3%82%8D%E3%81%84%20-%20shoya.io&amp;url=http://shoya.io/blog/pplog/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pplog/&amp;t=pplog%E3%81%8A%E3%82%82%E3%81%97%E3%82%8D%E3%81%84" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/pplog/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/pplog/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Feb 22, 2014
     
     [<a href="/tag/Note/">Note</a>]
@@ -183,88 +216,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Jan 12, 2014
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/category_next/"><h1 class="post-title">Jekyllのカテゴリ内で「次の記事」ボタンを設置する</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Jekyllではpage.previous, page.next要素に前の記事/次の記事が格納されているので、前の記事/次の記事へ誘導するボタンがすぐに作れる。しかしこの前の記事/次の記事はタグやカテゴリを無視して時系列に引っ張ってくるので、あるカテゴリ内で前へ前へといった誘導ができない。</p>
-
-<p>例えばこのブログでは<strike>日本語の記事をblog, 英語の記事をen/blogというカテゴリで管理しているので、</strike>(統合しました)英語の記事を読んでいる間は英語の記事だけを取得したいと思う。</p>
-
-<p>調べたところDavid Straußさんがプラグインを作成されていて、結構良さそう。</p>
-
-<p><a href="http://stravid.com/en/category-aware-previous-and-next-for-jekyll-posts/">Category Aware Previous And Next For Jekyll Posts</a></p>
-
-<p>これを少し改良して使うことにした。</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">class</span> <span class="nc">CategoryAwareNextGenerator</span> <span class="o">&lt;</span> <span class="no">Generator</span>
-
-    <span class="n">safe</span> <span class="kp">true</span>
-    <span class="n">priority</span> <span class="ss">:high</span>
-
-    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
-      <span class="n">site</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">each_pair</span> <span class="k">do</span> <span class="o">|</span><span class="n">category_name</span><span class="p">,</span> <span class="n">posts</span><span class="o">|</span>
-        <span class="n">posts</span><span class="o">.</span><span class="n">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span> <span class="p">}</span>
-
-        <span class="n">posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-          <span class="n">position</span> <span class="o">=</span> <span class="n">posts</span><span class="o">.</span><span class="n">index</span> <span class="n">post</span>
-
-          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="n">posts</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="n">category_previous</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span>
-          <span class="k">else</span>
-            <span class="n">category_previous</span> <span class="o">=</span> <span class="kp">nil</span>
-          <span class="k">end</span>
-
-          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">1</span>
-            <span class="n">category_next</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span>
-          <span class="k">else</span>
-            <span class="n">category_next</span> <span class="o">=</span> <span class="kp">nil</span>
-          <span class="k">end</span>
-
-          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_previous&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_previous</span> <span class="k">unless</span> <span class="n">category_previous</span><span class="o">.</span><span class="n">nil?</span>
-          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_next&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_next</span> <span class="k">unless</span> <span class="n">category_next</span><span class="o">.</span><span class="n">nil?</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-
-<p>改良点は2点。</p>
-
-<ul>
-  <li>オリジナルは次の記事のみを取得していたので、前も記事を取得するようにした。</li>
-  <li>前の記事で”時系列的に過去”を呼びたいので、前の記事/次の記事の関係を逆にした。</li>
-</ul>
-
-<p>_plugins/以下にcategory_next.rbなどと名前をつけて置いておけば</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 前の記事</span>
-page.CATEGORYNAME_previous
-<span class="c"># 次の記事</span>
-page.CATEGORYNAME_next</code></pre></div>
-
-<p>が取得できる</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/category_next/&amp;t=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/category_next/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -304,6 +255,8 @@ page.CATEGORYNAME_next</code></pre></div>
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/carcassonne/">歴史的城塞都市カルカソンヌ</a></li>
+        
           <li>- <a href="/blog/orange/">フランスでOrangeを契約する</a></li>
         
           <li>- <a href="/blog/1st_week_in_france/">フランスで暮らし始めて1週間</a></li>
@@ -313,8 +266,6 @@ page.CATEGORYNAME_next</code></pre></div>
           <li>- <a href="/blog/alfred_google_scholar/">Alfredを使って論文を最速で検索する</a></li>
         
           <li>- <a href="/blog/hubot_listens_webhook/">SlackのIncoming WebhooksをHubotで拾う</a></li>
-        
-          <li>- <a href="/blog/bootcamp_hyperv/">BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</a></li>
         
         </ul>
       </div>
