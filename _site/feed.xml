@@ -8,6 +8,51 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>ドキュメント考2015</title>
+        <description>&lt;p&gt;PCでとるメモの保存先について環境や目的の変化に合わせてこれまでいろんなツールを試してきたので、それらを踏まえて現状こんな感じというのを共有します。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;ドキュメント遍歴&lt;/h3&gt;
+
+&lt;p&gt;大学1-2年生(2010-2011年)の頃は今みたいに外で常時ネットに接続する環境がなかった。テキストファイルをPCに保存して、外出先で必要そうなものをあらかじめiPod touchに入れておいて&lt;a href=&quot;http://www.goodreader.com/&quot;&gt;GoodReader&lt;/a&gt;とかで見てた。PC上のファイルはディレクトリ分けによって管理していたので探すのが面倒だった。&lt;/p&gt;
+
+&lt;p&gt;大学3年生(2012年)の頃にiPhoneを手にしてからは&lt;a href=&quot;https://www.evernote.com/&quot;&gt;Evernote&lt;/a&gt;を使っていた。検索が楽になって外でも開けてとても便利。しかし&lt;a href=&quot;http://markovlabo.net/?p=1165&quot;&gt;ノート数が増えるに従ってPC/iPhoneアプリの挙動が不安定になった&lt;/a&gt;。ブラウザからしかアクセスしないので、EvernoteはライフログやWebクリップの保管場所にしか使われなくなった。&lt;/p&gt;
+
+&lt;p&gt;大学4年生(2013年)の頃から代わりに使い始めたのが&lt;a href=&quot;http://dayoneapp.com/&quot;&gt;DayOne&lt;/a&gt;というアプリで、Markdownでメモが取れる上に起動や同期が早くUIも綺麗。エディタとしては申し分ない環境だった。しかし少しだけ残念なところが2つある。それは好きな場所に画像を貼れないこと(外部においてマークダウンで読み込むことはできるが)と、EvernoteやDropbox, GoogleDriveのようなURLでドキュメントを限定公開する機能がないことだ。ドキュメントを他者と共有する機会が増えてきて、なんとかしたいと思っていた。&lt;/p&gt;
+
+&lt;p&gt;共同作業するときはだいたい&lt;a href=&quot;https://www.google.com/intl/ja/drive/&quot;&gt;GoogleDrive&lt;/a&gt;を使っているけど、オフラインだと使えないしブラウザ上で作業するのは不便なので個人の作業場所・ドキュメント保管場所には向いていない。また、用紙のサイズとかレイアウトとかいらないしMarkdownで書きたいという思いがあって自作のWikiを運用していたこともあったけど、やはりブラウザ上でしか編集できないのは大きな欠点だった。&lt;/p&gt;
+
+&lt;h3 id=&quot;evernote-alternote&quot;&gt;Evernote + Alternote&lt;/h3&gt;
+
+&lt;p&gt;では今はどうしているかというと、Evernoteに戻ってきて落ち着いた。使い方は昔とは変わり、自動的になんでも保存するのではなく、自分で書いた文章など必要なものだけを残している。新しいアカウントを作ってノートの数を絞ると同期も問題なく行えるようになった。久々に起動したEvernoteのクライアントアプリはいろいろと進化していて、特にプレゼンテーションモードは重宝している。未だエディタとしては使いづらいので、Macから文章を書くときは&lt;a href=&quot;http://alternoteapp.com/&quot;&gt;Alternote&lt;/a&gt;というアプリを使って保存している。Alternoteは主要な機能にショートカットキーが割り当てられていて書くことに専念できるEveroteエディタ。Markdownをリッチテキスト変換してくれる機能もあるけれど、テキストを他の媒体に貼り付けるときに記号が消えては困るのでオプションを切ってMarkdownには脳内で変換している。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;まとめ&lt;/h3&gt;
+
+&lt;p&gt;自分がドキュメントツールに求める機能は以下のとおり(優先度順)。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;複数端末で同期できる&lt;/li&gt;
+  &lt;li&gt;エディタとして使いやすい(起動が早く気持ちよく書ける)&lt;/li&gt;
+  &lt;li&gt;ディレクトリの概念がない(検索とタグで探す)&lt;/li&gt;
+  &lt;li&gt;URL限定公開ができる&lt;/li&gt;
+  &lt;li&gt;共同編集ができる&lt;/li&gt;
+  &lt;li&gt;画像を貼り付けることができる&lt;/li&gt;
+  &lt;li&gt;Markdownで書ける&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;現状では軽量化したEvernoteとAlternoteを使うのが良い感じです。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 06 Oct 2015 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/document_tools/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/document_tools/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>月の港ボルドー</title>
         <description>&lt;p&gt;ワインの生産地として有名なボルドーを観光しました。ローマ時代から良港をもち、18世紀にはワイン貿易で非常に栄えた街だそうです。&lt;/p&gt;
 
@@ -392,29 +437,6 @@
         <guid isPermaLink="true">http://shoya.io/blog/recruit_internship/</guid>
         
         <category>Event</category>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>「ベイマックス」観た</title>
-        <description>&lt;p&gt;感想の前に物語の核心に触れない程度のネタバレがあります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bighero6.jpg&quot; class=&quot;image-on-frame-mini image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ヒロ(主人公)はロボット工学の若き天才。大学進学に興味を示さずロボットファイトに興じるヒロ。その様子を見かねた兄タダシは、ヒロを大学の研究室に連れていく。科学オタクのおもしろ研究やロボット工学界の権威キャラハン教授に魅せられて、ヒロは大学進学を決意する。入学するにはキャラハン教授をあっと驚かせることをすれば良い。ヒロは知恵を絞ってオリジナルロボットを開発し、展示会でのデモンストレーションに成功する。&lt;/p&gt;
-
-&lt;p&gt;ここまでの展開が特に良い。訪問者に研究成果を見せたくてたまらない仲間たちや面白いデモを作って展示会の参加者をあっと驚かせてやろうと気持ちを昂ぶらせるヒロの姿は、理系大学院生なら誰もが共感できるところなんじゃないだろうか。僕の2014年は前半頑張りすぎて後半失速気味なところがあって、研究に対するモチベーションを失いかけていたのだけれど、ベイマックス観たおかげで研究を始めた頃の気持ちを思い出すことができた。&lt;/p&gt;
-
-&lt;p&gt;ここから先は王道のヒーローアクション+ヒロとベイマックスの成長といった感じで、物語の最後まで楽しめた。ベイマックスもう大丈夫だよ。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/bighero6/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/bighero6/</guid>
         
         <category>Note</category>
         
