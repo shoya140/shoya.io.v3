@@ -6,7 +6,4 @@ permalink: /blog/:title/
 markdown: kramdown
 paginate: 3
 popular: ["Paletta", "cookpad_internship", "hatena_intern", "towards-a-scientist", "internet_black_market", "long_shadow"]
-gems: ['jekyll/scholar']
-scholar:
-  style: ieee
-  bibliography_template: bib
+gems: []
