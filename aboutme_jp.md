@@ -35,6 +35,7 @@ permalink: /aboutme/jp/
 
 ### 活動・受賞歴など
 
+* <a href="https://twitter.com/shoya140/status/660636400333619200"><span style="font-weight: 600;">平成27年度大阪府立大学学長顕彰</span></a> (11.2015)
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学 知能情報工学分野/情報数理科学専攻 ポスター発表会</span></a> 優秀発表賞(09.2015)
 * <a href="http://recruit-jinji.jp/workshop2015/"><span style="font-weight: 600;">株式会社リクルートホールディングス 2Weeks US Workshop 2015</span></a> 優勝 (08.2015)
 * <a href="https://mashupawards.doorkeeper.jp/events/25862"><span style="font-weight: 600;">Mashup Awards主催 JINS MEME HACKATHON</span></a> 最優秀賞 (07.2015)

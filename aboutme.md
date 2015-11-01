@@ -39,6 +39,7 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 
 ### Activities
 
+* <a href="https://twitter.com/shoya140/status/660636400333619200">President's Honor in Osaka Prefecture University</a>, 2015
 * <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
 * <a href="http://recruit-jinji.jp/workshop2015/">2Weeks US Workshop 2015 by Recruit Holdings Co.</a>: Champion, 2015
 * <a href="https://mashupawards.doorkeeper.jp/events/25862">JINS MEME HACKATHON Powered by Mashup Awards</a>: Champion, 2015
