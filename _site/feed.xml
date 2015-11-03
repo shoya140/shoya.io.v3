@@ -8,6 +8,50 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Google Glassを修理する</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+
+&lt;p&gt;Google Glassには本体から送られる光を目に届けるためのプリズムが付いているのだけれど、高温多湿な場所で使っているとプリズムの先端に貼られているミラーフィルムが剥がれて画面が見えなくなってしまう。調べてみると割とよくある事例らしく、Googleに問い合わせた人もいる模様。(&lt;cite&gt;&lt;a href=&quot;http://glassalmanac.com/google-glass-mortal-enemy-high-temps-humidity/656/&quot;&gt;High Temps are Damaging Google Glass Beyond Repair&lt;/a&gt;&lt;/cite&gt;, &lt;cite&gt;&lt;a href=&quot;https://www.reddit.com/r/googleglass/comments/292rzy/whats_happing_to_the_film_on_my_google_glass/&quot;&gt;Whats Happing to the film on my Google Glass?&lt;/a&gt;&lt;cite&gt;) しかし手元のGoogle GlassはAmazon経由で購入ており問い合わせが難しいので、自分で修理することにした。&lt;/cite&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/reparing01.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;解決策&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;※修理は自己責任でお願いします。失敗したり保証を失っても一切の責任を負いかねます。&lt;/strong&gt;&lt;br /&gt;
+用意するもの: 金属光沢シート・はさみ(カッター)・ピンセット&lt;/p&gt;
+
+&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B001GQ2WP8/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/41o25COrUcL._SL75_.jpg&quot; width=&quot;36&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B001GQ2WP8/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;トライツール TF01 ミラー フィニッシュ&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;ハセガワ&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;表面に残ったフィルムを剥がす。(セロハンテープで上から押さえると綺麗に剥がれる。)&lt;/li&gt;
+  &lt;li&gt;金属光沢シートをプリズムの大きさに合わせて切り、ピンセットで乗せる。&lt;/li&gt;
+  &lt;li&gt;吸着するまで3-4分待つ。今までどおり画面が見えるようになる。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/reparing02.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;金属光沢シートを乗せた後はすぐに指で押したりせず自然と吸着するのを待ちましょう。気泡が入ると像がぼやけます。5,6回繰り返すうちに上手に貼ることができました。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;おまけ(うまくいかなかった例)&lt;/h3&gt;
+
+&lt;p&gt;いろいろ材料を探して試してみたところ、上記の金属光沢シートが一番良さそうでした。最初に試したアルミテープは光沢が十分ではなくて鏡として使えず、像を結ぶことができませんでした。金属光沢シートと一緒に両面テープも買ったのですが、シート自体に吸着力があったので必要ありませんでした。&lt;/p&gt;
+
+&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B00I4NQNJC/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/41A1pi3DmXL._SL75_.jpg&quot; width=&quot;75&quot; height=&quot;74&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B00I4NQNJC/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;エル日昌 アルミテープ(ツヤアリ)50mmx10m LM1025010&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;エル日昌&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/51DUq6IdhoL._SL75_.jpg&quot; width=&quot;75&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;3M スコッチ 超強力両面テープ 透明素材用 12mm×4m STD-12&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;3M (スリーエム)&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/repairing-google-glass/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/repairing-google-glass/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>ドキュメント考2015</title>
         <description>&lt;p&gt;PCでとるメモの保存先について環境や目的の変化に合わせてこれまでいろんなツールを試してきたので、それらを踏まえて現状こんな感じというのを共有します。&lt;/p&gt;
 
@@ -395,53 +439,6 @@
         
         
         <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>リクルートホールディングスのインターンシップに参加しました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://recruit-jinji.jp/winter-internship2015/&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship01.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2月中旬から16日間&lt;a href=&quot;http://recruit-jinji.jp/winter-internship2015/&quot;&gt;RecruitHoldings Winter Internship2015&lt;/a&gt;・Data Analystコースに参加しました。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;参加のきっかけ&lt;/h3&gt;
-
-&lt;p&gt;僕は卒業後の進路として研究者・ソフトウェアエンジニア・データサイエンティストの3つを検討しています。前2つと比較してデータサイエンスについては知らないことが多いため、データサイエンティストという仕事について知るためにデータ解析系のインターンを探して応募しました。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;内容&lt;/h3&gt;
-
-&lt;p&gt;リクルートが展開するじゃらん・SUUMO・ポンパレなどのサービスが持っている実データを解析して新しい提案をするインターンでした。まずキックオフイベントで各サービスが抱えている課題を聞き、興味のあるサービスの希望順を提出します。そしてサービスごとに結成されたチームメンバーと共に解析や実装を行い、最終日に成果発表会といった流れでした。僕らのチームは&lt;strong&gt;&lt;a href=&quot;http://zexy.net/&quot;&gt;ゼクシィ&lt;/a&gt;&lt;/strong&gt;事業部の業務を効率化するためのツールを作りました。発表ではメンター特別賞をいただきました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship02.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;成果物の開発には&lt;strong&gt;自然言語処理&lt;/strong&gt;と&lt;strong&gt;画像処理&lt;/strong&gt;を用いました。チームに自然言語処理を専攻しているメンバーがいて、ツールの使い方とかノウハウなど知らないことをたくさん学ぶことができたのがとても良かったです。&lt;/p&gt;
-
-&lt;p&gt;いろいろ試した手法の中で特に面白いと感じたのは&lt;strong&gt;word2vec&lt;/strong&gt;でした。word2vecとは、学習データ(膨大なテキスト)を使って単語同士の共起関係を計算し、単語を200次元くらいの空間内でベクトルとして表現する手法です。単語を意味的な空間配置することで、例えば「結婚」に近い意味の単語をテキストから引っ張ってきたり、「ドレス」-「女性」+「男性」で「タキシード」という単語を得るなどといった使い方をすることができます。ゼクシィの記事には雰囲気に関する言葉(ゆるふわ、さわやか、キュート、ラブリー…)がたくさん詰まっています。ゼクシィの全記事を使ってword2vecのモデルを作ると、「きれい」という単語に近い単語として「上品」「清楚」「軽やか」「フェミニン」という単語を出力したり、「かわいい」という言葉に対しては「ナチュラル」「愛らしい」「主役」「ガーリー」などといった単語の出力を得ることができました。それっぽい！&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;データサイエンティストという仕事&lt;/h3&gt;
-
-&lt;p&gt;実世界のデータは扱いやすいものばかりではないので、手動でラベルをつけたりデータをクリーニングしたり、実は&lt;strong&gt;泥臭い作業の多い仕事&lt;/strong&gt;なんだということを知りました。また、データサイエンスのチームには統計・情報処理・ソフトウェアエンジニアリング・ビジネスなど&lt;strong&gt;異なったバックグラウンドを持つメンバーが集まることで力を発揮する性質がある&lt;/strong&gt;ということを実感しました。スキルセットの重なりが小さいのでチーム内で中間物を共有することにとても苦労したのですが、ひとりでは扱いきれないデータがいろんな角度からのからのアプローチによって扱えるデータになっていく様子はとてもワクワクしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship03.jpg&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;毎日毎日が濃くて、16日間あっという間でした。勝山さんをはじめインターン事務局の方々、メンターの堀越さん・池田さん、チームメンバーのみんな、本当にお世話になりました！！&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;ちょっと宣伝&lt;/h3&gt;
-
-&lt;p&gt;アプリ開発コースのインターンメンバーと一緒にアプリ開発者向けのお祭を開催します。 LTやハッカソン、ライブコーディングなどに興味がある人はぜひぜひエントリーお待ちしております！&lt;strong&gt;エントリー締切は今日の23時59分です！！！！&lt;/strong&gt;(3/17現在)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://recruit-jinji.jp/adf_fes2015/&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship04.png&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 17 Mar 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/recruit_internship/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/recruit_internship/</guid>
-        
-        <category>Event</category>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
         
       </item>
     
