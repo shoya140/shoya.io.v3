@@ -39,6 +39,7 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 
 ### Activities
 
+* <a href="http://mashupaward.jp/">MashupAwards11</a>: Semifinal stage, 2015
 * <a href="https://twitter.com/shoya140/status/660636400333619200">President's Honor in Osaka Prefecture University</a>, 2015
 * <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
 * <a href="http://recruit-jinji.jp/workshop2015/">2Weeks US Workshop 2015 by Recruit Holdings Co.</a>: Champion, 2015
@@ -49,7 +50,7 @@ Activity recognition, Eye tracking, Mobile applications, Image processing.
 * <a href="http://jp.startup-dating.com/2013/05/super-hackathon-2013-in-osak">Super Hackathon 2013 in Osaka</a>: Third place, 2013
 * <a href="http://mrk1869.com/blog/honor/">President's Honor in Osaka Prefecture University</a>, 2012
 * <a href="http://bussorenre.com/?p=45">Kyoto Hackathon</a>: Champion, 2012
-* <a href="http://ma8.mashupaward.jp/">MashupAward8</a>: Semifinal stage, 2012
+* <a href="http://ma8.mashupaward.jp/">MashupAwards8</a>: Semifinal stage, 2012
 * <a href="http://internship.blog.klab.jp/2012/08/10/ptlab1-day1/">Prototyping Lab, KLab Inc</a>: Champion, 2012
 * <a href="https://www.cyberagent.co.jp/list/mockplan.html">Mock App Planning Contest, CyberAgent Inc</a>: Final stage, 2012
 * <a href="http://tech-tokyo.com/?p=679">Tech-Tokyo, Application Development Contest for Students</a>: Champion, 2012
