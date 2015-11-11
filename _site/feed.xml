@@ -52,6 +52,23 @@
       </item>
     
       <item>
+        <title>学長顕彰2</title>
+        <description>&lt;p&gt;大学在学中2度目の学長顕彰を戴きました。&lt;a href=&quot;/blog/honor/&quot;&gt;前回(3年前)受賞した時&lt;/a&gt;に「次は研究で成果をあげられるよう頑張ります」と言っていたので有言実行ということで:)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/honor2.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/honor2/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/honor2/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>ドキュメント考2015</title>
         <description>&lt;p&gt;PCでとるメモの保存先について環境や目的の変化に合わせてこれまでいろんなツールを試してきたので、それらを踏まえて現状こんな感じというのを共有します。&lt;/p&gt;
 
@@ -401,41 +418,6 @@
         <guid isPermaLink="true">http://shoya.io/blog/hubot_listens_webhook/</guid>
         
         <category>Programming</category>
-        
-        
-        <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</title>
-        <description>&lt;p&gt;Windows Phoneアプリのエミュレータが起動できなくなる不具合を発見したので報告します。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;エラー内容&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ハイパーバイザーが実行されていないため、Windows Phone Emulatorを起動できません。ハードウェア対応仮想化が有効になっていないことが原因の可能性があります。コンピュータのBIOSを調べ、ハードウェア対応仮想化及びハードウェア対応保護機能が有効になっていることを確認してください。&lt;/p&gt;
-
-&lt;p&gt;BootcampでインストールしたWindows8.1において コントロールパネル &amp;gt; プログラムと機能 &amp;gt; Windowsの機能の有効化または無効化 では有効化状態にあるはずのHyper-Vが実行されていない。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;解決策&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv02.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Optionキーを押しながら電源を入れてWindowsを起動するのではなく、まずOSXを起動し、システム環境設定 &amp;gt; 起動ディスク でWindowsをデフォルトに設定してから再起動ボタンを押して起動する。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;そんなばかな…と言った感じだけれど、こちらの記事(&lt;a href=&quot;https://discussions.apple.com/thread/6666722?searchText=hyper-v&quot;&gt;If I reboot to Windows directly from Windows (bootcamp options), I cannot launch a vm in Hyper-V - Apple Support Communities&lt;/a&gt;)によるとOptionキーを押しながら起動する方法ではCSM-BIOS layerの設定が起動しないからとのこと。&lt;/p&gt;
-
-&lt;p&gt;手順通りにWindowsを起動すると、Hyper-Vが実行されてEmulatorの起動を確認できた。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv03.png&quot; class=&quot;image-on-frame&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 19 Mar 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/bootcamp_hyperv/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/bootcamp_hyperv/</guid>
-        
-        <category>Infrastructure</category>
         
         
         <category>tech</category>

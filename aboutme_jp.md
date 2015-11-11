@@ -36,7 +36,7 @@ permalink: /aboutme/jp/
 ### 活動・受賞歴など
 
 * <a href="http://mashupaward.jp/"><span style="font-weight: 600;">MashupAwards11</span></a> 準決勝 (11.2015)
-* <a href="https://twitter.com/shoya140/status/660636400333619200"><span style="font-weight: 600;">平成27年度大阪府立大学学長顕彰</span></a> (11.2015)
+* <a href="http://shoya.io/blog/honor2/"><span style="font-weight: 600;">平成27年度大阪府立大学学長顕彰</span></a> (11.2015)
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学 知能情報工学分野/情報数理科学専攻 ポスター発表会</span></a> 優秀発表賞(09.2015)
 * <a href="http://recruit-jinji.jp/workshop2015/"><span style="font-weight: 600;">株式会社リクルートホールディングス 2Weeks US Workshop 2015</span></a> 優勝 (08.2015)
 * <a href="https://mashupawards.doorkeeper.jp/events/25862"><span style="font-weight: 600;">Mashup Awards主催 JINS MEME HACKATHON</span></a> 最優秀賞 (07.2015)
@@ -46,7 +46,7 @@ permalink: /aboutme/jp/
 * <a href ="https://sites.google.com/site/miru2014okayama/wakate"><span style="font-weight: 600;">MIRU2014 若手プログラム</span></a> Best Wakate Presentation Award, Audience Award (06.2014)
 * <a href="http://jp.startup-dating.com/2013/05/super-hackathon-2013-in-osak"><span style="font-weight: 600;">スーパーハッカソン2013</span></a> 3位・審査委員賞 (05.2013)
 * <a href="http://bussorenre.com/?p=45"><span style="font-weight: 600;">KtotoHackathon</span></a> 優勝 (12.2012)
-* <a href="http://mrk1869.com/blog/honor/"><span style="font-weight: 600;">平成24年度大阪府立大学学長顕彰</span></a> (11.2012)
+* <a href="http://shoya.io/blog/honor/"><span style="font-weight: 600;">平成24年度大阪府立大学学長顕彰</span></a> (11.2012)
 * <a href="http://ma8.mashupaward.jp/"><span style="font-weight: 600;">MashupAwards8</span></a> 準決勝 (11.2012)
 * <a href="http://internship.blog.klab.jp/2012/08/10/ptlab1-day1/"><span style="font-weight: 600;">KLab株式会社第1回プロトタイピングラボ</span></a> 優勝 (08.2012)
 * <a href="https://www.cyberagent.co.jp/list/mockplan.html"><span style="font-weight: 600;">株式会社サイバーエージェントモックプランコンテスト</span></a> 決勝 (06.2012)
