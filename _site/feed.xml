@@ -8,6 +8,40 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</title>
+        <description>&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;33dbc4b1166e45cca57400eeeaf0db4f&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;なぜ作ったか&lt;/h3&gt;
+
+&lt;p&gt;僕の観測範囲では、研究発表のスライドというのは装飾が最小限で、白地に黒文字が読みやすくて良いとされています。その制約の中で見栄えの良いスライドを作るのはなかなか難しいので、大体いい感じになるKeynoteテンプレートを作りました。名前はZebraです。こちらからダウンロードすることができます。&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/zebra&quot;&gt;Zebra — Keynote template for research presentations&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;テンプレート作成/公開にあたって参考にさせていただいたのは&lt;a href=&quot;http://www.sanographix.net/&quot;&gt;佐野章核&lt;/a&gt;さんの「Azusa」「Azusa Colors」で、勉強会やLTのスライドではいつもお世話になっています。
+&lt;cite&gt;&lt;a href=&quot;http://memo.sanographix.net/post/82160791768&quot;&gt;大体いい感じになるKeynoteテンプレート「Azusa」作った - MEMOGRAPHIX&lt;/a&gt;&lt;/cite&gt; ただ研究発表のような堅い場所で使うにはややポップすぎる感じがするのと、透過でない図やグラフを貼る機会が多くて真っ白な背景が使いたいので、今回はそれに適したテンプレートを作成することにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zebra1.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;機能&lt;/h3&gt;
+
+&lt;p&gt;title, outline, blank, mainの4種類のフォーマットと2種類のカラースキームで構成されています。mainのスライド上部には目立つが主張し過ぎない見出しを置いています。見出しの色は変えられるので好きな色を使ってください。スライドのメインカラーとリンクさせると綺麗です。スライドに使用する色は極力3色(背景・ベースカラー・メインカラー)に押さえて、課題-解決策の対比や強く伝えたいことにアクセントカラーを使うのが良いと思います。フォントはMac標準搭載のもののなかからAvenir Nextを選択しました。これも好みで選んでください。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;まとめ&lt;/h3&gt;
+
+&lt;p&gt;フォーマルだけど少しお洒落、大体いい感じの研究発表ができるKeynoteテンプレートを作って公開しました。ご活用ください。不具合などありましたらissue立てるか直接連絡いただけると嬉しいです。Zebra使って最高の卒論/修論発表にしようぜ！&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/zebra&quot;&gt;Zebra — Keynote template for research presentations&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/zebra/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/zebra/</guid>
+        
+        <category>ReleaseNote</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>Google Glassを修理する</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
 
@@ -389,38 +423,6 @@
         
         
         <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>SlackのIncoming WebhooksをHubotで拾う</title>
-        <description>&lt;p&gt;Hubotがチャット上の投稿を拾うにはhear(全てに反応)とrespond(呼ばれたら反応)という2つの方法があるのだけれど、無限ループを防ぐためか、どちらもbotの投稿を拾うことができない。botの投稿にも反応させたいときはcatchAllを使う。catchAllで投稿を一旦受け取り、正規表現で発言が必要か判断すれば良い。&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-coffeescript&quot; data-lang=&quot;coffeescript&quot;&gt;&lt;span class=&quot;nv&quot;&gt;module.exports = &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;(robot) -&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;robot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;catchAll&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;(msg) -&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;r = &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;RegExp&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;(.*)(どーなつ|ドーナツ)(.*)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;i&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;matches = &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;どーんといこう！&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;この方法はIncoming Webhooksをトリガーに発言させたい時に役に立つ。例えばうちのbotには下記の仕組みで夜になったら日報を作成してもらっている。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ifttt.com/channels/weather/triggers/131-sunset&quot;&gt;日が沈む&lt;/a&gt;とIFTTTが「今日も一日お疲れさまです」と投稿する&lt;/li&gt;
-  &lt;li&gt;「お疲れさまです」というキーワードに反応して、botが&lt;a href=&quot;https://developer.todoist.com/&quot;&gt;todoist&lt;/a&gt;から今日一日に完了したタスクを取得して投稿する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;他にもテストの結果に応じて一喜一憂させてみるなど、合いの手をひとつ入れるだけで会話が盛り上がって楽しいと思う。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 May 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/hubot_listens_webhook/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/hubot_listens_webhook/</guid>
-        
-        <category>Programming</category>
-        
-        
-        <category>tech</category>
         
       </item>
     
