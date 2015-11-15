@@ -154,7 +154,8 @@ body {
   font-weight: 300;
   color: #4a4a46;
   background-color: #fdfdfd;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased; }
   @media screen and (max-width: 500px) {
     body {
       font-size: 14px; } }
