@@ -1,5 +1,7 @@
 $(function(){
 
+  $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+
   // entry fade
   $(".post-list-item").hover(function(){
     rollIn($(this), "#9694b1");
