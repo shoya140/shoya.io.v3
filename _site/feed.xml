@@ -8,6 +8,134 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>深層学習の自己符号化器を4行で記述できるライブラリを作りました</title>
+        <description>&lt;p&gt;深層学習(DeepLeanring)の事前学習や特徴抽出に使われる積層自己符号化器(stacked auto-encoder)を簡単に記述するためのライブラリ(Chainerインターフェイス)を作りました。名前はzChainerです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pypi.python.org/pypi/zChainer/&quot;&gt;zChainer - scikit-learn like interface and stacked autoencoder for chainer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zchainer01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;なぜ作ったか&lt;/h3&gt;
+
+&lt;p&gt;ニューラルネットワークを簡単に実装することができるライブラリとしてChainerが多くの方に利用されていますが、ほぼ同じ記述を繰り返し書く必要があったり、学習器の定義・評価の記述が煩雑になりがちであるという課題があります。そこでインターフェイスとなるライブラリがあれば便利だと思って開発しました。scikt-learn likeに使うためにscikit-chainerとxchainerを参考にさせていただきました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;cite&gt;&lt;a href=&quot;http://qiita.com/lucidfrontier45/items/0568d0d9e2c125e72734&quot;&gt;chainerをscikit-learn likeに使えるようにした&lt;/a&gt;&lt;/cite&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;cite&gt;&lt;a href=&quot;http://blog.recruit-tech.co.jp/2015/09/02/xchainer-released/&quot;&gt;NNライブラリChainerをScikit-learn likeにガンガン拡張する&lt;/a&gt;&lt;/cite&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;作ってみると積層自己符号化器の実装も共通なコードが多いことに気付いたので、本ライブラリは積層自己符号化器を管理するところまでインターフェイスに含めてみました。後述のサンプルコードのとおり、少ない行数(整形のための改行を除けばわずか4行)で記述することができます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;機能&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Chainerをscikit-learnの学習器として使用できる&lt;/li&gt;
+  &lt;li&gt;少ない行数でニューラルネットワークを記述できる&lt;/li&gt;
+  &lt;li&gt;少ない行数で積層自己符号化器を記述できる&lt;/li&gt;
+  &lt;li&gt;出力先を指定するだけでログやシリアライズされたモデルを出力できる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;インストール方法&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install zChainer&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;サンプルコード&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;chainer.functions&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;F&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;chainer.links&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;L&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;chainer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ChainList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optimizers&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;zChainer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NNAutoEncoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utility&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# encoderの定義&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 例)ノード数784-200-100のネットワーク&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 学習後に出力層(MNISTの場合はノード数10)をadd_linkする&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;encoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ChainList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;784&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# decoderの定義&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# encoderとノード数を反対にしたLinkをChainする&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;decoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChainList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;784&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# NNAutoEncoderインスタンスの作成&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ae&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NNAutoEncoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optimizers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;log_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./ae_&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utility&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;_log.csv&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;export_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./ae_&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utility&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.model&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 学習&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ae&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;forward関数にはdropoutありのreluを登録していますが、好みのforward関数をセットすることもできます。詳しくは&lt;a href=&quot;https://github.com/shoya140/zChainer&quot;&gt;github&lt;/a&gt;のexampleをご確認ください。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;実装&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;class NNAutoEncoder &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;:
+    def __init__&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self, encoder, decoder, optimizer,
+        &lt;span class=&quot;nv&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20, &lt;span class=&quot;nv&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100, &lt;span class=&quot;nv&quot;&gt;log_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;export_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+        self.encoder &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; encoder
+        self.decoder &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; decoder
+        self.optimizer &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; optimizer
+        self.epoch &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; epoch
+        self.batch_size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; batch_size
+        self.log_path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; log_path
+        self.export_path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; export_path
+        self.autoencoded &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ChainList&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+    def fit&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self, x_train&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; layer in range&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0, len&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.encoder&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;:
+            &lt;span class=&quot;c&quot;&gt;# Creating model&lt;/span&gt;
+            self.model &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ChainList&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.encoder&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;layer&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.copy&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;, self.decoder&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;layer&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.copy&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+            NNManager.forward &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.forward
+            &lt;span class=&quot;nv&quot;&gt;nn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; NNManager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.model, self.optimizer, F.mean_squared_error,
+                self.epoch, self.batch_size, self.log_path&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;c&quot;&gt;# Training&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;x_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.encode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x_train, layer&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.data
+            nn.fit&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x_data, x_data, &lt;span class=&quot;nv&quot;&gt;autoencoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;True&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            self.autoencoded.add_link&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;nn.model&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.copy&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; self.export_path !&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;:
+            pickle.dump&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.autoencoded, open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.export_path, &lt;span class=&quot;s1&quot;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, -1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; self
+
+    def predict&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self, x_test&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+        raise Exception&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Prediction for AutoEncoder is not implemented.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+    def encode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self, x, n&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 0:
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; Variable&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;:
+            &lt;span class=&quot;nv&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.encode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x, n-1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; F.relu&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.autoencoded&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;n-1&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;h&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+
+    def forward&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self, x&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+        &lt;span class=&quot;nv&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; F.dropout&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;F.relu&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.model&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; F.dropout&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;F.relu&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;self.model&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;h&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Chainer1.5のLink and Chainを使用しています。ネットワークの構造をChainではなくChainListとして管理することで各層に添字でアクセスできるようにして、学習が済んだものをself.autoencodedにコピーしています。学習済みモデル最先端の層からの出力はencoded関数を再帰的に呼ぶことで得ています。(層が深くなるにつれて遅くなるかも？時間ができれば改良したい)&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;まとめ&lt;/h3&gt;
+
+&lt;p&gt;積層自己符号化器を含めたChainerのインターフェイスとなるライブラリを作成しました。時間の都合で十分検証ができていないので、不具合などあるかもしれません。おかしいところがあれば連絡いただけると嬉しいです。バージョン1.0になるまで使用は自己責任でお願いします。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shoya140/zChainer&quot;&gt;https://github.com/shoya140/zChainer&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/zchainer/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/zchainer/</guid>
+        
+        <category>ReleaseNote</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
         <title>大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</title>
         <description>&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;33dbc4b1166e45cca57400eeeaf0db4f&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
 
@@ -399,25 +527,6 @@
         <pubDate>Mon, 21 Sep 2015 00:00:00 +0900</pubDate>
         <link>http://shoya.io/blog/birthday_in_paris/</link>
         <guid isPermaLink="true">http://shoya.io/blog/birthday_in_paris/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>Alfredを使って論文を最速で検索する</title>
-        <description>&lt;p&gt;Alfredのcustom web searchesにGoogle Scholar &lt;code&gt;https://scholar.google.com/scholar?q={query}&lt;/code&gt; を登録して、いつどこからでも素早く論文を検索できるようにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/alfred_google_scholar.png&quot; class=&quot;image-on-frame-medium image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;検索結果をAlfred内に表示したりbibをクリップボードにコピーするworkflowを作ると面白いかもしれない(いつか時間ができたら作る)。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/alfred_google_scholar/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/alfred_google_scholar/</guid>
         
         <category>Note</category>
         
