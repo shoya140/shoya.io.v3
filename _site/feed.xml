@@ -8,6 +8,65 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://qiita.com/advent-calendar/2015/jinsmeme&quot;&gt;JINS MEME Advent Calendar 2015&lt;/a&gt; 3日目の記事です。昨日の記事は@hatoneさんによる &lt;cite&gt;&lt;a href=&quot;http://hatone.hateblo.jp/entry/2015/12/01/162235&quot;&gt;JINE MEME iOSアプリ開発入門 -公式サンプルアプリを動かす-&lt;/a&gt;&lt;/cite&gt;でした。サンプルアプリが動いたら、次はセンサから得られるデータについてもっと詳しく見てみたいはず！今日はセンサデータをグラフ表示したり保存する方法について紹介します。記事の前半は作ったものの紹介で後半は実装の工夫です。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+
+&lt;p&gt;センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な&lt;strong&gt;波形のモニタリング&lt;/strong&gt;と&lt;strong&gt;ラベル付データの記録&lt;/strong&gt;機能を持ったアプリを作って&lt;a href=&quot;https://github.com/shoya140/MEMELogger-iOS-developers&quot;&gt;githubで公開しました&lt;/a&gt;。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;機能&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;アプリ上でセンサデータをグラフ表示できる&lt;/li&gt;
+  &lt;li&gt;オフライン解析のためにデータを記録できる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;実装&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;グラフ描画&lt;/strong&gt; 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IBDesignable&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;GraphView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IBInspectable&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;maximumValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1000.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kr&quot;&gt;didSet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setNeedsDisplay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;データの記録&lt;/strong&gt; 開発者がデータの読み書きに使えるDocumentDirectory以下にテキストファイルを作成し、&lt;code&gt;memeRealTimeModeDataReceived(data: MEMERealTimeData!)&lt;/code&gt;が呼ばれる度にそのデータを追記しています。また、iTunesやiFunBoxを使ってデータを取り出せるように&lt;code&gt;プロジェクト名-info.plist&lt;/code&gt;にKey:&lt;code&gt;Application supports iTunes file sharing&lt;/code&gt; Value:&lt;code&gt;YES&lt;/code&gt;をセットしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;まばたきのアニメーション&lt;/strong&gt; &lt;a href=&quot;http://www.paintcodeapp.com/&quot;&gt;PaintCode&lt;/a&gt;を使ってPathの位置を変数で変えられる目の画像を作成しました。PaintCodeから出力されたStyleKitをimportして、目の開閉や虹彩の位置とともにdraw~を呼び出して描画しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_03.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;その他の細かい実装についてはリポジトリをご参照ください。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;まとめ&lt;/h3&gt;
+
+&lt;p&gt;JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。&lt;a href=&quot;http://qiita.com/advent-calendar/2015/jinsmeme&quot;&gt;JINS MEME Advent Calendar2015&lt;/a&gt; 明日の担当は古川さんとのことでとても楽しみです！&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shoya140/MEMELogger-iOS-developers&quot;&gt;https://github.com/shoya140/MEMELogger-iOS-developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/meme-logger/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/meme-logger/</guid>
+        
+        <category>ReleaseNote</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
         <title>深層学習の自己符号化器を4行で記述できるライブラリを作りました</title>
         <description>&lt;p&gt;深層学習(DeepLeanring)の事前学習や特徴抽出に使われる積層自己符号化器(stacked auto-encoder)を簡単に記述するためのライブラリ(Chainerインターフェイス)を作りました。名前はzChainerです。&lt;/p&gt;
 
@@ -499,34 +558,6 @@
         <pubDate>Tue, 29 Sep 2015 00:00:00 +0900</pubDate>
         <link>http://shoya.io/blog/1st_week_in_france/</link>
         <guid isPermaLink="true">http://shoya.io/blog/1st_week_in_france/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>誕生日&amp;&amp;留学初日</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/birthday_in_paris.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今日で24歳になると同時にフランスでの留学生活が始まった。ここ最近の生活を振り返って、今年は「やるべきことをする」を目標に頑張ることにする。具体的には3つのやるべきことができればと思っている。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;優先順位をつける&lt;/strong&gt;
-自分は面白そうなことには何でも挑戦する性分で、それによってかなり刺激的な日々を過ごしているのだけれど、増え続ける機会に全てに全力で参加することは物理的・時間的にいよいよ不可能になってきた。目の前の面白さだけでなく少し先のことも考えて、今自分がやるべきことを選んで集中することを意識してみようと思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;スケジュールを守る&lt;/strong&gt;
-ここ半年くらいのアウトプットは締め切り直前の爆発的なパフォーマンスに頼りきってしまっているので、もう少し余裕を持って作業することを心がける。最近実践しているのは、本当に本当の締め切りよりも前に細かい締め切りをいくつか作ること(例えば誰かに進捗を見せる日を決めるとか)で、これによってなるべく早い段階で最低限のクオリティを担保することができる。こんな感じの工夫を考えて、締め切りに追われるのではなく締め切りを追えるような生活がしたい。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;文章を書く&lt;/strong&gt;
-なぜなのか分からないけれど、やるべきはずなのに遠ざけてしまっているタスクには文章を書くということが共通している。書き始める前に文の構成とかあれこれ考えるのはやめて、多少雑でも良いので流れるように文章をかけるようになりたい。&lt;/p&gt;
-
-&lt;p&gt;この文章は「文章を書く」取り組みの一環としてパリから滞在先のラ・ロシェルへ向かう列車の中で書いている。生活が落ち着いたら、改めてフランスでの暮らしについて書きたいと思う。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 21 Sep 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/birthday_in_paris/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/birthday_in_paris/</guid>
         
         <category>Note</category>
         
