@@ -20,7 +20,6 @@ permalink: /applications/
 * <a href = "http://paletta.mrk1869.com"><span style="font-weight: 700;">Paletta</span></a><br>プログラマのためのカラーパレットツール
 * <a href = "http://meiwaku.me/"><span style="font-weight: 700;">迷惑メール共有サイト[SPAM MUSEUM]</span></a><br>日常のメイワクメールをワクワクに変えるサービス
 * <a href = "http://quuize.com/"><span style="font-weight: 700;">Quuize</span></a><br>キーワードを元にクイズを自動生成するアプリ
-* <a href = "http://book-mrk1869.tumblr.com/"><span style="font-weight: 700;">self.bookShelf</span></a><br>心に響いた一節を、いつでも読み返せるように。
 * <a href = "http://markovlabo.net/kotodama/"><span style="font-weight: 700;">kotodama</span></a><br>真夜中まで起きている人に対して寝坊後悔ツイートの爆撃を浴びせるTwitterBot
 * <a href = "https://twitter.com/TodaysMensa"><span style="font-weight: 700;">Today's Mensa</span></a><br>Mensaの日替わりメニューを日本語に翻訳してお知らせするTwitterBot
 * <a href = "http://mrk1869.sakura.ne.jp/belate/"><span style="font-weight: 700;">チコク イイワケ ロボ</span></a><br>チコクイイワケロボのWeb版
@@ -28,4 +27,5 @@ permalink: /applications/
 
 ## Library
 
+* <a href = "https://pypi.python.org/pypi/zChainer/"><span style="font-weight: 700;">zChainer</span></a><br>scikit-learn like interface and stacked autoencoder for chainer
 * <a href = "https://pypi.python.org/pypi/dalmatian/"><span style="font-weight: 700;">dalmatian</span></a><br>Confusion Matrix(混同行列)を視覚的に描画するpythonライブラリ
