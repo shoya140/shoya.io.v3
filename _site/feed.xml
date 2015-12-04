@@ -154,7 +154,7 @@
 
             &lt;span class=&quot;c&quot;&gt;# Training&lt;/span&gt;
             &lt;span class=&quot;nv&quot;&gt;x_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.encode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x_train, layer&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.data
-            nn.fit&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x_data, x_data, &lt;span class=&quot;nv&quot;&gt;autoencoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;True&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            nn.fit&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x_data, x_data&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
             self.autoencoded.add_link&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;nn.model&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;.copy&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
 
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; self.export_path !&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;:

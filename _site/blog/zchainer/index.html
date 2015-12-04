@@ -160,7 +160,7 @@
 
             <span class="c"># Training</span>
             <span class="nv">x_data</span> <span class="o">=</span> self.encode<span class="o">(</span>x_train, layer<span class="o">)</span>.data
-            nn.fit<span class="o">(</span>x_data, x_data, <span class="nv">autoencoding</span><span class="o">=</span>True<span class="o">)</span>
+            nn.fit<span class="o">(</span>x_data, x_data<span class="o">)</span>
             self.autoencoded.add_link<span class="o">(</span>nn.model<span class="o">[</span>0<span class="o">]</span>.copy<span class="o">())</span>
 
         <span class="k">if</span> self.export_path !<span class="o">=</span> <span class="s2">&quot;&quot;</span>:
