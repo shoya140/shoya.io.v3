@@ -635,6 +635,15 @@ a:hover .footer-icon{
     visibility: hidden;
 }
 
+.youtube-video{
+    width: 80%;
+    height: 400px;
+    @include media-query($on-palm) {
+        width: 90%;
+        height: 200px;
+    }
+}
+
 .injection-center{
     text-align:center;
     font-weight:600;

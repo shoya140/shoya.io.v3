@@ -593,6 +593,14 @@ a:hover .footer-icon {
 .image-fade {
   visibility: hidden; }
 
+.youtube-video {
+  width: 80%;
+  height: 400px; }
+  @media screen and (max-width: 500px) {
+    .youtube-video {
+      width: 90%;
+      height: 200px; } }
+
 .injection-center {
   text-align: center;
   font-weight: 600; }

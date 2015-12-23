@@ -65,141 +65,157 @@
           
 <div class="post">
   <header class="post-header">
-    <p class="post-meta">Nov 14, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/sublime-latex/"><h1 class="post-title">Sublime Text3でLaTeXをコンパイルする[Mac]</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Sublime Textにはcommand+bでコードを実行する機能(Build System)がある。今回はビルドできるファイルにLaTeXを加えてみた。Sublime TextでLaTeXを扱う方法、調べたらLaTeXToolsとかを入れていろいろ頑張る方法が出てくるのだけれど、既にMacTeXの環境(ターミナルからplatexコマンドなどが使える状態)があるのならもっと簡単に構築できると思う。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_latex_01.png" class="image-on-frame-small" /></p>
-
-<h3 id="section">手順</h3>
-
-<ol>
-  <li>
-    <p>Tools&gt;Build System&gt;New Build System…(上図参照)を選択してBuild Systemを作成する。</p>
-  </li>
-  <li>
-    <p>新規ファイルが開かれるので、下記の設定を記入して保存する。ファイル名がメニューバーに表示されるBuild Systemの名前になる。保存場所はデフォルトで ~/Library/Application Support/Sublime Text 3/Packages/User になる。</p>
-  </li>
-</ol>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;shell&quot;</span>: <span class="nb">false</span>,
-  <span class="s2">&quot;cmd&quot;</span>:<span class="o">[</span>
-    <span class="s2">&quot;/bin/sh&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;/usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/pbibtex $file_base_name.aux &amp;&amp; /usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/dvipdfmx -p a4 $file_base_name.dvi &amp;&amp; /usr/bin/open $file_base_name.pdf&quot;</span>
-  <span class="o">]</span>,
-  <span class="s2">&quot;selector&quot;</span>: <span class="s2">&quot;source.tex&quot;</span>
-<span class="o">}</span></code></pre></div>
-
-<h3 id="section-1">補足</h3>
-
-<p>LaTeXからPDFを作成するには、複数回のコンパイルが必要になる。標準で提供されている仕組みではBuild Systemに複数のコマンドを登録することができないので、上記のような黒魔術を使用する。Macの場合は”shell”をfalseに、”cmd”にshとその引数として実行したいコマンドを&amp;&amp;で続けていけばうまく動作するらしい。Windowsの場合は書き方がやや異なる。<cite><a href="http://blog.pcitron.fr/2013/02/08/multiple-command-in-sublime-build-system/">Multiple commands in Sublime Build System</a></cite>を参考に設定した。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]%20-%20shoya.io&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/sublime-latex/&amp;t=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/sublime-latex/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 13, 2014
+    <p class="post-meta">Dec 2, 2014
     
     [<a href="/tag/Note/">Note</a>]
     
     </p>
-    <a href="/blog/towards-a-scientist/"><h1 class="post-title">なんで科学者を目指すようになったか</h1></a>
+    <a href="/blog/looking-back-at-2014/"><h1 class="post-title">2014年振り返り</h1></a>
   </header>
   <article class="post-content">
-    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg" class="image-on-frame-mini" /></p>
+    <p>今年ももう終わりに近づいたので、2014年の良かったこと・良くなかったことの振り返りや2015年から意識したいことについて書きました。</p>
 
-<p>幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で<strong>科学体験フェスティバル</strong>を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。</p>
+<h3 id="section">良かったこと</h3>
 
-<p>それから中学・高校と理科の授業を受ける中で、興味の対象は物理学・化学・生物学の広く深い方向に伸びていった。高校生の頃に<strong>国際生物学オリンピック</strong>の日本代表を決める選考会に出たことがあって、惜しいところまでいった。(余談だけどサマーウォーズの「あと少しで日本代表になれたのに。」というセリフは聞く度に心に刺さるものがある。)そこで競った同期がとにかく賢く変わり者揃いだった。懇親会のときにひとりが「俺、東大に行こうと思う。」とつぶやいて、僕も私もといった具合に皆が声をあげた。ものすごく盛り上がり、「大学でまた会おう。」と言い合った。たぶん皆そういった刺激を与え合う相手に飢えていたのだと思う。研究の道に進むなら面白い人がたくさんいる環境で過ごしたい思い、僕も<a href="/blog/imabari/">難関校を目指すことを強く決めた</a>。結果、最初に発言した彼は東大に合格し、僕は阪大を受けるが落ちて府大に進学することになった。</p>
+<p><strong>多くの学会に参加した。</strong> 昨年参加したUbicomp2013が大勢の人の前でシステムのデモをやったり世界中の研究者と交流したり初めてヨーロッパの文化に触れる機会だったりとても思い入れのある学会だったので、今年もUbicomp2014に論文を通すことを目標にして研究を続けてきた。結果として今年も参加することができ、刺激的なフィードバックを得たり初めてアメリカを訪れるという経験ができた。また、主導で取り組んだ研究がAugmented Human2014に採択された(その頃自分はドイツ留学中だったので代理発表をお願いした)。MIRUやPRMUといった国内の研究会でもデモ発表や口頭発表を行って、同世代や少し上の世代の方々と繋がりができた。</p>
 
-<p>阪大には基礎工学部という工学と理学を織り交ぜた研究をしているところがある。僕の幅広い興味や視野と合うと思ったのが、進路に阪大を選んだ理由だった。入学したら<strong>脳科学</strong>の研究をしようと思っていた。第2希望の府大のことはよく知らなかったので、名前をみて知能情報工学科を受験した。脳と能の漢字違いで学部を選んだことを、僕は入学してから知ることになる。</p>
+<p><strong>良いものにたくさん触れた。</strong> 良いものを作るという作業、AとBという2つのうち良い方を選択することの連続だと思っている。その意思決定はデータとセンスに基づいて行われるべきで、センスを磨く一番の方法は良いものに触れることだと思う。留学中はChaos Communication Congress・<a href="/blog/transmediale/">Transmediale</a>・<a href="/blog/internet_black_market/">インターネット闇市</a>といったお祭りに参加したり、<a href="/tag/Sightseeing/">いろんな国や都市を観光した</a>。最近だと<a href="/blog/hakuryuen/">白龍園でとても綺麗な紅葉を見た</a>。映画もたくさん観た。これらの経験によって自分の中での面白いとか綺麗といった感覚を研ぎ澄ますことができたと思う。</p>
 
-<p>勘違いで選んだ学部も運命で、僕はそのおかげで<strong>情報工学</strong>に出会うことになる。プログラミング、あるいは企画やデザインまで含めたソフトウェア開発は、僕の適正にとてもマッチしていると思う。アイデアを形にして公開するまでのスピードは他分野のものづくりを圧倒するものがある。学部3年生の頃にその面白さに気付き、プログラミングを通じて<a href="/development/">いろんな(変な)ものを生み出して</a>、楽しい経験を積むことができた。その結果、もっと情報工学を学びたいと考え、大学や学術分野を変えることなく大学院へ進学した。巡り巡って僕は現在の研究テーマを<strong>情報工学の視点から見た脳科学や認知的行動</strong>に設定していて、今までの意思決定は間違っていなかったと確信してる。</p>
+<p><strong>ブログ書くようになった。</strong> 行った場所とか経験とか環境設定とかなんでもいいので文章にして公開してきた。これはsanographixさん(<cite><a href="http://memo.sanographix.net/post/69851358523">なんで日記書いたほうがいいか</a></cite>)やdd_otsuさん(<cite><a href="http://dd-otsu.tumblr.com/post/96688840406">承認情報と研究日誌</a></cite>)の影響で、自分の行動や思考は記録しておいて後から再利用したいと思うようになったから。Evernoteの走り書きは本当に雑な記録になりがちだけど、ブログだと最低限人に話せるレベルでまとまった文章が保証されて良い。誰かに情報を伝えるときも「この記事読んで」の一言でお互いの時間を短縮できる。あと文章は書く習慣つけてないといざ書こうと思った時にいい感じの言葉が出てこなくて困る。<cite><a href="http://autobiography0.blog82.fc2.com/blog-entry-79.html">No.15 クリエイティビティについて - 99%のひらめき</a></cite></p>
 
-<p>僕らの世代も就職活動が始まり、進学するか就職するか、いよいよ選択を先延ばしにできない時期になった。<cite><a href="http://memo.sanographix.net/post/69496511652">なんでデザイナーになったか - MEMOGRAPHIX</a></cite>に影響を受けて、科学者になる道を後押しする材料について書いてみたのでした。(開発者になる道を後押しする材料もたくさんあるので、また改めて書くことになると思う。)</p>
+<p><strong>運動するようになった。</strong> 体力の衰えを感じるようになったので、なるべく外に出て体を動かすことを心がけた。9月頃からは時々ジムに通うようにもなって筋力をつけたり泳いだりしてる。ジム、科学的に体を鍛える話が聞けるので一人で運動するよりも面白い。夜遅くまでやっているので大学帰りに寄れるのも良い。</p>
+
+<p><strong>進路について考えた。</strong> これまで先延ばしにしてきた卒業後の進路について真剣に考えて、修士卒業後の3年間の計画を立てることができた。(このあたりは直接会った時に聞いてください。)3年で力をつけた後は、自分の適正とかその時にやりたいことを考えて、研究と開発のどちらに進むかもう一度決めようと思う。</p>
+
+<h3 id="section-1">良くなかったこと</h3>
+
+<p><strong>体調崩した。</strong> 大学院生、こんなに忙しいとは思っていなくて、昼は講義に出席して夕方は実験と雑務、夜は論文書いて朝はレポート課題やって昼の講義へ、みたいな生活を続けていたので、めでたさが減っていくのも無理はなかった。</p>
+
+<h3 id="section-2">2015年</h3>
+
+<p>やりたいこともやるべきこともたくさんな1年で、全部に100%の力でコミットすることは不可能であることを痛感した。2015年は重要度や緊急度から優先順位を意識して、やるべきことをなるべく効果的に達成していきたいと思う。また、一人でできることには限りがあるので、もっと周りの人を頼ったり、作業手順やノウハウを<a href="/blog/protocol/">ドキュメント化</a>して後輩に引き継ぎたい。あと研究室生活はオーバーワークになりがちなので、家に研究を持ち帰らないようにして意識的に余暇の時間をとりたい。</p>
+
+<p>2015年もどうぞよろしくお願い致します。</p>
 
   </article>
   <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+    <div class="tweet-button"><a href="https://twitter.com/share?text=2014%E5%B9%B4%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%20-%20shoya.io&amp;url=http://shoya.io/blog/looking-back-at-2014/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
   </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/towards-a-scientist/&amp;t=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/looking-back-at-2014/&amp;t=2014%E5%B9%B4%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
   </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/looking-back-at-2014/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
   </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/towards-a-scientist/" style="display: none;">hatena</a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/looking-back-at-2014/" style="display: none;">hatena</a></div>
   </div>
 </div>
 <hr>
 
 <div class="post">
   <header class="post-header">
-    <p class="post-meta">Nov 12, 2014
+    <p class="post-meta">Dec 1, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
     
     </p>
-    <a href="/blog/brew-mozart/"><h1 class="post-title">HomebrewでOz開発環境を整える[Mozart2][Emacs]</h1></a>
+    <a href="/blog/pair-programming/"><h1 class="post-title">ペアプログラミングを支える技術</h1></a>
   </header>
   <article class="post-content">
-    <p>「コンピュータプログラミングの概念・技法・モデル」(ガウディ本)のサンプルコードを実行するためにOz言語の環境を整えた。Ozは開発環境であるMozartシステムやEmacsを必要とし、それらはウェブサイト上で無料で公開されているのだけれど、パッケージをダウンロードしてくるのが面倒なのですべてHomebrewで管理することにした。</p>
+    <p><a href="http://www.adventar.org/calendars/607">LiT!関西 Advent Calendar 2014</a> 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプログラミングとそれを支えるMacの便利機能について書きます。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># emacs</span>
-brew install emacs --japanese --cocoa --srgb --with-gnutls -v
-brew linkapps
+<h3 id="section">ペアプログラミングとは</h3>
 
-<span class="c"># homebrew-cask</span>
-brew tap caskroom/homebrew-cask
-brew install brew-cask
+<p>2人が1台のPCを使ってプログラミングすることです。キーボードを操作してコードを書く人(<strong>ドライバー</strong>)とその様子を眺める人(<strong>ナビゲーター</strong>)の役割に分かれて交代でプログラムを書きます。ドライバーは今何をしようとしているか、ナビゲーターは気になるところや別解について積極的に話しながら作業を進めます。</p>
 
-<span class="c"># mozart</span>
-brew tap caskroom/homebrew-versions
-brew install mozart2</code></pre></div>
+<p>2人で1つの作業を行うので生産性が落ちるという欠点がありますが、それ以上に<strong>綺麗なコードが書ける</strong>・<strong>互いの知識を共有できる</strong>などの利点があります。特に上級者と初心者がペアを組んでプログラムを書くと、上級者のコードの書き方や<a href="http://blog.shibayu36.org/entry/2013/01/19/202049">開発環境</a>を実際に見て学べる、リアルタイムに助言を受けられる、といった効率のよい学習を行うことができます。</p>
 
-<h3 id="section">補足</h3>
+<h3 id="section-1">画面共有しよう</h3>
 
-<p>Emacsについてはインストール方法やパッチが様々のようなので、<cite><a href="http://www.sevencredit.com/2014/07/02/580/">Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット</a>を参考にさせていただきインストールオプションを上記に選んだ。</cite></p>
+<p>一緒にコードを書いていると「ちょっと貸して！」みたいな状況が多々あると思います。その度に席を入れ替えたり身を乗り出すのも面倒なので、2人のPCから1つの画面を操作できると便利です。Macはデフォルトで画面を共有する機能を搭載しているので、その使い方について説明します。以下、画面共有を受け入れる側をドライバーPC、申請する側をナビゲーターPCとします。</p>
 
-<p>homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)</p>
+<p>まずはドライバーPCのシステム環境設定&gt;共有を開きます。1.画面共有にチェックを入れ、2.コンピュータ設定を選択して、3.ほかのユーザが画面操作の権限を要求することを許可にチェックを入れます。</p>
 
-<h3 id="section-1">2014.12.04 追記</h3>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair01.png" class="image-on-frame-medium image-fade" /></p>
 
-<p>mozart2がhomebrew-caskではなくhomevrewで管理されるようになったので現在は以下のコマンドでインストールできます。</p>
+<p>次にナビゲーターPCでFinder&gt;移動&gt;サーバへ接続(ショートカットキー:⌘+K)を開き、ドライバーPCに表示されているvnc://(IPアドレス)を入力します。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew install emacs --japanese --cocoa --srgb --with-gnutls -v
-brew install mozart2</code></pre></div>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair02.png" class="image-on-frame-medium image-fade" /></p>
 
-<h3 id="section-2">動作確認</h3>
+<p>画面操作の権限に関する選択画面が現れるので、アクセス権を要求を選んで接続ボタンを押します。</p>
 
-<p>Mozart2.appを起動して2フレームのEmacsが起動すればOKです。</p>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair03.png" class="image-on-frame-medium image-fade" /></p>
 
-<div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/51iXhiKTamL._SL75_.jpg" width="59" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="margin-bottom: 2px; line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank">コンピュータプログラミングの概念・技法・モデル(IT Architect' Archiveクラシックモダン・コンピューティング6) (IT Architects’Archive CLASSIC MODER)</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">セイフ・ハリディ, ピーター・ヴァン・ロイ, Peter Van-Roy, Seif Haridi</div></div><div class="booklink-footer" style="clear: left"></div></div>
+<p>するとドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair04.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプログラミングを開始しましょう。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/pair05.png" class="image-on-frame-medium image-fade" /></p>
+
+<p>なお、Macの画面共有を使用するには2つのPCが同じネットワークに接続されている必要があります。離れた環境で画面を共有する場合は<a href="https://screenhero.com/">Screenhero</a>・<a href="http://www.teamviewer.com/ja/">TeamViewer</a>・<a href="https://plus.google.com/hangouts">Googleハングアウト</a>のリモートデスクトップ機能を使うことをおすすめします。アカウント作成やソフトウェアのインストールが不要で簡単という理由で、今回は画面共有を紹介しました。</p>
+
+<p><a href="http://www.adventar.org/calendars/607">LiT!関西 Advent Calendar 2014</a>次回はほっしゃん(<a href="https://twitter.com/Recursible">@Recursible</a>)がAndroidのioschedライブラリの解析に関する記事を書いてくれます。お楽しみに！</p>
 
   </article>
   <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]%20-%20shoya.io&amp;url=http://shoya.io/blog/brew-mozart/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%83%9A%E3%82%A2%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93%20-%20shoya.io&amp;url=http://shoya.io/blog/pair-programming/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
   </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/brew-mozart/&amp;t=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pair-programming/&amp;t=%E3%83%9A%E3%82%A2%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
   </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/brew-mozart/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/pair-programming/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
   </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/brew-mozart/" style="display: none;">hatena</a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/pair-programming/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Nov 30, 2014
+    
+    [<a href="/tag/Sightseeing/">Sightseeing</a>]
+    
+    </p>
+    <a href="/blog/hakuryuen/"><h1 class="post-title">白龍園観覧</h1></a>
+  </header>
+  <article class="post-content">
+    <p><cite><a href="http://memo.sanographix.net/post/103115828845">1日100人限定・君は京都の激レアスポット「白龍園」を見たか - MEMOGRAPHIX</a></cite> の写真があまりにも美しくて居てもたってもいられなくなったので京都の白龍園に行ってきた。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu01.JPG" class="image-on-frame image-fade" /></p>
+
+<p>白龍園は子供服メーカーの青野株式会社によって所有・手入れされている庭園。今まで外部の人は入れなかったのだけれど、2012年秋から春と秋のみ・人数制限ありで一般公開されるようになった。観覧券は叡山電鉄出町柳駅にて09:00から購入できるが1日100人の枠が埋まると販売が終わってしまう。<cite><a href="http://guide.travel.co.jp/article/2244/">１日１００人限定！誰も知らない京都の紅葉穴場！～洛北・白龍園 - たびねす</a></cite></p>
+
+<p>11/23(日)に行ったのだけれど、三連休の真ん中だからすぐに売り切れるだろうとかなり余裕を持って07:30に出町柳駅に着くと、既に30人ほどの列ができていた。観覧券を購入した後は09:15発の電車に乗って二ノ瀬駅で降り、10:00の開園で入園した。電車は二ノ瀬駅に着く直前で「もみじのトンネル」を抜けるので道中も美しい景色を見ることができる。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu03.JPG" class="image-on-frame image-fade" /></p>
+
+<p>園内に入って最初に目にするのは、まるで絨毯のような美しい苔。1日の入場者を制限して丁寧に管理されているので、通路や階段などいたるところで茂っている。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu04.JPG" class="image-on-frame image-fade" /></p>
+
+<p>苔で覆われた石畳を進むと奥の方に神社があり、鳥居をくぐったあたりからは雰囲気が変わって高い木に覆われたところになる。細い道なのだけれど人が少ないので落ち着いて歩くことができた。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu02.JPG" class="image-on-frame image-fade" /></p>
+
+<p>庭園には腰を据えて景色を楽しめる東屋(あずまや)がある。写真は入口に近いところにある「彩雲亭」から見える景色で、窓によって切りだされた紅葉が非常に綺麗。特に日が差したタイミングに見ると窓の外の木々が色鮮やかに光るので、座ってしばらく眺めているのがおすすめ。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu05.JPG" class="image-on-frame image-fade" /></p>
+
+<p>高台にある「福寿園」という東屋からは山々の紅葉が見渡せる。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu06.JPG" class="image-on-frame image-fade" /></p>
+
+<p>滞在時間はゆっくり2巡して90分ほど。春にまた一般公開されるかもしれないので、今度は桜の咲く頃に来れたらいいなぁ。何度も足を運びたくなる美しい庭園でした。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=%E7%99%BD%E9%BE%8D%E5%9C%92%E8%A6%B3%E8%A6%A7%20-%20shoya.io&amp;url=http://shoya.io/blog/hakuryuen/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/hakuryuen/&amp;t=%E7%99%BD%E9%BE%8D%E5%9C%92%E8%A6%B3%E8%A6%A7" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/hakuryuen/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/hakuryuen/" style="display: none;">hatena</a></div>
   </div>
 </div>
 <hr>
@@ -243,17 +259,17 @@ brew install mozart2</code></pre></div>
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
+        
+          <li>- <a href="/blog/orbits/">論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</a></li>
+        
+          <li>- <a href="/blog/texpad/">Texpad LaTeX editorの紹介</a></li>
+        
           <li>- <a href="/blog/meme-logger/">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</a></li>
         
           <li>- <a href="/blog/zchainer/">深層学習の自己符号化器を4行で記述できるライブラリを作りました</a></li>
         
           <li>- <a href="/blog/zebra/">大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</a></li>
-        
-          <li>- <a href="/blog/repairing-google-glass/">Google Glassを修理する</a></li>
-        
-          <li>- <a href="/blog/honor2/">学長顕彰2</a></li>
-        
-          <li>- <a href="/blog/document_tools/">ドキュメント考2015</a></li>
         
         </ul>
       </div>

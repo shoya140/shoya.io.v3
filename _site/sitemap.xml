@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/pyenv-virtualenv/</loc>
+    </url>
+    
+    <url>
+        <loc>http://shoya.io/blog/orbits/</loc>
+    </url>
+    
+    <url>
+        <loc>http://shoya.io/blog/texpad/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/meme-logger/</loc>
     </url>
     
@@ -769,6 +781,14 @@
     
     <url>
         <loc>http://shoya.io/page32/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/page33/</loc>
     </url>
     
     

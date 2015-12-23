@@ -8,6 +8,195 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>科学技術計算のためのPython開発環境(2015)</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;機能&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;pyenv-virtualenvでバージョンと仮想環境を切り替えられる&lt;/li&gt;
+  &lt;li&gt;OpenCV3.0をPythonから利用できる&lt;/li&gt;
+  &lt;li&gt;Jupyter(iPython notebook)を起動できる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pyenv-virtualenv&quot;&gt;pyenv-virtualenvの導入&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;でインストールする&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pyenv-virtualenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;.zshrc(.bashrc)に下記の設定を追記&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${HOME}/.pyenv&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;${PYENV_ROOT}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv init -)&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv virtualenv-init -)&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pythonをインストール (例:3.5.10)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv install 3.5.10
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv global 3.5.10
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv rehash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;opencv&quot;&gt;OpenCVの導入&lt;/h3&gt;
+
+&lt;p&gt;Homebrewでインストールする。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install opencv3 --with-python3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# python2&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python2.7/site-packages &amp;gt;  &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv3.pth
+    
+&lt;span class=&quot;c&quot;&gt;# python3&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python3.5/site-packages &amp;gt;  &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv3.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;numpyも一緒に入るけどpipで管理するものを使う&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jupyter&quot;&gt;Jupyterなど定番ライブラリの導入&lt;/h3&gt;
+
+&lt;p&gt;pipでインストールする&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy scipy pandas scikit-learn matplotlib jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;virtualenvの上でmatplotlibを使うための設定&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;backend : TkAgg &amp;gt; ~/.matplotlib/matplotlibrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;virtualenv&quot;&gt;参考1 virtualenvの使い方&lt;/h3&gt;
+
+&lt;p&gt;大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvを使って仮想環境を用意する。&lt;/p&gt;
+
+&lt;p&gt;virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用する)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir tutorial &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;tutorial
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv virtualenv 3.5.0 3.5.0-tutorial
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;virtualenvの削除&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;osxlinux-windows&quot;&gt;参考2 OSX以外(Linux, Windows)での実行&lt;/h3&gt;
+
+&lt;p&gt;scipyやOpenCVのセットアップで躓くことが多いのでminicondaを使っている。例えば下記のDockerfileからcontainerを作成してその上で実行する。(Python3系のcondaはOpenCVをサポートしていないので注意)&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/docker-image-ml&quot;&gt;shoya140/docker-image-ml&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; centos
+&lt;span class=&quot;k&quot;&gt;MAINTAINER&lt;/span&gt; shoya140
+
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; yum update -y
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; yum install -y git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
+
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; git clone git://github.com/yyuu/pyenv.git .pyenv
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt; PYENV_ROOT &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.pyenv
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt; PATH &lt;span class=&quot;nv&quot;&gt;$PYENV_ROOT&lt;/span&gt;/shims:&lt;span class=&quot;nv&quot;&gt;$PYENV_ROOT&lt;/span&gt;/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv install miniconda-3.18.3
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv global miniconda-3.18.3
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv rehash
+
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install numpy scipy pandas scikit-learn
+&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 23 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/pyenv-virtualenv/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/pyenv-virtualenv/</guid>
+        
+        <category>Programming</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
+        <title>論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://qiita.com/advent-calendar/2015/hci&quot;&gt;ヒューマンコンピュータインタラクション論文紹介 Advent Calendar 2015&lt;/a&gt; 15日目の記事です。UbiComp2015で体験したデモの中から&lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2800942&amp;amp;CFID=568698974&amp;amp;CFTOKEN=47187028&quot;&gt;Orbits: Enabling Gaze Interaction in Smart Watches Using Moving Targets&lt;/a&gt;を紹介します。投稿が遅くなりましてすみません…&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;&quot;&gt;
+&lt;iframe class=&quot;youtube-video&quot; src=&quot;https://www.youtube.com/embed/x6hbicxEFbg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;概要&lt;/h3&gt;
+&lt;p&gt;円軌道上を動く点を見つめるといった視線入力を受け取るスマートウォッチ上のインターフェイス。画面上に位置・回転方向・半径・角速度の異なる軌道を配置することで、複数の軌道のなかからどれを見ているかを特定する。安価なアイトラッカで動作する点、キャリブレーションが不要な点、画面サイズに非依存な点が優れている。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;有効性の検証&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;実験1:&lt;/strong&gt; 認識に多くのサンプルを使うと精度が向上するが入力に時間がかかる。注視の認識に最適なウインドウサイズを実験によって求めた。ターゲットを注視しているとき・ターゲットではなく文字盤を見ているとき・読書など他の行動をとっているときの視線を解析した結果、サイズは1秒間が良いと分かった。&lt;strong&gt;実験2:&lt;/strong&gt; ターゲットの数・角速度・半径を変化させた際の認識率の変化を調査した。ターゲット数&amp;gt;角速度&amp;gt;半径の順に大きく影響することが分かった(軌道半径による影響は極めて小さい)。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;先行研究との比較&lt;/h3&gt;
+&lt;p&gt;画面が小さく片手でしか操作できないスマートウォッチのインターフェイスに関する研究は広く行われているが、その多くは指による入力の領域を拡張するものである。また、画面上の動かない点を注視するタイプの視線入力は正確な位置推定のためにキャリブレーションを要する。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;次に読むべき論文&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2493477&quot;&gt;Pursuits: spontaneous interaction with displays based on smooth pursuit eye movement and moving targets.&lt;/a&gt; “軌道上を動く点を見つめる視線の認識”はこちらの論文のアイデアによるもの。&lt;/p&gt;
+
+&lt;p&gt;デモではアイトラッカに&lt;a href=&quot;https://pupil-labs.com/pupil/&quot;&gt;pupil&lt;/a&gt;を使っていました。見ている対象は重要ではなく眼球運動のパターンが追えれば良いので、実は&lt;a href=&quot;https://jins-meme.com/ja/&quot;&gt;J!NS MEME&lt;/a&gt;でも同じようなことができるのではないかと思いました。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/orbits/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/orbits/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>Texpad LaTeX editorの紹介</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.adventar.org/calendars/899&quot;&gt;できる Mac OS X Advent Calendar 2015&lt;/a&gt; 17日目の記事です。”Mac App Storeで3000円くらいするけど有益で十分金出す価値あるソフトの情報”ということで&lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234&quot;&gt;Texpad&lt;/a&gt;について紹介します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/texpad01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Texとは数式の処理に優れており論文やレポートの作成に使用されるマークアップ言語です。これまでTexを書くのにVim+linuxコマンドを使ったりTexShopに乗り換えたりSublime Text3+Build Systemを使ってみたりいろいろと試してきて、今はTexpadを使っています。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;blog/mac_tex/&quot;&gt;2014年におけるMac TeX環境 - shoya.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/sublime-latex/&quot;&gt;Sublime Text3でLaTeXをコンパイルする[Mac] - shoya.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;texpad&quot;&gt;TexPadの良いところ&lt;/h3&gt;
+
+&lt;p&gt;エディタに必須な機能(シンタックスハイライト、オートコンプリート)が搭載されています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/texpad02.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;複数のタイプセットをサポートしていてPreferenceから切り替えることができます。(pdflatexとplatex-&amp;gt;dvipdfmxの違いを未だに理解していないので新しく論文を書くときは両方実行して通る方を使用してる)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/texpad03.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;そのほか、ショートカットキーでコンパイルできる点や.auxや.bblなどのコンパイル時に生成される中間物が./.texpadtmp/という不可視ディレクトリにまとめられる点も良いです。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;導入方法&lt;/h3&gt;
+
+&lt;p&gt;Texpadのコンパイル環境は別途用意する必要があります。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;MacにTex環境を作る(&lt;a href=&quot;https://tug.org/mactex/&quot;&gt;MacTex&lt;/a&gt;がおすすめ)&lt;/li&gt;
+  &lt;li&gt;AppStoreでTexpadを購入する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;という手順で導入することができます。&lt;/p&gt;
+
+&lt;p&gt;3400円(2015年12月現在)とやや高価ではありますがおすすめのアプリです。&lt;/p&gt;
+
+&lt;div class=&quot;sticky-itslink&quot;&gt;&lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://is3.mzstatic.com/image/thumb/Purple/v4/da/94/2a/da942ac4-54bc-63bc-764c-3be4c850f4db/source.icns/60x60bb.png&quot; style=&quot;float:left;margin:5px;&quot; alt=&quot;Texpad : LaTeX editor&quot; title=&quot;Texpad : LaTeX editor&quot; /&gt;&lt;/a&gt;&lt;div class=&quot;sticky-itslinktext&quot;&gt;&lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Texpad : LaTeX editor&lt;/a&gt;&lt;br /&gt;Valletta Ventures&lt;br /&gt;価格： 3,400円 &lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://linkmaker.itunes.apple.com/htmlResources/assets//images/web/linkmaker/badge_macappstore-sm.png&quot; alt=&quot;iTunesで見る&quot; class=&quot;sticky-itslinkbadge&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-size:xx-small;&quot;&gt;posted with &lt;a href=&quot;http://sticky.linclip.com/linkmaker/&quot; target=&quot;_blank&quot;&gt;sticky&lt;/a&gt; on 2015.12.24&lt;/span&gt;&lt;/div&gt;&lt;br style=&quot;clear:left;&quot; /&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 17 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://shoya.io/blog/texpad/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/texpad/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
 
@@ -435,137 +624,6 @@
         <guid isPermaLink="true">http://shoya.io/blog/bordeaux/</guid>
         
         <category>Sightseeing</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>歴史的城塞都市カルカソンヌ</title>
-        <description>&lt;p&gt;フランス南西部に位置するカルカソンヌを観光しました。カルカソンヌは古代ローマ時代から発達した城塞都市であるシテとオード川をはさんだ向かいに展開した下街の二区画からなる都市。下街の駅に降りて南東方向へ道なりに歩いて行くと、30分ほどでシテに入ることができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;オード川にかかるポン・ヴィユー(旧橋)から望むシテの全景。&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;サン・ジメール教会&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;シテ入口前の広場に教会がある。教会の近くから見る城壁は圧巻。&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;コンタル城&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;城塞の中心にある建物。ここから入って天守閣を見たり城塞の上を歩くことができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;城塞の上から見る城内外の景色。外の敵を狙い撃ちするための小さな穴や入り組んだ通路があったり、綺麗に下町が見渡せる場所があったり、どこを歩いても楽しい。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最後の写真の右下の位置は通路じゃないし高くて登れない場所のはずなんだけど、あの女性はどうやってたどり着いたんだろう。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;城塞は2層構造になっていて、その間を歩くこともできる。1周すると約3km。52個の円錐屋根の塔が見える。どれも同じ形をしているのでいまどこを歩いているのか分からなくなる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne11.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;シテの内部にはレストランやホテル、名産品を売るお店が立ち並んでいる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne12.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;途中でパレードに遭遇した。&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;サン・ナゼールバジリカ聖堂&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne13.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne14.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;とても美しいステンドグラスのある聖堂。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne15.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;夕食は郷土料理のカスレを食べた。インゲン豆と鴨とソーセージが入っている。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/carcassonne16.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;夕日で赤く染まる城壁。この位置から見る城が一番綺麗。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/carcassonne/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/carcassonne/</guid>
-        
-        <category>Sightseeing</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>フランスでOrangeを契約する</title>
-        <description>&lt;p&gt;Orangeのプリペイドsimカードを購入してインターネットを手に入れました。プランは以下のとおり。2015年9月の情報です。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;通話・SMS: 定額(フランス国内)&lt;/li&gt;
-  &lt;li&gt;インターネット: 定額(上限2GB)&lt;/li&gt;
-  &lt;li&gt;値段: 30euro(30日定額料金) + 9.9euro(simカード)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Orangeのショップにいき, simカード(Mobicarte)が欲しいことを伝えると購入できる。持ってきた端末を見せながら説明するとsimカードのサイズなど含めてスムーズに進む。用途に応じて &lt;strong&gt;電話とインターネット or インターネットのみ のいずれかのsimカード&lt;/strong&gt;と&lt;strong&gt;最初のチャージ量&lt;/strong&gt;を選択できる。チャージする量によって使える期間が決まっており、大きな金額を入れるほど多くの通信を長く使用することができる。(semaine:週, jours:日, mois:月, Mo:メガバイト, Go:ギガバイト)&lt;/p&gt;
-
-&lt;p&gt;電話とインターネット
-&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/orange01.png&quot; class=&quot;image-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;インターネットのみ
-&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/orange02.png&quot; class=&quot;image-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;電話番号があると何かと便利なので電話ができるものを選択したのだけれど、こちらのプランではテザリングが別料金。200MB:8euro, 1GB:25euroを別途チャージする日宇用があるようなので要注意。(知人はインターネットのみを選んで追加料金なくテザリングできている。) 後者を選択すればよかった…&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Sep 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/orange/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/orange/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>フランスで暮らし始めて1週間</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/1st_week_in_france01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;こちらでの生活にも慣れてきた。いつもだいたい朝6時に目が覚めて朝食をとる。10時頃に研究室へ向かい研究を始める。12時から14時くらいまでは研究室のみんなとご飯を食べて休憩。それから19時頃まで研究して帰宅。夕食を食べてシャワーを浴びて24時に寝るみたいな日々を繰り返している。こちらの生活リズムで驚いたのは、みんな昼休憩を長くとること(デザート食べたりコーヒー飲んでる)や割と夜遅くまで研究室に残っていること。ドイツ・DFKIの研究者は短時間集中して17時で帰っていたのでそのイメージで来たのだけれど、そもそも研究機関と大学の違いなのかもしれない。&lt;/p&gt;
-
-&lt;p&gt;大学の敷地内にあるアパートホテルに滞在していてとにかく快適。毎週掃除してくれるしキッチンが広いし食器や調理器具が充実しているので日本の下宿より過ごしやすい。部屋にコーヒーメーカーが備え付けてあるのがなんとなくフランスを感じさせる。&lt;/p&gt;
-
-&lt;p&gt;食事についても全く心配ない。スーパーで買えるチーズやパスタソースの数がかなり豊富なので、いろいろ試すのが楽しい。おそらく1ヶ月では制覇できないと思う。昼は大学内のカフェテリアだと5ユーロ、市街まで足を運ぶと少し高いが10+ユーロで美味しい料理を食べることができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/1st_week_in_france02.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ブルターニュ地方のシードル(リンゴ酒)。昼から美味しいお酒が飲めるのはやはり最高。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 29 Sep 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/1st_week_in_france/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/1st_week_in_france/</guid>
-        
-        <category>Note</category>
         
         
         <category>diary</category>
