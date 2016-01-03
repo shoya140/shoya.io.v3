@@ -65,6 +65,49 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Jun 21, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/terminal_login/"><h1 class="post-title">プロセスが完了しました</h1></a>
+  </header>
+  <article class="post-content">
+    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal01.png" class="image-on-frame-medium" /></p>
+
+<h3 id="section">問題</h3>
+
+<p>Macのターミナルが起動しない。起動するとすぐに[プロセスが完了しました]と表示される。</p>
+
+<h3 id="section-1">原因</h3>
+
+<p>ユーザ名が - から始まっている</p>
+
+<h3 id="section-2">解決策</h3>
+
+<p>ユーザ名を変更する(システム環境設定&gt;ユーザとグループ&gt;詳細オプション)。</p>
+
+<p><strong>ユーザ名の変更は多くのアプリケーションの動作に影響を及ぼす可能性があります。バックアップをとったのち、慎重に実行してください。</strong></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal02.png" class="image-on-frame-medium" /></p>
+
+<p>Macのターミナルが動かないという報告を受けたのだけれど、原因はユーザ名がマイナスから始まっていたことだった。-piyoのようなユーザ名はloginコマンドのプションとして認識されてしまうので(もちろんそんなオプションはない)ターミナルでログインできない。なんだそれ…</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%8C%E5%AE%8C%E4%BA%86%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/terminal_login/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/terminal_login/&amp;t=%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%8C%E5%AE%8C%E4%BA%86%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/terminal_login/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/terminal_login/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Jun 14, 2014
     
     [<a href="/tag/Event/">Event</a>]
@@ -149,87 +192,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">May 13, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/chef_prepare/"><h1 class="post-title">Chefのknife solo prepareで404</h1></a>
-  </header>
-  <article class="post-content">
-    <h3 id="section">問題</h3>
-
-<p>Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian
-Bootstrapping Chef...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2238</span>      <span class="m">0</span>  0:00:07  0:00:07 --:--:--  9674
-Downloading Chef 11.14.0.alpha.2 <span class="k">for</span> debian...
-downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
-  to file /tmp/install.sh.2565/metadata.txt
-trying wget...
-ERROR 404
-Unable to retrieve a valid package!
-Please file a bug report at http://tickets.opscode.com
-Project: Chef
-Component: Packages
-Label: Omnibus
-Version: 11.14.0.alpha.2
-
-Please detail your operating system <span class="nb">type</span>, version and any other relevant details
-Metadata URL: https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
-Generating node config <span class="s1">&#39;nodes/dev_debian.json&#39;</span>...</code></pre></div>
-
-<h3 id="section-1">解決</h3>
-
-<p><a href="http://stackoverflow.com/questions/23591190/knife-solo-prepare-fails">Knife-solo prepare fails - stackoverflow</a></p>
-
-<p>opscode(version 11.14.0.alpha.2)側の問題なので、オプションでchefのバージョンを指定してあげるといいよとの回答。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian --bootstrap-version 11.12.0
-Bootstrapping Chef...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2345</span>      <span class="m">0</span>  0:00:06  0:00:06 --:--:-- 14026
-Downloading Chef 11.12.0 <span class="k">for</span> debian...
-downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.12.0<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
-  to file /tmp/install.sh.2608/metadata.txt
-trying wget...
-url    https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
-md5    e3cefe75258f5d737b729ed549cadfc5
-sha256    3707bb7781317ce2928378564b95675291b9c3daa10a879bc77bea1333c83a9b
-downloaded metadata file looks valid...
-downloading https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
-  to file /tmp/install.sh.2608/chef_11.12.0-1_amd64.deb
-trying wget...
-Comparing checksum with sha256sum...
-Installing Chef 11.12.0
-installing with dpkg...
-Selecting previously unselected package chef.
-<span class="o">(</span>Reading database ... <span class="m">39953</span> files and directories currently installed.<span class="o">)</span>
-Unpacking chef <span class="o">(</span>from .../chef_11.12.0-1_amd64.deb<span class="o">)</span> ...
-Setting up chef <span class="o">(</span>11.12.0-1<span class="o">)</span> ...
-Thank you <span class="k">for</span> installing Chef!</code></pre></div>
-
-<p>新しいバージョンが提供されるまではこれが応急処置みたい。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404%20-%20shoya.io&amp;url=http://shoya.io/blog/chef_prepare/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/chef_prepare/&amp;t=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/chef_prepare/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/chef_prepare/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -269,6 +231,8 @@ Thank you <span class="k">for</span> installing Chef!</code></pre></div>
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/looking-back-at-2015/">2015年振り返り</a></li>
+        
           <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
         
           <li>- <a href="/blog/orbits/">論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</a></li>
@@ -278,8 +242,6 @@ Thank you <span class="k">for</span> installing Chef!</code></pre></div>
           <li>- <a href="/blog/meme-logger/">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</a></li>
         
           <li>- <a href="/blog/zchainer/">深層学習の自己符号化器を4行で記述できるライブラリを作りました</a></li>
-        
-          <li>- <a href="/blog/zebra/">大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</a></li>
         
         </ul>
       </div>
