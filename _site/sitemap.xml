@@ -441,6 +441,14 @@
     
     
     
+    <url>
+        <loc>http://shoya.io/dagstuhl/</loc>
+    </url>
+    
+    
+    
+    
+    
     
     
     <url>
@@ -458,30 +466,6 @@
     </url>
     
     
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/category/diary/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/category/tech/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/blog/</loc>
-    </url>
     
     
     
@@ -537,6 +521,30 @@
     
     <url>
         <loc>http://shoya.io/tag/Design/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/category/diary/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/category/tech/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/blog/</loc>
     </url>
     
     
