@@ -6,6 +6,8 @@ permalink: /applications/
 
 ## iPhone
 
+* <a href = "https://itunes.apple.com/us/app/memelogger/id1073074817"><span style="font-weight: 700;">MEMELogger</span></a><br>J!NS MEMEのセンサデータを可視化・記録するアプリ
+
 * <a href = "https://itunes.apple.com/jp/app/swiper-zhi-gan-cao-zuodetodo/id631354108"><span style="font-weight: 700;">Swiper</span></a><br>直感的に操作できるシンプルなToDo/タスク管理アプリ
 
 ## Android
