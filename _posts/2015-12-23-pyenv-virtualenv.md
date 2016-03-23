@@ -13,18 +13,17 @@ published: True
 
 ### pyenv-virtualenvの導入
 
-[Homebrew](http://brew.sh/)でインストールする
+[Homebrew](http://brew.sh/)でインストールする。
 
 {% highlight bash %}
 $ brew install pyenv-virtualenv
 {% endhighlight %}
 
-.zshrc(.bashrc)に下記の設定を追記
+.zshrc(.bashrc)に下記の設定を追記する。
 
 {% highlight bash %}
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
@@ -50,10 +49,10 @@ $ brew install opencv3 --with-python3
 
 {% highlight bash %}
 # python2
-$ echo /usr/local/opt/opencv3/lib/python2.7/site-packages >  $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv3.pth
-    
+$ echo /usr/local/opt/opencv/lib/python2.7/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
+
 # python3
-$ echo /usr/local/opt/opencv3/lib/python3.5/site-packages >  $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv3.pth
+$ echo /usr/local/opt/opencv/lib/python3.5/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
 {% endhighlight %}
 
 numpyも一緒に入るけどpipで管理するものを使う
@@ -61,7 +60,7 @@ numpyも一緒に入るけどpipで管理するものを使う
 {% highlight bash %}
 $ pip install numpy
 {% endhighlight %}
-    
+
 ### Jupyterなど定番ライブラリの導入
 
 pipでインストールする

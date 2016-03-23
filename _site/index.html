@@ -113,15 +113,14 @@
 
 <h3 id="pyenv-virtualenv">pyenv-virtualenvの導入</h3>
 
-<p><a href="http://brew.sh/">Homebrew</a>でインストールする</p>
+<p><a href="http://brew.sh/">Homebrew</a>でインストールする。</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew install pyenv-virtualenv</code></pre></div>
 
-<p>.zshrc(.bashrc)に下記の設定を追記</p>
+<p>.zshrc(.bashrc)に下記の設定を追記する。</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">&quot;${HOME}/.pyenv&quot;</span>
 <span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;${PYENV_ROOT}&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">PYENV_ROOT</span><span class="k">}</span>/bin:<span class="nv">$PATH</span>
     <span class="nb">eval</span> <span class="s2">&quot;$(pyenv init -)&quot;</span>
     <span class="nb">eval</span> <span class="s2">&quot;$(pyenv virtualenv-init -)&quot;</span>
 <span class="k">fi</span></code></pre></div>
@@ -141,10 +140,10 @@
 <p>現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># python2</span>
-<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python2.7/site-packages &gt;  <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv3.pth
-    
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv/lib/python2.7/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv.pth
+
 <span class="c"># python3</span>
-<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python3.5/site-packages &gt;  <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv3.pth</code></pre></div>
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv/lib/python3.5/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv.pth</code></pre></div>
 
 <p>numpyも一緒に入るけどpipで管理するものを使う</p>
 
@@ -196,6 +195,7 @@
 
 <span class="k">RUN</span> conda install numpy scipy pandas scikit-learn
 <span class="k">RUN</span> conda install -c https://conda.binstar.org/menpo opencv</code></pre></div>
+
 
   </article>
   <div class="post-social">

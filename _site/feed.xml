@@ -39,15 +39,14 @@
 
 &lt;h3 id=&quot;pyenv-virtualenv&quot;&gt;pyenv-virtualenvの導入&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;でインストールする&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;でインストールする。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pyenv-virtualenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;.zshrc(.bashrc)に下記の設定を追記&lt;/p&gt;
+&lt;p&gt;.zshrc(.bashrc)に下記の設定を追記する。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${HOME}/.pyenv&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;${PYENV_ROOT}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv init -)&amp;quot;&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv virtualenv-init -)&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -67,10 +66,10 @@
 &lt;p&gt;現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# python2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python2.7/site-packages &amp;gt;  &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv3.pth
-    
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv/lib/python2.7/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth
+
 &lt;span class=&quot;c&quot;&gt;# python3&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python3.5/site-packages &amp;gt;  &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv3.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv/lib/python3.5/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;numpyも一緒に入るけどpipで管理するものを使う&lt;/p&gt;
 
@@ -122,6 +121,7 @@
 
 &lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install numpy scipy pandas scikit-learn
 &lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 </description>
         <pubDate>Wed, 23 Dec 2015 00:00:00 +0900</pubDate>
         <link>http://shoya.io/blog/pyenv-virtualenv/</link>
