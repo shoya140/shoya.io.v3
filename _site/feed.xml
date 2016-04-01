@@ -8,6 +8,26 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>大学院を修了してドイツで働くことになりました</title>
+        <description>&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;It’s my pleasure to inform you that I have started working at DFKI, Kaiserslautern. &lt;a href=&quot;https://t.co/6Mol3GmIqG&quot;&gt;pic.twitter.com/6Mol3GmIqG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Shoya Ishimaru (@shoya140) &lt;a href=&quot;https://twitter.com/shoya140/status/715863592902508544&quot;&gt;2016年4月1日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;６年間通った大阪府立大学・大学院を卒業しました。大学前半の２年は白鷺祭、後半の２年はソフトウェア開発、大学院の２年は研究に没頭する毎日でした。
+今日からはドイツ人工知能研究研究センター(DFKI)で研究者として働きながら博士号の取得を目指します。
+しばらく日本を離れますが、なにかと用事で帰ってくる機会があると思います。皆さんとまたどこかでお会いできると嬉しいです。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/DFKI2/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/DFKI2/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>2015年振り返り</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/looking_back_at_2015_01.JPG&quot; class=&quot;image-on-frame-small&quot; /&gt;&lt;/p&gt;
 
@@ -17,7 +37,7 @@
 
 &lt;p&gt;2016年もどうぞよろしくお願いします！！&lt;/p&gt;
 </description>
-        <pubDate>Sun, 03 Jan 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 03 Jan 2016 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/looking-back-at-2015/</link>
         <guid isPermaLink="true">http://shoya.io/blog/looking-back-at-2015/</guid>
         
@@ -123,7 +143,7 @@
 &lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
-        <pubDate>Wed, 23 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 23 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/pyenv-virtualenv/</link>
         <guid isPermaLink="true">http://shoya.io/blog/pyenv-virtualenv/</guid>
         
@@ -155,7 +175,7 @@
 
 &lt;p&gt;デモではアイトラッカに&lt;a href=&quot;https://pupil-labs.com/pupil/&quot;&gt;pupil&lt;/a&gt;を使っていました。見ている対象は重要ではなく眼球運動のパターンが追えれば良いので、実は&lt;a href=&quot;https://jins-meme.com/ja/&quot;&gt;J!NS MEME&lt;/a&gt;でも同じようなことができるのではないかと思いました。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 21 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/orbits/</link>
         <guid isPermaLink="true">http://shoya.io/blog/orbits/</guid>
         
@@ -206,7 +226,7 @@
 
 &lt;div class=&quot;sticky-itslink&quot;&gt;&lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://is3.mzstatic.com/image/thumb/Purple/v4/da/94/2a/da942ac4-54bc-63bc-764c-3be4c850f4db/source.icns/60x60bb.png&quot; style=&quot;float:left;margin:5px;&quot; alt=&quot;Texpad : LaTeX editor&quot; title=&quot;Texpad : LaTeX editor&quot; /&gt;&lt;/a&gt;&lt;div class=&quot;sticky-itslinktext&quot;&gt;&lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Texpad : LaTeX editor&lt;/a&gt;&lt;br /&gt;Valletta Ventures&lt;br /&gt;価格： 3,400円 &lt;a href=&quot;https://itunes.apple.com/jp/app/texpad-latex-editor/id458866234?mt=12&amp;amp;uo=4&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://linkmaker.itunes.apple.com/htmlResources/assets//images/web/linkmaker/badge_macappstore-sm.png&quot; alt=&quot;iTunesで見る&quot; class=&quot;sticky-itslinkbadge&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-size:xx-small;&quot;&gt;posted with &lt;a href=&quot;http://sticky.linclip.com/linkmaker/&quot; target=&quot;_blank&quot;&gt;sticky&lt;/a&gt; on 2015.12.24&lt;/span&gt;&lt;/div&gt;&lt;br style=&quot;clear:left;&quot; /&gt;&lt;/div&gt;
 </description>
-        <pubDate>Thu, 17 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 17 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/texpad/</link>
         <guid isPermaLink="true">http://shoya.io/blog/texpad/</guid>
         
@@ -265,7 +285,7 @@
   &lt;li&gt;&lt;a href=&quot;https://github.com/shoya140/MEMELogger-iOS-developers&quot;&gt;https://github.com/shoya140/MEMELogger-iOS-developers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 03 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/meme-logger/</link>
         <guid isPermaLink="true">http://shoya.io/blog/meme-logger/</guid>
         
@@ -395,7 +415,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/shoya140/zChainer&quot;&gt;https://github.com/shoya140/zChainer&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 02 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 02 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/zchainer/</link>
         <guid isPermaLink="true">http://shoya.io/blog/zchainer/</guid>
         
@@ -431,7 +451,7 @@
 
 &lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/zebra&quot;&gt;Zebra — Keynote template for research presentations&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 13 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 13 Nov 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/zebra/</link>
         <guid isPermaLink="true">http://shoya.io/blog/zebra/</guid>
         
@@ -477,7 +497,7 @@
 
 &lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/51DUq6IdhoL._SL75_.jpg&quot; width=&quot;75&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;3M スコッチ 超強力両面テープ 透明素材用 12mm×4m STD-12&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;3M (スリーエム)&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/repairing-google-glass/</link>
         <guid isPermaLink="true">http://shoya.io/blog/repairing-google-glass/</guid>
         
@@ -494,54 +514,9 @@
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/honor2.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 02 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 02 Nov 2015 00:00:00 +0100</pubDate>
         <link>http://shoya.io/blog/honor2/</link>
         <guid isPermaLink="true">http://shoya.io/blog/honor2/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>ドキュメント考2015</title>
-        <description>&lt;p&gt;PCでとるメモの保存先について環境や目的の変化に合わせてこれまでいろんなツールを試してきたので、それらを踏まえて現状こんな感じというのを共有します。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;ドキュメント遍歴&lt;/h3&gt;
-
-&lt;p&gt;大学1-2年生(2010-2011年)の頃は今みたいに外で常時ネットに接続する環境がなかった。テキストファイルをPCに保存して、外出先で必要そうなものをあらかじめiPod touchに入れておいて&lt;a href=&quot;http://www.goodreader.com/&quot;&gt;GoodReader&lt;/a&gt;とかで見てた。PC上のファイルはディレクトリ分けによって管理していたので探すのが面倒だった。途中から&lt;a href=&quot;https://www.evernote.com/&quot;&gt;Evernote&lt;/a&gt;を使い始めて、全てひとつの場所に放り込んで検索する便利さを知った。iPod touchでも一部のノートをオフラインで開けるようにしてした。&lt;/p&gt;
-
-&lt;p&gt;大学3年生(2012年)の頃にiPhoneを手にしてからはEvernoteを利用する機会が増えた。検索が楽になって外でも開けてとても便利。しかし&lt;a href=&quot;http://markovlabo.net/?p=1165&quot;&gt;ノート数が増えるに従ってPC/iPhoneアプリの挙動が不安定になった&lt;/a&gt;。ブラウザからしかアクセスしなくなり、ライフログやWebクリップの保管場所にしか使われなくなった。&lt;/p&gt;
-
-&lt;p&gt;大学4年生(2013年)の頃から代わりに使い始めたのが&lt;a href=&quot;http://dayoneapp.com/&quot;&gt;DayOne&lt;/a&gt;というアプリで、Markdownでメモが取れる上に起動や同期が早くUIも綺麗。エディタとしては申し分ない環境だった。しかし少しだけ残念なところが2つある。それは好きな場所に画像を貼れないこと(外部においてマークダウンで読み込むことはできるが)と、EvernoteやDropbox, GoogleDriveのようなURLでドキュメントを限定公開する機能がないことだ。ドキュメントを他者と共有する機会が増えてきて、なんとかしたいと思っていた。&lt;/p&gt;
-
-&lt;p&gt;共同作業するときはだいたい&lt;a href=&quot;https://www.google.com/intl/ja/drive/&quot;&gt;GoogleDrive&lt;/a&gt;を使っているけど、オフラインだと使えないしブラウザ上で作業するのは不便なので個人の作業場所・ドキュメント保管場所には向いていない。また、用紙のサイズとかレイアウトとかいらないしMarkdownで書きたいという思いがあって自作のWikiを運用していたこともあったけど、やはりブラウザ上でしか編集できないのは大きな欠点だった。&lt;/p&gt;
-
-&lt;h3 id=&quot;evernote-alternote&quot;&gt;Evernote + Alternote&lt;/h3&gt;
-
-&lt;p&gt;では今はどうしているかというと、Evernoteに戻ってきて落ち着いた。使い方は昔とは変わり、自動的になんでも保存するのではなく、自分で書いた文章など必要なものだけを残している。新しいアカウントを作ってノートの数を絞ると同期も問題なく行えるようになった。久々に起動したEvernoteのクライアントアプリはいろいろと進化していて、特にプレゼンテーションモードは重宝している。未だエディタとしては使いづらいので、Macから文章を書くときは&lt;a href=&quot;http://alternoteapp.com/&quot;&gt;Alternote&lt;/a&gt;というアプリを使って保存している。Alternoteは主要な機能にショートカットキーが割り当てられていて書くことに専念できるEveroteエディタ。Markdownをリッチテキスト変換してくれる機能もあるけれど、テキストを他の媒体に貼り付けるときに記号が消えては困るのでオプションを切ってMarkdownには脳内で変換している。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;まとめ&lt;/h3&gt;
-
-&lt;p&gt;自分がドキュメントツールに求める機能は以下のとおり(優先度順)。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;複数端末で同期できる&lt;/li&gt;
-  &lt;li&gt;エディタとして使いやすい(起動が早く気持ちよく書ける)&lt;/li&gt;
-  &lt;li&gt;ディレクトリの概念がない(検索とタグで探す)&lt;/li&gt;
-  &lt;li&gt;URL限定公開ができる&lt;/li&gt;
-  &lt;li&gt;共同編集ができる&lt;/li&gt;
-  &lt;li&gt;画像を貼り付けることができる&lt;/li&gt;
-  &lt;li&gt;Markdownで書ける&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;現状では軽量化したEvernoteとAlternoteを使うのが良い感じです。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 06 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://shoya.io/blog/document_tools/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/document_tools/</guid>
         
         <category>Note</category>
         
