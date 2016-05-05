@@ -8,6 +8,94 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Sol-31</title>
+        <description>&lt;p&gt;ドイツで生活を始めて1ヶ月になるのでこちらの暮らしについて振り返ってみようと思う。&lt;/p&gt;
+
+&lt;p&gt;平日は7時くらいに目が覚めて9時に出社する。18時頃まで仕事して帰宅。家に帰ってからは日本でやっていた研究を論文にまとめたり趣味のプロジェクトを進めたり好きなことをして、24時くらいに眠りにつく。家の近くに大きな森があるので天気のいい日の朝や夕方はよく散歩に出かける。以前半年ほど住んでいたこともあって、街や食べ物には慣れているので日々の生活で心配なことは特にない。&lt;/p&gt;
+
+&lt;p&gt;仕事について。予想通りだったのは皆短い時間で集中的に作業すること。17時を過ぎると研究所に誰もいなくなる。あと自分のやっていることや考えを積極的に主張する必要がある。働き始めてしばらく皆と打ち解けられずにいたんだけど、これまでやってきた研究内容をプレゼンした途端に「若いのにいろいろ面白いことやってるな！もっと見せてくれ！」と言われて関心もってもらえるようになった。Demo or Die.&lt;/p&gt;
+
+&lt;p&gt;予想外だったのは言語の壁。普段の会話はドイツ語で交わされることの方が多いし、ミーティングでも参加者が増えるか1対1の会話になるとドイツ語になる傾向がある。早く聞き取れるようにならないとまずい。&lt;/p&gt;
+
+&lt;p&gt;まだちょっと寒くてときどき雪が降る。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/life_in_germany03.JPG&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 May 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/life-in-germany2/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/life-in-germany2/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>AWSのGPUインスタンスでchainerとjupyter notebookを使う</title>
+        <description>&lt;p&gt;AWSのアカウントを作成した状態から深層学習のための環境を作るまでの手順メモ&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. インスタンスの作成&lt;/h2&gt;
+
+&lt;p&gt;インスタンス-&amp;gt;マーケットプレイス-&amp;gt;「nvidia」で検索。&lt;br /&gt;インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cudnn&quot;&gt;2. cuDNNのインストール(任意)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIAのwebサイト&lt;/a&gt;でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tar zxvf cudnn-6.5-linux-x64-v2.tgz
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo cp lib* /opt/nvidia/cuda/lib64/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo cp cudnn.h /opt/nvidia/cuda/include/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;chainerjupyter&quot;&gt;3. chainerとjupyterのセットアップ&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo &lt;span class=&quot;nv&quot;&gt;CUDA_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/nvidia/cuda pip install chainer
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;jupyter notebookを立ち上げてブラウザからアクセスできるようにする。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ipython
+&lt;span class=&quot;c&quot;&gt;# 下記を実行して出力されたハッシュをコピー&lt;/span&gt;
+from notebook.auth import passwd
+passwd&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir ~/.jupyter
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim ~/.jupyter/jupyter_notebook_config.py
+&lt;span class=&quot;c&quot;&gt;# 下記の内容で保存&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; get_config&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+c.NotebookApp.ip &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+c.NotebookApp.password &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; u&lt;span class=&quot;s1&quot;&gt;&amp;#39;sha1:bcd259ccf...出力されたハッシュ&amp;#39;&lt;/span&gt;
+c.NotebookApp.open_browser &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; False
+c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポート&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;セキュリティグループの設定で開けておく&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;SSL/HTTPSを使用する方法は&lt;a href=&quot;http://jupyter-notebook.readthedocs.io/en/latest/public_server.html&quot;&gt;こちら&lt;/a&gt;を参照。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;3. イメージの作成とイメージからのインスタンス作成&lt;/h2&gt;
+
+&lt;p&gt;イメージ(テンプレート)の作成はインスタンスのメニュー&amp;gt;イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer02.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer03.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/aws-chainer/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/aws-chainer/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
         <title>大学院を修了してドイツで働くことになりました</title>
         <description>&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;It’s my pleasure to inform you that I have started working at DFKI, Kaiserslautern. &lt;a href=&quot;https://t.co/6Mol3GmIqG&quot;&gt;pic.twitter.com/6Mol3GmIqG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Shoya Ishimaru (@shoya140) &lt;a href=&quot;https://twitter.com/shoya140/status/715863592902508544&quot;&gt;2016年4月1日&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -458,67 +546,6 @@
         <category>ReleaseNote</category>
         
         <category>Design</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>Google Glassを修理する</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
-
-&lt;p&gt;Google Glassには本体から送られる光を目に届けるためのプリズムが付いているのだけれど、高温多湿な場所で使っているとプリズムの先端に貼られているミラーフィルムが剥がれて画面が見えなくなってしまう。調べてみると割とよくある事例らしく、Googleに問い合わせた人もいる模様。(&lt;cite&gt;&lt;a href=&quot;http://glassalmanac.com/google-glass-mortal-enemy-high-temps-humidity/656/&quot;&gt;High Temps are Damaging Google Glass Beyond Repair&lt;/a&gt;&lt;/cite&gt;, &lt;cite&gt;&lt;a href=&quot;https://www.reddit.com/r/googleglass/comments/292rzy/whats_happing_to_the_film_on_my_google_glass/&quot;&gt;Whats Happing to the film on my Google Glass?&lt;/a&gt;&lt;/cite&gt;) しかし手元のGoogle GlassはAmazon経由で購入ており問い合わせが難しいので、自分で修理することにした。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/reparing01.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;解決策&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;※修理は自己責任でお願いします。失敗したり保証を失っても一切の責任を負いかねます。&lt;/strong&gt;&lt;br /&gt;
-用意するもの: 金属光沢シート・はさみ(カッター)・ピンセット&lt;/p&gt;
-
-&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B001GQ2WP8/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/41o25COrUcL._SL75_.jpg&quot; width=&quot;36&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B001GQ2WP8/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;トライツール TF01 ミラー フィニッシュ&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;ハセガワ&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;表面に残ったフィルムを剥がす。(セロハンテープで上から押さえると綺麗に剥がれる。)&lt;/li&gt;
-  &lt;li&gt;金属光沢シートをプリズムの大きさに合わせて切り、ピンセットで乗せる。&lt;/li&gt;
-  &lt;li&gt;吸着するまで3-4分待つ。今までどおり画面が見えるようになる。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/reparing02.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;金属光沢シートを乗せた後はすぐに指で押したりせず自然と吸着するのを待ちましょう。気泡が入ると像がぼやけます。5,6回繰り返すうちに上手に貼ることができました。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;おまけ(うまくいかなかった例)&lt;/h3&gt;
-
-&lt;p&gt;いろいろ材料を探して試してみたところ、上記の金属光沢シートが一番良さそうでした。最初に試したアルミテープは光沢が十分ではなくて鏡として使えず、像を結ぶことができませんでした。金属光沢シートと一緒に両面テープも買ったのですが、シート自体に吸着力があったので必要ありませんでした。&lt;/p&gt;
-
-&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B00I4NQNJC/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/41A1pi3DmXL._SL75_.jpg&quot; width=&quot;75&quot; height=&quot;74&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B00I4NQNJC/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;エル日昌 アルミテープ(ツヤアリ)50mmx10m LM1025010&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;エル日昌&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;babylink-box&quot; style=&quot;overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;&quot;&gt;&lt;div class=&quot;babylink-image&quot; style=&quot;float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;img style=&quot;border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;&quot; src=&quot;http://ecx.images-amazon.com/images/I/51DUq6IdhoL._SL75_.jpg&quot; width=&quot;75&quot; height=&quot;75&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-info&quot; style=&quot;overflow: hidden; zoom: 1; line-height: 120%;&quot;&gt;&lt;div class=&quot;babylink-title&quot; style=&quot;margin-bottom: 2px; line-height: 120%;&quot;&gt;&lt;a href=&quot;http://www.amazon.co.jp/exec/obidos/ASIN/B002YMOUDA/mrk1869-22/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;3M スコッチ 超強力両面テープ 透明素材用 12mm×4m STD-12&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;babylink-manufacturer&quot; style=&quot;margin-bottom: 5px;&quot;&gt;3M (スリーエム)&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;booklink-footer&quot; style=&quot;clear: left&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Tue, 03 Nov 2015 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/repairing-google-glass/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/repairing-google-glass/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>学長顕彰2</title>
-        <description>&lt;p&gt;大学在学中2度目の学長顕彰を戴きました。&lt;a href=&quot;/blog/honor/&quot;&gt;前回(3年前)受賞した時&lt;/a&gt;に「次は研究で成果をあげられるよう頑張ります」と言っていたので有言実行ということで:)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/honor2.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Nov 2015 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/honor2/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/honor2/</guid>
-        
-        <category>Note</category>
         
         
         <category>diary</category>

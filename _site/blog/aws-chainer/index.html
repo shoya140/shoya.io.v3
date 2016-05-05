@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="ローマ, 観光">
+    
     
     <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
-    <meta property="og:title" content="イタリア旅行記2[ローマ]">
+    <meta property="og:title" content="AWSのGPUインスタンスでchainerとjupyter notebookを使う">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://shoya.io/blog/roma/">
+    <meta property="og:url" content="http://shoya.io/blog/aws-chainer/">
     
         <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
     
-    <title>イタリア旅行記2[ローマ] - shoya.io</title>
+    <title>AWSのGPUインスタンスでchainerとjupyter notebookを使う - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://shoya.io/blog/roma/">
+    <link rel="canonical" href="http://shoya.io/blog/aws-chainer/">
     <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 
@@ -65,113 +65,87 @@
           <div class="post">
 
   <header class="post-header">
-    <p class="post-meta">Apr 8, 2014
+    <p class="post-meta">Apr 10, 2016
     
-    [<a href="/tag/Sightseeing/">Sightseeing</a>]
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
     
     </p>
-    <a href="/blog/roma/"><h1 class="post-title">イタリア旅行記2[ローマ]</h1></a>
+    <a href="/blog/aws-chainer/"><h1 class="post-title">AWSのGPUインスタンスでchainerとjupyter notebookを使う</h1></a>
   </header>
 
   <article class="post-content">
-    <p>イタリア南部を観光したあとは、鉄道でローマへ移動。<a href="http://allabout.co.jp/gm/gc/7407/">ローマ旅行のモデルコース - All About</a>を参考にしながら、一日かけて有名どころを巡りました。どこも観光客で賑わっていました。</p>
+    <p>AWSのアカウントを作成した状態から深層学習のための環境を作るまでの手順メモ</p>
 
-<p class="injection-center">コロッセオ</p>
+<h2 id="section">1. インスタンスの作成</h2>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma01.jpg" class="image-on-frame" /></p>
+<p>インスタンス-&gt;マーケットプレイス-&gt;「nvidia」で検索。<br />インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。</p>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma02.jpg" class="image-on-frame" /></p>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer01.png" class="image-on-frame-medium" /></p>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma03.jpg" class="image-on-frame" /></p>
+<h2 id="cudnn">2. cuDNNのインストール(任意)</h2>
 
-<p>古代ローマ帝国時代の巨大な円形闘技場跡。地上にあるのはアリーナと観客席。当時は中央のむき出しになっているところにも床が敷かれていて、全体がアリーナになっていた。地下には倉庫や猛獣の檻、奴隷牢がありました。</p>
+<p><a href="https://developer.nvidia.com/cudnn">NVIDIAのwebサイト</a>でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。</p>
 
-<p class="injection-center">サンタ・マリア・コスメディアン教会 真実の口</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tar zxvf cudnn-6.5-linux-x64-v2.tgz
+<span class="nv">$ </span>sudo cp lib* /opt/nvidia/cuda/lib64/
+<span class="nv">$ </span>sudo cp cudnn.h /opt/nvidia/cuda/include/</code></pre></div>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma11.jpg" class="image-on-frame" /></p>
+<h2 id="chainerjupyter">3. chainerとjupyterのセットアップ</h2>
 
-<p>有名ですね。手を入れるには列に並ぶ必要があるのですが(日本人ばかりだった…)、回転率がやたら早くてすぐに順番が回ってきました。教会ではカップルが結婚式をあげていました。</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo <span class="nv">CUDA_PATH</span><span class="o">=</span>/opt/nvidia/cuda pip install chainer
+<span class="nv">$ </span>sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
+<span class="nv">$ </span>sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter</code></pre></div>
 
-<p class="injection-center">バチカン市国</p>
+<p>jupyter notebookを立ち上げてブラウザからアクセスできるようにする。</p>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma31.jpg" class="image-on-frame" /></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ipython
+<span class="c"># 下記を実行して出力されたハッシュをコピー</span>
+from notebook.auth import passwd
+passwd<span class="o">()</span>
 
-<p>旧市街からバスで移動してバチカン市国へ。
-サン・ピエトロ大聖堂は圧巻で、広場を取り囲むように配置されている聖人像はどれも立派でした。</p>
+<span class="nv">$ </span>mkdir ~/.jupyter
+<span class="nv">$ </span>vim ~/.jupyter/jupyter_notebook_config.py
+<span class="c"># 下記の内容で保存</span>
+<span class="nv">c</span> <span class="o">=</span> get_config<span class="o">()</span>
+c.NotebookApp.ip <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+c.NotebookApp.password <span class="o">=</span> u<span class="s1">&#39;sha1:bcd259ccf...出力されたハッシュ&#39;</span>
+c.NotebookApp.open_browser <span class="o">=</span> False
+c.NotebookApp.port <span class="o">=</span> 任意のポート<span class="o">(</span>セキュリティグループの設定で開けておく<span class="o">)</span>
 
-<p class="injection-center">トレビの泉</p>
+<span class="nv">$ </span>jupyter notebook</code></pre></div>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma21.jpg" class="image-on-frame" /></p>
+<p>SSL/HTTPSを使用する方法は<a href="http://jupyter-notebook.readthedocs.io/en/latest/public_server.html">こちら</a>を参照。</p>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma22.jpg" class="image-on-frame" /></p>
+<h2 id="section-1">3. イメージの作成とイメージからのインスタンス作成</h2>
 
-<p>バチカンを出た後は地下鉄に乗ってトレビの泉へ。
-泉に背を向けてコインを投げると願いが叶うという言い伝えがあり、投げる枚数によって願いも異なる。</p>
+<p>イメージ(テンプレート)の作成はインスタンスのメニュー&gt;イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。</p>
 
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma23.jpg" class="image-on-frame" /></p>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer02.png" class="image-on-frame-medium" /></p>
 
-<p>観光客がたくさん。</p>
-
-<p class="injection-center">ローマの町並み</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma41.jpg" class="image-on-frame" /></p>
-
-<p>スペイン広場近くの展望台はローマの旧市街が見渡せる絶景スポット。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma42.jpg" class="image-on-frame" /></p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma43.jpg" class="image-on-frame" /></p>
-
-<p>ローマの路地は、日本やドイツに比べて綺麗なわけじゃないけれど、どこか風情がありました。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma44.jpg" class="image-on-frame" /></p>
-
-<p>ホテルのオーナーに勧められて、近くのお店でボンゴレビアンコを食べた。
-オーナーからは「だぶんぼったくられるけど、俺がサイン書いておけば正規の値段で食べられるから」といってよく分からない紙を渡されました。
-イタリアはなんでもありだなぁとつくづく思う。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/roma51.jpg" class="image-on-frame" /></p>
-
-<p>帰りの飛行機から見えた雪一面のアルプス。
-写真には収まりきらない美しさがありました。</p>
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer03.png" class="image-on-frame-medium" /></p>
 
   </article>
 
   <div class="post-relations">
     
-    <h3><span class="lsf">check</span> 関連記事</h3>
-    <ul>
-    
-      <li><a href="/blog/naples/" class="linkedTitle">Now loading..</a></li>
-    
-      <li><a href="/blog/hamburg/" class="linkedTitle">Now loading..</a></li>
-    
-      <li><a href="/blog/paris/" class="linkedTitle">Now loading..</a></li>
-    
-      <li><a href="/blog/london/" class="linkedTitle">Now loading..</a></li>
-    
-      <li><a href="/blog/cologne/" class="linkedTitle">Now loading..</a></li>
-    
-    </ul>
-    
   </div>
 
   <div class="post-social">
-  	<div class="tweet-button"><a href="https://twitter.com/share?text=%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E6%97%85%E8%A1%8C%E8%A8%982[%E3%83%AD%E3%83%BC%E3%83%9E]%20-%20shoya.io&amp;url=http://shoya.io/blog/roma/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  	<div class="tweet-button"><a href="https://twitter.com/share?text=AWS%E3%81%AEGPU%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%A7chainer%E3%81%A8jupyter%20notebook%E3%82%92%E4%BD%BF%E3%81%86%20-%20shoya.io&amp;url=http://shoya.io/blog/aws-chainer/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
   </a></div>
-  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/roma/&amp;t=%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E6%97%85%E8%A1%8C%E8%A8%982[%E3%83%AD%E3%83%BC%E3%83%9E]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  	<div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/aws-chainer/&amp;t=AWS%E3%81%AEGPU%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%A7chainer%E3%81%A8jupyter%20notebook%E3%82%92%E4%BD%BF%E3%81%86" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
   </a></div>
-  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/roma/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  	<div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/aws-chainer/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
   </a></div>
-  	<div class="hatena-star"><a href="http://shoya.io/blog/roma/" style="display: none;">hatena</a></div>
+  	<div class="hatena-star"><a href="http://shoya.io/blog/aws-chainer/" style="display: none;">hatena</a></div>
   </div>
 
   <div class="pagenation">
     
-      <div class="page-button"><a href="/blog/naples/"></a><span class="lsf">left</span> イタリア旅行記1[ナポリ・イタリア南部]</div>
+      <div class="page-button"><a href="/blog/DFKI2/"></a><span class="lsf">left</span> 大学院を修了してドイツで働くことになりました</div>
     
     
-      <div class="page-button"><a href="/blog/transmediale/"></a>トランスメディアーレに行ってきました <span class="lsf">right</span></div>
+      <div class="page-button"><a href="/blog/life-in-germany2/"></a>Sol-31 <span class="lsf">right</span></div>
     
   </div>
 

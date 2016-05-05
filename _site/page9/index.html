@@ -65,6 +65,182 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Dec 22, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/pypi/"><h1 class="post-title">Pythonライブラリを作成してPyPIに登録する</h1></a>
+  </header>
+  <article class="post-content">
+    <p><a href="https://pypi.python.org/pypi/dalmatian/"><img src="https://dl.dropboxusercontent.com/u/12208857/img/pypi01.png" class="image-on-frame-medium image-fade" /></a></p>
+
+<p>Confusion Matrix(混同行列)を視覚的に描画する<a href="https://pypi.python.org/pypi/dalmatian/">dalmatian</a>というライブラリを作成してPyPIに登録しました(<a href="https://github.com/shoya140/dalmatian">ソースコードはGitHubで公開</a>)。パッケージの作成とPyPIへの登録、情報が少なくて苦労したので、必要なファイルと公開手順についてメモを残しておきます。</p>
+
+<h3 id="section">ファイル構成</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dalmatian
+├── README.md
+├── dalmatian
+│   ├── __init__.py
+│   ├── matrix.py
+│   └── test.py
+├── register.py
+└── setup.py</code></pre></div>
+
+<p>dalmatian/dalmatian/matrix.pyがモジュールの実体でtest.pyがテストファイルです。必要なファイルはsetup.pyと__init__.py。register.pyやREADME.mdは任意。</p>
+
+<h3 id="setuppy">setup.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># coding: utf-8</span>
+
+try:
+    import setuptools
+    from setuptools import setup, find_packages
+except ImportError:
+    print<span class="o">(</span><span class="s2">&quot;Please install setuptools.&quot;</span><span class="o">)</span>
+
+import os
+<span class="nv">long_description</span> <span class="o">=</span> <span class="s1">&#39;Visualizing a confusion matrix with gradations&#39;</span>
+<span class="k">if</span> os.path.exists<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span>:
+    <span class="nv">long_description</span> <span class="o">=</span> open<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span>.read<span class="o">()</span>
+
+setup<span class="o">(</span>
+    <span class="nv">name</span>  <span class="o">=</span> <span class="s1">&#39;dalmatian&#39;</span>,
+    <span class="nv">version</span> <span class="o">=</span> <span class="s1">&#39;0.1.3&#39;</span>,
+    <span class="nv">description</span> <span class="o">=</span> <span class="s1">&#39;Visualizing a confusion matrix with gradations&#39;</span>,
+    <span class="nv">long_description</span> <span class="o">=</span> long_description,
+    <span class="nv">license</span> <span class="o">=</span> <span class="s1">&#39;MIT&#39;</span>,
+    <span class="nv">author</span> <span class="o">=</span> <span class="s1">&#39;Shoya Ishimaru&#39;</span>,
+    <span class="nv">author_email</span> <span class="o">=</span> <span class="s1">&#39;shoya.ishimaru@gmail.com&#39;</span>,
+    <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shoya140/dalmatian&#39;</span>,
+    <span class="nv">keywords</span> <span class="o">=</span> <span class="s1">&#39;confusion matrix&#39;</span>,
+    <span class="nv">packages</span> <span class="o">=</span> find_packages<span class="o">()</span>,
+    <span class="nv">install_requires</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;numpy&#39;</span>, <span class="s1">&#39;reportlab&#39;</span><span class="o">]</span>,
+    <span class="nv">classifiers</span> <span class="o">=</span> <span class="o">[</span>
+      <span class="s1">&#39;Programming Language :: Python :: 2.7&#39;</span>,
+      <span class="s1">&#39;Intended Audience :: Science/Research&#39;</span>,
+      <span class="s1">&#39;License :: OSI Approved :: MIT License&#39;</span>
+    <span class="o">]</span>
+<span class="o">)</span></code></pre></div>
+
+<p>上から順に説明します。ライブラリのインストールにはsetuptoolsを使用するのでimport。setuptoolsがインストールされていないときは警告を出して終了します。</p>
+
+<p>PyPIのWebサイトにはreStructuredTextで書いたREADMEドキュメントを表示できるところがあります。やっぱりMarkdownで書きたいので、後述するregister.pyでREADME.mdの内容を変換します。config.pyでは変換によって出力されたテキストをlong_descriptionに代入しています。<cite><a href="https://coderwall.com/p/qawuyq/use-markdown-readme-s-in-python-modules">Use Markdown README’s in Python modules</a></cite></p>
+
+<p>setup()の中にはライブラリの名前・バージョン・ライセンス形態・依存ライブラリなどを記入します。classifiersは<a href="https://pypi.python.org/pypi?%3Aaction=list_classifiers">PyPIのWebサイト</a>から適しているものを見つけて設定します。<cite><a href="http://qiita.com/futoase/items/fb7400bfa8c956336ff1">今どきのPythonのライブラリ自作からPyPIへの登録</a></cite></p>
+
+<h3 id="registerpy">register.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">import os
+import pypandoc
+
+<span class="nv">f</span> <span class="o">=</span> open<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span>,<span class="s1">&#39;w+&#39;</span><span class="o">)</span>
+f.write<span class="o">(</span>pypandoc.convert<span class="o">(</span><span class="s1">&#39;README.md&#39;</span>, <span class="s1">&#39;rst&#39;</span><span class="o">))</span>
+f.close<span class="o">()</span>
+os.system<span class="o">(</span><span class="s2">&quot;python setup.py sdist upload&quot;</span><span class="o">)</span>
+os.remove<span class="o">(</span><span class="s1">&#39;README.txt&#39;</span><span class="o">)</span></code></pre></div>
+
+<p>Markdownで書かれたREADME.mdをreStructuredTextに変換するスクリプトです。python setup.py sdist uploadも含めることで、python register.pyのコマンドひとつで公開までできるようにしました。</p>
+
+<h3 id="initpy">__init__.py</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># coding:utf-8</span>
+
+from matrix import Matrix</code></pre></div>
+
+<p>モジュールの実体と同じ階層に__init__.pyという名前でファイルを作成します。中身は空でも良いのですが、ここでクラスを列挙してimportすることで、ライブラリを使用するときにLIBRARY_NAME.CLASS_NAMEの形でクラスを扱うことができるようになります。</p>
+
+<h3 id="gitignore">.gitignore</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">.DS_Store
+*.swp
+*.swo
+*.pyc
+*.egg-info/
+dist/</code></pre></div>
+
+<p>ソースコードをGitHubなどで公開する場合は、パッケージ作成にともなって作られるファイルを.gitignoreに書いておくことを忘れないようにしましょう。</p>
+
+<h3 id="section-1">公開</h3>
+
+<p>まず<a href="https://pypi.python.org/pypi">PyPI</a> &gt; Registerでアカウントを作成します。次に下記のコマンドを実行します。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># PyPIアカウントでログイン</span>
+<span class="nv">$ </span>python setup.py register
+
+<span class="c"># register.pyを作成している場合</span>
+<span class="nv">$ </span>python register.py
+
+<span class="c"># 作成していない場合</span>
+<span class="nv">$ </span>python setup.py sdist upload</code></pre></div>
+
+<p>最初のアップロードではアカウント情報を入力します(.pypircに保存される)。結果出力が200でエラーがなければライブラリの公開は完了です。</p>
+
+<p>今日からあなたもpypi author!!</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Python%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6PyPI%E3%81%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/pypi/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pypi/&amp;t=Python%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6PyPI%E3%81%AB%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/pypi/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/pypi/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">Dec 2, 2014
+    
+    [<a href="/tag/Note/">Note</a>]
+    
+    </p>
+    <a href="/blog/looking-back-at-2014/"><h1 class="post-title">2014年振り返り</h1></a>
+  </header>
+  <article class="post-content">
+    <p>今年ももう終わりに近づいたので、2014年の良かったこと・良くなかったことの振り返りや2015年から意識したいことについて書きました。</p>
+
+<h3 id="section">良かったこと</h3>
+
+<p><strong>多くの学会に参加した。</strong> 昨年参加したUbicomp2013が大勢の人の前でシステムのデモをやったり世界中の研究者と交流したり初めてヨーロッパの文化に触れる機会だったりとても思い入れのある学会だったので、今年もUbicomp2014に論文を通すことを目標にして研究を続けてきた。結果として今年も参加することができ、刺激的なフィードバックを得たり初めてアメリカを訪れるという経験ができた。また、主導で取り組んだ研究がAugmented Human2014に採択された(その頃自分はドイツ留学中だったので代理発表をお願いした)。MIRUやPRMUといった国内の研究会でもデモ発表や口頭発表を行って、同世代や少し上の世代の方々と繋がりができた。</p>
+
+<p><strong>良いものにたくさん触れた。</strong> 良いものを作るという作業、AとBという2つのうち良い方を選択することの連続だと思っている。その意思決定はデータとセンスに基づいて行われるべきで、センスを磨く一番の方法は良いものに触れることだと思う。留学中はChaos Communication Congress・<a href="/blog/transmediale/">Transmediale</a>・<a href="/blog/internet_black_market/">インターネット闇市</a>といったお祭りに参加したり、<a href="/tag/Sightseeing/">いろんな国や都市を観光した</a>。最近だと<a href="/blog/hakuryuen/">白龍園でとても綺麗な紅葉を見た</a>。映画もたくさん観た。これらの経験によって自分の中での面白いとか綺麗といった感覚を研ぎ澄ますことができたと思う。</p>
+
+<p><strong>ブログ書くようになった。</strong> 行った場所とか経験とか環境設定とかなんでもいいので文章にして公開してきた。これはsanographixさん(<cite><a href="http://memo.sanographix.net/post/69851358523">なんで日記書いたほうがいいか</a></cite>)やdd_otsuさん(<cite><a href="http://dd-otsu.tumblr.com/post/96688840406">承認情報と研究日誌</a></cite>)の影響で、自分の行動や思考は記録しておいて後から再利用したいと思うようになったから。Evernoteの走り書きは本当に雑な記録になりがちだけど、ブログだと最低限人に話せるレベルでまとまった文章が保証されて良い。誰かに情報を伝えるときも「この記事読んで」の一言でお互いの時間を短縮できる。あと文章は書く習慣つけてないといざ書こうと思った時にいい感じの言葉が出てこなくて困る。<cite><a href="http://autobiography0.blog82.fc2.com/blog-entry-79.html">No.15 クリエイティビティについて - 99%のひらめき</a></cite></p>
+
+<p><strong>運動するようになった。</strong> 体力の衰えを感じるようになったので、なるべく外に出て体を動かすことを心がけた。9月頃からは時々ジムに通うようにもなって筋力をつけたり泳いだりしてる。ジム、科学的に体を鍛える話が聞けるので一人で運動するよりも面白い。夜遅くまでやっているので大学帰りに寄れるのも良い。</p>
+
+<p><strong>進路について考えた。</strong> これまで先延ばしにしてきた卒業後の進路について真剣に考えて、修士卒業後の3年間の計画を立てることができた。(このあたりは直接会った時に聞いてください。)3年で力をつけた後は、自分の適正とかその時にやりたいことを考えて、研究と開発のどちらに進むかもう一度決めようと思う。</p>
+
+<h3 id="section-1">良くなかったこと</h3>
+
+<p><strong>体調崩した。</strong> 大学院生、こんなに忙しいとは思っていなくて、昼は講義に出席して夕方は実験と雑務、夜は論文書いて朝はレポート課題やって昼の講義へ、みたいな生活を続けていたので、めでたさが減っていくのも無理はなかった。</p>
+
+<h3 id="section-2">2015年</h3>
+
+<p>やりたいこともやるべきこともたくさんな1年で、全部に100%の力でコミットすることは不可能であることを痛感した。2015年は重要度や緊急度から優先順位を意識して、やるべきことをなるべく効果的に達成していきたいと思う。また、一人でできることには限りがあるので、もっと周りの人を頼ったり、作業手順やノウハウを<a href="/blog/protocol/">ドキュメント化</a>して後輩に引き継ぎたい。あと研究室生活はオーバーワークになりがちなので、家に研究を持ち帰らないようにして意識的に余暇の時間をとりたい。</p>
+
+<p>2015年もどうぞよろしくお願い致します。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=2014%E5%B9%B4%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%20-%20shoya.io&amp;url=http://shoya.io/blog/looking-back-at-2014/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/looking-back-at-2014/&amp;t=2014%E5%B9%B4%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/looking-back-at-2014/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/looking-back-at-2014/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Dec 1, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -122,107 +298,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 30, 2014
-    
-    [<a href="/tag/Sightseeing/">Sightseeing</a>]
-    
-    </p>
-    <a href="/blog/hakuryuen/"><h1 class="post-title">白龍園観覧</h1></a>
-  </header>
-  <article class="post-content">
-    <p><cite><a href="http://memo.sanographix.net/post/103115828845">1日100人限定・君は京都の激レアスポット「白龍園」を見たか - MEMOGRAPHIX</a></cite> の写真があまりにも美しくて居てもたってもいられなくなったので京都の白龍園に行ってきた。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu01.JPG" class="image-on-frame image-fade" /></p>
-
-<p>白龍園は子供服メーカーの青野株式会社によって所有・手入れされている庭園。今まで外部の人は入れなかったのだけれど、2012年秋から春と秋のみ・人数制限ありで一般公開されるようになった。観覧券は叡山電鉄出町柳駅にて09:00から購入できるが1日100人の枠が埋まると販売が終わってしまう。<cite><a href="http://guide.travel.co.jp/article/2244/">１日１００人限定！誰も知らない京都の紅葉穴場！～洛北・白龍園 - たびねす</a></cite></p>
-
-<p>11/23(日)に行ったのだけれど、三連休の真ん中だからすぐに売り切れるだろうとかなり余裕を持って07:30に出町柳駅に着くと、既に30人ほどの列ができていた。観覧券を購入した後は09:15発の電車に乗って二ノ瀬駅で降り、10:00の開園で入園した。電車は二ノ瀬駅に着く直前で「もみじのトンネル」を抜けるので道中も美しい景色を見ることができる。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu03.JPG" class="image-on-frame image-fade" /></p>
-
-<p>園内に入って最初に目にするのは、まるで絨毯のような美しい苔。1日の入場者を制限して丁寧に管理されているので、通路や階段などいたるところで茂っている。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu04.JPG" class="image-on-frame image-fade" /></p>
-
-<p>苔で覆われた石畳を進むと奥の方に神社があり、鳥居をくぐったあたりからは雰囲気が変わって高い木に覆われたところになる。細い道なのだけれど人が少ないので落ち着いて歩くことができた。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu02.JPG" class="image-on-frame image-fade" /></p>
-
-<p>庭園には腰を据えて景色を楽しめる東屋(あずまや)がある。写真は入口に近いところにある「彩雲亭」から見える景色で、窓によって切りだされた紅葉が非常に綺麗。特に日が差したタイミングに見ると窓の外の木々が色鮮やかに光るので、座ってしばらく眺めているのがおすすめ。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu05.JPG" class="image-on-frame image-fade" /></p>
-
-<p>高台にある「福寿園」という東屋からは山々の紅葉が見渡せる。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/hakuryu06.JPG" class="image-on-frame image-fade" /></p>
-
-<p>滞在時間はゆっくり2巡して90分ほど。春にまた一般公開されるかもしれないので、今度は桜の咲く頃に来れたらいいなぁ。何度も足を運びたくなる美しい庭園でした。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E7%99%BD%E9%BE%8D%E5%9C%92%E8%A6%B3%E8%A6%A7%20-%20shoya.io&amp;url=http://shoya.io/blog/hakuryuen/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/hakuryuen/&amp;t=%E7%99%BD%E9%BE%8D%E5%9C%92%E8%A6%B3%E8%A6%A7" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/hakuryuen/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/hakuryuen/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 14, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/sublime-latex/"><h1 class="post-title">Sublime Text3でLaTeXをコンパイルする[Mac]</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Sublime Textにはcommand+bでコードを実行する機能(Build System)がある。今回はビルドできるファイルにLaTeXを加えてみた。Sublime TextでLaTeXを扱う方法、調べたらLaTeXToolsとかを入れていろいろ頑張る方法が出てくるのだけれど、既にMacTeXの環境(ターミナルからplatexコマンドなどが使える状態)があるのならもっと簡単に構築できると思う。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_latex_01.png" class="image-on-frame-small" /></p>
-
-<h3 id="section">手順</h3>
-
-<ol>
-  <li>
-    <p>Tools&gt;Build System&gt;New Build System…(上図参照)を選択してBuild Systemを作成する。</p>
-  </li>
-  <li>
-    <p>新規ファイルが開かれるので、下記の設定を記入して保存する。ファイル名がメニューバーに表示されるBuild Systemの名前になる。保存場所はデフォルトで ~/Library/Application Support/Sublime Text 3/Packages/User になる。</p>
-  </li>
-</ol>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;shell&quot;</span>: <span class="nb">false</span>,
-  <span class="s2">&quot;cmd&quot;</span>:<span class="o">[</span>
-    <span class="s2">&quot;/bin/sh&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;/usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/pbibtex $file_base_name.aux &amp;&amp; /usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/dvipdfmx -p a4 $file_base_name.dvi &amp;&amp; /usr/bin/open $file_base_name.pdf&quot;</span>
-  <span class="o">]</span>,
-  <span class="s2">&quot;selector&quot;</span>: <span class="s2">&quot;source.tex&quot;</span>
-<span class="o">}</span></code></pre></div>
-
-<h3 id="section-1">補足</h3>
-
-<p>LaTeXからPDFを作成するには、複数回のコンパイルが必要になる。標準で提供されている仕組みではBuild Systemに複数のコマンドを登録することができないので、上記のような黒魔術を使用する。Macの場合は”shell”をfalseに、”cmd”にshとその引数として実行したいコマンドを&amp;&amp;で続けていけばうまく動作するらしい。Windowsの場合は書き方がやや異なる。<cite><a href="http://blog.pcitron.fr/2013/02/08/multiple-command-in-sublime-build-system/">Multiple commands in Sublime Build System</a></cite>を参考に設定した。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]%20-%20shoya.io&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/sublime-latex/&amp;t=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/sublime-latex/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -262,6 +337,10 @@
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/life-in-germany2/">Sol-31</a></li>
+        
+          <li>- <a href="/blog/aws-chainer/">AWSのGPUインスタンスでchainerとjupyter notebookを使う</a></li>
+        
           <li>- <a href="/blog/DFKI2/">大学院を修了してドイツで働くことになりました</a></li>
         
           <li>- <a href="/blog/looking-back-at-2015/">2015年振り返り</a></li>
@@ -269,10 +348,6 @@
           <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
         
           <li>- <a href="/blog/orbits/">論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</a></li>
-        
-          <li>- <a href="/blog/texpad/">Texpad LaTeX editorの紹介</a></li>
-        
-          <li>- <a href="/blog/meme-logger/">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</a></li>
         
         </ul>
       </div>

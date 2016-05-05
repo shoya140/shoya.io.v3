@@ -65,6 +65,262 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">May 13, 2014
+    
+    [<a href="/tag/Infrastructure/">Infrastructure</a>]
+    
+    </p>
+    <a href="/blog/chef_prepare/"><h1 class="post-title">Chefのknife solo prepareで404</h1></a>
+  </header>
+  <article class="post-content">
+    <h3 id="section">問題</h3>
+
+<p>Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2238</span>      <span class="m">0</span>  0:00:07  0:00:07 --:--:--  9674
+Downloading Chef 11.14.0.alpha.2 <span class="k">for</span> debian...
+downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+  to file /tmp/install.sh.2565/metadata.txt
+trying wget...
+ERROR 404
+Unable to retrieve a valid package!
+Please file a bug report at http://tickets.opscode.com
+Project: Chef
+Component: Packages
+Label: Omnibus
+Version: 11.14.0.alpha.2
+
+Please detail your operating system <span class="nb">type</span>, version and any other relevant details
+Metadata URL: https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+Generating node config <span class="s1">&#39;nodes/dev_debian.json&#39;</span>...</code></pre></div>
+
+<h3 id="section-1">解決</h3>
+
+<p><a href="http://stackoverflow.com/questions/23591190/knife-solo-prepare-fails">Knife-solo prepare fails - stackoverflow</a></p>
+
+<p>opscode(version 11.14.0.alpha.2)側の問題なので、オプションでchefのバージョンを指定してあげるといいよとの回答。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian --bootstrap-version 11.12.0
+Bootstrapping Chef...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+<span class="m">100</span> <span class="m">15934</span>  <span class="m">100</span> <span class="m">15934</span>    <span class="m">0</span>     <span class="m">0</span>   <span class="m">2345</span>      <span class="m">0</span>  0:00:06  0:00:06 --:--:-- 14026
+Downloading Chef 11.12.0 <span class="k">for</span> debian...
+downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.12.0<span class="p">&amp;</span><span class="nv">prerelease</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">nightlies</span><span class="o">=</span><span class="nb">false</span><span class="p">&amp;</span><span class="nv">p</span><span class="o">=</span>debian<span class="p">&amp;</span><span class="nv">pv</span><span class="o">=</span>6<span class="p">&amp;</span><span class="nv">m</span><span class="o">=</span>x86_64
+  to file /tmp/install.sh.2608/metadata.txt
+trying wget...
+url    https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+md5    e3cefe75258f5d737b729ed549cadfc5
+sha256    3707bb7781317ce2928378564b95675291b9c3daa10a879bc77bea1333c83a9b
+downloaded metadata file looks valid...
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chef_11.12.0-1_amd64.deb
+  to file /tmp/install.sh.2608/chef_11.12.0-1_amd64.deb
+trying wget...
+Comparing checksum with sha256sum...
+Installing Chef 11.12.0
+installing with dpkg...
+Selecting previously unselected package chef.
+<span class="o">(</span>Reading database ... <span class="m">39953</span> files and directories currently installed.<span class="o">)</span>
+Unpacking chef <span class="o">(</span>from .../chef_11.12.0-1_amd64.deb<span class="o">)</span> ...
+Setting up chef <span class="o">(</span>11.12.0-1<span class="o">)</span> ...
+Thank you <span class="k">for</span> installing Chef!</code></pre></div>
+
+<p>新しいバージョンが提供されるまではこれが応急処置みたい。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404%20-%20shoya.io&amp;url=http://shoya.io/blog/chef_prepare/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/chef_prepare/&amp;t=Chef%E3%81%AEknife%20solo%20prepare%E3%81%A7404" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/chef_prepare/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/chef_prepare/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
+    <p class="post-meta">May 9, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/updraft/"><h1 class="post-title">Grunt+BowerでつくるWebアプリケーションひな形</h1></a>
+  </header>
+  <article class="post-content">
+    <p>ハッカソンに参加するときとか、ちょっとしたWebサイトをつくるときとか、アプリケーションのテンプレートを持っていると開発にかかる時間を大きく短縮できる。特にbootstrapやjQueryをダウンロードして、過去のリソースを切り貼りして…という作業を毎回行うのは面倒なので、自分用のWebアプリケーションひな形を作成した。</p>
+
+<p><a href="https://github.com/Mrk1869/updraft">Mrk1869/updraft</a></p>
+
+<p>tornadoのひな形なのでupdraft(上昇気流)と呼んでいるけど、main.pyを変更すれば静的なサイトやsinatraのプロジェクトでも利用できる。</p>
+
+<h2 id="span-classlsfcheckspan-features"><span class="lsf">check</span> Features</h2>
+
+<ul>
+  <li>bootstrap, jQuery, backbone, underscoreのセットアップ</li>
+  <li>Gruntを使ったcoffee scriptとsassの自動コンパイル</li>
+</ul>
+
+<h2 id="span-classlsfsetupspan-require"><span class="lsf">setup</span> Require</h2>
+
+<p>bower, grunt, coffee, sassを使うので、インストールしていなければ準備が必要。npmコマンドが使えない場合は、導入はNodeとパッケージ管理システム(Macの場合はHomebrewなど)について勉強してからのほうがいいかもしれない。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install -g bower
+<span class="nv">$ </span>npm install -g grunt-cli
+<span class="nv">$ </span>npm install -g coffee-script
+<span class="nv">$ </span>gem install sass</code></pre></div>
+
+<h2 id="span-classlsfsetupspan-installation"><span class="lsf">setup</span> Installation</h2>
+
+<p><a href="https://github.com/Mrk1869/updraft">Mrk1869/updraft</a> からデータをダウンロードしてきたら、そのディレクトリに入って</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 必要なパッケージをインストール</span>
+<span class="nv">$ </span>npm install
+
+<span class="c"># bootstrapなどをダウンロードしてassets/以下に配置する</span>
+<span class="nv">$ </span>grunt bower:install
+
+<span class="c"># coffee, sassの監視を開始する</span>
+<span class="nv">$ </span>grunt</code></pre></div>
+
+<p>これでひな形の準備は完了です。</p>
+
+<p>以下は補足説明。</p>
+
+<h2 id="span-classlsfcodespan-bowerjson"><span class="lsf">code</span> bower.json</h2>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;updraft&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;0.0.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Web application template&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;license&quot;</span><span class="o">:</span> <span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ignore&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;**/.*&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;node_modules&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;bower_components&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tests&quot;</span>
+    <span class="p">],</span>
+  <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="s2">&quot;~3.1.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;backbone&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.1.2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;underscore&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.6.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="s2">&quot;~2.1.1&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;exportsOverride&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">//main fileが設定されていないライブラリをassetsにコピーするための設定</span>
+    <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/js/bootstrap.min.js&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;css&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/css/bootstrap.min.css&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;backbone&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;backbone.js&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;underscore&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;underscore.js&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/jquery.min.js&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Bowerとはフロントエンド用のパッケージマネージャ。jQueryやTwitterBootstrapなどの定番ライブラリを、サイトを巡回することなく下記のようなコマンドで集めてくることができる。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install jquery</code></pre></div>
+
+<p>しかしbowerでインストールしたライブラリはbower_components以下の複雑な場所に配置されるため、それらを扱いやすい場所(assets/ lib/など)にコピーしたい。そこでGruntを使う。コピーの対象となるファイルをmain fileとして設定していないライブラリもあるので、コメント部のようにjs, cssファイルの場所を指定する必要がある。</p>
+
+<p><a href="http://yosuke-furukawa.hatenablog.com/entry/2013/06/01/173308">参考: Bower入門(基礎編) - from scratch</a></p>
+
+<h2 id="span-classlsfcodespan-gruntfilejs"><span class="lsf">code</span> Gruntfile.js</h2>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+
+    <span class="c1">// bowerでインストールしたライブラリをassets以下に置く</span>
+    <span class="nx">bower</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">install</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">targetDir</span><span class="o">:</span> <span class="s1">&#39;./assets&#39;</span><span class="p">,</span>
+          <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;byType&#39;</span><span class="p">,</span>
+          <span class="nx">install</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nx">cleanTargetDir</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nx">cleanBowerDir</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1">// sassのコンパイル</span>
+    <span class="nx">sass</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">compile</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/_scss/*.scss&#39;</span><span class="p">,</span>
+        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;assets/css/style.css&#39;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1">// coffeeのコンパイル</span>
+    <span class="nx">coffee</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">compile</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/_coffee/*.coffee&#39;</span><span class="p">,</span>
+        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;assets/js/script.js&#39;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1">// sassとcoffeeの更新を監視する</span>
+    <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">scss</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="s1">&#39;assets/_scss/*.scss&#39;</span><span class="p">,</span>
+        <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;sass&#39;</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">coffee</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="s1">&#39;assets/_coffee/*.coffee&#39;</span><span class="p">,</span>
+        <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;diary&#39;</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+  <span class="p">});</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-bower-task&#39;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-sass&#39;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-coffee&#39;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>  <span class="p">[</span><span class="s1">&#39;sass&#39;</span><span class="p">,</span> <span class="s1">&#39;coffee&#39;</span><span class="p">,</span> <span class="s1">&#39;watch&#39;</span><span class="p">]);</span>
+<span class="p">};</span></code></pre></div>
+
+<p>grunt-bower-taskによってライブラリをコピーする。はじめの方にあるbower:installはそれに関する設定。grunt-contrib-watchによってsassとcoffeeの更新を検知して、sass:compile, coffee:compileタスクを実行するよう設定している。</p>
+
+<h2 id="section">5/11 追記</h2>
+
+<p><a href="http://d.hatena.ne.jp/naoya/20130504/1367640512">昨今の自分用Webアプリケーションひな形その2 - Grunt - naoyaのはてなダイアリー</a></p>
+
+<p>を参考に、Gruntfileをcoffeeに書きなおしました。また、Procfileを作成して</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">application: python main.py --port<span class="o">=</span><span class="m">8000</span> --debug<span class="o">=</span>True
+grunt: grunt</code></pre></div>
+
+<p>foreman startでgruntとtornadoが起動するようにしました。</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Grunt+Bower%E3%81%A7%E3%81%A4%E3%81%8F%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%B2%E3%81%AA%E5%BD%A2%20-%20shoya.io&amp;url=http://shoya.io/blog/updraft/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/updraft/&amp;t=Grunt+Bower%E3%81%A7%E3%81%A4%E3%81%8F%E3%82%8BWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%B2%E3%81%AA%E5%BD%A2" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/updraft/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/updraft/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">May 3, 2014
     
     [<a href="/tag/Infrastructure/">Infrastructure</a>]
@@ -139,116 +395,6 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Apr 29, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/quick_response/"><h1 class="post-title">Quick Response</h1></a>
-  </header>
-  <article class="post-content">
-    <p>メールをできるだけ早く返すように心がけている。そう思うようになったきっかけは「<a href="http://book-mrk1869.tumblr.com/post/83999920951">MITメディアラボ  魔法のイノベーション・パワー</a>」という本のなかのこの一節。簡潔な返事が良い。</p>
-
-<blockquote>
-  <p>ある日の午後、私はリハビリ・セッションを終えた母親に会うためにリハビリ病棟の食堂で待っているあいだ、ヒュー・ハーにメールを送った。「ヒュー、この高齢化社会で、お年寄りの転倒を減らすことができれば、これまでのがん研究なんかよりもずっと、人々の生活向上に貢献できると思うんだけれどね。ぜひその方法を考えるべきだ」<br />
-すぐにヒューからメールが返ってきた。「今スキー中。あとで考えてみる」</p>
-</blockquote>
-
-<p>時間のかかるタスクを含むメールが来た時を考える。タスクをすべて終わらせてか返信すると、時間がかかってよくない。こちらのメールが届くまで相手の作業を止めていることもあるので、自分がそれらにいつ取り掛かれるか、今どれくらい終えているのかを先に知らせるべきである。手がふさがっている場合は読んだことだけ伝えることも大切だと考えている。</p>
-
-<p>また、返信が遅れるとこんなスパイラルに陥ってしまうことがある。</p>
-
-<pre>
-メールが来る
---&gt;返信が遅れる
---&gt;遅れたぶん, きちんとした文章で返信しよう
---&gt;文面悩む
---&gt;返信が遅れる
---&gt;(繰り返し)
-</pre>
-
-<p>進捗報告の遅延と同じである。</p>
-
-<pre>
-進捗どうですか
---&gt;報告が遅れる
---&gt;遅れたぶん, 期待値を上回る成果を出してから報告しよう
---&gt;成果まだ足りない
---&gt;報告が遅れる
---&gt;(繰り返し)
-</pre>
-
-<p>誰かを待たせることで、自分の中で(勝手に)期待値を上げてしまうのよくない。</p>
-
-<p>一方で、最近は(物理的にも社会的にも)窓口が増えて、取りこぼしてしまう連絡も増えた。ということで、送ってから2日ほど経っても何の連絡がない場合は、見逃している可能性が高いので遠慮なく催促してください。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Quick%20Response%20-%20shoya.io&amp;url=http://shoya.io/blog/quick_response/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/quick_response/&amp;t=Quick%20Response" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/quick_response/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/quick_response/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Apr 28, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/book_shelf/"><h1 class="post-title">心に響いた一節を、いつでも読み返せるように。</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Web上に自分用の本棚を作った。<a href="http://book-mrk1869.tumblr.com">self.bookShelf</a></p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/book_shelf.png" class="image-on-frame-medium" /></p>
-
-<p>作ったというと聞こえはいいけれど、投稿機能はTumblrがやってくれているので、実際のところCSSを書いただけです。</p>
-
-<h3 id="section">機能</h3>
-
-<ul>
-  <li>気に入った一節をTumblrから投稿する。後日いい感じに振り返ることができる。</li>
-  <li>ページ中央のシャッフルボタンを押すと、過去の投稿がランダムに表示される。</li>
-</ul>
-
-<h3 id="section-1">動機</h3>
-
-<p>本、読み終えると本棚にしまうんだけど、「あの一節が読みたい」といった衝動に駆られてあとから引っ張りだすことがよくある。内容を前後に行ったり来たりしながら目的の一節を探すので、本の内容に引き込まれてずいぶん時間を奪われる。気に入ったところだけスクラップしておいて、いつでも短時間で読み返せるようにしたいと考えた。</p>
-
-<p>また、先日I-siteなんばにある<a href="http://opu.is-library.jp/">まちライブラリー</a>を訪れたこともあって、自分が読んだ本の記録をどこかに残してみたいと思った。</p>
-
-<p>というのが建前で</p>
-
-<ul>
-  <li>少し休養をとっていた時期があって、その間にたくさんの本を読んだ。</li>
-  <li><a href="http://memo.sanographix.net/post/82160791768">大体いい感じになるKeynoteテンプレート「Azusa」作った</a>という記事を読んで、3色で構成されたWebページを作りたいと思っていた。</li>
-  <li><a href="http://pplog.net">pplog - ゆるふわインターネットにポエムを刻もう</a>を見てから、クリックしたりマウスオーバーしたときにぐるぐる回るボタンを使ってみたかった。</li>
-</ul>
-
-<p>という理由で作ってみた。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E5%BF%83%E3%81%AB%E9%9F%BF%E3%81%84%E3%81%9F%E4%B8%80%E7%AF%80%E3%82%92%E3%80%81%E3%81%84%E3%81%A4%E3%81%A7%E3%82%82%E8%AA%AD%E3%81%BF%E8%BF%94%E3%81%9B%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%80%82%20-%20shoya.io&amp;url=http://shoya.io/blog/book_shelf/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/book_shelf/&amp;t=%E5%BF%83%E3%81%AB%E9%9F%BF%E3%81%84%E3%81%9F%E4%B8%80%E7%AF%80%E3%82%92%E3%80%81%E3%81%84%E3%81%A4%E3%81%A7%E3%82%82%E8%AA%AD%E3%81%BF%E8%BF%94%E3%81%9B%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%80%82" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/book_shelf/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/book_shelf/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -288,6 +434,10 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/life-in-germany2/">Sol-31</a></li>
+        
+          <li>- <a href="/blog/aws-chainer/">AWSのGPUインスタンスでchainerとjupyter notebookを使う</a></li>
+        
           <li>- <a href="/blog/DFKI2/">大学院を修了してドイツで働くことになりました</a></li>
         
           <li>- <a href="/blog/looking-back-at-2015/">2015年振り返り</a></li>
@@ -295,10 +445,6 @@ sed -e <span class="s1">&#39;s/¥/\\/g&#39;</span> -e <span class="s1">&#39;s/�
           <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
         
           <li>- <a href="/blog/orbits/">論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</a></li>
-        
-          <li>- <a href="/blog/texpad/">Texpad LaTeX editorの紹介</a></li>
-        
-          <li>- <a href="/blog/meme-logger/">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</a></li>
         
         </ul>
       </div>
