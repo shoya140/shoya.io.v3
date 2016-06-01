@@ -40,9 +40,11 @@ permalink: /publications/
 
 ### Domestic Conference
 
+1. 星加 健介, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;">リーディングライフログを用いた日常的な読書行動の計量</span>. 電子情報通信学会技術研究報告, vol. 116, no. 38, PRMU2016-19, pp. 101-106, May 2016.
+
 1. 大社 綾乃, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;">視点情報を用いた主観的高難易度単語の推定</span>. 電子情報通信学会技術研究報告, vol. 115, no. 517, PRMU2015-189, pp. 149-153, March 2016.
 
-1. 藤好 宏樹, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;">視点情報を用いた英語習熟度推定法の実験的検討</span>. 電子情報通信学会技術研究報告, vol. 115, no. 517, PRMU2015-195, pp. 185-190, March 2014.
+1. 藤好 宏樹, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;">視点情報を用いた英語習熟度推定法の実験的検討</span>. 電子情報通信学会技術研究報告, vol. 115, no. 517, PRMU2015-195, pp. 185-190, March 2016.
 
 1. <u>石丸 翔也</u>, クンツェ カイ, 黄瀬 浩一. <span style="font-weight: 700;">眼電位を用いたみんなのための眼球運動認識</span>. 電子情報通信学会技術研究報告, vol. 114, no. 230, PRMU2014-62, pp. 45-48, October 2014.
 
