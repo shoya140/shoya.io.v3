@@ -81,14 +81,14 @@
 <p>アプリケーションはAppStore &gt; homebrew-cask &gt; 手動で管理する主義なので、Sublime Textをhomebrew-caskからインストール。デフォルトのbrew caskからインストールできるSublime Textのversionは2なので注意。version3を追加する。</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">brew tap caskroom/homebrew-versions
-brew cask install sublime-text3</code></pre></div>
+brew cask install sublime-text-dev</code></pre></div>
 
 <h3 id="package-control">Package Control</h3>
 
 <p>プラグイン管理ツールであるPackage Controlをインストールする。<br />
 メニューバーから View &gt; Show Consoleを開く。下記を入力して実行する。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib<span class="p">;</span> <span class="nv">h</span> <span class="o">=</span> <span class="s1">&#39;7183a2d3e96f11eeadd761d777e62404&#39;</span> + <span class="s1">&#39;e330c659d4bb41d3bdf022e94cab3cd0&#39;</span><span class="p">;</span> <span class="nv">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span> <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span><span class="p">;</span> <span class="nv">by</span> <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">&#39;http://sublime.wbond.net/&#39;</span> + pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>, <span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">()</span><span class="p">;</span> <span class="nv">dh</span> <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span><span class="p">;</span> print<span class="o">(</span><span class="s1">&#39;Error validating download (got %s instead of %s), please try manual install&#39;</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if</span> dh !<span class="o">=</span> h <span class="k">else</span> open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">&#39;wb&#39;</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib<span class="p">;</span> <span class="nv">h</span> <span class="o">=</span> <span class="s1">&#39;2915d1851351e5ee549c20394736b442&#39;</span> + <span class="s1">&#39;8bc59f460fa1548d1514676163dafc88&#39;</span><span class="p">;</span> <span class="nv">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span> <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span><span class="p">;</span> <span class="nv">by</span> <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">&#39;http://packagecontrol.io/&#39;</span> + pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>, <span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">()</span><span class="p">;</span> <span class="nv">dh</span> <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span><span class="p">;</span> print<span class="o">(</span><span class="s1">&#39;Error validating download (got %s instead of %s), please try manual install&#39;</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if</span> dh !<span class="o">=</span> h <span class="k">else</span> open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">&#39;wb&#39;</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></div>
 
 <p>インストールが完了したらcommand+shift+p &gt; install packageで起動できる。パッケージ名を検索して選択するとインストールされる。インストールしたパッケージリストは以下に作成される。</p>
 
@@ -97,18 +97,18 @@ brew cask install sublime-text3</code></pre></div>
 <p>とりあえず入れたパッケージ</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-	<span class="s2">&quot;installed_packages&quot;</span>:
-	<span class="o">[</span>
-		<span class="s2">&quot;ColorPicker&quot;</span>,
-		<span class="s2">&quot;Gist&quot;</span>,
-		<span class="s2">&quot;Git&quot;</span>,
-		<span class="s2">&quot;HTML5&quot;</span>,
-		<span class="s2">&quot;Jekyll&quot;</span>,
-		<span class="s2">&quot;Markdown Preview&quot;</span>,
-		<span class="s2">&quot;SCSS&quot;</span>,
-		<span class="s2">&quot;Theme - itg.flat&quot;</span>,
-		<span class="s2">&quot;Theme - Soda&quot;</span>
-	<span class="o">]</span>
+    <span class="s2">&quot;installed_packages&quot;</span>:
+    <span class="o">[</span>
+        <span class="s2">&quot;ColorPicker&quot;</span>,
+        <span class="s2">&quot;Gist&quot;</span>,
+        <span class="s2">&quot;Git&quot;</span>,
+        <span class="s2">&quot;HTML5&quot;</span>,
+        <span class="s2">&quot;Jekyll&quot;</span>,
+        <span class="s2">&quot;Markdown Preview&quot;</span>,
+        <span class="s2">&quot;SCSS&quot;</span>,
+        <span class="s2">&quot;Theme - itg.flat&quot;</span>,
+        <span class="s2">&quot;Theme - Soda&quot;</span>
+    <span class="o">]</span>
 <span class="o">}</span></code></pre></div>
 
 <p>参考: <a href="https://sublime.wbond.net/installation">Installation - Package Control</a></p>

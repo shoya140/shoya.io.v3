@@ -174,10 +174,10 @@ c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポ�
 &lt;p&gt;現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# python2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv/lib/python2.7/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python2.7/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth
 
 &lt;span class=&quot;c&quot;&gt;# python3&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv/lib/python3.5/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python3.5/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;numpyも一緒に入るけどpipで管理するものを使う&lt;/p&gt;
 

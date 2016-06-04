@@ -49,10 +49,10 @@ $ brew install opencv3 --with-python3
 
 {% highlight bash %}
 # python2
-$ echo /usr/local/opt/opencv/lib/python2.7/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
+$ echo /usr/local/opt/opencv3/lib/python2.7/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
 
 # python3
-$ echo /usr/local/opt/opencv/lib/python3.5/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
+$ echo /usr/local/opt/opencv3/lib/python3.5/site-packages > $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")/opencv.pth
 {% endhighlight %}
 
 numpyも一緒に入るけどpipで管理するものを使う
