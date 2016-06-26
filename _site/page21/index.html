@@ -65,6 +65,88 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Jan 12, 2014
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/category_next/"><h1 class="post-title">Jekyllのカテゴリ内で「次の記事」ボタンを設置する</h1></a>
+  </header>
+  <article class="post-content">
+    <p>Jekyllではpage.previous, page.next要素に前の記事/次の記事が格納されているので、前の記事/次の記事へ誘導するボタンがすぐに作れる。しかしこの前の記事/次の記事はタグやカテゴリを無視して時系列に引っ張ってくるので、あるカテゴリ内で前へ前へといった誘導ができない。</p>
+
+<p>例えばこのブログでは<strike>日本語の記事をblog, 英語の記事をen/blogというカテゴリで管理しているので、</strike>(統合しました)英語の記事を読んでいる間は英語の記事だけを取得したいと思う。</p>
+
+<p>調べたところDavid Straußさんがプラグインを作成されていて、結構良さそう。</p>
+
+<p><a href="http://stravid.com/en/category-aware-previous-and-next-for-jekyll-posts/">Category Aware Previous And Next For Jekyll Posts</a></p>
+
+<p>これを少し改良して使うことにした。</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">CategoryAwareNextGenerator</span> <span class="o">&lt;</span> <span class="no">Generator</span>
+
+    <span class="n">safe</span> <span class="kp">true</span>
+    <span class="n">priority</span> <span class="ss">:high</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">site</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">each_pair</span> <span class="k">do</span> <span class="o">|</span><span class="n">category_name</span><span class="p">,</span> <span class="n">posts</span><span class="o">|</span>
+        <span class="n">posts</span><span class="o">.</span><span class="n">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span> <span class="p">}</span>
+
+        <span class="n">posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+          <span class="n">position</span> <span class="o">=</span> <span class="n">posts</span><span class="o">.</span><span class="n">index</span> <span class="n">post</span>
+
+          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="n">posts</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">category_previous</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span>
+          <span class="k">else</span>
+            <span class="n">category_previous</span> <span class="o">=</span> <span class="kp">nil</span>
+          <span class="k">end</span>
+
+          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">1</span>
+            <span class="n">category_next</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span>
+          <span class="k">else</span>
+            <span class="n">category_next</span> <span class="o">=</span> <span class="kp">nil</span>
+          <span class="k">end</span>
+
+          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_previous&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_previous</span> <span class="k">unless</span> <span class="n">category_previous</span><span class="o">.</span><span class="n">nil?</span>
+          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_next&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_next</span> <span class="k">unless</span> <span class="n">category_next</span><span class="o">.</span><span class="n">nil?</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>改良点は2点。</p>
+
+<ul>
+  <li>オリジナルは次の記事のみを取得していたので、前も記事を取得するようにした。</li>
+  <li>前の記事で”時系列的に過去”を呼びたいので、前の記事/次の記事の関係を逆にした。</li>
+</ul>
+
+<p>_plugins/以下にcategory_next.rbなどと名前をつけて置いておけば</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 前の記事</span>
+page.CATEGORYNAME_previous
+<span class="c"># 次の記事</span>
+page.CATEGORYNAME_next</code></pre></div>
+
+<p>が取得できる</p>
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/category_next/&amp;t=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/category_next/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Jan 2, 2014
     
     [<a href="/tag/Sightseeing/">Sightseeing</a>]
@@ -213,48 +295,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Dec 24, 2013
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/locate/"><h1 class="post-title">locateとupdatedbでファイルを高速検索</h1></a>
-  </header>
-  <article class="post-content">
-    <p>シェル上でファイルを検索するときfindを使っていたのだけれど</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>find DIRECTORY -name <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
-
-<p>locate コマンドを使ったほうが早くて便利だよと教えてもらった。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>locate <span class="s2">&quot;FILENAME&quot;</span></code></pre></div>
-
-<p>locateはあらかじめ作成しておいたデータベースを使って検索するため、コマンドが叩かれる度に検索を実行するfindより早いらしい。</p>
-
-<p>データベースは定期的に更新されるが、下記のコマンドで手動で更新できる。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo updatedb</code></pre></div>
-
-<p>Mac OSXの場合は</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo /usr/libexec/locate.updatedb</code></pre></div>
-
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=locate%E3%81%A8updatedb%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%AB%98%E9%80%9F%E6%A4%9C%E7%B4%A2%20-%20shoya.io&amp;url=http://shoya.io/blog/locate/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/locate/&amp;t=locate%E3%81%A8updatedb%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%AB%98%E9%80%9F%E6%A4%9C%E7%B4%A2" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/locate/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/locate/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -294,6 +334,8 @@
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/setup-windows/">Windowsの設定(普段Mac使ってる人向け)</a></li>
+        
           <li>- <a href="/blog/life-in-germany2/">Sol-31</a></li>
         
           <li>- <a href="/blog/aws-chainer/">AWSのGPUインスタンスでchainerとjupyter notebookを使う</a></li>
@@ -303,8 +345,6 @@
           <li>- <a href="/blog/looking-back-at-2015/">2015年振り返り</a></li>
         
           <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
-        
-          <li>- <a href="/blog/orbits/">論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</a></li>
         
         </ul>
       </div>

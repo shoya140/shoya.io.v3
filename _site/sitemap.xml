@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://shoya.io/blog/setup-windows/</loc>
+    </url>
+    
+    <url>
         <loc>http://shoya.io/blog/life-in-germany2/</loc>
     </url>
     
@@ -821,6 +825,14 @@
     
     <url>
         <loc>http://shoya.io/page34/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/page35/</loc>
     </url>
     
     

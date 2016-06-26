@@ -8,6 +8,55 @@
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Windowsの設定(普段Mac使ってる人向け)</title>
+        <description>&lt;p&gt;Windows上に開発環境を構築することが時々あるのでその作業メモ。&lt;/p&gt;
+
+&lt;h3 id=&quot;sharpkeyswindows&quot;&gt;SharpKeysでWindowsキーをコントロールキーにリマップ&lt;/h3&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;http://www.randyrants.com/category/sharpkeys/&quot;&gt;SharpKeys&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;MacBook内臓のキーボードやApple Magic Keyboardのcommandキーを押すとWindowsキーが反応する。コピー・ペーストやアプリを閉じる操作をMacと同じキーで行いたいのでキーリマップソフトウェアを使って変更する。いろいろ試してみたところSharpKyesが良さそうな感じ。(キーリマップソフトウェアにはレジストリを書き換えるものとシステムに常駐するものがあって、SharpKeysは前者。)&lt;/p&gt;
+
+&lt;h3 id=&quot;gnupackcygwin&quot;&gt;gnupackでcygwin環境を構築する&lt;/h3&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;http://gnupack.osdn.jp/docs/UsersGuide.html&quot;&gt;gnupack Users Guide&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;gnupackとはインストール不要のcygwin環境。展開して.exeを起動するとそのディレクトリにあるhome/をホームディレクトリとしてLinuxディストリビューション同等の機能が使用できる。VimやEmacsも入っている。以下はおすすめの設定。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;openコマンドでファイルを開く&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cygstart&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;sublコマンドでSublime Textを起動する&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Program&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Files&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;gnupackとMinicondaを一緒に使う&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://conda.pydata.org/miniconda.html&quot;&gt;Miniconda&lt;/a&gt;とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Scripts&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Library&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;他にも便利な設定が見つかったら追記していく予定。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Jun 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/setup-windows/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/setup-windows/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
         <title>Sol-31</title>
         <description>&lt;p&gt;ドイツで生活を始めて1ヶ月になるのでこちらの暮らしについて振り返ってみようと思う。&lt;/p&gt;
 
@@ -513,42 +562,6 @@ c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポ�
         
         
         <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</title>
-        <description>&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;33dbc4b1166e45cca57400eeeaf0db4f&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;なぜ作ったか&lt;/h3&gt;
-
-&lt;p&gt;僕の観測範囲では、研究発表のスライドというのは装飾が最小限で、白地に黒文字が読みやすくて良いとされています。その制約の中で見栄えの良いスライドを作るのはなかなか難しいので、大体いい感じになるKeynoteテンプレートを作りました。名前はZebraです。こちらからダウンロードすることができます。&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/zebra&quot;&gt;Zebra — Keynote template for research presentations&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;テンプレート作成/公開にあたって参考にさせていただいたのは&lt;a href=&quot;http://www.sanographix.net/&quot;&gt;佐野章核&lt;/a&gt;さんの「Azusa」「Azusa Colors」で、勉強会やLTのスライドではいつもお世話になっています。
-&lt;cite&gt;&lt;a href=&quot;http://memo.sanographix.net/post/82160791768&quot;&gt;大体いい感じになるKeynoteテンプレート「Azusa」作った - MEMOGRAPHIX&lt;/a&gt;&lt;/cite&gt; ただ研究発表のような堅い場所で使うにはややポップすぎる感じがするのと、透過でない図やグラフを貼る機会が多くて真っ白な背景が使いたいので、今回はそれに適したテンプレートを作成することにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zebra1.jpg&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;機能&lt;/h3&gt;
-
-&lt;p&gt;title, outline, blank, mainの4種類のフォーマットと2種類のカラースキームで構成されています。mainのスライド上部には目立つが主張し過ぎない見出しを置いています。見出しの色は変えられるので好きな色を使ってください。スライドのメインカラーとリンクさせると綺麗です。スライドに使用する色は極力3色(背景・ベースカラー・メインカラー)に押さえて、課題-解決策の対比や強く伝えたいことにアクセントカラーを使うのが良いと思います。フォントはMac標準搭載のもののなかからAvenir Nextを選択しました。これも好みで選んでください。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;まとめ&lt;/h3&gt;
-
-&lt;p&gt;フォーマルだけど少しお洒落、大体いい感じの研究発表ができるKeynoteテンプレートを作って公開しました。ご活用ください。不具合などありましたらissue立てるか直接連絡いただけると嬉しいです。Zebra使って最高の卒論/修論発表にしようぜ！&lt;/p&gt;
-
-&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/zebra&quot;&gt;Zebra — Keynote template for research presentations&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 Nov 2015 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/zebra/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/zebra/</guid>
-        
-        <category>ReleaseNote</category>
-        
-        <category>Design</category>
-        
-        
-        <category>diary</category>
         
       </item>
     

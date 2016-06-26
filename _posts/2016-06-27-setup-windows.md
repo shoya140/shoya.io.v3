@@ -1,0 +1,49 @@
+---
+layout: post
+title: Windowsの設定(普段Mac使ってる人向け)
+categories: ['tech']
+tags: ['Infrastructure']
+published: True
+---
+
+Windows上に開発環境を構築することが時々あるのでその作業メモ。
+
+### SharpKeysでWindowsキーをコントロールキーにリマップ
+
+<cite>[SharpKeys](http://www.randyrants.com/category/sharpkeys/)</cite>
+
+MacBook内臓のキーボードやApple Magic Keyboardのcommandキーを押すとWindowsキーが反応する。コピー・ペーストやアプリを閉じる操作をMacと同じキーで行いたいのでキーリマップソフトウェアを使って変更する。いろいろ試してみたところSharpKyesが良さそうな感じ。(キーリマップソフトウェアにはレジストリを書き換えるものとシステムに常駐するものがあって、SharpKeysは前者。)
+
+### gnupackでcygwin環境を構築する
+
+<cite>[gnupack Users Guide](http://gnupack.osdn.jp/docs/UsersGuide.html)</cite>
+
+gnupackとはインストール不要のcygwin環境。展開して.exeを起動するとそのディレクトリにあるhome/をホームディレクトリとしてLinuxディストリビューション同等の機能が使用できる。VimやEmacsも入っている。以下はおすすめの設定。
+
+**openコマンドでファイルを開く**
+
+cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。
+
+{% highlight bash %}
+alias open='cygstart'
+{% endhighlight %}
+
+**sublコマンドでSublime Textを起動する**
+
+Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。
+
+{% highlight bash %}
+export PATH=C:\\Program\ Files\\Sublime\ Text\ 3:$PATH
+{% endhighlight %}
+
+**gnupackとMinicondaを一緒に使う**
+
+[Miniconda](http://conda.pydata.org/miniconda.html)とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。
+
+{% highlight bash %}
+export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda2\\:$PATH
+export PATH=C:\\Users\\ YOUR_USER_NAME\\Miniconda2\\Scripts\\:$PATH
+export PATH=C:\\Users\\ YOUR_USER_NAME\\Miniconda2\\Library\\bin:$PATH
+{% endhighlight %}
+
+他にも便利な設定が見つかったら追記していく予定。
