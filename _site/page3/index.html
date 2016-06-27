@@ -65,6 +65,122 @@
           
 <div class="post">
   <header class="post-header">
+    <p class="post-meta">Dec 23, 2015
+    
+    [<a href="/tag/Programming/">Programming</a>]
+    
+    </p>
+    <a href="/blog/pyenv-virtualenv/"><h1 class="post-title">科学技術計算のためのPython開発環境(2015)</h1></a>
+  </header>
+  <article class="post-content">
+    <h3 id="section">機能</h3>
+<ul>
+  <li>pyenv-virtualenvでバージョンと仮想環境を切り替えられる</li>
+  <li>OpenCV3.0をPythonから利用できる</li>
+  <li>Jupyter(iPython notebook)を起動できる</li>
+</ul>
+
+<h3 id="pyenv-virtualenv">pyenv-virtualenvの導入</h3>
+
+<p><a href="http://brew.sh/">Homebrew</a>でインストールする。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew install pyenv-virtualenv</code></pre></div>
+
+<p>.zshrc(.bashrc)に下記の設定を追記する。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">&quot;${HOME}/.pyenv&quot;</span>
+<span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;${PYENV_ROOT}&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">eval</span> <span class="s2">&quot;$(pyenv init -)&quot;</span>
+    <span class="nb">eval</span> <span class="s2">&quot;$(pyenv virtualenv-init -)&quot;</span>
+<span class="k">fi</span></code></pre></div>
+
+<p>Pythonをインストール (例:3.5.10)</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv install 3.5.10
+<span class="nv">$ </span>pyenv global 3.5.10
+<span class="nv">$ </span>pyenv rehash</code></pre></div>
+
+<h3 id="opencv">OpenCVの導入</h3>
+
+<p>Homebrewでインストールする。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew install opencv3 --with-python3</code></pre></div>
+
+<p>現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># python2</span>
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python2.7/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv.pth
+
+<span class="c"># python3</span>
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python3.5/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;</span><span class="k">)</span>/opencv.pth</code></pre></div>
+
+<p>numpyも一緒に入るけどpipで管理するものを使う</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install numpy</code></pre></div>
+
+<h3 id="jupyter">Jupyterなど定番ライブラリの導入</h3>
+
+<p>pipでインストールする</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install numpy scipy pandas scikit-learn matplotlib jupyter</code></pre></div>
+
+<p>virtualenvの上でmatplotlibを使うための設定</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">echo </span>backend : TkAgg &gt; ~/.matplotlib/matplotlibrc</code></pre></div>
+
+<h3 id="virtualenv">参考1 virtualenvの使い方</h3>
+
+<p>大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvを使って仮想環境を用意する。</p>
+
+<p>virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用する)</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir tutorial <span class="o">&amp;&amp;</span> <span class="nb">cd </span>tutorial
+<span class="nv">$ </span>pyenv virtualenv 3.5.0 3.5.0-tutorial
+<span class="nv">$ </span>pyenv <span class="nb">local </span>3.5.0-tutorial</code></pre></div>
+
+<p>virtualenvの削除</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv uninstall 3.5.0-tutorial</code></pre></div>
+
+<h3 id="osxlinux-windows">参考2 OSX以外(Linux, Windows)での実行</h3>
+
+<p>scipyやOpenCVのセットアップで躓くことが多いのでminicondaを使っている。例えば下記のDockerfileからcontainerを作成してその上で実行する。(Python3系のcondaはOpenCVをサポートしていないので注意)</p>
+
+<p><cite><a href="https://github.com/shoya140/docker-image-ml">shoya140/docker-image-ml</a></cite></p>
+
+<div class="highlight"><pre><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span> centos
+<span class="k">MAINTAINER</span> shoya140
+
+<span class="k">RUN</span> yum update -y
+<span class="k">RUN</span> yum install -y git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
+
+<span class="k">RUN</span> git clone git://github.com/yyuu/pyenv.git .pyenv
+<span class="k">ENV</span> PYENV_ROOT <span class="nv">$HOME</span>/.pyenv
+<span class="k">ENV</span> PATH <span class="nv">$PYENV_ROOT</span>/shims:<span class="nv">$PYENV_ROOT</span>/bin:<span class="nv">$PATH</span>
+
+<span class="k">RUN</span> pyenv install miniconda-3.18.3
+<span class="k">RUN</span> pyenv global miniconda-3.18.3
+<span class="k">RUN</span> pyenv rehash
+
+<span class="k">RUN</span> conda install numpy scipy pandas scikit-learn
+<span class="k">RUN</span> conda install -c https://conda.binstar.org/menpo opencv</code></pre></div>
+
+
+  </article>
+  <div class="post-social">
+    <div class="tweet-button"><a href="https://twitter.com/share?text=%E7%A7%91%E5%AD%A6%E6%8A%80%E8%A1%93%E8%A8%88%E7%AE%97%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEPython%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83(2015)%20-%20shoya.io&amp;url=http://shoya.io/blog/pyenv-virtualenv/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+  </a></div>
+    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/pyenv-virtualenv/&amp;t=%E7%A7%91%E5%AD%A6%E6%8A%80%E8%A1%93%E8%A8%88%E7%AE%97%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEPython%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83(2015)" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+  </a></div>
+    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/pyenv-virtualenv/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+  </a></div>
+    <div class="hatena-star"><a href="http://shoya.io/blog/pyenv-virtualenv/" style="display: none;">hatena</a></div>
+  </div>
+</div>
+<hr>
+
+<div class="post">
+  <header class="post-header">
     <p class="post-meta">Dec 21, 2015
     
     [<a href="/tag/Note/">Note</a>]
@@ -166,77 +282,6 @@
 </div>
 <hr>
 
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Dec 3, 2015
-    
-    [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/meme-logger/"><h1 class="post-title">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</h1></a>
-  </header>
-  <article class="post-content">
-    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png" class="image-on-frame-small" /></p>
-
-<p><a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar 2015</a> 3日目の記事です。昨日の記事は@hatoneさんによる <cite><a href="http://hatone.hateblo.jp/entry/2015/12/01/162235">JINE MEME iOSアプリ開発入門 -公式サンプルアプリを動かす-</a></cite>でした。サンプルアプリが動いたら、次はセンサから得られるデータについてもっと詳しく見てみたいはず！今日はセンサデータをグラフ表示したり保存する方法について紹介します。記事の前半は作ったものの紹介で後半は実装の工夫です。</p>
-
-<h3 id="section">背景</h3>
-
-<p>センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な<strong>波形のモニタリング</strong>と<strong>ラベル付データの記録</strong>機能を持ったアプリを作って<a href="https://github.com/shoya140/MEMELogger-iOS-developers">githubで公開しました</a>。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。</p>
-
-<h3 id="section-1">機能</h3>
-
-<ul>
-  <li>アプリ上でセンサデータをグラフ表示できる</li>
-  <li>オフライン解析のためにデータを記録できる</li>
-</ul>
-
-<h3 id="section-2">実装</h3>
-
-<p><strong>グラフ描画</strong> 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。</p>
-
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">@</span><span class="n">IBDesignable</span> <span class="k">class</span> <span class="nl">GraphView</span><span class="p">:</span> <span class="bp">UIView</span> <span class="p">{</span>
-    <span class="p">@</span><span class="n">IBInspectable</span> <span class="k">var</span> <span class="nl">maximumValue</span><span class="p">:</span> <span class="n">Double</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">{</span>
-        <span class="kr">didSet</span> <span class="p">{</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">setNeedsDisplay</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-<span class="p">}</span></code></pre></div>
-
-<p><strong>データの記録</strong> 開発者がデータの読み書きに使えるDocumentDirectory以下にテキストファイルを作成し、<code>memeRealTimeModeDataReceived(data: MEMERealTimeData!)</code>が呼ばれる度にそのデータを追記しています。また、iTunesやiFunBoxを使ってデータを取り出せるように<code>プロジェクト名-info.plist</code>にKey:<code>Application supports iTunes file sharing</code> Value:<code>YES</code>をセットしました。</p>
-
-<p><strong>まばたきのアニメーション</strong> <a href="http://www.paintcodeapp.com/">PaintCode</a>を使ってPathの位置を変数で変えられる目の画像を作成しました。PaintCodeから出力されたStyleKitをimportして、目の開閉や虹彩の位置とともにdraw~を呼び出して描画しています。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_03.png" class="image-on-frame-medium" /></p>
-
-<p>その他の細かい実装についてはリポジトリをご参照ください。</p>
-
-<h3 id="section-3">まとめ</h3>
-
-<p>JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。<a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar2015</a> 明日の担当は古川さんとのことでとても楽しみです！</p>
-
-<ul>
-  <li><a href="https://github.com/shoya140/MEMELogger-iOS-developers">https://github.com/shoya140/MEMELogger-iOS-developers</a></li>
-</ul>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/meme-logger/&amp;t=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/meme-logger/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
 
 <div class="pagenation">
     
@@ -276,6 +321,8 @@
         <p><span class="lsf">list</span> 最近の記事</p>
         <ul>
         
+          <li>- <a href="/blog/dropbox-ignore/">Dropboxへアップロードしたくないディレクトリをignoreする</a></li>
+        
           <li>- <a href="/blog/setup-windows/">Windowsの設定(普段Mac使ってる人向け)</a></li>
         
           <li>- <a href="/blog/life-in-germany2/">Sol-31</a></li>
@@ -285,8 +332,6 @@
           <li>- <a href="/blog/DFKI2/">大学院を修了してドイツで働くことになりました</a></li>
         
           <li>- <a href="/blog/looking-back-at-2015/">2015年振り返り</a></li>
-        
-          <li>- <a href="/blog/pyenv-virtualenv/">科学技術計算のためのPython開発環境(2015)</a></li>
         
         </ul>
       </div>
