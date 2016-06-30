@@ -6,23 +6,23 @@ permalink: /publications/
 
 ### Journal
 
-1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u> and Kai Kunze. <span style="font-weight: 700;">Making Regular Eyeglasses Smart</span>. Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015.
+1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u>, and Kai Kunze. <span style="font-weight: 700;">Making Regular Eyeglasses Smart</span>. Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015.
 
 ### International Conference
 
-1. Christophe Rigaud, Thanh-Nam Le, J.-C. Burie, J.-M. Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata, and Koichi Kise. <span style="font-weight: 700;">Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information</span>. In Proceedings of the 12th IAPR International Workshop on Document Analysis Systems (DAS2016), April 2016.
+1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata, and Koichi Kise. <span style="font-weight: 700;">Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information</span>. In Proceedings of the 12th IAPR International Workshop on Document Analysis Systems (DAS2016), April 2016.
 
 1. <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;">Quantifying the Mental State on the Basis of Physical and Social Activities</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.
 
-1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Quantifying Reading Habits – Counting How Many Words You Read</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Publication (UbiComp2015). September 2015.
+1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">Quantifying Reading Habits – Counting How Many Words You Read</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Publication (UbiComp2015). September 2015.
 
-1. Kai Kunze, Yuji Uema, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami  <span style="font-weight: 700;">MEME – Eye Wear Computing to Explore Human Behavior</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.
+1. Kai Kunze, Yuji Uema, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">MEME – Eye Wear Computing to Explore Human Behavior</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.
 
 1. Kai Kunze, Kazutaka Inoue, Katsutoshi Masai, Yuji Uema, Sean Shao-An Tsai, <u>Shoya Ishimaru</u>, Katsuma Tanaka, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">MEME - Smart Glasses to Promote Healthy Habits for Knowledge Workers</span>. In Proceedings of ACM SIGGRAPH 2015 Emerging Technologies. August 2015.
 
-1. Kai Kunze, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami <span style="font-weight: 700;">Nekoze! – Monitoring and Detecting Head Posture while Working with Laptop and Mobile Phone</span>. In Proceedings of the 9th International Conference on Pervasive Computing Technologies for Healthcare (PervasiveHealth2015). May 2015.
+1. Kai Kunze, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">Nekoze! – Monitoring and Detecting Head Posture while Working with Laptop and Mobile Phone</span>. In Proceedings of the 9th International Conference on Pervasive Computing Technologies for Healthcare (PervasiveHealth2015). May 2015.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami.  <span style="font-weight: 700;">Smart Eyewear for Interaction and Activity Recognition</span>. In Proceedings of the 33rd Annual ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI2015). April 2015.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">Smart Eyewear for Interaction and Activity Recognition</span>. In Proceedings of the 33rd Annual ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI2015). April 2015.
 
 1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;">Position Paper: Brain Teasers - Toward Wearable Computing that Engages Our Mind</span>. In Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
 
