@@ -16,7 +16,8 @@ permalink: /aboutme/jp/
 ### 職歴(アルバイト・インターンシップ含む)
 
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学</span></a> 客員研究員 (06.2016 - )
-* <a href="http://www.dfki.de/web"><span style="font-weight: 600;">ドイツ人工知能研究センター(DFKI)</span></a> 研究員 (04.2016 - )
+* <a href="http://www.dfki.de/web"><span style="font-weight: 600;">ドイツ人工知能研究センター(DFKI)</span></a> リサーチャー (04.2016 - )
+* <a href="https://www.uni-kl.de"><span style="font-weight: 600;">カイザースラウテルン工科大学</span></a> リサーチ・アソシエイト (04.2016 - )
 * <a href="http://www.recruit.jp/"><span style="font-weight: 600;">株式会社リクルートホールディングス</span></a> ウィンターインターンシップ データ解析コース (02.2015)
 * <a href="http://www.livesense.co.jp/"><span style="font-weight: 600;">株式会社リブセンス</span></a> エンジニア インターンシップ (12.2014)
 * <a href="http://www.kmd.keio.ac.jp/jp/"><span style="font-weight: 600;">慶應義塾大学大学院メディアデザイン研究科附属メディアデザイン研究所</span></a> リサーチャー (11.2014 - )

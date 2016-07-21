@@ -10,6 +10,12 @@ permalink: /publications/
 
 ### International Conference
 
+1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;">Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016, to appear.
+
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;">The Wordometer 2.0 - Estimating the Number of Words You Read in Real Life using Commercial EOG Glasses</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016, to appear.
+
+1. <u>Shoya Ishimaru</u>, Tilman Dingler, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;">Reading Interventions - Tracking Reading State and Designing Interventions</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016, to appear.
+
 1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata, and Koichi Kise. <span style="font-weight: 700;">Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information</span>. In Proceedings of the 12th IAPR International Workshop on Document Analysis Systems (DAS2016), April 2016.
 
 1. <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;">Quantifying the Mental State on the Basis of Physical and Social Activities</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.

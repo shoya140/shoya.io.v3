@@ -18,7 +18,8 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 ### Work Experience
 
 * Visiting researcher, <a href="http://www.osakafu-u.ac.jp/english/">Osaka Prefecture University</a>, 06.2016 - *
-* Researcher, <a href="http://www.dfki.de/web">German Research Center for Artificial Intelligence(DFKI)</a>, 04.2016 - *
+* Researcher, <a href="http://www.dfki.de/web">German Research Center for Artificial Intelligence (DFKI)</a>, 04.2016 - *
+* Research associate, <a href="https://www.uni-kl.de">University of Kaiserslautern</a>, 04.2016 - *
 * Data analysis internship, <a href="http://www.recruit.jp/">Recruit Holdings Co.</a>, 02.2015
 * Engineering internship, <a href="http://www.livesense.co.jp/">Livesense Inc.</a>, 12.2014
 * Researcher, <a href="http://www.kmd.keio.ac.jp/">Keio Media Design Research Institute</a>, 11.2014 - *
