@@ -47,11 +47,10 @@
       </a>
 
       <div class="trigger">
-          <a class="page-link" href="/category/tech/">Blog(tech)</a>
-          <a class="page-link" href="/category/diary/">Blog(diary)</a>
+          <a class="page-link" href="/blog/">Blog(JP)</a>
           <a class="page-link" href="/publications/">Publications</a>
           <a class="page-link" href="/applications/">Applications</a>
-          <a class="page-link" href="/aboutme/">About</a>
+          <a class="page-link" href="/aboutme/">About me</a>
       </div>
     </nav>
 
@@ -59,168 +58,97 @@
 
 </header>
 
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="wrapper-inside">
-          
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">May 26, 2015
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/hubot_listens_webhook/"><h1 class="post-title">SlackのIncoming WebhooksをHubotで拾う</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Hubotがチャット上の投稿を拾うにはhear(全てに反応)とrespond(呼ばれたら反応)という2つの方法があるのだけれど、無限ループを防ぐためか、どちらもbotの投稿を拾うことができない。botの投稿にも反応させたいときはcatchAllを使う。catchAllで投稿を一旦受け取り、正規表現で発言が必要か判断すれば良い。</p>
-
-<div class="highlight"><pre><code class="language-coffeescript" data-lang="coffeescript"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
-  <span class="nx">robot</span><span class="p">.</span><span class="nx">catchAll</span> <span class="nf">(msg) -&gt;</span>
-    <span class="nv">r = </span><span class="k">new</span> <span class="nb">RegExp</span> <span class="s">&quot;(.*)(どーなつ|ドーナツ)(.*)&quot;</span><span class="p">,</span> <span class="s">&quot;i&quot;</span>
-    <span class="nv">matches = </span><span class="nx">msg</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">matches</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">or</span> <span class="nx">matches</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span>
-      <span class="k">return</span>
-    <span class="nx">msg</span><span class="p">.</span><span class="nx">send</span> <span class="s">&quot;どーんといこう！&quot;</span></code></pre></div>
-
-<p>この方法はIncoming Webhooksをトリガーに発言させたい時に役に立つ。例えばうちのbotには下記の仕組みで夜になったら日報を作成してもらっている。</p>
-
-<ol>
-  <li><a href="https://ifttt.com/channels/weather/triggers/131-sunset">日が沈む</a>とIFTTTが「今日も一日お疲れさまです」と投稿する</li>
-  <li>「お疲れさまです」というキーワードに反応して、botが<a href="https://developer.todoist.com/">todoist</a>から今日一日に完了したタスクを取得して投稿する</li>
-</ol>
-
-<p>他にもテストの結果に応じて一喜一憂させてみるなど、合いの手をひとつ入れるだけで会話が盛り上がって楽しいと思う。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Slack%E3%81%AEIncoming%20Webhooks%E3%82%92Hubot%E3%81%A7%E6%8B%BE%E3%81%86%20-%20shoya.io&amp;url=http://shoya.io/blog/hubot_listens_webhook/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/hubot_listens_webhook/&amp;t=Slack%E3%81%AEIncoming%20Webhooks%E3%82%92Hubot%E3%81%A7%E6%8B%BE%E3%81%86" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/hubot_listens_webhook/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/hubot_listens_webhook/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Mar 19, 2015
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/bootcamp_hyperv/"><h1 class="post-title">BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Windows Phoneアプリのエミュレータが起動できなくなる不具合を発見したので報告します。</p>
-
-<h3 id="section">エラー内容</h3>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv01.png" class="image-on-frame-medium" /></p>
-
-<p>ハイパーバイザーが実行されていないため、Windows Phone Emulatorを起動できません。ハードウェア対応仮想化が有効になっていないことが原因の可能性があります。コンピュータのBIOSを調べ、ハードウェア対応仮想化及びハードウェア対応保護機能が有効になっていることを確認してください。</p>
-
-<p>BootcampでインストールしたWindows8.1において コントロールパネル &gt; プログラムと機能 &gt; Windowsの機能の有効化または無効化 では有効化状態にあるはずのHyper-Vが実行されていない。</p>
-
-<h3 id="section-1">解決策</h3>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv02.png" class="image-on-frame-medium" /></p>
-
-<p><strong>Optionキーを押しながら電源を入れてWindowsを起動するのではなく、まずOSXを起動し、システム環境設定 &gt; 起動ディスク でWindowsをデフォルトに設定してから再起動ボタンを押して起動する。</strong></p>
-
-<p>そんなばかな…と言った感じだけれど、こちらの記事(<a href="https://discussions.apple.com/thread/6666722?searchText=hyper-v">If I reboot to Windows directly from Windows (bootcamp options), I cannot launch a vm in Hyper-V - Apple Support Communities</a>)によるとOptionキーを押しながら起動する方法ではCSM-BIOS layerの設定が起動しないからとのこと。</p>
-
-<p>手順通りにWindowsを起動すると、Hyper-Vが実行されてEmulatorの起動を確認できた。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv03.png" class="image-on-frame" /></p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Bootcamp%E3%81%A7Windows8.1%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%ABHyper-V%E3%81%8C%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C%20-%20shoya.io&amp;url=http://shoya.io/blog/bootcamp_hyperv/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/bootcamp_hyperv/&amp;t=Bootcamp%E3%81%A7Windows8.1%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%ABHyper-V%E3%81%8C%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/bootcamp_hyperv/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/bootcamp_hyperv/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Mar 17, 2015
-    
-    [<a href="/tag/Event/">Event</a>]
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/recruit_internship/"><h1 class="post-title">リクルートホールディングスのインターンシップに参加しました</h1></a>
-  </header>
-  <article class="post-content">
-    <p><a href="http://recruit-jinji.jp/winter-internship2015/"><img src="https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship01.png" class="image-on-frame-medium image-fade" /></a></p>
-
-<p>2月中旬から16日間<a href="http://recruit-jinji.jp/winter-internship2015/">RecruitHoldings Winter Internship2015</a>・Data Analystコースに参加しました。</p>
-
-<h3 id="section">参加のきっかけ</h3>
-
-<p>僕は卒業後の進路として研究者・ソフトウェアエンジニア・データサイエンティストの3つを検討しています。前2つと比較してデータサイエンスについては知らないことが多いため、データサイエンティストという仕事について知るためにデータ解析系のインターンを探して応募しました。</p>
-
-<h3 id="section-1">内容</h3>
-
-<p>リクルートが展開するじゃらん・SUUMO・ポンパレなどのサービスが持っている実データを解析して新しい提案をするインターンでした。まずキックオフイベントで各サービスが抱えている課題を聞き、興味のあるサービスの希望順を提出します。そしてサービスごとに結成されたチームメンバーと共に解析や実装を行い、最終日に成果発表会といった流れでした。僕らのチームは<strong><a href="http://zexy.net/">ゼクシィ</a></strong>事業部の業務を効率化するためのツールを作りました。発表ではメンター特別賞をいただきました！</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship02.png" class="image-on-frame-medium image-fade" /></p>
-
-<p>成果物の開発には<strong>自然言語処理</strong>と<strong>画像処理</strong>を用いました。チームに自然言語処理を専攻しているメンバーがいて、ツールの使い方とかノウハウなど知らないことをたくさん学ぶことができたのがとても良かったです。</p>
-
-<p>いろいろ試した手法の中で特に面白いと感じたのは<strong>word2vec</strong>でした。word2vecとは、学習データ(膨大なテキスト)を使って単語同士の共起関係を計算し、単語を200次元くらいの空間内でベクトルとして表現する手法です。単語を意味的な空間配置することで、例えば「結婚」に近い意味の単語をテキストから引っ張ってきたり、「ドレス」-「女性」+「男性」で「タキシード」という単語を得るなどといった使い方をすることができます。ゼクシィの記事には雰囲気に関する言葉(ゆるふわ、さわやか、キュート、ラブリー…)がたくさん詰まっています。ゼクシィの全記事を使ってword2vecのモデルを作ると、「きれい」という単語に近い単語として「上品」「清楚」「軽やか」「フェミニン」という単語を出力したり、「かわいい」という言葉に対しては「ナチュラル」「愛らしい」「主役」「ガーリー」などといった単語の出力を得ることができました。それっぽい！</p>
-
-<h3 id="section-2">データサイエンティストという仕事</h3>
-
-<p>実世界のデータは扱いやすいものばかりではないので、手動でラベルをつけたりデータをクリーニングしたり、実は<strong>泥臭い作業の多い仕事</strong>なんだということを知りました。また、データサイエンスのチームには統計・情報処理・ソフトウェアエンジニアリング・ビジネスなど<strong>異なったバックグラウンドを持つメンバーが集まることで力を発揮する性質がある</strong>ということを実感しました。スキルセットの重なりが小さいのでチーム内で中間物を共有することにとても苦労したのですが、ひとりでは扱いきれないデータがいろんな角度からのからのアプローチによって扱えるデータになっていく様子はとてもワクワクしました。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship03.jpg" class="image-on-frame-medium image-fade" /></p>
-
-<p>毎日毎日が濃くて、16日間あっという間でした。勝山さんをはじめインターン事務局の方々、メンターの堀越さん・池田さん、チームメンバーのみんな、本当にお世話になりました！！</p>
-
-<h3 id="section-3">ちょっと宣伝</h3>
-
-<p>アプリ開発コースのインターンメンバーと一緒にアプリ開発者向けのお祭を開催します。 LTやハッカソン、ライブコーディングなどに興味がある人はぜひぜひエントリーお待ちしております！<strong>エントリー締切は今日の23時59分です！！！！</strong>(3/17現在)</p>
-
-<p><a href="http://recruit-jinji.jp/adf_fes2015/"><img src="https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship04.png" class="image-on-frame-small image-fade" /></a></p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%83%AA%E3%82%AF%E3%83%AB%E3%83%BC%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%83%E3%83%97%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/recruit_internship/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/recruit_internship/&amp;t=%E3%83%AA%E3%82%AF%E3%83%AB%E3%83%BC%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%83%E3%83%97%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/recruit_internship/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/recruit_internship/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-
-<div class="pagenation">
-    
-        <div class="page-button"><a href="/page9"></a><span class="lsf">left</span> Previous</div>
-    
-    
-        
-            <div class="page-button"><a href="/page7"></a>Next <span class="lsf">right</span></div>
-        
-    
-</div>
-        </div>
-      </div>
+    <div class="index-content">
+  <div class="wrapper">
+    <div class="wrapper-inside" style="background-color:transparent;>
+      <ul id="hexGrid" style="padding-bottom: 100px;">
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2013eyetracking">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_eyetracking.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#weppner2014logging">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_glass_gesture.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/long_shadow/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow00.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_research.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2015smart">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_blinky_bird.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/zebra/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_zebra.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/tag/Design/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_design.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/aboutme/">
+            <img src="/assets/img/icon_dot_up_white.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/meme-logger/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/applications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_engineering.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="https://shinonkei.com">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_shinonkei.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/swiper/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_swiper.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/kotodama/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/kotodama_screenshot.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/spam_museum/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/spammuseum_ss.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/Paletta/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/Paletta-feature_red.png">
+            </a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
     <footer class="site-footer">
   <div class="wrapper-footer">
     <div class="footer-col-wrapper">

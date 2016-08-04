@@ -47,11 +47,10 @@
       </a>
 
       <div class="trigger">
-          <a class="page-link" href="/category/tech/">Blog(tech)</a>
-          <a class="page-link" href="/category/diary/">Blog(diary)</a>
+          <a class="page-link" href="/blog/">Blog(JP)</a>
           <a class="page-link" href="/publications/">Publications</a>
           <a class="page-link" href="/applications/">Applications</a>
-          <a class="page-link" href="/aboutme/">About</a>
+          <a class="page-link" href="/aboutme/">About me</a>
       </div>
     </nav>
 
@@ -59,281 +58,97 @@
 
 </header>
 
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="wrapper-inside">
-          
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Dec 3, 2015
-    
-    [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/meme-logger/"><h1 class="post-title">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</h1></a>
-  </header>
-  <article class="post-content">
-    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png" class="image-on-frame-small" /></p>
-
-<p><a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar 2015</a> 3日目の記事です。昨日の記事は@hatoneさんによる <cite><a href="http://hatone.hateblo.jp/entry/2015/12/01/162235">JINE MEME iOSアプリ開発入門 -公式サンプルアプリを動かす-</a></cite>でした。サンプルアプリが動いたら、次はセンサから得られるデータについてもっと詳しく見てみたいはず！今日はセンサデータをグラフ表示したり保存する方法について紹介します。記事の前半は作ったものの紹介で後半は実装の工夫です。</p>
-
-<h3 id="section">背景</h3>
-
-<p>センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な<strong>波形のモニタリング</strong>と<strong>ラベル付データの記録</strong>機能を持ったアプリを作って<a href="https://github.com/shoya140/MEMELogger-iOS-developers">githubで公開しました</a>。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。</p>
-
-<h3 id="section-1">機能</h3>
-
-<ul>
-  <li>アプリ上でセンサデータをグラフ表示できる</li>
-  <li>オフライン解析のためにデータを記録できる</li>
-</ul>
-
-<h3 id="section-2">実装</h3>
-
-<p><strong>グラフ描画</strong> 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。</p>
-
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">@</span><span class="n">IBDesignable</span> <span class="k">class</span> <span class="nl">GraphView</span><span class="p">:</span> <span class="bp">UIView</span> <span class="p">{</span>
-    <span class="p">@</span><span class="n">IBInspectable</span> <span class="k">var</span> <span class="nl">maximumValue</span><span class="p">:</span> <span class="n">Double</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">{</span>
-        <span class="kr">didSet</span> <span class="p">{</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">setNeedsDisplay</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-<span class="p">}</span></code></pre></div>
-
-<p><strong>データの記録</strong> 開発者がデータの読み書きに使えるDocumentDirectory以下にテキストファイルを作成し、<code>memeRealTimeModeDataReceived(data: MEMERealTimeData!)</code>が呼ばれる度にそのデータを追記しています。また、iTunesやiFunBoxを使ってデータを取り出せるように<code>プロジェクト名-info.plist</code>にKey:<code>Application supports iTunes file sharing</code> Value:<code>YES</code>をセットしました。</p>
-
-<p><strong>まばたきのアニメーション</strong> <a href="http://www.paintcodeapp.com/">PaintCode</a>を使ってPathの位置を変数で変えられる目の画像を作成しました。PaintCodeから出力されたStyleKitをimportして、目の開閉や虹彩の位置とともにdraw~を呼び出して描画しています。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_03.png" class="image-on-frame-medium" /></p>
-
-<p>その他の細かい実装についてはリポジトリをご参照ください。</p>
-
-<h3 id="section-3">まとめ</h3>
-
-<p>JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。<a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar2015</a> 明日の担当は古川さんとのことでとても楽しみです！</p>
-
-<ul>
-  <li><a href="https://github.com/shoya140/MEMELogger-iOS-developers">https://github.com/shoya140/MEMELogger-iOS-developers</a></li>
-</ul>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/meme-logger/&amp;t=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/meme-logger/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Dec 2, 2015
-    
-    [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
-    
-    [<a href="/tag/Programming/">Programming</a>]
-    
-    </p>
-    <a href="/blog/zchainer/"><h1 class="post-title">深層学習の自己符号化器を4行で記述できるライブラリを作りました</h1></a>
-  </header>
-  <article class="post-content">
-    <p>深層学習(DeepLeanring)の事前学習や特徴抽出に使われる積層自己符号化器(stacked auto-encoder)を簡単に記述するためのライブラリ(Chainerインターフェイス)を作りました。名前はzChainerです。</p>
-
-<p><a href="https://pypi.python.org/pypi/zChainer/">zChainer - scikit-learn like interface and stacked autoencoder for chainer</a></p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/zchainer01.png" class="image-on-frame-medium" /></p>
-
-<h3 id="section">なぜ作ったか</h3>
-
-<p>ニューラルネットワークを簡単に実装することができるライブラリとしてChainerが多くの方に利用されていますが、ほぼ同じ記述を繰り返し書く必要があったり、学習器の定義・評価の記述が煩雑になりがちであるという課題があります。そこでインターフェイスとなるライブラリがあれば便利だと思って開発しました。scikt-learn likeに使うためにscikit-chainerとxchainerを参考にさせていただきました。</p>
-
-<ul>
-  <li><cite><a href="http://qiita.com/lucidfrontier45/items/0568d0d9e2c125e72734">chainerをscikit-learn likeに使えるようにした</a></cite></li>
-  <li><cite><a href="http://blog.recruit-tech.co.jp/2015/09/02/xchainer-released/">NNライブラリChainerをScikit-learn likeにガンガン拡張する</a></cite></li>
-</ul>
-
-<p>作ってみると積層自己符号化器の実装も共通なコードが多いことに気付いたので、本ライブラリは積層自己符号化器を管理するところまでインターフェイスに含めてみました。後述のサンプルコードのとおり、少ない行数(整形のための改行を除けばわずか4行)で記述することができます。</p>
-
-<h3 id="section-1">機能</h3>
-
-<ul>
-  <li>Chainerをscikit-learnの学習器として使用できる</li>
-  <li>少ない行数でニューラルネットワークを記述できる</li>
-  <li>少ない行数で積層自己符号化器を記述できる</li>
-  <li>出力先を指定するだけでログやシリアライズされたモデルを出力できる</li>
-</ul>
-
-<h3 id="section-2">インストール方法</h3>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install zChainer</code></pre></div>
-
-<h3 id="section-3">サンプルコード</h3>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">chainer.functions</span> <span class="kn">as</span> <span class="nn">F</span>
-<span class="kn">import</span> <span class="nn">chainer.links</span> <span class="kn">as</span> <span class="nn">L</span>
-<span class="kn">from</span> <span class="nn">chainer</span> <span class="kn">import</span> <span class="n">ChainList</span><span class="p">,</span> <span class="n">optimizers</span>
-<span class="kn">from</span> <span class="nn">zChainer</span> <span class="kn">import</span> <span class="n">NNAutoEncoder</span><span class="p">,</span> <span class="n">utility</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="o">..</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-
-<span class="c"># encoderの定義</span>
-<span class="c"># 例)ノード数784-200-100のネットワーク</span>
-<span class="c"># 学習後に出力層(MNISTの場合はノード数10)をadd_linkする</span>
-<span class="n">encoder</span> <span class="o">=</span> <span class="n">ChainList</span><span class="p">(</span>
-    <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
-    <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-
-<span class="c"># decoderの定義</span>
-<span class="c"># encoderとノード数を反対にしたLinkをChainする</span>
-<span class="n">decoder</span> <span class="o">=</span><span class="n">ChainList</span><span class="p">(</span>
-    <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">784</span><span class="p">),</span>
-    <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
-
-<span class="c"># NNAutoEncoderインスタンスの作成</span>
-<span class="n">ae</span> <span class="o">=</span> <span class="n">NNAutoEncoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s">&quot;./ae_&quot;</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;_log.csv&quot;</span><span class="p">,</span> <span class="n">export_path</span><span class="o">=</span><span class="s">&quot;./ae_&quot;</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;.model&quot;</span><span class="p">)</span>
-
-<span class="c"># 学習</span>
-<span class="n">ae</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code></pre></div>
-
-<p>forward関数にはdropoutありのreluを登録していますが、好みのforward関数をセットすることもできます。詳しくは<a href="https://github.com/shoya140/zChainer">github</a>のexampleをご確認ください。</p>
-
-<h3 id="section-4">実装</h3>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">class NNAutoEncoder <span class="o">()</span>:
-    def __init__<span class="o">(</span>self, encoder, decoder, optimizer,
-        <span class="nv">epoch</span><span class="o">=</span>20, <span class="nv">batch_size</span><span class="o">=</span>100, <span class="nv">log_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span>, <span class="nv">export_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">)</span>:
-        self.encoder <span class="o">=</span> encoder
-        self.decoder <span class="o">=</span> decoder
-        self.optimizer <span class="o">=</span> optimizer
-        self.epoch <span class="o">=</span> epoch
-        self.batch_size <span class="o">=</span> batch_size
-        self.log_path <span class="o">=</span> log_path
-        self.export_path <span class="o">=</span> export_path
-        self.autoencoded <span class="o">=</span> ChainList<span class="o">()</span>
-
-    def fit<span class="o">(</span>self, x_train<span class="o">)</span>:
-        <span class="k">for</span> layer in range<span class="o">(</span>0, len<span class="o">(</span>self.encoder<span class="o">))</span>:
-            <span class="c"># Creating model</span>
-            self.model <span class="o">=</span> ChainList<span class="o">(</span>self.encoder<span class="o">[</span>layer<span class="o">]</span>.copy<span class="o">()</span>, self.decoder<span class="o">[</span>layer<span class="o">]</span>.copy<span class="o">())</span>
-            NNManager.forward <span class="o">=</span> self.forward
-            <span class="nv">nn</span> <span class="o">=</span> NNManager<span class="o">(</span>self.model, self.optimizer, F.mean_squared_error,
-                self.epoch, self.batch_size, self.log_path<span class="o">)</span>
-
-            <span class="c"># Training</span>
-            <span class="nv">x_data</span> <span class="o">=</span> self.encode<span class="o">(</span>x_train, layer<span class="o">)</span>.data
-            nn.fit<span class="o">(</span>x_data, x_data<span class="o">)</span>
-            self.autoencoded.add_link<span class="o">(</span>nn.model<span class="o">[</span>0<span class="o">]</span>.copy<span class="o">())</span>
-
-        <span class="k">if</span> self.export_path !<span class="o">=</span> <span class="s2">&quot;&quot;</span>:
-            pickle.dump<span class="o">(</span>self.autoencoded, open<span class="o">(</span>self.export_path, <span class="s1">&#39;wb&#39;</span><span class="o">)</span>, -1<span class="o">)</span>
-        <span class="k">return</span> self
-
-    def predict<span class="o">(</span>self, x_test<span class="o">)</span>:
-        raise Exception<span class="o">(</span><span class="s2">&quot;Prediction for AutoEncoder is not implemented.&quot;</span><span class="o">)</span>
-
-    def encode<span class="o">(</span>self, x, n<span class="o">)</span>:
-        <span class="k">if</span> <span class="nv">n</span> <span class="o">==</span> 0:
-            <span class="k">return</span> Variable<span class="o">(</span>x<span class="o">)</span>
-        <span class="k">else</span>:
-            <span class="nv">h</span> <span class="o">=</span> self.encode<span class="o">(</span>x, n-1<span class="o">)</span>
-            <span class="k">return</span> F.relu<span class="o">(</span>self.autoencoded<span class="o">[</span>n-1<span class="o">](</span>h<span class="o">))</span>
-
-    def forward<span class="o">(</span>self, x<span class="o">)</span>:
-        <span class="nv">h</span> <span class="o">=</span> F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model<span class="o">[</span>0<span class="o">](</span>x<span class="o">)))</span>
-        <span class="k">return</span> F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model<span class="o">[</span>1<span class="o">](</span>h<span class="o">)))</span></code></pre></div>
-
-<p>Chainer1.5のLink and Chainを使用しています。ネットワークの構造をChainではなくChainListとして管理することで各層に添字でアクセスできるようにして、学習が済んだものをself.autoencodedにコピーしています。学習済みモデル最先端の層からの出力はencoded関数を再帰的に呼ぶことで得ています。(層が深くなるにつれて遅くなるかも？時間ができれば改良したい)</p>
-
-<h3 id="section-5">まとめ</h3>
-
-<p>積層自己符号化器を含めたChainerのインターフェイスとなるライブラリを作成しました。時間の都合で十分検証ができていないので、不具合などあるかもしれません。おかしいところがあれば連絡いただけると嬉しいです。バージョン1.0になるまで使用は自己責任でお願いします。</p>
-
-<p><a href="https://github.com/shoya140/zChainer">https://github.com/shoya140/zChainer</a></p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E6%B7%B1%E5%B1%A4%E5%AD%A6%E7%BF%92%E3%81%AE%E8%87%AA%E5%B7%B1%E7%AC%A6%E5%8F%B7%E5%8C%96%E5%99%A8%E3%82%924%E8%A1%8C%E3%81%A7%E8%A8%98%E8%BF%B0%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/zchainer/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/zchainer/&amp;t=%E6%B7%B1%E5%B1%A4%E5%AD%A6%E7%BF%92%E3%81%AE%E8%87%AA%E5%B7%B1%E7%AC%A6%E5%8F%B7%E5%8C%96%E5%99%A8%E3%82%924%E8%A1%8C%E3%81%A7%E8%A8%98%E8%BF%B0%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/zchainer/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/zchainer/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 13, 2015
-    
-    [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
-    
-    [<a href="/tag/Design/">Design</a>]
-    
-    </p>
-    <a href="/blog/zebra/"><h1 class="post-title">大体いい感じの研究発表ができるKeynoteテンプレート「Zebra」を作った</h1></a>
-  </header>
-  <article class="post-content">
-    <script async="" class="speakerdeck-embed" data-id="33dbc4b1166e45cca57400eeeaf0db4f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-
-<h3 id="section">なぜ作ったか</h3>
-
-<p>僕の観測範囲では、研究発表のスライドというのは装飾が最小限で、白地に黒文字が読みやすくて良いとされています。その制約の中で見栄えの良いスライドを作るのはなかなか難しいので、大体いい感じになるKeynoteテンプレートを作りました。名前はZebraです。こちらからダウンロードすることができます。<cite><a href="https://github.com/shoya140/zebra">Zebra — Keynote template for research presentations</a></cite></p>
-
-<p>テンプレート作成/公開にあたって参考にさせていただいたのは<a href="http://www.sanographix.net/">佐野章核</a>さんの「Azusa」「Azusa Colors」で、勉強会やLTのスライドではいつもお世話になっています。
-<cite><a href="http://memo.sanographix.net/post/82160791768">大体いい感じになるKeynoteテンプレート「Azusa」作った - MEMOGRAPHIX</a></cite> ただ研究発表のような堅い場所で使うにはややポップすぎる感じがするのと、透過でない図やグラフを貼る機会が多くて真っ白な背景が使いたいので、今回はそれに適したテンプレートを作成することにしました。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/zebra1.jpg" class="image-on-frame-medium" /></p>
-
-<h3 id="section-1">機能</h3>
-
-<p>title, outline, blank, mainの4種類のフォーマットと2種類のカラースキームで構成されています。mainのスライド上部には目立つが主張し過ぎない見出しを置いています。見出しの色は変えられるので好きな色を使ってください。スライドのメインカラーとリンクさせると綺麗です。スライドに使用する色は極力3色(背景・ベースカラー・メインカラー)に押さえて、課題-解決策の対比や強く伝えたいことにアクセントカラーを使うのが良いと思います。フォントはMac標準搭載のもののなかからAvenir Nextを選択しました。これも好みで選んでください。</p>
-
-<h3 id="section-2">まとめ</h3>
-
-<p>フォーマルだけど少しお洒落、大体いい感じの研究発表ができるKeynoteテンプレートを作って公開しました。ご活用ください。不具合などありましたらissue立てるか直接連絡いただけると嬉しいです。Zebra使って最高の卒論/修論発表にしようぜ！</p>
-
-<p><cite><a href="https://github.com/shoya140/zebra">Zebra — Keynote template for research presentations</a></cite></p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E5%A4%A7%E4%BD%93%E3%81%84%E3%81%84%E6%84%9F%E3%81%98%E3%81%AE%E7%A0%94%E7%A9%B6%E7%99%BA%E8%A1%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8BKeynote%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%80%8CZebra%E3%80%8D%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F%20-%20shoya.io&amp;url=http://shoya.io/blog/zebra/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/zebra/&amp;t=%E5%A4%A7%E4%BD%93%E3%81%84%E3%81%84%E6%84%9F%E3%81%98%E3%81%AE%E7%A0%94%E7%A9%B6%E7%99%BA%E8%A1%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8BKeynote%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%80%8CZebra%E3%80%8D%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/zebra/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/zebra/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-
-<div class="pagenation">
-    
-        <div class="page-button"><a href="/page5"></a><span class="lsf">left</span> Previous</div>
-    
-    
-        
-            <div class="page-button"><a href="/page3"></a>Next <span class="lsf">right</span></div>
-        
-    
-</div>
-        </div>
-      </div>
+    <div class="index-content">
+  <div class="wrapper">
+    <div class="wrapper-inside" style="background-color:transparent;>
+      <ul id="hexGrid" style="padding-bottom: 100px;">
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2013eyetracking">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_eyetracking.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#weppner2014logging">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_glass_gesture.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/long_shadow/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow00.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_research.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2015smart">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_blinky_bird.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/zebra/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_zebra.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/tag/Design/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_design.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/aboutme/">
+            <img src="/assets/img/icon_dot_up_white.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/meme-logger/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/applications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_engineering.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="https://shinonkei.com">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_shinonkei.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/swiper/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_swiper.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/kotodama/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/kotodama_screenshot.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/spam_museum/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/spammuseum_ss.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/Paletta/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/Paletta-feature_red.png">
+            </a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
     <footer class="site-footer">
   <div class="wrapper-footer">
     <div class="footer-col-wrapper">

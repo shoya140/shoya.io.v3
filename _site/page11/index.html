@@ -47,11 +47,10 @@
       </a>
 
       <div class="trigger">
-          <a class="page-link" href="/category/tech/">Blog(tech)</a>
-          <a class="page-link" href="/category/diary/">Blog(diary)</a>
+          <a class="page-link" href="/blog/">Blog(JP)</a>
           <a class="page-link" href="/publications/">Publications</a>
           <a class="page-link" href="/applications/">Applications</a>
-          <a class="page-link" href="/aboutme/">About</a>
+          <a class="page-link" href="/aboutme/">About me</a>
       </div>
     </nav>
 
@@ -59,165 +58,97 @@
 
 </header>
 
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="wrapper-inside">
-          
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 14, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/sublime-latex/"><h1 class="post-title">Sublime Text3でLaTeXをコンパイルする[Mac]</h1></a>
-  </header>
-  <article class="post-content">
-    <p>Sublime Textにはcommand+bでコードを実行する機能(Build System)がある。今回はビルドできるファイルにLaTeXを加えてみた。Sublime TextでLaTeXを扱う方法、調べたらLaTeXToolsとかを入れていろいろ頑張る方法が出てくるのだけれど、既にMacTeXの環境(ターミナルからplatexコマンドなどが使える状態)があるのならもっと簡単に構築できると思う。</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_latex_01.png" class="image-on-frame-small" /></p>
-
-<h3 id="section">手順</h3>
-
-<ol>
-  <li>
-    <p>Tools&gt;Build System&gt;New Build System…(上図参照)を選択してBuild Systemを作成する。</p>
-  </li>
-  <li>
-    <p>新規ファイルが開かれるので、下記の設定を記入して保存する。ファイル名がメニューバーに表示されるBuild Systemの名前になる。保存場所はデフォルトで ~/Library/Application Support/Sublime Text 3/Packages/User になる。</p>
-  </li>
-</ol>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;shell&quot;</span>: <span class="nb">false</span>,
-  <span class="s2">&quot;cmd&quot;</span>:<span class="o">[</span>
-    <span class="s2">&quot;/bin/sh&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;/usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/pbibtex $file_base_name.aux &amp;&amp; /usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/dvipdfmx -p a4 $file_base_name.dvi &amp;&amp; /usr/bin/open $file_base_name.pdf&quot;</span>
-  <span class="o">]</span>,
-  <span class="s2">&quot;selector&quot;</span>: <span class="s2">&quot;source.tex&quot;</span>
-<span class="o">}</span></code></pre></div>
-
-<h3 id="section-1">補足</h3>
-
-<p>LaTeXからPDFを作成するには、複数回のコンパイルが必要になる。標準で提供されている仕組みではBuild Systemに複数のコマンドを登録することができないので、上記のような黒魔術を使用する。Macの場合は”shell”をfalseに、”cmd”にshとその引数として実行したいコマンドを&amp;&amp;で続けていけばうまく動作するらしい。Windowsの場合は書き方がやや異なる。<cite><a href="http://blog.pcitron.fr/2013/02/08/multiple-command-in-sublime-build-system/">Multiple commands in Sublime Build System</a></cite>を参考に設定した。</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]%20-%20shoya.io&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/sublime-latex/&amp;t=Sublime%20Text3%E3%81%A7LaTeX%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B[Mac]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/sublime-latex/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/sublime-latex/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 13, 2014
-    
-    [<a href="/tag/Note/">Note</a>]
-    
-    </p>
-    <a href="/blog/towards-a-scientist/"><h1 class="post-title">なんで科学者を目指すようになったか</h1></a>
-  </header>
-  <article class="post-content">
-    <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg" class="image-on-frame-mini" /></p>
-
-<p>幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で<strong>科学体験フェスティバル</strong>を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。</p>
-
-<p>それから中学・高校と理科の授業を受ける中で、興味の対象は物理学・化学・生物学の広く深い方向に伸びていった。高校生の頃に<strong>国際生物学オリンピック</strong>の日本代表を決める選考会に出たことがあって、惜しいところまでいった。(余談だけどサマーウォーズの「あと少しで日本代表になれたのに。」というセリフは聞く度に心に刺さるものがある。)そこで競った同期がとにかく賢く変わり者揃いだった。懇親会のときにひとりが「俺、東大に行こうと思う。」とつぶやいて、僕も私もといった具合に皆が声をあげた。ものすごく盛り上がり、「大学でまた会おう。」と言い合った。たぶん皆そういった刺激を与え合う相手に飢えていたのだと思う。研究の道に進むなら面白い人がたくさんいる環境で過ごしたい思い、僕も<a href="/blog/imabari/">難関校を目指すことを強く決めた</a>。結果、最初に発言した彼は東大に合格し、僕は阪大を受けるが落ちて府大に進学することになった。</p>
-
-<p>阪大には基礎工学部という工学と理学を織り交ぜた研究をしているところがある。僕の幅広い興味や視野と合うと思ったのが、進路に阪大を選んだ理由だった。入学したら<strong>脳科学</strong>の研究をしようと思っていた。第2希望の府大のことはよく知らなかったので、名前をみて知能情報工学科を受験した。脳と能の漢字違いで学部を選んだことを、僕は入学してから知ることになる。</p>
-
-<p>勘違いで選んだ学部も運命で、僕はそのおかげで<strong>情報工学</strong>に出会うことになる。プログラミング、あるいは企画やデザインまで含めたソフトウェア開発は、僕の適正にとてもマッチしていると思う。アイデアを形にして公開するまでのスピードは他分野のものづくりを圧倒するものがある。学部3年生の頃にその面白さに気付き、プログラミングを通じて<a href="/development/">いろんな(変な)ものを生み出して</a>、楽しい経験を積むことができた。その結果、もっと情報工学を学びたいと考え、大学や学術分野を変えることなく大学院へ進学した。巡り巡って僕は現在の研究テーマを<strong>情報工学の視点から見た脳科学や認知的行動</strong>に設定していて、今までの意思決定は間違っていなかったと確信してる。</p>
-
-<p>僕らの世代も就職活動が始まり、進学するか就職するか、いよいよ選択を先延ばしにできない時期になった。<cite><a href="http://memo.sanographix.net/post/69496511652">なんでデザイナーになったか - MEMOGRAPHIX</a></cite>に影響を受けて、科学者になる道を後押しする材料について書いてみたのでした。(開発者になる道を後押しする材料もたくさんあるので、また改めて書くことになると思う。)</p>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B%20-%20shoya.io&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/towards-a-scientist/&amp;t=%E3%81%AA%E3%82%93%E3%81%A7%E7%A7%91%E5%AD%A6%E8%80%85%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/towards-a-scientist/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/towards-a-scientist/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-<div class="post">
-  <header class="post-header">
-    <p class="post-meta">Nov 12, 2014
-    
-    [<a href="/tag/Infrastructure/">Infrastructure</a>]
-    
-    </p>
-    <a href="/blog/brew-mozart/"><h1 class="post-title">HomebrewでOz開発環境を整える[Mozart2][Emacs]</h1></a>
-  </header>
-  <article class="post-content">
-    <p>「コンピュータプログラミングの概念・技法・モデル」(ガウディ本)のサンプルコードを実行するためにOz言語の環境を整えた。Ozは開発環境であるMozartシステムやEmacsを必要とし、それらはウェブサイト上で無料で公開されているのだけれど、パッケージをダウンロードしてくるのが面倒なのですべてHomebrewで管理することにした。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># emacs</span>
-brew install emacs --japanese --cocoa --srgb --with-gnutls -v
-brew linkapps
-
-<span class="c"># homebrew-cask</span>
-brew tap caskroom/homebrew-cask
-brew install brew-cask
-
-<span class="c"># mozart</span>
-brew tap caskroom/homebrew-versions
-brew install mozart2</code></pre></div>
-
-<h3 id="section">補足</h3>
-
-<p>Emacsについてはインストール方法やパッチが様々のようなので、<cite><a href="http://www.sevencredit.com/2014/07/02/580/">Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット</a>を参考にさせていただきインストールオプションを上記に選んだ。</cite></p>
-
-<p>homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)</p>
-
-<h3 id="section-1">2014.12.04 追記</h3>
-
-<p>mozart2がhomebrew-caskではなくhomevrewで管理されるようになったので現在は以下のコマンドでインストールできます。</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew install emacs --japanese --cocoa --srgb --with-gnutls -v
-brew install mozart2</code></pre></div>
-
-<h3 id="section-2">動作確認</h3>
-
-<p>Mozart2.appを起動して2フレームのEmacsが起動すればOKです。</p>
-
-<div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 15px 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/51iXhiKTamL._SL75_.jpg" width="59" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="margin-bottom: 2px; line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113468/mrk1869-22/" rel="nofollow" target="_blank">コンピュータプログラミングの概念・技法・モデル(IT Architect' Archiveクラシックモダン・コンピューティング6) (IT Architects’Archive CLASSIC MODER)</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">セイフ・ハリディ, ピーター・ヴァン・ロイ, Peter Van-Roy, Seif Haridi</div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-  </article>
-  <div class="post-social">
-    <div class="tweet-button"><a href="https://twitter.com/share?text=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]%20-%20shoya.io&amp;url=http://shoya.io/blog/brew-mozart/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
-  </a></div>
-    <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/brew-mozart/&amp;t=Homebrew%E3%81%A7Oz%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B[Mozart2][Emacs]" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
-  </a></div>
-    <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/brew-mozart/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
-  </a></div>
-    <div class="hatena-star"><a href="http://shoya.io/blog/brew-mozart/" style="display: none;">hatena</a></div>
-  </div>
-</div>
-<hr>
-
-
-<div class="pagenation">
-    
-        <div class="page-button"><a href="/page12"></a><span class="lsf">left</span> Previous</div>
-    
-    
-        
-            <div class="page-button"><a href="/page10"></a>Next <span class="lsf">right</span></div>
-        
-    
-</div>
-        </div>
-      </div>
+    <div class="index-content">
+  <div class="wrapper">
+    <div class="wrapper-inside" style="background-color:transparent;>
+      <ul id="hexGrid" style="padding-bottom: 100px;">
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2013eyetracking">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_eyetracking.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#weppner2014logging">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_glass_gesture.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/long_shadow/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow00.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_research.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn hexGreen" href="/publications/#ishimaru2015smart">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_blinky_bird.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/zebra/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_zebra.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/tag/Design/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_design.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/aboutme/">
+            <img src="/assets/img/icon_dot_up_white.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/meme-logger/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/applications/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_title_engineering.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="https://shinonkei.com">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_shinonkei.jpg">
+            </a>
+        </li>
+        <li class="hex"></li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/swiper/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/thumbnail_swiper.jpg">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/kotodama/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/kotodama_screenshot.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/spam_museum/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/spammuseum_ss.png">
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="/blog/Paletta/">
+            <img src="https://dl.dropboxusercontent.com/u/12208857/img/Paletta-feature_red.png">
+            </a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
     <footer class="site-footer">
   <div class="wrapper-footer">
     <div class="footer-col-wrapper">
