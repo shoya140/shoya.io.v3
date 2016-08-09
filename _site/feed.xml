@@ -8,6 +8,55 @@
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>ローテンブルク・オプ・デア・タウバー</title>
+        <description>&lt;p&gt;中世の街並みが残るローテンブルクを観光しました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ローテンブルク・オプ・デア・タウバーはドイツ南部のバイエルン州ミッテルフランケンのアンスバッハ郡にある大規模郡都市。入り組んだ路地や小さな公園それを取り巻く木組み住宅といった中世さながらのよく保存された旧市街で知られている。この旧市街は、ドイツの街のプロトタイプとして、世界中の観光客の目的地となっている。 &lt;br /&gt;&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%BC%E3%83%86%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF%E3%83%BB%E3%82%AA%E3%83%97%E3%83%BB%E3%83%87%E3%82%A2%E3%83%BB%E3%82%BF%E3%82%A6%E3%83%90%E3%83%BC&quot;&gt;ローテンブルク・オプ・デア・タウバー - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;injection-center&quot;&gt;中世犯罪博物館&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拷問や処刑に使われた道具やその様子について展示されている。ローテンブルクは日本からの観光客が多いのか、ドイツ語・英語にならんで日本語の解説もある。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ローテンブルクは旧市街全体を市壁で囲まれている。壁の上を歩くこともできる。&lt;/p&gt;
+
+&lt;p class=&quot;injection-center&quot;&gt;マルクト広場と市庁舎&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/rothenburg10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;市庁舎から見下ろす町並み。ドット絵みたいな家の壁がかわいい。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/rothenburg/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/rothenburg/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>宗教都市「黄金のマインツ」</title>
         <description>&lt;p class=&quot;injection-center&quot;&gt;ザンクト・シュテファン教会&lt;/p&gt;
 
@@ -367,38 +416,6 @@ RUN conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre
         
         
         <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>論文紹介『Orbits - Enabling Gaze Interaction in Smart Watches Using Moving Targets』</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://qiita.com/advent-calendar/2015/hci&quot;&gt;ヒューマンコンピュータインタラクション論文紹介 Advent Calendar 2015&lt;/a&gt; 15日目の記事です。UbiComp2015で体験したデモの中から&lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2800942&amp;amp;CFID=568698974&amp;amp;CFTOKEN=47187028&quot;&gt;Orbits: Enabling Gaze Interaction in Smart Watches Using Moving Targets&lt;/a&gt;を紹介します。投稿が遅くなりましてすみません…&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;&quot;&gt;
-&lt;iframe class=&quot;youtube-video&quot; src=&quot;https://www.youtube.com/embed/x6hbicxEFbg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;概要&lt;/h3&gt;
-&lt;p&gt;円軌道上を動く点を見つめるといった視線入力を受け取るスマートウォッチ上のインターフェイス。画面上に位置・回転方向・半径・角速度の異なる軌道を配置することで、複数の軌道のなかからどれを見ているかを特定する。安価なアイトラッカで動作する点、キャリブレーションが不要な点、画面サイズに非依存な点が優れている。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;有効性の検証&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;実験1:&lt;/strong&gt; 認識に多くのサンプルを使うと精度が向上するが入力に時間がかかる。注視の認識に最適なウインドウサイズを実験によって求めた。ターゲットを注視しているとき・ターゲットではなく文字盤を見ているとき・読書など他の行動をとっているときの視線を解析した結果、サイズは1秒間が良いと分かった。&lt;strong&gt;実験2:&lt;/strong&gt; ターゲットの数・角速度・半径を変化させた際の認識率の変化を調査した。ターゲット数&amp;gt;角速度&amp;gt;半径の順に大きく影響することが分かった(軌道半径による影響は極めて小さい)。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;先行研究との比較&lt;/h3&gt;
-&lt;p&gt;画面が小さく片手でしか操作できないスマートウォッチのインターフェイスに関する研究は広く行われているが、その多くは指による入力の領域を拡張するものである。また、画面上の動かない点を注視するタイプの視線入力は正確な位置推定のためにキャリブレーションを要する。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;次に読むべき論文&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2493477&quot;&gt;Pursuits: spontaneous interaction with displays based on smooth pursuit eye movement and moving targets.&lt;/a&gt; “軌道上を動く点を見つめる視線の認識”はこちらの論文のアイデアによるもの。&lt;/p&gt;
-
-&lt;p&gt;デモではアイトラッカに&lt;a href=&quot;https://pupil-labs.com/pupil/&quot;&gt;pupil&lt;/a&gt;を使っていました。見ている対象は重要ではなく眼球運動のパターンが追えれば良いので、実は&lt;a href=&quot;https://jins-meme.com/ja/&quot;&gt;J!NS MEME&lt;/a&gt;でも同じようなことができるのではないかと思いました。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 21 Dec 2015 00:00:00 +0100</pubDate>
-        <link>http://shoya.io/blog/orbits/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/orbits/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>diary</category>
         
       </item>
     
