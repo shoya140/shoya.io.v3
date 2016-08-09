@@ -84,21 +84,21 @@
 
 <p>cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">open</span><span class="o">=</span><span class="s1">&#39;cygstart&#39;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">open</span><span class="o">=</span><span class="s1">'cygstart'</span></code></pre></figure>
 
 <p><strong>sublコマンドでSublime Textを起動する</strong></p>
 
 <p>Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Program<span class="se">\ </span>Files<span class="se">\\</span>Sublime<span class="se">\ </span>Text<span class="se">\ </span>3:<span class="nv">$PATH</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Program<span class="se">\ </span>Files<span class="se">\\</span>Sublime<span class="se">\ </span>Text<span class="se">\ </span>3:<span class="nv">$PATH</span></code></pre></figure>
 
 <p><strong>gnupackとMinicondaを一緒に使う</strong></p>
 
 <p><a href="http://conda.pydata.org/miniconda.html">Miniconda</a>とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span>YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>:<span class="nv">$PATH</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span>YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>:<span class="nv">$PATH</span>
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span> YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>Scripts<span class="se">\\</span>:<span class="nv">$PATH</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span> YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>Library<span class="se">\\</span>bin:<span class="nv">$PATH</span></code></pre></div>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span> YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>Library<span class="se">\\</span>bin:<span class="nv">$PATH</span></code></pre></figure>
 
 <p>他にも便利な設定が見つかったら追記していく予定。</p>
 

@@ -68,13 +68,13 @@
         <article class="post-content">
           <p>Hubotがチャット上の投稿を拾うにはhear(全てに反応)とrespond(呼ばれたら反応)という2つの方法があるのだけれど、無限ループを防ぐためか、どちらもbotの投稿を拾うことができない。botの投稿にも反応させたいときはcatchAllを使う。catchAllで投稿を一旦受け取り、正規表現で発言が必要か判断すれば良い。</p>
 
-<div class="highlight"><pre><code class="language-coffeescript" data-lang="coffeescript"><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
-  <span class="nx">robot</span><span class="p">.</span><span class="nx">catchAll</span> <span class="nf">(msg) -&gt;</span>
-    <span class="nv">r = </span><span class="k">new</span> <span class="nb">RegExp</span> <span class="s">&quot;(.*)(どーなつ|ドーナツ)(.*)&quot;</span><span class="p">,</span> <span class="s">&quot;i&quot;</span>
-    <span class="nv">matches = </span><span class="nx">msg</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">matches</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">or</span> <span class="nx">matches</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span>
+<figure class="highlight"><pre><code class="language-coffeescript" data-lang="coffeescript"><span class="nx">module</span><span class="p">.</span><span class="na">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">robot</span><span class="p">)</span> <span class="o">-&gt;</span>
+  <span class="nx">robot</span><span class="p">.</span><span class="na">catchAll</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span> <span class="s">"(.*)(どーなつ|ドーナツ)(.*)"</span><span class="p">,</span> <span class="s">"i"</span>
+    <span class="nx">matches</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="na">message</span><span class="p">.</span><span class="na">text</span><span class="p">.</span><span class="na">match</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">matches</span> <span class="o">==</span> <span class="no">null</span> <span class="o">or</span> <span class="nx">matches</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span>
       <span class="k">return</span>
-    <span class="nx">msg</span><span class="p">.</span><span class="nx">send</span> <span class="s">&quot;どーんといこう！&quot;</span></code></pre></div>
+    <span class="nx">msg</span><span class="p">.</span><span class="na">send</span> <span class="s">"どーんといこう！"</span></code></pre></figure>
 
 <p>この方法はIncoming Webhooksをトリガーに発言させたい時に役に立つ。例えばうちのbotには下記の仕組みで夜になったら日報を作成してもらっている。</p>
 

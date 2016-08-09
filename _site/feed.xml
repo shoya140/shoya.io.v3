@@ -5,7 +5,7 @@
     <description></description>
     <link>http://shoya.io/</link>
     <atom:link href="http://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <generator>Jekyll v2.5.3</generator>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>宗教都市「黄金のマインツ」</title>
@@ -106,21 +106,21 @@
 
 &lt;p&gt;cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cygstart&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cygstart'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;sublコマンドでSublime Textを起動する&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Program&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Files&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Program&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Files&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;gnupackとMinicondaを一緒に使う&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://conda.pydata.org/miniconda.html&quot;&gt;Miniconda&lt;/a&gt;とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Scripts&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Library&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Library&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;他にも便利な設定が見つかったら追記していく予定。&lt;/p&gt;
 </description>
@@ -174,33 +174,33 @@
 
 &lt;p&gt;&lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIAのwebサイト&lt;/a&gt;でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tar zxvf cudnn-6.5-linux-x64-v2.tgz
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo cp lib* /opt/nvidia/cuda/lib64/
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo cp cudnn.h /opt/nvidia/cuda/include/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar zxvf cudnn-6.5-linux-x64-v2.tgz
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo cp lib&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /opt/nvidia/cuda/lib64/
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo cp cudnn.h /opt/nvidia/cuda/include/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;chainerjupyter&quot;&gt;3. chainerとjupyterのセットアップ&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo &lt;span class=&quot;nv&quot;&gt;CUDA_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/nvidia/cuda pip install chainer
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo &lt;span class=&quot;nv&quot;&gt;CUDA_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/nvidia/cuda pip install chainer
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;jupyter notebookを立ち上げてブラウザからアクセスできるようにする。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ipython
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ipython
 &lt;span class=&quot;c&quot;&gt;# 下記を実行して出力されたハッシュをコピー&lt;/span&gt;
 from notebook.auth import passwd
 passwd&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir ~/.jupyter
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim ~/.jupyter/jupyter_notebook_config.py
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir ~/.jupyter
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;vim ~/.jupyter/jupyter_notebook_config.py
 &lt;span class=&quot;c&quot;&gt;# 下記の内容で保存&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; get_config&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-c.NotebookApp.ip &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
-c.NotebookApp.password &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; u&lt;span class=&quot;s1&quot;&gt;&amp;#39;sha1:bcd259ccf...出力されたハッシュ&amp;#39;&lt;/span&gt;
+c &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; get_config&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+c.NotebookApp.ip &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'*'&lt;/span&gt;
+c.NotebookApp.password &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; u&lt;span class=&quot;s1&quot;&gt;'sha1:bcd259ccf...出力されたハッシュ'&lt;/span&gt;
 c.NotebookApp.open_browser &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; False
 c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポート&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;セキュリティグループの設定で開けておく&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;SSL/HTTPSを使用する方法は&lt;a href=&quot;http://jupyter-notebook.readthedocs.io/en/latest/public_server.html&quot;&gt;こちら&lt;/a&gt;を参照。&lt;/p&gt;
 
@@ -277,49 +277,49 @@ c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポ�
 
 &lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;でインストールする。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pyenv-virtualenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install pyenv-virtualenv&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;.zshrc(.bashrc)に下記の設定を追記する。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${HOME}/.pyenv&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -d &lt;span class=&quot;s2&quot;&gt;&amp;quot;${PYENV_ROOT}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv init -)&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(pyenv virtualenv-init -)&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.pyenv&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -d &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYENV_ROOT&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pyenv init -&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pyenv virtualenv-init -&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Pythonをインストール (例:3.5.10)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv install 3.5.10
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv global 3.5.10
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv rehash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv install 3.5.10
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv global 3.5.10
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv rehash&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;opencv&quot;&gt;OpenCVの導入&lt;/h3&gt;
 
 &lt;p&gt;Homebrewでインストールする。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install opencv3 --with-python3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install opencv3 --with-python3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# python2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python2.7/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# python2&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python2.7/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth
 
 &lt;span class=&quot;c&quot;&gt;# python3&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python3.5/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/opt/opencv3/lib/python3.5/site-packages &amp;gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;python -c &lt;span class=&quot;s2&quot;&gt;&quot;from distutils.sysconfig import get_python_lib; print(get_python_lib())&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/opencv.pth&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;numpyも一緒に入るけどpipで管理するものを使う&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pip install numpy&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;jupyter&quot;&gt;Jupyterなど定番ライブラリの導入&lt;/h3&gt;
 
 &lt;p&gt;pipでインストールする&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy scipy pandas scikit-learn matplotlib jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pip install numpy scipy pandas scikit-learn matplotlib jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;virtualenvの上でmatplotlibを使うための設定&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;backend : TkAgg &amp;gt; ~/.matplotlib/matplotlibrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;backend : TkAgg &amp;gt; ~/.matplotlib/matplotlibrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;virtualenv&quot;&gt;参考1 virtualenvの使い方&lt;/h3&gt;
 
@@ -327,13 +327,13 @@ c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポ�
 
 &lt;p&gt;virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用する)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir tutorial &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;tutorial
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv virtualenv 3.5.0 3.5.0-tutorial
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir tutorial &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;tutorial
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv virtualenv 3.5.0 3.5.0-tutorial
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;virtualenvの削除&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pyenv uninstall 3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pyenv uninstall 3.5.0-tutorial&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;osxlinux-windows&quot;&gt;参考2 OSX以外(Linux, Windows)での実行&lt;/h3&gt;
 
@@ -341,22 +341,22 @@ c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポ�
 
 &lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://github.com/shoya140/docker-image-ml&quot;&gt;shoya140/docker-image-ml&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; centos
-&lt;span class=&quot;k&quot;&gt;MAINTAINER&lt;/span&gt; shoya140
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;FROM centos
+MAINTAINER shoya140
 
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; yum update -y
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; yum install -y git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
+RUN yum update -y
+RUN yum install -y git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
 
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; git clone git://github.com/yyuu/pyenv.git .pyenv
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt; PYENV_ROOT &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.pyenv
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt; PATH &lt;span class=&quot;nv&quot;&gt;$PYENV_ROOT&lt;/span&gt;/shims:&lt;span class=&quot;nv&quot;&gt;$PYENV_ROOT&lt;/span&gt;/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+RUN git clone git://github.com/yyuu/pyenv.git .pyenv
+ENV PYENV_ROOT $HOME/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv install miniconda-3.18.3
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv global miniconda-3.18.3
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; pyenv rehash
+RUN pyenv install miniconda-3.18.3
+RUN pyenv global miniconda-3.18.3
+RUN pyenv rehash
 
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install numpy scipy pandas scikit-learn
-&lt;span class=&quot;k&quot;&gt;RUN&lt;/span&gt; conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+RUN conda install numpy scipy pandas scikit-learn
+RUN conda install -c https://conda.binstar.org/menpo opencv&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Wed, 23 Dec 2015 00:00:00 +0100</pubDate>

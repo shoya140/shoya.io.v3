@@ -70,100 +70,100 @@
 
 <h2 id="section">記述例</h2>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
 
 <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s">"""
+    This method returns the average value of args.
+    &gt;&gt;&gt; average(1, 2)
+    1.5
+    """</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></figure>
 
 <p>上記のコードを実行すると</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py
-**********************************************************************
-File <span class="s2">&quot;hello.py&quot;</span>, line 6, in __main__.average
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python hello.py
+<span class="k">**********************************************************************</span>
+File <span class="s2">"hello.py"</span>, line 6, <span class="k">in </span>__main__.average
 Failed example:
     average<span class="o">(</span>1, 2<span class="o">)</span>
 Expected:
     0.5
 Got:
     1
-**********************************************************************
-<span class="m">1</span> items had failures:
-   <span class="m">1</span> of   <span class="m">1</span> in __main__.average
-***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+<span class="k">**********************************************************************</span>
+1 items had failures:
+   1 of   1 <span class="k">in </span>__main__.average
+<span class="k">***</span>Test Failed<span class="k">***</span> 1 failures.</code></pre></figure>
 
 <p>テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
 
 <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s">"""
+    This method returns the average value of args.
+    &gt;&gt;&gt; average(1, 2)
+    1.5
+    """</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python hello.py</code></pre></figure>
 
 <p>実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
 Trying:
     average<span class="o">(</span>1, 2<span class="o">)</span>
 Expecting:
     1.5
 ok
-<span class="m">1</span> items had no tests:
+1 items had no tests:
     __main__
-<span class="m">1</span> items passed all tests:
-   <span class="m">1</span> tests in __main__.average
-<span class="m">1</span> tests in <span class="m">2</span> items.
-<span class="m">1</span> passed and <span class="m">0</span> failed.
-Test passed.</code></pre></div>
+1 items passed all tests:
+   1 tests <span class="k">in </span>__main__.average
+1 tests <span class="k">in </span>2 items.
+1 passed and 0 failed.
+Test passed.</code></pre></figure>
 
 <h2 id="python--m-doctest--v-">python -m doctest -v [ファイル名]</h2>
 
 <p>Python2.6以降にはdoctest.testmod()を実行するコマンドラインショートカット(-m doctest)があり、doctest.testmod()をコード内に記述する必要がなくなりました。</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of args.</span>
-<span class="sd">    &gt;&gt;&gt; average(1, 2)</span>
-<span class="sd">    1.5</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="s">"""
+    This method returns the average value of args.
+    &gt;&gt;&gt; average(1, 2)
+    1.5
+    """</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">pass</span></code></pre></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></figure>
 
 <p>main関数を空にしてコマンドラインからテストします。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python -m doctest -v hello.py
 Trying:
     average<span class="o">(</span>1, 2<span class="o">)</span>
 Expecting:
     1.5
 ok
-<span class="m">1</span> items had no tests:
+1 items had no tests:
     hello
-<span class="m">1</span> items passed all tests:
-   <span class="m">1</span> tests in hello.average
-<span class="m">1</span> tests in <span class="m">2</span> items.
-<span class="m">1</span> passed and <span class="m">0</span> failed.
-Test passed.</code></pre></div>
+1 items passed all tests:
+   1 tests <span class="k">in </span>hello.average
+1 tests <span class="k">in </span>2 items.
+1 passed and 0 failed.
+Test passed.</code></pre></figure>
 
 <p>テストが実行されました。</p>
 
@@ -175,33 +175,33 @@ Test passed.</code></pre></div>
 
 <p>出力結果をTrue, Falseで判断することで、表記揺れによるテスト失敗を回避することができました。また、この方法では弾く(Falseを想定した)テストも書けるので便利です。</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method returns the average value of numbers.</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) #failed</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) #ok</span>
-<span class="sd">    1.0</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1 #ok</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 1.0 #ok</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; average(0, 2) == 2.0 #ok</span>
-<span class="sd">    False</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="s">"""
+    This method returns the average value of numbers.
+    &gt;&gt;&gt; average(0, 2) #failed
+    1
+    &gt;&gt;&gt; average(0, 2) #ok
+    1.0
+    &gt;&gt;&gt; average(0, 2) == 1 #ok
+    True
+    &gt;&gt;&gt; average(0, 2) == 1.0 #ok
+    True
+    &gt;&gt;&gt; average(0, 2) == 2.0 #ok
+    False
+    """</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">pass</span></code></pre></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python -m doctest -v hello.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python -m doctest -v hello.py
 Trying:
     average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
 Expecting:
     1
-**********************************************************************
-File <span class="s2">&quot;hello.py&quot;</span>, line 4, in hello.average
+<span class="k">**********************************************************************</span>
+File <span class="s2">"hello.py"</span>, line 4, <span class="k">in </span>hello.average
 Failed example:
     average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
 Expected:
@@ -214,7 +214,7 @@ Expecting:
     1.0
 ok
 Trying:
-    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> <span class="m">1</span> <span class="c">#ok</span>
+    average<span class="o">(</span>0, 2<span class="o">)</span> <span class="o">==</span> 1 <span class="c">#ok</span>
 Expecting:
     True
 ok
@@ -228,14 +228,14 @@ Trying:
 Expecting:
     False
 ok
-<span class="m">1</span> items had no tests:
+1 items had no tests:
     hello
-**********************************************************************
-<span class="m">1</span> items had failures:
-   <span class="m">1</span> of   <span class="m">5</span> in hello.average
-<span class="m">5</span> tests in <span class="m">2</span> items.
-<span class="m">4</span> passed and <span class="m">1</span> failed.
-***Test Failed*** <span class="m">1</span> failures.</code></pre></div>
+<span class="k">**********************************************************************</span>
+1 items had failures:
+   1 of   5 <span class="k">in </span>hello.average
+5 tests <span class="k">in </span>2 items.
+4 passed and 1 failed.
+<span class="k">***</span>Test Failed<span class="k">***</span> 1 failures.</code></pre></figure>
 
 
         </article>

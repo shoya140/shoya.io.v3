@@ -72,31 +72,31 @@
 
 <p>それぞれ数値を取得するためのapiと取り出し方は以下のとおり。</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;net/http&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="no">URL_OF_YOUR_ENTRY</span>
 
-<span class="c1"># hatena 文字列で返ってくる. 0は&quot;&quot;.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://api.b.st-hatena.com/entry.count?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">body</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="p">?</span> <span class="n">body</span><span class="o">.</span><span class="n">to_i</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="c1"># hatena 文字列で返ってくる. 0は"".</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">"http://api.b.st-hatena.com/entry.count?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">get_response</span><span class="p">(</span><span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">)).</span><span class="nf">body</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">body</span> <span class="o">!=</span> <span class="s2">""</span> <span class="p">?</span> <span class="n">body</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">:</span> <span class="mi">0</span>
 
 <span class="c1"># facebook jsonで返ってくる. 0は0.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://graph.facebook.com/</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;shares&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;shares&#39;</span><span class="o">]</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">"http://graph.facebook.com/</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">get_response</span><span class="p">(</span><span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">)).</span><span class="nf">body</span>
+<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s1">'shares'</span><span class="p">]</span> <span class="p">?</span> <span class="n">json</span><span class="p">[</span><span class="s1">'shares'</span><span class="p">]</span> <span class="p">:</span> <span class="mi">0</span>
 
 <span class="c1"># tweet jsonで返ってくる. 0は0.</span>
-<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;http://urls.api.twitter.com/1/urls/count.json?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span><span class="o">.</span><span class="n">body</span>
-<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;count&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="n">json</span><span class="o">[</span><span class="s1">&#39;count&#39;</span><span class="o">]</span> <span class="p">:</span> <span class="mi">0</span></code></pre></div>
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">"http://urls.api.twitter.com/1/urls/count.json?url=</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">body</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">get_response</span><span class="p">(</span><span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">uri</span><span class="p">)).</span><span class="nf">body</span>
+<span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="p">?</span> <span class="n">json</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="p">:</span> <span class="mi">0</span></code></pre></figure>
 
 <p>buildの度に取得すると記事を書く際に不便なので、jekyll server に –drafts オプションをつけているときは評価をスキップする。–draftsオプションが付いているかどうかは</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;show_drafts&#39;</span><span class="o">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'show_drafts'</span><span class="p">]</span></code></pre></figure>
 
 <p>を確認すれば良い。</p>
 

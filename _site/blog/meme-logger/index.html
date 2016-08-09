@@ -87,18 +87,18 @@
 
 <p><strong>グラフ描画</strong> 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。</p>
 
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">@</span><span class="n">IBDesignable</span> <span class="k">class</span> <span class="nl">GraphView</span><span class="p">:</span> <span class="bp">UIView</span> <span class="p">{</span>
-    <span class="p">@</span><span class="n">IBInspectable</span> <span class="k">var</span> <span class="nl">maximumValue</span><span class="p">:</span> <span class="n">Double</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">{</span>
-        <span class="kr">didSet</span> <span class="p">{</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">setNeedsDisplay</span><span class="p">()</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@IBDesignable</span> <span class="kd">class</span> <span class="kt">GraphView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="p">{</span>
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">maximumValue</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">setNeedsDisplay</span><span class="p">()</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-    <span class="p">.</span>
-<span class="p">}</span></code></pre></div>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+<span class="p">}</span></code></pre></figure>
 
-<p><strong>データの記録</strong> 開発者がデータの読み書きに使えるDocumentDirectory以下にテキストファイルを作成し、<code>memeRealTimeModeDataReceived(data: MEMERealTimeData!)</code>が呼ばれる度にそのデータを追記しています。また、iTunesやiFunBoxを使ってデータを取り出せるように<code>プロジェクト名-info.plist</code>にKey:<code>Application supports iTunes file sharing</code> Value:<code>YES</code>をセットしました。</p>
+<p><strong>データの記録</strong> 開発者がデータの読み書きに使えるDocumentDirectory以下にテキストファイルを作成し、<code class="highlighter-rouge">memeRealTimeModeDataReceived(data: MEMERealTimeData!)</code>が呼ばれる度にそのデータを追記しています。また、iTunesやiFunBoxを使ってデータを取り出せるように<code class="highlighter-rouge">プロジェクト名-info.plist</code>にKey:<code class="highlighter-rouge">Application supports iTunes file sharing</code> Value:<code class="highlighter-rouge">YES</code>をセットしました。</p>
 
 <p><strong>まばたきのアニメーション</strong> <a href="http://www.paintcodeapp.com/">PaintCode</a>を使ってPathの位置を変数で変えられる目の画像を作成しました。PaintCodeから出力されたStyleKitをimportして、目の開閉や虹彩の位置とともにdraw~を呼び出して描画しています。</p>
 

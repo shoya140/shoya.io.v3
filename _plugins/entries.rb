@@ -8,7 +8,7 @@ module Jekyll
       self.process(@name)
       raise 'name is null' unless @name
       self.read_yaml(File.join(base, '_layouts'), 'entries.html')
-      self.data['posts'] = site.posts.reverse
+      self.data['posts'] = site.posts.docs.reverse
     end
   end
 

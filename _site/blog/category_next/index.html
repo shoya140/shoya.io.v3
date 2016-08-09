@@ -76,38 +76,38 @@
 
 <p>これを少し改良して使うことにした。</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
   <span class="k">class</span> <span class="nc">CategoryAwareNextGenerator</span> <span class="o">&lt;</span> <span class="no">Generator</span>
 
     <span class="n">safe</span> <span class="kp">true</span>
     <span class="n">priority</span> <span class="ss">:high</span>
 
     <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
-      <span class="n">site</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">each_pair</span> <span class="k">do</span> <span class="o">|</span><span class="n">category_name</span><span class="p">,</span> <span class="n">posts</span><span class="o">|</span>
-        <span class="n">posts</span><span class="o">.</span><span class="n">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span> <span class="p">}</span>
+      <span class="n">site</span><span class="p">.</span><span class="nf">categories</span><span class="p">.</span><span class="nf">each_pair</span> <span class="k">do</span> <span class="o">|</span><span class="n">category_name</span><span class="p">,</span> <span class="n">posts</span><span class="o">|</span>
+        <span class="n">posts</span><span class="p">.</span><span class="nf">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span> <span class="p">}</span>
 
-        <span class="n">posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-          <span class="n">position</span> <span class="o">=</span> <span class="n">posts</span><span class="o">.</span><span class="n">index</span> <span class="n">post</span>
+        <span class="n">posts</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+          <span class="n">position</span> <span class="o">=</span> <span class="n">posts</span><span class="p">.</span><span class="nf">index</span> <span class="n">post</span>
 
-          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="n">posts</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="n">category_previous</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span>
+          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="n">posts</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">category_previous</span> <span class="o">=</span> <span class="n">posts</span><span class="p">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
           <span class="k">else</span>
             <span class="n">category_previous</span> <span class="o">=</span> <span class="kp">nil</span>
           <span class="k">end</span>
 
           <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">1</span>
-            <span class="n">category_next</span> <span class="o">=</span> <span class="n">posts</span><span class="o">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span>
+            <span class="n">category_next</span> <span class="o">=</span> <span class="n">posts</span><span class="p">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
           <span class="k">else</span>
             <span class="n">category_next</span> <span class="o">=</span> <span class="kp">nil</span>
           <span class="k">end</span>
 
-          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_previous&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_previous</span> <span class="k">unless</span> <span class="n">category_previous</span><span class="o">.</span><span class="n">nil?</span>
-          <span class="n">post</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_next&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="n">category_next</span> <span class="k">unless</span> <span class="n">category_next</span><span class="o">.</span><span class="n">nil?</span>
+          <span class="n">post</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s2">"</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_previous"</span><span class="p">]</span> <span class="o">=</span> <span class="n">category_previous</span> <span class="k">unless</span> <span class="n">category_previous</span><span class="p">.</span><span class="nf">nil?</span>
+          <span class="n">post</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s2">"</span><span class="si">#{</span><span class="n">category_name</span><span class="si">}</span><span class="s2">_next"</span><span class="p">]</span> <span class="o">=</span> <span class="n">category_next</span> <span class="k">unless</span> <span class="n">category_next</span><span class="p">.</span><span class="nf">nil?</span>
         <span class="k">end</span>
       <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
+<span class="k">end</span></code></pre></figure>
 
 <p>改良点は2点。</p>
 
@@ -118,10 +118,10 @@
 
 <p>_plugins/以下にcategory_next.rbなどと名前をつけて置いておけば</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 前の記事</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 前の記事</span>
 page.CATEGORYNAME_previous
 <span class="c"># 次の記事</span>
-page.CATEGORYNAME_next</code></pre></div>
+page.CATEGORYNAME_next</code></pre></figure>
 
 <p>が取得できる</p>
 

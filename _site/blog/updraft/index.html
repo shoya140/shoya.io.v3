@@ -83,23 +83,23 @@
 
 <p>bower, grunt, coffee, sassを使うので、インストールしていなければ準備が必要。npmコマンドが使えない場合は、導入はNodeとパッケージ管理システム(Macの場合はHomebrewなど)について勉強してからのほうがいいかもしれない。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install -g bower
-<span class="nv">$ </span>npm install -g grunt-cli
-<span class="nv">$ </span>npm install -g coffee-script
-<span class="nv">$ </span>gem install sass</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>npm install -g bower
+<span class="gp">$ </span>npm install -g grunt-cli
+<span class="gp">$ </span>npm install -g coffee-script
+<span class="gp">$ </span>gem install sass</code></pre></figure>
 
 <h2 id="span-classlsfsetupspan-installation"><span class="lsf">setup</span> Installation</h2>
 
 <p><a href="https://github.com/Mrk1869/updraft">Mrk1869/updraft</a> からデータをダウンロードしてきたら、そのディレクトリに入って</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 必要なパッケージをインストール</span>
-<span class="nv">$ </span>npm install
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 必要なパッケージをインストール</span>
+<span class="gp">$ </span>npm install
 
 <span class="c"># bootstrapなどをダウンロードしてassets/以下に配置する</span>
-<span class="nv">$ </span>grunt bower:install
+<span class="gp">$ </span>grunt bower:install
 
 <span class="c"># coffee, sassの監視を開始する</span>
-<span class="nv">$ </span>grunt</code></pre></div>
+<span class="gp">$ </span>grunt</code></pre></figure>
 
 <p>これでひな形の準備は完了です。</p>
 
@@ -107,44 +107,44 @@
 
 <h2 id="span-classlsfcodespan-bowerjson"><span class="lsf">code</span> bower.json</h2>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;updraft&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;0.0.0&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Web application template&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;license&quot;</span><span class="o">:</span> <span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ignore&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="s2">&quot;**/.*&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;node_modules&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;bower_components&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;tests&quot;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"updraft"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="err">:</span> <span class="s2">"0.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"Web application template"</span><span class="p">,</span>
+  <span class="s2">"license"</span><span class="err">:</span> <span class="s2">"MIT"</span><span class="p">,</span>
+  <span class="s2">"ignore"</span><span class="err">:</span> <span class="p">[</span>
+    <span class="s2">"**/.*"</span><span class="p">,</span>
+  <span class="s2">"node_modules"</span><span class="p">,</span>
+  <span class="s2">"bower_components"</span><span class="p">,</span>
+  <span class="s2">"test"</span><span class="p">,</span>
+  <span class="s2">"tests"</span>
     <span class="p">],</span>
-  <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="s2">&quot;~3.1.1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;backbone&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.1.2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;underscore&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.6.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="s2">&quot;~2.1.1&quot;</span>
+  <span class="s2">"devDependencies"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"bootstrap"</span><span class="err">:</span> <span class="s2">"~3.1.1"</span><span class="p">,</span>
+    <span class="s2">"backbone"</span><span class="err">:</span> <span class="s2">"~1.1.2"</span><span class="p">,</span>
+    <span class="s2">"underscore"</span><span class="err">:</span> <span class="s2">"~1.6.0"</span><span class="p">,</span>
+    <span class="s2">"jquery"</span><span class="err">:</span> <span class="s2">"~2.1.1"</span>
   <span class="p">},</span>
-  <span class="s2">&quot;exportsOverride&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">//main fileが設定されていないライブラリをassetsにコピーするための設定</span>
-    <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/js/bootstrap.min.js&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;css&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/css/bootstrap.min.css&quot;</span>
+  <span class="s2">"exportsOverride"</span><span class="err">:</span> <span class="p">{</span> <span class="c1">//main fileが設定されていないライブラリをassetsにコピーするための設定</span>
+    <span class="s2">"bootstrap"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"dist/js/bootstrap.min.js"</span><span class="p">,</span>
+      <span class="s2">"css"</span><span class="err">:</span> <span class="s2">"dist/css/bootstrap.min.css"</span>
     <span class="p">},</span>
-    <span class="s2">&quot;backbone&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;backbone.js&quot;</span>
+    <span class="s2">"backbone"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"backbone.js"</span>
     <span class="p">},</span>
-    <span class="s2">&quot;underscore&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;underscore.js&quot;</span>
+    <span class="s2">"underscore"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"underscore.js"</span>
     <span class="p">},</span>
-    <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;js&quot;</span><span class="o">:</span> <span class="s2">&quot;dist/jquery.min.js&quot;</span>
+    <span class="s2">"jquery"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"dist/jquery.min.js"</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Bowerとはフロントエンド用のパッケージマネージャ。jQueryやTwitterBootstrapなどの定番ライブラリを、サイトを巡回することなく下記のようなコマンドで集めてくることができる。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install jquery</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>bower install jquery</code></pre></figure>
 
 <p>しかしbowerでインストールしたライブラリはbower_components以下の複雑な場所に配置されるため、それらを扱いやすい場所(assets/ lib/など)にコピーしたい。そこでGruntを使う。コピーの対象となるファイルをmain fileとして設定していないライブラリもあるので、コメント部のようにjs, cssファイルの場所を指定する必要がある。</p>
 
@@ -152,58 +152,58 @@
 
 <h2 id="span-classlsfcodespan-gruntfilejs"><span class="lsf">code</span> Gruntfile.js</h2>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
 
     <span class="c1">// bowerでインストールしたライブラリをassets以下に置く</span>
-    <span class="nx">bower</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">install</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">targetDir</span><span class="o">:</span> <span class="s1">&#39;./assets&#39;</span><span class="p">,</span>
-          <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;byType&#39;</span><span class="p">,</span>
-          <span class="nx">install</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">cleanTargetDir</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">cleanBowerDir</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="na">bower</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">install</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">targetDir</span><span class="p">:</span> <span class="s1">'./assets'</span><span class="p">,</span>
+          <span class="na">layout</span><span class="p">:</span> <span class="s1">'byType'</span><span class="p">,</span>
+          <span class="na">install</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">verbose</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="na">cleanTargetDir</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="na">cleanBowerDir</span><span class="p">:</span> <span class="kc">false</span>
         <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">},</span>
 
     <span class="c1">// sassのコンパイル</span>
-    <span class="nx">sass</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">compile</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/_scss/*.scss&#39;</span><span class="p">,</span>
-        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;assets/css/style.css&#39;</span>
+    <span class="na">sass</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">compile</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">src</span><span class="p">:</span> <span class="s1">'assets/_scss/*.scss'</span><span class="p">,</span>
+        <span class="na">dest</span><span class="p">:</span> <span class="s1">'assets/css/style.css'</span>
       <span class="p">}</span>
     <span class="p">},</span>
 
     <span class="c1">// coffeeのコンパイル</span>
-    <span class="nx">coffee</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">compile</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/_coffee/*.coffee&#39;</span><span class="p">,</span>
-        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;assets/js/script.js&#39;</span>
+    <span class="na">coffee</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">compile</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">src</span><span class="p">:</span> <span class="s1">'assets/_coffee/*.coffee'</span><span class="p">,</span>
+        <span class="na">dest</span><span class="p">:</span> <span class="s1">'assets/js/script.js'</span>
       <span class="p">}</span>
     <span class="p">},</span>
 
     <span class="c1">// sassとcoffeeの更新を監視する</span>
-    <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">scss</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">files</span><span class="o">:</span> <span class="s1">&#39;assets/_scss/*.scss&#39;</span><span class="p">,</span>
-        <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;sass&#39;</span><span class="p">]</span>
+    <span class="na">watch</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">scss</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">files</span><span class="p">:</span> <span class="s1">'assets/_scss/*.scss'</span><span class="p">,</span>
+        <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span><span class="s1">'sass'</span><span class="p">]</span>
       <span class="p">},</span>
-      <span class="nx">coffee</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">files</span><span class="o">:</span> <span class="s1">&#39;assets/_coffee/*.coffee&#39;</span><span class="p">,</span>
-        <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;diary&#39;</span><span class="p">]</span>
+      <span class="na">coffee</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">files</span><span class="p">:</span> <span class="s1">'assets/_coffee/*.coffee'</span><span class="p">,</span>
+        <span class="na">tasks</span><span class="p">:</span> <span class="p">[</span><span class="s1">'diary'</span><span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
 
   <span class="p">});</span>
-  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-bower-task&#39;</span><span class="p">);</span>
-  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span>
-  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-sass&#39;</span><span class="p">);</span>
-  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-coffee&#39;</span><span class="p">);</span>
-  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>  <span class="p">[</span><span class="s1">&#39;sass&#39;</span><span class="p">,</span> <span class="s1">&#39;coffee&#39;</span><span class="p">,</span> <span class="s1">&#39;watch&#39;</span><span class="p">]);</span>
-<span class="p">};</span></code></pre></div>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-bower-task'</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-contrib-watch'</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-contrib-sass'</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-contrib-coffee'</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span>  <span class="p">[</span><span class="s1">'sass'</span><span class="p">,</span> <span class="s1">'coffee'</span><span class="p">,</span> <span class="s1">'watch'</span><span class="p">]);</span>
+<span class="p">};</span></code></pre></figure>
 
 <p>grunt-bower-taskによってライブラリをコピーする。はじめの方にあるbower:installはそれに関する設定。grunt-contrib-watchによってsassとcoffeeの更新を検知して、sass:compile, coffee:compileタスクを実行するよう設定している。</p>
 
@@ -213,8 +213,8 @@
 
 <p>を参考に、Gruntfileをcoffeeに書きなおしました。また、Procfileを作成して</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">application: python main.py --port<span class="o">=</span><span class="m">8000</span> --debug<span class="o">=</span>True
-grunt: grunt</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">application: python main.py --port<span class="o">=</span>8000 --debug<span class="o">=</span>True
+grunt: grunt</code></pre></figure>
 
 <p>foreman startでgruntとtornadoが起動するようにしました。</p>
 

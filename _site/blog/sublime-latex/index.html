@@ -81,13 +81,13 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;shell&quot;</span>: <span class="nb">false</span>,
-  <span class="s2">&quot;cmd&quot;</span>:<span class="o">[</span>
-    <span class="s2">&quot;/bin/sh&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;/usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/pbibtex $file_base_name.aux &amp;&amp; /usr/texbin/platex $file_base_name.tex &amp;&amp; /usr/texbin/dvipdfmx -p a4 $file_base_name.dvi &amp;&amp; /usr/bin/open $file_base_name.pdf&quot;</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+  <span class="s2">"shell"</span>: <span class="nb">false</span>,
+  <span class="s2">"cmd"</span>:[
+    <span class="s2">"/bin/sh"</span>, <span class="s2">"-c"</span>, <span class="s2">"/usr/texbin/platex </span><span class="nv">$file_base_name</span><span class="s2">.tex &amp;&amp; /usr/texbin/pbibtex </span><span class="nv">$file_base_name</span><span class="s2">.aux &amp;&amp; /usr/texbin/platex </span><span class="nv">$file_base_name</span><span class="s2">.tex &amp;&amp; /usr/texbin/dvipdfmx -p a4 </span><span class="nv">$file_base_name</span><span class="s2">.dvi &amp;&amp; /usr/bin/open </span><span class="nv">$file_base_name</span><span class="s2">.pdf"</span>
   <span class="o">]</span>,
-  <span class="s2">&quot;selector&quot;</span>: <span class="s2">&quot;source.tex&quot;</span>
-<span class="o">}</span></code></pre></div>
+  <span class="s2">"selector"</span>: <span class="s2">"source.tex"</span>
+<span class="o">}</span></code></pre></figure>
 
 <h3 id="section-1">補足</h3>
 

@@ -70,52 +70,52 @@
 
 <h3 id="warning1">Warning1</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in /usr/local/share/man aren<span class="s1">&#39;t writable.</span>
-<span class="s1">This can happen if you &quot;sudo make install&quot; software that isn&#39;</span>t managed
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories <span class="k">in</span> /usr/local/share/man aren<span class="s1">'t writable.
+This can happen if you "sudo make install" software that isn'</span>t managed
 by Homebrew. If a brew tries to add locale information to one of these
-directories, <span class="k">then</span> the install will fail during the link step.
+directories, <span class="k">then </span>the install will fail during the link step.
 You should probably <span class="sb">`</span>chown<span class="sb">`</span> them:
 
     /usr/local/share/man/de
-    /usr/local/share/man/de/man1</code></pre></div>
+    /usr/local/share/man/de/man1</code></pre></figure>
 
 <p>一部のディレクトリの所有者がbrewを使うユーザになっていない問題。chownコマンドで所有者を変更します。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></figure>
 
 <h3 id="warning2">Warning2</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">&quot;config&quot;</span> scripts exist outside your system or Homebrew directories.
-<span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> *-config scripts to determine <span class="k">if</span>
-software packages are installed, and what additional flags to use when
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">"config"</span> scripts exist outside your system or Homebrew directories.
+<span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> <span class="k">*</span>-config scripts to determine <span class="k">if
+</span>software packages are installed, and what additional flags to use when
 compiling and linking.
 
-Having additional scripts in your path can confuse software installed via
-Homebrew <span class="k">if</span> the config script overrides a system or Homebrew provided
-script of the same name. We found the following <span class="s2">&quot;config&quot;</span> scripts:
+Having additional scripts <span class="k">in </span>your path can confuse software installed via
+Homebrew <span class="k">if </span>the config script overrides a system or Homebrew provided
+script of the same name. We found the following <span class="s2">"config"</span> scripts:
 
     /Users/shoya/.pyenv/shims/python-config
     /Users/shoya/.pyenv/shims/python2-config
-    /Users/shoya/.pyenv/shims/python2.7-config</code></pre></div>
+    /Users/shoya/.pyenv/shims/python2.7-config</code></pre></figure>
 
 <p>homebrewの管理外かつPATHが通っているところにconfigスクリプトが存在する問題。深刻な問題ではないようなので、このWarningが表示されないよう回避する方向で。brewコマンドを実行するときだけ~/.pyenv/shims/をPATHから取り除くエイリアスを.bashrcに追記した。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">brew</span><span class="o">=</span><span class="s2">&quot;env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">brew</span><span class="o">=</span><span class="s2">"env PATH=</span><span class="k">${</span><span class="nv">PATH</span><span class="p">/\/Users\/</span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="p">\/\.pyenv\/shims</span>:?/<span class="k">}</span><span class="s2"> brew"</span></code></pre></figure>
 
 <p>参考:<a href="http://qiita.com/takc923/items/45386905f70fde9af0e7">phpenv入れてる時brew doctorしたら出るWarning消した</a></p>
 
 <h3 id="warning3">Warning3</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories in your path end in a slash.
-Directories in your path should not end in a slash. This can <span class="nb">break </span>other
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories <span class="k">in </span>your path end <span class="k">in </span>a slash.
+Directories <span class="k">in </span>your path should not end <span class="k">in </span>a slash. This can <span class="nb">break </span>other
 doctor checks. The following directories should be edited:
-    /Applications/MacVim.app/Contents/MacOS/    /Users/shoya/software/android-ndk/    /Users/shoya/software/android-sdk/platform-tools/</code></pre></div>
+    /Applications/MacVim.app/Contents/MacOS/    /Users/shoya/software/android-ndk/    /Users/shoya/software/android-sdk/platform-tools/</code></pre></figure>
 
 <p>PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。</p>
 
 <h3 id="warning4">Warning4</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: /usr/bin occurs before /usr/local/bin
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: /usr/bin occurs before /usr/local/bin
 This means that system-provided programs will be used instead of those
 provided by Homebrew. The following tools exist at both paths:
 
@@ -128,24 +128,24 @@ provided by Homebrew. The following tools exist at both paths:
 
 Consider setting your PATH so that /usr/local/bin
 occurs before /usr/bin. Here is a one-liner:
-    <span class="nb">echo export </span><span class="nv">PATH</span><span class="o">=</span><span class="s1">&#39;/usr/local/bin:$PATH&#39;</span> &gt;&gt; ~/.bash_profile</code></pre></div>
+    <span class="nb">echo export </span><span class="nv">PATH</span><span class="o">=</span><span class="s1">'/usr/local/bin:$PATH'</span> &gt;&gt; ~/.bash_profile</code></pre></figure>
 
 <p>PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。</p>
 
 <h3 id="warning5">Warning5</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Your Homebrew is outdated.
-You haven<span class="err">&#39;</span>t updated <span class="k">for</span> at least <span class="m">24</span> hours, this is a long <span class="nb">time </span>in brewland!
-To update Homebrew, run <span class="sb">`</span>brew update<span class="sb">`</span>.</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Your Homebrew is outdated.
+You haven<span class="s1">'t updated for at least 24 hours, this is a long time in brewland!
+To update Homebrew, run `brew update`.</span></code></pre></figure>
 
 <p>homebrewをアップデートします。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew update</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew update</code></pre></figure>
 
 <h3 id="warning">すべてのWarningを取り除いたので</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew doctor
-&gt;&gt; Your system is ready to brew.</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew doctor
+<span class="gp">&gt;&gt; </span>Your system is ready to brew.</code></pre></figure>
 
 <p>診断結果が正常になりました。めでたい。</p>
 

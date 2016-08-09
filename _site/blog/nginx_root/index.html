@@ -68,15 +68,15 @@
         <article class="post-content">
           <p>静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。<a href="http://www.oreilly.co.jp/books/9784873115764/">概説Tornado</a>の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定をNginxに書いた。</p>
 
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
-    <span class="kn">root</span> <span class="s">/path/to/app/static</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="n">/static/</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="n">/path/to/app/static</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>上記のように書きたいところだがこれは間違いで</p>
 
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/static/</span> <span class="p">{</span>
-    <span class="kn">root</span> <span class="s">/path/to/app</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="n">/static/</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="n">/path/to/app</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>正しくはこちら。</p>
 
@@ -84,22 +84,22 @@
 
 <p>(備考)アプリケーション全体のnginx設定ファイルはこんな感じ。各アプリケーションごとに設定ファイルを分けてconf.d/以下に保存しておき、nginx.confでそれらをインポートしている。</p>
 
-<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">upstream</span> <span class="s">paletta</span><span class="p">{</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8011</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8012</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8013</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">8014</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">upstream</span> <span class="s">paletta</span><span class="p">{</span>
+    <span class="kn">server</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">8011</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">8012</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">8013</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">8014</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">paletta.mrk1869.com</span><span class="p">;</span>
 
-    <span class="kn">access_log</span>  <span class="s">/home/web/log/nginx/paletta.mrk1869.com/access.log</span> <span class="s">ltsv</span><span class="p">;</span>
-    <span class="kn">location</span> <span class="s">/static/</span> <span class="p">{</span>
-        <span class="kn">root</span> <span class="s">/home/web/paletta/app</span><span class="p">;</span>
+    <span class="kn">access_log</span>  <span class="n">/home/web/log/nginx/paletta.mrk1869.com/access.log</span> <span class="s">ltsv</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="n">/static/</span> <span class="p">{</span>
+        <span class="kn">root</span> <span class="n">/home/web/paletta/app</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
         <span class="kn">proxy_pass_header</span> <span class="s">Server</span><span class="p">;</span>
         <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
         <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
@@ -107,7 +107,7 @@
         <span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span> <span class="nv">$scheme</span><span class="p">;</span>
         <span class="kn">proxy_pass</span> <span class="s">http://paletta</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 
         </article>

@@ -78,33 +78,33 @@
 
 <p><a href="https://developer.nvidia.com/cudnn">NVIDIAのwebサイト</a>でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tar zxvf cudnn-6.5-linux-x64-v2.tgz
-<span class="nv">$ </span>sudo cp lib* /opt/nvidia/cuda/lib64/
-<span class="nv">$ </span>sudo cp cudnn.h /opt/nvidia/cuda/include/</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>tar zxvf cudnn-6.5-linux-x64-v2.tgz
+<span class="gp">$ </span>sudo cp lib<span class="k">*</span> /opt/nvidia/cuda/lib64/
+<span class="gp">$ </span>sudo cp cudnn.h /opt/nvidia/cuda/include/</code></pre></figure>
 
 <h2 id="chainerjupyter">3. chainerとjupyterのセットアップ</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo <span class="nv">CUDA_PATH</span><span class="o">=</span>/opt/nvidia/cuda pip install chainer
-<span class="nv">$ </span>sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
-<span class="nv">$ </span>sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo <span class="nv">CUDA_PATH</span><span class="o">=</span>/opt/nvidia/cuda pip install chainer
+<span class="gp">$ </span>sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
+<span class="gp">$ </span>sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter</code></pre></figure>
 
 <p>jupyter notebookを立ち上げてブラウザからアクセスできるようにする。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ipython
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ipython
 <span class="c"># 下記を実行して出力されたハッシュをコピー</span>
 from notebook.auth import passwd
 passwd<span class="o">()</span>
 
-<span class="nv">$ </span>mkdir ~/.jupyter
-<span class="nv">$ </span>vim ~/.jupyter/jupyter_notebook_config.py
+<span class="gp">$ </span>mkdir ~/.jupyter
+<span class="gp">$ </span>vim ~/.jupyter/jupyter_notebook_config.py
 <span class="c"># 下記の内容で保存</span>
-<span class="nv">c</span> <span class="o">=</span> get_config<span class="o">()</span>
-c.NotebookApp.ip <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
-c.NotebookApp.password <span class="o">=</span> u<span class="s1">&#39;sha1:bcd259ccf...出力されたハッシュ&#39;</span>
+c <span class="o">=</span> get_config<span class="o">()</span>
+c.NotebookApp.ip <span class="o">=</span> <span class="s1">'*'</span>
+c.NotebookApp.password <span class="o">=</span> u<span class="s1">'sha1:bcd259ccf...出力されたハッシュ'</span>
 c.NotebookApp.open_browser <span class="o">=</span> False
 c.NotebookApp.port <span class="o">=</span> 任意のポート<span class="o">(</span>セキュリティグループの設定で開けておく<span class="o">)</span>
 
-<span class="nv">$ </span>jupyter notebook</code></pre></div>
+<span class="gp">$ </span>jupyter notebook</code></pre></figure>
 
 <p>SSL/HTTPSを使用する方法は<a href="http://jupyter-notebook.readthedocs.io/en/latest/public_server.html">こちら</a>を参照。</p>
 

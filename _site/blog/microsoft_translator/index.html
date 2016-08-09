@@ -80,22 +80,22 @@
 
 <p>Python用のSDKがGitHubで公開されているので<a href="https://github.com/openlabs/Microsoft-Translator-Python-API">リポジトリ</a>をcloneします。</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone git@github.com:openlabs/Microsoft-Translator-Python-API.git</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone git@github.com:openlabs/Microsoft-Translator-Python-API.git</code></pre></figure>
 
 <p>セットアップスクリプトを実行します.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>Microsoft-Translator-Python-API
-<span class="nv">$ </span>sudo python setup.py install</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>Microsoft-Translator-Python-API
+<span class="gp">$ </span>sudo python setup.py install</code></pre></figure>
 
 <p>以上で導入は終わりです. 簡単ですね.</p>
 
 <h2 id="section-2">3. 実際に使ってみる</h2>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">microsofttranslator</span> <span class="kn">import</span> <span class="n">Translator</span>
-<span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">(</span><span class="s">&#39;&lt;Your Client ID&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;Your Client Secret&gt;&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;ja&quot;</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">microsofttranslator</span> <span class="kn">import</span> <span class="n">Translator</span>
+<span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">(</span><span class="s">'&lt;Your Client ID&gt;'</span><span class="p">,</span> <span class="s">'&lt;Your Client Secret&gt;'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"ja"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">こんにちは</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">こんにちは</code></pre></figure>
 
 <h2 id="section-3">所感</h2>
 

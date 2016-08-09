@@ -96,11 +96,11 @@
 
 <h3 id="section-2">インストール方法</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip install zChainer</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install zChainer</code></pre></figure>
 
 <h3 id="section-3">サンプルコード</h3>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">chainer.functions</span> <span class="kn">as</span> <span class="nn">F</span>
 <span class="kn">import</span> <span class="nn">chainer.links</span> <span class="kn">as</span> <span class="nn">L</span>
 <span class="kn">from</span> <span class="nn">chainer</span> <span class="kn">import</span> <span class="n">ChainList</span><span class="p">,</span> <span class="n">optimizers</span>
@@ -123,18 +123,18 @@
 
 <span class="c"># NNAutoEncoderインスタンスの作成</span>
 <span class="n">ae</span> <span class="o">=</span> <span class="n">NNAutoEncoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-    <span class="n">log_path</span><span class="o">=</span><span class="s">&quot;./ae_&quot;</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;_log.csv&quot;</span><span class="p">,</span> <span class="n">export_path</span><span class="o">=</span><span class="s">&quot;./ae_&quot;</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;.model&quot;</span><span class="p">)</span>
+    <span class="n">log_path</span><span class="o">=</span><span class="s">"./ae_"</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">"_log.csv"</span><span class="p">,</span> <span class="n">export_path</span><span class="o">=</span><span class="s">"./ae_"</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">".model"</span><span class="p">)</span>
 
 <span class="c"># 学習</span>
-<span class="n">ae</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code></pre></div>
+<span class="n">ae</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code></pre></figure>
 
 <p>forward関数にはdropoutありのreluを登録していますが、好みのforward関数をセットすることもできます。詳しくは<a href="https://github.com/shoya140/zChainer">github</a>のexampleをご確認ください。</p>
 
 <h3 id="section-4">実装</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">class NNAutoEncoder <span class="o">()</span>:
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">class NNAutoEncoder <span class="o">()</span>:
     def __init__<span class="o">(</span>self, encoder, decoder, optimizer,
-        <span class="nv">epoch</span><span class="o">=</span>20, <span class="nv">batch_size</span><span class="o">=</span>100, <span class="nv">log_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span>, <span class="nv">export_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">)</span>:
+        <span class="nv">epoch</span><span class="o">=</span>20, <span class="nv">batch_size</span><span class="o">=</span>100, <span class="nv">log_path</span><span class="o">=</span><span class="s2">""</span>, <span class="nv">export_path</span><span class="o">=</span><span class="s2">""</span><span class="o">)</span>:
         self.encoder <span class="o">=</span> encoder
         self.decoder <span class="o">=</span> decoder
         self.optimizer <span class="o">=</span> optimizer
@@ -145,35 +145,35 @@
         self.autoencoded <span class="o">=</span> ChainList<span class="o">()</span>
 
     def fit<span class="o">(</span>self, x_train<span class="o">)</span>:
-        <span class="k">for</span> layer in range<span class="o">(</span>0, len<span class="o">(</span>self.encoder<span class="o">))</span>:
+        <span class="k">for </span>layer <span class="k">in </span>range<span class="o">(</span>0, len<span class="o">(</span>self.encoder<span class="o">))</span>:
             <span class="c"># Creating model</span>
-            self.model <span class="o">=</span> ChainList<span class="o">(</span>self.encoder<span class="o">[</span>layer<span class="o">]</span>.copy<span class="o">()</span>, self.decoder<span class="o">[</span>layer<span class="o">]</span>.copy<span class="o">())</span>
+            self.model <span class="o">=</span> ChainList<span class="o">(</span>self.encoder[layer].copy<span class="o">()</span>, self.decoder[layer].copy<span class="o">())</span>
             NNManager.forward <span class="o">=</span> self.forward
-            <span class="nv">nn</span> <span class="o">=</span> NNManager<span class="o">(</span>self.model, self.optimizer, F.mean_squared_error,
+            nn <span class="o">=</span> NNManager<span class="o">(</span>self.model, self.optimizer, F.mean_squared_error,
                 self.epoch, self.batch_size, self.log_path<span class="o">)</span>
 
             <span class="c"># Training</span>
-            <span class="nv">x_data</span> <span class="o">=</span> self.encode<span class="o">(</span>x_train, layer<span class="o">)</span>.data
+            x_data <span class="o">=</span> self.encode<span class="o">(</span>x_train, layer<span class="o">)</span>.data
             nn.fit<span class="o">(</span>x_data, x_data<span class="o">)</span>
-            self.autoencoded.add_link<span class="o">(</span>nn.model<span class="o">[</span>0<span class="o">]</span>.copy<span class="o">())</span>
+            self.autoencoded.add_link<span class="o">(</span>nn.model[0].copy<span class="o">())</span>
 
-        <span class="k">if</span> self.export_path !<span class="o">=</span> <span class="s2">&quot;&quot;</span>:
-            pickle.dump<span class="o">(</span>self.autoencoded, open<span class="o">(</span>self.export_path, <span class="s1">&#39;wb&#39;</span><span class="o">)</span>, -1<span class="o">)</span>
-        <span class="k">return</span> self
+        <span class="k">if </span>self.export_path !<span class="o">=</span> <span class="s2">""</span>:
+            pickle.dump<span class="o">(</span>self.autoencoded, open<span class="o">(</span>self.export_path, <span class="s1">'wb'</span><span class="o">)</span>, -1<span class="o">)</span>
+        <span class="k">return </span>self
 
     def predict<span class="o">(</span>self, x_test<span class="o">)</span>:
-        raise Exception<span class="o">(</span><span class="s2">&quot;Prediction for AutoEncoder is not implemented.&quot;</span><span class="o">)</span>
+        raise Exception<span class="o">(</span><span class="s2">"Prediction for AutoEncoder is not implemented."</span><span class="o">)</span>
 
     def encode<span class="o">(</span>self, x, n<span class="o">)</span>:
-        <span class="k">if</span> <span class="nv">n</span> <span class="o">==</span> 0:
-            <span class="k">return</span> Variable<span class="o">(</span>x<span class="o">)</span>
+        <span class="k">if </span>n <span class="o">==</span> 0:
+            <span class="k">return </span>Variable<span class="o">(</span>x<span class="o">)</span>
         <span class="k">else</span>:
-            <span class="nv">h</span> <span class="o">=</span> self.encode<span class="o">(</span>x, n-1<span class="o">)</span>
-            <span class="k">return</span> F.relu<span class="o">(</span>self.autoencoded<span class="o">[</span>n-1<span class="o">](</span>h<span class="o">))</span>
+            h <span class="o">=</span> self.encode<span class="o">(</span>x, n-1<span class="o">)</span>
+            <span class="k">return </span>F.relu<span class="o">(</span>self.autoencoded[n-1]<span class="o">(</span>h<span class="o">))</span>
 
     def forward<span class="o">(</span>self, x<span class="o">)</span>:
-        <span class="nv">h</span> <span class="o">=</span> F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model<span class="o">[</span>0<span class="o">](</span>x<span class="o">)))</span>
-        <span class="k">return</span> F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model<span class="o">[</span>1<span class="o">](</span>h<span class="o">)))</span></code></pre></div>
+        h <span class="o">=</span> F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model[0]<span class="o">(</span>x<span class="o">)))</span>
+        <span class="k">return </span>F.dropout<span class="o">(</span>F.relu<span class="o">(</span>self.model[1]<span class="o">(</span>h<span class="o">)))</span></code></pre></figure>
 
 <p>Chainer1.5のLink and Chainを使用しています。ネットワークの構造をChainではなくChainListとして管理することで各層に添字でアクセスできるようにして、学習が済んだものをself.autoencodedにコピーしています。学習済みモデル最先端の層からの出力はencoded関数を再帰的に呼ぶことで得ています。(層が深くなるにつれて遅くなるかも？時間ができれば改良したい)</p>
 
