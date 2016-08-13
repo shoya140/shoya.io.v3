@@ -8,6 +8,35 @@
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>ミュンヘン</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;ミュンヘンはイーザル川河畔にあり、バイエルンアルプスの北側に位置する都市。ドイツの連邦州であるバイエルン州最大の都市であり、同州の州都である。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%83%B3%E3%83%98%E3%83%B3&quot;&gt;ミュンヘン - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen04.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen05.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/muenchen06.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/muenchen/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/muenchen/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>ツークシュピッツェ</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -329,69 +358,6 @@
         
         
         <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>AWSのGPUインスタンスでchainerとjupyter notebookを使う</title>
-        <description>&lt;p&gt;AWSのアカウントを作成した状態から深層学習のための環境を作るまでの手順メモ&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;1. インスタンスの作成&lt;/h2&gt;
-
-&lt;p&gt;インスタンス-&amp;gt;マーケットプレイス-&amp;gt;「nvidia」で検索。&lt;br /&gt;インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer01.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cudnn&quot;&gt;2. cuDNNのインストール(任意)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIAのwebサイト&lt;/a&gt;でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar zxvf cudnn-6.5-linux-x64-v2.tgz
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo cp lib&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /opt/nvidia/cuda/lib64/
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo cp cudnn.h /opt/nvidia/cuda/include/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;chainerjupyter&quot;&gt;3. chainerとjupyterのセットアップ&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo &lt;span class=&quot;nv&quot;&gt;CUDA_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/nvidia/cuda pip install chainer
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo pip install scipy matplotlib pandas docopt scikit-learn jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;jupyter notebookを立ち上げてブラウザからアクセスできるようにする。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ipython
-&lt;span class=&quot;c&quot;&gt;# 下記を実行して出力されたハッシュをコピー&lt;/span&gt;
-from notebook.auth import passwd
-passwd&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir ~/.jupyter
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;vim ~/.jupyter/jupyter_notebook_config.py
-&lt;span class=&quot;c&quot;&gt;# 下記の内容で保存&lt;/span&gt;
-c &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; get_config&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-c.NotebookApp.ip &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'*'&lt;/span&gt;
-c.NotebookApp.password &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; u&lt;span class=&quot;s1&quot;&gt;'sha1:bcd259ccf...出力されたハッシュ'&lt;/span&gt;
-c.NotebookApp.open_browser &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; False
-c.NotebookApp.port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 任意のポート&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;セキュリティグループの設定で開けておく&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;SSL/HTTPSを使用する方法は&lt;a href=&quot;http://jupyter-notebook.readthedocs.io/en/latest/public_server.html&quot;&gt;こちら&lt;/a&gt;を参照。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;3. イメージの作成とイメージからのインスタンス作成&lt;/h2&gt;
-
-&lt;p&gt;イメージ(テンプレート)の作成はインスタンスのメニュー&amp;gt;イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer02.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer03.png&quot; class=&quot;image-on-frame-medium&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 10 Apr 2016 00:00:00 +0200</pubDate>
-        <link>http://shoya.io/blog/aws-chainer/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/aws-chainer/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>tech</category>
         
       </item>
     
