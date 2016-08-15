@@ -8,6 +8,43 @@
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>コンスタンツ</title>
+        <description>&lt;p class=&quot;injection-center&quot;&gt;ライヒェナウ島&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/konstanz11.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/konstanz/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/konstanz/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>トリベルク</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/triberg01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -312,55 +349,6 @@
         <pubDate>Tue, 28 Jun 2016 00:00:00 +0200</pubDate>
         <link>http://shoya.io/blog/dropbox-ignore/</link>
         <guid isPermaLink="true">http://shoya.io/blog/dropbox-ignore/</guid>
-        
-        <category>Infrastructure</category>
-        
-        
-        <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>Windowsの設定(普段Mac使ってる人向け)</title>
-        <description>&lt;p&gt;Windows上に開発環境を構築することが時々あるのでその作業メモ。&lt;/p&gt;
-
-&lt;h3 id=&quot;sharpkeyswindows&quot;&gt;SharpKeysでWindowsキーをコントロールキーにリマップ&lt;/h3&gt;
-
-&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;http://www.randyrants.com/category/sharpkeys/&quot;&gt;SharpKeys&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;MacBook内臓のキーボードやApple Magic Keyboardのcommandキーを押すとWindowsキーが反応する。コピー・ペーストやアプリを閉じる操作をMacと同じキーで行いたいのでキーリマップソフトウェアを使って変更する。いろいろ試してみたところSharpKyesが良さそうな感じ。(キーリマップソフトウェアにはレジストリを書き換えるものとシステムに常駐するものがあって、SharpKeysは前者。)&lt;/p&gt;
-
-&lt;h3 id=&quot;gnupackcygwin&quot;&gt;gnupackでcygwin環境を構築する&lt;/h3&gt;
-
-&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;http://gnupack.osdn.jp/docs/UsersGuide.html&quot;&gt;gnupack Users Guide&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;gnupackとはインストール不要のcygwin環境。展開して.exeを起動するとそのディレクトリにあるhome/をホームディレクトリとしてLinuxディストリビューション同等の機能が使用できる。VimやEmacsも入っている。以下はおすすめの設定。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;openコマンドでファイルを開く&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cygstart'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;sublコマンドでSublime Textを起動する&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Program&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Files&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Sublime&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Text&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;3:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;gnupackとMinicondaを一緒に使う&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://conda.pydata.org/miniconda.html&quot;&gt;Miniconda&lt;/a&gt;とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Scripts&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Users&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; YOUR_USER_NAME&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Miniconda2&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;Library&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;他にも便利な設定が見つかったら追記していく予定。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 27 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://shoya.io/blog/setup-windows/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/setup-windows/</guid>
         
         <category>Infrastructure</category>
         
