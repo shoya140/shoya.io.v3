@@ -13,7 +13,11 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 
 > オーバーアマガウはドイツバイエルン州ガルミッシュ＝パルテンキルヒェン郡にある村で、10年に一度村人総出の受難劇が催される処として有名である。<cite>[オーバーアマガウ - Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%A2%E3%83%9E%E3%82%AC%E3%82%A6)</cite>
 
+ペストが流行したとき1632年、オーバーアマガウの被害が奇跡的に少なかったことから、信仰あつい村の人々は神に感謝を込めて1634年以来380年以上も受難劇を演じ続けてきたとのこと。
+
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau01.jpg" class="image-on-frame image-fade">
+
+衣装製作から出演まですべてアマチュアの村人たちでおこなう。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau02.jpg" class="image-on-frame image-fade">
 
@@ -41,7 +45,7 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 
 > ドイツ、バイエルン州南西のオーバーアマガウ近くに位置する城である。リンダーホーフ宮殿ともよばれる。バイエルン王ルートヴィヒ2世が建設した3つの城のうち、唯一完成した城である。1874年に建築が開始され、1878年に完成した。完成後、彼は長い期間そこで過ごした。建物内部はロココ様式の豪華な装飾があり、庭園内には金色の女神像の噴水がある。<cite>[リンダーホーフ城 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%B3%E3%83%80%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%95%E5%9F%8E)</cite>
 
-こちらも内装がとても豪華で感動した。建物の中は撮影禁止だった。
+こちらも内装がとても豪華で感動した。キッチンで調理された料理がテーブルごと上の階のダイニングにあがる魔法の食卓など面白い仕掛けもあった。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau08.jpg" class="image-on-frame image-fade">
 
