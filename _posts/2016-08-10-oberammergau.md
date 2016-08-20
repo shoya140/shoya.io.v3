@@ -7,7 +7,7 @@ published: True
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 ---
 
-ミュンヘンを拠点にしてドイツ南部バイエルン州を観光しました。1日目。
+ドイツ南部バイエルン州を観光しました。
 
 <p class="injection-center">オーバーアマガウ</p>
 
