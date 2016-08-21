@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ストラスブールへようこそ
+title: 街道の街 ストラスブール
 categories: ['diary']
 tags: ['Sightseeing']
 published: True
