@@ -604,15 +604,7 @@
     
     
     <url>
-        <loc>http://shoya.io/tag/Programming/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>http://shoya.io/tag/Infrastructure/</loc>
+        <loc>http://shoya.io/tag/Engineering/</loc>
     </url>
     
     
@@ -621,6 +613,14 @@
     
     <url>
         <loc>http://shoya.io/tag/Design/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://shoya.io/tag/Research/</loc>
     </url>
     
     

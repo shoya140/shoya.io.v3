@@ -2,6 +2,11 @@
 layout: page
 title: Blog
 ---
+<div class="tag-header">
+  {% for tag in site.tags %}
+  <a href="/tag/{{ tag[0] }}/"><span class="lsf">tag</span>{{ tag[0] }}</a>({{ tag[1].size }})
+  {% endfor %}
+  </div>
 {% for post in page.posts %}
 <div class="post-list-item">
     <a href="{{ post.url | prepend: site.baseurl }}"></a>

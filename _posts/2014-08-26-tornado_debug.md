@@ -3,7 +3,7 @@ layout: post
 title: Tornadoのデバッグモードを有効にする
 published: True
 categories: ['tech']
-tags: ['Programming']
+tags: ['Engineering']
 keywords: Tornado, debug, デバッグ, リロード
 ---
 

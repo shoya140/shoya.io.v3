@@ -3,7 +3,7 @@ layout: post
 title: Jekyllのカテゴリ内で「次の記事」ボタンを設置する
 published: True
 categories: ['tech']
-tags: ['Programming']
+tags: ['Engineering']
 keywords: カテゴリ, 次の記事, 前の記事, jekyll
 relations:
   - ranking_plugin

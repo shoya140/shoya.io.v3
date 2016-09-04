@@ -3,7 +3,7 @@ layout: post
 title: Jekyllの記事を人気順にソートする
 published: True
 categories: ['tech']
-tags: ['Programming']
+tags: ['Engineering']
 keywords: Jekyll, はてな, facebook, twitter
 relations:
   - hatena_star

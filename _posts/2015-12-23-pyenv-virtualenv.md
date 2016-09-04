@@ -2,7 +2,7 @@
 layout: post
 title: 科学技術計算のためのPython開発環境(2015)
 categories: ['tech']
-tags: ['Programming']
+tags: ['Engineering']
 published: True
 ---
 

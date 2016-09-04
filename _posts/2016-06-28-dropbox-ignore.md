@@ -2,7 +2,7 @@
 layout: post
 title: Dropboxへアップロードしたくないディレクトリをignoreする
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Note']
 published: True
 ---
 

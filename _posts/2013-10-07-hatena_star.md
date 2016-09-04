@@ -3,7 +3,7 @@ layout: post
 title: Jekyllにはてなスター導入した
 published: True
 categories: ['tech']
-tags: ['Programming']
+tags: ['Engineering']
 keywords: Jekyll, はてなスター
 relations:
   - ranking_plugin

@@ -3,7 +3,7 @@ layout: post
 title: Nginxの静的ファイル配信でハマった
 published: True
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 keywords: Nginx, location, root, static
 ---
 

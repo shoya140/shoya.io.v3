@@ -3,7 +3,7 @@ layout: post
 title: Mac起動後の画面が真っ暗
 published: True
 categories: ['diary']
-tags: ['Infrastructure']
+tags: ['Engineering']
 keywords: Mac, ディスプレイ, 認識しない, 真っ暗, 起動
 ---
 

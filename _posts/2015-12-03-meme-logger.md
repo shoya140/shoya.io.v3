@@ -2,7 +2,7 @@
 layout: post
 title: JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました
 categories: ['tech']
-tags: ['ReleaseNote', 'Programming']
+tags: ['ReleaseNote', 'Engineering']
 published: True
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 published: True
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Windowsの設定(普段Mac使ってる人向け)
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 published: True
 ---
 

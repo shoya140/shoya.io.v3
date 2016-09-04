@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3導入メモ
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 published: True
 keywords: Sublime Text3
 ---

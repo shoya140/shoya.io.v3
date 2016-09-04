@@ -3,7 +3,7 @@ layout: post
 title: Chefのknife solo prepareで404
 published: True
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 keywords: chef, vagrant, prepare, 404, error
 ---
 

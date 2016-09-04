@@ -3,7 +3,7 @@ layout: post
 title: Sublime Text3の設定をGit+Dropboxで安全に同期する
 published: True
 categories: ['tech']
-tags: ['Infrastructure']
+tags: ['Engineering']
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png
 ---
 
