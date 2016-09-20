@@ -246,29 +246,25 @@ hr {
     background: #fdfdfd; }
 
 .wrapper {
-  max-width: -webkit-calc(1100px - (30px * 2));
-  max-width: calc(1100px - (30px * 2));
+  max-width: -webkit-calc(700px + (30px * 5.0)*2);
+  max-width: calc(700px + (30px * 5.0)*2);
   margin-right: auto;
-  margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px; }
+  margin-left: auto; }
   @media screen and (max-width: 1000px) {
     .wrapper {
-      max-width: -webkit-calc(900px - (30px));
-      max-width: calc(900px - (30px));
-      padding-right: 0;
-      padding-left: 0; } }
+      max-width: -webkit-calc(700px + (30px*1.5)*2);
+      max-width: calc(700px + (30px*1.5)*2); } }
 
 .wrapper-inside {
   background-color: #fdfdfd;
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-right: 105px;
-  padding-left: 105px; }
+  padding-right: 150px;
+  padding-left: 150px; }
   @media screen and (max-width: 1000px) {
     .wrapper-inside {
-      padding-right: 36px;
-      padding-left: 36px; } }
+      padding-right: 45px;
+      padding-left: 45px; } }
   @media screen and (max-width: 500px) {
     .wrapper-inside {
       padding-right: 12px;
@@ -480,8 +476,8 @@ a:hover .footer-icon {
   position: relative;
   padding-top: 9px;
   padding-bottom: 15px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 3px;
+  padding-right: 3px;
   border-top: 1px solid #e8e8e8; }
   .post-list-item h2 {
     margin-top: 0;
@@ -509,7 +505,6 @@ a:hover .footer-icon {
 
 .post-link {
   display: block;
-  font-size: 24px;
   line-height: 1.2;
   color: #4f4f4f; }
   @media screen and (max-width: 500px) {
@@ -533,13 +528,13 @@ a:hover .footer-icon {
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
-    font-size: 20px; }
+    font-size: 19px; }
   .post-content h3 {
-    font-size: 20px; }
+    font-size: 19px; }
     .post-content h3:before {
       content: "rightright "; }
   .post-content h4 {
-    font-size: 20px; }
+    font-size: 19px; }
   @media screen and (max-width: 500px) {
     .post-content {
       text-align: justify; }
@@ -627,7 +622,7 @@ a:hover .footer-icon {
   -o-text-overflow: ellipsis; }
   @media screen and (max-width: 1000px) {
     .page-button-base, .page-button, .page-button-disabled {
-      width: 44%;
+      width: 43%;
       font-size: 13.6px; } }
   @media screen and (max-width: 500px) {
     .page-button-base, .page-button, .page-button-disabled {
