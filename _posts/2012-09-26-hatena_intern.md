@@ -3,7 +3,7 @@ layout: post
 title: はてなのサマーインターンに参加しました
 published: True
 categories: ['diary']
-tags: ['Event', 'Note']
+tags: ['Note']
 keywords: はてなインターン2012
 relations:
   - paperboy

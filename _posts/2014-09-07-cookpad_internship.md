@@ -3,7 +3,7 @@ layout: post
 title: クックパッドのサマーインターンシップに参加しました
 published: True
 categories: ['diary']
-tags: ['Event', 'Note']
+tags: ['Note']
 keywords: クックパッド, サマーインターン
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/cookpad_internship01.jpg
 relations:

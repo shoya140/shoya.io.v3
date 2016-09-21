@@ -3,7 +3,7 @@ layout: post
 title: クックパッドのデザイン講演会に参加しました
 published: True
 categories: ['diary']
-tags: ['Event', 'Note']
+tags: ['Note']
 keywords: クックパッド, デザイン, UX
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg
 ---

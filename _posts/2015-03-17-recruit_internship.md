@@ -3,7 +3,7 @@ layout: post
 title: リクルートホールディングスのインターンシップに参加しました
 published: True
 categories: ['diary']
-tags: ['Event', 'Note']
+tags: ['Note']
 keywords: リクルート, サマーインターン
 eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/recruit_internship01.png
 relations:

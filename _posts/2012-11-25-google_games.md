@@ -3,7 +3,7 @@ layout: post
 title: GoogleGamesに参加して人生変わった
 published: True
 categories: ['diary']
-tags: ['Event', 'Note']
+tags: ['Note']
 keywords: Google Games
 relations:
   - hatena_intern
