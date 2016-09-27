@@ -738,6 +738,9 @@ a:hover .footer-icon {
 .error-text {
   font-size: 24px; }
 
+.footnotes {
+  font-size: 12px; }
+
 #hexGrid {
   overflow: hidden;
   width: 90%;

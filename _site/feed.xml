@@ -8,6 +8,54 @@
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>定点観測</title>
+        <description>&lt;p&gt;高校時代の恩師から依頼をいただき、年に1度、愛媛県の中高一貫校で講演をしている。ちょうどさきほど今年も行けますという話をしていて、今年でなんと4年連続になる。ということで12月に日本行きます:)&lt;/p&gt;
+
+&lt;p&gt;これまで講演で使ってきたスライドを開くと、荒削りながらも当時伝えたかったことを当時最も良いと思う方法で伝えようとしている跡が見える。そしてその差分が1年間の成長の証だと思うと感慨深い。今年は研究所で働き始めたということもあり、話したい内容が尽きないので、ストーリーもメッセージもガラリと変えていこうと思う。去年の自分をどれだけ超えられるか想像するとワクワクする。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Sep 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/fixed-point-observation/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/fixed-point-observation/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>転んでもただでは起きない性格</title>
+        <description>&lt;p&gt;そろそろ客観的に考えられる頃だと思うので、この2年間について語ろうと思う。&lt;/p&gt;
+
+&lt;p&gt;2年前（大学院1年）の4月から9月くらい、この速度を保つことができれば25歳で博士号をとれるかもしれない&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;という助言を受けて、僕は成果をだそうと焦っていた。修士2年分の講義をまとめてとり、たくさんの実装と実験を行い、原稿をたくさん書いて、気がついたときには生活リズムを壊し、心身に影響がでていた。&lt;/p&gt;
+
+&lt;p&gt;10月から1月くらいまで、体がいうことを聞かず、1日18時間以上眠り続ける生活を続けていた。2月頃になると、気持ちの落ち込みも随分回復して大学に復帰することができた。しかしこの後半の時期（2月以降）の方がつらかった。頭が思うように働かず、まとまった文章が書けなくなっていた。研究したいのに研究できないというのは本当に苦しい。研究者は、実験する-&amp;gt;結果を論文にまとめる-&amp;gt;成果をもとに申請書を書くというサイクルを回す仕事なので、自分の頭のなかにあるものを文字にして発信することができなければ致命的である。特に、日によって調子が浮き沈みするのが大変だった。タスクを引き受けるとき、今日の自分ならこなせるが明日の自分がこなせる保証がなかった。他にもいろんな悩みがあり、自分が書いたのかと思うとゾッとするようなメモが残っている。&lt;/p&gt;
+
+&lt;p&gt;しかしこの苦しみが「心温計」のアイデアをもたらした。僕は生活リズムがおかしくなり始めた頃から自身にセンサを付けて生活に関する様々なログを取っていて、気持ちの浮き沈みと行動に相互の相関があることを見つけた。「行動ログや各種センシングによって心の状態を測り、状態を自分や他人に分かりやすく伝える」というテーマで提案書を書き、未踏に採択された。心温計の開発を通じていろんなセンシングを試し、多くの方から助言をいただき、結果としてスーパークリエータに認定されるとともに、心温計を使うことで自分の調子をもとに戻すことに成功した。&lt;/p&gt;
+
+&lt;p&gt;もちろん、2年前のペースを維持して今年博士号を取れればそれは良い人生ではあるけれど、この経験がなければ未踏に採択されることはなかったと思うし、修士で卒業して現在のように海外の研究所で働くという選択肢を思いつくことはなかった。&lt;a href=&quot;/blog/towards-a-scientist/&quot;&gt;なんで科学者を目指すようになったか&lt;/a&gt;と同じような話になったけど、人は失敗から学ぶ事ができるし、予期せぬ結果の先には偶然のチャンスがあるものだし、その努力はどこかで必ず役に立つ。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;単位や論文の数が要件を満たしていれば、博士前期（修士）を1年・博士後期（博士）を1年短縮して、普通27歳でとれるところを25歳でとることができる。さらに学部を1年飛び級して24歳でとるのが日本では最短のはず。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 26 Sep 2016 00:00:00 +0200</pubDate>
+        <link>http://shoya.io/blog/turning-anything-into-profit/</link>
+        <guid isPermaLink="true">http://shoya.io/blog/turning-anything-into-profit/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
         <title>バーデン=バーデン</title>
         <description>&lt;p&gt;たまには広いお風呂に浸かってリラックスしたいなと思って、ヨーロッパ屈指の由緒ある温泉保養地として知られるバーデン=バーデンに行ってきた。&lt;/p&gt;
 
@@ -325,114 +373,6 @@
         <pubDate>Sat, 13 Aug 2016 00:00:00 +0200</pubDate>
         <link>http://shoya.io/blog/muenchen/</link>
         <guid isPermaLink="true">http://shoya.io/blog/muenchen/</guid>
-        
-        <category>Sightseeing</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>ドイツ最高峰ツークシュピッツェ</title>
-        <description>&lt;p&gt;ドイツで一番高い山であるツークシュピッツェに登ってきました。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ツークシュピッツェ山は、ドイツ・バイエルン州とオーストリア・チロル州の国境にある山。高さ2962mで、ドイツの最高峰である。 &lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%84%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%94%E3%83%83%E3%83%84%E3%82%A&quot;&gt;ツークシュピッツェ - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;麓から頂上まで登山鉄道やケーブルカーで一気に登ることができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;行きはケーブルカー帰りは鉄道で移動することにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ケーブルカーから見た景色。森から岩山へ、岩山から雪へと変わっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;金色の柱がドイツで一番高い場所の印。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;展望台まではケーブルカーで行けるのですが、最高峰の印まではロープを伝って登る必要があります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;途中には歩ける場所がないところも。下は視界ゼロで足を踏み外したら死ぬ。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ドイツで一番高いところにある教会。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ドイツで一番高いところにある研究所。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これまで訪れた場所の中で最も感動した景色でした。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/zugspitze10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 12 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://shoya.io/blog/zugspitze/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/zugspitze/</guid>
-        
-        <category>Sightseeing</category>
-        
-        
-        <category>diary</category>
-        
-      </item>
-    
-      <item>
-        <title>ノイシュバンシュタイン城</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/blog/oberammergau/&quot;&gt;前回&lt;/a&gt;に続きバイエルン州の観光の様子です。道路を挟んで左に見えるのがノイシュバンシュタイン城、右がホーエンシュバンガウ城です。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;ノイシュバンシュタイン城&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ドイツ南部のバイエルン州バイエルン・シュヴァーベン地方にある城である。オストアルゴイ郡フュッセンの東南東方向（直線距離にて約4km）に位置する。バイエルン王ルートヴィヒ2世によって19世紀に建築された。現在はロマンチック街道の終点として、人気の観光スポットとなっており、内部を見学することができる。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%8E%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%83%B3%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%A4%E3%83%B3%E5%9F%8E&quot;&gt;ノイシュバンシュタイン城 - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ディズニーランドのシンデレラ城のモデルになったといわれているノイシュバンシュタイン城、可愛らしいお城かと思っていたら、岩山にそびえ立つかっこいい城でした。見る角度によって印象が違う。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;近くで見ると壮大といった感じ。城内は豪華。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;城の窓やバルコニーからあたり一面を見渡すことができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;ホーエンシュバンガウ城&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;1832年、マクシミリアン2世は12世紀に建設されたが廃墟になっていたシュヴァンシュタイン城を購入した。そして4年ほどの歳月を費やし、古城を改築した。これがホーエンシュヴァンガウ城である。ルートヴィヒ2世は幼年時代をホーエンシュヴァンガウ城で過ごした。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%9B%E3%83%BC%E3%82%A8%E3%83%B3%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%83%B3%E3%82%AC%E3%82%A6%E5%9F%8E&quot;&gt;ホーエンシュバンガウ城 - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;時間がなかったのでホーエンシュバンガウ城は遠くから見ただけ。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/neuschwanstein08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 11 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://shoya.io/blog/neuschwanstein/</link>
-        <guid isPermaLink="true">http://shoya.io/blog/neuschwanstein/</guid>
         
         <category>Sightseeing</category>
         

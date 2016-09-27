@@ -45,9 +45,9 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 * <a href="http://mashupaward.jp/">MashupAwards11</a>: Semifinal stage, 2015
 * <a href="http://shoya.io/blog/honor2/">President's Honor in Osaka Prefecture University</a>, 2015
 * <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
-* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html">IPA MITOH Program</a>: Accept, 2015
 * <a href="http://recruit-jinji.jp/workshop2015/">2Weeks US Workshop 2015 by Recruit Holdings Co.</a>: Champion, 2015
 * <a href="https://mashupawards.doorkeeper.jp/events/25862">JINS MEME HACKATHON Powered by Mashup Awards</a>: Champion, 2015
+* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html">IPA MITOH Program</a>: Accept, 2015
 * <a href="https://www.imaginecup.com/">Imagine Cup 2015 Inovation Path</a>: Best 3 at Japan preliminary round, 2015
 * <a href="http://recruit-jinji.jp/adf_fes2015/">APPLICATION DEVELOPER FESTIVAL</a>: Staff, 2015
 * <a href="https://sites.google.com/site/miru2014okayama/wakate">MIRU2014 Young Researchers' Program</a>: Best Wakate Presentation Award, Audience Award, 2014
