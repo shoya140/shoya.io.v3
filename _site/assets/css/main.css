@@ -542,7 +542,7 @@ a:hover .footer-icon {
         font-size: 15px; } }
 
 .image-on-frame, .image-on-frame-medium, .image-on-frame-small, .image-on-frame-mini {
-  max-width: 90%;
+  max-width: 100%;
   position: relative;
   display: block;
   padding: 5px;
