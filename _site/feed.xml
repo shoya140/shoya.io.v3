@@ -11,7 +11,7 @@
         <title>昔作ったBotがドイツで僕の帰りを待ち続けていた</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
 
-&lt;p&gt;僕が在籍しているカイザースラウテルン工科大学にはMENSAと呼ばれる食堂があって、普段はここで昼食をとっている。おすすめは2種類の日替わりメニューで、学生は入り口の電子掲示板を見てEssen1/2のどちらかを選ぶ。しかしこの掲示板、ドイツ語表記で写真もないので、ドイツ語が読めない留学生は列の長さ（人気度）だけでメニューを決めなければならないという問題を抱えている。&lt;/p&gt;
+&lt;p&gt;僕が在籍しているカイザースラウテルン工科大学にはMENSAと呼ばれる食堂があって、普段はここで昼食をとっている。おすすめは2種類の日替わりメニュー。学生は入り口の電子掲示板を見てEssen1/2のどちらかを選ぶ。しかしこの掲示板、ドイツ語表記で写真もないので、ドイツ語が読めない学生は列の長さ（人気度）だけでメニューを決めなければならないという問題を抱えている。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/mensa01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -27,13 +27,11 @@
   &lt;li&gt;TwitterのAPIを使って専用アカウントから投稿する&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;集めたデータはすべて保存し、httpリクエストで取り出せるようにした。従っていろいろなサービスと連携させることができる。例えば&lt;br /&gt;
-&lt;a href=&quot;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&quot;&gt;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&lt;/a&gt;&lt;br /&gt;
-で2016年9月23日に僕が食べたメニューを取得することができる。&lt;/p&gt;
+&lt;p&gt;集めたデータはすべて保存し、httpリクエストで取り出せるようにした。例えば &lt;a href=&quot;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&quot;&gt;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&lt;/a&gt; で2016年9月23日に僕が食べたメニューが返ってくる。Twitter以外にも様々なサービスと連携させることができる。&lt;/p&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;特徴&lt;/h3&gt;
 
-&lt;p&gt;「作っていた」と書いたのは、このBotは3年前にこちらに留学していたときに作ったものだから。（当時のメモ: &lt;a href=&quot;http://shoya.io/blog/microsoft_translator/&quot;&gt;PythonでMicrosoft Translator APIを使ってみる&lt;/a&gt;）その後システムは何も手を加えられることもなく動き続け、今も毎日使われている。サーバーの設定・APIの仕様・大学Webサイトのどれか一つでも変わると止まってしまうことを考えると、今も動き続けているのは奇跡といえる。僕がいなかった間も毎日投稿しながら帰りを待っていたのかと思うと感慨深い。&lt;/p&gt;
+&lt;p&gt;「作っていた」と書いたのは、このBotは3年前にこちらに留学していたときに作ったものだから。（当時のメモ: &lt;a href=&quot;http://shoya.io/blog/microsoft_translator/&quot;&gt;PythonでMicrosoft Translator APIを使ってみる&lt;/a&gt;）その後システムは何も手を加えられることもなく動き続け、今も毎日使われている。サーバーの設定やAPIの仕様、大学Webサイトのレイアウトなど、どれか一つでも変わると止まってしまうことを考えると、動き続けているのは奇跡といえる。僕がいなかった間も毎日投稿しながら帰りを待っていたのかと思うとなんだか愛着が湧いてくる。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/todaysmensa&quot;&gt;Today’s Mensa(@TodaysMensa)さん | Twitter&lt;/a&gt;&lt;/p&gt;
 </description>
