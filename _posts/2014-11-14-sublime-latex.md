@@ -12,7 +12,7 @@ Sublime Textにはcommand+bでコードを実行する機能(Build System)があ
 
 ### 手順
 
-1. Tools>Build System>New Build System...(上図参照)を選択してBuild Systemを作成する。
+1. Tools>Build System>New Build System...を選択してBuild Systemを作成する。
 
 2. 新規ファイルが開かれるので、下記の設定を記入して保存する。ファイル名がメニューバーに表示されるBuild Systemの名前になる。保存場所はデフォルトで ~/Library/Application Support/Sublime Text 3/Packages/User になる。
 

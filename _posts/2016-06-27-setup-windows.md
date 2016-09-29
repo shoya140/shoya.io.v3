@@ -22,7 +22,7 @@ gnupackとはインストール不要のcygwin環境。展開して.exeを起動
 
 **openコマンドでファイルを開く**
 
-cygstartというコマンドがMacターミナルのopenに相当するようなので下記を.bashrcに追記する。
+cygstartというコマンドがMacターミナルのopenに相当するようなので.bashrcに追記。
 
 {% highlight bash %}
 alias open='cygstart'
@@ -30,7 +30,7 @@ alias open='cygstart'
 
 **sublコマンドでSublime Textを起動する**
 
-Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記する。
+Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記。
 
 {% highlight bash %}
 export PATH=C:\\Program\ Files\\Sublime\ Text\ 3:$PATH
@@ -38,7 +38,7 @@ export PATH=C:\\Program\ Files\\Sublime\ Text\ 3:$PATH
 
 **gnupackとMinicondaを一緒に使う**
 
-[Miniconda](http://conda.pydata.org/miniconda.html)とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記する。Miniconda2のところはインストールしたPythonのバージョンに合わせる。
+[Miniconda](http://conda.pydata.org/miniconda.html)とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記。Miniconda2のところはインストールしたPythonのバージョンに合わせる。
 
 {% highlight bash %}
 export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda2\\:$PATH

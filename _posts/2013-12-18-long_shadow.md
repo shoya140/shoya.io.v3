@@ -28,12 +28,12 @@ relations:
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow01.png" class="image-on-frame">
 
-それらを別の場所にコピーして、さらにアイコンのコピーを正方形の枠外にも配置します。
+それらを別の場所にコピーして、さらにアイコンのコピーを枠外にも配置します。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow02.png" class="image-on-frame">
 
 画面左に見える「ツール」から「ブレンドツール」を見つけてダブルクリックします。<br>
-今回はステップ数を大きな数にして、オブジェクトの間をブレンドで埋め尽くします。OKを押すとマウスカーソルが変わるので、ふたつのアイコンを順番にクリックしてください。
+今回はステップ数を大きな数にして、オブジェクトの間をブレンドで埋め尽くします。OKを押すとマウスカーソルが変わるので、ふたつのアイコンを順番にクリックします。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow03.png" class="image-on-frame">
 
@@ -41,7 +41,7 @@ relations:
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow04.png" class="image-on-frame">
 
-無数のアイコンが作成されるので、それらを「パスファインダー > 合体」でひとつにします。
+無数のアイコンが作成されるので、「パスファインダー > 合体」でひとつにします。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow05.png" class="image-on-frame">
 
@@ -53,7 +53,7 @@ relations:
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow07.png" class="image-on-frame">
 
-影をアイコンの下に配置して、「暗くて濃い色」とグラデーションを適用してください。グラデーションは角度135度・終端の不透明率20%くらいに設定するといい感じに仕上がります。
+影をアイコンの下に配置して、「暗くて濃い色」とグラデーションを適用します。角度135度・終端の不透明率20%くらいに設定するといい感じに仕上がります。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/long_shadow08.png" class="image-on-frame">
 

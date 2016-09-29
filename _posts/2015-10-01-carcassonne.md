@@ -41,7 +41,7 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/carcassonne16.jpg
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/carcassonne09.jpg" class="image-on-frame image-fade">
 
-城塞は2層構造になっていて、その間を歩くこともできる。1周すると約3km。52個の円錐屋根の塔が見える。どれも同じ形をしているのでいまどこを歩いているのか分からなくなる。
+城塞は2層構造になっていて、その間を歩くこともできる。1周すると約3km。52個の円錐屋根の塔が見える。どれも同じ形をしているのでどこを歩いているのか分からなくなる。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/carcassonne10.jpg" class="image-on-frame image-fade">
 

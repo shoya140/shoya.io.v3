@@ -6,7 +6,7 @@ categories: ['tech']
 tags: ['Engineering']
 ---
 
-[LiT!関西 Advent Calendar 2014](http://www.adventar.org/calendars/607) 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプログラミングとそれを支えるMacの便利機能について書きます。
+[LiT!関西 Advent Calendar 2014](http://www.adventar.org/calendars/607) 1日目の記事ということで、プログラミングを教える/教わるときによくやっているペアプロとそれを支えるMacの便利機能について書きます。
 
 ### ペアプログラミングとは
 
@@ -30,11 +30,11 @@ tags: ['Engineering']
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/pair03.png" class="image-on-frame-medium image-fade">
 
-するとドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。
+ドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/pair04.png" class="image-on-frame-medium image-fade">
 
-以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプログラミングを開始しましょう。
+以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプロを開始しましょう。
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/pair05.png" class="image-on-frame-medium image-fade">
 

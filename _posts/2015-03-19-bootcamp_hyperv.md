@@ -6,7 +6,7 @@ tags: ['Engineering']
 published: True
 ---
 
-Windows Phoneアプリのエミュレータが起動できなくなる不具合を発見したので報告します。
+Windows Phoneのエミュレータが起動できなくなる問題を発見したので報告します。
 
 ### エラー内容
 

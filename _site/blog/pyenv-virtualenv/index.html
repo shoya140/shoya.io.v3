@@ -99,7 +99,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew install opencv3 --with-python3</code></pre></figure>
 
-<p>現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。</p>
+<p>現在のPythonが見ているところにpathを通す。<br />新しい仮想環境を作る度に下記のコマンドを実行する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># python2</span>
 <span class="gp">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python2.7/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">"from distutils.sysconfig import get_python_lib; print(get_python_lib())"</span><span class="k">)</span>/opencv.pth
@@ -123,9 +123,9 @@
 
 <h3 id="virtualenv">参考1 virtualenvの使い方</h3>
 
-<p>大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvを使って仮想環境を用意する。</p>
+<p>大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvで仮想環境を用意する。</p>
 
-<p>virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用する)</p>
+<p>virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用)</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mkdir tutorial <span class="o">&amp;&amp;</span> <span class="nb">cd </span>tutorial
 <span class="gp">$ </span>pyenv virtualenv 3.5.0 3.5.0-tutorial

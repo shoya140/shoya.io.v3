@@ -111,7 +111,7 @@ dvipdfmx -p a4 <span class="nv">$filename</span>.dvi
 <span class="c"># preview</span>
 open <span class="nv">$filename</span>.pdf</code></pre></figure>
 
-<p>あと研究室秘伝のテンプレートファイルは往々にしてShift-JISだったりするので、UTF-8に変換してから使っている。
+<p>あと研究室秘伝のテンプレートファイルはShift-JISだったりするので、UTF-8に変換してから使っている。
 変換後は円マークをバックスラッシュに置換する必要がある。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">iconv -s -f SHIFT_JIS -t UTF-8 paper.tex &gt; paper_utf8.tex

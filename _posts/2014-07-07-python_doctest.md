@@ -44,7 +44,7 @@ Got:
 ***Test Failed*** 1 failures.
 {% endhighlight %}
 
-テストが失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。
+失敗しました。除算を用いるので引数を浮動小数点として扱うように修正します。
 
 {% highlight python %}
 import doctest

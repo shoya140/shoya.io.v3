@@ -7,7 +7,7 @@ tags: ['Engineering']
 keywords: Nginx, location, root, static
 ---
 
-静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。[概説Tornado](http://www.oreilly.co.jp/books/9784873115764/)の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定をNginxに書いた。
+静的ファイルに限った話ではないけれど、Nginxのlocationに応じたrootの設定でつまずいたのでメモ。[概説Tornado](http://www.oreilly.co.jp/books/9784873115764/)の中に「静的リソースはアプリケーションにリクエストをプロキシするのではなくNginxに捌かせるほうがアプリケーションの不要な負担を取り除けて有用」という説明があったので、staticディレクトリへのルーティング設定を書いた。
 
 {% highlight nginx %}
 location /static/ {
@@ -25,7 +25,7 @@ location /static/ {
 
 正しくはこちら。
 
-rootはstaticディレクトリのrootを指すのではなく、アプリケーションのroot。/static/はURLとして生きているので、/static/を含めたパスでファイルへ届くように書く必要がある。
+rootはstaticディレクトリのrootを指すのではなく、アプリケーションのroot。/static/はURLとして生きているので/static/を含むパスでファイルへ届くように書く必要がある。
 
 (備考)アプリケーション全体のnginx設定ファイルはこんな感じ。各アプリケーションごとに設定ファイルを分けてconf.d/以下に保存しておき、nginx.confでそれらをインポートしている。
 

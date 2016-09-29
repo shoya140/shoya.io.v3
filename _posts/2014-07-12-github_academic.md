@@ -7,7 +7,7 @@ tags: ['Note']
 keywords: GitHub, 学割, 学生, プライベートリポジトリ, academic
 ---
 
-GitHubにはプライベートリポジトリが無料で使える(billing planが1つ上がる)学割があります。
+GitHubにはプライベートリポジトリが無料で使える学割があります。
 
 [GitHub Education](https://education.github.com/)
 
@@ -19,7 +19,7 @@ GitHubにはプライベートリポジトリが無料で使える(billing plan�
 >
 > You might get a message about not being able to apply the new coupon. That's because you can't have two simultaneous coupons on your account. Once your old coupon expires, you can apply the new coupon. There's usually a "grace period" of a few days between the expiration and the first charge, but if you do get charged before you add your new coupon, just let us know! Please don't hesitate to let us know if you have any questions or concerns.
 
-あと学割が切れても既に作成してあるプライベートリポジトリはプライベートのままらしい。
+あと学割が切れても既存のプライベートリポジトリはプライベートのままらしい。
 
 <blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/alpaca_taichou">@alpaca_taichou</a> 突然勝手にpublicになるんですか?</p>&mdash; Kazuki Yoshida (@101kaz) <a href="https://twitter.com/101kaz/statuses/486756076776214528">2014, 7月 9</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

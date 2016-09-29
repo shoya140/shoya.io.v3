@@ -45,7 +45,7 @@ Homebrewでインストールする。
 $ brew install opencv3 --with-python3
 {% endhighlight %}
 
-現在のPythonが見ているところにpathを通す。新しい仮想環境を作る度に下記のコマンドを実行する。
+現在のPythonが見ているところにpathを通す。<br>新しい仮想環境を作る度に下記のコマンドを実行する。
 
 {% highlight bash %}
 # python2
@@ -77,9 +77,9 @@ $ echo backend : TkAgg > ~/.matplotlib/matplotlibrc
 
 ### 参考1 virtualenvの使い方
 
-大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvを使って仮想環境を用意する。
+大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvで仮想環境を用意する。
 
-virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用する)
+virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用)
 
 {% highlight bash %}
 $ mkdir tutorial && cd tutorial

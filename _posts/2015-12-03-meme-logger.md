@@ -47,6 +47,6 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios
 
 ### まとめ
 
-JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。[JINS MEME Advent Calendar2015](http://qiita.com/advent-calendar/2015/jinsmeme) 明日の担当は古川さんとのことでとても楽しみです！
+JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。[JINS MEME Advent Calendar2015](http://qiita.com/advent-calendar/2015/jinsmeme) 明日は古川さんとのことでとても楽しみです！
 
 * [https://github.com/shoya140/MEMELogger-iOS-developers](https://github.com/shoya140/MEMELogger-iOS-developers)

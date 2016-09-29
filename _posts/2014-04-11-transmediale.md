@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: トランスメディアーレに行ってきました
 published: True
