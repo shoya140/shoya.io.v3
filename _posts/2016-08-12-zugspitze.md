@@ -9,7 +9,7 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/zugspitze10.jpg
 
 ドイツで一番高い山であるツークシュピッツェに登ってきました。
 
-> ツークシュピッツェ山は、ドイツ・バイエルン州とオーストリア・チロル州の国境にある山。高さ2962mで、ドイツの最高峰である。 <cite>[ツークシュピッツェ - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%84%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%94%E3%83%83%E3%83%84%E3%82%A)</cite>
+> ツークシュピッツェ山は、ドイツ・バイエルン州とオーストリア・チロル州の国境にある山。高さ2962mで、ドイツの最高峰である。 <cite>[ツークシュピッツェ - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%84%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%94%E3%83%83%E3%83%84%E3%82%A7)</cite>
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/zugspitze01.jpg" class="image-on-frame image-fade">
 
