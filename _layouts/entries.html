@@ -3,10 +3,12 @@ layout: page
 title: Blog
 ---
 <div class="tag-header">
-  {% for tag in site.tags %}
-  <a href="/tag/{{ tag[0] }}/">#{{ tag[0] }}</a>({{ tag[1].size }})
-  {% endfor %}
-  </div>
+  <a href="/tag/Research/">#研究</a>({{ site.tags["Research"].size }})
+  <a href="/tag/Engineering/">#エンジニアリング</a>({{ site.tags["Engineering"].size }})
+  <a href="/tag/Design/">#デザイン</a>({{ site.tags["Design"].size }})
+  <a href="/tag/Sightseeing/">#観光</a>({{ site.tags["Sightseeing"].size }})
+  <a href="/tag/Note/">#日記</a>({{ site.tags["Note"].size }})
+  <a href="/tag/ReleaseNote/">#作りました</a>({{ site.tags["ReleaseNote"].size }})
 {% for post in page.posts %}
 <div class="post-list-item">
     <a href="{{ post.url | prepend: site.baseurl }}"></a>
