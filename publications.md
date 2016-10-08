@@ -10,9 +10,9 @@ permalink: /publications/
 
 ### International Conference
 
-1. <u>Shoya Ishimaru</u>. <span style="font-weight: 700;" id="sabine2016sensing">Cognitive State Recognition for Developing Anticipating Textbook</span>. In Proceedings of the The Ninth International Conference on Mobile Computing and Ubiquitous Networking (ICMU2016). October 2016, to appear.
-
 1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel, and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">Sensing thermal stress at office workplaces</span>. In Proceedings of the Fifth International Conference on Human-Environment System (ICHES2016 Nagoya). October 2016, to appear.
+
+1. <u>Shoya Ishimaru</u>. <span style="font-weight: 700;" id="sabine2016sensing">Cognitive State Recognition for Developing Anticipating Textbook</span>. In Proceedings of the The Ninth International Conference on Mobile Computing and Ubiquitous Networking (ICMU2016). October 2016.
 
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016textbook">Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016.
 
