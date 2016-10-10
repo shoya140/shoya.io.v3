@@ -483,11 +483,16 @@ a:hover .footer-icon {
     .index-right {
       width: 100%; } }
 
+.index-title {
+  margin-bottom: 0; }
+
 .index-icon {
-  width: 80%; }
+  width: 80%;
+  padding-top: 20px; }
   @media screen and (max-width: 500px) {
     .index-icon {
-      width: 50%; } }
+      width: 50%;
+      padding-top: 0; } }
 
 .index-image {
   width: 90%;
