@@ -51,7 +51,7 @@ permalink: /aboutme/jp/
 * <a href="http://imabarihigashi-s.esnet.ed.jp/08communication/261006-challengehighschool-kouen/261006-challengehighschool-koien.html"><span style="font-weight: 600;">えひめ学力向上チャレンジハイスクール事業 同世代のトップランナーによる講演会</span></a> 講演 (10.2014)
 * <a href ="https://sites.google.com/site/miru2014okayama/wakate"><span style="font-weight: 600;">MIRU2014 若手プログラム</span></a> Best Wakate Presentation Award, Audience Award (06.2014)
 * <a href="http://jp.startup-dating.com/2013/05/super-hackathon-2013-in-osak"><span style="font-weight: 600;">スーパーハッカソン2013</span></a> 3位・審査委員賞 (05.2013)
-* <a href="http://bussorenre.com/?p=45"><span style="font-weight: 600;">KtotoHackathon</span></a> 優勝 (12.2012)
+* <a href="http://bussorenre.com/?p=45"><span style="font-weight: 600;">KyotoHackathon</span></a> 優勝 (12.2012)
 * <a href="http://shoya.io/blog/honor/"><span style="font-weight: 600;">平成24年度大阪府立大学学長顕彰</span></a> (11.2012)
 * <a href="http://ma8.mashupaward.jp/"><span style="font-weight: 600;">MashupAwards8</span></a> 準決勝 (11.2012)
 * <a href="http://internship.blog.klab.jp/2012/08/10/ptlab1-day1/"><span style="font-weight: 600;">KLab株式会社第1回プロトタイピングラボ</span></a> 優勝 (08.2012)
