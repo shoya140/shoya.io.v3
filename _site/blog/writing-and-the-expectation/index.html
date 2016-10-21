@@ -8,17 +8,17 @@
     <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
-    <meta property="og:title" content="Windowsの設定(普段Mac使ってる人向け)">
+    <meta property="og:title" content="文章と期待値">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://shoya.io/blog/setup-windows/">
+    <meta property="og:url" content="http://shoya.io/blog/writing-and-the-expectation/">
     
         <meta property="og:image" content="http://shoya.io/assets/img/icon_laptop.png">
     
-    <title>Windowsの設定(普段Mac使ってる人向け) - shoya.io</title>
+    <title>文章と期待値 - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="http://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://shoya.io/blog/setup-windows/">
+    <link rel="canonical" href="http://shoya.io/blog/writing-and-the-expectation/">
     <link rel="shortcut icon" href="http://shoya.io/assets/img/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 </head>
@@ -57,50 +57,22 @@
       <div class="post">
 
         <header class="post-header">
-          <p class="post-meta">Jun 27, 2016
+          <p class="post-meta">Oct 21, 2016
           
-          [<a href="/tag/Engineering/">Engineering</a>]
+          [<a href="/tag/Note/">Note</a>]
           
           </p>
-          <a href="/blog/setup-windows/"><h1 class="post-title">Windowsの設定(普段Mac使ってる人向け)</h1></a>
+          <a href="/blog/writing-and-the-expectation/"><h1 class="post-title">文章と期待値</h1></a>
         </header>
 
         <article class="post-content">
-          <p>Windows上に開発環境を構築することが時々あるのでその作業メモ。</p>
+          <p>やる気はあるのに手が動かないという状態は期待値の設定がおかしいのかもしれない。</p>
 
-<h3 id="sharpkeyswindows">SharpKeysでWindowsキーをコントロールキーにリマップ</h3>
+<p>時々パタリと文章が書けなくなることがあるのだけれど、それは自分の中でその作業や成果物に対する期待値を高く設定しすぎているのかもしれない。面白い実験結果・成果物なのでしっかり文章を書こうとか、遅れた分クオリティをあげようとか、無意識にそういうことを考えてしまっている気がする。実際、この文章は期待値０で書いてるので頭の中で考えたことがスラスラ文字になっている。</p>
 
-<p><cite><a href="http://www.randyrants.com/category/sharpkeys/">SharpKeys</a></cite></p>
+<p>過剰に期待値を上げまくった文章書きに締め切り間際まで着手できず、直前の頑張りで仕上げることがある。その時の期待値は振り切れて（提出することに意味があるというレベルまで）低くなっている。しかし不思議なことに、後からその文章を読んだら結構普通に書けていて、腰を据えて書いた文章と遜色がなかったりする。むしろ勢いがあって良い。</p>
 
-<p>MacBook内臓のキーボードやApple Magic Keyboardのcommandキーを押すとWindowsキーが反応する。コピー・ペーストやアプリを閉じる操作をMacと同じキーで行いたいのでキーリマップソフトウェアを使って変更する。いろいろ試してみたところSharpKyesが良さそうな感じ。(キーリマップソフトウェアにはレジストリを書き換えるものとシステムに常駐するものがあって、SharpKeysは前者。)</p>
-
-<h3 id="gnupackcygwin">gnupackでcygwin環境を構築する</h3>
-
-<p><cite><a href="http://gnupack.osdn.jp/docs/UsersGuide.html">gnupack Users Guide</a></cite></p>
-
-<p>gnupackとはインストール不要のcygwin環境。展開して.exeを起動するとそのディレクトリにあるhome/をホームディレクトリとしてLinuxディストリビューション同等の機能が使用できる。VimやEmacsも入っている。以下はおすすめの設定。</p>
-
-<p><strong>openコマンドでファイルを開く</strong></p>
-
-<p>cygstartというコマンドがMacターミナルのopenに相当するようなので.bashrcに追記。</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">open</span><span class="o">=</span><span class="s1">'cygstart'</span></code></pre></figure>
-
-<p><strong>sublコマンドでSublime Textを起動する</strong></p>
-
-<p>Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記。</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Program<span class="se">\ </span>Files<span class="se">\\</span>Sublime<span class="se">\ </span>Text<span class="se">\ </span>3:<span class="nv">$PATH</span></code></pre></figure>
-
-<p><strong>gnupackとMinicondaを一緒に使う</strong></p>
-
-<p><a href="http://conda.pydata.org/miniconda.html">Miniconda</a>とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記。Miniconda2のところはインストールしたPythonのバージョンに合わせる。</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span>YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>:<span class="nv">$PATH</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span> YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>Scripts<span class="se">\\</span>:<span class="nv">$PATH</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Users<span class="se">\\</span> YOUR_USER_NAME<span class="se">\\</span>Miniconda2<span class="se">\\</span>Library<span class="se">\\</span>bin:<span class="nv">$PATH</span></code></pre></figure>
-
-<p>他にも便利な設定が見つかったら追記していく予定。</p>
+<p>クオリティは後から読み返しながら上げていけば良い。最高の一文を置いていくのではなく、とりあえず先に概要をいくつか書いてみて、良いと思ったものを選んで中身を書く。骨格をつくる。いっぱい並べて良いのを選ぶ。肉付けする。削る。また肉付けする。書くことで考えが整理されて伝えたいことが変わることもある。それも面白い。</p>
 
         </article>
 
@@ -109,21 +81,21 @@
         </div>
 
         <div class="post-social">
-          <div class="tweet-button"><a href="https://twitter.com/share?text=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)%20-%20shoya.io&amp;url=http://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+          <div class="tweet-button"><a href="https://twitter.com/share?text=%E6%96%87%E7%AB%A0%E3%81%A8%E6%9C%9F%E5%BE%85%E5%80%A4%20-%20shoya.io&amp;url=http://shoya.io/blog/writing-and-the-expectation/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
         </a></div>
-          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/setup-windows/&amp;t=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=http://shoya.io/blog/writing-and-the-expectation/&amp;t=%E6%96%87%E7%AB%A0%E3%81%A8%E6%9C%9F%E5%BE%85%E5%80%A4" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
         </a></div>
-          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=http://shoya.io/blog/writing-and-the-expectation/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
         </a></div>
-          <div class="hatena-star"><a href="http://shoya.io/blog/setup-windows/" style="display: none;">hatena</a></div>
+          <div class="hatena-star"><a href="http://shoya.io/blog/writing-and-the-expectation/" style="display: none;">hatena</a></div>
         </div>
 
         <div class="pagenation">
           
-            <div class="page-button"><a href="/blog/life-in-germany2/"></a><span class="lsf">left</span> Sol-31</div>
+            <div class="page-button"><a href="/blog/mensa/"></a><span class="lsf">left</span> 昔作ったBotがドイツで僕の帰りを待ち続けていた</div>
           
           
-            <div class="page-button"><a href="/blog/dropbox-ignore/"></a>Dropboxへアップロードしたくないディレクトリをignoreする <span class="lsf">right</span></div>
+            <div class="page-button-disabled">Next <span class="lsf">right</span></div>
           
         </div>
 
