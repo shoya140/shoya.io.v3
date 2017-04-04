@@ -31,13 +31,19 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 
 ### Education
 
-* MS CS, Graduate School of Engineering, Osaka Prefecture University, 04.2014 - 03.2016
-* BS CS, Osaka Prefecture University, 04.2010 - 03.2014
+* Master of Engineering, Osaka Prefecture University, 03.2016
+* Bachelor of Engineering, Osaka Prefecture University, 03.2014
 
 ### Study Abroad
 
 * University of La Rochelle, France, 09.2015 - 10.2015
-* DFKI / Kaiserslautern University of Technology, Germany, 10.2013 - 03.2014
+* Kaiserslautern University of Technology, Germany, 10.2013 - 03.2014
+
+### Fundings
+
+* JSPS Grant-in-Aid for Scientific Research (C), FY2017-2019, 3.600.000 JPY
+* JSPS Grant-in-Aid for Young Scientists (B), FY2017-2019, 3.200.000 JPY
+* IPA Exploratory IT Human Resources Project (MITOH), FY2015, 2.304.000 JPY
 
 ### Activities
 
