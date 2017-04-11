@@ -7,7 +7,7 @@ permalink: /aboutme/jp/
 
 ## 石丸 翔也 [[EN](/aboutme/)/JP]
 
-偉大な研究を成し遂げて世界中の人を幸せにすることが目標。カメラやセンサーを利用して人間の行動を認識する研究に取り組んでいます。コンピュータビジョン・パターン認識・認知科学に興味があります。[iOS Android Webアプリ開発](/applications/)が趣味です。
+面白い発明で世界中の人を幸せにすることが目標。カメラやセンサーを利用して人間の行動を認識する研究に取り組んでいます。コンピュータビジョン・パターン認識・認知科学に興味があります。[iOS, Android, Webアプリ開発](/applications/)が趣味です。
 
 ### 略歴
 
@@ -45,7 +45,8 @@ permalink: /aboutme/jp/
 
 ### 活動・受賞歴など
 
-* <a href="https://www.ipa.go.jp/about/press/20160602.html"><span style="font-weight: 600;">2015年度IPA未踏スーパークリエータ</span></a> 認定 (06.2016)
+* <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind"><span style="font-weight: 600;">世界最大規模の技術展示会CeBITにて研究成果を展示</span></a> (03.2017)
+* <a href="https://www.ipa.go.jp/about/press/20160602.html"><span style="font-weight: 600;">2015年度IPA未踏スーパークリエータに認定</span></a> (06.2016)
 * <a href="http://mashupaward.jp/"><span style="font-weight: 600;">MashupAwards11</span></a> 準決勝 (11.2015)
 * <a href="http://shoya.io/blog/honor2/"><span style="font-weight: 600;">平成27年度大阪府立大学学長顕彰</span></a> (11.2015)
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学 知能情報工学分野/情報数理科学専攻 ポスター発表会</span></a> 優秀発表賞(09.2015)

@@ -9,7 +9,7 @@ permalink: /aboutme/
 
 I'm a researcher at DFKI and working toward Ph.D. degree in Kaiserslautern University of Technology. My current research interest is activity recognition, which involves recognizing and quantifying human activities by using data from several sensors. [[publications](/publications/)]
 
-I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is inventing amazing applications and satisfying people all over the world. [[applications](/applications/)]
+I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is to invent amazing applications and to satisfy people all over the world. [[applications](/applications/)]
 
 ### Interests
 
@@ -47,7 +47,8 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 
 ### Activities
 
-* <a href="http://www.meti.go.jp/english/press/2016/0602_01.html">Super Creator certificated by METI and IPA Japan</a>, 2016
+* <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind">Demonstration at CeBIT in Hannover</a>, 2017
+* <a href="http://www.meti.go.jp/english/press/2016/0602_01.html">Certificated as Super Creator by METI and IPA Japan</a>, 2016
 * <a href="http://mashupaward.jp/">MashupAwards11</a>: Semifinal stage, 2015
 * <a href="http://shoya.io/blog/honor2/">President's Honor in Osaka Prefecture University</a>, 2015
 * <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
