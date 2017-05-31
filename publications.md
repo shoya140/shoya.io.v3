@@ -10,43 +10,41 @@ permalink: /publications/
 
 ### International Conference
 
-1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel, and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">Sensing thermal stress at office workplaces</span>. In Proceedings of the Fifth International Conference on Human-Environment System (ICHES2016 Nagoya). October 2016, to appear.
+1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel, and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">"Sensing thermal stress at office workplaces</span>." Proc. ICHES2016 Nagoya, October 2016.
 
-1. <u>Shoya Ishimaru</u>. <span style="font-weight: 700;" id="sabine2016sensing">Cognitive State Recognition for Developing Anticipating Textbook</span>. In Proceedings of the The Ninth International Conference on Mobile Computing and Ubiquitous Networking (ICMU2016). October 2016.
+1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016textbook">"Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics."</span> Proc. UbiComp2016 Adjunct, pp. 1041-1045, September 2016.
 
-1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016textbook">Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016wordometer2">"The Wordometer 2.0 - Estimating the Number of Words You Read in Real Life using Commercial EOG Glasses."</span> Proc. UbiComp2016 Adjunct, pp. 1217-1220, September 2016.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016wordometer2">The Wordometer 2.0 - Estimating the Number of Words You Read in Real Life using Commercial EOG Glasses</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016.
+1. <u>Shoya Ishimaru</u>, Tilman Dingler, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016interventions">"Reading Interventions - Tracking Reading State and Designing Interventions."</span> Proc. UbiComp2016 Adjunct, pp. 1759-1764, September 2016.
 
-1. <u>Shoya Ishimaru</u>, Tilman Dingler, Kai Kunze, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016interventions">Reading Interventions - Tracking Reading State and Designing Interventions</span>. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2016). September 2016.
+1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata, and Koichi Kise. <span style="font-weight: 700;" id="rigaud2016manga">"Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information."</span> Proc. DAS2016, pp. 120-125, April 2016.
 
-1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata, and Koichi Kise. <span style="font-weight: 700;" id="rigaud2016manga">Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information</span>. In Proceedings of the 12th IAPR International Workshop on Document Analysis Systems (DAS2016), April 2016.
+1. <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2015mental">"Quantifying the Mental State on the Basis of Physical and Social Activities."</span> Proc. UbiComp2015 Adjunct, pp. 1217-1220, September 2015.
 
-1. <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2015mental">Quantifying the Mental State on the Basis of Physical and Social Activities</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.
+1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015habits">"Quantifying Reading Habits – Counting How Many Words You Read."</span> Proc UbiComp2015, pp. 87-96, September 2015.
 
-1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015habits">Quantifying Reading Habits – Counting How Many Words You Read</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Publication (UbiComp2015). September 2015.
+1. Kai Kunze, Yuji Uema, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015eyewear">"MEME – Eye Wear Computing to Explore Human Behavior."</span> Proc. UbiComp2015 Adjunct, pp. 361-363, September 2015.
 
-1. Kai Kunze, Yuji Uema, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015eyewear">MEME – Eye Wear Computing to Explore Human Behavior</span>. In Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2015). September 2015.
+1. Kai Kunze, Kazutaka Inoue, Katsutoshi Masai, Yuji Uema, Sean Shao-An Tsai, <u>Shoya Ishimaru</u>, Katsuma Tanaka, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015smart">"MEME - Smart Glasses to Promote Healthy Habits for Knowledge Workers."</span> Proc. SIGGRAPH 2015 Emerging Technologies, p 17, August 2015.
 
-1. Kai Kunze, Kazutaka Inoue, Katsutoshi Masai, Yuji Uema, Sean Shao-An Tsai, <u>Shoya Ishimaru</u>, Katsuma Tanaka, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015smart">MEME - Smart Glasses to Promote Healthy Habits for Knowledge Workers</span>. In Proceedings of ACM SIGGRAPH 2015 Emerging Technologies. August 2015.
+1. Kai Kunze, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015nekoze">"Nekoze! – Monitoring and Detecting Head Posture while Working with Laptop and Mobile Phone."</span> Proc. PervasiveHealth2015, pp. 237-240, May 2015.
 
-1. Kai Kunze, Katsuma Tanaka, <u>Shoya Ishimaru</u>, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015nekoze">Nekoze! – Monitoring and Detecting Head Posture while Working with Laptop and Mobile Phone</span>. In Proceedings of the 9th International Conference on Pervasive Computing Technologies for Healthcare (PervasiveHealth2015). May 2015.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2015smart">"Smart Eyewear for Interaction and Activity Recognition."</span> Proc. CHI2015, pp. 307-310, April 2015.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka,  Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2015smart">Smart Eyewear for Interaction and Activity Recognition</span>. In Proceedings of the 33rd Annual ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI2015). April 2015.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2014brain">"Position Paper: Brain Teasers - Toward Wearable Computing that Engages Our Mind."</span> Proc. UbiComp2014 Adjunct, pp. 1405-1408, September 2014.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2014brain">Position Paper: Brain Teasers - Toward Wearable Computing that Engages Our Mind</span>. In Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka, Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2014smarter">"Smarter Eyewear – Using Commercial EOG Glasses for Activity Recognition."</span> Proc. UbiComp2014 Adjunct, pp.239-242, September 2014.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka, Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2014smarter">Smarter Eyewear – Using Commercial EOG Glasses for Activity Recognition</span>. In Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
+1. Jens Weppner, Andreas Poxrucker, Paul Lukowicz, <u>Shoya Ishimaru</u>, Kai Kunze and Koichi Kise. <span style="font-weight: 700;" id="weppner2014logging">"Shiny - An Activity Logging Platform for Google Glass."</span> Proc. UbiComp2014 Adjunct, pp. 283-286, September 2014.
 
-1. Jens Weppner, Andreas Poxrucker, Paul Lukowicz, <u>Shoya Ishimaru</u>, Kai Kunze and Koichi Kise. <span style="font-weight: 700;" id="weppner2014logging">Shiny - An Activity Logging Platform for Google Glass</span>. In Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2014). September 2014.
+1. <u>Shoya Ishimaru</u>, Jens Weppner, Kai Kunze, Andreas Bulling, Koichi Kise, Andreas Dengel and Paul Lukowicz. <span style="font-weight: 700;" id="ishimaru2014blink">"In the Blink of an Eye - Combining Head Motion and Eye Blink Frequency for Activity Recognition with Google Glass."</span> Proc. AH2014, pp. 150-153, March 2014.
 
-1. <u>Shoya Ishimaru</u>, Jens Weppner, Kai Kunze, Andreas Bulling, Koichi Kise, Andreas Dengel and Paul Lukowicz. <span style="font-weight: 700;" id="ishimaru2014blink">In the Blink of an Eye - Combining Head Motion and Eye Blink Frequency for Activity Recognition with Google Glass</span>. In Proceedings of the 5th Augmented Human International Conference (AH2014). March 2014.
+1. <u>Shoya Ishimaru</u>, Kai Kunze, Yuzuko Utsumi, Masakazu Iwamura and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2013eyetracking">"Where Are You Looking At? - Feature-Based Eye Tracking on Unmodified Tablets."</span> Proc. ACPR2013, pp. 783-789, November 2013.
 
-1. <u>Shoya Ishimaru</u>, Kai Kunze, Yuzuko Utsumi, Masakazu Iwamura and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2013eyetracking">Where Are You Looking At? - Feature-Based Eye Tracking on Unmodified Tablets</span>. In Proceedings of the 2013 2nd IAPR Asian Conference on Pattern Recognition (ACPR2013). November 2013.
+1. Kai Kunze, <u>Shoya Ishimaru</u>, Yuzuko Utsumi and Koichi Kise. <span style="font-weight: 700;" id="kunze2013reading">"My reading life: towards utilizing eyetracking on unmodified tablets and phones."</span> Proc. UbiComp2013 Adjunct, pp. 283-236, September 2013.
 
-1. Kai Kunze, <u>Shoya Ishimaru</u>, Yuzuko Utsumi and Koichi Kise. <span style="font-weight: 700;" id="kunze2013reading">My reading life: towards utilizing eyetracking on unmodified tablets and phones</span>. In Proceedings of the 2013 ACM Conference on Pervasive and Ubiquitous Computing Adjunct Publication (UbiComp2013). September 2013.
-
-1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents</span>. In Proceedings of the 2013 12th International Conference on Document Analysis and Recognition (ICDAR2013). August 2013.
+1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013.
 
 ### Domestic Conference
 
