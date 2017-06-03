@@ -697,6 +697,7 @@ a:hover .footer-icon{
 }
 
 .pagenation{
+    clear: both;
     text-align: center;
 }
 
@@ -768,21 +769,7 @@ a:hover .footer-icon{
 .hatenabookmark-button{
     @extend .social-button-base;
     margin-right: 0px;
-}
-
-.hatena-star{
-    clear: both;
     margin-bottom: $spacing-unit;
-}
-
-.hatena-star-user{
-    border-radius: 4px;
-    z-index: 1;
-}
-
-.hatena-star-star{
-    z-index: 10;
-    background-color:#ffffff;
 }
 
 @font-face {

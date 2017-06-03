@@ -49,9 +49,6 @@ $(function(){
   });
 
 
-  // hatena ster
-  Hatena.Star.EntryLoader.headerTagAndClassName = ['div','hatena-star'];
-
   // image fade
   $(".image-fade").css('visibility','visible').hide().fadeIn(800);
 

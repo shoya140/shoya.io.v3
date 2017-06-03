@@ -645,6 +645,7 @@ a:hover .footer-icon {
   font-weight: 600; }
 
 .pagenation {
+  clear: both;
   text-align: center; }
 
 .page-button-base, .page-button, .page-button-disabled {
@@ -698,19 +699,8 @@ a:hover .footer-icon {
       margin-right: 4px; } }
 
 .hatenabookmark-button {
-  margin-right: 0px; }
-
-.hatena-star {
-  clear: both;
+  margin-right: 0px;
   margin-bottom: 30px; }
-
-.hatena-star-user {
-  border-radius: 4px;
-  z-index: 1; }
-
-.hatena-star-star {
-  z-index: 10;
-  background-color: #ffffff; }
 
 @font-face {
   font-family: 'LigatureSymbols';
