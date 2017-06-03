@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0" />
+    <meta property="og:title" content="BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shoya.io/blog/bootcamp_hyperv/">
+    
+        <meta property="og:image" content="https://shoya.io/assets/img/icon_laptop.png">
+    
+    <title>BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題 - shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://shoya.io/blog/bootcamp_hyperv/">
+    <link rel="shortcut icon" href="https://shoya.io/assets/img/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
+</head>
+
+  <body>
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/publications/">Publications</a>
+          <a class="page-link" href="/applications/">Applications</a>
+          <a class="page-link" href="/aboutme/">About me</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+  <div class="wrapper">
+    <div class="wrapper-inside">
+      <div class="post">
+
+        <header class="post-header">
+          <p class="post-meta">Mar 19, 2015
+          
+          [<a href="/tag/Engineering/">Engineering</a>]
+          
+          </p>
+          <a href="/blog/bootcamp_hyperv/"><h1 class="post-title">BootcampでWindows8.1を起動する際にHyper-Vが実行されない問題</h1></a>
+        </header>
+
+        <article class="post-content">
+          <p>Windows Phoneのエミュレータが起動できなくなる問題を発見したので報告します。</p>
+
+<h3 id="section">エラー内容</h3>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv01.png" class="image-on-frame-medium" /></p>
+
+<p>ハイパーバイザーが実行されていないため、Windows Phone Emulatorを起動できません。ハードウェア対応仮想化が有効になっていないことが原因の可能性があります。コンピュータのBIOSを調べ、ハードウェア対応仮想化及びハードウェア対応保護機能が有効になっていることを確認してください。</p>
+
+<p>BootcampでインストールしたWindows8.1において コントロールパネル &gt; プログラムと機能 &gt; Windowsの機能の有効化または無効化 では有効化状態にあるはずのHyper-Vが実行されていない。</p>
+
+<h3 id="section-1">解決策</h3>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv02.png" class="image-on-frame-medium" /></p>
+
+<p><strong>Optionキーを押しながら電源を入れてWindowsを起動するのではなく、まずOSXを起動し、システム環境設定 &gt; 起動ディスク でWindowsをデフォルトに設定してから再起動ボタンを押して起動する。</strong></p>
+
+<p>そんなばかな…と言った感じだけれど、こちらの記事(<a href="https://discussions.apple.com/thread/6666722?searchText=hyper-v">If I reboot to Windows directly from Windows (bootcamp options), I cannot launch a vm in Hyper-V - Apple Support Communities</a>)によるとOptionキーを押しながら起動する方法ではCSM-BIOS layerの設定が起動しないからとのこと。</p>
+
+<p>手順通りにWindowsを起動すると、Hyper-Vが実行されてEmulatorの起動を確認できた。</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/12208857/img/bootcamp_hyperv03.png" class="image-on-frame" /></p>
+
+        </article>
+
+        <div class="post-relations">
+          
+        </div>
+
+        <div class="post-social">
+          <div class="tweet-button"><a href="https://twitter.com/share?text=Bootcamp%E3%81%A7Windows8.1%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%ABHyper-V%E3%81%8C%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C%20-%20shoya.io&amp;url=https://shoya.io/blog/bootcamp_hyperv/"><span class="lsf" style="font-size:20px;">twitter</span> tweet
+        </a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/bootcamp_hyperv/&amp;t=Bootcamp%E3%81%A7Windows8.1%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%ABHyper-V%E3%81%8C%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share
+        </a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/bootcamp_hyperv/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark
+        </a></div>
+          <div class="hatena-star"><a href="https://shoya.io/blog/bootcamp_hyperv/" style="display: none;">hatena</a></div>
+        </div>
+
+        <div class="pagenation">
+          
+            <div class="page-button"><a href="/blog/recruit_internship/"></a><span class="lsf">left</span> リクルートホールディングスのインターンシップに参加しました</div>
+          
+          
+            <div class="page-button"><a href="/blog/hubot_listens_webhook/"></a>SlackのIncoming WebhooksをHubotで拾う <span class="lsf">right</span></div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> 人気の記事</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/zebra/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> 最近の記事</p>
+        <ul>
+        
+          <li>- <a href="/blog/writing-and-the-expectation/">文章と期待値</a></li>
+        
+          <li>- <a href="/blog/mensa/">昔作ったBotがドイツで僕の帰りを待ち続けていた</a></li>
+        
+          <li>- <a href="/blog/fixed-point-observation/">定点観測</a></li>
+        
+          <li>- <a href="/blog/turning-everything-into-profit/">転んでもただでは起きない性格</a></li>
+        
+          <li>- <a href="/blog/baden-baden/">バーデン=バーデン</a></li>
+        
+          <li>- <a href="/blog/strasbourg/">街道の街 ストラスブール</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> 記事のタグ</p>
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Engineering/">Engineering</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+        [<a href="/tag/Research/">Research</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <script type="text/javascript" language="javascript">
+      function mail(){var s="FI=;NCIHeBL?@tYG;CFNIqMBIS;eCMBCG;LOwAG;CFe=IGY",r="";
+      for(i=0;i<s.length;i++)r+=String.fromCharCode((s.charCodeAt(i)+5)%93+33);eval(r);}
+        document.write('<a href="javascript:mail()"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>')</script>
+      <a href = "/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© 2014 - 2016 <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+<script type="text/javascript" src="/assets/js/star.js"></script>
+<script type="text/javascript">Hatena.Star.Token = 'd2f3ada92845cdc5beeb7325518464d39adf9e88';</script>
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
