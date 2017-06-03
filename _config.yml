@@ -1,7 +1,7 @@
 # Site settings
 title: shoya.io
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://shoya.io" # the base hostname & protocol for your site
+url: "https://shoya.io" # the base hostname & protocol for your site
 permalink: /blog/:title/
 markdown: kramdown
 popular: ["Paletta", "zebra", "cookpad_internship", "hatena_intern", "internet_black_market", "long_shadow"]
