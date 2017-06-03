@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Applications - Shoya Ishimaru
+title: Applications
 permalink: /applications/
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications - Shoya Ishimaru
+title: Publications
 permalink: /publications/
 ---
 
