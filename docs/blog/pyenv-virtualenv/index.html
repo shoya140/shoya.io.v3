@@ -66,14 +66,14 @@
         </header>
 
         <article class="post-content">
-          <h3 id="section">機能</h3>
+          <h3 id="機能">機能</h3>
 <ul>
   <li>pyenv-virtualenvでバージョンと仮想環境を切り替えられる</li>
   <li>OpenCV3.0をPythonから利用できる</li>
   <li>Jupyter(iPython notebook)を起動できる</li>
 </ul>
 
-<h3 id="pyenv-virtualenv">pyenv-virtualenvの導入</h3>
+<h3 id="pyenv-virtualenvの導入">pyenv-virtualenvの導入</h3>
 
 <p><a href="http://brew.sh/">Homebrew</a>でインストールする。</p>
 
@@ -93,7 +93,7 @@
 <span class="gp">$ </span>pyenv global 3.5.10
 <span class="gp">$ </span>pyenv rehash</code></pre></figure>
 
-<h3 id="opencv">OpenCVの導入</h3>
+<h3 id="opencvの導入">OpenCVの導入</h3>
 
 <p>Homebrewでインストールする。</p>
 
@@ -111,7 +111,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install numpy</code></pre></figure>
 
-<h3 id="jupyter">Jupyterなど定番ライブラリの導入</h3>
+<h3 id="jupyterなど定番ライブラリの導入">Jupyterなど定番ライブラリの導入</h3>
 
 <p>pipでインストールする</p>
 
@@ -121,7 +121,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">echo </span>backend : TkAgg &gt; ~/.matplotlib/matplotlibrc</code></pre></figure>
 
-<h3 id="virtualenv">参考1 virtualenvの使い方</h3>
+<h3 id="参考1-virtualenvの使い方">参考1 virtualenvの使い方</h3>
 
 <p>大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvで仮想環境を用意する。</p>
 
@@ -135,7 +135,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pyenv uninstall 3.5.0-tutorial</code></pre></figure>
 
-<h3 id="osxlinux-windows">参考2 OSX以外(Linux, Windows)での実行</h3>
+<h3 id="参考2-osx以外linux-windowsでの実行">参考2 OSX以外(Linux, Windows)での実行</h3>
 
 <p>scipyやOpenCVのセットアップで躓くことが多いのでminicondaを使っている。例えば下記のDockerfileからcontainerを作成してその上で実行する。(Python3系のcondaはOpenCVをサポートしていないので注意)</p>
 

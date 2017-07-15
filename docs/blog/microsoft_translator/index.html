@@ -68,7 +68,7 @@
         <article class="post-content">
           <p>自動翻訳APIであるMicrosoft Translator APIを導入してみました。</p>
 
-<h2 id="section">1. アプリケーションの登録</h2>
+<h2 id="1-アプリケーションの登録">1. アプリケーションの登録</h2>
 
 <p><a href="https://datamarket.azure.com/developer/applications/">Windows Azure Marketplace</a>にアクセスしてアプリケーションを登録します。</p>
 
@@ -76,7 +76,7 @@
 
 <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/microsoft_translator01.png" class="image-on-frame" /></p>
 
-<h2 id="section-1">2. ライブラリのインストール</h2>
+<h2 id="2-ライブラリのインストール">2. ライブラリのインストール</h2>
 
 <p>Python用のSDKがGitHubで公開されているので<a href="https://github.com/openlabs/Microsoft-Translator-Python-API">リポジトリ</a>をcloneします。</p>
 
@@ -89,7 +89,7 @@
 
 <p>以上で導入は終わりです. 簡単ですね.</p>
 
-<h2 id="section-2">3. 実際に使ってみる</h2>
+<h2 id="3-実際に使ってみる">3. 実際に使ってみる</h2>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">microsofttranslator</span> <span class="kn">import</span> <span class="n">Translator</span>
 <span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">(</span><span class="s">'&lt;Your Client ID&gt;'</span><span class="p">,</span> <span class="s">'&lt;Your Client Secret&gt;'</span><span class="p">)</span>
@@ -97,7 +97,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">こんにちは</code></pre></figure>
 
-<h2 id="section-3">所感</h2>
+<h2 id="所感">所感</h2>
 
 <p>自動翻訳APIは数多く存在しますが, 対応言語が多い・安定してサービスが継続されそうという理由で今回はMicrosoft Translator APIを選択しました。
 (Google Translate APIの無料版v1は2011年12月1日をもってサービスを終了している)</p>

@@ -74,7 +74,7 @@
 
 <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/zchainer01.png" class="image-on-frame-medium" /></p>
 
-<h3 id="section">なぜ作ったか</h3>
+<h3 id="なぜ作ったか">なぜ作ったか</h3>
 
 <p>ニューラルネットワークを簡単に実装することができるライブラリとしてChainerが多くの方に利用されていますが、ほぼ同じ記述を繰り返し書く必要があったり、学習器の定義・評価の記述が煩雑になりがちであるという課題があります。そこでインターフェイスとなるライブラリがあれば便利だと思って開発しました。scikt-learn likeに使うためにscikit-chainerとxchainerを参考にさせていただきました。</p>
 
@@ -85,7 +85,7 @@
 
 <p>作ってみると積層自己符号化器の実装も共通なコードが多いことに気付いたので、本ライブラリは積層自己符号化器を管理するところまでインターフェイスに含めてみました。後述のサンプルコードのとおり、少ない行数(整形のための改行を除けばわずか4行)で記述することができます。</p>
 
-<h3 id="section-1">機能</h3>
+<h3 id="機能">機能</h3>
 
 <ul>
   <li>Chainerをscikit-learnの学習器として使用できる</li>
@@ -94,11 +94,11 @@
   <li>出力先を指定するだけでログやシリアライズされたモデルを出力できる</li>
 </ul>
 
-<h3 id="section-2">インストール方法</h3>
+<h3 id="インストール方法">インストール方法</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install zChainer</code></pre></figure>
 
-<h3 id="section-3">サンプルコード</h3>
+<h3 id="サンプルコード">サンプルコード</h3>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">chainer.functions</span> <span class="kn">as</span> <span class="nn">F</span>
@@ -130,7 +130,7 @@
 
 <p>forward関数にはdropoutありのreluを登録していますが、好みのforward関数をセットすることもできます。詳しくは<a href="https://github.com/shoya140/zChainer">github</a>のexampleをご確認ください。</p>
 
-<h3 id="section-4">実装</h3>
+<h3 id="実装">実装</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">class NNAutoEncoder <span class="o">()</span>:
     def __init__<span class="o">(</span>self, encoder, decoder, optimizer,
@@ -177,7 +177,7 @@
 
 <p>Chainer1.5のLink and Chainを使用しています。ネットワークの構造をChainではなくChainListとして管理することで各層に添字でアクセスできるようにして、学習が済んだものをself.autoencodedにコピーしています。学習済みモデル最先端の層からの出力はencoded関数を再帰的に呼ぶことで得ています。(層が深くなるにつれて遅くなるかも？時間ができれば改良したい)</p>
 
-<h3 id="section-5">まとめ</h3>
+<h3 id="まとめ">まとめ</h3>
 
 <p>積層自己符号化器を含めたChainerのインターフェイスとなるライブラリを作成しました。時間の都合で十分検証ができていないので、不具合などあるかもしれません。おかしいところがあれば連絡いただけると嬉しいです。バージョン1.0になるまで使用は自己責任でお願いします。</p>
 

@@ -5,7 +5,7 @@
     <description></description>
     <link>https://shoya.io/</link>
     <atom:link href="https://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
-    <generator>Jekyll v3.2.1</generator>
+    <generator>Jekyll v3.5.0</generator>
     
       <item>
         <title>文章と期待値</title>
@@ -30,7 +30,7 @@
     
       <item>
         <title>昔作ったBotがドイツで僕の帰りを待ち続けていた</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
 
 &lt;p&gt;僕が在籍しているカイザースラウテルン工科大学にはMENSAと呼ばれる食堂があって、普段はここで昼食をとっている。おすすめは2種類の日替わりメニュー。学生は入り口の電子掲示板を見てEssen1/2のどちらかを選ぶ。しかしこの掲示板、ドイツ語表記で写真もないので、ドイツ語が読めない学生は列の長さ（人気度）だけでメニューを決めなければならないという問題を抱えている。&lt;/p&gt;
 
@@ -40,7 +40,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/12208857/img/mensa02.png&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;仕組み&lt;/h3&gt;
+&lt;h3 id=&quot;仕組み&quot;&gt;仕組み&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;大学のWebサイトをスクレイピングしてその日のメニューを取得する&lt;/li&gt;
@@ -50,7 +50,7 @@
 
 &lt;p&gt;集めたデータはすべて保存し、httpリクエストで取り出せるようにしている。例えば &lt;a href=&quot;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&quot;&gt;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&lt;/a&gt; で2016年9月23日のメニューが返ってくる。従ってTwitter以外にも様々なサービスと連携させることができる。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;特徴&lt;/h3&gt;
+&lt;h3 id=&quot;特徴&quot;&gt;特徴&lt;/h3&gt;
 
 &lt;p&gt;「作っていた」と書いたのは、このBotは3年前にこちらに留学していたときに作ったものだから。（当時のメモ: &lt;a href=&quot;http://shoya.io/blog/microsoft_translator/&quot;&gt;PythonでMicrosoft Translator APIを使ってみる&lt;/a&gt;）その後システムは何も手を加えられることもなく動き続け、今も毎日使われている。サーバーの設定やAPIの仕様、大学Webサイトのレイアウトなど、どれか一つでも変わると止まってしまうことを考えると、動き続けているのは奇跡といえる。僕がいなかった間も毎日投稿しながら帰りを待っていたのかと思うとなんだか愛着が湧いてくる。&lt;/p&gt;
 
@@ -103,7 +103,7 @@
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;単位や論文の数が要件を満たしていれば、博士前期（修士）を1年・博士後期（博士）を1年短縮して、普通27歳でとれるところを25歳でとることができる。さらに学部を1年飛び級して24歳でとるのが日本では最短のはず。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;単位や論文の数が要件を満たしていれば、博士前期（修士）を1年・博士後期（博士）を1年短縮して、普通27歳でとれるところを25歳でとることができる。さらに学部を1年飛び級して24歳でとるのが日本では最短のはず。&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;

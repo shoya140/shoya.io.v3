@@ -10,7 +10,11 @@ permalink: /publications/
 
 ### International Conference
 
+1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> PLATO Summer Conference, June 2017.
+
 1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel, and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">"Sensing thermal stress at office workplaces</span>." Proc. ICHES2016 Nagoya, October 2016.
+
+1. <u>Shoya Ishimaru</u>, <span style="font-weight: 700;" id="ishimaru2016cognitive">"Cognitive State Recognition for Developing Anticipating Textbook."</span> Proc. ICMU2016, Vol. 2016, No. 20, October 2016.
 
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016textbook">"Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics."</span> Proc. UbiComp2016 Adjunct, pp. 1041-1045, September 2016.
 

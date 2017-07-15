@@ -72,14 +72,14 @@
 
 <p>tornadoのひな形なのでupdraft(上昇気流)と呼んでいるけど、main.pyを変更すれば静的なサイトやsinatraのプロジェクトでも利用できる。</p>
 
-<h2 id="span-classlsfcheckspan-features"><span class="lsf">check</span> Features</h2>
+<h2 id="check-features"><span class="lsf">check</span> Features</h2>
 
 <ul>
   <li>bootstrap, jQuery, backbone, underscoreのセットアップ</li>
   <li>Gruntを使ったcoffee scriptとsassの自動コンパイル</li>
 </ul>
 
-<h2 id="span-classlsfsetupspan-require"><span class="lsf">setup</span> Require</h2>
+<h2 id="setup-require"><span class="lsf">setup</span> Require</h2>
 
 <p>bower, grunt, coffee, sassを使うので、インストールしていなければ準備が必要。npmコマンドが使えない場合は、導入はNodeとパッケージ管理システム(Macの場合はHomebrewなど)について勉強してからのほうがいいかもしれない。</p>
 
@@ -88,7 +88,7 @@
 <span class="gp">$ </span>npm install -g coffee-script
 <span class="gp">$ </span>gem install sass</code></pre></figure>
 
-<h2 id="span-classlsfsetupspan-installation"><span class="lsf">setup</span> Installation</h2>
+<h2 id="setup-installation"><span class="lsf">setup</span> Installation</h2>
 
 <p><a href="https://github.com/Mrk1869/updraft">Mrk1869/updraft</a> からデータをダウンロードしてきたら、そのディレクトリに入って</p>
 
@@ -105,7 +105,7 @@
 
 <p>以下は補足説明。</p>
 
-<h2 id="span-classlsfcodespan-bowerjson"><span class="lsf">code</span> bower.json</h2>
+<h2 id="code-bowerjson"><span class="lsf">code</span> bower.json</h2>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"updraft"</span><span class="p">,</span>
@@ -150,7 +150,7 @@
 
 <p><a href="http://yosuke-furukawa.hatenablog.com/entry/2013/06/01/173308">参考: Bower入門(基礎編) - from scratch</a></p>
 
-<h2 id="span-classlsfcodespan-gruntfilejs"><span class="lsf">code</span> Gruntfile.js</h2>
+<h2 id="code-gruntfilejs"><span class="lsf">code</span> Gruntfile.js</h2>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
@@ -207,7 +207,7 @@
 
 <p>grunt-bower-taskによってライブラリをコピーする。はじめの方にあるbower:installはそれに関する設定。grunt-contrib-watchによってsassとcoffeeの更新を検知して、sass:compile, coffee:compileタスクを実行するよう設定している。</p>
 
-<h2 id="section">5/11 追記</h2>
+<h2 id="511-追記">5/11 追記</h2>
 
 <p><a href="http://d.hatena.ne.jp/naoya/20130504/1367640512">昨今の自分用Webアプリケーションひな形その2 - Grunt - naoyaのはてなダイアリー</a></p>
 

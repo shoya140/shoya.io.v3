@@ -68,13 +68,13 @@
         <article class="post-content">
           <p>AWSのアカウントを作成した状態から深層学習のための環境を作るまでの手順メモ</p>
 
-<h2 id="section">1. インスタンスの作成</h2>
+<h2 id="1-インスタンスの作成">1. インスタンスの作成</h2>
 
 <p>インスタンス-&gt;マーケットプレイス-&gt;「nvidia」で検索。<br />インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。</p>
 
 <p><img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer01.png" class="image-on-frame-medium" /></p>
 
-<h2 id="cudnn">2. cuDNNのインストール(任意)</h2>
+<h2 id="2-cudnnのインストール任意">2. cuDNNのインストール(任意)</h2>
 
 <p><a href="https://developer.nvidia.com/cudnn">NVIDIAのwebサイト</a>でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。</p>
 
@@ -82,7 +82,7 @@
 <span class="gp">$ </span>sudo cp lib<span class="k">*</span> /opt/nvidia/cuda/lib64/
 <span class="gp">$ </span>sudo cp cudnn.h /opt/nvidia/cuda/include/</code></pre></figure>
 
-<h2 id="chainerjupyter">3. chainerとjupyterのセットアップ</h2>
+<h2 id="3-chainerとjupyterのセットアップ">3. chainerとjupyterのセットアップ</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo <span class="nv">CUDA_PATH</span><span class="o">=</span>/opt/nvidia/cuda pip install chainer
 <span class="gp">$ </span>sudo yum install gcc atlas-devel lapack-devel blas-devel libpng-devel freetype-devel
@@ -108,7 +108,7 @@ c.NotebookApp.port <span class="o">=</span> 任意のポート<span class="o">(<
 
 <p>SSL/HTTPSを使用する方法は<a href="http://jupyter-notebook.readthedocs.io/en/latest/public_server.html">こちら</a>を参照。</p>
 
-<h2 id="section-1">3. イメージの作成とイメージからのインスタンス作成</h2>
+<h2 id="3-イメージの作成とイメージからのインスタンス作成">3. イメージの作成とイメージからのインスタンス作成</h2>
 
 <p>イメージ(テンプレート)の作成はインスタンスのメニュー&gt;イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。</p>
 

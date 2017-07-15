@@ -70,7 +70,7 @@
 
 <p>今回は大学の計算機にGit/GitLab環境を構築したので、その手順メモを記しました。<a href="https://github.com/gitlabhq/gitlabhq/blob/6-0-stable/doc/install/installation.md">インストールガイド</a>を参考に、redisの起動など足りないところを補完してあります。<br />GitLabのインストール方法はバージョンによって少しずつ異なります。6.1, 6.2はsidekiqの立ち上げに問題があるので、2013年11月現在は6.0を導入するのが最善かと思われます。</p>
 
-<h2 id="span-classlsfsetupspan-"><span class="lsf">setup</span> 環境</h2>
+<h2 id="setup-環境"><span class="lsf">setup</span> 環境</h2>
 <ul>
   <li>Debian 6.0.8</li>
   <li>GitLab 6.0</li>
@@ -82,7 +82,7 @@
   <li>nginx 0.7.67</li>
 </ul>
 
-<h2 id="section">1. 導入準備 (必要に応じて)</h2>
+<h2 id="1-導入準備-必要に応じて">1. 導入準備 (必要に応じて)</h2>
 <p>GitLabを導入する前に、sudoコマンド、エディタ(Vim)、Git、Python、Ruby、MySQLをインストールします。既にインストールしている場合は<strong>手順2</strong>まで読み飛ばしてください。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># run as root!</span>
@@ -90,7 +90,7 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install sudo -y</code></pre></figure>
 
-<h2 id="vim">1.1. Vimインストール</h2>
+<h2 id="11-vimインストール">1.1. Vimインストール</h2>
 
 <p>Vimをインストールして、標準のエディタとして設定。</p>
 
@@ -98,7 +98,7 @@ apt-get install sudo -y</code></pre></figure>
 sudo apt-get install -y vim
 sudo update-alternatives --set editor /usr/bin/vim.basic</code></pre></figure>
 
-<h2 id="git">1.2. Gitインストール</h2>
+<h2 id="12-gitインストール">1.2. Gitインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install git</span>
 sudo apt-get install -y git-core
@@ -125,7 +125,7 @@ sudo make <span class="nv">prefix</span><span class="o">=</span>/usr/local insta
 
 <p>※Gitを/usr/local/bin/gitにインストールしたので、<strong>手順8</strong>でconfig/gitlab.ymlを編集するときにbin_pathを/usr/local/bin/gitに書き換えること。</p>
 
-<h2 id="python">1.3. Pythonインストール</h2>
+<h2 id="13-pythonインストール">1.3. Pythonインストール</h2>
 
 <p>“python2”でpython2.xが起動するように設定する。</p>
 
@@ -147,7 +147,7 @@ sudo ln -s /usr/bin/python /usr/bin/python2
 <span class="c"># For reStructuredText markup language support install required package:</span>
 sudo apt-get install -y python-docutils</code></pre></figure>
 
-<h2 id="ruby-">1.4. Ruby インストール</h2>
+<h2 id="14-ruby-インストール">1.4. Ruby インストール</h2>
 
 <p>システムデフォルトのRubyは1.9.3より古い可能性大なのでアップデート。</p>
 
@@ -168,7 +168,7 @@ sudo make install</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo gem install bundler --no-ri --no-rdoc</code></pre></figure>
 
-<h2 id="mysql">1.5 MySQLインストール</h2>
+<h2 id="15-mysqlインストール">1.5 MySQLインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install the database packages</span>
 sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
@@ -194,17 +194,17 @@ mysql -u root -p
 <span class="c"># Quit the database session</span>
 <span class="gp">mysql&gt; </span><span class="se">\q</span></code></pre></figure>
 
-<h2 id="git-1">2. Gitユーザの作成</h2>
+<h2 id="2-gitユーザの作成">2. Gitユーザの作成</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo adduser --disabled-login --gecos <span class="s1">'GitLab'</span> git</code></pre></figure>
 
 <p>以降の手順はGitユーザで行います。</p>
 
-<h2 id="section-1">3. 必要パッケージのインストール</h2>
+<h2 id="3-必要パッケージのインストール">3. 必要パッケージのインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate</code></pre></figure>
 
-<h2 id="gitlab-shell">4. GitLab shellインストール</h2>
+<h2 id="4-gitlab-shellインストール">4. GitLab shellインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git
 
@@ -238,7 +238,7 @@ sudo vim /etc/hosts
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u git -H ./bin/install</code></pre></figure>
 
-<h2 id="gitlab">5. GitLabインストール</h2>
+<h2 id="5-gitlabインストール">5. GitLabインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git
 
@@ -294,7 +294,7 @@ sudo -u git -H cp config/unicorn.rb.example config/unicorn.rb
 <span class="c"># Ex. change amount of workers to 3 for 2GB RAM server</span>
 sudo -u git -H editor config/unicorn.rb</code></pre></figure>
 
-<h2 id="mysql-1">6. MySQLとの接続確認</h2>
+<h2 id="6-mysqlとの接続確認">6. MySQLとの接続確認</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Mysql</span>
 sudo -u git cp config/database.yml.mysql config/database.yml
@@ -309,18 +309,18 @@ sudo -u git -H editor config/database.yml
 <span class="c"># Make config/database.yml readable to git only</span>
 sudo -u git -H chmod o-rwx config/database.yml</code></pre></figure>
 
-<h2 id="gem">7. Gemインストール</h2>
+<h2 id="7-gemインストール">7. Gemインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git/gitlab
 
 sudo -u git -H bundle install --deployment --without development <span class="nb">test </span>postgres aws</code></pre></figure>
 
-<h2 id="section-2">8. データベース初期化</h2>
+<h2 id="8-データベース初期化">8. データベース初期化</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Type 'yes' to create the database.</span>
 sudo -u git -H bundle <span class="nb">exec </span>rake gitlab:setup <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
 
-<h2 id="section-3">9. 起動ファイル導入</h2>
+<h2 id="9-起動ファイル導入">9. 起動ファイル導入</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo rm /etc/init.d/gitlab
 sudo curl --output /etc/init.d/gitlab https://raw.github.com/gitlabhq/gitlabhq/6-0-stable/lib/support/init.d/gitlab
@@ -330,11 +330,11 @@ sudo chmod +x /etc/init.d/gitlab</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo update-rc.d gitlab defaults 21</code></pre></figure>
 
-<h2 id="redis">10. Redis起動</h2>
+<h2 id="10-redis起動">10. Redis起動</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo /etc/init.d/redis-server start</code></pre></figure>
 
-<h2 id="gitlab-1">11. GitLabの起動</h2>
+<h2 id="11-gitlabの起動">11. GitLabの起動</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">/etc/init.d/gitlab start</code></pre></figure>
 
@@ -343,7 +343,7 @@ sudo chmod +x /etc/init.d/gitlab</code></pre></figure>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">/etc/init.d/gitlab stop
 /etc/init.d/gitlab restart</code></pre></figure>
 
-<h2 id="nginx">12. Nginx(リバースプロキシ)の設定</h2>
+<h2 id="12-nginxリバースプロキシの設定">12. Nginx(リバースプロキシ)の設定</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install nginx</span>
 sudo apt-get install -y nginx</code></pre></figure>
@@ -370,16 +370,16 @@ User: admin@local.host
 Pass: 5iveL!fe
 </pre>
 
-<h2 id="section-4">トラブルシューティング</h2>
+<h2 id="トラブルシューティング">トラブルシューティング</h2>
 
-<h3 id="span-classlsfcheckspan-httpsgit-clone"><span class="lsf">check</span> httpsプロトコルでgit cloneできない</h3>
+<h3 id="check-httpsプロトコルでgit-cloneできない"><span class="lsf">check</span> httpsプロトコルでgit cloneできない</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">git config –global http.sslVerify <span class="nb">false</span></code></pre></figure>
 
 <p>を実行して、証明書チェックを外す。<br />
 参考：<a href="http://319ring.net/blog/archives/1164">GIT:リポジトリにHTTPSでアクセスしてみる - 自転車で通勤しましょ♪ブログ</a></p>
 
-<h3 id="span-classlsfcheckspan-cant-save-project-please-try-again-later"><span class="lsf">check</span> Can’t save project. Please try again later</h3>
+<h3 id="check-cant-save-project-please-try-again-later"><span class="lsf">check</span> Can’t save project. Please try again later</h3>
 
 <p>redis-serverをアップデートする</p>
 
@@ -389,7 +389,7 @@ apt-get -t squeeze-backports install redis-server</code></pre></figure>
 
 <p>参考：<a href="https://github.com/gitlabhq/gitlabhq/issues/3328">“Can’t save project. Please try again later” - GitHub issues</a></p>
 
-<h3 id="span-classlsfcheckspan-502-bad-gateway-"><span class="lsf">check</span> 502 Bad Gateway ページが見つからない</h3>
+<h3 id="check-502-bad-gateway-ページが見つからない"><span class="lsf">check</span> 502 Bad Gateway ページが見つからない</h3>
 
 <p>タイムアウト値を30から180くらいに変更する</p>
 
@@ -397,7 +397,7 @@ apt-get -t squeeze-backports install redis-server</code></pre></figure>
 
 <p>参考：<a href="http://stackoverflow.com/questions/18501406/502-bad-gateway-from-nginx-for-large-gitlab-fork">502 Bad Gateway from Nginx for large GitLab fork - stackoverflow</a></p>
 
-<h3 id="span-classlsfcheckspan-gitlab-shell-self-check-failed"><span class="lsf">check</span> gitlab-shell self-check failed</h3>
+<h3 id="check-gitlab-shell-self-check-failed"><span class="lsf">check</span> gitlab-shell self-check failed</h3>
 
 <p>virtual hostsの設定を取りこぼしてないか確認する</p>
 
@@ -407,7 +407,7 @@ sudo vim /etc/hosts
 <span class="c"># Add a new hosts setting like this</span>
 127.0.0.1    YOUR_DOMAIN.COM</code></pre></figure>
 
-<h3 id="span-classlsfcheckspan-"><span class="lsf">check</span> その他の問題解決</h3>
+<h3 id="check-その他の問題解決"><span class="lsf">check</span> その他の問題解決</h3>
 
 <p>おかしいなと思ったら、以下のコマンドを実行。<br />
 エラーメッセージから原因を見つけて修復する。</p>
