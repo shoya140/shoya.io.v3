@@ -42,7 +42,7 @@ $ pyenv rehash
 Homebrewでインストールする。
 
 {% highlight bash %}
-$ brew install opencv3 --with-python3
+$ brew install opencv3 --with-contrib --with-python3 --without-python
 {% endhighlight %}
 
 現在のPythonが見ているところにpathを通す。<br>新しい仮想環境を作る度に下記のコマンドを実行する。
