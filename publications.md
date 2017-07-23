@@ -10,6 +10,10 @@ permalink: /publications/
 
 ### International Conference
 
+1. <u>Shoya Ishimaru</u>, Kensuke Hoshika, Kai Kunze, Koichi Kise, and Andreas Dengel, <span style="font-weight: 700;" id="ishimaru2017inthewild">"Towards Reading Trackers in the Wild: Detecting Reading Activities by EOG Glasses and Deep Neural Networks"</span>, Proc. UbiComp2017 Adjunct, September 2017, to appear.
+
+1. <u>Shoya Ishimaru</u> and Andreas Dengel, <span style="font-weight: 700;" id="ishimaru2017arfled">"ARFLED: Ability Recognition Framework for Learning and Education"</span>, Proc. UbiComp2017 Adjunct, September 2017, to appear.
+
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> PLATO Summer Conference, June 2017.
 
 1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel, and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">"Sensing thermal stress at office workplaces</span>." Proc. ICHES2016 Nagoya, October 2016.
