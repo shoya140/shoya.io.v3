@@ -12,6 +12,8 @@ permalink: /publications/
 
 1. <u>Shoya Ishimaru</u>, Kensuke Hoshika, Kai Kunze, Koichi Kise, and Andreas Dengel, <span style="font-weight: 700;" id="ishimaru2017inthewild">"Towards Reading Trackers in the Wild: Detecting Reading Activities by EOG Glasses and Deep Neural Networks"</span>, Proc. UbiComp2017 Adjunct, September 2017, to appear.
 
+1. Koichi Kise, Oliver Augereau, Yuzuko Utsumi, Masakazu Iwamura, Kai Kunze, <u>Shoya Ishimaru</u>, and Andreas Dengel, <span style="font-weight: 700;" id="kise2017quantified">"Quantified Reading and Learning for Sharing Experiences"</span>, Proc. UbiComp2017 Adjunct, September 2017, to appear.
+
 1. <u>Shoya Ishimaru</u> and Andreas Dengel, <span style="font-weight: 700;" id="ishimaru2017arfled">"ARFLED: Ability Recognition Framework for Learning and Education"</span>, Proc. UbiComp2017 Adjunct, September 2017, to appear.
 
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Jochen Kuhn, and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> PLATO Summer Conference, June 2017.
