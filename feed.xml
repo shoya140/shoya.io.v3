@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shoya.io</title>
+    <description></description>
+    <link>https://shoya.io/</link>
+    <atom:link href="https://shoya.io/feed.xml" rel="self" type="application/rss+xml" />
+    <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Karabiner-ElementsとHammerspoonを使ってSpace+hjklでキー移動する</title>
+        <description>&lt;p&gt;KarabinerのVi mode extraに入っている「Spaceとhjkl同時押しでカーソル移動する」機能をMacOS Sierraでも使えるようにしたので、設定ファイルを公開する。&lt;/p&gt;
+
+&lt;p&gt;まずKarabiner-Elementsを使ってSpaceと何かのキーの同時押しをControlキーにマッピングする。次にHammerspoonでControl+hjklをカーソルキーに割り当てる。Karabiner-Elementsだけでキー移動をマッピングしたところ、カーソルが見えないくらい早く移動して使いづらかったので、2つのアプリケーションを使う複雑な設定になってしまった。&lt;/p&gt;
+
+&lt;h3 id=&quot;configkarabinerkarabinerjson&quot;&gt;~/.config/karabiner/karabiner.json&lt;/h3&gt;
+
+&lt;p&gt;注意: Commandキーを英数/かなにマッピングする設定と、Capslockを単体のときはEscape, 何かのキーと同時押しのときはControlにマッピングする設定も含まれています。”rules”:以下を読んで必要なものを選んで使ってください。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;global&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;check_for_updates_on_startup&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;show_in_menu_bar&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;show_profile_name_in_menu_bar&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;profiles&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;complex_modifications&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;parameters&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;s2&quot;&gt;&quot;basic.to_if_alone_timeout_milliseconds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Change left/right_command to eisu/kana if pressed alone.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;manipulators&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;left_command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                            &lt;span class=&quot;s2&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;left_command&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;japanese_eisuu&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;basic&quot;&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;right_command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                            &lt;span class=&quot;s2&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;right_command&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;japanese_kana&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;basic&quot;&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Change spacebar to left_control. (Post spacebar if pressed alone)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;manipulators&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;spacebar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                            &lt;span class=&quot;s2&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;left_control&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;spacebar&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;basic&quot;&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Change caps_lock to control if pressed with other keys, to escape if pressed alone.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;manipulators&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;caps_lock&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;s2&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                            &lt;span class=&quot;s2&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;left_control&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                        &lt;span class=&quot;s2&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;escape&quot;&lt;/span&gt;
+                                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;basic&quot;&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;devices&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;fn_function_keys&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;display_brightness_decrement&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f10&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;mute&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f11&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;volume_decrement&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f12&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;volume_increment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;display_brightness_increment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;mission_control&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;launchpad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;illumination_decrement&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f6&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;illumination_increment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rewind&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;play_or_pause&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;f9&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;fastforward&quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Default profile&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;selected&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;simple_modifications&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;standalone_keys&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;left_command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;japanese_eisuu&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;right_command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;japanese_kana&quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;virtual_hid_keyboard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;caps_lock_delay_milliseconds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;keyboard_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ansi&quot;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;hammerspooninitlua&quot;&gt;~/.hammerspoon/init.lua&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;&lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;hs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventtap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newKeyEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;string.lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;hs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;hs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventtap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newKeyEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;string.lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;hs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hotkey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'j'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'down'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'right'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'j'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'down'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'right'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'j'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'down'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'right'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'j'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'down'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;remapKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ctrl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shift'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sat, 15 Jul 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/karabiner-hammerspoon-space-hjkl/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/karabiner-hammerspoon-space-hjkl/</guid>
+        
+        <category>Engineering</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
+        <title>文章と期待値</title>
+        <description>&lt;p&gt;やる気はあるのに手が動かないという状態は期待値の設定がおかしいのかもしれない。&lt;/p&gt;
+
+&lt;p&gt;時々パタリと文章が書けなくなることがあるのだけれど、それは自分の中でその作業や成果物に対する期待値を高く設定しすぎているのかもしれない。面白い実験結果・成果物なのでしっかり文章を書こうとか、遅れた分クオリティをあげようとか、無意識にそういうことを考えてしまっている気がする。実際、この文章は期待値０で書いてるので頭の中で考えたことがスラスラ文字になっている。&lt;/p&gt;
+
+&lt;p&gt;過剰に期待値を上げまくった文章書きに締め切り間際まで着手できず、直前の頑張りで仕上げることがある。その時の期待値は振り切れて（提出することに意味があるというレベルまで）低くなっている。しかし不思議なことに、後からその文章を読んだら結構普通に書けていて、腰を据えて書いた文章と遜色がなかったりする。むしろ勢いがあって良い。&lt;/p&gt;
+
+&lt;p&gt;クオリティは後から読み返しながら上げていけば良い。最高の一文を置いていくのではなく、とりあえず先に概要をいくつか書いてみて、良いと思ったものを選んで中身を書く。骨格をつくる。いっぱい並べて良いのを選ぶ。肉付けする。削る。また肉付けする。書くことで考えが整理されて伝えたいことが変わることもある。それも面白い。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Oct 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/writing-and-the-expectation/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/writing-and-the-expectation/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作ったBotがドイツで僕の帰りを待ち続けていた</title>
+        <description>&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
+
+&lt;p&gt;僕が在籍しているカイザースラウテルン工科大学にはMENSAと呼ばれる食堂があって、普段はここで昼食をとっている。おすすめは2種類の日替わりメニュー。学生は入り口の電子掲示板を見てEssen1/2のどちらかを選ぶ。しかしこの掲示板、ドイツ語表記で写真もないので、ドイツ語が読めない学生は列の長さ（人気度）だけでメニューを決めなければならないという問題を抱えている。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_mensa01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この問題を解決するために、&lt;strong&gt;「MENSAの日替わりメニューを日本語に翻訳してお昼になったら投稿する」&lt;/strong&gt;というニッチなTwitterBotを作っていた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_mensa02.png&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;仕組み&quot;&gt;仕組み&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;大学のWebサイトをスクレイピングしてその日のメニューを取得する&lt;/li&gt;
+  &lt;li&gt;Microsoftの翻訳APIを使って日本語に機械翻訳する&lt;/li&gt;
+  &lt;li&gt;TwitterのAPIを使って専用アカウントから投稿する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;集めたデータはすべて保存し、httpリクエストで取り出せるようにしている。例えば &lt;a href=&quot;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&quot;&gt;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&lt;/a&gt; で2016年9月23日のメニューが返ってくる。従ってTwitter以外にも様々なサービスと連携させることができる。&lt;/p&gt;
+
+&lt;h3 id=&quot;特徴&quot;&gt;特徴&lt;/h3&gt;
+
+&lt;p&gt;「作っていた」と書いたのは、このBotは3年前にこちらに留学していたときに作ったものだから。（当時のメモ: &lt;a href=&quot;http://shoya.io/blog/microsoft_translator/&quot;&gt;PythonでMicrosoft Translator APIを使ってみる&lt;/a&gt;）その後システムは何も手を加えられることもなく動き続け、今も毎日使われている。サーバーの設定やAPIの仕様、大学Webサイトのレイアウトなど、どれか一つでも変わると止まってしまうことを考えると、動き続けているのは奇跡といえる。僕がいなかった間も毎日投稿しながら帰りを待っていたのかと思うとなんだか愛着が湧いてくる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/todaysmensa&quot;&gt;Today’s Mensa(@TodaysMensa)さん | Twitter&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/mensa/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/mensa/</guid>
+        
+        <category>Note</category>
+        
+        <category>ReleaseNote</category>
+        
+        <category>Engineering</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>定点観測</title>
+        <description>&lt;p&gt;高校時代の恩師から依頼をいただき、年に1度、愛媛県の中高一貫校で講演をしている。ちょうどさきほど今年も行けますという話をしていて、今年でなんと4年連続になる。ということで12月に日本行きます:)&lt;/p&gt;
+
+&lt;p&gt;これまで講演で使ってきたスライドを開くと、荒削りながらも当時伝えたかったことを当時最も良いと思う方法で伝えようとしている跡が見える。そしてその差分が1年間の成長の証だと思うと感慨深い。今年は研究所で働き始めたということもあり、話したい内容が尽きないので、ストーリーもメッセージもガラリと変えていこうと思う。去年の自分をどれだけ超えられるか想像するとワクワクする。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Sep 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/fixed-point-observation/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/fixed-point-observation/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>転んでもただでは起きない性格</title>
+        <description>&lt;p&gt;そろそろ客観的に考えられる頃だと思うので、この2年間について語ろうと思う。&lt;/p&gt;
+
+&lt;p&gt;2年前（大学院1年）の4月から9月くらい、この速度を保つことができれば25歳で博士号をとれるかもしれない&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;という助言を受けて、僕は成果をだそうと焦っていた。修士2年分の講義をまとめてとり、たくさんの実装と実験を行い、原稿をたくさん書いて、気がついたときには生活リズムを壊し、心身に影響がでていた。&lt;/p&gt;
+
+&lt;p&gt;10月から1月くらいまで、体がいうことを聞かず、1日18時間以上眠り続ける生活を続けていた。2月頃になると、気持ちの落ち込みも随分回復して大学に復帰することができた。しかしこの後半の時期（2月以降）の方がつらかった。頭が思うように働かず、まとまった文章が書けなくなっていた。研究したいのに研究できないというのは本当に苦しい。研究者は、実験する-&amp;gt;結果を論文にまとめる-&amp;gt;成果をもとに申請書を書くというサイクルを回す仕事なので、自分の頭のなかにあるものを文字にして発信することができなければ致命的である。特に、日によって調子が浮き沈みするのが大変だった。タスクを引き受けるとき、今日の自分ならこなせるが明日の自分がこなせる保証がなかった。他にもいろんな悩みがあり、自分が書いたのかと思うとゾッとするようなメモが残っている。&lt;/p&gt;
+
+&lt;p&gt;しかしこの苦しみが「心温計」のアイデアをもたらした。僕は生活リズムがおかしくなり始めた頃から自身にセンサを付けて生活に関する様々なログを取っていて、気持ちの浮き沈みと行動に相互の相関があることを見つけた。「行動ログや各種センシングによって心の状態を測り、状態を自分や他人に分かりやすく伝える」というテーマで提案書を書き、未踏に採択された。心温計の開発を通じていろんなセンシングを試し、多くの方から助言をいただき、結果としてスーパークリエータに認定されるとともに、心温計を使うことで自分の調子をもとに戻すことに成功した。&lt;/p&gt;
+
+&lt;p&gt;もちろん、2年前のペースを維持して今年博士号を取れればそれは良い人生ではあるけれど、この経験がなければ未踏に採択されることはなかったと思うし、修士で卒業して現在のように海外の研究所で働くという選択肢を思いつくことはなかった。&lt;a href=&quot;/blog/towards-a-scientist/&quot;&gt;なんで科学者を目指すようになったか&lt;/a&gt;と同じような話になったけど、人は失敗から学ぶ事ができるし、予期せぬ結果の先には偶然のチャンスがあるものだし、その努力はどこかで必ず役に立つ。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;単位や論文の数が要件を満たしていれば、博士前期（修士）を1年・博士後期（博士）を1年短縮して、普通27歳でとれるところを25歳でとることができる。さらに学部を1年飛び級して24歳でとるのが日本では最短のはず。&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/turning-everything-into-profit/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/turning-everything-into-profit/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>バーデン=バーデン</title>
+        <description>&lt;p&gt;たまには広いお風呂に浸かってリラックスしたいなと思って、ヨーロッパ屈指の由緒ある温泉保養地として知られるバーデン=バーデンに行ってきた。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;バーデン＝バーデンは、ドイツ連邦共和国のバーデン＝ヴュルテンベルク州に属する都市。人口は約5万4千人。 ヨーロッパ有数の温泉地として幅広く知られる。ドイツ語で、バーデンという語自体が、「入浴」を意味しており、そこからバーデンという地名がついた。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%87%E3%83%B3%EF%BC%9D%E3%83%90%E3%83%BC%E3%83%87%E3%83%B3&quot;&gt;バーデン=バーデン - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;injection-center&quot;&gt;フリードリヒス浴場&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1877年に完成した豪華な浴場。案内に従って全裸のままシャワーやサウナ、異なる温度設定のお風呂に浸かる。火・水・金・日・祝・2/14は男女混浴、月・木・土は男女別浴。混浴の日に行ったのでなかなかカルチャーショックな体験になった。&lt;/p&gt;
+
+&lt;p class=&quot;injection-center&quot;&gt;カラカラ浴場&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらは水着着用の温泉プール。フリードリヒス浴場に比べて近代的な施設。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;温泉をでたあとは町を散策した。半日しか過ごさなかったのだけれど、ショッピングモールや美術館、博物館、カジノなどもあって、本来はリフレッシュのためにもっと長く滞在するべき場所らしい。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/baden-baden/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/baden-baden/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>街道の街 ストラスブール</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg04.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg11.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg12.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_strasbourg13.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 20 Aug 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/strasbourg/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/strasbourg/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>Steiff Museum</title>
+        <description>&lt;p&gt;テディベアの生みの親マルガレーテ・シュタイフの博物館を訪れました。人形劇や展示を通じてテディベアが生まれたきっかけやその製造過程について知ることができます。日本人が多くて驚いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_steiff-museum07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/steiff-museum/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/steiff-museum/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>アインシュタイン生誕の地 ウルム</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;ウルムは、ドイツ連邦共和国のバーデン＝ヴュルテンベルク州南部に属する都市。 世界で最も高い尖塔を有するウルム大聖堂、ルネ・デカルトが直交座標系を思いついた地、物理学者アルベルト・アインシュタインの出生地として知られる。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%AB%E3%83%A0&quot;&gt;ウルム - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm02.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm11.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm12.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm13.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm14.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm15.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm16.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Aug 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/ulm/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/ulm/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>ヨーロッパ最大の滝 ライン滝</title>
+        <description>&lt;p&gt;ヨーロッパで一番大きい滝です。めちゃくちゃ迫力があった！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1枚目の写真の国旗があるところまでボートを使っていくことができる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;国旗のあるところから見下ろした滝の様子。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;滝の向こうにラウフェン城が見える。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;綱渡りで川を横断してる人がいた。まじか！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2016 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/rheinfall/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/rheinfall/</guid>
+        
+        <category>Sightseeing</category>
+        
+        
+        <category>diary</category>
+        
+      </item>
+    
+  </channel>
+</rss>
