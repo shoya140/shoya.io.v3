@@ -6,7 +6,7 @@ tags: ['Note']
 published: True
 ---
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/looking_back_at_2015_01.JPG" class="image-on-frame-small">
+<img src="/assets/img/blog_looking_back_at_2015_01.JPG" class="image-on-frame-small">
 
 新年あけましておめでとうございます。<br>これまでの人生で最も忙しい日々が続いていて、振り返る間もなく2015年が終わっていた。忘れないうちに2015年のことを書いておこうと思う。
 

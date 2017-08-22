@@ -10,7 +10,7 @@ published: True
 
 Google Glassには本体から送られる光を目に届けるためのプリズムが付いているのだけれど、高温多湿な場所で使っているとプリズムの先端に貼られているミラーフィルムが剥がれて画面が見えなくなってしまう。調べてみると割とよくある事例らしく、Googleに問い合わせた人もいる模様。(<cite>[High Temps are Damaging Google Glass Beyond Repair](http://glassalmanac.com/google-glass-mortal-enemy-high-temps-humidity/656/)</cite>, <cite>[Whats Happing to the film on my Google Glass?](https://www.reddit.com/r/googleglass/comments/292rzy/whats_happing_to_the_film_on_my_google_glass/)</cite>) しかし手元のGoogle GlassはAmazon経由で購入ており問い合わせが難しいので、自分で修理することにした。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/reparing01.jpg" class="image-on-frame-medium">
+<img src="/assets/img/blog_reparing01.jpg" class="image-on-frame-medium">
 
 ### 解決策
 
@@ -24,7 +24,7 @@ Google Glassには本体から送られる光を目に届けるためのプリ�
 1. 金属光沢シートをプリズムの大きさに合わせて切り、ピンセットで乗せる。
 1. 吸着するまで3-4分待つ。今までどおり画面が見えるようになる。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/reparing02.jpg" class="image-on-frame-medium">
+<img src="/assets/img/blog_reparing02.jpg" class="image-on-frame-medium">
 
 金属光沢シートを乗せた後はすぐに指で押したりせず自然と吸着するのを待ちましょう。気泡が入ると像がぼやけます。5,6回繰り返すうちに上手に貼ることができました。
 

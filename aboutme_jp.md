@@ -3,7 +3,7 @@ layout: page
 title: 石丸 翔也
 permalink: /aboutme/jp/
 ---
-<img src="/assets/img/myglass2_ex3_mini.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="石丸 翔也">
+<img src="/assets/img/icon_portrait.jpg" class="image-trimmed-by-circle image-on-frame" width="150px" alt="石丸 翔也">
 
 ## 石丸 翔也 [[EN](/aboutme/)/JP]
 

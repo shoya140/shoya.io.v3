@@ -19,4 +19,4 @@ relations:
 
 まだちょっと寒くてときどき雪が降る。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/life_in_germany03.JPG" class="image-on-frame-small image-fade">
+<img src="/assets/img/blog_life_in_germany03.JPG" class="image-on-frame-small image-fade">

@@ -12,7 +12,7 @@ AWSのアカウントを作成した状態から深層学習のための環境�
 
 インスタンス->マーケットプレイス->「nvidia」で検索。<br>インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer01.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_aws-chainer01.png" class="image-on-frame-medium">
 
 ## 2. cuDNNのインストール(任意)
 
@@ -58,6 +58,6 @@ SSL/HTTPSを使用する方法は[こちら](http://jupyter-notebook.readthedocs
 
 イメージ(テンプレート)の作成はインスタンスのメニュー>イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer02.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_aws-chainer02.png" class="image-on-frame-medium">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/aws-chainer03.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_aws-chainer03.png" class="image-on-frame-medium">

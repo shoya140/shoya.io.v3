@@ -4,7 +4,7 @@ title: オーバーアマガウ・ヴィースの巡礼教会・リンダーホ�
 categories: ['diary']
 tags: ['Sightseeing']
 published: True
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
+eyecatch: /assets/img/blog_oberammergau10.jpg
 ---
 
 ドイツ南部バイエルン州を観光しました。
@@ -15,19 +15,19 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 
 ペストが流行したとき1632年、オーバーアマガウの被害が奇跡的に少なかったことから、信仰あつい村の人々は神に感謝を込めて1634年以来380年以上も受難劇を演じ続けてきたとのこと。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau01.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau01.jpg" class="image-on-frame image-fade">
 
 衣装製作から出演まですべてアマチュアの村人たちでおこなう。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau02.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau02.jpg" class="image-on-frame image-fade">
 
 オーバーアマガウはフレスコ画(壁に直接描かれた絵)で有名な村でもある。村の家やレストランなどいたるところに描かれた絵を見ながら散策するのも楽しい。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau03.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau03.jpg" class="image-on-frame image-fade">
 
 村の中心から離れたところに童話を題材にしたフレスコ画がある。写真は赤ずきんちゃん。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau04.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau04.jpg" class="image-on-frame image-fade">
 
 <p class="injection-center">ヴィースの巡礼教会</p>
 
@@ -35,11 +35,11 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 
 内部の装飾が豪華。今までで訪れた教会のなかで最も印象的かもしれない。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau05.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau05.jpg" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau06.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau06.jpg" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau07.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau07.jpg" class="image-on-frame image-fade">
 
 <p class="injection-center">リンダーホーフ城</p>
 
@@ -47,8 +47,8 @@ eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg
 
 こちらも内装がとても豪華で感動した。キッチンで調理された料理がテーブルごと上の階のダイニングにあがる魔法の食卓など面白い仕掛けもあった。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau08.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau08.jpg" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau09.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau09.jpg" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/oberammergau10.jpg" class="image-on-frame image-fade">
+<img src="/assets/img/blog_oberammergau10.jpg" class="image-on-frame image-fade">

@@ -9,7 +9,7 @@ keywords: 本, 引用
 
 Web上に自分用の本棚を作った。[self.bookShelf](http://book-mrk1869.tumblr.com)
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/book_shelf.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_book_shelf.png" class="image-on-frame-medium">
 
 作ったというと聞こえはいいけれど、投稿機能はTumblrがやってくれているので、実際のところCSSを書いただけです。
 

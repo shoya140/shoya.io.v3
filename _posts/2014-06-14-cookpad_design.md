@@ -5,12 +5,12 @@ published: True
 categories: ['diary']
 tags: ['Note']
 keywords: クックパッド, デザイン, UX
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg
+eyecatch: /assets/img/blog_cookpad_design.jpg
 ---
 
 京都のCAMPHOR-HOUSEにて、クックパッドのデザイン責任者・池田さんによる講演会が開催されました。「クックパッドのサービス開発とデザイン」というタイトルで、「決してインターネットに詳しいわけではない方にまでに幅広く支持されているデザインの裏側には、どういった工夫やこだわりがあるか」というお話をしていただきました。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/cookpad_design.jpg" class="image-on-frame-medium">
+<img src="/assets/img/blog_cookpad_design.jpg" class="image-on-frame-medium">
 
 ### デザインの原則
 

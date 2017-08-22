@@ -1,0 +1,27 @@
+language: ruby
+addons:
+  apt:
+    packages:
+    - ruby-dev
+    - libgsl0ldbl
+    - libgsl0-dev
+cache: bundler
+rvm:
+- 2.3.3
+branches:
+  only:
+    - master
+before_script:
+- bundle exec rake setup[https://${GH_TOKEN}@github.com/shoya140/shoya.io.git]
+script:
+- bundle exec rake generate
+# - bundle exec rake validate
+after_success:
+- bundle exec rake -q deploy 2>&1 | sed "s/${GH_TOKEN}/\${GH_TOKEN}/g"
+env:
+  global:
+  - GIT_COMMITTER_NAME="Shoya Ishimaru (via Travis-CI)"
+  - GIT_COMMITTER_EMAIL="shoya.ishimaru@gmail.com"
+  - GIT_AUTHOR_NAME="Shoya Ishimaru (via Travis-CI)"
+  - GIT_AUTHOR_EMAIL="shoya.ishimaru@gmail.com"
+  - secure: "wOEtPvQ56QibyS/ArB65iz+471aD3mZh6XvcWPkONsBtnMlpPj5HdVoO39B0fLgzb1ju0UL5DAjT7KQN9QYQfaLdf5dz0YzZAkspARGUl2LdEPgrxwlwGZLFCrfe/txQhQ0kBf+V0iFYTqzckM9CdAnpjeV4Zf2nNCS47z/AjoZ+9BXEffHZbYd69uSpSUqt2/mLiYdFb/fsom7nTT89soxD454xxT7csMovrWWNx0en8Hhg7gdem2X9ywcATNSokVf84IE1fbcqJpny0J5AKFtYTZ/xlXn+NCELpuWi59L612s7rH+Uf5nWlVWda+f8cO8gTz0Pgbbo6mhL1IIAzPdLd6Y9JOwEWbAXNcP43a6ujvgHIz6OxO8s7o1LwFv9iI92WsjCrtZ9M6CHvXHVkkwUiu+SYNbJqc3VsTaejaHq+oO0frQluNn94sXWUk9EvkmLvy/NJnsBL+nZ6d87drTa0Va0ie/yzFI324t3dpGKj4eujfbcPYgw+SCGjpLjMXakLXgx1d6Qsb2k4MHbYQTEWQVk0A3k1dFsR9juMeNpblRudVpAo5deJIZQBBESB9Jy6i2hf0lxGoMSD1kKc4JNAY3nuv+o+rZjiJmd0hCMMM245p5XKZeeAmTTvanBsjD/52xoT1fJFQMlmmwUbjhsAUpCMhPjFyU2CMMSgZE="

@@ -4,10 +4,10 @@ title: なんで科学者を目指すようになったか
 published: True
 categories: ['diary']
 tags: ['Note']
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg
+eyecatch: /assets/img/blog_towards_a_scientist_01.jpg
 ---
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/towards_a_scientist_01.jpg" class="image-on-frame-mini">
+<img src="/assets/img/blog_towards_a_scientist_01.jpg" class="image-on-frame-mini">
 
 幼い頃から「科学」が好きな子供だった。近所の大学が大学祭で**科学体験フェスティバル**を開催していて、毎年欠かさず参加した。特に鉱物の展示がお気に入りだったので、参加賞の水晶などを集めながら、物心ついた頃は石博士になりたいと思っていた。うちの小学校の卒業式には卒業証書を受け取る際に将来の夢を大声で言うみたいなイベントがあって、「科学者になって世界中の人を幸せにする」と言ったのを覚えている。
 

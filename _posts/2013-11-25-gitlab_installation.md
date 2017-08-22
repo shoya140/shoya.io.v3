@@ -356,7 +356,7 @@ Nginx再起動
 sudo /etc/init.d/nginx restart
 {% endhighlight %}
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/gitlab_ss.png" class="image-on-frame image-center">
+<img src="/assets/img/blog_gitlab_ss.png" class="image-on-frame image-center">
 
 以上の設定でhttp://YOUR_DOMAIN.COM/でGitLabへアクセスできます。
 管理者アカウントの初期設定は下記のとおりです。

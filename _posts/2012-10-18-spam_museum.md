@@ -16,7 +16,7 @@ relations:
 メイワクメールをワクワクに変える。<br>
 迷惑メール共有サイト「Spam Museum」スパムミュージアムを本日リリースしました。
 
-[<img src="https://dl.dropboxusercontent.com/u/12208857/img/spammuseum_ss.png" class="image-on-frame">](http://meiwaku.me)
+[<img src="/assets/img/blog_spammuseum_ss.png" class="image-on-frame">](http://meiwaku.me)
 
 日常的に届く迷惑メール。<br>
 世の中で送受信されるメールの約95％が迷惑メールだとも言われています。<br>
@@ -25,7 +25,7 @@ relations:
 Spam Museumとはそういった素敵な迷惑メールを皆で共有するためのサイトです。<br>
 「日常のメイワクをワクワクに変える」そんなコンセプトで作りました。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/spammuseum_about.gif" class="image-on-frame">
+<img src="/assets/img/blog_spammuseum_about.gif" class="image-on-frame">
 
 Spam Museumでできることは大きく分けて３つあります。
 

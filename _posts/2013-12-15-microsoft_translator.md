@@ -15,7 +15,7 @@ keywords: Python, Microsoft Translator API, 自動翻訳
 
 Windows accountでのサインインを求められるので、持っていない場合は"新規登録"ボタンをクリックしてアカウントを作成します。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/microsoft_translator01.png" class="image-on-frame">
+<img src="/assets/img/blog_microsoft_translator01.png" class="image-on-frame">
 
 ## 2. ライブラリのインストール
 

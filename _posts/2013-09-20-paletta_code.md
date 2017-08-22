@@ -12,7 +12,7 @@ relations:
 
 [Paletta - HSV Color palette for every Programmer](http://paletta.mrk1869.com)
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/paletta_code.png" class="image-on-frame">
+<img src="/assets/img/blog_paletta_code.png" class="image-on-frame">
 
 ### 新機能
 

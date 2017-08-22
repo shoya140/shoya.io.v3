@@ -36,4 +36,4 @@ EntryLoader.headerTagAndClassNameにaタグを内包するDOMを指定すると�
 
 はてなスターがあるとどのエントリが盛り上がっているか視覚的に分かって便利。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/ss_hatena_star.png" class="image-on-frame">
+<img src="/assets/img/blog_ss_hatena_star.png" class="image-on-frame">

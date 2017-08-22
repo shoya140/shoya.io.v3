@@ -4,12 +4,12 @@ title: Sublime Text3の設定をGit+Dropboxで安全に同期する
 published: True
 categories: ['tech']
 tags: ['Engineering']
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png
+eyecatch: /assets/img/blog_sublime_sync.png
 ---
 
 [Sublime Text3導入メモ](http://shoya.io/blog/hello-sublime/)で設定ファイルをDropboxで同期する方法を書いたのだけれど、意図しないタイミングで設定が同期されてコンフリクトが頻繁に発生するので、設定をGitで管理することにした。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/sublime_sync.png" class="image-on-frame-small">
+<img src="/assets/img/blog_sublime_sync.png" class="image-on-frame-small">
 
 設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「**過去の状態に戻しやすくなる**」「**任意のタイミングで同期できる**」というメリットがある。
 

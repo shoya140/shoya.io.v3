@@ -20,23 +20,23 @@ tags: ['Engineering']
 
 まずはドライバーPCのシステム環境設定>共有を開きます。1.画面共有にチェックを入れ、2.コンピュータ設定を選択して、3.ほかのユーザが画面操作の権限を要求することを許可にチェックを入れます。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/pair01.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_pair01.png" class="image-on-frame-medium image-fade">
 
 次にナビゲーターPCでFinder>移動>サーバへ接続(ショートカットキー:⌘+K)を開き、ドライバーPCに表示されているvnc://(IPアドレス)を入力します。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/pair02.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_pair02.png" class="image-on-frame-medium image-fade">
 
 画面操作の権限に関する選択画面が現れるので、アクセス権を要求を選んで接続ボタンを押します。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/pair03.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_pair03.png" class="image-on-frame-medium image-fade">
 
 ドライバーPCに要求を許可するか確認画面が現れるので画面を共有をクリックします。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/pair04.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_pair04.png" class="image-on-frame-medium image-fade">
 
 以上の設定が完了するとドライバーPCの画面が表示され、ナビゲーターのカーソル移動・キーボード入力を受け入れるようになります。早速ペアプロを開始しましょう。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/pair05.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_pair05.png" class="image-on-frame-medium image-fade">
 
 なお、Macの画面共有を使用するには2つのPCが同じネットワークに接続されている必要があります。離れた環境で画面を共有する場合は[Screenhero](https://screenhero.com/)・[TeamViewer](http://www.teamviewer.com/ja/)・[Googleハングアウト](https://plus.google.com/hangouts)のリモートデスクトップ機能を使うことをおすすめします。アカウント作成やソフトウェアのインストールが不要で簡単という理由で、今回は画面共有を紹介しました。
 

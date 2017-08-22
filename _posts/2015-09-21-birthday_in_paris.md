@@ -4,10 +4,10 @@ title: 誕生日&&留学初日
 categories: ['diary']
 tags: ['Note']
 published: True
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/birthday_in_paris.jpg
+eyecatch: /assets/img/blog_birthday_in_paris.jpg
 ---
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/birthday_in_paris.jpg" class="image-on-frame-small image-fade">
+<img src="/assets/img/blog_birthday_in_paris.jpg" class="image-on-frame-small image-fade">
 
 今日で24歳になると同時にフランスでの留学生活が始まった。ここ最近の生活を振り返って、今年は「やるべきことをする」を目標に頑張ることにする。具体的には3つのやるべきことができればと思っている。
 

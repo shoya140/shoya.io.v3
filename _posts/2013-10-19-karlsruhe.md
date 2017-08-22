@@ -16,21 +16,21 @@ relations:
 今日はカールスルーエを観光しました。
 というより、工科大にパンクロックが好きな学生がいて、都会でしかできない買い物に付き合ったったいう感じでした。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1272.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1272.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1274.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1274.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1233.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1233.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1275.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1275.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1276.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1276.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1277.JPG" class="image-on-frame image-fade">
+<img src="/assets/img/blog_IMG_1277.JPG" class="image-on-frame image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1258.JPG" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_IMG_1258.JPG" class="image-on-frame-medium image-fade">
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/IMG_1224.JPG" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_IMG_1224.JPG" class="image-on-frame-medium image-fade">
 
 ちなみに電車の中での話題
 

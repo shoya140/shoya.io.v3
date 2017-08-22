@@ -7,7 +7,7 @@ tags: ['Engineering']
 keywords: Mac, ターミナル, プロセスが完了しました, ログイン
 ---
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal01.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_terminal01.png" class="image-on-frame-medium">
 
 ### 問題
 
@@ -23,6 +23,6 @@ Macのターミナルが起動しない。起動後すぐに\[プロセスが完
 
 **ユーザ名の変更は多くのアプリケーションの動作に影響を及ぼす可能性があります。バックアップをとったのち、慎重に実行してください。**
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/terminal02.png" class="image-on-frame-medium">
+<img src="/assets/img/blog_terminal02.png" class="image-on-frame-medium">
 
 Macのターミナルが動かないという報告を受けたのだけれど、原因はユーザ名がマイナスから始まっていたことだった。-piyoのようなユーザ名はloginコマンドのプションとして認識されてしまうので(もちろんそんなオプションはない)ターミナルでログインできない。なんだそれ...

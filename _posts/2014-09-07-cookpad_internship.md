@@ -5,7 +5,7 @@ published: True
 categories: ['diary']
 tags: ['Note']
 keywords: クックパッド, サマーインターン
-eyecatch: https://dl.dropboxusercontent.com/u/12208857/img/cookpad_internship01.jpg
+eyecatch: /assets/img/blog_cookpad_internship01.jpg
 relations:
   - cookpad_design
   - hatena_intern
@@ -48,6 +48,6 @@ relations:
 
 サポートしていただいた社員の方々、参加者のみんな、そしてチームメンバーの辻くん、5日間お世話になりました！ありがとうございました！
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/cookpad_internship02.jpg" class="image-on-frame-medium">
+<img src="/assets/img/blog_cookpad_internship02.jpg" class="image-on-frame-medium">
 
 (おまけ)miyagawaさんに会えてテンション最高潮の[rebuild.fm](http://rebuild.fm/)リスナーインターン

@@ -8,6 +8,6 @@ published: True
 
 Alfredのcustom web searchesにGoogle Scholar ```https://scholar.google.com/scholar?q={query}``` を登録して、いつどこからでも素早く論文を検索できるようにしました。
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/alfred_google_scholar.png" class="image-on-frame-medium image-fade">
+<img src="/assets/img/blog_alfred_google_scholar.png" class="image-on-frame-medium image-fade">
 
 検索結果をAlfred内に表示したりbibをクリップボードにコピーするworkflowを作ると面白いかもしれない(いつか時間ができたら作る)。
