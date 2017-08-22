@@ -12,7 +12,7 @@ relations:
 
 承認欲求を満たすためにはてなスターを導入した。
 
-<div class="hatena-star"><a href="{{ site.url }}{{ page.url}}" style="display:none;">hatena</a></div>
+<div class="hatena-star"><a href="{{ site.fullurl }}{{ page.url}}" style="display:none;">hatena</a></div>
 
 手順は[はてなスター日記](http://d.hatena.ne.jp/hatenastar/20070707)の通りで、headなど任意の場所で以下のコードを読み込む。
 
