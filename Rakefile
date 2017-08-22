@@ -48,6 +48,7 @@ task :deploy do
   cd "#{deploy_dir}" do
     puts "git pull in #{deploy_dir}... "
     ok_failed system "git pull origin \'#{deploy_branch}\'"
+    ok_failed system "git checkout \'#{deploy_branch}\'"
   end
 
   puts "\nCopy to _site/ to #{deploy_dir}... "
