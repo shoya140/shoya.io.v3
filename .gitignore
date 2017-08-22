@@ -1,0 +1,8 @@
+*.swp
+.DS_Store
+vendor/
+_site/
+_drafts/
+.sass-cache/
+.tweet-cache/
+.jekyll-metadata
