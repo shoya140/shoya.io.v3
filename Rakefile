@@ -46,9 +46,8 @@ task :deploy do
   #Rake::Task[:generate].execute
 
   cd "#{deploy_dir}" do
-    puts "git pull in #{deploy_dir}... "
-    ok_failed system "git pull origin \'#{deploy_branch}\'"
-    ok_failed system "git checkout \'#{deploy_branch}\'"
+    puts "Crate a branch named #{deploy_dir}... "
+    ok_failed system "git checkout -b \'#{deploy_branch}\' \'origin/#{deploy_branch}\'"
   end
 
   puts "\nCopy to _site/ to #{deploy_dir}... "
