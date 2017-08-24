@@ -1,21 +1,30 @@
 ---
-layout: page
-title: Blog
+layout: default
 ---
-<div class="tag-header">
-  <a href="/tag/Research/">#研究</a>({{ site.tags["Research"].size }})
-  <a href="/tag/Engineering/">#エンジニアリング</a>({{ site.tags["Engineering"].size }})
-  <a href="/tag/Design/">#デザイン</a>({{ site.tags["Design"].size }})
-  <a href="/tag/Sightseeing/">#観光</a>({{ site.tags["Sightseeing"].size }})
-  <a href="/tag/Note/">#日記</a>({{ site.tags["Note"].size }})
-  <a href="/tag/ReleaseNote/">#作りました</a>({{ site.tags["ReleaseNote"].size }})
-{% for post in page.posts %}
-<div class="post-list-item">
-    <a href="{{ post.url | prepend: site.baseurl }}"></a>
-    <span class="post-meta">
-    	{{ post.date | date: "%b %-d, %Y" }}
-    	{% for tag in post.tags %}[{{ tag }}]{% endfor %}
-    </span>
-    <h2 class="post-link">{{ post.title }}</h2>
+<div class="page-content">
+  <div class="wrapper">
+    <div class="wrapper-inside">
+      <div class="post">
+        <article class="post-content">
+          <div class="tag-header">
+            <a href="/tag/Research/">#研究</a>({{ site.tags["Research"].size }})
+            <a href="/tag/Engineering/">#エンジニアリング</a>({{ site.tags["Engineering"].size }})
+            <a href="/tag/Design/">#デザイン</a>({{ site.tags["Design"].size }})
+            <a href="/tag/Sightseeing/">#観光</a>({{ site.tags["Sightseeing"].size }})
+            <a href="/tag/Note/">#日記</a>({{ site.tags["Note"].size }})
+            <a href="/tag/ReleaseNote/">#作りました</a>({{ site.tags["ReleaseNote"].size }})
+          {% for post in page.posts %}
+          <div class="post-list-item">
+              <a href="{{ post.url | prepend: site.baseurl }}"></a>
+              <span class="post-meta">
+              	{{ post.date | date: "%b %-d, %Y" }}
+              	{% for tag in post.tags %}[{{ tag }}]{% endfor %}
+              </span>
+              <h2 class="post-link">{{ post.title }}</h2>
+          </div>
+          {% endfor %}
+        </article>
+      </div>
+    </div>
+  </div>
 </div>
-{% endfor %}

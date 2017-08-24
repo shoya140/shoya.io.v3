@@ -2,7 +2,7 @@
 layout: post
 title: ハイデルベルクを観光しました
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 keywords: ハイデルベルク, 観光
 relations:

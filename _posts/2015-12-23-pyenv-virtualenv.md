@@ -1,17 +1,17 @@
 ---
 layout: post
 title: 科学技術計算のためのPython開発環境(2015)
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 published: True
 ---
 
-### 機能
+## 機能
 * pyenv-virtualenvでバージョンと仮想環境を切り替えられる
 * OpenCV3.0をPythonから利用できる
 * Jupyter(iPython notebook)を起動できる
 
-### pyenv-virtualenvの導入
+## pyenv-virtualenvの導入
 
 [Homebrew](http://brew.sh/)でインストールする。
 
@@ -37,7 +37,7 @@ $ pyenv global 3.5.10
 $ pyenv rehash
 {% endhighlight %}
 
-### OpenCVの導入
+## OpenCVの導入
 
 Homebrewでインストールする。
 
@@ -61,7 +61,7 @@ numpyも一緒に入るけどpipで管理するものを使う
 $ pip install numpy
 {% endhighlight %}
 
-### Jupyterなど定番ライブラリの導入
+## Jupyterなど定番ライブラリの導入
 
 pipでインストールする
 
@@ -75,7 +75,7 @@ virtualenvの上でmatplotlibを使うための設定
 $ echo backend : TkAgg > ~/.matplotlib/matplotlibrc
 {% endhighlight %}
 
-### 参考1 virtualenvの使い方
+## 参考1 virtualenvの使い方
 
 大体の場合はPythonのバージョン(2.7と3.5)を切り替えられるだけで十分だが、異なるバージョンのライブラリを使いたい時やテスト環境ではvirtualenvで仮想環境を用意する。
 
@@ -93,7 +93,7 @@ virtualenvの削除
 $ pyenv uninstall 3.5.0-tutorial
 {% endhighlight %}
 
-### 参考2 OSX以外(Linux, Windows)での実行
+## 参考2 OSX以外(Linux, Windows)での実行
 
 scipyやOpenCVのセットアップで躓くことが多いのでminicondaを使っている。例えば下記のDockerfileからcontainerを作成してその上で実行する。(Python3系のcondaはOpenCVをサポートしていないので注意)
 

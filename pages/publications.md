@@ -4,11 +4,11 @@ title: Publications
 permalink: /publications/
 ---
 
-### Journal
+## Journal
 
 1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u>, and Kai Kunze. <span style="font-weight: 700;" id="amft2015regular">Making Regular Eyeglasses Smart</span>. Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015.
 
-### International Conference
+## International Conference
 
 1. <u>Shoya Ishimaru</u>, Soumy Jacob, Apurba Roy, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Michael Thees, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017cognitive">"Cognitive State Measurement on Learning Materials by Utilizing Eye Tracker and Thermal Camera."</span> Proc. ICDAR-HDI 2017, October 2017, to appear.
 
@@ -58,7 +58,7 @@ permalink: /publications/
 
 1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013.
 
-### Domestic Conference
+## Domestic Conference
 
 1. 星加 健介, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;" id="hoshika2016jreading">リーディングライフログを用いた日常的な読書行動の計量</span>. 電子情報通信学会技術研究報告, vol. 116, no. 38, PRMU2016-19, pp. 101-106, May 2016.
 

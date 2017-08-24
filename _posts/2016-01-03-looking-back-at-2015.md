@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2015年振り返り
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: フェルクリンゲン製鉄所
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_voelklingen10.jpg

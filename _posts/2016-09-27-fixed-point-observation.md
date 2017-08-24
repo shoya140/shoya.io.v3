@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 定点観測
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 ---

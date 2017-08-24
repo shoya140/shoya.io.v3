@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 転んでもただでは起きない性格
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 ---

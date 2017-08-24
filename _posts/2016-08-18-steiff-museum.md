@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Steiff Museum
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_steiff-museum05.jpg

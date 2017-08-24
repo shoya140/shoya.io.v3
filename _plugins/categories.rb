@@ -18,7 +18,7 @@ module Jekyll
 
     def generate(site)
       site.categories.keys.each do |category|
-        site.pages << CategoryPage.new(site, site.source, File.join('category', category), category)
+        site.pages << CategoryPage.new(site, site.source, category, category)
       end
     end
   end

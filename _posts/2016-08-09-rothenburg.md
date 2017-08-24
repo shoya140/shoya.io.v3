@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ローテンブルク・オプ・デア・タウバー
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_rothenburg10.jpg

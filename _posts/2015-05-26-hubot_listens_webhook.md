@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SlackのIncoming WebhooksをHubotで拾う
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 published: True
 ---

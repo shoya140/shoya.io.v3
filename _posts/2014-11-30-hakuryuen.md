@@ -2,7 +2,7 @@
 layout: post
 title: 白龍園観覧
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3でLaTeXをコンパイルする[Mac]
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 ---
 
@@ -10,7 +10,7 @@ Sublime Textにはcommand+bでコードを実行する機能(Build System)があ
 
 <img src="/assets/img/blog_sublime_latex_01.png" class="image-on-frame-small">
 
-### 手順
+## 手順
 
 1. Tools>Build System>New Build System...を選択してBuild Systemを作成する。
 
@@ -26,6 +26,6 @@ Sublime Textにはcommand+bでコードを実行する機能(Build System)があ
 }
 {% endhighlight %}
 
-### 補足
+## 補足
 
 LaTeXからPDFを作成するには、複数回のコンパイルが必要になる。標準で提供されている仕組みではBuild Systemに複数のコマンドを登録することができないので、上記のような黒魔術を使用する。Macの場合は"shell"をfalseに、"cmd"にshとその引数として実行したいコマンドを&&で続けていけばうまく動作するらしい。Windowsの場合は書き方がやや異なる。<cite>[Multiple commands in Sublime Build System](http://blog.pcitron.fr/2013/02/08/multiple-command-in-sublime-build-system/)</cite>を参考に設定した。

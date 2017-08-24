@@ -1,20 +1,20 @@
 ---
 layout: post
 title: AWSのGPUインスタンスでchainerとjupyter notebookを使う
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 published: True
 ---
 
 AWSのアカウントを作成した状態から深層学習のための環境を作るまでの手順メモ
 
-## 1. インスタンスの作成
+## インスタンスの作成
 
 インスタンス->マーケットプレイス->「nvidia」で検索。<br>インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。
 
 <img src="/assets/img/blog_aws-chainer01.png" class="image-on-frame-medium">
 
-## 2. cuDNNのインストール(任意)
+## cuDNNのインストール(任意)
 
 [NVIDIAのwebサイト](https://developer.nvidia.com/cudnn)でAccelerated Computing Developer Programに登録してダウンロード。登録が完了するまでに3日ほどかかる。ダウンロードしたものをインスタンス上で解凍して指定の位置に置く。
 
@@ -24,7 +24,7 @@ $ sudo cp lib* /opt/nvidia/cuda/lib64/
 $ sudo cp cudnn.h /opt/nvidia/cuda/include/
 {% endhighlight %}
 
-## 3. chainerとjupyterのセットアップ
+## chainerとjupyterのセットアップ
 
 {% highlight bash %}
 $ sudo CUDA_PATH=/opt/nvidia/cuda pip install chainer
@@ -54,7 +54,7 @@ $ jupyter notebook
 
 SSL/HTTPSを使用する方法は[こちら](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html)を参照。
 
-## 3. イメージの作成とイメージからのインスタンス作成
+## イメージの作成とイメージからのインスタンス作成
 
 イメージ(テンプレート)の作成はインスタンスのメニュー>イメージの作成を選択して行う。同時にスナップショットも作成される。ここまでの作業を終えたものをイメージにしておけば、以後はそのイメージから同様のインスタンスを作成することができる。
 

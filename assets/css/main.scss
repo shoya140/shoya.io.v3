@@ -5,7 +5,8 @@
 
 // Our variables
 $base-font-family: Oxygen, 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font-size: 17px;
+$base-font-size: 16px;
+$large-font-size: 18px;
 $palm-font-size: 14px;
 $small-font-size: $base-font-size * 0.8;
 $base-line-height: 1.8;
@@ -590,17 +591,10 @@ a:hover .footer-icon{
 .post-content {
     margin-bottom: $spacing-unit;
     h2 {
-        font-size: 19px;
+        font-size: $large-font-size;
     }
     h3 {
-        font-size: 19px;
-        &:before{
-            content: "rightright ";
-            @extend .lsf;
-        }
-    }
-    h4 {
-        font-size: 19px;
+        font-size: $base-font-size;
     }
     @include media-query($on-palm) {
         text-align: justify;
@@ -707,7 +701,7 @@ a:hover .footer-icon{
     display: inline-block;
     position:relative;
     width: 46%;
-    font-size: 16px;
+    font-size: $base-font-size;
     padding: 10px;
     margin: 2px;
     white-space: nowrap;
@@ -806,30 +800,6 @@ a:hover .footer-icon{
     background-attachment: fixed;
     color: $background-color;
     text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-
-    h2{
-        font-size: 20px;
-    }
-    h3{
-        font-size: 20px;
-        &:before{
-            content: "rightright ";
-            @extend .lsf;
-        }
-    }
-    a{
-        color: $yellow-color;
-        text-decoration: none;
-        &:hover{
-            color: $yellow-color-dark;
-        }
-    }
-    @include media-query($on-palm) {
-        text-align: justify;
-        h2, h3{
-            font-size: 15px;
-        }
-    }
 }
 
 .profile-image{
@@ -862,4 +832,10 @@ a:hover .footer-icon{
 
 .footnotes{
     font-size: 12px;
+}
+
+twitterwidget,
+iframe[id^="twitter-widget-"] {
+  margin-left: auto;
+  margin-right: auto;
 }

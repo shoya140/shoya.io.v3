@@ -2,7 +2,7 @@
 layout: post
 title: はてなのサマーインターンに参加しました
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 keywords: はてなインターン2012
 relations:

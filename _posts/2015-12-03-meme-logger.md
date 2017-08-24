@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました
-categories: ['tech']
+categories: ['blog']
 tags: ['ReleaseNote', 'Engineering']
 published: True
 eyecatch: /assets/img/blog_github_memelogger_ios_dev_01.png
@@ -11,16 +11,16 @@ eyecatch: /assets/img/blog_github_memelogger_ios_dev_01.png
 
 [JINS MEME Advent Calendar 2015](http://qiita.com/advent-calendar/2015/jinsmeme) 3日目の記事です。昨日の記事は@hatoneさんによる <cite>[JINE MEME iOSアプリ開発入門 -公式サンプルアプリを動かす-](http://hatone.hateblo.jp/entry/2015/12/01/162235)</cite>でした。サンプルアプリが動いたら、次はセンサから得られるデータについてもっと詳しく見てみたいはず！今日はセンサデータをグラフ表示したり保存する方法について紹介します。記事の前半は作ったものの紹介で後半は実装の工夫です。
 
-### 背景
+## 背景
 
 センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な**波形のモニタリング**と**ラベル付データの記録**機能を持ったアプリを作って[githubで公開しました](https://github.com/shoya140/MEMELogger-iOS-developers)。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。
 
-### 機能
+## 機能
 
 * アプリ上でセンサデータをグラフ表示できる
 * オフライン解析のためにデータを記録できる
 
-### 実装
+## 実装
 
 **グラフ描画** 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。
 
@@ -45,7 +45,7 @@ eyecatch: /assets/img/blog_github_memelogger_ios_dev_01.png
 
 その他の細かい実装についてはリポジトリをご参照ください。
 
-### まとめ
+## まとめ
 
 JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。[JINS MEME Advent Calendar2015](http://qiita.com/advent-calendar/2015/jinsmeme) 明日は古川さんとのことでとても楽しみです！
 

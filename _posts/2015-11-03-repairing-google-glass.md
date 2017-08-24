@@ -1,18 +1,18 @@
 ---
 layout: post
 title: Google Glassを修理する
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 ---
 
-### 背景
+## 背景
 
 Google Glassには本体から送られる光を目に届けるためのプリズムが付いているのだけれど、高温多湿な場所で使っているとプリズムの先端に貼られているミラーフィルムが剥がれて画面が見えなくなってしまう。調べてみると割とよくある事例らしく、Googleに問い合わせた人もいる模様。(<cite>[High Temps are Damaging Google Glass Beyond Repair](http://glassalmanac.com/google-glass-mortal-enemy-high-temps-humidity/656/)</cite>, <cite>[Whats Happing to the film on my Google Glass?](https://www.reddit.com/r/googleglass/comments/292rzy/whats_happing_to_the_film_on_my_google_glass/)</cite>) しかし手元のGoogle GlassはAmazon経由で購入ており問い合わせが難しいので、自分で修理することにした。
 
 <img src="/assets/img/blog_reparing01.jpg" class="image-on-frame-medium">
 
-### 解決策
+## 解決策
 
 **※修理は自己責任でお願いします。**<br>
 **失敗したり保証を失っても一切の責任を負いかねます。**<br>
@@ -28,7 +28,7 @@ Google Glassには本体から送られる光を目に届けるためのプリ�
 
 金属光沢シートを乗せた後はすぐに指で押したりせず自然と吸着するのを待ちましょう。気泡が入ると像がぼやけます。5,6回繰り返すうちに上手に貼ることができました。
 
-### おまけ(うまくいかなかった例)
+## おまけ(うまくいかなかった例)
 
 いろいろ材料を探して試してみたところ、上記の金属光沢シートが一番良さそうでした。最初に試したアルミテープは光沢が十分ではなくて鏡として使えず、像を結ぶことができませんでした。金属光沢シートと一緒に両面テープも買ったのですが、シート自体に吸着力があったので必要ありませんでした。
 

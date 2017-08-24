@@ -2,7 +2,7 @@
 layout: post
 title: HomebrewでOz開発環境を整える[Mozart2][Emacs]
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 eyecatch: http://ecx.images-amazon.com/images/I/51iXhiKTamL.jpg
 ---
@@ -23,13 +23,13 @@ brew tap caskroom/homebrew-versions
 brew install mozart2
 {% endhighlight %}
 
-### 補足
+## 補足
 
 Emacsについてはインストール方法やパッチが様々のようなので、<cite>[Macで本家EmacsとHomebrew IMEパッチ版とEmacs Mac PortとAquamacsを比べてみる。 - たったのセブンクレジット](http://www.sevencredit.com/2014/07/02/580/)を参考にさせていただきインストールオプションを上記に選んだ。
 
 homebrew-versionsに送ったpull requestが無事にmergeされたのでcaskroom/homebrew-caskをtapすることでmozart2.0.0がインストールできるようになった。(本家のhomebrew-caskでインストールできるMozartは安定版の1.4.0)
 
-### 2014.12.04 追記
+## 2014.12.04 追記
 
 mozart2がhomebrew-caskではなくhomevrewで管理されるようになったので現在は以下のコマンドでインストールできます。
 
@@ -38,7 +38,7 @@ brew install emacs --japanese --cocoa --srgb --with-gnutls -v
 brew install mozart2
 {% endhighlight %}
 
-### 動作確認
+## 動作確認
 
 Mozart2.appを起動して2フレームのEmacsが起動すればOKです。
 

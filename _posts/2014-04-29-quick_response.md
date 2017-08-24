@@ -2,7 +2,7 @@
 layout: post
 title: Quick Response
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 keywords: メール, 返信, Quick Response
 ---

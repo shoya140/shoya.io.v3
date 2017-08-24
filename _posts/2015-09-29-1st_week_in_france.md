@@ -1,7 +1,7 @@
 ---
 layout: post
 title: フランスで暮らし始めて1週間
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 eyecatch: /assets/img/blog_1st_week_in_france01.jpg

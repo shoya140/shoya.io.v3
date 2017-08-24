@@ -2,7 +2,7 @@
 layout: post
 title: 文体にまつわる話
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 keywords: ブログ, 文体, スタイル
 ---

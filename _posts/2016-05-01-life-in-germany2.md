@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sol-31
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 relations:

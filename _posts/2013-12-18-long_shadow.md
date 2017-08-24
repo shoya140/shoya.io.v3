@@ -2,7 +2,7 @@
 layout: post
 title: 5分で完成！イラレで作るロングシャドウアイコン
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Design']
 keywords: ロングシャドウ, イラレ, アイコン, 作成
 eyecatch: /assets/img/blog_long_shadow00.png
@@ -15,14 +15,14 @@ relations:
 
 <img src="/assets/img/blog_long_shadow00.png" class="image-on-frame-mini">
 
-### 用意するもの
+## 用意するもの
 
 * 単色アイコン
 * 色相が同じ２つの色
 
 ロングシャドウを作成するために、あらかじめシンボルとなるアイコン画像と２つの色を用意しておきます。単色アイコンを自分で描くことが難しい場合は[iconmonstr](http://iconmonstr.com/)などの素材サイトを利用すると良いです。色に関しては[Paletta](http://paletta.mrk1869.com/)を使って、ひとつのパレットから「明るくて淡い色」と「暗くて濃い色」の2色を選んでおきます。
 
-### 手順
+## 手順
 
 まずは薄い色で塗られた正方形を作成し、その上に単色アイコンを置きます。
 

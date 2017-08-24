@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ヨーロッパ最大の滝 ライン滝
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_rheinfall01.jpg

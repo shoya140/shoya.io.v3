@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 「心の脳科学」読んだ
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 

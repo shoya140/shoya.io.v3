@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ノイシュバンシュタイン城
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_neuschwanstein02.jpg

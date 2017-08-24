@@ -2,22 +2,22 @@
 layout: post
 title: プロセスが完了しました
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 keywords: Mac, ターミナル, プロセスが完了しました, ログイン
 ---
 
 <img src="/assets/img/blog_terminal01.png" class="image-on-frame-medium">
 
-### 問題
+## 問題
 
 Macのターミナルが起動しない。起動後すぐに\[プロセスが完了しました\]と表示される。
 
-### 原因
+## 原因
 
 ユーザ名が - から始まっている
 
-### 解決策
+## 解決策
 
 ユーザ名を変更する(システム環境設定>ユーザとグループ>詳細オプション)。
 

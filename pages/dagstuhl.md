@@ -8,7 +8,7 @@ permalink: /dagstuhl/
 
 How to record and analyze J!NS MEME's data
 
-### Data recording
+## Data recording
 
 <img src="/assets/img/blog_memelogger_ios_dev_01.png" class="image-on-frame-medium">
 
@@ -22,7 +22,7 @@ How to record and analyze J!NS MEME's data
 
 <img src="/assets/img/blog_dagstuhl_meme01.png" class="image-on-frame">
 
-### Visualizing
+## Visualizing
 
 Do you like python?<br>
 -> Enjoy analyzing by using iPython Notebook ;)
@@ -34,14 +34,14 @@ Are you using Mac OSX?<br>
 
 <img src="/assets/img/blog_dagstuhl_meme03.png" class="image-on-frame">
 
-### Academic Pack
+## Academic Pack
 
 Are you using Windows?<br>
 -> Download [MEME Data Logger](http://xfs.jp/jXBcC).
 
 <img src="/assets/img/blog_dagstuhl_meme04.png" class="image-on-frame">
 
-### Prototype
+## Prototype
 
 Are you using Mac OSX?<br>
 -> Download [MEMELogger on OSX](https://dl.dropboxusercontent.com/u/12208857/snd/MEMELogger-OSX.zip)

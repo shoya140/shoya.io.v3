@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 街道の街 ストラスブール
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_strasbourg01.jpg

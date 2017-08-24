@@ -1,7 +1,7 @@
 ---
 layout: post
 title: バーデン=バーデン
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_baden-baden01.jpg

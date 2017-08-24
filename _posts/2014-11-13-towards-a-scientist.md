@@ -2,7 +2,7 @@
 layout: post
 title: なんで科学者を目指すようになったか
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 eyecatch: /assets/img/blog_towards_a_scientist_01.jpg
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: ピザを焼く
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 keywords: ピザ, ドイツ
 relations:

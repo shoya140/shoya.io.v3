@@ -2,7 +2,7 @@
 layout: post
 title: モン・サン・ミッシェル
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 keywords: モン・サン・ミッシェル, 観光
 relations:

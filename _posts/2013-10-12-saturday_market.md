@@ -2,7 +2,7 @@
 layout: post
 title: Saturday Market
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 keywords: ドイツ, Saturday Market
 relations:

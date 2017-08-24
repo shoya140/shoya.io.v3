@@ -2,7 +2,7 @@
 layout: post
 title: GitLab 6.0をインストールする
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 keywords: GitLab, Git, インストール, セットアップ
 ---
@@ -367,7 +367,7 @@ Pass: 5iveL!fe
 
 ## トラブルシューティング
 
-### <span class="lsf">check</span> httpsプロトコルでgit cloneできない
+## <span class="lsf">check</span> httpsプロトコルでgit cloneできない
 
 {% highlight bash %}
 git config –global http.sslVerify false
@@ -375,7 +375,7 @@ git config –global http.sslVerify false
 を実行して、証明書チェックを外す。<br>
 参考：[GIT:リポジトリにHTTPSでアクセスしてみる - 自転車で通勤しましょ♪ブログ](http://319ring.net/blog/archives/1164)
 
-### <span class="lsf">check</span> Can't save project. Please try again later
+## <span class="lsf">check</span> Can't save project. Please try again later
 
 redis-serverをアップデートする
 {% highlight bash %}
@@ -385,7 +385,7 @@ apt-get -t squeeze-backports install redis-server
 {% endhighlight %}
 参考：["Can't save project. Please try again later" - GitHub issues](https://github.com/gitlabhq/gitlabhq/issues/3328)
 
-### <span class="lsf">check</span> 502 Bad Gateway ページが見つからない
+## <span class="lsf">check</span> 502 Bad Gateway ページが見つからない
 
 タイムアウト値を30から180くらいに変更する
 {% highlight bash %}
@@ -393,7 +393,7 @@ sudo -u git -H editor config/unicorn.rb
 {% endhighlight %}
 参考：[502 Bad Gateway from Nginx for large GitLab fork - stackoverflow](http://stackoverflow.com/questions/18501406/502-bad-gateway-from-nginx-for-large-gitlab-fork)
 
-### <span class="lsf">check</span> gitlab-shell self-check failed
+## <span class="lsf">check</span> gitlab-shell self-check failed
 
 virtual hostsの設定を取りこぼしてないか確認する
 
@@ -405,7 +405,7 @@ sudo vim /etc/hosts
 127.0.0.1    YOUR_DOMAIN.COM
 {% endhighlight %}
 
-### <span class="lsf">check</span> その他の問題解決
+## <span class="lsf">check</span> その他の問題解決
 
 おかしいなと思ったら、以下のコマンドを実行。<br>
 エラーメッセージから原因を見つけて修復する。

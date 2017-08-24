@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 文章と期待値
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 published: True
 ---

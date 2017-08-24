@@ -2,7 +2,7 @@
 layout: post
 title: Karabiner-ElementsとHammerspoonを使ってSpace+hjklでキー移動する
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 ---
 
@@ -10,7 +10,7 @@ KarabinerのVi mode extraに入っている「Spaceとhjkl同時押しでカー�
 
 まずKarabiner-Elementsを使ってSpaceと何かのキーの同時押しをControlキーにマッピングする。次にHammerspoonでControl+hjklをカーソルキーに割り当てる。Karabiner-Elementsだけでキー移動をマッピングしたところ、カーソルが見えないくらい早く移動して使いづらかったので、2つのアプリケーションを使う複雑な設定になってしまった。
 
-### ~/.config/karabiner/karabiner.json
+## ~/.config/karabiner/karabiner.json
 
 注意: Commandキーを英数/かなにマッピングする設定と、Capslockを単体のときはEscape, 何かのキーと同時押しのときはControlにマッピングする設定も含まれています。"rules":以下を読んで必要なものを選んで使ってください。
 
@@ -160,7 +160,7 @@ KarabinerのVi mode extraに入っている「Spaceとhjkl同時押しでカー�
 }
 {% endhighlight %}
 
-### ~/.hammerspoon/init.lua
+## ~/.hammerspoon/init.lua
 
 {% highlight lua %}
 local function keyCode(key, modifiers)

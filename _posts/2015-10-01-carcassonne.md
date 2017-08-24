@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 歴史的城塞都市カルカソンヌ
-categories: ['diary']
+categories: ['blog']
 tags: ['Sightseeing']
 published: True
 eyecatch: /assets/img/blog_carcassonne16.jpg

@@ -2,7 +2,7 @@
 layout: post
 title: 「How Google Works」読んだ
 published: True
-categories: ['diary']
+categories: ['blog']
 tags: ['Note']
 eyecatch: http://ecx.images-amazon.com/images/I/41wP3LRm7QL.jpg
 ---

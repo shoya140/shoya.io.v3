@@ -11,11 +11,11 @@ I'm a researcher at DFKI and working toward Ph.D. degree in Kaiserslautern Unive
 
 I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is to invent amazing applications and to satisfy people all over the world. [[applications](/applications/)]
 
-### Interests
+## Interests
 
 Cognitive science, Activity recognition, Eye tracking, Mobile applications
 
-### Work Experience
+## Work Experience
 
 * Visiting researcher, <a href="http://www.osakafu-u.ac.jp/english/">Osaka Prefecture University</a>, 06.2016 - *
 * Researcher, <a href="http://www.dfki.de/web">German Research Center for Artificial Intelligence (DFKI)</a>, 04.2016 - *
@@ -29,23 +29,23 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 * Part-time software engineer, <a href="http://www.paperboy.co.jp/">Paperboy&co. Inc</a>, 06.2012 - 12.2012
 * Software engineer, <a href="http://campus-inc.org/">Campus. Inc.</a>, 05.2012 - 04.2013
 
-### Education
+## Education
 
 * Master of Engineering, Osaka Prefecture University, 03.2016
 * Bachelor of Engineering, Osaka Prefecture University, 03.2014
 
-### Study Abroad
+## Study Abroad
 
 * University of La Rochelle, France, 09.2015 - 10.2015
 * Kaiserslautern University of Technology, Germany, 10.2013 - 03.2014
 
-### Fundings
+## Fundings
 
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K00276/">JSPS Grant-in-Aid for Scientific Research (C) (Co.), FY2017-2019</a>
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K12728/">JSPS Grant-in-Aid for Young Scientists (B) (PI), FY2017-2019</a>
 * <a href="https://www.ipa.go.jp/jinzai/mitou/2015/gaiyou_s-4.html">IPA Exploratory IT Human Resources Project (MITOH), FY2015</a>
 
-### Activities
+## Activities
 
 * Gave a talk at <a href="http://tedxnagoyau.com">TEDxNagouaU</a>, 2017
 * <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind">Demonstration at CeBIT in Hannover</a>, 2017

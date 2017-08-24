@@ -9,7 +9,7 @@ permalink: /aboutme/jp/
 
 2016年大阪府立大学大学院博士前期課程修了。現在はDFKI（ドイツ人工知能研究センター）にて人間の能力を拡張する技術の研究に取り組んでいる。専門は行動認識と認知科学。2014年より慶應義塾大学KMD研究所リサーチャー。2016年より大阪府立大学客員研究員。2016年よりカイザースラウテルン工科大学リサーチアソシエイト。研究者になる前はソフトウェア開発者として活動し、作品が数多くのコンテストで入賞。ペパボ・はてな・クックパッド・リクルートなどでアルバイトやインターンシップを経験した。2015年度のIPA未踏事業にて心の状態を可視化するシステム「心温計」を開発し、未踏スーパークリエータの認定を受けた。面白い発明で世界中の人を幸せにすることが目標。
 
-### 職歴(アルバイト・インターンシップ含む)
+## 職歴(アルバイト・インターンシップ含む)
 
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学</span></a> 客員研究員 (06.2016 - )
 * <a href="http://www.dfki.de/web"><span style="font-weight: 600;">ドイツ人工知能研究センター(DFKI)</span></a> リサーチャー (04.2016 - )
@@ -23,23 +23,23 @@ permalink: /aboutme/jp/
 * <a href="http://campus-inc.org/"><span style="font-weight: 600;">株式会社Campus</span></a> エンジニア (06.2012 - 03.2013)
 * <a href="http://www.paperboy.co.jp/"><span style="font-weight: 600;">株式会社Paperboy＆co.</span></a> アプリエンジニア アルバイト (06.2012 - 12.2012)
 
-### 学歴
+## 学歴
 
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学大学院</span></a> 工学研究科 修了 (03.2016)
 * <a href="http://www.osakafu-u.ac.jp/"><span style="font-weight: 600;">大阪府立大学</span></a> 工学部 知能情報工学科 卒業 (03.2014)
 
-### 留学経験
+## 留学経験
 
 * <a href="http://www.univ-larochelle.fr/?lang=en"><span style="font-weight: 600;">フランス ラ・ロシェル大学</span></a> (09.2015 - 10.2015)
 * <a href="http://www.dfki.de/web"><span style="font-weight: 600;">ドイツ カイザースラウテルン工科大学</span></a> (10.2013 - 03.2014)
 
-### 獲得資金
+## 獲得資金
 
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K00276/"><span style="font-weight: 600;">2017-2019年度 JSPS 科研費 基盤(C) (分担)</span></a>
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K12728/"><span style="font-weight: 600;">2017-2019年度 JSPS 科研費 若手(B) (代表)</span></a>
 * <a href="https://www.ipa.go.jp/jinzai/mitou/2015/gaiyou_s-4.html"><span style="font-weight: 600;">2015年度 IPA 未踏IT人材発掘・育成事業</span></a>
 
-### 活動・受賞歴など
+## 活動・受賞歴など
 
 * <a href="http://tedxnagoyau.com"><span style="font-weight: 600;">TEDxNagoyaU</span></a> 登壇 (07.2017)
 * <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind"><span style="font-weight: 600;">世界最大規模の技術展示会CeBITにて研究成果を展示</span></a> (03.2017)

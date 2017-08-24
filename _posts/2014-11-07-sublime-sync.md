@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text3の設定をGit+Dropboxで安全に同期する
 published: True
-categories: ['tech']
+categories: ['blog']
 tags: ['Engineering']
 eyecatch: /assets/img/blog_sublime_sync.png
 ---
@@ -13,7 +13,7 @@ eyecatch: /assets/img/blog_sublime_sync.png
 
 設定ファイルにはアクセスキーなども含まれており、変更履歴を外部に公開するのはよくない。そこで今回はDropbox上にリモートリポジトリを作成する。同期をGitとDropboxの2段階にすることで「**過去の状態に戻しやすくなる**」「**任意のタイミングで同期できる**」というメリットがある。
 
-### 1台目の手順
+## 1台目の手順
 
 まずはDropbox上にリモートリポジトリを作成する。
 
@@ -40,7 +40,7 @@ $ git commit -m "init"
 $ git push origin master
 {% endhighlight %}
 
-### 2台目の手順
+## 2台目の手順
 
 既存の設定フォルダを削除してからgit clone.
 
