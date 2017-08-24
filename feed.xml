@@ -13,7 +13,7 @@
 
 &lt;p&gt;まずKarabiner-Elementsを使ってSpaceと何かのキーの同時押しをControlキーにマッピングする。次にHammerspoonでControl+hjklをカーソルキーに割り当てる。Karabiner-Elementsだけでキー移動をマッピングしたところ、カーソルが見えないくらい早く移動して使いづらかったので、2つのアプリケーションを使う複雑な設定になってしまった。&lt;/p&gt;
 
-&lt;h3 id=&quot;configkarabinerkarabinerjson&quot;&gt;~/.config/karabiner/karabiner.json&lt;/h3&gt;
+&lt;h2 id=&quot;configkarabinerkarabinerjson&quot;&gt;~/.config/karabiner/karabiner.json&lt;/h2&gt;
 
 &lt;p&gt;注意: Commandキーを英数/かなにマッピングする設定と、Capslockを単体のときはEscape, 何かのキーと同時押しのときはControlにマッピングする設定も含まれています。”rules”:以下を読んで必要なものを選んで使ってください。&lt;/p&gt;
 
@@ -161,7 +161,7 @@
     &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;hammerspooninitlua&quot;&gt;~/.hammerspoon/init.lua&lt;/h3&gt;
+&lt;h2 id=&quot;hammerspooninitlua&quot;&gt;~/.hammerspoon/init.lua&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;&lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;keyCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifiers&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
@@ -200,7 +200,7 @@
         <category>Engineering</category>
         
         
-        <category>tech</category>
+        <category>blog</category>
         
       </item>
     
@@ -221,13 +221,13 @@
         <category>Note</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
       <item>
         <title>昔作ったBotがドイツで僕の帰りを待ち続けていた</title>
-        <description>&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
+        <description>&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
 
 &lt;p&gt;僕が在籍しているカイザースラウテルン工科大学にはMENSAと呼ばれる食堂があって、普段はここで昼食をとっている。おすすめは2種類の日替わりメニュー。学生は入り口の電子掲示板を見てEssen1/2のどちらかを選ぶ。しかしこの掲示板、ドイツ語表記で写真もないので、ドイツ語が読めない学生は列の長さ（人気度）だけでメニューを決めなければならないという問題を抱えている。&lt;/p&gt;
 
@@ -237,7 +237,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog_mensa02.png&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;仕組み&quot;&gt;仕組み&lt;/h3&gt;
+&lt;h2 id=&quot;仕組み&quot;&gt;仕組み&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;大学のWebサイトをスクレイピングしてその日のメニューを取得する&lt;/li&gt;
@@ -247,7 +247,7 @@
 
 &lt;p&gt;集めたデータはすべて保存し、httpリクエストで取り出せるようにしている。例えば &lt;a href=&quot;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&quot;&gt;http://api.mrk1869.com/mensa/v1/?date=23.09.2016&lt;/a&gt; で2016年9月23日のメニューが返ってくる。従ってTwitter以外にも様々なサービスと連携させることができる。&lt;/p&gt;
 
-&lt;h3 id=&quot;特徴&quot;&gt;特徴&lt;/h3&gt;
+&lt;h2 id=&quot;特徴&quot;&gt;特徴&lt;/h2&gt;
 
 &lt;p&gt;「作っていた」と書いたのは、このBotは3年前にこちらに留学していたときに作ったものだから。（当時のメモ: &lt;a href=&quot;http://shoya.io/blog/microsoft_translator/&quot;&gt;PythonでMicrosoft Translator APIを使ってみる&lt;/a&gt;）その後システムは何も手を加えられることもなく動き続け、今も毎日使われている。サーバーの設定やAPIの仕様、大学Webサイトのレイアウトなど、どれか一つでも変わると止まってしまうことを考えると、動き続けているのは奇跡といえる。僕がいなかった間も毎日投稿しながら帰りを待っていたのかと思うとなんだか愛着が湧いてくる。&lt;/p&gt;
 
@@ -264,7 +264,7 @@
         <category>Engineering</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -281,7 +281,7 @@
         <category>Note</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -312,7 +312,7 @@
         <category>Note</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -355,7 +355,7 @@
         <category>Sightseeing</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -394,7 +394,7 @@
         <category>Sightseeing</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -423,7 +423,7 @@
         <category>Sightseeing</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -472,7 +472,7 @@
         <category>Sightseeing</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     
@@ -507,7 +507,7 @@
         <category>Sightseeing</category>
         
         
-        <category>diary</category>
+        <category>blog</category>
         
       </item>
     

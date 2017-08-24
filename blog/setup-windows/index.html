@@ -12,14 +12,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://shoya.io/blog/setup-windows/">
     
-        <meta property="og:image" content="https://shoya.io/assets/img/icon_laptop.png">
+        <meta property="og:image" content="https://shoya.io/assets/img/icon_dot_white.png">
     
     <title>Windowsの設定(普段Mac使ってる人向け) - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://shoya.io/blog/setup-windows/">
-    <link rel="shortcut icon" href="https://shoya.io/assets/img/favicon.ico">
+    <link rel="shortcut icon" href="https://shoya.io/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 </head>
 
@@ -56,7 +56,6 @@
   <div class="wrapper">
     <div class="wrapper-inside">
       <div class="post">
-
         <header class="post-header">
           <p class="post-meta">Jun 27, 2016
           
@@ -65,35 +64,34 @@
           </p>
           <a href="/blog/setup-windows/"><h1 class="post-title">Windowsの設定(普段Mac使ってる人向け)</h1></a>
         </header>
-
         <article class="post-content">
           <p>Windows上に開発環境を構築することが時々あるのでその作業メモ。</p>
 
-<h3 id="sharpkeysでwindowsキーをコントロールキーにリマップ">SharpKeysでWindowsキーをコントロールキーにリマップ</h3>
+<h2 id="sharpkeysでwindowsキーをコントロールキーにリマップ">SharpKeysでWindowsキーをコントロールキーにリマップ</h2>
 
 <p><cite><a href="http://www.randyrants.com/category/sharpkeys/">SharpKeys</a></cite></p>
 
 <p>MacBook内臓のキーボードやApple Magic Keyboardのcommandキーを押すとWindowsキーが反応する。コピー・ペーストやアプリを閉じる操作をMacと同じキーで行いたいのでキーリマップソフトウェアを使って変更する。いろいろ試してみたところSharpKyesが良さそうな感じ。(キーリマップソフトウェアにはレジストリを書き換えるものとシステムに常駐するものがあって、SharpKeysは前者。)</p>
 
-<h3 id="gnupackでcygwin環境を構築する">gnupackでcygwin環境を構築する</h3>
+<h2 id="gnupackでcygwin環境を構築する">gnupackでcygwin環境を構築する</h2>
 
 <p><cite><a href="http://gnupack.osdn.jp/docs/UsersGuide.html">gnupack Users Guide</a></cite></p>
 
 <p>gnupackとはインストール不要のcygwin環境。展開して.exeを起動するとそのディレクトリにあるhome/をホームディレクトリとしてLinuxディストリビューション同等の機能が使用できる。VimやEmacsも入っている。以下はおすすめの設定。</p>
 
-<p><strong>openコマンドでファイルを開く</strong></p>
+<h3 id="openコマンドでファイルを開く">openコマンドでファイルを開く</h3>
 
 <p>cygstartというコマンドがMacターミナルのopenに相当するようなので.bashrcに追記。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">open</span><span class="o">=</span><span class="s1">'cygstart'</span></code></pre></figure>
 
-<p><strong>sublコマンドでSublime Textを起動する</strong></p>
+<h3 id="sublコマンドでsublime-textを起動する">sublコマンドでSublime Textを起動する</h3>
 
 <p>Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>C:<span class="se">\\</span>Program<span class="se">\ </span>Files<span class="se">\\</span>Sublime<span class="se">\ </span>Text<span class="se">\ </span>3:<span class="nv">$PATH</span></code></pre></figure>
 
-<p><strong>gnupackとMinicondaを一緒に使う</strong></p>
+<h3 id="gnupackとminicondaを一緒に使う">gnupackとMinicondaを一緒に使う</h3>
 
 <p><a href="http://conda.pydata.org/miniconda.html">Miniconda</a>とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記。Miniconda2のところはインストールしたPythonのバージョンに合わせる。</p>
 
@@ -104,17 +102,14 @@
 <p>他にも便利な設定が見つかったら追記していく予定。</p>
 
         </article>
-
         <div class="post-relations">
           
         </div>
-
         <div class="post-social">
-          <div class="tweet-button"><a href="https://twitter.com/share?text=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)%20-%20shoya.io&amp;url=https://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">twitter</span> tweet</a></div>
-          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/setup-windows/&amp;t=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share</a></div>
-          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark</a></div>
+          <div class="tweet-button"><a href="https://twitter.com/share?text=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)%20-%20shoya.io&amp;url=https://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">twitter</span> Tweet</a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/setup-windows/&amp;t=Windows%E3%81%AE%E8%A8%AD%E5%AE%9A(%E6%99%AE%E6%AE%B5Mac%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%8B%E4%BA%BA%E5%90%91%E3%81%91)" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> Share</a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/setup-windows/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> Bookmark</a></div>
         </div>
-
         <div class="pagenation">
           
             <div class="page-button"><a href="/blog/life-in-germany2/"></a><span class="lsf">left</span> Sol-31</div>
@@ -123,7 +118,6 @@
             <div class="page-button"><a href="/blog/dropbox-ignore/"></a>Dropboxへアップロードしたくないディレクトリをignoreする <span class="lsf">right</span></div>
           
         </div>
-
       </div>
     </div>
   </div>

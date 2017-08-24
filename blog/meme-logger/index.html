@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://shoya.io/blog/meme-logger/">
-    <link rel="shortcut icon" href="https://shoya.io/assets/img/favicon.ico">
+    <link rel="shortcut icon" href="https://shoya.io/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 </head>
 
@@ -56,7 +56,6 @@
   <div class="wrapper">
     <div class="wrapper-inside">
       <div class="post">
-
         <header class="post-header">
           <p class="post-meta">Dec 3, 2015
           
@@ -67,24 +66,23 @@
           </p>
           <a href="/blog/meme-logger/"><h1 class="post-title">JINS MEMEのセンサデータをグラフ表示・csv出力するアプリを作りました</h1></a>
         </header>
-
         <article class="post-content">
           <p><img src="/assets/img/blog_github_memelogger_ios_dev_01.png" class="image-on-frame-small" /></p>
 
 <p><a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar 2015</a> 3日目の記事です。昨日の記事は@hatoneさんによる <cite><a href="http://hatone.hateblo.jp/entry/2015/12/01/162235">JINE MEME iOSアプリ開発入門 -公式サンプルアプリを動かす-</a></cite>でした。サンプルアプリが動いたら、次はセンサから得られるデータについてもっと詳しく見てみたいはず！今日はセンサデータをグラフ表示したり保存する方法について紹介します。記事の前半は作ったものの紹介で後半は実装の工夫です。</p>
 
-<h3 id="背景">背景</h3>
+<h2 id="背景">背景</h2>
 
 <p>センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な<strong>波形のモニタリング</strong>と<strong>ラベル付データの記録</strong>機能を持ったアプリを作って<a href="https://github.com/shoya140/MEMELogger-iOS-developers">githubで公開しました</a>。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。</p>
 
-<h3 id="機能">機能</h3>
+<h2 id="機能">機能</h2>
 
 <ul>
   <li>アプリ上でセンサデータをグラフ表示できる</li>
   <li>オフライン解析のためにデータを記録できる</li>
 </ul>
 
-<h3 id="実装">実装</h3>
+<h2 id="実装">実装</h2>
 
 <p><strong>グラフ描画</strong> 直近のデータを配列として保持しておき、UIBezierPathで連結することで描画しています。上限下限や色などはStoryboard上で変えられるようにIBInspectableを設定しました。</p>
 
@@ -107,7 +105,7 @@
 
 <p>その他の細かい実装についてはリポジトリをご参照ください。</p>
 
-<h3 id="まとめ">まとめ</h3>
+<h2 id="まとめ">まとめ</h2>
 
 <p>JINS MEMEのデータを観察する際に役立つアプリを作って公開しました。ご活用ください。<a href="http://qiita.com/advent-calendar/2015/jinsmeme">JINS MEME Advent Calendar2015</a> 明日は古川さんとのことでとても楽しみです！</p>
 
@@ -116,17 +114,14 @@
 </ul>
 
         </article>
-
         <div class="post-relations">
           
         </div>
-
         <div class="post-social">
-          <div class="tweet-button"><a href="https://twitter.com/share?text=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=https://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">twitter</span> tweet</a></div>
-          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/meme-logger/&amp;t=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share</a></div>
-          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark</a></div>
+          <div class="tweet-button"><a href="https://twitter.com/share?text=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20-%20shoya.io&amp;url=https://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">twitter</span> Tweet</a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/meme-logger/&amp;t=JINS%20MEME%E3%81%AE%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B0%E3%83%A9%E3%83%95%E8%A1%A8%E7%A4%BA%E3%83%BBcsv%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> Share</a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/meme-logger/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> Bookmark</a></div>
         </div>
-
         <div class="pagenation">
           
             <div class="page-button"><a href="/blog/zchainer/"></a><span class="lsf">left</span> 深層学習の自己符号化器を4行で記述できるライブラリを作りました</div>
@@ -135,7 +130,6 @@
             <div class="page-button"><a href="/blog/texpad/"></a>Texpad LaTeX editorの紹介 <span class="lsf">right</span></div>
           
         </div>
-
       </div>
     </div>
   </div>

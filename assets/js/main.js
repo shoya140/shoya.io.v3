@@ -48,14 +48,10 @@ $(function(){
     rollOut($(this), "#9694b1");
   });
 
-
   // image fade
   $(".image-fade").css('visibility','visible').hide().fadeIn(800);
 
-  // twitter
-  $(".twitter-tweet").addClass('tw-align-center');
-
-  // getTitleofLinkedPage
+  // get titles of linked pages
   var $titles = $(".linkedTitle");
   $titles.each(function(i){
     var title = "";

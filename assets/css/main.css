@@ -148,7 +148,7 @@ dl, dd, ol, ul, figure {
 
 body {
   font-family: Oxygen, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   letter-spacing: 0.4px;
   font-weight: 300;
@@ -175,7 +175,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 13.6px; }
+  font-size: 12.8px; }
 
 ul, ol {
   margin-left: 30px; }
@@ -197,7 +197,7 @@ blockquote {
   color: #828282;
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
-  font-size: 13.6px; }
+  font-size: 12.8px; }
   blockquote > :last-child {
     margin-bottom: 0; }
   @media screen and (max-width: 500px) {
@@ -212,7 +212,7 @@ cite {
 
 pre,
 code {
-  font-size: 13.6px;
+  font-size: 12.8px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
   background-color: #fdfdfd; }
@@ -530,7 +530,7 @@ a:hover .footer-icon {
     top: 0; }
 
 .post-meta {
-  font-size: 13.6px;
+  font-size: 12.8px;
   margin-bottom: 3px;
   padding-left: 2px; }
   @media screen and (max-width: 500px) {
@@ -563,13 +563,9 @@ a:hover .footer-icon {
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
-    font-size: 19px; }
+    font-size: 18px; }
   .post-content h3 {
-    font-size: 19px; }
-    .post-content h3:before {
-      content: "rightright "; }
-  .post-content h4 {
-    font-size: 19px; }
+    font-size: 16px; }
   @media screen and (max-width: 500px) {
     .post-content {
       text-align: justify; }
@@ -665,11 +661,11 @@ a:hover .footer-icon {
   @media screen and (max-width: 1000px) {
     .page-button-base, .page-button, .page-button-disabled {
       width: 43%;
-      font-size: 13.6px; } }
+      font-size: 12.8px; } }
   @media screen and (max-width: 500px) {
     .page-button-base, .page-button, .page-button-disabled {
       width: 90%;
-      font-size: 12.24px; } }
+      font-size: 11.52px; } }
 
 .page-button {
   background-color: #ffffff; }
@@ -709,7 +705,7 @@ a:hover .footer-icon {
   src: url("/assets/font/LigatureSymbols.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-.lsf, cite:before, hr:after, .post-content h3:before, .background h3:before, .lsf-icon:before {
+.lsf, cite:before, hr:after, .lsf-icon:before {
   font-family: 'LigatureSymbols';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -729,22 +725,6 @@ a:hover .footer-icon {
   background-attachment: fixed;
   color: #fdfdfd;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
-  .background h2 {
-    font-size: 20px; }
-  .background h3 {
-    font-size: 20px; }
-    .background h3:before {
-      content: "rightright "; }
-  .background a {
-    color: #fcffce;
-    text-decoration: none; }
-    .background a:hover {
-      color: #f3ff35; }
-  @media screen and (max-width: 500px) {
-    .background {
-      text-align: justify; }
-      .background h2, .background h3 {
-        font-size: 15px; } }
 
 .profile-image {
   border-radius: 50%;
@@ -771,3 +751,8 @@ a:hover .footer-icon {
 
 .footnotes {
   font-size: 12px; }
+
+twitterwidget,
+iframe[id^="twitter-widget-"] {
+  margin-left: auto;
+  margin-right: auto; }

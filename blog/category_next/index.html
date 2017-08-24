@@ -12,14 +12,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://shoya.io/blog/category_next/">
     
-        <meta property="og:image" content="https://shoya.io/assets/img/icon_laptop.png">
+        <meta property="og:image" content="https://shoya.io/assets/img/icon_dot_white.png">
     
     <title>Jekyllのカテゴリ内で「次の記事」ボタンを設置する - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://shoya.io/blog/category_next/">
-    <link rel="shortcut icon" href="https://shoya.io/assets/img/favicon.ico">
+    <link rel="shortcut icon" href="https://shoya.io/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 </head>
 
@@ -56,7 +56,6 @@
   <div class="wrapper">
     <div class="wrapper-inside">
       <div class="post">
-
         <header class="post-header">
           <p class="post-meta">Jan 12, 2014
           
@@ -65,7 +64,6 @@
           </p>
           <a href="/blog/category_next/"><h1 class="post-title">Jekyllのカテゴリ内で「次の記事」ボタンを設置する</h1></a>
         </header>
-
         <article class="post-content">
           <p>Jekyllではpage.previous, page.next要素に前の記事/次の記事が格納されているので、前の記事/次の記事へ誘導するボタンがすぐに作れる。しかしこの前の記事/次の記事はタグやカテゴリを無視して時系列に引っ張ってくるので、あるカテゴリ内で前へ前へといった誘導ができない。</p>
 
@@ -96,7 +94,7 @@
             <span class="n">category_previous</span> <span class="o">=</span> <span class="kp">nil</span>
           <span class="k">end</span>
 
-          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">1</span>
+          <span class="k">if</span> <span class="n">position</span> <span class="o">&amp;&amp;</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">0</span>
             <span class="n">category_next</span> <span class="o">=</span> <span class="n">posts</span><span class="p">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
           <span class="k">else</span>
             <span class="n">category_next</span> <span class="o">=</span> <span class="kp">nil</span>
@@ -127,10 +125,9 @@ page.CATEGORYNAME_next</code></pre></figure>
 <p>が取得できる</p>
 
         </article>
-
         <div class="post-relations">
           
-          <h3><span class="lsf">check</span> 関連記事</h3>
+          <h3>関連記事</h3>
           <ul>
           
             <li><a href="/blog/ranking_plugin/" class="linkedTitle">Now loading..</a></li>
@@ -140,13 +137,11 @@ page.CATEGORYNAME_next</code></pre></figure>
           </ul>
           
         </div>
-
         <div class="post-social">
-          <div class="tweet-button"><a href="https://twitter.com/share?text=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=https://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">twitter</span> tweet</a></div>
-          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/category_next/&amp;t=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share</a></div>
-          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark</a></div>
+          <div class="tweet-button"><a href="https://twitter.com/share?text=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=https://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">twitter</span> Tweet</a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/category_next/&amp;t=Jekyll%E3%81%AE%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%86%85%E3%81%A7%E3%80%8C%E6%AC%A1%E3%81%AE%E8%A8%98%E4%BA%8B%E3%80%8D%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> Share</a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/category_next/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> Bookmark</a></div>
         </div>
-
         <div class="pagenation">
           
             <div class="page-button"><a href="/blog/hamburg/"></a><span class="lsf">left</span> ハンブルクを観光しました</div>
@@ -155,7 +150,6 @@ page.CATEGORYNAME_next</code></pre></figure>
             <div class="page-button"><a href="/blog/div_a_fade/"></a>div全体をaタグで囲ってふんわりメニューをつくる <span class="lsf">right</span></div>
           
         </div>
-
       </div>
     </div>
   </div>

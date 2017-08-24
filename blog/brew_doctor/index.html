@@ -12,14 +12,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://shoya.io/blog/brew_doctor/">
     
-        <meta property="og:image" content="https://shoya.io/assets/img/icon_laptop.png">
+        <meta property="og:image" content="https://shoya.io/assets/img/icon_dot_white.png">
     
     <title>brew doctorのwarningを解決する - shoya.io</title>
 
     <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://shoya.io/blog/brew_doctor/">
-    <link rel="shortcut icon" href="https://shoya.io/assets/img/favicon.ico">
+    <link rel="shortcut icon" href="https://shoya.io/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
 </head>
 
@@ -56,7 +56,6 @@
   <div class="wrapper">
     <div class="wrapper-inside">
       <div class="post">
-
         <header class="post-header">
           <p class="post-meta">Jul 4, 2014
           
@@ -65,11 +64,10 @@
           </p>
           <a href="/blog/brew_doctor/"><h1 class="post-title">brew doctorのwarningを解決する</h1></a>
         </header>
-
         <article class="post-content">
           <p>brew doctorコマンドで表示されるWarningを順番に解決しました。基本的には指示通りに解決していけばよいのですが、Warning2 pyenvとの干渉が厄介でした。</p>
 
-<h3 id="warning1">Warning1</h3>
+<h2 id="warning1">Warning1</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories <span class="k">in</span> /usr/local/share/man aren<span class="s1">'t writable.
 This can happen if you "sudo make install" software that isn'</span>t managed
@@ -84,7 +82,7 @@ You should probably <span class="sb">`</span>chown<span class="sb">`</span> them
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></figure>
 
-<h3 id="warning2">Warning2</h3>
+<h2 id="warning2">Warning2</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">"config"</span> scripts exist outside your system or Homebrew directories.
 <span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> <span class="k">*</span>-config scripts to determine <span class="k">if
@@ -105,7 +103,7 @@ script of the same name. We found the following <span class="s2">"config"</span>
 
 <p>参考:<a href="http://qiita.com/takc923/items/45386905f70fde9af0e7">phpenv入れてる時brew doctorしたら出るWarning消した</a></p>
 
-<h3 id="warning3">Warning3</h3>
+<h2 id="warning3">Warning3</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories <span class="k">in </span>your path end <span class="k">in </span>a slash.
 Directories <span class="k">in </span>your path should not end <span class="k">in </span>a slash. This can <span class="nb">break </span>other
@@ -114,7 +112,7 @@ doctor checks. The following directories should be edited:
 
 <p>PATHが/(スラッシュ)で終わるのはよくないらしい。.bashrcを編集してそれぞれ最後のスラッシュを取り除きました。</p>
 
-<h3 id="warning4">Warning4</h3>
+<h2 id="warning4">Warning4</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: /usr/bin occurs before /usr/local/bin
 This means that system-provided programs will be used instead of those
@@ -133,7 +131,7 @@ occurs before /usr/bin. Here is a one-liner:
 
 <p>PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。</p>
 
-<h3 id="warning5">Warning5</h3>
+<h2 id="warning5">Warning5</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Your Homebrew is outdated.
 You haven<span class="s1">'t updated for at least 24 hours, this is a long time in brewland!
@@ -143,7 +141,7 @@ To update Homebrew, run `brew update`.</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew update</code></pre></figure>
 
-<h3 id="すべてのwarningを取り除いたので">すべてのWarningを取り除いたので</h3>
+<h2 id="すべてのwarningを取り除いたので">すべてのWarningを取り除いたので</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew doctor
 <span class="gp">&gt;&gt; </span>Your system is ready to brew.</code></pre></figure>
@@ -151,17 +149,14 @@ To update Homebrew, run `brew update`.</span></code></pre></figure>
 <p>診断結果が正常になりました。めでたい。</p>
 
         </article>
-
         <div class="post-relations">
           
         </div>
-
         <div class="post-social">
-          <div class="tweet-button"><a href="https://twitter.com/share?text=brew%20doctor%E3%81%AEwarning%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=https://shoya.io/blog/brew_doctor/"><span class="lsf" style="font-size:20px;">twitter</span> tweet</a></div>
-          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/brew_doctor/&amp;t=brew%20doctor%E3%81%AEwarning%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> share</a></div>
-          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/brew_doctor/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> bookmark</a></div>
+          <div class="tweet-button"><a href="https://twitter.com/share?text=brew%20doctor%E3%81%AEwarning%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%99%E3%82%8B%20-%20shoya.io&amp;url=https://shoya.io/blog/brew_doctor/"><span class="lsf" style="font-size:20px;">twitter</span> Tweet</a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/brew_doctor/&amp;t=brew%20doctor%E3%81%AEwarning%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%99%E3%82%8B" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> Share</a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/brew_doctor/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> Bookmark</a></div>
         </div>
-
         <div class="pagenation">
           
             <div class="page-button"><a href="/blog/terminal_login/"></a><span class="lsf">left</span> プロセスが完了しました</div>
@@ -170,7 +165,6 @@ To update Homebrew, run `brew update`.</span></code></pre></figure>
             <div class="page-button"><a href="/blog/python_doctest/"></a>doctestを使ってpythonの簡単な単体テストを書く <span class="lsf">right</span></div>
           
         </div>
-
       </div>
     </div>
   </div>
