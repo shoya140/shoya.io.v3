@@ -11,7 +11,7 @@
         <title>Dropbox Publicフォルダの終了に伴うブログ改修</title>
         <description>&lt;p&gt;Dropboxには、ファイル/フォルダを選択して公開リンクを作成せずとも指定ディレクトリ以下をまるごと外部に公開できる「Publicフォルダ」という非常に機能があった。しかし、新規ユーザ、Dropbox Basicユーザの順にこの機能が制限され、2017年9月1日をもってDropbox Plusユーザも使用することができなくなってしまった。&lt;cite&gt;&lt;a href=&quot;https://www.dropbox.com/ja/help/files-folders/public-folder&quot;&gt;Public フォルダ - Dropbox&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;このブログはJekyllでビルドしてGitHub Pages上で公開していて、Gitリポジトリになるべく入れたくないという理由で画像のホスティングをPublicフォルダで行っていた。機能の終了に伴って8月末に少しだけブログを改修したので、その過程で得た知見を共有する。&lt;/p&gt;
+&lt;p&gt;このブログはJekyllでビルドしてGitHub Pages上で公開していて、画像はなるべくGit管理に入れたくないという理由でPublicフォルダでホスティングしていた。今回、機能の終了に伴って8月末に少しだけブログを改修したので、その過程で得た知見を共有する。&lt;/p&gt;
 
 &lt;h3 id=&quot;公開リンクのurlを少し変えてファイルのホスティングを行う&quot;&gt;公開リンクのURLを少し変えてファイルのホスティングを行う&lt;/h3&gt;
 
