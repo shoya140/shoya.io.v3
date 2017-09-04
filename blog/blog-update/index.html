@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="sFx-iJWT2iihts7-5wK7CnR03-MymfWXmn_7KNoyIz0">
+    <meta property="og:title" content="Dropbox Publicフォルダの終了に伴うブログ改修">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shoya.io/blog/blog-update/">
+    
+        <meta property="og:image" content="https://shoya.io/assets/img/icon_dot_white.png">
+    
+    <title>Dropbox Publicフォルダの終了に伴うブログ改修 - shoya.io</title>
+
+    <link rel="alternate" type="application/rss+xml" title="shoya.io" href="https://shoya.io/feed.xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://shoya.io/blog/blog-update/">
+    <link rel="shortcut icon" href="https://shoya.io/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
+</head>
+
+  <body>
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/assets/img/logo.png"></a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/blog/">Blog</a>
+          <a class="page-link" href="/publications/">Publications</a>
+          <a class="page-link" href="/applications/">Applications</a>
+          <a class="page-link" href="http://photo.shoya.io" target="_blank">Photos</a>
+          <a class="page-link" href="/aboutme/">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+  <div class="wrapper">
+    <div class="wrapper-inside">
+      <div class="post">
+        <header class="post-header">
+          <p class="post-meta">Sep 1, 2017
+          
+          [<a href="/tag/Engineering/">Engineering</a>]
+          
+          </p>
+          <a href="/blog/blog-update/"><h1 class="post-title">Dropbox Publicフォルダの終了に伴うブログ改修</h1></a>
+        </header>
+        <article class="post-content">
+          <p>Dropboxには、ファイル/フォルダを選択して公開リンクを作成せずとも指定ディレクトリ以下をまるごと外部に公開できる「Publicフォルダ」という非常に機能があった。しかし新規ユーザ、Dropbox Basic(無料)ユーザの順にこの機能が制限され、2017年9月1日をもってDropbox Plus(有料)ユーザも使用することができなくなってしまった。<cite><a href="https://www.dropbox.com/ja/help/files-folders/public-folder">Public フォルダ - Dropbox</a></cite></p>
+
+<p>このブログはJekyllでビルドしてGitHub Pages上で公開していて、Gitリポジトリになるべく入れたくないという理由で画像のホスティングをPublicフォルダで行っていた。機能の終了に伴って8月末に少しだけブログを改修したので、その過程で得た知見を共有する。</p>
+
+<h3 id="公開リンクのurlを少し変えてファイルのホスティングを行う">公開リンクのURLを少し変えてファイルのホスティングを行う</h3>
+
+<p>公開リンクにブラウザでアクセスすると、通常はファイル/フォルダのダウンロードやコメントの投稿を行うためのWebページが表示される。ここで、URLの末尾にあるパラメータdl=0をraw=1に変更すると、Publicフォルダと同じようにファイルをブラウザ上でのレンダリングを実行することができる。実際には<code class="highlighter-rouge">https://dl.dropboxusercontent.com</code>にリダイレクトされているようなので、こちらに書き換えても大丈夫。<cite><a href="https://www.dropbox.com/help/desktop-web/force-download">ファイルやフォルダのダウンロードを強制する/dropbox.com でレンダリングを実行する - Dropbox</a></cite> を参考にした。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 通常の公開リンク; DropboxのWebページが表示される</span>
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?dl<span class="o">=</span>0
+
+<span class="c"># 強制的にダウンロードする</span>
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?dl<span class="o">=</span>1
+
+<span class="c"># ブラウザ上で直接レンダリングされる</span>
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?raw<span class="o">=</span>1
+
+<span class="c"># 同様にブラウザ上でレンダリングされる</span>
+https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg</code></pre></figure>
+
+<p>この方法で従来通りWebサイト向けのファイルをホスティングすることができるが、ファイルひとつひとつを選択して公開リンクを作成するのは手間である。そこで、特に容量の大きなもののみにこの方法を使って、残りのほとんどは仕方なくGitリポジトリに加えることにした。</p>
+
+<p>Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。</p>
+
+<p>(1)は独自のプラグインが実行できず(セキュリティ上safeオプションが付加されるため)、(2)はリポジトリを2個管理するのが面倒、という理由で8月末までは(3)を選択していたのだけれど、リポジトリの容量がsourceとoutputでほぼ2倍になってしまい、画像を入れると深刻な問題になるので、CIツールの練習をかねて(5)に移行してみた。</p>
+
+<h3 id="travis-ciでjekyllブログをビルドする">Travis CIでJekyllブログをビルドする</h3>
+
+<p>検索するといろいろ情報がでてくるのだけれど、GitHubのアクセストークンがTravisのログに残ってしまう方法がヒットするので、慎重に方法を選んだ。<cite><a href="https://cat-in-136.github.io/2015/04/jekyll-travis-ci-github-pages-deployment.html">Jekyll ブログの Travis CI 使って Github Page への配備する方法のメモ</a></cite> が良さそうだった。手順は下記の通り。</p>
+
+<ol>
+  <li><a href="https://travis-ci.org/">travis-ci.org</a>にサインインして+ボタンからsourceのリポジトリを登録する。</li>
+  <li><a href="https://github.com/shoya140/shoya.io/blob/master/.travis.yml">.travis.yml</a>と<a href="https://github.com/shoya140/shoya.io/blob/master/Rakefile">Rakefile</a>をリポジトリに追加する。</li>
+  <li>GitHubの<a href="https://github.com/settings/tokens/new">アクセストークンを発行する</a>(scopeはpublic_repoにチェック)。</li>
+  <li><code class="highlighter-rouge">$ gem install travis</code>でtravisをローカルの環境にインストールする</li>
+  <li><code class="highlighter-rouge">$ travis encrypt -r ユーザ名/レポジトリ名 GH_TOKEN=トークン</code>を実行する。</li>
+  <li>.travis.ymlの<code class="highlighter-rouge">source:</code>を5の出力結果に置き換える。</li>
+  <li>git pushする。</li>
+</ol>
+
+        </article>
+        <div class="post-relations">
+          
+        </div>
+        <div class="post-social">
+          <div class="tweet-button"><a href="https://twitter.com/share?text=Dropbox%20Public%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E7%B5%82%E4%BA%86%E3%81%AB%E4%BC%B4%E3%81%86%E3%83%96%E3%83%AD%E3%82%B0%E6%94%B9%E4%BF%AE%20-%20shoya.io&amp;url=https://shoya.io/blog/blog-update/"><span class="lsf" style="font-size:20px;">twitter</span> Tweet</a></div>
+          <div class="facebook-button"><a href="http://www.facebook.com/sharer.php?u=https://shoya.io/blog/blog-update/&amp;t=Dropbox%20Public%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E7%B5%82%E4%BA%86%E3%81%AB%E4%BC%B4%E3%81%86%E3%83%96%E3%83%AD%E3%82%B0%E6%94%B9%E4%BF%AE" onClick="window.open(encodeURI(decodeURI(this.href)), 'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"><span class="lsf" style="font-size:20px;">facebook</span> Share</a></div>
+          <div class="hatenabookmark-button"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://shoya.io/blog/blog-update/"><span class="lsf" style="font-size:20px;">hatenabookmark</span> Bookmark</a></div>
+        </div>
+        <div class="pagenation">
+          
+            <div class="page-button"><a href="/blog/karabiner-hammerspoon-space-hjkl/"></a><span class="lsf">left</span> Karabiner-ElementsとHammerspoonを使ってSpace+hjklでキー移動する</div>
+          
+          
+            <div class="page-button-disabled">Next <span class="lsf">right</span></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer class="site-footer">
+  <div class="wrapper-footer">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">crown</span> 人気の記事</p>
+        <ul>
+        
+          <li>- <a href="/blog/Paletta/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/zebra/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/cookpad_internship/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/hatena_intern/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/internet_black_market/" class="linkedTitle">Now loading..</a></li>
+        
+          <li>- <a href="/blog/long_shadow/" class="linkedTitle">Now loading..</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-3">
+        <p><span class="lsf">list</span> 最近の記事</p>
+        <ul>
+        
+          <li>- <a href="/blog/blog-update/">Dropbox Publicフォルダの終了に伴うブログ改修</a></li>
+        
+          <li>- <a href="/blog/karabiner-hammerspoon-space-hjkl/">Karabiner-ElementsとHammerspoonを使ってSpace+hjklでキー移動する</a></li>
+        
+          <li>- <a href="/blog/recovery-log/">復旧作業ログ</a></li>
+        
+          <li>- <a href="/blog/writing-and-the-expectation/">文章と期待値</a></li>
+        
+          <li>- <a href="/blog/mensa/">昔作ったBotがドイツで僕の帰りを待ち続けていた</a></li>
+        
+          <li>- <a href="/blog/fixed-point-observation/">定点観測</a></li>
+        
+        </ul>
+      </div>
+      <div class="footer-col  footer-col-1">
+        <p><span class="lsf">tag</span> 記事のタグ</p>
+        
+        [<a href="/tag/Note/">Note</a>]
+        
+        [<a href="/tag/ReleaseNote/">ReleaseNote</a>]
+        
+        [<a href="/tag/Sightseeing/">Sightseeing</a>]
+        
+        [<a href="/tag/Engineering/">Engineering</a>]
+        
+        [<a href="/tag/Design/">Design</a>]
+        
+        [<a href="/tag/Research/">Research</a>]
+        
+      </div>
+    </div>
+    <div class="footer-bio">
+      <a href = "https://github.com/shoya140/"><img src="/assets/img/icon_github.png" class="footer-icon"></a>
+      <a href = "https://twitter.com/shoya140/"><img src="/assets/img/icon_twitter.png" class="footer-icon"></a>
+      <script type="text/javascript" language="javascript">
+      function mail(){var s="FI=;NCIHeBL?@tYG;CFNIqMBIS;eCMBCG;LOwAG;CFe=IGY",r="";
+      for(i=0;i<s.length;i++)r+=String.fromCharCode((s.charCodeAt(i)+5)%93+33);eval(r);}
+        document.write('<a href="javascript:mail()"><img src="/assets/img/icon_mail.png" class="footer-icon"></a>')</script>
+      <a href = "/feed.xml"><img src="/assets/img/icon_rss.png" class="footer-icon"></a><br>
+      <p>© 2014 - 2017 <a href="https://plus.google.com/102413339779614193497?rel=author">Shoya Ishimaru</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/jquery.1.10.2.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.color.js"></script>
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1918944-8']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>

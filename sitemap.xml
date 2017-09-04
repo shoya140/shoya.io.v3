@@ -2,7 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://shoya.io/blog/blog-update/</loc>
+    </url>
+    
+    <url>
         <loc>https://shoya.io/blog/karabiner-hammerspoon-space-hjkl/</loc>
+    </url>
+    
+    <url>
+        <loc>https://shoya.io/blog/recovery-log/</loc>
     </url>
     
     <url>

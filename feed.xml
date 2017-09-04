@@ -8,6 +8,59 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>Dropbox Publicフォルダの終了に伴うブログ改修</title>
+        <description>&lt;p&gt;Dropboxには、ファイル/フォルダを選択して公開リンクを作成せずとも指定ディレクトリ以下をまるごと外部に公開できる「Publicフォルダ」という非常に機能があった。しかし新規ユーザ、Dropbox Basic(無料)ユーザの順にこの機能が制限され、2017年9月1日をもってDropbox Plus(有料)ユーザも使用することができなくなってしまった。&lt;cite&gt;&lt;a href=&quot;https://www.dropbox.com/ja/help/files-folders/public-folder&quot;&gt;Public フォルダ - Dropbox&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;このブログはJekyllでビルドしてGitHub Pages上で公開していて、Gitリポジトリになるべく入れたくないという理由で画像のホスティングをPublicフォルダで行っていた。機能の終了に伴って8月末に少しだけブログを改修したので、その過程で得た知見を共有する。&lt;/p&gt;
+
+&lt;h3 id=&quot;公開リンクのurlを少し変えてファイルのホスティングを行う&quot;&gt;公開リンクのURLを少し変えてファイルのホスティングを行う&lt;/h3&gt;
+
+&lt;p&gt;公開リンクにブラウザでアクセスすると、通常はファイル/フォルダのダウンロードやコメントの投稿を行うためのWebページが表示される。ここで、URLの末尾にあるパラメータdl=0をraw=1に変更すると、Publicフォルダと同じようにファイルをブラウザ上でのレンダリングを実行することができる。実際には&lt;code class=&quot;highlighter-rouge&quot;&gt;https://dl.dropboxusercontent.com&lt;/code&gt;にリダイレクトされているようなので、こちらに書き換えても大丈夫。&lt;cite&gt;&lt;a href=&quot;https://www.dropbox.com/help/desktop-web/force-download&quot;&gt;ファイルやフォルダのダウンロードを強制する/dropbox.com でレンダリングを実行する - Dropbox&lt;/a&gt;&lt;/cite&gt; を参考にした。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# 通常の公開リンク; DropboxのWebページが表示される&lt;/span&gt;
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?dl&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+
+&lt;span class=&quot;c&quot;&gt;# 強制的にダウンロードする&lt;/span&gt;
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?dl&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+
+&lt;span class=&quot;c&quot;&gt;# ブラウザ上で直接レンダリングされる&lt;/span&gt;
+https://www.dropbox.com/s/oxw7w2l72bpsato/dibtp.jpg?raw&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+
+&lt;span class=&quot;c&quot;&gt;# 同様にブラウザ上でレンダリングされる&lt;/span&gt;
+https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;この方法で従来通りWebサイト向けのファイルをホスティングすることができるが、ファイルひとつひとつを選択して公開リンクを作成するのは手間である。そこで、特に容量の大きなもののみにこの方法を使って、残りのほとんどは仕方なくGitリポジトリに加えることにした。&lt;/p&gt;
+
+&lt;p&gt;Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。&lt;/p&gt;
+
+&lt;p&gt;(1)は独自のプラグインが実行できず(セキュリティ上safeオプションが付加されるため)、(2)はリポジトリを2個管理するのが面倒、という理由で8月末までは(3)を選択していたのだけれど、リポジトリの容量がsourceとoutputでほぼ2倍になってしまい、画像を入れると深刻な問題になるので、CIツールの練習をかねて(5)に移行してみた。&lt;/p&gt;
+
+&lt;h3 id=&quot;travis-ciでjekyllブログをビルドする&quot;&gt;Travis CIでJekyllブログをビルドする&lt;/h3&gt;
+
+&lt;p&gt;検索するといろいろ情報がでてくるのだけれど、GitHubのアクセストークンがTravisのログに残ってしまう方法がヒットするので、慎重に方法を選んだ。&lt;cite&gt;&lt;a href=&quot;https://cat-in-136.github.io/2015/04/jekyll-travis-ci-github-pages-deployment.html&quot;&gt;Jekyll ブログの Travis CI 使って Github Page への配備する方法のメモ&lt;/a&gt;&lt;/cite&gt; が良さそうだった。手順は下記の通り。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;travis-ci.org&lt;/a&gt;にサインインして+ボタンからsourceのリポジトリを登録する。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shoya140/shoya.io/blob/master/.travis.yml&quot;&gt;.travis.yml&lt;/a&gt;と&lt;a href=&quot;https://github.com/shoya140/shoya.io/blob/master/Rakefile&quot;&gt;Rakefile&lt;/a&gt;をリポジトリに追加する。&lt;/li&gt;
+  &lt;li&gt;GitHubの&lt;a href=&quot;https://github.com/settings/tokens/new&quot;&gt;アクセストークンを発行する&lt;/a&gt;(scopeはpublic_repoにチェック)。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ gem install travis&lt;/code&gt;でtravisをローカルの環境にインストールする&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ travis encrypt -r ユーザ名/レポジトリ名 GH_TOKEN=トークン&lt;/code&gt;を実行する。&lt;/li&gt;
+  &lt;li&gt;.travis.ymlの&lt;code class=&quot;highlighter-rouge&quot;&gt;source:&lt;/code&gt;を5の出力結果に置き換える。&lt;/li&gt;
+  &lt;li&gt;git pushする。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/blog-update/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/blog-update/</guid>
+        
+        <category>Engineering</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>Karabiner-ElementsとHammerspoonを使ってSpace+hjklでキー移動する</title>
         <description>&lt;p&gt;KarabinerのVi mode extraに入っている「Spaceとhjkl同時押しでカーソル移動する」機能をMacOS Sierraでも使えるようにしたので、設定ファイルを公開する。&lt;/p&gt;
 
@@ -198,6 +251,43 @@
         <guid isPermaLink="true">https://shoya.io/blog/karabiner-hammerspoon-space-hjkl/</guid>
         
         <category>Engineering</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>復旧作業ログ</title>
+        <description>&lt;p&gt;いろいろなアプリにsubmoduleとして追加していたライブラリを別アプリに切り出したので、リポジトリを巡回してgit submodule deinitしていた。最後のリポジトリでdeinitした瞬間に、そのアプリケーションは今日使ったばかりでsubmodule（しかもignoreされているところ）に実験データが残ったままであったことに気付く。Ctrl-Cするが時既に遅し。即座にネットワークを切断してDropboxの同期を止める。GitLabのデータ障害が脳裏をよぎる。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;YPはすぐさま削除を停止させたが、もう遅かった。約310ギガバイトあったデータのうち、残ったのは4.5ギガバイトであった。 &lt;cite&gt;&lt;a href=&quot;http://www.publickey1.jp/blog/17/gitlabcom56.html&quot;&gt;GitLab.comが操作ミスで本番データベース喪失&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dropbox同期している別のPCから救出を試みる。しかしこちらも1/4ほどのデータがすでに消えている。ディレクトリを横断して名前が若いファイル（001.png, 002.png, …）から消えているようだ。一部の実験ではなく今日記録したすべてのデータが使えなくなる可能性がある。&lt;/p&gt;
+
+&lt;p&gt;Dropboxで削除したファイルの復元ができることに気付く。deinitを実行したPCを再度ネットワークに繋いで、同期が完了したのを確認してWebにアクセスする。ところが、同期の途中でネットワークを切ったのが原因なのか「削除したファイル」の中に消えていた1/4のファイルがない。（再接続後に同期したファイルは復元できる。）&lt;/p&gt;
+
+&lt;p&gt;ディスク復元ソフトを使ってみるが削除したファイルが検出されない。絶望する。&lt;/p&gt;
+
+&lt;p&gt;Dropbox Webのツールバーにごみ箱アイコン「削除したファイルを表示」があるのを見つける。祈りながら削除したディレクトリに移動してアイコンを押す。消えていたファイルが見つかった！！！面倒だけど各ディレクトリに移動して表示-&amp;gt;復元を繰り返す。&lt;/p&gt;
+
+&lt;p&gt;すべてのファイルを復元し終える。念のため解析スクリプトに入れてみて最初から最後までの実験のデータが破損していないか確かめる。無事だった。&lt;/p&gt;
+
+&lt;p&gt;Dropbox Web左カラムの「削除したファイル」に消えたファイルがなくても諦めてはいけない。そのディレクトリに移動して「削除したファイルを表示」を押すと見つかることがある。復元し終わってから気付いたけど左カラムの「イベント」にDropbox上のすべての変更が記録されていて、初めに消えた1/4のファイルの履歴も残っていた。ここからボタン一つで復元できたらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_recover_log.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;教訓&quot;&gt;教訓&lt;/h3&gt;
+
+&lt;p&gt;バックアップ大事。特に大きな変更を加えるgitコマンドを叩くときは必ずハードコピーをとっておくこと。あと気が動転すると何を試したか今何をしているのか分からなくなってくるのでメモをとったほうがいい。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/recovery-log/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/recovery-log/</guid>
+        
+        <category>Note</category>
         
         
         <category>blog</category>
@@ -419,90 +509,6 @@
         <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
         <link>https://shoya.io/blog/steiff-museum/</link>
         <guid isPermaLink="true">https://shoya.io/blog/steiff-museum/</guid>
-        
-        <category>Sightseeing</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>アインシュタイン生誕の地 ウルム</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;ウルムは、ドイツ連邦共和国のバーデン＝ヴュルテンベルク州南部に属する都市。 世界で最も高い尖塔を有するウルム大聖堂、ルネ・デカルトが直交座標系を思いついた地、物理学者アルベルト・アインシュタインの出生地として知られる。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%AB%E3%83%A0&quot;&gt;ウルム - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm02.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm08.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm09.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm10.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm11.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm12.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm13.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm14.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm15.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_ulm16.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Aug 2016 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/ulm/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/ulm/</guid>
-        
-        <category>Sightseeing</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>ヨーロッパ最大の滝 ライン滝</title>
-        <description>&lt;p&gt;ヨーロッパで一番大きい滝です。めちゃくちゃ迫力があった！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1枚目の写真の国旗があるところまでボートを使っていくことができる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;国旗のあるところから見下ろした滝の様子。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;滝の向こうにラウフェン城が見える。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;綱渡りで川を横断してる人がいた。まじか！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_rheinfall06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Aug 2016 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/rheinfall/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/rheinfall/</guid>
         
         <category>Sightseeing</category>
         
