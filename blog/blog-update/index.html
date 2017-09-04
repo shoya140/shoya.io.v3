@@ -65,7 +65,7 @@
           <a href="/blog/blog-update/"><h1 class="post-title">Dropbox Publicフォルダの終了に伴うブログ改修</h1></a>
         </header>
         <article class="post-content">
-          <p>Dropboxには、ファイル/フォルダを選択して公開リンクを作成せずとも指定ディレクトリ以下をまるごと外部に公開できる「Publicフォルダ」という非常に機能があった。しかし新規ユーザ、Dropbox Basic(無料)ユーザの順にこの機能が制限され、2017年9月1日をもってDropbox Plus(有料)ユーザも使用することができなくなってしまった。<cite><a href="https://www.dropbox.com/ja/help/files-folders/public-folder">Public フォルダ - Dropbox</a></cite></p>
+          <p>Dropboxには、ファイル/フォルダを選択して公開リンクを作成せずとも指定ディレクトリ以下をまるごと外部に公開できる「Publicフォルダ」という非常に機能があった。しかし、新規ユーザ、Dropbox Basicユーザの順にこの機能が制限され、2017年9月1日をもってDropbox Plusユーザも使用することができなくなってしまった。<cite><a href="https://www.dropbox.com/ja/help/files-folders/public-folder">Public フォルダ - Dropbox</a></cite></p>
 
 <p>このブログはJekyllでビルドしてGitHub Pages上で公開していて、Gitリポジトリになるべく入れたくないという理由で画像のホスティングをPublicフォルダで行っていた。機能の終了に伴って8月末に少しだけブログを改修したので、その過程で得た知見を共有する。</p>
 
@@ -93,7 +93,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg</code></pre></figu
 
 <h3 id="travis-ciでjekyllブログをビルドする">Travis CIでJekyllブログをビルドする</h3>
 
-<p>検索するといろいろ情報がでてくるのだけれど、GitHubのアクセストークンがTravisのログに残ってしまう方法がヒットするので、慎重に方法を選んだ。<cite><a href="https://cat-in-136.github.io/2015/04/jekyll-travis-ci-github-pages-deployment.html">Jekyll ブログの Travis CI 使って Github Page への配備する方法のメモ</a></cite> が良さそうだった。手順は下記の通り。</p>
+<p>検索するといろいろ情報がでてくる。GitHubのアクセストークンがTravisのログに残ってしまう方法がヒットするので、慎重に方法を選んだ。<cite><a href="https://cat-in-136.github.io/2015/04/jekyll-travis-ci-github-pages-deployment.html">Jekyll ブログの Travis CI 使って Github Page への配備する方法のメモ</a></cite> が良さそうだった。手順は下記の通り。</p>
 
 <ol>
   <li><a href="https://travis-ci.org/">travis-ci.org</a>にサインインして+ボタンからsourceのリポジトリを登録する。</li>
