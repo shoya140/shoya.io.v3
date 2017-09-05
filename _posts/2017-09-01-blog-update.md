@@ -12,7 +12,7 @@ Dropboxには、ファイル/フォルダを選択して公開リンクを作成
 
 ### 公開リンクのURLを少し変えてファイルのホスティングを行う
 
-公開リンクにブラウザでアクセスすると、通常はファイル/フォルダのダウンロードやコメントの投稿を行うためのWebページが表示される。ここで、URLの末尾にあるパラメータdl=0をraw=1に変更すると、Publicフォルダと同じようにファイルをブラウザ上でのレンダリングを実行することができる。実際には```https://dl.dropboxusercontent.com```にリダイレクトされているようなので、こちらに書き換えても大丈夫。<cite>[ファイルやフォルダのダウンロードを強制する/dropbox.com でレンダリングを実行する - Dropbox](https://www.dropbox.com/help/desktop-web/force-download)</cite> を参考にした。
+公開リンクにブラウザでアクセスすると、通常はファイル/フォルダのダウンロードやコメントの投稿を行うためのWebページが表示される。ここで、URLの末尾にあるパラメータdl=0をraw=1に変更すると、Publicフォルダと同じようにブラウザ上でのレンダリングを実行することができる。実際には```https://dl.dropboxusercontent.com```にリダイレクトされているようなので、こちらに書き換えても大丈夫。<cite>[ファイルやフォルダのダウンロードを強制する/dropbox.com でレンダリングを実行する - Dropbox](https://www.dropbox.com/help/desktop-web/force-download)</cite> を参考にした。
 
 {% highlight bash %}
 # 通常の公開リンク; DropboxのWebページが表示される
@@ -30,7 +30,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg
 
 この方法で従来通りWebサイト向けのファイルをホスティングすることができるが、ファイルひとつひとつを選択して公開リンクを作成するのは手間である。そこで、特に容量の大きなもののみにこの方法を使って、残りのほとんどは仕方なくGitリポジトリに加えることにした。
 
-Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。
+ところで、Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。
 
 (1)は独自のプラグインが実行できず(セキュリティ上safeオプションが付加されるため)、(2)はリポジトリを2個管理するのが面倒、という理由で8月末までは(3)を選択していたのだけれど、リポジトリの容量がsourceとoutputでほぼ2倍になってしまい、画像を入れると深刻な問題になるので、CIツールの練習をかねて(5)に移行してみた。
 
@@ -42,6 +42,6 @@ Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourc
 1. [.travis.yml](https://github.com/shoya140/shoya.io/blob/master/.travis.yml)と[Rakefile](https://github.com/shoya140/shoya.io/blob/master/Rakefile)をリポジトリに追加する。
 1. GitHubの[アクセストークンを発行する](https://github.com/settings/tokens/new)(scopeはpublic_repoにチェック)。
 1. ```$ gem install travis```でtravisをローカルの環境にインストールする
-1. ```$ travis encrypt -r ユーザ名/レポジトリ名 GH_TOKEN=トークン```を実行する。
+1. ```$ travis encrypt -r ユーザ名/リポジトリ名 GH_TOKEN=トークン```を実行する。
 1. .travis.ymlの```source:```を5の出力結果に置き換える。
 1. git pushする。
