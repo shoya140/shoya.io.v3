@@ -87,7 +87,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg</code></pre></figu
 
 <p>この方法で従来通りWebサイト向けのファイルをホスティングすることができるが、ファイルひとつひとつを選択して公開リンクを作成するのは手間である。そこで、特に容量の大きなもののみにこの方法を使って、残りのほとんどは仕方なくGitリポジトリに加えることにした。</p>
 
-<p>Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。</p>
+<p>ところで、Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。</p>
 
 <p>(1)は独自のプラグインが実行できず(セキュリティ上safeオプションが付加されるため)、(2)はリポジトリを2個管理するのが面倒、という理由で8月末までは(3)を選択していたのだけれど、リポジトリの容量がsourceとoutputでほぼ2倍になってしまい、画像を入れると深刻な問題になるので、CIツールの練習をかねて(5)に移行してみた。</p>
 
@@ -100,7 +100,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg</code></pre></figu
   <li><a href="https://github.com/shoya140/shoya.io/blob/master/.travis.yml">.travis.yml</a>と<a href="https://github.com/shoya140/shoya.io/blob/master/Rakefile">Rakefile</a>をリポジトリに追加する。</li>
   <li>GitHubの<a href="https://github.com/settings/tokens/new">アクセストークンを発行する</a>(scopeはpublic_repoにチェック)。</li>
   <li><code class="highlighter-rouge">$ gem install travis</code>でtravisをローカルの環境にインストールする</li>
-  <li><code class="highlighter-rouge">$ travis encrypt -r ユーザ名/レポジトリ名 GH_TOKEN=トークン</code>を実行する。</li>
+  <li><code class="highlighter-rouge">$ travis encrypt -r ユーザ名/リポジトリ名 GH_TOKEN=トークン</code>を実行する。</li>
   <li>.travis.ymlの<code class="highlighter-rouge">source:</code>を5の出力結果に置き換える。</li>
   <li>git pushする。</li>
 </ol>

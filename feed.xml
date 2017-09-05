@@ -31,7 +31,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
 
 &lt;p&gt;この方法で従来通りWebサイト向けのファイルをホスティングすることができるが、ファイルひとつひとつを選択して公開リンクを作成するのは手間である。そこで、特に容量の大きなもののみにこの方法を使って、残りのほとんどは仕方なくGitリポジトリに加えることにした。&lt;/p&gt;
 
-&lt;p&gt;Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。&lt;/p&gt;
+&lt;p&gt;ところで、Jekyllを使ってWebサイトをGitHub Pages上で公開する際、そのsourceとoutputを管理する方法は複数存在する。(1)sourceをGitHubにPushしてGitHub上でビルドする。(2)outputのみをPushするリポジトリを作る。(3)Jekyllのoutputを/docs/にする設定を_config.ymlに書く。(4)sourceをmasterブランチで管理してgh-pagesブランチにoutputのみをコピーするRakefileを書く。(5)CIツールでPushを検知して自動デプロイする。の5つである。&lt;/p&gt;
 
 &lt;p&gt;(1)は独自のプラグインが実行できず(セキュリティ上safeオプションが付加されるため)、(2)はリポジトリを2個管理するのが面倒、という理由で8月末までは(3)を選択していたのだけれど、リポジトリの容量がsourceとoutputでほぼ2倍になってしまい、画像を入れると深刻な問題になるので、CIツールの練習をかねて(5)に移行してみた。&lt;/p&gt;
 
@@ -44,7 +44,7 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
   &lt;li&gt;&lt;a href=&quot;https://github.com/shoya140/shoya.io/blob/master/.travis.yml&quot;&gt;.travis.yml&lt;/a&gt;と&lt;a href=&quot;https://github.com/shoya140/shoya.io/blob/master/Rakefile&quot;&gt;Rakefile&lt;/a&gt;をリポジトリに追加する。&lt;/li&gt;
   &lt;li&gt;GitHubの&lt;a href=&quot;https://github.com/settings/tokens/new&quot;&gt;アクセストークンを発行する&lt;/a&gt;(scopeはpublic_repoにチェック)。&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ gem install travis&lt;/code&gt;でtravisをローカルの環境にインストールする&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ travis encrypt -r ユーザ名/レポジトリ名 GH_TOKEN=トークン&lt;/code&gt;を実行する。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ travis encrypt -r ユーザ名/リポジトリ名 GH_TOKEN=トークン&lt;/code&gt;を実行する。&lt;/li&gt;
   &lt;li&gt;.travis.ymlの&lt;code class=&quot;highlighter-rouge&quot;&gt;source:&lt;/code&gt;を5の出力結果に置き換える。&lt;/li&gt;
   &lt;li&gt;git pushする。&lt;/li&gt;
 &lt;/ol&gt;
