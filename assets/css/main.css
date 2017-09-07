@@ -190,7 +190,7 @@ a {
   color: #9694b1;
   text-decoration: none; }
   a:hover {
-    color: #1e1e28; }
+    color: #4a4963; }
 
 blockquote {
   color: #1e1e28;
@@ -324,7 +324,7 @@ hr {
   min-height: 56px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fdfdfd;
   position: relative; }
   @media screen and (max-width: 500px) {
     .site-header {
@@ -721,7 +721,7 @@ iframe[id^="twitter-widget-"] {
       font-size: 11.7px; } }
 
 .page-button {
-  background-color: #ffffff; }
+  background-color: #fdfdfd; }
   .page-button a {
     display: block;
     width: 100%;
