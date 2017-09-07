@@ -244,6 +244,19 @@ hr {
     color: #9694b1;
     background: #fdfdfd; }
 
+sup,
+sub {
+  height: 0;
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative; }
+
+sup {
+  bottom: 1ex; }
+
+sub {
+  top: .5ex; }
+
 .wrapper {
   max-width: -webkit-calc(700px + (30px * 5.0)*2);
   max-width: calc(700px + (30px * 5.0)*2);
