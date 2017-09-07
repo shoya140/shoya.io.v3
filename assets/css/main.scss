@@ -27,7 +27,8 @@ $spacing-unit: 30px;
 $white-color: #fdfdfd;
 $brand-color: #9694b1;
 $brand-color-light: lighten($brand-color, 30%);
-$brand-color-dark: darken($brand-color, 50%);
+$brand-color-dark: darken($brand-color, 30%);
+$brand-color-very-dark: darken($brand-color, 50%);
 
 $on-palm: 500px;
 $on-laptop: 1000px;
@@ -47,7 +48,7 @@ body {
     line-height: $base-line-height;
     letter-spacing: $letter-spacing;
     font-weight: 300;
-    color: $brand-color-dark;
+    color: $brand-color-very-dark;
     background-color: $white-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
@@ -102,7 +103,7 @@ a {
 }
 
 blockquote {
-    color: $brand-color-dark;
+    color: $brand-color-very-dark;
     border-left: 4px solid $brand-color-light;
     padding-left: $spacing-unit / 2;
     font-size: $small-font-size;
@@ -169,6 +170,22 @@ hr{
     }
 }
 
+sup,
+sub {
+    height: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    position: relative;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
 .wrapper {
     max-width: -webkit-calc(700px + (#{$spacing-unit} * 5.0)*2);
     max-width:         calc(700px + (#{$spacing-unit} * 5.0)*2);
@@ -233,7 +250,7 @@ hr{
         vertical-align: middle;
 
         path {
-            fill: $brand-color-dark;
+            fill: $brand-color-very-dark;
         }
     }
 }
@@ -270,12 +287,12 @@ hr{
 
 .site-header {
     font-family: $base-font-family;
-    border-top: 5px solid $brand-color-dark;
+    border-top: 5px solid $brand-color-very-dark;
     border-bottom: 1px solid $brand-color-light;
     min-height: 56px;
     padding-left: $spacing-unit;
     padding-right: $spacing-unit;
-    background-color: rgba(255,255,255,0.9);
+    background-color: $white-color;
 
     @include media-query($on-palm) {
         padding-left: $spacing-unit*0.3;
@@ -319,7 +336,7 @@ hr{
     }
 
     .page-link {
-        color: $brand-color-dark;
+        color: $brand-color-very-dark;
         line-height: $base-line-height;
         font-size: 18px;
 
@@ -352,7 +369,7 @@ hr{
                 height: 15px;
 
                 path {
-                    fill: $brand-color-dark;
+                    fill: $brand-color-very-dark;
                 }
             }
         }
@@ -375,7 +392,7 @@ hr{
 }
 
 .site-footer {
-    background-color: $brand-color-dark;
+    background-color: $brand-color-very-dark;
     padding: $spacing-unit*2 0;
     color: $white-color;
     p{
@@ -615,7 +632,7 @@ a:hover .footer-icon{
 .post-link {
     display: block;
     line-height: 1.2;
-    color: $brand-color-dark;
+    color: $brand-color-very-dark;
     @include media-query($on-palm) {
         font-size: 18px;
         line-height: 1.2;
@@ -634,7 +651,7 @@ a:hover .footer-icon{
         font-size: 18px;
         line-height: 1.2;
     }
-    color: $brand-color-dark;
+    color: $brand-color-very-dark;
 }
 
 .post-content {
@@ -776,7 +793,7 @@ iframe[id^="twitter-widget-"] {
 
 .page-button{
     @extend .page-button-base;
-    background-color:#ffffff;
+    background-color:$white-color;
     a{
         display: block;
         width: 100%;
