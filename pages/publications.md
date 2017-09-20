@@ -6,7 +6,11 @@ permalink: /publications/
 
 ## Journal
 
-1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u> and Kai Kunze. <span style="font-weight: 700;" id="amft2015regular">Making Regular Eyeglasses Smart</span>. Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015. <a href="https://www.dropbox.com/s/ld08aby62vqylrs/IEEEPervasiveComputing2015Amft.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u> and Kai Kunze. <span style="font-weight: 700;" id="amft2015regular">"Making Regular Eyeglasses Smart</span>." Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015. <a href="https://www.dropbox.com/s/ld08aby62vqylrs/IEEEPervasiveComputing2015Amft.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
+## Book Chapter
+
+1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Pascal Klein, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> Positive Learning and Transformation in the Information Age (PLATO) - A blessing or a curse?, Springer, October 2017, in press.
 
 ## Conference Papers (in the Main Proceedings)
 
@@ -29,8 +33,6 @@ permalink: /publications/
 1. Koichi Kise, Olivier Augereau, Yuzuko Utsumi, Masakazu Iwamura, Kai Kunze, <u>Shoya Ishimaru</u> and Andreas Dengel. <span style="font-weight: 700;" id="kise2017quantified">"Quantified Reading and Learning for Sharing Experiences."</span> Proc. UbiComp2017 Adjunct (WAHM2017), pp. 724-731, September 2017. <a href="https://www.dropbox.com/s/76pajkk7wkpa9bn/WAHM2017Kise.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u> and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017arfled">"ARFLED: Ability Recognition Framework for Learning and Education."</span> Proc. UbiComp2017 Adjunct (DC), pp. 339-343, September 2017. <a href="https://www.dropbox.com/s/jl0rfu80cte39d7/UbiComp2017Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> PLATO Summer Conference, June 2017.
 
 1. <u>Shoya Ishimaru</u>, <span style="font-weight: 700;" id="ishimaru2016cognitive">"Cognitive State Recognition for Developing Anticipating Textbook."</span> Proc. ICMU2016, Vol. 2016, No. 20, October 2016. <a href="https://www.dropbox.com/s/7tjk3oc7zbfphxw/ICMU2016Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
