@@ -64,6 +64,8 @@ permalink: /publications/
 
 ## Domestic Conference Papers
 
+1. Jochen Kuhn, <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann and Andreas Dengel. <span style="font-weight: 700;" id="kuhn2017hypermind">"HyperMind, das antizipierende Schulbuch – Ein Beitrag zur Unterrichtsentwicklung."</span> The World Education Leadership Symposium 2017, September 2017.
+
 1. 黄瀬 浩一, Olivier Augereau, Charles Lima Sanches, 藤好 宏樹, 大社 綾乃, 山田 健斗, Kai Kunze, <u>石丸 翔也</u>, Andreas Dengel. <span style="font-weight: 700;" id="kise2017various">様々なセンサを用いた読書行動解析</span>. 教育情報システム学会研究会報告, vol. 32, no. 2, pp. 53-60, July 2017.
 
 1. 星加 健介, <u>石丸 翔也</u>, Olivier Augereau, 黄瀬 浩一. <span style="font-weight: 700;" id="hoshika2016jreading">リーディングライフログを用いた日常的な読書行動の計量</span>. 電子情報通信学会技術研究報告, vol. 116, no. 38, PRMU2016-19, pp. 101-106, May 2016.
