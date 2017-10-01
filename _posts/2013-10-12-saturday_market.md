@@ -24,6 +24,6 @@ relations:
 
 <img src="/assets/img/blog_2013-10-12%2010.05.41.jpg" class="image-on-frame image-fade">
 
-Neuer Wein(発酵途中のワイン)を買って帰った。
-1リットル1ユーロ。
-計り売りでポリケースに入ってでてきた。
+Neuer Wein(発酵途中のワイン)を買って帰った。1リットル1ユーロ。計り売りでポリケースに入ってでてきた。
+
+<img src="/assets/img/blog_2013-10-12%2011.40.40.jpg" class="image-on-frame-small image-fade">
