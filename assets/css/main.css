@@ -150,7 +150,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   letter-spacing: 0.4px;
-  font-weight: 300;
+  font-weight: 400;
   color: #1e1e28;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -370,7 +370,8 @@ sub {
   .site-nav .page-link {
     color: #1e1e28;
     line-height: 1.8;
-    font-size: 18px; }
+    font-size: 18px;
+    font-weight: 300; }
     .site-nav .page-link:not(:first-child) {
       margin-left: 14px; }
   @media screen and (max-width: 500px) {
