@@ -47,7 +47,7 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     letter-spacing: $letter-spacing;
-    font-weight: 300;
+    font-weight: 400;
     color: $brand-color-very-dark;
     background-color: $white-color;
     -webkit-text-size-adjust: 100%;
@@ -339,6 +339,7 @@ sub {
         color: $brand-color-very-dark;
         line-height: $base-line-height;
         font-size: 18px;
+        font-weight: 300;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {

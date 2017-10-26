@@ -7,13 +7,9 @@ permalink: /aboutme/
 
 ## Shoya Ishimaru [EN/[JP](/aboutme/jp/)]
 
-I'm a researcher at DFKI and working toward Ph.D. degree in Kaiserslautern University of Technology. My current research interest is activity recognition, which involves recognizing and quantifying human activities by using data from several sensors. [[publications](/publications/)]
+Shoya Ishimaru is a researcher at German Research Center for Artificial Intelligence (DFKI) and working toward Ph.D degree in University of Kaiserslautern. His current research interest is activity recognition, which involves recognizing and quantifying human activities by analyzing data from several sensors [[publications](/publications/)].
 
-I'm also a software developer. I like not only programming but designing beautiful softwares. My final goal is to invent amazing applications and to satisfy people all over the world. [[applications](/applications/)]
-
-## Interests
-
-Cognitive science, Activity recognition, Eye tracking, Mobile applications
+He received B.E. and M.E. degree in Electrical Engineering and Information Science from Osaka Prefecture University in 2014 and 2016. He has been a researcher at Keio Media Design Research Institute since 2014, a visiting researcher at Osaka Prefecture University since 2016, and a research associate at University of Kaiserslautern since 2016. Shoya is also a software developer [[applications](/applications/)]. He likes not only programming but designing beautiful software. As an internship/part-time engineer, he worked for many IT companies including paperboy&co., Hatena, and Recruit. In 2016, he received a title of MITOU Super Creator by Ministry of Economy, Trade, and Industry in Japan by developing a system for visualizing the mental state. He gave a number of invited talks at universities, high schools, and TEDx. His mission in life is to invent amazing applications and to satisfy people all over the world.
 
 ## Work Experience
 
@@ -43,7 +39,7 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K00276/">JSPS Grant-in-Aid for Scientific Research (C) (Co.), FY2017-2019</a>
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K12728/">JSPS Grant-in-Aid for Young Scientists (B) (PI), FY2017-2019</a>
-* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/gaiyou_s-4.html">IPA Exploratory IT Human Resources Project (MITOH), FY2015</a>
+* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/gaiyou_s-4.html">IPA Exploratory IT Human Resources Project (MITOU), FY2015</a>
 
 ## Activities
 
@@ -55,7 +51,7 @@ Cognitive science, Activity recognition, Eye tracking, Mobile applications
 * <a href="http://www.osakafu-u.ac.jp/">Poster Presentation in Osaka Prefecture University</a>: Best Presentation Award, 2015
 * <a href="http://recruit-jinji.jp/workshop2015/">2Weeks US Workshop 2015 by Recruit Holdings Co.</a>: Champion, 2015
 * <a href="https://mashupawards.doorkeeper.jp/events/25862">JINS MEME HACKATHON Powered by Mashup Awards</a>: Champion, 2015
-* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html">IPA MITOH Program</a>: Accept, 2015
+* <a href="https://www.ipa.go.jp/jinzai/mitou/2015/koubokekka_index.html">IPA MITOU Program</a>: Accept, 2015
 * <a href="https://www.imaginecup.com/">Imagine Cup 2015 Inovation Path</a>: Best 3 at Japan preliminary round, 2015
 * <a href="http://recruit-jinji.jp/adf_fes2015/">APPLICATION DEVELOPER FESTIVAL</a>: Staff, 2015
 * <a href="https://sites.google.com/site/miru2014okayama/wakate">MIRU2014 Young Researchers' Program</a>: Best Wakate Presentation Award, Audience Award, 2014
