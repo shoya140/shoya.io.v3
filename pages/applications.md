@@ -6,12 +6,12 @@ permalink: /applications/
 
 ## iPhone
 
-* <a href = "https://itunes.apple.com/us/app/memelogger/id1073074817"><span style="font-weight: 700;">MEMELogger</span></a><br>J!NS MEMEのセンサデータを可視化・記録するアプリ
-
+* <a href = "https://itunes.apple.com/us/app/memelogger/id1073074817"><span style="font-weight: 700;">MEMELogger</span></a><br>J!NS MEME ESのセンサデータを可視化・記録するアプリ
 * <a href = "https://itunes.apple.com/jp/app/swiper-zhi-gan-cao-zuodetodo/id631354108"><span style="font-weight: 700;">Swiper</span></a><br>直感的に操作できるシンプルなToDo/タスク管理アプリ
 
 ## Android
 
+* <a href="https://play.google.com/store/apps/details?id=io.shoya.memelogger_android_developers"><span style="font-weight: 700;">MEMELogger</span></a>, <a href="https://play.google.com/store/apps/details?id=io.shoya.memelogger_android_academic"><span style="font-weight: 700;">MEMELogger Academic</span></a><br>J!NS MEME ES, ES_Rのセンサデータを可視化・記録するアプリ
 * <a href = "https://play.google.com/store/apps/details?id=com.racolta"><span style="font-weight: 700;">racolta</span></a><br>かさばるチケットをすきり整理できるWebスクラップブックアプリ
 * <a href = "http://hatena.g.hatena.ne.jp/hatenabookmark/20120906/1346904246"><span style="font-weight: 700;">はてなブックマーク1.7.1</span></a><br>はてなサマーインターン2012実践過程にてタグ検索/話題のタグ機能実装
 * <a href = "https://play.google.com/store/apps/details?id=com.mrk1869.nfcjunction"><span style="font-weight: 700;">NFC Junction</span></a><br>NFCタグへのReading/Writingアプリ
