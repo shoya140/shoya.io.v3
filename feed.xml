@@ -8,6 +8,35 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>Evernoteに登録すると便利なショートカットキー</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog_evernote_shortcuts01.png&quot; class=&quot;image-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Macのアプリケーションにはユーザ独自のショートカットキーを登録することができる。システム環境設定&amp;gt;キーボード&amp;gt;ショートカットを開いて、アプリケーションメニュー(画面左上にあるメニュー)の名前とキー入力の組み合わせを入力すると登録が完了だ。特にEvernoteにおいて普段よく使っているショートカットキーがいくつかあるので紹介する。&lt;/p&gt;
+
+&lt;p&gt;上記のスクリーンショットのように登録すると&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;shift-cmd-N&lt;/strong&gt; 編集中のノートを別ウインドウで表示&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;shift-cmd-H&lt;/strong&gt; 網掛けの切り替え&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cmd-\&lt;/strong&gt; サイドバーの表示切り替え&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cmd-P&lt;/strong&gt; Atomのcmd-P, Slackのcmd-K&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cmd-[, cmd-]&lt;/strong&gt; インデントの増減&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ができるようになる。&lt;strong&gt;cmd-P&lt;/strong&gt;(デフォルトだと&lt;strong&gt;cmd-J&lt;/strong&gt;)のインクリメンタルサーチでノートにジャンプする機能は意外と知られていないので、使ったことがなければぜひ試してみてほしい。箇条書きでよく使うインデントの増減については、アプリケーションによって&lt;strong&gt;shift-cmd-[&lt;/strong&gt;, &lt;strong&gt;cmd-[&lt;/strong&gt;, &lt;strong&gt;tab&lt;/strong&gt;などと違って覚えるのが面倒なので、AtomやGoogleDriveを基準に&lt;strong&gt;cmd-[&lt;/strong&gt;に統一した。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Nov 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/evernote-shortcuts/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/evernote-shortcuts/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>今年もNeuer Weinの季節がやってきた</title>
         <description>&lt;p&gt;「ドイツに遊びに行くならいつがおすすめ？」と聞かれたら、観光が好きな人には8月、お酒が好きな人には9月下旬〜10月上旬と答えている。オクトーバーフェストもあるけれど、1年で唯一、Neuer Weinが飲める時期だからだ。&lt;/p&gt;
 
@@ -450,49 +479,6 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
         <guid isPermaLink="true">https://shoya.io/blog/turning-everything-into-profit/</guid>
         
         <category>Note</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>バーデン=バーデン</title>
-        <description>&lt;p&gt;たまには広いお風呂に浸かってリラックスしたいなと思って、ヨーロッパ屈指の由緒ある温泉保養地として知られるバーデン=バーデンに行ってきた。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;バーデン＝バーデンは、ドイツ連邦共和国のバーデン＝ヴュルテンベルク州に属する都市。人口は約5万4千人。 ヨーロッパ有数の温泉地として幅広く知られる。ドイツ語で、バーデンという語自体が、「入浴」を意味しており、そこからバーデンという地名がついた。&lt;cite&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%87%E3%83%B3%EF%BC%9D%E3%83%90%E3%83%BC%E3%83%87%E3%83%B3&quot;&gt;バーデン=バーデン - Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden01.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;フリードリヒス浴場&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden02.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden03.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1877年に完成した豪華な浴場。案内に従って全裸のままシャワーやサウナ、異なる温度設定のお風呂に浸かる。火・水・金・日・祝・2/14は男女混浴、月・木・土は男女別浴。混浴の日に行ったのでなかなかカルチャーショックな体験になった。&lt;/p&gt;
-
-&lt;p class=&quot;injection-center&quot;&gt;カラカラ浴場&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden04.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;こちらは水着着用の温泉プール。フリードリヒス浴場に比べて近代的な施設。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden05.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden06.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_baden-baden07.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;温泉をでたあとは町を散策した。半日しか過ごさなかったのだけれど、ショッピングモールや美術館、博物館、カジノなどもあって、本来はリフレッシュのためにもっと長く滞在するべき場所らしい。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/baden-baden/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/baden-baden/</guid>
-        
-        <category>Sightseeing</category>
         
         
         <category>blog</category>
