@@ -12,19 +12,7 @@ permalink: /publications/
 
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Pascal Klein, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> Positive Learning and Transformation in the Information Age (PLATO) - A blessing or a curse?, Springer, October 2017, in press.
 
-## Conference Papers (in the Main Proceedings)
-
-1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">"Sensing thermal stress at office workplaces</span>." Proc. ICHES2016 Nagoya, October 2016. <a href="https://www.dropbox.com/s/qvamgqvqu51p1ef/ICHESNagoya2016Hoffmann.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata and Koichi Kise. <span style="font-weight: 700;" id="rigaud2016manga">"Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information."</span> Proc. DAS2016, pp. 120-125, April 2016. <a href="https://www.dropbox.com/s/k5202jgwuoz38xo/DAS2016Rigaud.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015habits">"Quantifying Reading Habits – Counting How Many Words You Read."</span> Proc UbiComp2015, pp. 87-96, September 2015. <a href="https://www.dropbox.com/s/4jvq6xm3pi4osqz/UbiComp2015Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-1. <u>Shoya Ishimaru</u>, Jens Weppner, Kai Kunze, Andreas Bulling, Koichi Kise, Andreas Dengel and Paul Lukowicz. <span style="font-weight: 700;" id="ishimaru2014blink">"In the Blink of an Eye - Combining Head Motion and Eye Blink Frequency for Activity Recognition with Google Glass."</span> Proc. AH2014, pp. 150-153, March 2014. <a href="https://www.dropbox.com/s/1jffafhf6vod0om/AH2014Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013. <a href="https://www.dropbox.com/s/rukvtfl21d7fjws/ICDAR2013Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
-
-## Conference Extended Abstracts (Demo/Poster/Workshop)
+## Conference Papers
 
 1. <u>Shoya Ishimaru</u>, Soumy Jacob, Apurba Roy, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Michael Thees, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017cognitive">"Cognitive State Measurement on Learning Materials by Utilizing Eye Tracker and Thermal Camera."</span> Proc. ICDAR2017 (HDI2017), November 2017, to appear.
 
@@ -36,11 +24,17 @@ permalink: /publications/
 
 1. <u>Shoya Ishimaru</u>, <span style="font-weight: 700;" id="ishimaru2016cognitive">"Cognitive State Recognition for Developing Anticipating Textbook."</span> Proc. ICMU2016, Vol. 2016, No. 20, October 2016. <a href="https://www.dropbox.com/s/7tjk3oc7zbfphxw/ICMU2016Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
+1. Sabine Hoffmann, Helga Tauscher, Andreas Dengel, <u>Shoya Ishimaru</u>, Sheraz Ahmed, Jochen Kuhn, Carina Heisel and Yutaka Arakawa. <span style="font-weight: 700;" id="sabine2016sensing">"Sensing thermal stress at office workplaces</span>." Proc. ICHES2016 Nagoya, October 2016. <a href="https://www.dropbox.com/s/qvamgqvqu51p1ef/ICHESNagoya2016Hoffmann.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
 1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016textbook">"Towards an Intelligent Textbook: Eye Gaze Based Attention Extraction on Materials for Learning and Instruction in Physics."</span> Proc. UbiComp2016 Adjunct (WAHM2016), pp. 1041-1045, September 2016. <a href="https://www.dropbox.com/s/nqutm3l6iqmnetp/WAHM2016Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u>, Kai Kunze, Koichi Kise and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016wordometer2">"The Wordometer 2.0 - Estimating the Number of Words You Read in Real Life using Commercial EOG Glasses."</span> Proc. UbiComp2016 Adjunct (Demo), pp. 1217-1220, September 2016. <a href="https://www.dropbox.com/s/bt5u2z1u7tsk7e3/UbiComp2016Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u>, Tilman Dingler, Kai Kunze, Koichi Kise and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2016interventions">"Reading Interventions - Tracking Reading State and Designing Interventions."</span> Proc. UbiComp2016 Adjunct (EyeWear2016), pp. 1759-1764, September 2016. <a href="https://www.dropbox.com/s/heu20bvu6y3c351/Eyewear2016Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
+1. Christophe Rigaud, Thanh-Nam Le, Jean-Christophe Burie, Jean-Marc Ogier, <u>Shoya Ishimaru</u>, Motoi Iwata and Koichi Kise. <span style="font-weight: 700;" id="rigaud2016manga">"Semi-Automatic Text and Graphics Extraction of Manga Using Eye Tracking Information."</span> Proc. DAS2016, pp. 120-125, April 2016. <a href="https://www.dropbox.com/s/k5202jgwuoz38xo/DAS2016Rigaud.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
+1. Kai Kunze, Ömer Sacakli, <u>Shoya Ishimaru</u>, Andreas Dengel, Marcus Liwicki, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="kunze2015habits">"Quantifying Reading Habits – Counting How Many Words You Read."</span> Proc UbiComp2015, pp. 87-96, September 2015. <a href="https://www.dropbox.com/s/4jvq6xm3pi4osqz/UbiComp2015Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2015mental">"Quantifying the Mental State on the Basis of Physical and Social Activities."</span> Proc. UbiComp2015 Adjunct (WAHM2015), pp. 1217-1220, September 2015. <a href="https://www.dropbox.com/s/1agd8qq1asm06fb/WAHM2015Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
@@ -58,9 +52,13 @@ permalink: /publications/
 
 1. Jens Weppner, Andreas Poxrucker, Paul Lukowicz, <u>Shoya Ishimaru</u>, Kai Kunze and Koichi Kise. <span style="font-weight: 700;" id="weppner2014logging">"Shiny - An Activity Logging Platform for Google Glass."</span> Proc. UbiComp2014 Adjunct (Demo), pp. 283-286, September 2014. <a href="https://www.dropbox.com/s/voe3wvndmvcvxhf/UbiComp2014Weppner.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
+1. <u>Shoya Ishimaru</u>, Jens Weppner, Kai Kunze, Andreas Bulling, Koichi Kise, Andreas Dengel and Paul Lukowicz. <span style="font-weight: 700;" id="ishimaru2014blink">"In the Blink of an Eye - Combining Head Motion and Eye Blink Frequency for Activity Recognition with Google Glass."</span> Proc. AH2014, pp. 150-153, March 2014. <a href="https://www.dropbox.com/s/1jffafhf6vod0om/AH2014Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
 1. <u>Shoya Ishimaru</u>, Kai Kunze, Yuzuko Utsumi, Masakazu Iwamura and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2013eyetracking">"Where Are You Looking At? - Feature-Based Eye Tracking on Unmodified Tablets."</span> Proc. ACPR2013 (Poster), pp. 783-789, November 2013. <a href="https://www.dropbox.com/s/7l8p3watjkpeh7p/ACPR2013Ishimaru.pdf?dl=0"><span class="lsf">file</span> PDF</a>
 
 1. Kai Kunze, <u>Shoya Ishimaru</u>, Yuzuko Utsumi and Koichi Kise. <span style="font-weight: 700;" id="kunze2013reading">"My reading life: towards utilizing eyetracking on unmodified tablets and phones."</span> Proc. UbiComp2013 Adjunct (Demo), pp. 283-236, September 2013. <a href="https://www.dropbox.com/s/6n1batu7nkg7c09/UbiComp2013Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
+1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013. <a href="https://www.dropbox.com/s/rukvtfl21d7fjws/ICDAR2013Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 ## Domestic Conference Papers
 
