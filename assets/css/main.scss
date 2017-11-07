@@ -661,7 +661,7 @@ a:hover .footer-icon{
         font-size: $large-font-size;
     }
     h3 {
-        font-size: $base-font-size;
+        font-size: $large-font-size;
     }
     @include media-query($on-palm) {
         text-align: justify;
