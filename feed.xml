@@ -104,7 +104,7 @@
   &lt;li&gt;&lt;strong&gt;cmd-[, cmd-]&lt;/strong&gt; インデントの増減&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;ができるようになる。&lt;strong&gt;cmd-P&lt;/strong&gt;(デフォルトだと&lt;strong&gt;cmd-J&lt;/strong&gt;)のインクリメンタルサーチでノートにジャンプする機能は意外と知られていないので、使ったことがなければぜひ試してみてほしい。箇条書きでよく使うインデントの増減については、アプリケーションによって&lt;strong&gt;shift-cmd-]&lt;/strong&gt;, &lt;strong&gt;cmd-]&lt;/strong&gt;, &lt;strong&gt;tab&lt;/strong&gt;などと違って覚えるのが面倒なので、AtomやGoogleDriveを基準に&lt;strong&gt;cmd-[&lt;/strong&gt;に統一した。&lt;/p&gt;
+&lt;p&gt;ができるようになる。&lt;strong&gt;cmd-P&lt;/strong&gt;(デフォルトだと&lt;strong&gt;cmd-J&lt;/strong&gt;)のインクリメンタルサーチでノートにジャンプする機能は意外と知られていないので、使ったことがなければぜひ試してみてほしい。箇条書きでよく使うインデントの増減については、アプリケーションによって&lt;strong&gt;shift-cmd-]&lt;/strong&gt;, &lt;strong&gt;cmd-]&lt;/strong&gt;, &lt;strong&gt;tab&lt;/strong&gt;などと違って覚えるのが面倒なので、AtomやGoogleDriveに揃えて&lt;strong&gt;cmd-]&lt;/strong&gt;にした。&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Nov 2017 00:00:00 +0000</pubDate>
         <link>https://shoya.io/blog/evernote-shortcuts/</link>
