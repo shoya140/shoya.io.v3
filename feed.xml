@@ -8,6 +8,87 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>科学技術計算のためのPython開発環境(2017・conda)</title>
+        <description>&lt;p&gt;2015年の12月に&lt;a href=&quot;/blog/pyenv-virtualenv/&quot;&gt;科学技術計算のためのPython開発環境(2015)&lt;/a&gt;という記事を書きましたが、現在はpyenvとvirtualenvではなくcondaを使っています。condaとはPython用のパッケージ管理・仮想環境構築ツールです。学生を見る機会が増えたので、なるべく簡単にセットアップしたい/&lt;a href=&quot;https://github.com/shoya140/data-science-intro/blob/master/code/ipynb/getting-started.ipynb&quot;&gt;その手順を伝えたい&lt;/a&gt;と思ったのがcondaに乗り換えた理由です。&lt;/p&gt;
+
+&lt;h2 id=&quot;pythonのインストール&quot;&gt;Pythonのインストール&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;: Homebrewでインストールすることをおすすめします。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Homebrewのインストールが済んでない場合&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;xcode-select --install
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;/usr/bin/ruby -e &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Anacondaのminimal versionであるMinicondaをインストール&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew tap caskroom/cask
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew cask install miniconda
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=usr/local/miniconda3/bin:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;PATH&quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Minicondaを公式Webページからダウンロードしてインストールします。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# 64bit OSの場合&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh'&lt;/span&gt; &amp;gt; Miniconda3.sh
+
+&lt;span class=&quot;c&quot;&gt;# 32bit OSの場合&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh'&lt;/span&gt; &amp;gt; Miniconda3.sh
+
+&lt;span class=&quot;c&quot;&gt;# ダウンロードしたインストールスクリプトを実行&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;chmod u+x Miniconda3.sh
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./Miniconda3.sh
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;HOME/miniconda3/bin:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;PATH&quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Anacondaを&lt;a href=&quot;https://conda.io/miniconda.html&quot;&gt;公式Webページ&lt;/a&gt;からインストーラをダウンロードしてインストールします。途中のダイアログでInstallation Typeを”Just me”, Advanced Installation Optionsの”Add Anaconda to my PATH environment variable”にチェックを入れることをおすすめします。MinicondaではなくAnacondaを選んだのは、以下の説明の&lt;code class=&quot;highlighter-rouge&quot;&gt;$ conda&lt;/code&gt;コマンドをAnaconda Promptで使うためです。Cygwinなどを使っている場合はMinicondaを入れても大丈夫です。&lt;/p&gt;
+
+&lt;p&gt;いずれのOSでも、&lt;code class=&quot;highlighter-rouge&quot;&gt;$ which python&lt;/code&gt;コマンドを実行してMiniconda(Anaconda)を含むパスが出力されればインストールは完了です。&lt;/p&gt;
+
+&lt;h2 id=&quot;condaの使い方メモ&quot;&gt;condaの使い方メモ&lt;/h2&gt;
+
+&lt;p&gt;パッケージのインストール&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda install numpy scipy pandas matplotlib scikit-learn jupyter&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;condaに登録されていないパッケージはpipで入れる&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;pip install pyinstaller&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;新しい仮想環境を作成する&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda create --name myenv &lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.6&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;仮想環境の切り替え&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;activate myenv
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;deactivate&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;仮想環境の一覧&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda info -e&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;仮想環境をエクスポート&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda env &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &amp;gt; conda.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;エクスポートしたファイルから仮想環境を作成&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda env create --file conda.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;仮想環境の削除&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;conda remove --name myenv --all&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/python-setup-2017/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/python-setup-2017/</guid>
+        
+        <category>Engineering</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>Evernoteに登録すると便利なショートカットキー</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog_evernote_shortcuts01.png&quot; class=&quot;image-center&quot; /&gt;&lt;/p&gt;
 
@@ -446,37 +527,6 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
         <pubDate>Tue, 27 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://shoya.io/blog/fixed-point-observation/</link>
         <guid isPermaLink="true">https://shoya.io/blog/fixed-point-observation/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>転んでもただでは起きない性格</title>
-        <description>&lt;p&gt;そろそろ客観的に考えられる頃だと思うので、この2年間について語ろうと思う。&lt;/p&gt;
-
-&lt;p&gt;2年前（大学院1年）の4月から9月くらい、この速度を保つことができれば25歳で博士号をとれるかもしれない&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;という助言を受けて、僕は成果をだそうと焦っていた。修士2年分の講義をまとめてとり、たくさんの実装と実験を行い、原稿をたくさん書いて、気がついたときには生活リズムを壊し、心身に影響がでていた。&lt;/p&gt;
-
-&lt;p&gt;10月から1月くらいまで、体がいうことを聞かず、1日18時間以上眠り続ける生活を続けていた。2月頃になると、気持ちの落ち込みも随分回復して大学に復帰することができた。しかしこの後半の時期（2月以降）の方がつらかった。頭が思うように働かず、まとまった文章が書けなくなっていた。研究したいのに研究できないというのは本当に苦しい。研究者は、実験する-&amp;gt;結果を論文にまとめる-&amp;gt;成果をもとに申請書を書くというサイクルを回す仕事なので、自分の頭のなかにあるものを文字にして発信することができなければ致命的である。特に、日によって調子が浮き沈みするのが大変だった。タスクを引き受けるとき、今日の自分ならこなせるが明日の自分がこなせる保証がなかった。他にもいろんな悩みがあり、自分が書いたのかと思うとゾッとするようなメモが残っている。&lt;/p&gt;
-
-&lt;p&gt;しかしこの苦しみが「心温計」のアイデアをもたらした。僕は生活リズムがおかしくなり始めた頃から自身にセンサを付けて生活に関する様々なログを取っていて、気持ちの浮き沈みと行動に相互の相関があることを見つけた。「行動ログや各種センシングによって心の状態を測り、状態を自分や他人に分かりやすく伝える」というテーマで提案書を書き、未踏に採択された。心温計の開発を通じていろんなセンシングを試し、多くの方から助言をいただき、結果としてスーパークリエータに認定されるとともに、心温計を使うことで自分の調子をもとに戻すことに成功した。&lt;/p&gt;
-
-&lt;p&gt;もちろん、2年前のペースを維持して今年博士号を取れればそれは良い人生ではあるけれど、この経験がなければ未踏に採択されることはなかったと思うし、修士で卒業して現在のように海外の研究所で働くという選択肢を思いつくことはなかった。&lt;a href=&quot;/blog/towards-a-scientist/&quot;&gt;なんで科学者を目指すようになったか&lt;/a&gt;と同じような話になったけど、人は失敗から学ぶ事ができるし、予期せぬ結果の先には偶然のチャンスがあるものだし、その努力はどこかで必ず役に立つ。&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;単位や論文の数が要件を満たしていれば、博士前期（修士）を1年・博士後期（博士）を1年短縮して、普通27歳でとれるところを25歳でとることができる。さらに学部を1年飛び級して24歳でとるのが日本では最短のはず。&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/turning-everything-into-profit/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/turning-everything-into-profit/</guid>
         
         <category>Note</category>
         
