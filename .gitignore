@@ -3,6 +3,7 @@
 vendor/
 _site/
 _drafts/
+assets/draft/
 .sass-cache/
 .tweet-cache/
 .jekyll-metadata
