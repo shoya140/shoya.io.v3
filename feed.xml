@@ -8,6 +8,69 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>分報仲間(miiraサンチーム)に参加しています</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/blog_miira01.jpg&quot; class=&quot;image-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://adventar.org/calendars/2367&quot;&gt;しがないラジオアドベントカレンダー&lt;/a&gt;7日目の記事です。6日目はるっか和尚さんでした。「ラジオに関することならなんでも大丈夫」とのことですので、ゲスト出演したときに話した「分報仲間」についてもう少し書こうと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
+
+&lt;p&gt;しがないラジオにゲスト出演されている、はくどーさん、湊川さん、てぃーびーさんを含む8名の分報仲間(以下: miiraサンチーム)に参加しています。分報とは、週報や日報のより粒度が細かいもののことで、日頃考えていることや取り組んだことの記録です。分報をSlackワークスペースなどで互いに共有する仲間や場のことを&lt;a href=&quot;http://c16e.com/1511101558/&quot;&gt;分報仲間と呼んでいます&lt;/a&gt;。メンバーと集まった経緯についてはてぃーびーさんのブログ(&lt;cite&gt;&lt;a href=&quot;http://tbpgr.hatenablog.com/entry/2017/11/26/004057&quot;&gt;分報仲間が集まった経緯&lt;/a&gt;&lt;/cite&gt;)をご覧ください。&lt;/p&gt;
+
+&lt;p&gt;miiraサンチームの存在を知ったのは1年くらい前で、ブログ・Twitter・pplogなどで活動を聞く度に「いいなぁ」と思っていました。自分が参加したのは今から2ヶ月前(2017年10月)です。参加の理由はラジオで話したとおり&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;、仕事の内容や生活環境が大変になるにつれて研究や個人開発のモチベーションを維持するのが難しくなってきたからでした。&lt;a href=&quot;https://bellflower.dodgson.org/%E9%80%B1%E5%A0%B1%E4%BB%B2%E9%96%93-a799ad07f349&quot;&gt;週報仲間&lt;/a&gt;のような仕組みで解決したいと思って、近況を共有したい相手として最初に思い浮かんだのがmiiraサンチームの方々だったので、声をかけて入れていただいたという次第です。&lt;/p&gt;
+
+&lt;h2 id=&quot;良いところ&quot;&gt;良いところ&lt;/h2&gt;
+
+&lt;p&gt;分報仲間をつくって得られることは大きく分けて3つあると思っています。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自分の思考を整理できる&lt;/strong&gt; 作業中に思い浮かんだアイデアや考え事について投稿すると、その出力から生まれる新しい考えや仲間からのフィードバックによって、思考をさらに膨らませたり整理することができます。思考のメモは例えばEvernoteなど自分しか読めない形で記録することもできますが、自分しか読めればいいという走り書きや単語ではそこから発展することがなかなかありません。少し頑張って他人の目に触れるレベルにまで言語化・整理するのが大事なのだと思います。また、ちょっと長めの文章を書くときも、下書きをSlackに連続で投稿していったほうが早く書けるという気付きがありました。&lt;a href=&quot;http://www.geocities.jp/deepbreathinghp/freewriting.htm&quot;&gt;文章を書くのが難しいのは言葉を紡ぎ出すという「創造」と紡ぎ出した言葉や文を整えるという「訂正」を同時に行おうとしてしまうから&lt;/a&gt;であり、前に戻って編集するのが面倒なチャットのUIはそれらを上手に分離できる(一気に書き上げてあとから推敲しようという気持ちになる)からかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;仲間の頑張りが励みになる&lt;/strong&gt; 日々の目標や成果、思考の記録をつけるのはひとりだとサボりがちですが、仲間が投稿しているのを見ていると自分も何か投稿しようという気持ちになります。仲間の進捗を聞いていると、自分も負けずに進捗をだそうという気持ちになります。また、&lt;a href=&quot;/blog/paperboy/&quot;&gt;自分は何かが生まれるまでのプロセスを見るのが好きなので&lt;/a&gt;、例えば湊川さんが漫画を書く過程など、メンバーの皆さんの進捗が垣間見れるのはすごく良い経験になっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;小さな進捗を褒めあえる&lt;/strong&gt; 取り組むプロジェクトが大きくなるほど、作業と対外発表までの時間差が大きくなります。その作業自体も「楽しいからする」というものから「大変だけど努力の末に報われる」というものになってくると思います。対外発表に至るまでの小さな成果を見せられる相手がいると、最後までモチベーションを維持することができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;気をつけるところ&quot;&gt;気をつけるところ&lt;/h2&gt;
+
+&lt;p&gt;デメリットというか気をつけなければいけないなと思うのは、仲間の投稿があるとついつい見に行ってしまって作業に集中できなくなるということです。特にmiiraチームの活動が活発になる夕方から深夜は、ドイツだと朝から夕方の仕事をするべき時間になります&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;。そこで最近は、就業時間は開くのを控えて後からまとめて見るようにしています。miiraチームは各々の活動が独立していて時々会話が発生するという感じなので後からまとめて見るか読まなくても大丈夫なのですが、同じ会社やチームの分報だとちょっと疲れてしまうかもしれません。&lt;/p&gt;
+
+&lt;h2 id=&quot;おわりに&quot;&gt;おわりに&lt;/h2&gt;
+
+&lt;p&gt;分報仲間に参加することで、以前より研究や個人開発のモチベーションが高まったと思います。miiraチームについてもっと知りたい方はメンバーの記事をぜひ読んでみてください。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tbpgr.hatenablog.com/entry/2016/07/17/233613&quot;&gt;rebuild.fmで話題になっていた週報仲間に似た分報仲間をはじめてから8ヵ月が経過して変わった世界 - Tbpgr Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://note.mu/llminatoll/n/n1870ba6b8320&quot;&gt;あなたの頑張りをほめてくれる場所の作り方 ｜Slack実例｜湊川あい@わかばちゃんと学ぶ本 発売中｜note&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kiwinote.hateblo.jp/entry/miirahage&quot;&gt;Slack分報チームに入って1年で変わったこと（ミイラとりがミイラになった話） - kiwinote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://becolomochi.hatenablog.com/entry/miira-join&quot;&gt;miiraにジョインしていました - べこのツボ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/361241465&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/362127854&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;分報仲間については後編(sp.11b)の1:02:20から話しています。パーソナリティのzuckyさん・gamiさん、繋いでいただいたてぃーびーさん、ありがとうございました！&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;時差については「日本時間で夜遅くに投稿するので迷惑になる/皆さんの寝る時間が遅くなるかも？」という懸念点を参加する前に伝えていました。&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/miira/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/miira/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>科学技術計算のためのPython開発環境(2017・conda)</title>
         <description>&lt;p&gt;2015年の12月に&lt;a href=&quot;/blog/pyenv-virtualenv/&quot;&gt;科学技術計算のためのPython開発環境(2015)&lt;/a&gt;という記事を書きましたが、現在はpyenvとvirtualenvではなくcondaを使っています。condaとはPython用のパッケージ管理・仮想環境構築ツールです。学生を見る機会が増えたので、なるべく簡単にセットアップしたい/&lt;a href=&quot;https://github.com/shoya140/data-science-intro/blob/master/code/ipynb/getting-started.ipynb&quot;&gt;その手順を伝えたい&lt;/a&gt;と思ったのがcondaに乗り換えた理由です。&lt;/p&gt;
 
@@ -512,23 +575,6 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
         <category>ReleaseNote</category>
         
         <category>Engineering</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>定点観測</title>
-        <description>&lt;p&gt;高校時代の恩師から依頼をいただき、年に1度、愛媛県の中高一貫校で講演をしている。ちょうどさきほど今年も行けますという話をしていて、今年でなんと4年連続になる。ということで12月に日本行きます:)&lt;/p&gt;
-
-&lt;p&gt;これまで講演で使ってきたスライドを開くと、荒削りながらも当時伝えたかったことを当時最も良いと思う方法で伝えようとしている跡が見える。そしてその差分が1年間の成長の証だと思うと感慨深い。今年は研究所で働き始めたということもあり、話したい内容が尽きないので、ストーリーもメッセージもガラリと変えていこうと思う。去年の自分をどれだけ超えられるか想像するとワクワクする。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 27 Sep 2016 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/fixed-point-observation/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/fixed-point-observation/</guid>
-        
-        <category>Note</category>
         
         
         <category>blog</category>
