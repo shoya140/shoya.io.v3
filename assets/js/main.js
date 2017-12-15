@@ -6,7 +6,7 @@ $(function(){
   $(".post-list-item").hover(function(){
     rollIn($(this), "#9694b1");
   }, function(){
-    rollOut($(this), "#4a4a46");
+    rollOut($(this), "#1e1e28");
   });
   $(".post-list-item").click(function(){
     rollOut($(this));
@@ -15,10 +15,10 @@ $(function(){
   $(".page-button").hover(function(){
     rollIn($(this), "#9694b1");
   }, function(){
-    rollOut($(this), "#4a4a46");
+    rollOut($(this), "#1e1e28");
   });
   $(".page-button").click(function(){
-    rollOut($(this), "#4a4a46");
+    rollOut($(this), "#1e1e28");
   });
 
   $(".tweet-button").hover(function(){
