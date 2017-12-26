@@ -10,7 +10,7 @@ permalink: /publications/
 
 ## Book Chapter
 
-1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Pascal Klein, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> Positive Learning and Transformation in the Information Age (PLATO) - A blessing or a curse?, Springer, October 2017, in press.
+1. <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Pascal Klein, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017augmented">"Augmented Learning on Anticipating Textbooks with Eye Tracking."</span> Positive Learning and Transformation in the Information Age (PLATO) - A blessing or a curse?, Springer, pp. 387-398, December 2017.
 
 ## Conference Papers
 
