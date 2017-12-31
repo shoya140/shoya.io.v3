@@ -6,7 +6,7 @@ fullurl: "https://shoya.io" # https://stackoverflow.com/questions/40668302/jekyl
 destination: _site
 permalink: /:categories/:title/
 markdown: kramdown
-popular: ["Paletta", "zebra", "cookpad_internship", "hatena_intern", "internet_black_market", "long_shadow"]
+popular: ["Paletta", "zebra", "long_shadow", "meme-logger", "internet_black_market", "nginx_root"]
 plugins: []
 exclude:
   - README.md
