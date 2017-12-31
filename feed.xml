@@ -8,6 +8,25 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>2017年振り返り</title>
+        <description>&lt;p&gt;仕事の近況については&lt;a href=&quot;/blog/DFKI3&quot;&gt;前回の記事&lt;/a&gt;で書いたようにマネジメントに注力する1年でした。研究対外発表はBook Chapterが1報と国際会議と併催ワークショップが4報で、もう少し頑張れた気がする印象です。その他大きな成果としては、&lt;a href=&quot;https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind&quot;&gt;技術見本市CeBITへの出展&lt;/a&gt;、&lt;a href=&quot;https://www.youtube.com/watch?v=cMurBm1myhM&quot;&gt;母校である松山西中等教育学校での講演&lt;/a&gt;、&lt;a href=&quot;https://www.youtube.com/watch?v=4Kuqil3lOIk&quot;&gt;TEDxNagoyaU登壇&lt;/a&gt;、&lt;a href=&quot;https://shiganai.org/ep/sp11a-shoya140&quot;&gt;しがないラジオ出演&lt;/a&gt;などがありました。&lt;/p&gt;
+
+&lt;p&gt;2018年はアウトプットの質を高める年にしていきたいと思っています。具体的には、デモやワークショップではなくフルペーパーや論文誌に採択される論文を、締切間際ではなくスケジュール通りに執筆するのが目標です。ソフトウェア開発についても代表作といえるようなアウトプットを更新したいです。このあたりは面白い動きがあるのでとても楽しみな年です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_looking_back_at_2017.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/looking-back-at-2017/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/looking-back-at-2017/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>ドイツ人工知能研究センター(DFKI)への留学と就職</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog_dfki3.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -593,43 +612,6 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
         <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
         <link>https://shoya.io/blog/imaginary-mentor/</link>
         <guid isPermaLink="true">https://shoya.io/blog/imaginary-mentor/</guid>
-        
-        <category>Note</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>復旧作業ログ</title>
-        <description>&lt;p&gt;いろいろなアプリにsubmoduleとして追加していたライブラリを別アプリに切り出したので、リポジトリを巡回してgit submodule deinitしていた。最後のリポジトリでdeinitした瞬間に、そのアプリケーションは今日使ったばかりでsubmodule（しかもignoreされているところ）に実験データが残ったままであったことに気付く。Ctrl-Cするが時既に遅し。即座にネットワークを切断してDropboxの同期を止める。GitLabのデータ障害が脳裏をよぎる。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;YPはすぐさま削除を停止させたが、もう遅かった。約310ギガバイトあったデータのうち、残ったのは4.5ギガバイトであった。 &lt;cite&gt;&lt;a href=&quot;http://www.publickey1.jp/blog/17/gitlabcom56.html&quot;&gt;GitLab.comが操作ミスで本番データベース喪失&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Dropbox同期している別のPCから救出を試みる。しかしこちらも1/4ほどのデータがすでに消えている。ディレクトリを横断して名前が若いファイル（001.png, 002.png, …）から消えているようだ。一部の実験ではなく今日記録したすべてのデータが使えなくなる可能性がある。&lt;/p&gt;
-
-&lt;p&gt;Dropboxで削除したファイルの復元ができることに気付く。deinitを実行したPCを再度ネットワークに繋いで、同期が完了したのを確認してWebにアクセスする。ところが、同期の途中でネットワークを切ったのが原因なのか「削除したファイル」の中に消えていた1/4のファイルがない。（再接続後に同期したファイルは復元できる。）&lt;/p&gt;
-
-&lt;p&gt;ディスク復元ソフトを使ってみるが削除したファイルが検出されない。絶望する。&lt;/p&gt;
-
-&lt;p&gt;Dropbox Webのツールバーにごみ箱アイコン「削除したファイルを表示」があるのを見つける。祈りながら削除したディレクトリに移動してアイコンを押す。消えていたファイルが見つかった！！！面倒だけど各ディレクトリに移動して表示-&amp;gt;復元を繰り返す。&lt;/p&gt;
-
-&lt;p&gt;すべてのファイルを復元し終える。念のため解析スクリプトに入れてみて最初から最後までの実験のデータが破損していないか確かめる。無事だった。&lt;/p&gt;
-
-&lt;p&gt;Dropbox Web左カラムの「削除したファイル」に消えたファイルがなくても諦めてはいけない。そのディレクトリに移動して「削除したファイルを表示」を押すと見つかることがある。復元し終わってから気付いたけど左カラムの「イベント」にDropbox上のすべての変更が記録されていて、初めに消えた1/4のファイルの履歴も残っていた。ここからボタン一つで復元できたらしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog_recover_log.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;教訓&quot;&gt;教訓&lt;/h3&gt;
-
-&lt;p&gt;バックアップ大事。特に大きな変更を加えるgitコマンドを叩くときは必ずハードコピーをとっておくこと。あと気が動転すると何を試したか今何をしているのか分からなくなってくるのでメモをとったほうがいい。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/recovery-log/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/recovery-log/</guid>
         
         <category>Note</category>
         
