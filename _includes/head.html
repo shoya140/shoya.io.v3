@@ -10,12 +10,12 @@
     <meta name="twitter:creator" content="@shoya140">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta name="twitter:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}">
-    <meta name="twitter:descroption" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:url" content="{{ site.fullurl }}{{ page.url }}">
     <meta property="og:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}">
-    <meta property="og:descroption" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.fullurl }}/feed.xml">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.fullurl }}">
