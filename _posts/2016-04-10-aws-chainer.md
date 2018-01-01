@@ -10,7 +10,7 @@ AWSのアカウントを作成した状態から深層学習のための環境�
 
 ## インスタンスの作成
 
-インスタンス->マーケットプレイス->「nvidia」で検索。<br>インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。
+インスタンス->マーケットプレイス->「nvidia」で検索。<br/>インスタンスタイプはg2.2xlargeまたはg2.8xlargeを選択。
 
 <img src="/assets/img/blog_aws-chainer01.png" class="image-on-frame-medium">
 

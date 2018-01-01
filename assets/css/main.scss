@@ -49,7 +49,7 @@ body {
     letter-spacing: $letter-spacing;
     font-weight: 400;
     color: $brand-color-very-dark;
-    background-color: $white-color;
+    background-color: $brand-color-very-dark;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     @include media-query($on-palm) {

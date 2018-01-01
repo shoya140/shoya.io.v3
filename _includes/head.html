@@ -1,25 +1,25 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts">
-    {% if page.keywords != nil %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
-    {% if page.description != nil %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@shoya140">
-    <meta name="twitter:creator" content="@shoya140">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta name="twitter:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}">
-    <meta name="twitter:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:url" content="{{ site.fullurl }}{{ page.url }}">
-    <meta property="og:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}">
-    <meta property="og:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="author" href="https://plus.google.com/u/0/102413339779614193497/posts" />
+    {% if page.keywords != nil %}<meta name="keywords" content="{{ page.keywords }}" />{% endif %}
+    {% if page.description != nil %}<meta name="description" content="{{ page.description }}" />{% endif %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@shoya140" />
+    <meta name="twitter:creator" content="@shoya140" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}" />
+    <meta name="twitter:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:url" content="{{ site.fullurl }}{{ page.url }}" />
+    <meta property="og:image" content="{% if page.eyecatch  != nil %}{{ site.fullurl }}{{ page.eyecatch }}{% else %}{{ site.fullurl }}/assets/img/icon_dot_white.png{% endif %}" />
+    <meta property="og:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.fullurl }}/feed.xml">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.fullurl }}">
-    <link rel="shortcut icon" href="{{ site.fullurl }}/favicon.ico">
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.fullurl }}/feed.xml" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.fullurl }}" />
+    <link rel="shortcut icon" href="{{ site.fullurl }}/favicon.ico" />
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" />
 </head>

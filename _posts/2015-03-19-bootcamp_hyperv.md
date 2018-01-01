@@ -26,4 +26,4 @@ BootcampでインストールしたWindows8.1において コントロールパ�
 
 手順通りにWindowsを起動すると、Hyper-Vが実行されてEmulatorの起動を確認できた。
 
-<img src="/assets/img/blog_bootcamp_hyperv03.png" class="image-on-frame">
+<img src="/assets/img/blog_bootcamp_hyperv03.png" class="image-on-frame" />

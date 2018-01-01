@@ -9,7 +9,7 @@ keywords: GitLab, Git, インストール, セットアップ
 
 [GitLab](http://gitlab.org/)とはGitHubクローンのひとつで、ソースコードの管理やコードレビュー、複数人でのプロジェクト開発を円滑にするツールです。[GitHub](https://github.com/)との違いは、無料でプライベート(非公開の)リポジトリをいくつでも作ることができる点と、社外・学外のサーバーに機密情報を含むデータを預ける必要がない点にあります。(GitHub Enterpriseとの比較は割愛)
 
-今回は大学の計算機にGit/GitLab環境を構築したので、その手順メモを記しました。[インストールガイド](https://github.com/gitlabhq/gitlabhq/blob/6-0-stable/doc/install/installation.md)を参考に、redisの起動など足りないところを補完してあります。<br>GitLabのインストール方法はバージョンによって少しずつ異なります。6.1, 6.2はsidekiqの立ち上げに問題があるので、2013年11月現在は6.0を導入するのが最善かと思われます。
+今回は大学の計算機にGit/GitLab環境を構築したので、その手順メモを記しました。[インストールガイド](https://github.com/gitlabhq/gitlabhq/blob/6-0-stable/doc/install/installation.md)を参考に、redisの起動など足りないところを補完してあります。<br/>GitLabのインストール方法はバージョンによって少しずつ異なります。6.1, 6.2はsidekiqの立ち上げに問題があるので、2013年11月現在は6.0を導入するのが最善かと思われます。
 
 ## <span class="lsf">setup</span> 環境
 * Debian 6.0.8
@@ -372,7 +372,7 @@ Pass: 5iveL!fe
 {% highlight bash %}
 git config –global http.sslVerify false
 {% endhighlight %}
-を実行して、証明書チェックを外す。<br>
+を実行して、証明書チェックを外す。<br/>
 参考：[GIT:リポジトリにHTTPSでアクセスしてみる - 自転車で通勤しましょ♪ブログ](http://319ring.net/blog/archives/1164)
 
 ## <span class="lsf">check</span> Can't save project. Please try again later
@@ -407,7 +407,7 @@ sudo vim /etc/hosts
 
 ## <span class="lsf">check</span> その他の問題解決
 
-おかしいなと思ったら、以下のコマンドを実行。<br>
+おかしいなと思ったら、以下のコマンドを実行。<br/>
 エラーメッセージから原因を見つけて修復する。
 
 <strong>・インストール情報の表示</strong>

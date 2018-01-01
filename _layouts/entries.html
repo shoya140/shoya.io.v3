@@ -13,6 +13,7 @@ layout: default
             <a href="/tag/Sightseeing/">#観光</a>({{ site.tags["Sightseeing"].size }})
             <a href="/tag/Note/">#日記</a>({{ site.tags["Note"].size }})
             <a href="/tag/ReleaseNote/">#作りました</a>({{ site.tags["ReleaseNote"].size }})
+          </div>
           {% for post in page.posts %}
           <div class="post-list-item">
               <a href="{{ post.url | prepend: site.baseurl }}"></a>

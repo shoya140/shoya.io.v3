@@ -13,19 +13,19 @@ relations:
   - racolta
 ---
 
-メイワクメールをワクワクに変える。<br>
+メイワクメールをワクワクに変える。<br/>
 迷惑メール共有サイト「Spam Museum」スパムミュージアムを本日リリースしました。
 
-[<img src="/assets/img/blog_spammuseum_ss.png" class="image-on-frame">](http://meiwaku.me)
+[<img src="/assets/img/blog_spammuseum_ss.png" class="image-on-frame" />](http://meiwaku.me)
 
-日常的に届く迷惑メール。<br>
-世の中で送受信されるメールの約95％が迷惑メールだとも言われています。<br>
+日常的に届く迷惑メール。<br/>
+世の中で送受信されるメールの約95％が迷惑メールだとも言われています。<br/>
 しかしそんな鬱陶しい迷惑メールの中にも、思わず笑ってしまうようなもの、ひとに感動を与えてくれるようなもの、といった素敵なメールというものが存在します。
 
-Spam Museumとはそういった素敵な迷惑メールを皆で共有するためのサイトです。<br>
+Spam Museumとはそういった素敵な迷惑メールを皆で共有するためのサイトです。<br/>
 「日常のメイワクをワクワクに変える」そんなコンセプトで作りました。
 
-<img src="/assets/img/blog_spammuseum_about.gif" class="image-on-frame">
+<img src="/assets/img/blog_spammuseum_about.gif" class="image-on-frame" />
 
 Spam Museumでできることは大きく分けて３つあります。
 

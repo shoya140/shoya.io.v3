@@ -20,7 +20,7 @@ brew cask install sublime-text-dev
 
 ## Package Control
 
-プラグイン管理ツールであるPackage Controlをインストールする。<br>
+プラグイン管理ツールであるPackage Controlをインストールする。<br/>
 メニューバーから View > Show Consoleを開く。下記を入力して実行する。
 
 {% highlight bash %}

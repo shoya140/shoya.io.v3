@@ -13,7 +13,7 @@ relations:
 
 11/24(土)グーグル株式会社主催/株式会社アカリク企画運営のGoogle Gmaes in Kyotoに参加してきました。
 
-<img src="/assets/img/blog_google_slooProImg_20121125010559.jpg" class="image-on-frame">
+<img src="/assets/img/blog_google_slooProImg_20121125010559.jpg" class="image-on-frame" />
 
 Google Gamesとは「Googler(Googleで働く人たち)の出題するクイズやパズルに挑戦することでGoogleの文化に触れる」というイベントです。告知文は以下のとおり。
 
@@ -25,19 +25,19 @@ Google Gamesとは「Googler(Googleで働く人たち)の出題するクイズ�
 
 ## クイズ！パズル！コーディング！
 
-<img src="/assets/img/blog_google_slooProImg_20121125010549.jpg" class="image-on-frame">
+<img src="/assets/img/blog_google_slooProImg_20121125010549.jpg" class="image-on-frame" />
 
 京都での開催でしたが関西圏外からも含め80名ほどの学生が参加しました。これから5人1組のチームに分かれてクイズやパズルに挑戦です。みんな気合入ってます。
 
 ## 休憩
 
-<img src="/assets/img/blog_google_slooProImg_20121125010608.jpg" class="image-on-frame">
+<img src="/assets/img/blog_google_slooProImg_20121125010608.jpg" class="image-on-frame" />
 
 頭を使ったらおなかがすいた！ということで休憩時間には軽食が振舞われました。
 
 ## レゴチャレンジ
 
-<img src="/assets/img/blog_google_slooProImg_20121125010604.jpg" class="image-on-frame">
+<img src="/assets/img/blog_google_slooProImg_20121125010604.jpg" class="image-on-frame" />
 
 クイズやパズル、コーディングときて最後の問題はレゴチャレンジ。始まるまでは「レゴで一体何するんだろう」って思っていたけれど、きちんとした評価基準があってがっつり競技でした。このレゴチャレンジが一番楽しかった。
 
@@ -57,7 +57,7 @@ Google Gamesとは「Googler(Googleで働く人たち)の出題するクイズ�
 
 そして一番刺激的だったのはGooglerとお話しできたことだった。参加する前からGooglerは良い意味でクレイジーな人ばかりという印象を持っていたのだけれど、実際に会ってみるとやはり賢い人達の集まりだった。
 
-採用の話も聞いた。Googleの採用試験というとフェルミ推定だったり難解なロジックパズルを解くものだというイメージだったのだけれど、それらは営業や文系職に対する試験であってエンジニア採用においてはそういう問題は出題していないことだった。試験はディスカッションとホワイトボードコーディングで構成されていて、コンピュータサイエンスに関する知識やコーディングスキルを問うとのこと。(と言いつつ会場の誰もが解けなかったパズルをものの1分で解いたりするしやっぱりGoogleエンジニアはすごい。)<br>
+採用の話も聞いた。Googleの採用試験というとフェルミ推定だったり難解なロジックパズルを解くものだというイメージだったのだけれど、それらは営業や文系職に対する試験であってエンジニア採用においてはそういう問題は出題していないことだった。試験はディスカッションとホワイトボードコーディングで構成されていて、コンピュータサイエンスに関する知識やコーディングスキルを問うとのこと。(と言いつつ会場の誰もが解けなかったパズルをものの1分で解いたりするしやっぱりGoogleエンジニアはすごい。)<br/>
 更にあまりオープンになっていないような話も聞けて勉強になった。
 
 ## これからのこと

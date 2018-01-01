@@ -20,30 +20,30 @@ How to record and analyze J!NS MEME's data
 
 4.Pull recorded data by using iTunes File Sharing.
 
-<img src="/assets/img/blog_dagstuhl_meme01.png" class="image-on-frame">
+<img src="/assets/img/blog_dagstuhl_meme01.png" class="image-on-frame" />
 
 ## Visualizing
 
-Do you like python?<br>
+Do you like python?<br/>
 -> Enjoy analyzing by using iPython Notebook ;)
 
-<img src="/assets/img/blog_dagstuhl_meme02.png" class="image-on-frame">
+<img src="/assets/img/blog_dagstuhl_meme02.png" class="image-on-frame" />
 
-Are you using Mac OSX?<br>
+Are you using Mac OSX?<br/>
 -> Download [MEMEPlayer](https://dl.dropboxusercontent.com/u/12208857/snd/MEMEPlayer.zip). You can visualize data easily just drag & drop .csv to the App.
 
-<img src="/assets/img/blog_dagstuhl_meme03.png" class="image-on-frame">
+<img src="/assets/img/blog_dagstuhl_meme03.png" class="image-on-frame" />
 
 ## Academic Pack
 
-Are you using Windows?<br>
+Are you using Windows?<br/>
 -> Download [MEME Data Logger](http://xfs.jp/jXBcC).
 
-<img src="/assets/img/blog_dagstuhl_meme04.png" class="image-on-frame">
+<img src="/assets/img/blog_dagstuhl_meme04.png" class="image-on-frame" />
 
 ## Prototype
 
-Are you using Mac OSX?<br>
+Are you using Mac OSX?<br/>
 -> Download [MEMELogger on OSX](https://dl.dropboxusercontent.com/u/12208857/snd/MEMELogger-OSX.zip)
 
-<img src="/assets/img/blog_dagstuhl_meme05.png" class="image-on-frame">
+<img src="/assets/img/blog_dagstuhl_meme05.png" class="image-on-frame" />
