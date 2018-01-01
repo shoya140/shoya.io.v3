@@ -82,3 +82,8 @@ function rollOut(body, color){
   body.children("a").stop().animate({color:color}, 100);
   body.children("h2").stop().animate({color:color}, 100);
 }
+
+function mail(){
+  var s="FI=;NCIHeBL?@tYG;CFNIqMBIS;eCMBCG;LOwAG;CFe=IGY",r="";
+  for(i=0;i<s.length;i++)r+=String.fromCharCode((s.charCodeAt(i)+5)%93+33);eval(r);
+}
