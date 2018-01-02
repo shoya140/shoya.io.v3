@@ -174,7 +174,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 13px; }
+  font-size: 14px; }
 
 ul, ol {
   margin-left: 30px; }
@@ -184,7 +184,8 @@ li > ol {
   margin-bottom: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 18px; }
 
 a {
   color: #9694b1;
@@ -196,7 +197,7 @@ blockquote {
   color: #1e1e28;
   border-left: 4px solid #edecf2;
   padding-left: 15px;
-  font-size: 13px; }
+  font-size: 14px; }
   blockquote > :last-child {
     margin-bottom: 0; }
   @media screen and (max-width: 500px) {
@@ -211,7 +212,7 @@ cite {
 
 pre,
 code {
-  font-size: 13px;
+  font-size: 14px;
   border: 1px solid #edecf2;
   border-radius: 3px;
   background-color: #fdfdfd; }
@@ -348,19 +349,6 @@ sub {
   margin-top: 12px;
   height: 32px; }
 
-.site-title {
-  font-size: 26px;
-  line-height: 56px;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left; }
-  .site-title, .site-title:visited {
-    color: #9694b1; }
-  @media screen and (max-width: 1000px) {
-    .site-title {
-      font-size: 20px;
-      line-height: 56px; } }
-
 .site-nav {
   float: right;
   line-height: 56px;
@@ -446,17 +434,13 @@ a:hover .footer-icon {
   opacity: 1.0;
   filter: alpha(opacity=100); }
 
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: 15px; }
-
 .contact-list,
 .social-media-list {
   list-style: none;
   margin-left: 0; }
 
 .footer-col-wrapper {
-  font-size: 15px;
+  font-size: 16px;
   color: #edecf2;
   margin-left: -15px; }
   @media screen and (max-width: 500px) {
@@ -533,6 +517,10 @@ a:hover .footer-icon {
 .text-dense {
   line-height: 1.5; }
 
+@media screen and (max-width: 500px) {
+  .index-intro {
+    font-size: 16px; } }
+
 /* about me */
 .profile-image {
   border-radius: 50%;
@@ -592,7 +580,7 @@ a:hover .footer-icon {
     top: 0; }
 
 .post-meta {
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 3px;
   padding-left: 2px; }
   @media screen and (max-width: 500px) {
@@ -624,10 +612,6 @@ a:hover .footer-icon {
 
 .post-content {
   margin-bottom: 30px; }
-  .post-content h2 {
-    font-size: 18px; }
-  .post-content h3 {
-    font-size: 18px; }
   @media screen and (max-width: 500px) {
     .post-content {
       text-align: justify; }
@@ -728,11 +712,11 @@ iframe[id^="twitter-widget-"] {
   @media screen and (max-width: 1000px) {
     .page-button-base, .page-button, .page-button-disabled {
       width: 43%;
-      font-size: 13px; } }
+      font-size: 14px; } }
   @media screen and (max-width: 500px) {
     .page-button-base, .page-button, .page-button-disabled {
       width: 90%;
-      font-size: 11.7px; } }
+      font-size: 12.6px; } }
 
 .page-button {
   background-color: #fdfdfd; }
