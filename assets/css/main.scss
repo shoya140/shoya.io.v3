@@ -18,8 +18,8 @@
 $base-font-family: Oxygen, 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
 $large-font-size: 18px;
+$huge-font-size: 24px;
 $palm-font-size: 14px;
-$small-font-size: 13px;
 $base-line-height: 1.8;
 $letter-spacing: 0.4px;
 $spacing-unit: 30px;
@@ -75,7 +75,7 @@ figure > img {
 }
 
 figcaption {
-    font-size: $small-font-size;
+    font-size: $palm-font-size;
 }
 
 ul, ol {
@@ -91,6 +91,7 @@ li {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
+    font-size: $large-font-size;
 }
 
 a {
@@ -106,7 +107,7 @@ blockquote {
     color: $brand-color-very-dark;
     border-left: 4px solid $brand-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: $small-font-size;
+    font-size: $palm-font-size;
 
     > :last-child {
         margin-bottom: 0;
@@ -128,7 +129,7 @@ cite{
 
 pre,
 code {
-    font-size: $small-font-size;
+    font-size: $palm-font-size;
     border: 1px solid $brand-color-light;
     border-radius: 3px;
     background-color: $white-color;
@@ -163,7 +164,7 @@ hr{
         display: inline-block;
         position: relative;
         top: -21px;
-        font-size: 24px;
+        font-size: $huge-font-size;
         padding: 0 10px;
         color: $brand-color;
         background: $white-color;
@@ -233,7 +234,6 @@ sub {
 }
 
 %clearfix {
-
     &:after {
         content: "";
         display: table;
@@ -242,7 +242,6 @@ sub {
 }
 
 .icon {
-
     > svg {
         display: inline-block;
         width: 16px;
@@ -308,24 +307,6 @@ sub {
     height: 32px;
 }
 
-.site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $brand-color;
-    }
-
-    @include media-query($on-laptop) {
-        font-size: 20px;
-        line-height: 56px;
-    }
-}
-
 .site-nav {
     float: right;
     line-height: 56px;
@@ -338,7 +319,7 @@ sub {
     .page-link {
         color: $brand-color-very-dark;
         line-height: $base-line-height;
-        font-size: 18px;
+        font-size: $large-font-size;
         font-weight: 300;
 
         // Gaps between nav items, but not on the first one
@@ -440,11 +421,6 @@ a:hover .footer-icon{
     filter: alpha(opacity=100);
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
-}
-
 .contact-list,
 .social-media-list {
     list-style: none;
@@ -452,12 +428,12 @@ a:hover .footer-icon{
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
+    font-size: $base-font-size;
     color: $brand-color-light;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
     @include media-query($on-palm) {
-        font-size: 14px;
+        font-size: $palm-font-size;
     }
 }
 
@@ -508,7 +484,7 @@ a:hover .footer-icon{
 .index-left {
     display: inline-block;
     position: relative;
-    top:0px;
+    top: 0px;
     width: 30%;
     text-align: center;
     vertical-align:middle;
@@ -549,6 +525,12 @@ a:hover .footer-icon{
     line-height: 1.5;
 }
 
+.index-intro {
+    @include media-query($on-palm) {
+      font-size: $base-font-size;
+    }
+}
+
 /* about me */
 
 .profile-image{
@@ -578,7 +560,7 @@ a:hover .footer-icon{
 }
 
 .error-text{
-    font-size: 24px;
+    font-size: $huge-font-size;
 }
 
 .background{
@@ -621,11 +603,11 @@ a:hover .footer-icon{
 }
 
 .post-meta {
-    font-size: $small-font-size;
+    font-size: $palm-font-size;
     margin-bottom: 3px;
     padding-left: 2px;
     @include media-query($on-palm) {
-        font-size: 14px;
+        font-size: $palm-font-size;
         padding-left: 0px;
     }
 }
@@ -646,7 +628,7 @@ a:hover .footer-icon{
 
 .post-title {
     margin-top: 0;
-    font-size: 24px;
+    font-size: $huge-font-size;
     line-height: 1.2;
     @include media-query($on-palm) {
         font-size: 18px;
@@ -657,12 +639,6 @@ a:hover .footer-icon{
 
 .post-content {
     margin-bottom: $spacing-unit;
-    h2 {
-        font-size: $large-font-size;
-    }
-    h3 {
-        font-size: $large-font-size;
-    }
     @include media-query($on-palm) {
         text-align: justify;
         h2, h3{
@@ -784,11 +760,11 @@ iframe[id^="twitter-widget-"] {
     -o-text-overflow: ellipsis;
     @include media-query($on-laptop) {
         width: 43%;
-        font-size: $small-font-size;
+        font-size: $palm-font-size;
     }
     @include media-query($on-palm) {
         width: 90%;
-        font-size: $small-font-size*0.9;
+        font-size: $palm-font-size*0.9;
     }
 }
 
