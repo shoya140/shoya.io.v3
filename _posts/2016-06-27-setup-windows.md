@@ -28,22 +28,24 @@ cygstartというコマンドがMacターミナルのopenに相当するよう�
 alias open='cygstart'
 {% endhighlight %}
 
-### sublコマンドでSublime Textを起動する
+### sublコマンドでAtomを起動する
 
-Sublime Textのインストール先をPathに追加することで可能。.bashrcに下記を追記。
+Atomのインストール先をPathに追加することで可能。.bashrcに下記を追記。
 
 {% highlight bash %}
-export PATH=C:\\Program\ Files\\Sublime\ Text\ 3:$PATH
+export PATH=$HOME\\AppData\\Local\\atom:$PATH
+# 他のエディタも同様
+# export PATH=C:\\Program\ Files\\Sublime\ Text\ 3:$PATH
 {% endhighlight %}
 
 ### gnupackとMinicondaを一緒に使う
 
-[Miniconda](http://conda.pydata.org/miniconda.html)とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記。Miniconda2のところはインストールしたPythonのバージョンに合わせる。
+[Miniconda](http://conda.pydata.org/miniconda.html)とはPythonの主要ライブラリを簡単に管理できるツールであるAnacondaの最小構成版。インストールが済むとシステムかユーザ以下(選択可能)に新しいPythonが入ってWindowsの環境変数にそのPathが追記される。gnupack上のcygwinはこの環境変数を読まないので、Pathを手動で追加する必要がある。下記を.bashrcに追記。Miniconda3のところはインストールしたPythonのバージョンに合わせる。
 
 {% highlight bash %}
-export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda2\\:$PATH
-export PATH=C:\\Users\\ YOUR_USER_NAME\\Miniconda2\\Scripts\\:$PATH
-export PATH=C:\\Users\\ YOUR_USER_NAME\\Miniconda2\\Library\\bin:$PATH
+export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda3\\:$PATH
+export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda3\\Scripts\\:$PATH
+export PATH=C:\\Users\\YOUR_USER_NAME\\Miniconda3\\Library\\bin:$PATH
 {% endhighlight %}
 
 他にも便利な設定が見つかったら追記していく予定。
