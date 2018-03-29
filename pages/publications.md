@@ -4,6 +4,9 @@ title: Publications
 permalink: /publications/
 ---
 
+\[[Google Scholar](https://scholar.google.com/citations?user=052bgSAAAAAJ)\]
+\[[dblp](http://dblp.uni-trier.de/pers/hd/i/Ishimaru:Shoya)\]
+
 ## Journal Paper
 
 1. Oliver Amft, Florian Wahl, <u>Shoya Ishimaru</u> and Kai Kunze. <span style="font-weight: 700;" id="amft2015regular">"Making Regular Eyeglasses Smart</span>." Pervasive Computing, IEEE, vol. 14, no. 3, pp. 32–43, 2015. <a href="https://www.dropbox.com/s/ld08aby62vqylrs/IEEEPervasiveComputing2015Amft.pdf?raw=1"><span class="lsf">file</span> PDF</a>
@@ -25,6 +28,8 @@ permalink: /publications/
 1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013. <a href="https://www.dropbox.com/s/rukvtfl21d7fjws/ICDAR2013Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 ## Extended Abstracts (Posters, Demos, and Workshop Papers)
+
+1. Soumy Jacob, <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, and Andreas Dengel. <span style="font-weight: 700;" id="jacobl2018gaze"> "Gaze-based Interest Detection on Newspaper Articles."</span> Proc. ETRA2018 (PETMEI), June 2018, to appear.
 
 1. Iuliia Brishtel, <u>Shoya Ishimaru</u>, Olivier Augereau, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="brishtel2018assessing"> "Assessing Cognitive Workload on Printed and Electronic Media using Eye-Tracker and EDA Wristband."</span> Proc. IUI2018 (Poster), March 2018. <a href="https://www.dropbox.com/s/r807qwnvkz6v0lj/IUI2018Iuliia.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
