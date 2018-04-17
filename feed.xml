@@ -8,6 +8,42 @@
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>BahnCardの更新費を払い忘れるとどうなるか</title>
+        <description>&lt;p&gt;ドイツ鉄道(Deutsche Bahn)には、年会費を払えば鉄道代が25%, 50%, 100% OFFになる&lt;a href=&quot;https://www.bahn.com/en/view/offers/bahncard/bahncard.shtml?dbkanal_007=L04_S02_D002_KIN0060_NAVIGATION-LINKS-BAHNCARD_LZ01&quot;&gt;BahnCard&lt;/a&gt;という会員制度がある。特に25% OFFのものはコストパフォーマンスがよく、27歳以下なら1回長距離移動するだけで元が取れるので短期間滞在者にもおすすめ&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;。しかし注意しなければいけない点があり、このBahnCard、何もしないと契約が自動更新される。解約したい旨を電話やメールで伝えないと翌年のカードと振込用紙が勝手に届くシステムである。&lt;/p&gt;
+
+&lt;p&gt;ここ半年ほど忙しくて鉄道で遠出していなかったこともあり、更新費の振込、というよりBahnCardを持っていること自体をすっかり忘れていた。さらに悪いことに、ここ4ヶ月は日本出張が度々あって家を空ける期間が長く、ポストを開けるという習慣すら失っていた。ということで、更新費の振込を忘れて催促にも気が付かないとどうなるのか、実際に体験した。&lt;/p&gt;
+
+&lt;p&gt;結論を言うと、弁護士や裁判所から警告を受けることになる。まず弁護士事務所から更新費と延滞料を請求する手紙が届く(ドイツ鉄道が委託している？)。何通か催促の手紙が届いた後に、それらに応じなければ裁判所から封筒が届く。この封筒は他の郵便物に比べて紙質・書体ともに特別感があり、ドイツ語が読めなくてもすぐに封を切るべきだというのが伝わってくる。恐る恐る中を開けてGoogle翻訳にかけてみたところ、”court”の単語が見えて驚愕する&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;。どうやら留守の間に2通届いていたようで、1通目は弁護士事務所から請求の申し出が届いていることの通知、2通目には具体的な期限が書かれており何かしらアクションを取らないとヤバいよと書いてある。それにも気が付かなかったので、さらに弁護士から最終警告を受け取った。この時点でようやくすべての手紙に気が付いたので、その日のうちに慌てて銀行に駆け込んで諸々の費用を振り込んだ。更新料・延滞料・事務手数料・裁判にかかる費用で当初のBahnCard更新費の約5.5年分を弁護士に支払ってなんとかことなきことを得た。&lt;/p&gt;
+
+&lt;p&gt;心配だったので振込の後に弁護士事務所に確認の電話をかけてみた。英語で話しかけたところドイツ語でしか取り合ってくれないのでドイツ語が話せる同僚に通訳をお願いした。聞くところによると、振込が確認でき次第対応する、ドイツ鉄道および裁判所とのやりとりは弁護士がすべて代理で行ってくれる、罪に問われる心配はない、ということだった。手紙のドイツ語が読めなかったからといってアクションを起こせなかったことは言い訳にはできないから、今後は厳重に注意するようにと繰り返しお叱りを受けた。この一件が起きたのが3週間前で、それから毎日ポストを開けて確認しているけど以後連絡がないのでおそらく解決したと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog_bahncard.jpg&quot; class=&quot;image-on-frame-small image-fade&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ドイツで働き始めて2年経ってもこうしたトラブルが絶えないのでときどき心折れそうになる。ちなみにこちらの写真は&lt;a href=&quot;https://www.instagram.com/p/BFMmqKbLWFC/?taken-by=shoya140&quot;&gt;2年前の5月に受け取った封筒&lt;/a&gt;。「住み始めたばかりなのにいきなりレッドカードとかどうしよう…」と思ったらただの広告だった。紛らわしい！&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;学割・年齢による割引・キャンペーンなどによって値段が異なる&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;courtはテニスコート・裁判所なんて訳をまさか日常生活で使うと思ってなかった&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+        <link>https://shoya.io/blog/bahncard/</link>
+        <guid isPermaLink="true">https://shoya.io/blog/bahncard/</guid>
+        
+        <category>Note</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>2017年振り返り</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog_looking_back_at_2017.jpg&quot; class=&quot;image-on-frame image-fade&quot; /&gt;&lt;/p&gt;
 
@@ -583,37 +619,6 @@ https://dl.dropboxusercontent.com/s/oxw7w2l72bpsato/dibtp.jpg&lt;/code&gt;&lt;/p
         <guid isPermaLink="true">https://shoya.io/blog/karabiner-hammerspoon-space-hjkl/</guid>
         
         <category>Engineering</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>仮想メンター</title>
-        <description>&lt;p&gt;先週のべこさんのポエムに触発されてAmazon PrimeビデオでSHIROBAKOをまた観ている。SHIROBAKOはアニメ制作会社で働く人たちのアニメ。良いシーンがたくさんあって、特に絵麻ちゃん・井口さん・小笠原さんのでてくる7・8・16話が好きだ。&lt;/p&gt;
-
-&lt;p&gt;絵麻ちゃんは真面目で丁寧な絵を描く。でも制作会社のギリギリのスケジュールのなかで速く上手く描くことを求められ、速く描いたら作画監督からは「こんな手の抜き方は良くない」とダメ出しされ、どうすればいいのかこの業界でやっていけるのかと自分を見失ってしまう。そんな絵麻ちゃんに対して、先輩の井口さんはおすすめの散歩スポットに連れ出して、気分転換のコツや上手い描き方を見て真似ぶ(学ぶ)方法を教える。&lt;/p&gt;
-
-&lt;p&gt;井口さんは器用に生きる人だなぁと思っていたら、一方で井口さんも、16話でキャラクターデザインを任されたときは何度描いても原作者からOKがもらえず行き詰まってしまう。(これは具体的にどこを直してほしいか伝えない原作者と全く仕事しない担当編集者も悪い。)先輩の小笠原さんは井口さんを気分転換に誘い、自分が過去に同じ経験をして乗り越えたエピソードを話し、監督やプロデューサーには井口さんへのサポートが足りないと指摘する。&lt;/p&gt;
-
-&lt;p&gt;これらの話から得られる教訓は3つあると思う。(1)何事も次のステップに挑戦するときには困難をともなうものだから、無理に悩んだり自分を見失ってはいけない。(2)困難のレベルが上がるのにあわせて、自分自身のメンテナンス方法も改良していくべきである。(3)相談に乗ってくれる、あるいは過去に同じ経験を乗り越えたメンターを見つけるのが大事である。&lt;/p&gt;
-
-&lt;p&gt;最近の自分はあまり仕事が順調とはいえなくて、3つとも守れていない気がする。特に(2)については、日本にいたときと違って、美味しいものを食べる・お風呂に浸かる・友達と話すなどの方法がとれないのがつらい。ドイツにいてもできること、例えばジョギングなどでストレスを解消したい&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;。(3)についても今の環境ではまだ見つけられずにいる。「SOFT SKILLS」にはメンターが見つからないときは専門書・技術書を読んで頭のなかに仮想の人物を作り出せとマッチョなことが書いてあったので、最近は本を読んだりフィクションの人物を観察したりして新しいことを学びとろうとしている。&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;学生の頃は体を動かすことが大嫌いだった自分が毎日走るようになったのは感慨深いものがある&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
-        <link>https://shoya.io/blog/imaginary-mentor/</link>
-        <guid isPermaLink="true">https://shoya.io/blog/imaginary-mentor/</guid>
-        
-        <category>Note</category>
         
         
         <category>blog</category>
