@@ -63,7 +63,7 @@ permalink: /publications/
 
 1. <u>Shoya Ishimaru</u>, Kai Kunze, Katsuma Tanaka, Yuji Uema, Koichi Kise and Masahiko Inami. <span style="font-weight: 700;" id="ishimaru2014smarter">"Smarter Eyewear – Using Commercial EOG Glasses for Activity Recognition."</span> Proc. UbiComp2014 Adjunct (Demo), pp.239-242, September 2014. <a href="https://www.dropbox.com/s/lqwokv450fj8rc9/UbiComp2014Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
-1. Jens Weppner, Andreas Poxrucker, Paul Lukowicz, <u>Shoya Ishimaru</u>, Kai Kunze and Koichi Kise. <span style="font-weight: 700;" id="weppner2014logging">"Shiny - An Activity Logging Platform for Google Glass."</span> Proc. UbiComp2014 Adjunct (Demo), pp. 283-286, September 2014. <a href="https://www.dropbox.com/s/voe3wvndmvcvxhf/UbiComp2014Weppner.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+1. <u>Shoya Ishimaru</u>, Jens Weppner, Andreas Poxrucker, Kai Kunze, Paul Lukowicz and Koichi Kise. <span style="font-weight: 700;" id="weppner2014logging">"Shiny - An Activity Logging Platform for Google Glass."</span> Proc. UbiComp2014 Adjunct (Demo), pp. 283-286, September 2014. <a href="https://www.dropbox.com/s/voe3wvndmvcvxhf/UbiComp2014Weppner.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u>, Kai Kunze, Yuzuko Utsumi, Masakazu Iwamura and Koichi Kise. <span style="font-weight: 700;" id="ishimaru2013eyetracking">"Where Are You Looking At? - Feature-Based Eye Tracking on Unmodified Tablets."</span> Proc. ACPR2013 (Poster), pp. 783-789, November 2013. <a href="https://www.dropbox.com/s/7l8p3watjkpeh7p/ACPR2013Ishimaru.pdf?dl=0"><span class="lsf">file</span> PDF</a>
 
