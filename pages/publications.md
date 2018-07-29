@@ -27,11 +27,17 @@ permalink: /publications/
 
 1. Kai Kunze, Yuki Shiga, <u>Shoya Ishimaru</u> and Koichi Kise. <span style="font-weight: 700;" id="kunze2013eeg">"Reading Activity Recognition Using an Off-the-Shelf EEG‒Detecting Reading Activities and Distinguishing Genres of Documents."</span> Proc. ICDAR2013, pp. 96-100, August 2013. <a href="https://www.dropbox.com/s/rukvtfl21d7fjws/ICDAR2013Kunze.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
-## Extended Abstracts (Posters, Demos, and Workshop Papers)
+## Extended Abstracts (Posters, Demos and Workshop Papers)
 
-1. Soumy Jacob, <u>Shoya Ishimaru</u>, Syed Saqib Bukhari, and Andreas Dengel. <span style="font-weight: 700;" id="jacobl2018gaze"> "Gaze-based Interest Detection on Newspaper Articles."</span> Proc. ETRA2018 (PETMEI), June 2018. <a href="https://www.dropbox.com/s/uywfq6gft0bt2s6/PETMEI2018Jacob.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+1. <u>Shoya Ishimaru</u>, Ko Watanabe, Nicolas Großmann, Carina Heisel, Pascal Klein, Yutaka Arakawa, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2018pervasive">"HyperMind Builder: Pervasive User Interface to Create Intelligent Interactive Documents."</span> Proc. UbiComp2018 Adjunct (Demo), October 2018, to appear.
 
-1. Iuliia Brishtel, <u>Shoya Ishimaru</u>, Olivier Augereau, Koichi Kise, and Andreas Dengel. <span style="font-weight: 700;" id="brishtel2018assessing"> "Assessing Cognitive Workload on Printed and Electronic Media using Eye-Tracker and EDA Wristband."</span> Proc. IUI2018 (Poster), March 2018. <a href="https://www.dropbox.com/s/r807qwnvkz6v0lj/IUI2018Iuliia.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+1. Soumy Jacob, <u>Shoya Ishimaru</u> and Andreas Dengel. <span style="font-weight: 700;" id="jacob2018interest">"Interest Detection while Reading Newspaper Articles by Utilizing a Physiological Sensing Wristband."</span> Proc. UbiComp2018 Adjunct (Poster), October 2018, to appear.
+
+1. Dayananda Herurkar, <u>Shoya Ishimaru</u> and Andreas Dengel. <span style="font-weight: 700;" id="herurkar2018combining">"Combining Software-Based Eye Tracking and a Wide-Angle Lens for Sneaking Detection."</span> Proc. UbiComp2018 Adjunct (Poster), October 2018, to appear.
+
+1. Soumy Jacob, <u>Shoya Ishimaru</u>, Syed Saqib Bukhari and Andreas Dengel. <span style="font-weight: 700;" id="jacobl2018gaze"> "Gaze-based Interest Detection on Newspaper Articles."</span> Proc. ETRA2018 (PETMEI), June 2018. <a href="https://www.dropbox.com/s/uywfq6gft0bt2s6/PETMEI2018Jacob.pdf?raw=1"><span class="lsf">file</span> PDF</a>
+
+1. Iuliia Brishtel, <u>Shoya Ishimaru</u>, Olivier Augereau, Koichi Kise and Andreas Dengel. <span style="font-weight: 700;" id="brishtel2018assessing"> "Assessing Cognitive Workload on Printed and Electronic Media using Eye-Tracker and EDA Wristband."</span> Proc. IUI2018 (Poster), March 2018. <a href="https://www.dropbox.com/s/r807qwnvkz6v0lj/IUI2018Iuliia.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. <u>Shoya Ishimaru</u>, Soumy Jacob, Apurba Roy, Syed Saqib Bukhari, Carina Heisel, Nicolas Großmann, Michael Thees, Jochen Kuhn and Andreas Dengel. <span style="font-weight: 700;" id="ishimaru2017cognitive">"Cognitive State Measurement on Learning Materials by Utilizing Eye Tracker and Thermal Camera."</span> Proc. ICDAR2017 (HDI2017), pp. 32-36, November 2017. <a href="https://www.dropbox.com/s/5hzmu9lgxswk661/HDI2017Ishimaru.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
