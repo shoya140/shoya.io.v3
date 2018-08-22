@@ -35,6 +35,12 @@ permalink: /publications/
 
 1. Dayananda Herurkar, <u>Shoya Ishimaru</u> and Andreas Dengel. <span style="font-weight: 700;" id="herurkar2018combining">"Combining Software-Based Eye Tracking and a Wide-Angle Lens for Sneaking Detection."</span> Proc. UbiComp2018 Adjunct (Poster), October 2018, to appear.
 
+1. Jayasankar Santhosh, <u>Shoya Ishimaru</u> and Andreas Dengel <span style="font-weight: 700;" id="santhosh2018estimating">"Estimating Fixation Durations for Each Word in Documents towards Readability Measurement."</span> Proc. READ2018, October 2018, to appear.
+
+1. Yuya Ohbayashi, <u>Shoya Ishimaru</u>, Andreas Dengel and Koichi Kise <span style="font-weight: 700;" id="ohbayashi2018investigating">"Investigating Gaze and Physiological Features to Estimate Comprehension on E-learning Video Lectures."</span> Proc. READ2018, October 2018, to appear.
+
+1. Nicolas Großmann, Iuliia Brishtel, <u>Shoya Ishimaru</u>, Andreas Dengel, Carina Heisel, Pascal Klein and Jochen Kuhn <span style="font-weight: 700;" id="Grossmann2018immersive">"iQL - Immersive Quantified Learning Lab."</span> Proc. READ2018, October 2018, to appear.
+
 1. Soumy Jacob, <u>Shoya Ishimaru</u>, Syed Saqib Bukhari and Andreas Dengel. <span style="font-weight: 700;" id="jacobl2018gaze"> "Gaze-based Interest Detection on Newspaper Articles."</span> Proc. ETRA2018 (PETMEI), June 2018. <a href="https://www.dropbox.com/s/uywfq6gft0bt2s6/PETMEI2018Jacob.pdf?raw=1"><span class="lsf">file</span> PDF</a>
 
 1. Iuliia Brishtel, <u>Shoya Ishimaru</u>, Olivier Augereau, Koichi Kise and Andreas Dengel. <span style="font-weight: 700;" id="brishtel2018assessing"> "Assessing Cognitive Workload on Printed and Electronic Media using Eye-Tracker and EDA Wristband."</span> Proc. IUI2018 (Poster), March 2018. <a href="https://www.dropbox.com/s/r807qwnvkz6v0lj/IUI2018Iuliia.pdf?raw=1"><span class="lsf">file</span> PDF</a>
