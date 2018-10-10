@@ -41,6 +41,7 @@ permalink: /aboutme/jp/
 
 ## 活動・受賞歴など
 
+* <a href="http://ubicomp.org/ubicomp2018/"><span style="font-weight: 600;">UbiComp/ISWC 2018</span></a> Poster Track Honorable Mention (10.2018)
 * <a href="http://tedxnagoyau.com"><span style="font-weight: 600;">TEDxNagoyaU</span></a> 登壇 (07.2017)
 * <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind"><span style="font-weight: 600;">世界最大規模の技術展示会CeBITにて研究成果を展示</span></a> (03.2017)
 * <a href="https://www.ipa.go.jp/about/press/20160602.html"><span style="font-weight: 600;">2015年度IPA未踏スーパークリエータに認定</span></a> (06.2016)

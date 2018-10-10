@@ -43,6 +43,7 @@ He received B.E. and M.E. degree in Electrical Engineering and Information Scien
 
 ## Activities
 
+* Poster Track Honorable Mention at <a href="http://ubicomp.org/ubicomp2018/">UbiComp/ISWC 2018</a>, 2018
 * Gave a talk at <a href="http://tedxnagoyau.com">TEDxNagouaU</a>, 2017
 * <a href="https://www.dfki.de/web/presse/pressemitteilung/2017/HyperMind">Demonstration at CeBIT in Hannover</a>, 2017
 * <a href="http://www.meti.go.jp/english/press/2016/0602_01.html">Certificated as Super Creator by METI and IPA Japan</a>, 2016
