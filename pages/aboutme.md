@@ -35,7 +35,7 @@ He received B.E. and M.E. degree in Electrical Engineering and Information Scien
 * University of La Rochelle, France, 09.2015 - 10.2015
 * Kaiserslautern University of Technology, Germany, 10.2013 - 03.2014
 
-## Fundings
+## Funds
 
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K00276/">JSPS Grant-in-Aid for Scientific Research (C) (Co.), FY2017-2019</a>
 * <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-17K12728/">JSPS Grant-in-Aid for Young Scientists (B) (PI), FY2017-2019</a>
