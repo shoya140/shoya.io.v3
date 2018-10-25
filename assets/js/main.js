@@ -21,6 +21,14 @@ $(function(){
     rollOut($(this), "#1e1e28");
   });
 
+  $(".index-outer").hover(function () {
+    rollIn($(this), "#e6eBf0");
+    rollIn($(this).find('.index-inner'), "#e6eBf0");
+  }, function () {
+    rollOut($(this), "#1e1e28");
+    rollOut($(this).find('.index-inner'), "#1e1e28");
+  });
+
   $(".tweet-button").hover(function(){
     rollIn($(this), "#55acee");
   }, function(){
