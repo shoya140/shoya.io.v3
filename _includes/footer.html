@@ -2,7 +2,7 @@
   <div class="wrapper-footer">
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-3">
-        <p><span class="lsf">crown</span> 人気の記事</p>
+        <h4><span class="lsf">crown</span> 人気の記事</h4>
         <ul>
         {% for popular in site.popular %}
           <li>- <a href="/blog/{{popular}}/" class="linkedTitle">Now loading..</a></li>
@@ -10,7 +10,7 @@
         </ul>
       </div>
       <div class="footer-col  footer-col-3">
-        <p><span class="lsf">list</span> 最近の記事</p>
+        <h4><span class="lsf">list</span> 最近の記事</h4>
         <ul>
         {% for post in site.posts limit:6 %}
           <li>- <a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -18,10 +18,12 @@
         </ul>
       </div>
       <div class="footer-col  footer-col-1">
-        <p><span class="lsf">tag</span> 記事のタグ</p>
+        <h4><span class="lsf">tag</span> 記事のタグ</h4>
+        <ul>
         {% for tag in site.tags %}
-        [<a href="/tag/{{ tag | first }}/">{{ tag | first }}</a>]
+          <li><a href="/tag/{{ tag | first }}/">#{{ tag | first }}</a></li>
         {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="footer-bio">

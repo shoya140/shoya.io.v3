@@ -6,6 +6,8 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese');
+
 // Change layouts based on a screen width
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -15,13 +17,13 @@
 
 /* variables */
 
-$base-font-family: Oxygen, 'Hiragino Kaku Gothic ProN', Meiryo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif-font: 'Noto Serif JP', serif;
+$sans-serif-font: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 $base-font-size: 16px;
 $large-font-size: 18px;
 $huge-font-size: 24px;
 $palm-font-size: 14px;
 $base-line-height: 1.8;
-$letter-spacing: 0.4px;
 $spacing-unit: 30px;
 
 $white-color: #fdfdfd;
@@ -43,10 +45,9 @@ dl, dd, ol, ul, figure {
 }
 
 body {
-    font-family: $base-font-family;
+    font-family: $serif-font;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    letter-spacing: $letter-spacing;
     font-weight: 400;
     color: $brand-color-very-dark;
     background-color: $brand-color-very-dark;
@@ -79,7 +80,11 @@ figcaption {
 }
 
 ul, ol {
-    margin-left: $spacing-unit;
+    margin-left: $spacing-unit*0.8;
+    text-align: left; // bug in iOS?
+    p {
+        text-align: left;
+    }
 }
 
 li {
@@ -92,6 +97,16 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: $large-font-size;
+    font-family: $sans-serif-font;
+    text-align: left;
+}
+
+p {
+    text-align: justify;
+}
+
+b, strong {
+    font-family: $sans-serif-font;
 }
 
 a {
@@ -127,8 +142,7 @@ cite{
     }
 }
 
-pre,
-code {
+pre, code {
     font-size: $palm-font-size;
     border: 1px solid $brand-color-light;
     border-radius: 3px;
@@ -171,8 +185,7 @@ hr{
     }
 }
 
-sup,
-sub {
+sup, sub {
     height: 0;
     line-height: 1;
     vertical-align: baseline;
@@ -285,7 +298,6 @@ sub {
 // mark - layout
 
 .site-header {
-    font-family: $base-font-family;
     border-top: 5px solid $brand-color-very-dark;
     border-bottom: 1px solid $brand-color-light;
     min-height: 56px;
@@ -294,17 +306,22 @@ sub {
     background-color: $white-color;
 
     @include media-query($on-palm) {
-        padding-left: $spacing-unit*0.3;
-        padding-right: $spacing-unit*0.3;
+        padding-left: $spacing-unit*0.5;
+        padding-right: $spacing-unit*0.5;
     }
 
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
-.logo{
-    margin-top: 12px;
-    height: 32px;
+.logo {
+    line-height: 56px;
+    color: $brand-color-very-dark;
+}
+
+.logo-img {
+    margin-top: -6px;
+    height: 20px;
 }
 
 .site-nav {
@@ -319,7 +336,6 @@ sub {
     .page-link {
         color: $brand-color-very-dark;
         line-height: $base-line-height;
-        font-size: $large-font-size;
         font-weight: 300;
 
         // Gaps between nav items, but not on the first one
@@ -377,6 +393,7 @@ sub {
     background-color: $brand-color-very-dark;
     padding: $spacing-unit*2 0;
     color: $white-color;
+
     p{
         color: $white-color;
         line-height: 1.0;
@@ -402,6 +419,7 @@ sub {
   margin-top: 10px;
   text-align: center;
   p{
+    text-align: center;
     margin-top: 15px;
   }
 }
@@ -441,6 +459,13 @@ a:hover .footer-icon{
     float: left;
     margin-bottom: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
+
+    h4 {
+        margin-bottom: 0;
+    }
+    ul {
+        margin-top: 0;
+    }
 }
 
 .footer-col-1 {
@@ -479,56 +504,124 @@ a:hover .footer-icon{
     }
 }
 
+.tag-header {
+    font-family: $sans-serif-font;
+}
+
 /* index */
 
-.index-left {
-    display: inline-block;
-    position: relative;
-    top: 0px;
-    width: 30%;
+.index-introduction {
     text-align: center;
-    vertical-align:middle;
-    @include media-query($on-palm) {
-        width: 100%;
+    background-color: #fdfdfd;
+    padding: 40px 20px 40px 20px;
+    color: $brand-color-dark;
+
+    h1 {
+        font-family: $serif-font;
+        font-size: 34px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    p {
+        display: inline-block;
+        margin-top: 0;
+        text-align: left;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    img {
+        display: inline-block;
+        width: 110px;
+        vertical-align: top;
+        margin-right: 20px;
+
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        background-size: contain;
+
+        @include media-query($on-laptop) {
+            display: none;
+        }
     }
 }
 
-.index-right {
+.index-projects {
+    padding: 20px 0;
+    background-color: $brand-color-light;
+    color: $brand-color-dark;
+
+    h2 {
+        margin-top: 30px;
+        margin-bottom: 0;
+        padding-left: 5px;
+        font-family: $serif-font;
+    }
+
+    h3 {
+        font-size: $base-font-size;
+        margin-top: 5px;
+        text-align: center;
+
+        @include media-query($on-laptop) {
+            font-size: $palm-font-size;
+        }
+    }
+}
+
+.index-page {
+    width: 98%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-left: 2%;
+    padding-bottom: 40px;
+}
+
+.index-item {
+    margin-top: 10px;
     display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: calc(100%/3 - 2%);
+
+    @include media-query($on-palm) {
+        width: 98%;
+        margin-left: 0;
+    }
+}
+
+.index-outer {
+    background-color: $white-color;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
     position: relative;
-    width: 68%;
-    vertical-align:middle;
-    @include media-query($on-palm) {
+    width: 100%;
+    padding-top: 62.5%;
+    cursor: pointer;
+
+    a {
+        position: absolute;
         width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
     }
 }
 
-.index-title {
-    margin-bottom: 0;
-}
-
-.index-icon {
-    width: 80%;
-    padding-top: 20px;
-    @include media-query($on-palm) {
-        width: 50%;
-        padding-top: 0;
-    }
-}
-
-.index-image {
-    width: 90%;
-    padding: 5px;
-}
-
-.text-dense {
-    line-height: 1.5;
-}
-
-.index-intro {
-    @include media-query($on-palm) {
-      font-size: $base-font-size;
-    }
+.index-inner {
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $white-color;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 /* about me */
@@ -551,16 +644,17 @@ a:hover .footer-icon{
 .error-content{
     padding-top: $spacing-unit*5;
     padding-bottom: $spacing-unit*5;
-    text-align: center;
 }
 
 .error-number{
     font-size: 120px;
     line-height: 0.8;
+    text-align: center;
 }
 
 .error-text{
     font-size: $huge-font-size;
+    text-align: center;
 }
 
 .background{
@@ -787,6 +881,7 @@ iframe[id^="twitter-widget-"] {
 }
 
 .social-button-base{
+    font-family: $sans-serif-font;
     float: left;
     line-height: 16px;
     padding: 8px 16px;
@@ -817,4 +912,8 @@ iframe[id^="twitter-widget-"] {
 
 .footnotes{
     font-size: 12px;
+    p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
