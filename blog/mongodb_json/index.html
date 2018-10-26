@@ -64,12 +64,12 @@
 
 <h2 id="問題">問題</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># DB接続確立</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># DB接続確立
+</span><span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">conn</span><span class="p">[</span><span class="s">"restaurant"</span><span class="p">]</span>
 
-<span class="c"># 取り出しとエンコード</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">"date"</span><span class="p">:</span><span class="s">"13.12.2013"</span><span class="p">})</span>
+<span class="c1"># 取り出しとエンコード
+</span><span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">"date"</span><span class="p">:</span><span class="s">"13.12.2013"</span><span class="p">})</span>
 <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code></pre></figure>
 
 <p>実行結果:エラー</p>
@@ -83,8 +83,8 @@
 
 <p>JSONエンコードする前にディクショナリから_idキーを削除する.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># 取り出しとエンコード</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">"date"</span><span class="p">:</span><span class="s">"13.12.2013"</span><span class="p">})</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># 取り出しとエンコード
+</span><span class="n">item</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">restaurant</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">"date"</span><span class="p">:</span><span class="s">"13.12.2013"</span><span class="p">})</span>
 <span class="k">del</span> <span class="n">item</span><span class="p">[</span><span class="s">"_id"</span><span class="p">]</span>
 <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code></pre></figure>
 

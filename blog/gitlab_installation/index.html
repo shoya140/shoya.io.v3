@@ -80,42 +80,42 @@
 <p>GitLabを導入する前に、sudoコマンド、エディタ(Vim)、Git、Python、Ruby、MySQLをインストールします。既にインストールしている場合は<strong>手順2</strong>まで読み飛ばしてください。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># run as root!</span>
-apt-get update -y
-apt-get upgrade -y
-apt-get install sudo -y</code></pre></figure>
+apt-get update <span class="nt">-y</span>
+apt-get upgrade <span class="nt">-y</span>
+apt-get <span class="nb">install sudo</span> <span class="nt">-y</span></code></pre></figure>
 
 <h2 id="11-vimインストール">1.1. Vimインストール</h2>
 
 <p>Vimをインストールして、標準のエディタとして設定。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install Vim</span>
-sudo apt-get install -y vim
-sudo update-alternatives --set editor /usr/bin/vim.basic</code></pre></figure>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> vim
+<span class="nb">sudo </span>update-alternatives <span class="nt">--set</span> editor /usr/bin/vim.basic</code></pre></figure>
 
 <h2 id="12-gitインストール">1.2. Gitインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install git</span>
-sudo apt-get install -y git-core
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> git-core
 
 <span class="c"># Make sure Git is version 1.7.10 or higher, for example 1.7.12 or 1.8.4</span>
-git --version</code></pre></figure>
+git <span class="nt">--version</span></code></pre></figure>
 
 <p>Gitのバージョンが1.7.10より小さい場合は以下の手順でアップデート</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Remove packaged Git</span>
-sudo apt-get remove git-core
+<span class="nb">sudo </span>apt-get remove git-core
 
 <span class="c"># Install dependencies</span>
-sudo apt-get install -y libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
 
 <span class="c"># Download and compile from source</span>
 <span class="nb">cd</span> /tmp
-curl --progress https://git-core.googlecode.com/files/git-1.8.4.1.tar.gz | tar xz
+curl <span class="nt">--progress</span> https://git-core.googlecode.com/files/git-1.8.4.1.tar.gz | <span class="nb">tar </span>xz
 <span class="nb">cd </span>git-1.8.4.1/
 make <span class="nv">prefix</span><span class="o">=</span>/usr/local all
 
 <span class="c"># Install into /usr/local/bin</span>
-sudo make <span class="nv">prefix</span><span class="o">=</span>/usr/local install</code></pre></figure>
+<span class="nb">sudo </span>make <span class="nv">prefix</span><span class="o">=</span>/usr/local <span class="nb">install</span></code></pre></figure>
 
 <p>※Gitを/usr/local/bin/gitにインストールしたので、<strong>手順8</strong>でconfig/gitlab.ymlを編集するときにbin_pathを/usr/local/bin/gitに書き換えること。</p>
 
@@ -124,209 +124,209 @@ sudo make <span class="nv">prefix</span><span class="o">=</span>/usr/local insta
 <p>“python2”でpython2.xが起動するように設定する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install python</span>
-sudo apt-get install -y python
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python
 
 <span class="c"># Make sure that Python is 2.5+ (3.x is not supported at the moment)</span>
-python --version
+python <span class="nt">--version</span>
 
 <span class="c"># If it's Python 3 you might need to install Python 2 separately</span>
-sudo apt-get install -y python2.7
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python2.7
 
 <span class="c"># Make sure you can access Python via python2</span>
-python2 --version
+python2 <span class="nt">--version</span>
 
 <span class="c"># If you get a "command not found" error create a link to the python binary</span>
-sudo ln -s /usr/bin/python /usr/bin/python2
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /usr/bin/python /usr/bin/python2
 
 <span class="c"># For reStructuredText markup language support install required package:</span>
-sudo apt-get install -y python-docutils</code></pre></figure>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python-docutils</code></pre></figure>
 
 <h2 id="14-ruby-インストール">1.4. Ruby インストール</h2>
 
 <p>システムデフォルトのRubyは1.9.3より古い可能性大なのでアップデート。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Remove the old Ruby 1.8 if present</span>
-sudo apt-get remove ruby1.8
+<span class="nb">sudo </span>apt-get remove ruby1.8
 
 <span class="c"># Download and compile from source</span>
-mkdir /tmp/ruby <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /tmp/ruby
-curl --progress ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz | tar xz
+<span class="nb">mkdir</span> /tmp/ruby <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /tmp/ruby
+curl <span class="nt">--progress</span> ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz | <span class="nb">tar </span>xz
 <span class="nb">cd </span>ruby-2.0.0-p353
-./configure --disable-install-rdoc
+./configure <span class="nt">--disable-install-rdoc</span>
 
 <span class="c"># Install ruby</span>
 make
-sudo make install</code></pre></figure>
+<span class="nb">sudo </span>make <span class="nb">install</span></code></pre></figure>
 
 <p>Bandlerインストール</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo gem install bundler --no-ri --no-rdoc</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>gem <span class="nb">install </span>bundler <span class="nt">--no-ri</span> <span class="nt">--no-rdoc</span></code></pre></figure>
 
 <h2 id="15-mysqlインストール">1.5 MySQLインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install the database packages</span>
-sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> mysql-server mysql-client libmysqlclient-dev
 
 <span class="c"># Secure your installation.</span>
-sudo mysql_secure_installation</code></pre></figure>
+<span class="nb">sudo </span>mysql_secure_installation</code></pre></figure>
 
 <p>GitLab用にユーザとデータベースを作成</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Login to MySQL</span>
-mysql -u root -p
+mysql <span class="nt">-u</span> root <span class="nt">-p</span>
 
 <span class="c"># do not type the 'mysql&gt;', this is part of the prompt</span>
 <span class="c"># change $password in the command below to a real password you pick</span>
-<span class="gp">mysql&gt; </span>CREATE USER <span class="s1">'gitlab'</span>@<span class="s1">'localhost'</span> IDENTIFIED BY <span class="s1">'$password'</span>;
+mysql&gt; CREATE USER <span class="s1">'gitlab'</span>@<span class="s1">'localhost'</span> IDENTIFIED BY <span class="s1">'$password'</span><span class="p">;</span>
 
 <span class="c"># Create the GitLab production database</span>
-<span class="gp">mysql&gt; </span>CREATE DATABASE IF NOT EXISTS <span class="sb">`</span>gitlabhq_production<span class="sb">`</span> DEFAULT CHARACTER SET <span class="sb">`</span>utf8<span class="sb">`</span> COLLATE <span class="sb">`</span>utf8_unicode_ci<span class="sb">`</span>;
+mysql&gt; CREATE DATABASE IF NOT EXISTS <span class="sb">`</span>gitlabhq_production<span class="sb">`</span> DEFAULT CHARACTER SET <span class="sb">`</span>utf8<span class="sb">`</span> COLLATE <span class="sb">`</span>utf8_unicode_ci<span class="sb">`</span><span class="p">;</span>
 
 <span class="c"># Grant the GitLab user necessary permissions on the table.</span>
-<span class="gp">mysql&gt; </span>GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON <span class="sb">`</span>gitlabhq_production<span class="sb">`</span>.<span class="k">*</span> TO <span class="s1">'gitlab'</span>@<span class="s1">'localhost'</span>;
+mysql&gt; GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON <span class="sb">`</span>gitlabhq_production<span class="sb">`</span>.<span class="k">*</span> TO <span class="s1">'gitlab'</span>@<span class="s1">'localhost'</span><span class="p">;</span>
 
 <span class="c"># Quit the database session</span>
-<span class="gp">mysql&gt; </span><span class="se">\q</span></code></pre></figure>
+mysql&gt; <span class="se">\q</span></code></pre></figure>
 
 <h2 id="2-gitユーザの作成">2. Gitユーザの作成</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo adduser --disabled-login --gecos <span class="s1">'GitLab'</span> git</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>adduser <span class="nt">--disabled-login</span> <span class="nt">--gecos</span> <span class="s1">'GitLab'</span> git</code></pre></figure>
 
 <p>以降の手順はGitユーザで行います。</p>
 
 <h2 id="3-必要パッケージのインストール">3. 必要パッケージのインストール</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate</code></pre></figure>
 
 <h2 id="4-gitlab-shellインストール">4. GitLab shellインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git
 
 <span class="c"># Clone gitlab shell</span>
-sudo -u git -H git clone https://github.com/gitlabhq/gitlab-shell.git
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git clone https://github.com/gitlabhq/gitlab-shell.git
 
 <span class="c"># Go to gitlab-shell dir</span>
 <span class="nb">cd </span>gitlab-shell
 
 <span class="c"># switch to right version</span>
-sudo -u git -H git checkout v1.7.0</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git checkout v1.7.0</code></pre></figure>
 
 <p>config.yml.exampleをもとにconfig.ymlを作成して、http://localhost/のところをGitLabをセットアップするURL(例: http://YOUR_DOMAIN.COM)に書き換える。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Copy config.yml from config.yml.example</span>
-sudo -u git -H cp config.yml.example config.yml
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">cp </span>config.yml.example config.yml
 
 <span class="c"># Edit config and replace gitlab_url</span>
 <span class="c"># with something like 'http://YOUR_DOMAIN.COM/'</span>
-sudo -u git -H editor config.yml</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> editor config.yml</code></pre></figure>
 
 <p>hostsのlocalhostにYOUR_DMAIN.COMを追記する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Edit hosts</span>
-sudo vim /etc/hosts
+<span class="nb">sudo </span>vim /etc/hosts
 
 <span class="c"># Add a new hosts setting like this</span>
 127.0.0.1    YOUR_DOMAIN.COM</code></pre></figure>
 
 <p>インストール</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u git -H ./bin/install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> ./bin/install</code></pre></figure>
 
 <h2 id="5-gitlabインストール">5. GitLabインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git
 
 <span class="c"># Clone GitLab repository</span>
-sudo -u git -H git clone https://github.com/gitlabhq/gitlabhq.git gitlab
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git clone https://github.com/gitlabhq/gitlabhq.git gitlab
 
 <span class="c"># Go to gitlab dir</span>
 <span class="nb">cd</span> /home/git/gitlab
 
 <span class="c"># Checkout to stable release</span>
-sudo -u git -H git checkout 6-0-stable
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git checkout 6-0-stable
 
 <span class="c"># Make sure GitLab can write to the log/ and tmp/ directories</span>
-sudo chown -R git log/
-sudo chown -R git tmp/
-sudo chmod -R u+rwX log/
-sudo chmod -R u+rwX tmp/
+<span class="nb">sudo chown</span> <span class="nt">-R</span> git log/
+<span class="nb">sudo chown</span> <span class="nt">-R</span> git tmp/
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> u+rwX log/
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> u+rwX tmp/
 
 <span class="c"># Create directory for satellites</span>
-sudo -u git -H mkdir /home/git/gitlab-satellites
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">mkdir</span> /home/git/gitlab-satellites
 
 <span class="c"># Create directories for sockets/pids and make sure GitLab can write to them</span>
-sudo -u git -H mkdir tmp/pids/
-sudo -u git -H mkdir tmp/sockets/
-sudo chmod -R u+rwX  tmp/pids/
-sudo chmod -R u+rwX  tmp/sockets/
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">mkdir </span>tmp/pids/
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">mkdir </span>tmp/sockets/
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> u+rwX  tmp/pids/
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> u+rwX  tmp/sockets/
 
 <span class="c"># Create public/uploads directory otherwise backup will fail</span>
-sudo -u git -H mkdir public/uploads
-sudo chmod -R u+rwX  public/uploads
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">mkdir </span>public/uploads
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> u+rwX  public/uploads
 
 <span class="c"># Configure Git global settings for git user, useful when editing via web</span>
 <span class="c"># Edit user.email according to what is set in gitlab.yml</span>
-sudo -u git -H git config --global user.name <span class="s2">"GitLab"</span>
-sudo -u git -H git config --global user.email <span class="s2">"gitlab@localhost"</span>
-sudo -u git -H git config --global core.autocrlf input</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git config <span class="nt">--global</span> user.name <span class="s2">"GitLab"</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git config <span class="nt">--global</span> user.email <span class="s2">"gitlab@localhost"</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> git config <span class="nt">--global</span> core.autocrlf input</code></pre></figure>
 
 <p>config/gitlab.yml.exampleをもとにconfig/gitlab.ymlを作成して、localhostのところをGitLabをセットアップするURLに編集する。gitのインストール先をusr/local/bin/gitに変更した場合はgit bin_pathも書き換える。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Copy the example GitLab config</span>
-sudo -u git -H cp config/gitlab.yml.example config/gitlab.yml
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">cp </span>config/gitlab.yml.example config/gitlab.yml
 
 <span class="c"># Make sure to change "localhost" to the fully-qualified domain name of your</span>
 <span class="c"># host serving GitLab where necessary</span>
-sudo -u git -H editor config/gitlab.yml</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> editor config/gitlab.yml</code></pre></figure>
 
 <p>config/unicorn.rb.example config/unicorn.rbを作成して編集する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Copy the example Unicorn config</span>
-sudo -u git -H cp config/unicorn.rb.example config/unicorn.rb
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">cp </span>config/unicorn.rb.example config/unicorn.rb
 
 <span class="c"># Enable cluster mode if you expect to have a high load instance</span>
 <span class="c"># Ex. change amount of workers to 3 for 2GB RAM server</span>
-sudo -u git -H editor config/unicorn.rb</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> editor config/unicorn.rb</code></pre></figure>
 
 <h2 id="6-mysqlとの接続確認">6. MySQLとの接続確認</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Mysql</span>
-sudo -u git cp config/database.yml.mysql config/database.yml
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nb">cp </span>config/database.yml.mysql config/database.yml
 
 <span class="c"># Make sure to update username/password in config/database.yml.</span>
 <span class="c"># You only need to adapt the production settings (first part).</span>
 <span class="c"># If you followed the database guide then please do as follows:</span>
 <span class="c"># Change 'secure password' with the value you have given to $password</span>
 <span class="c"># You can keep the double quotes around the password</span>
-sudo -u git -H editor config/database.yml
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> editor config/database.yml
 
 <span class="c"># Make config/database.yml readable to git only</span>
-sudo -u git -H chmod o-rwx config/database.yml</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> <span class="nb">chmod </span>o-rwx config/database.yml</code></pre></figure>
 
 <h2 id="7-gemインストール">7. Gemインストール</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /home/git/gitlab
 
-sudo -u git -H bundle install --deployment --without development <span class="nb">test </span>postgres aws</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> bundle <span class="nb">install</span> <span class="nt">--deployment</span> <span class="nt">--without</span> development <span class="nb">test </span>postgres aws</code></pre></figure>
 
 <h2 id="8-データベース初期化">8. データベース初期化</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Type 'yes' to create the database.</span>
-sudo -u git -H bundle <span class="nb">exec </span>rake gitlab:setup <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
+<span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> bundle <span class="nb">exec </span>rake gitlab:setup <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
 
 <h2 id="9-起動ファイル導入">9. 起動ファイル導入</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo rm /etc/init.d/gitlab
-sudo curl --output /etc/init.d/gitlab https://raw.github.com/gitlabhq/gitlabhq/6-0-stable/lib/support/init.d/gitlab
-sudo chmod +x /etc/init.d/gitlab</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo rm</span> /etc/init.d/gitlab
+<span class="nb">sudo </span>curl <span class="nt">--output</span> /etc/init.d/gitlab https://raw.github.com/gitlabhq/gitlabhq/6-0-stable/lib/support/init.d/gitlab
+<span class="nb">sudo chmod</span> +x /etc/init.d/gitlab</code></pre></figure>
 
 <p>サーバー起動時にGitLabが自動起動するよう設定</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo update-rc.d gitlab defaults 21</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>update-rc.d gitlab defaults 21</code></pre></figure>
 
 <h2 id="10-redis起動">10. Redis起動</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo /etc/init.d/redis-server start</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> /etc/init.d/redis-server start</code></pre></figure>
 
 <h2 id="11-gitlabの起動">11. GitLabの起動</h2>
 
@@ -340,20 +340,20 @@ sudo chmod +x /etc/init.d/gitlab</code></pre></figure>
 <h2 id="12-nginxリバースプロキシの設定">12. Nginx(リバースプロキシ)の設定</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install nginx</span>
-sudo apt-get install -y nginx</code></pre></figure>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nginx</code></pre></figure>
 
 <p>gitlab用設定ファイルの導入</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp lib/support/nginx/gitlab /etc/nginx/sites-available/gitlab
-sudo ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo cp </span>lib/support/nginx/gitlab /etc/nginx/sites-available/gitlab
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
 
 <span class="c"># Change YOUR_SERVER_FQDN to the fully-qualified</span>
 <span class="c"># domain name of your host serving GitLab.</span>
-sudo editor /etc/nginx/sites-available/gitlab</code></pre></figure>
+<span class="nb">sudo </span>editor /etc/nginx/sites-available/gitlab</code></pre></figure>
 
 <p>Nginx再起動</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo /etc/init.d/nginx restart</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> /etc/init.d/nginx restart</code></pre></figure>
 
 <p><img src="/assets/img/blog_gitlab_ss.png" class="image-on-frame image-center" /></p>
 
@@ -377,9 +377,9 @@ Pass: 5iveL!fe
 
 <p>redis-serverをアップデートする</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"deb http://backports.debian.org/debian-backports squeeze-backports main"</span> &gt;&gt; /etc/apt/sources.list
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"deb http://backports.debian.org/debian-backports squeeze-backports main"</span> <span class="o">&gt;&gt;</span> /etc/apt/sources.list
 apt-get update
-apt-get -t squeeze-backports install redis-server</code></pre></figure>
+apt-get <span class="nt">-t</span> squeeze-backports <span class="nb">install </span>redis-server</code></pre></figure>
 
 <p>参考：<a href="https://github.com/gitlabhq/gitlabhq/issues/3328">“Can’t save project. Please try again later” - GitHub issues</a></p>
 
@@ -387,7 +387,7 @@ apt-get -t squeeze-backports install redis-server</code></pre></figure>
 
 <p>タイムアウト値を30から180くらいに変更する</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u git -H editor config/unicorn.rb</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> editor config/unicorn.rb</code></pre></figure>
 
 <p>参考：<a href="http://stackoverflow.com/questions/18501406/502-bad-gateway-from-nginx-for-large-gitlab-fork">502 Bad Gateway from Nginx for large GitLab fork - stackoverflow</a></p>
 
@@ -396,7 +396,7 @@ apt-get -t squeeze-backports install redis-server</code></pre></figure>
 <p>virtual hostsの設定を取りこぼしてないか確認する</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Edit hosts</span>
-sudo vim /etc/hosts
+<span class="nb">sudo </span>vim /etc/hosts
 
 <span class="c"># Add a new hosts setting like this</span>
 127.0.0.1    YOUR_DOMAIN.COM</code></pre></figure>
@@ -408,7 +408,7 @@ sudo vim /etc/hosts
 
 <p><strong>・インストール情報の表示</strong></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u git -H bundle <span class="nb">exec </span>rake gitlab:env:info <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> bundle <span class="nb">exec </span>rake gitlab:env:info <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
 
 <p>成功例</p>
 <pre>
@@ -442,7 +442,7 @@ Git:            /usr/bin/git
 
 <p><strong>・起動確認</strong></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u git -H bundle <span class="nb">exec </span>rake gitlab:check <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo</span> <span class="nt">-u</span> git <span class="nt">-H</span> bundle <span class="nb">exec </span>rake gitlab:check <span class="nv">RAILS_ENV</span><span class="o">=</span>production</code></pre></figure>
 
 <p>成功例</p>
 <pre>

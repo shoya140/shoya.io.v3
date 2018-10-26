@@ -92,7 +92,7 @@
 <span class="nv">filename</span><span class="o">=</span><span class="s2">"paper"</span>
 
 <span class="c"># get file name from parameter</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">]</span>; <span class="k">then
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>
 <span class="k">fi</span>
 
@@ -100,7 +100,7 @@
 platex <span class="nv">$filename</span>.tex
 pbibtex <span class="nv">$filename</span>.aux
 platex <span class="nv">$filename</span>.tex
-dvipdfmx -p a4 <span class="nv">$filename</span>.dvi
+dvipdfmx <span class="nt">-p</span> a4 <span class="nv">$filename</span>.dvi
 
 <span class="c"># preview</span>
 open <span class="nv">$filename</span>.pdf</code></pre></figure>
@@ -108,8 +108,8 @@ open <span class="nv">$filename</span>.pdf</code></pre></figure>
 <p>あと研究室秘伝のテンプレートファイルはShift-JISだったりするので、UTF-8に変換してから使っている。
 変換後は円マークをバックスラッシュに置換する必要がある。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">iconv -s -f SHIFT_JIS -t UTF-8 paper.tex &gt; paper_utf8.tex
-sed -e <span class="s1">'s/¥/\\/g'</span> -e <span class="s1">'s/‾/~/g'</span> paper_utf8.tex &gt; paper_out.tex</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">iconv <span class="nt">-s</span> <span class="nt">-f</span> SHIFT_JIS <span class="nt">-t</span> UTF-8 paper.tex <span class="o">&gt;</span> paper_utf8.tex
+<span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'s/¥/\\/g'</span> <span class="nt">-e</span> <span class="s1">'s/‾/~/g'</span> paper_utf8.tex <span class="o">&gt;</span> paper_out.tex</code></pre></figure>
 
 <p><a href="http://mizchi.hatenablog.com/entry/2014/01/20/090957">参考: markdown-&gt;TeXの変換だけで卒論を仕上げるのに便利だったツール10個まとめ - mizchi’s blog</a></p>
 

@@ -67,20 +67,20 @@
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Some directories <span class="k">in</span> /usr/local/share/man aren<span class="s1">'t writable.
 This can happen if you "sudo make install" software that isn'</span>t managed
 by Homebrew. If a brew tries to add locale information to one of these
-directories, <span class="k">then </span>the install will fail during the link step.
-You should probably <span class="sb">`</span>chown<span class="sb">`</span> them:
+directories, <span class="k">then </span>the <span class="nb">install </span>will fail during the <span class="nb">link </span>step.
+You should probably <span class="sb">`</span><span class="nb">chown</span><span class="sb">`</span> them:
 
     /usr/local/share/man/de
     /usr/local/share/man/de/man1</code></pre></figure>
 
 <p>一部のディレクトリの所有者がbrewを使うユーザになっていない問題。chownコマンドで所有者を変更します。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span> /usr/local/share/man/de</code></pre></figure>
 
 <h2 id="warning2">Warning2</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: <span class="s2">"config"</span> scripts exist outside your system or Homebrew directories.
-<span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> <span class="k">*</span>-config scripts to determine <span class="k">if
+<span class="sb">`</span>./configure<span class="sb">`</span> scripts often look <span class="k">for</span> <span class="k">*</span><span class="nt">-config</span> scripts to determine <span class="k">if
 </span>software packages are installed, and what additional flags to use when
 compiling and linking.
 
@@ -122,7 +122,7 @@ provided by Homebrew. The following tools exist at both paths:
 
 Consider setting your PATH so that /usr/local/bin
 occurs before /usr/bin. Here is a one-liner:
-    <span class="nb">echo export </span><span class="nv">PATH</span><span class="o">=</span><span class="s1">'/usr/local/bin:$PATH'</span> &gt;&gt; ~/.bash_profile</code></pre></figure>
+    <span class="nb">echo export </span><span class="nv">PATH</span><span class="o">=</span><span class="s1">'/usr/local/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile</code></pre></figure>
 
 <p>PATHの順番がよくない。PATHは前方に書かれてあるものが優先されるので、bashrcを見てPATH=(追加するPATH):$PATHの形になっていないものを修正しました。</p>
 
@@ -134,12 +134,12 @@ To update Homebrew, run `brew update`.</span></code></pre></figure>
 
 <p>homebrewをアップデートします。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew update</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew update</code></pre></figure>
 
 <h2 id="すべてのwarningを取り除いたので">すべてのWarningを取り除いたので</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew doctor
-<span class="gp">&gt;&gt; </span>Your system is ready to brew.</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew doctor
+<span class="o">&gt;&gt;</span> Your system is ready to brew.</code></pre></figure>
 
 <p>診断結果が正常になりました。めでたい。</p>
 

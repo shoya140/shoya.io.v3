@@ -90,37 +90,37 @@
 
 <h2 id="インストール方法">インストール方法</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install zChainer</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip <span class="nb">install </span>zChainer</code></pre></figure>
 
 <h2 id="サンプルコード">サンプルコード</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">chainer.functions</span> <span class="kn">as</span> <span class="nn">F</span>
-<span class="kn">import</span> <span class="nn">chainer.links</span> <span class="kn">as</span> <span class="nn">L</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">chainer.functions</span> <span class="k">as</span> <span class="n">F</span>
+<span class="kn">import</span> <span class="nn">chainer.links</span> <span class="k">as</span> <span class="n">L</span>
 <span class="kn">from</span> <span class="nn">chainer</span> <span class="kn">import</span> <span class="n">ChainList</span><span class="p">,</span> <span class="n">optimizers</span>
 <span class="kn">from</span> <span class="nn">zChainer</span> <span class="kn">import</span> <span class="n">NNAutoEncoder</span><span class="p">,</span> <span class="n">utility</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="o">..</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="c"># encoderの定義</span>
-<span class="c"># 例)ノード数784-200-100のネットワーク</span>
-<span class="c"># 学習後に出力層(MNISTの場合はノード数10)をadd_linkする</span>
-<span class="n">encoder</span> <span class="o">=</span> <span class="n">ChainList</span><span class="p">(</span>
+<span class="c1"># encoderの定義
+# 例)ノード数784-200-100のネットワーク
+# 学習後に出力層(MNISTの場合はノード数10)をadd_linkする
+</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">ChainList</span><span class="p">(</span>
     <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
     <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 
-<span class="c"># decoderの定義</span>
-<span class="c"># encoderとノード数を反対にしたLinkをChainする</span>
-<span class="n">decoder</span> <span class="o">=</span><span class="n">ChainList</span><span class="p">(</span>
+<span class="c1"># decoderの定義
+# encoderとノード数を反対にしたLinkをChainする
+</span><span class="n">decoder</span> <span class="o">=</span><span class="n">ChainList</span><span class="p">(</span>
     <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">784</span><span class="p">),</span>
     <span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 
-<span class="c"># NNAutoEncoderインスタンスの作成</span>
-<span class="n">ae</span> <span class="o">=</span> <span class="n">NNAutoEncoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<span class="c1"># NNAutoEncoderインスタンスの作成
+</span><span class="n">ae</span> <span class="o">=</span> <span class="n">NNAutoEncoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
     <span class="n">log_path</span><span class="o">=</span><span class="s">"./ae_"</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">"_log.csv"</span><span class="p">,</span> <span class="n">export_path</span><span class="o">=</span><span class="s">"./ae_"</span><span class="o">+</span><span class="n">utility</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">+</span><span class="s">".model"</span><span class="p">)</span>
 
-<span class="c"># 学習</span>
-<span class="n">ae</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code></pre></figure>
+<span class="c1"># 学習
+</span><span class="n">ae</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code></pre></figure>
 
 <p>forward関数にはdropoutありのreluを登録していますが、好みのforward関数をセットすることもできます。詳しくは<a href="https://github.com/shoya140/zChainer">github</a>のexampleをご確認ください。</p>
 
@@ -151,8 +151,8 @@
             nn.fit<span class="o">(</span>x_data, x_data<span class="o">)</span>
             self.autoencoded.add_link<span class="o">(</span>nn.model[0].copy<span class="o">())</span>
 
-        <span class="k">if </span>self.export_path !<span class="o">=</span> <span class="s2">""</span>:
-            pickle.dump<span class="o">(</span>self.autoencoded, open<span class="o">(</span>self.export_path, <span class="s1">'wb'</span><span class="o">)</span>, -1<span class="o">)</span>
+        <span class="k">if </span>self.export_path <span class="o">!=</span> <span class="s2">""</span>:
+            pickle.dump<span class="o">(</span>self.autoencoded, open<span class="o">(</span>self.export_path, <span class="s1">'wb'</span><span class="o">)</span>, <span class="nt">-1</span><span class="o">)</span>
         <span class="k">return </span>self
 
     def predict<span class="o">(</span>self, x_test<span class="o">)</span>:

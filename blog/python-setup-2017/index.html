@@ -67,26 +67,26 @@
 <p><strong>Mac</strong>: Homebrewでインストールすることをおすすめします。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Homebrewのインストールが済んでない場合</span>
-<span class="gp">$ </span>xcode-select --install
-<span class="gp">$ </span>/usr/bin/ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+<span class="nv">$ </span>xcode-select <span class="nt">--install</span>
+<span class="nv">$ </span>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
 
 <span class="c"># Anacondaのminimal versionであるMinicondaをインストール</span>
-<span class="gp">$ </span>brew tap caskroom/cask
-<span class="gp">$ </span>brew cask install miniconda
-<span class="gp">$ </span><span class="nb">echo</span> <span class="s2">"export PATH=usr/local/miniconda3/bin:</span><span class="se">\$</span><span class="s2">PATH"</span> &gt;&gt; ~/.bashrc</code></pre></figure>
+<span class="nv">$ </span>brew tap caskroom/cask
+<span class="nv">$ </span>brew cask <span class="nb">install </span>miniconda
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"export PATH=usr/local/miniconda3/bin:</span><span class="se">\$</span><span class="s2">PATH"</span> <span class="o">&gt;&gt;</span> ~/.bashrc</code></pre></figure>
 
 <p><strong>Linux</strong>: Minicondaを公式Webページからダウンロードしてインストールします。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 64bit OSの場合</span>
-<span class="gp">$ </span>curl <span class="s1">'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh'</span> &gt; Miniconda3.sh
+<span class="nv">$ </span>curl <span class="s1">'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh'</span> <span class="o">&gt;</span> Miniconda3.sh
 
 <span class="c"># 32bit OSの場合</span>
-<span class="gp">$ </span>curl <span class="s1">'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh'</span> &gt; Miniconda3.sh
+<span class="nv">$ </span>curl <span class="s1">'https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh'</span> <span class="o">&gt;</span> Miniconda3.sh
 
 <span class="c"># ダウンロードしたインストールスクリプトを実行</span>
-<span class="gp">$ </span>chmod u+x Miniconda3.sh
-<span class="gp">$ </span>./Miniconda3.sh
-<span class="gp">$ </span><span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="se">\$</span><span class="s2">HOME/miniconda3/bin:</span><span class="se">\$</span><span class="s2">PATH"</span> &gt;&gt; ~/.bashrc</code></pre></figure>
+<span class="nv">$ </span><span class="nb">chmod </span>u+x Miniconda3.sh
+<span class="nv">$ </span>./Miniconda3.sh
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="se">\$</span><span class="s2">HOME/miniconda3/bin:</span><span class="se">\$</span><span class="s2">PATH"</span> <span class="o">&gt;&gt;</span> ~/.bashrc</code></pre></figure>
 
 <p><strong>Windows</strong>: Anacondaを<a href="https://conda.io/miniconda.html">公式Webページ</a>からインストーラをダウンロードしてインストールします。途中のダイアログでInstallation Typeを”Just me”, Advanced Installation Optionsの”Add Anaconda to my PATH environment variable”にチェックを入れることをおすすめします。MinicondaではなくAnacondaを選んだのは、以下の説明の<code class="highlighter-rouge">$ conda</code>コマンドをAnaconda Promptで使うためです。Cygwinなどを使っている場合はMinicondaを入れても大丈夫です。</p>
 
@@ -96,36 +96,36 @@
 
 <p>パッケージのインストール</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda install numpy scipy pandas matplotlib scikit-learn jupyter</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda <span class="nb">install </span>numpy scipy pandas matplotlib scikit-learn jupyter</code></pre></figure>
 
 <p>condaに登録されていないパッケージはpipで入れる</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install pyinstaller</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip <span class="nb">install </span>pyinstaller</code></pre></figure>
 
 <p>新しい仮想環境を作成する</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda create --name myenv <span class="nv">python</span><span class="o">=</span>3.6</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda create <span class="nt">--name</span> myenv <span class="nv">python</span><span class="o">=</span>3.6</code></pre></figure>
 
 <p>仮想環境の切り替え</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">source </span>activate myenv
-<span class="gp">$ </span><span class="nb">source </span>deactivate</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">source </span>activate myenv
+<span class="nv">$ </span><span class="nb">source </span>deactivate</code></pre></figure>
 
 <p>仮想環境の一覧</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda info -e</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda info <span class="nt">-e</span></code></pre></figure>
 
 <p>仮想環境をエクスポート</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda env <span class="nb">export</span> &gt; conda.yaml</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda <span class="nb">env export</span> <span class="o">&gt;</span> conda.yaml</code></pre></figure>
 
 <p>エクスポートしたファイルから仮想環境を作成</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda env create --file conda.yaml</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda <span class="nb">env </span>create <span class="nt">--file</span> conda.yaml</code></pre></figure>
 
 <p>仮想環境の削除</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>conda remove --name myenv --all</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>conda remove <span class="nt">--name</span> myenv <span class="nt">--all</span></code></pre></figure>
 
 
         </article>

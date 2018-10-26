@@ -77,23 +77,23 @@
 
 <p>bower, grunt, coffee, sassを使うので、インストールしていなければ準備が必要。npmコマンドが使えない場合は、導入はNodeとパッケージ管理システム(Macの場合はHomebrewなど)について勉強してからのほうがいいかもしれない。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>npm install -g bower
-<span class="gp">$ </span>npm install -g grunt-cli
-<span class="gp">$ </span>npm install -g coffee-script
-<span class="gp">$ </span>gem install sass</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> bower
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> grunt-cli
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> coffee-script
+<span class="nv">$ </span>gem <span class="nb">install </span>sass</code></pre></figure>
 
 <h2 id="setup-installation"><span class="lsf">setup</span> Installation</h2>
 
 <p><a href="https://github.com/Mrk1869/updraft">Mrk1869/updraft</a> からデータをダウンロードしてきたら、そのディレクトリに入って</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 必要なパッケージをインストール</span>
-<span class="gp">$ </span>npm install
+<span class="nv">$ </span>npm <span class="nb">install</span>
 
 <span class="c"># bootstrapなどをダウンロードしてassets/以下に配置する</span>
-<span class="gp">$ </span>grunt bower:install
+<span class="nv">$ </span>grunt bower:install
 
 <span class="c"># coffee, sassの監視を開始する</span>
-<span class="gp">$ </span>grunt</code></pre></figure>
+<span class="nv">$ </span>grunt</code></pre></figure>
 
 <p>これでひな形の準備は完了です。</p>
 
@@ -102,43 +102,43 @@
 <h2 id="code-bowerjson"><span class="lsf">code</span> bower.json</h2>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"updraft"</span><span class="p">,</span>
-  <span class="s2">"version"</span><span class="err">:</span> <span class="s2">"0.0.0"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"Web application template"</span><span class="p">,</span>
-  <span class="s2">"license"</span><span class="err">:</span> <span class="s2">"MIT"</span><span class="p">,</span>
-  <span class="s2">"ignore"</span><span class="err">:</span> <span class="p">[</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"updraft"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Web application template"</span><span class="p">,</span>
+  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"MIT"</span><span class="p">,</span>
+  <span class="s2">"ignore"</span><span class="p">:</span> <span class="p">[</span>
     <span class="s2">"**/.*"</span><span class="p">,</span>
   <span class="s2">"node_modules"</span><span class="p">,</span>
   <span class="s2">"bower_components"</span><span class="p">,</span>
   <span class="s2">"test"</span><span class="p">,</span>
   <span class="s2">"tests"</span>
     <span class="p">],</span>
-  <span class="s2">"devDependencies"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"bootstrap"</span><span class="err">:</span> <span class="s2">"~3.1.1"</span><span class="p">,</span>
-    <span class="s2">"backbone"</span><span class="err">:</span> <span class="s2">"~1.1.2"</span><span class="p">,</span>
-    <span class="s2">"underscore"</span><span class="err">:</span> <span class="s2">"~1.6.0"</span><span class="p">,</span>
-    <span class="s2">"jquery"</span><span class="err">:</span> <span class="s2">"~2.1.1"</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"bootstrap"</span><span class="p">:</span> <span class="s2">"~3.1.1"</span><span class="p">,</span>
+    <span class="s2">"backbone"</span><span class="p">:</span> <span class="s2">"~1.1.2"</span><span class="p">,</span>
+    <span class="s2">"underscore"</span><span class="p">:</span> <span class="s2">"~1.6.0"</span><span class="p">,</span>
+    <span class="s2">"jquery"</span><span class="p">:</span> <span class="s2">"~2.1.1"</span>
   <span class="p">},</span>
-  <span class="s2">"exportsOverride"</span><span class="err">:</span> <span class="p">{</span> <span class="c1">//main fileが設定されていないライブラリをassetsにコピーするための設定</span>
-    <span class="s2">"bootstrap"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"dist/js/bootstrap.min.js"</span><span class="p">,</span>
-      <span class="s2">"css"</span><span class="err">:</span> <span class="s2">"dist/css/bootstrap.min.css"</span>
+  <span class="s2">"exportsOverride"</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//main fileが設定されていないライブラリをassetsにコピーするための設定</span>
+    <span class="s2">"bootstrap"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="p">:</span> <span class="s2">"dist/js/bootstrap.min.js"</span><span class="p">,</span>
+      <span class="s2">"css"</span><span class="p">:</span> <span class="s2">"dist/css/bootstrap.min.css"</span>
     <span class="p">},</span>
-    <span class="s2">"backbone"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"backbone.js"</span>
+    <span class="s2">"backbone"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="p">:</span> <span class="s2">"backbone.js"</span>
     <span class="p">},</span>
-    <span class="s2">"underscore"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"underscore.js"</span>
+    <span class="s2">"underscore"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="p">:</span> <span class="s2">"underscore.js"</span>
     <span class="p">},</span>
-    <span class="s2">"jquery"</span><span class="err">:</span> <span class="p">{</span>
-      <span class="s2">"js"</span><span class="err">:</span> <span class="s2">"dist/jquery.min.js"</span>
+    <span class="s2">"jquery"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"js"</span><span class="p">:</span> <span class="s2">"dist/jquery.min.js"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Bowerとはフロントエンド用のパッケージマネージャ。jQueryやTwitterBootstrapなどの定番ライブラリを、サイトを巡回することなく下記のようなコマンドで集めてくることができる。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>bower install jquery</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower <span class="nb">install </span>jquery</code></pre></figure>
 
 <p>しかしbowerでインストールしたライブラリはbower_components以下の複雑な場所に配置されるため、それらを扱いやすい場所(assets/ lib/など)にコピーしたい。そこでGruntを使う。コピーの対象となるファイルをmain fileとして設定していないライブラリもあるので、コメント部のようにjs, cssファイルの場所を指定する必要がある。</p>
 
@@ -207,7 +207,7 @@
 
 <p>を参考に、Gruntfileをcoffeeに書きなおしました。また、Procfileを作成して</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">application: python main.py --port<span class="o">=</span>8000 --debug<span class="o">=</span>True
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">application: python main.py <span class="nt">--port</span><span class="o">=</span>8000 <span class="nt">--debug</span><span class="o">=</span>True
 grunt: grunt</code></pre></figure>
 
 <p>foreman startでgruntとtornadoが起動するようにしました。</p>

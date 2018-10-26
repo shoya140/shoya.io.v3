@@ -79,7 +79,7 @@
 
 <p>上記のコードを実行すると</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python hello.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py
 <span class="k">**********************************************************************</span>
 File <span class="s2">"hello.py"</span>, line 6, <span class="k">in </span>__main__.average
 Failed example:
@@ -109,11 +109,11 @@ Got:
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python hello.py</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python hello.py</code></pre></figure>
 
 <p>実行結果が何も表示されません。すなわちテストが通ったことを意味します。通ったテストのログはオプション-vをつけることで表示することが可能です。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py -v
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$python</span> hello.py <span class="nt">-v</span>
 Trying:
     average<span class="o">(</span>1, 2<span class="o">)</span>
 Expecting:
@@ -145,7 +145,7 @@ Test passed.</code></pre></figure>
 
 <p>main関数を空にしてコマンドラインからテストします。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python -m doctest -v hello.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python <span class="nt">-m</span> doctest <span class="nt">-v</span> hello.py
 Trying:
     average<span class="o">(</span>1, 2<span class="o">)</span>
 Expecting:
@@ -189,7 +189,7 @@ Test passed.</code></pre></figure>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="k">pass</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python -m doctest -v hello.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python <span class="nt">-m</span> doctest <span class="nt">-v</span> hello.py
 Trying:
     average<span class="o">(</span>0, 2<span class="o">)</span> <span class="c">#failed</span>
 Expecting:

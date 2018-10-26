@@ -67,14 +67,14 @@
 <p>アプリケーションはAppStore &gt; homebrew-cask &gt; 手動で管理する主義なので、Sublime Textをhomebrew-caskからインストール。デフォルトのbrew caskからインストールできるSublime Textのversionは2なので注意。version3を追加する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew tap caskroom/homebrew-versions
-brew cask install sublime-text-dev</code></pre></figure>
+brew cask <span class="nb">install </span>sublime-text-dev</code></pre></figure>
 
 <h2 id="package-control">Package Control</h2>
 
 <p>プラグイン管理ツールであるPackage Controlをインストールする。<br />
 メニューバーから View &gt; Show Consoleを開く。下記を入力して実行する。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib; h <span class="o">=</span> <span class="s1">'2915d1851351e5ee549c20394736b442'</span> + <span class="s1">'8bc59f460fa1548d1514676163dafc88'</span>; pf <span class="o">=</span> <span class="s1">'Package Control.sublime-package'</span>; ipp <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span>; urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span>; by <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">'http://packagecontrol.io/'</span> + pf.replace<span class="o">(</span><span class="s1">' '</span>, <span class="s1">'%20'</span><span class="o">))</span>.read<span class="o">()</span>; dh <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span>; print<span class="o">(</span><span class="s1">'Error validating download (got %s instead of %s), please try manual install'</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if </span>dh !<span class="o">=</span> h <span class="k">else </span>open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">'wb'</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib.request,os,hashlib<span class="p">;</span> h <span class="o">=</span> <span class="s1">'2915d1851351e5ee549c20394736b442'</span> + <span class="s1">'8bc59f460fa1548d1514676163dafc88'</span><span class="p">;</span> pf <span class="o">=</span> <span class="s1">'Package Control.sublime-package'</span><span class="p">;</span> ipp <span class="o">=</span> sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> urllib.request.install_opener<span class="o">(</span> urllib.request.build_opener<span class="o">(</span> urllib.request.ProxyHandler<span class="o">())</span> <span class="o">)</span><span class="p">;</span> by <span class="o">=</span> urllib.request.urlopen<span class="o">(</span> <span class="s1">'http://packagecontrol.io/'</span> + pf.replace<span class="o">(</span><span class="s1">' '</span>, <span class="s1">'%20'</span><span class="o">))</span>.read<span class="o">()</span><span class="p">;</span> dh <span class="o">=</span> hashlib.sha256<span class="o">(</span>by<span class="o">)</span>.hexdigest<span class="o">()</span><span class="p">;</span> print<span class="o">(</span><span class="s1">'Error validating download (got %s instead of %s), please try manual install'</span> % <span class="o">(</span>dh, h<span class="o">))</span> <span class="k">if </span>dh <span class="o">!=</span> h <span class="k">else </span>open<span class="o">(</span>os.path.join<span class="o">(</span> ipp, pf<span class="o">)</span>, <span class="s1">'wb'</span> <span class="o">)</span>.write<span class="o">(</span>by<span class="o">)</span></code></pre></figure>
 
 <p>インストールが完了したらcommand+shift+p &gt; install packageで起動できる。パッケージ名を検索して選択するとインストールされる。インストールしたパッケージリストは以下に作成される。</p>
 
@@ -107,15 +107,15 @@ brew cask install sublime-text-dev</code></pre></figure>
 <p>1台目</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
-mkdir ~/Dropbox/Sublime
-mv User ~/Dropbox/Sublime/
-ln -s ~/Dropbox/Sublime/Use</code></pre></figure>
+<span class="nb">mkdir</span> ~/Dropbox/Sublime
+<span class="nb">mv </span>User ~/Dropbox/Sublime/
+<span class="nb">ln</span> <span class="nt">-s</span> ~/Dropbox/Sublime/Use</code></pre></figure>
 
 <p>2台目</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/
-rm -r User
-ln -s ~/Dropbox/Sublime/User</code></pre></figure>
+<span class="nb">rm</span> <span class="nt">-r</span> User
+<span class="nb">ln</span> <span class="nt">-s</span> ~/Dropbox/Sublime/User</code></pre></figure>
 
 <p>Gitで管理してgithubに置く場合はアクセスキーやトークンの取り扱いに注意。プライベートリポジトリ推奨。また下記のファイルは.gitignoreに書いて同期しないように設定する。</p>
 
@@ -132,8 +132,8 @@ ln -s ~/Dropbox/Sublime/User</code></pre></figure>
 
 <h2 id="ターミナルから起動">ターミナルから起動</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>subl <span class="o">[</span>ファイル名] <span class="c"># ファイル名を開く</span>
-<span class="gp">$ </span>subl . <span class="c"># カレントディレクトリを開く</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>subl <span class="o">[</span>ファイル名] <span class="c"># ファイル名を開く</span>
+<span class="nv">$ </span>subl <span class="nb">.</span> <span class="c"># カレントディレクトリを開く</span></code></pre></figure>
 
 <h2 id="利用者の声">利用者の声</h2>
 

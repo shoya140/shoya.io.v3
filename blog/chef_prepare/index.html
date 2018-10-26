@@ -64,11 +64,11 @@
 
 <p>Chefでknife solo prepareがうまく実行されない。Chef 11.14.0.alpha.2のwgetで404が返ってくるのが問題。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">shoya@tornado$ </span>knife solo prepare dev_debian
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian
 Bootstrapping Chef...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100 15934  100 15934    0     0   2238      0  0:00:07  0:00:07 --:--:--  9674
+100 15934  100 15934    0     0   2238      0  0:00:07  0:00:07 <span class="nt">--</span>:--:--  9674
 Downloading Chef 11.14.0.alpha.2 <span class="k">for </span>debian...
 downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.14.0.alpha.2&amp;prerelease<span class="o">=</span><span class="nb">false</span>&amp;nightlies<span class="o">=</span><span class="nb">false</span>&amp;p<span class="o">=</span>debian&amp;pv<span class="o">=</span>6&amp;m<span class="o">=</span>x86_64
   to file /tmp/install.sh.2565/metadata.txt
@@ -91,11 +91,11 @@ Generating node config <span class="s1">'nodes/dev_debian.json'</span>...</code>
 
 <p>opscode(version 11.14.0.alpha.2)側の問題なので、オプションでchefのバージョンを指定してあげるといいよとの回答。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">shoya@tornado$ </span>knife solo prepare dev_debian --bootstrap-version 11.12.0
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">shoya@tornado<span class="nv">$ </span>knife solo prepare dev_debian <span class="nt">--bootstrap-version</span> 11.12.0
 Bootstrapping Chef...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100 15934  100 15934    0     0   2345      0  0:00:06  0:00:06 --:--:-- 14026
+100 15934  100 15934    0     0   2345      0  0:00:06  0:00:06 <span class="nt">--</span>:--:-- 14026
 Downloading Chef 11.12.0 <span class="k">for </span>debian...
 downloading https://www.opscode.com/chef/metadata?v<span class="o">=</span>11.12.0&amp;prerelease<span class="o">=</span><span class="nb">false</span>&amp;nightlies<span class="o">=</span><span class="nb">false</span>&amp;p<span class="o">=</span>debian&amp;pv<span class="o">=</span>6&amp;m<span class="o">=</span>x86_64
   to file /tmp/install.sh.2608/metadata.txt

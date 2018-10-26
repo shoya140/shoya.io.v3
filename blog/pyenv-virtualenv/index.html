@@ -71,49 +71,49 @@
 
 <p><a href="http://brew.sh/">Homebrew</a>でインストールする。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew install pyenv-virtualenv</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nb">install </span>pyenv-virtualenv</code></pre></figure>
 
 <p>.zshrc(.bashrc)に下記の設定を追記する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/.pyenv"</span>
-<span class="k">if</span> <span class="o">[</span> -d <span class="s2">"</span><span class="k">${</span><span class="nv">PYENV_ROOT</span><span class="k">}</span><span class="s2">"</span> <span class="o">]</span>; <span class="k">then
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="k">${</span><span class="nv">PYENV_ROOT</span><span class="k">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">"</span>
     <span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv virtualenv-init -<span class="k">)</span><span class="s2">"</span>
 <span class="k">fi</span></code></pre></figure>
 
 <p>Pythonをインストール (例:3.5.10)</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pyenv install 3.5.10
-<span class="gp">$ </span>pyenv global 3.5.10
-<span class="gp">$ </span>pyenv rehash</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv <span class="nb">install </span>3.5.10
+<span class="nv">$ </span>pyenv global 3.5.10
+<span class="nv">$ </span>pyenv rehash</code></pre></figure>
 
 <h2 id="opencvの導入">OpenCVの導入</h2>
 
 <p>Homebrewでインストールする。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew install opencv3 --with-contrib --with-python3 --without-python</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nb">install </span>opencv3 <span class="nt">--with-contrib</span> <span class="nt">--with-python3</span> <span class="nt">--without-python</span></code></pre></figure>
 
 <p>現在のPythonが見ているところにpathを通す。<br />新しい仮想環境を作る度に下記のコマンドを実行する。</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># python2</span>
-<span class="gp">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python2.7/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">"from distutils.sysconfig import get_python_lib; print(get_python_lib())"</span><span class="k">)</span>/opencv.pth
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python2.7/site-packages <span class="o">&gt;</span> <span class="k">$(</span>python <span class="nt">-c</span> <span class="s2">"from distutils.sysconfig import get_python_lib; print(get_python_lib())"</span><span class="k">)</span>/opencv.pth
 
 <span class="c"># python3</span>
-<span class="gp">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python3.5/site-packages &gt; <span class="k">$(</span>python -c <span class="s2">"from distutils.sysconfig import get_python_lib; print(get_python_lib())"</span><span class="k">)</span>/opencv.pth</code></pre></figure>
+<span class="nv">$ </span><span class="nb">echo</span> /usr/local/opt/opencv3/lib/python3.5/site-packages <span class="o">&gt;</span> <span class="k">$(</span>python <span class="nt">-c</span> <span class="s2">"from distutils.sysconfig import get_python_lib; print(get_python_lib())"</span><span class="k">)</span>/opencv.pth</code></pre></figure>
 
 <p>numpyも一緒に入るけどpipで管理するものを使う</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install numpy</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip <span class="nb">install </span>numpy</code></pre></figure>
 
 <h2 id="jupyterなど定番ライブラリの導入">Jupyterなど定番ライブラリの導入</h2>
 
 <p>pipでインストールする</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pip install numpy scipy pandas scikit-learn matplotlib jupyter</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pip <span class="nb">install </span>numpy scipy pandas scikit-learn matplotlib jupyter</code></pre></figure>
 
 <p>virtualenvの上でmatplotlibを使うための設定</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">echo </span>backend : TkAgg &gt; ~/.matplotlib/matplotlibrc</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">echo </span>backend : TkAgg <span class="o">&gt;</span> ~/.matplotlib/matplotlibrc</code></pre></figure>
 
 <h2 id="参考1-virtualenvの使い方">参考1 virtualenvの使い方</h2>
 
@@ -121,13 +121,13 @@
 
 <p>virtualenvの作成 (例:tutorialディレクトリ以下では3.5.0から作った3.5.0-tutorialを使用)</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mkdir tutorial <span class="o">&amp;&amp;</span> <span class="nb">cd </span>tutorial
-<span class="gp">$ </span>pyenv virtualenv 3.5.0 3.5.0-tutorial
-<span class="gp">$ </span>pyenv <span class="nb">local </span>3.5.0-tutorial</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">mkdir </span>tutorial <span class="o">&amp;&amp;</span> <span class="nb">cd </span>tutorial
+<span class="nv">$ </span>pyenv virtualenv 3.5.0 3.5.0-tutorial
+<span class="nv">$ </span>pyenv <span class="nb">local </span>3.5.0-tutorial</code></pre></figure>
 
 <p>virtualenvの削除</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>pyenv uninstall 3.5.0-tutorial</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>pyenv uninstall 3.5.0-tutorial</code></pre></figure>
 
 <h2 id="参考2-osx以外linux-windowsでの実行">参考2 OSX以外(Linux, Windows)での実行</h2>
 
@@ -135,22 +135,22 @@
 
 <p><cite><a href="https://github.com/shoya140/docker-image-ml">shoya140/docker-image-ml</a></cite></p>
 
-<figure class="highlight"><pre><code class="language-dockerfile" data-lang="dockerfile">FROM centos
-MAINTAINER shoya140
+<figure class="highlight"><pre><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> centos</span>
+<span class="k">MAINTAINER</span><span class="s"> shoya140</span>
 
-RUN yum update -y
-RUN yum install -y git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
+<span class="k">RUN </span>yum update <span class="nt">-y</span>
+<span class="k">RUN </span>yum <span class="nb">install</span> <span class="nt">-y</span> git curl gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl openssl-devel
 
-RUN git clone git://github.com/yyuu/pyenv.git .pyenv
-ENV PYENV_ROOT $HOME/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+<span class="k">RUN </span>git clone git://github.com/yyuu/pyenv.git .pyenv
+<span class="k">ENV</span><span class="s"> PYENV_ROOT $HOME/.pyenv</span>
+<span class="k">ENV</span><span class="s"> PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH</span>
 
-RUN pyenv install miniconda-3.18.3
-RUN pyenv global miniconda-3.18.3
-RUN pyenv rehash
+<span class="k">RUN </span>pyenv <span class="nb">install </span>miniconda-3.18.3
+<span class="k">RUN </span>pyenv global miniconda-3.18.3
+<span class="k">RUN </span>pyenv rehash
 
-RUN conda install numpy scipy pandas scikit-learn
-RUN conda install -c https://conda.binstar.org/menpo opencv</code></pre></figure>
+<span class="k">RUN </span>conda <span class="nb">install </span>numpy scipy pandas scikit-learn
+<span class="k">RUN </span>conda <span class="nb">install</span> <span class="nt">-c</span> https://conda.binstar.org/menpo opencv</code></pre></figure>
 
 
         </article>
