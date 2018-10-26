@@ -1,7 +1,6 @@
 /**
  * Syntax highlighting styles
  */
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese");
 .highlight {
   background: #fff; }
   .highlight .c {
@@ -147,9 +146,10 @@ dl, dd, ol, ul, figure {
   padding: 0; }
 
 body {
-  font-family: "Noto Serif JP", serif;
+  font-family: Oxygen, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.8;
+  letter-spacing: 0.4px;
   font-weight: 400;
   color: #1e1e28;
   background-color: #1e1e28;
@@ -185,15 +185,7 @@ li > ol {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  font-size: 18px;
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  text-align: left; }
-
-p {
-  text-align: justify; }
-
-b, strong {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+  font-size: 18px; }
 
 a {
   color: #9694b1;
@@ -218,7 +210,8 @@ cite {
     content: "external";
     color: #9694b1; }
 
-pre, code {
+pre,
+code {
   font-size: 14px;
   border: 1px solid #edecf2;
   border-radius: 3px;
@@ -252,7 +245,8 @@ hr {
     color: #9694b1;
     background: #fdfdfd; }
 
-sup, sub {
+sup,
+sub {
   height: 0;
   line-height: 1;
   vertical-align: baseline;
@@ -338,6 +332,7 @@ sub {
   font-size: 130%; }
 
 .site-header {
+  font-family: Oxygen, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-top: 5px solid #1e1e28;
   border-bottom: 1px solid #edecf2;
   min-height: 56px;
@@ -351,10 +346,8 @@ sub {
       padding-right: 9px; } }
 
 .logo {
-  line-height: 56px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1e1e28; }
+  margin-top: 12px;
+  height: 32px; }
 
 .site-nav {
   float: right;
@@ -425,7 +418,6 @@ sub {
   margin-top: 10px;
   text-align: center; }
   .footer-bio p {
-    text-align: center;
     margin-top: 15px; }
 
 .footer-icon {
@@ -459,10 +451,6 @@ a:hover .footer-icon {
   float: left;
   margin-bottom: 15px;
   padding-left: 15px; }
-  .footer-col h4 {
-    margin-bottom: 0; }
-  .footer-col ul {
-    margin-top: 0; }
 
 .footer-col-1 {
   width: -webkit-calc(20% - (30px / 2));
@@ -490,91 +478,48 @@ a:hover .footer-icon {
     float: none;
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2)); } }
-.tag-header {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
-
 /* index */
-.index-introduction {
-  text-align: center;
-  background-color: #fdfdfd;
-  padding: 80px 20px 80px 20px;
-  color: #4a4963; }
-  .index-introduction h1 {
-    font-family: "Noto Serif JP", serif;
-    font-size: 36px;
-    margin-bottom: 0;
-    text-align: center; }
-  .index-introduction p {
-    margin-top: 0;
-    text-align: center; }
-
-.index-projects {
-  padding: 20px 0;
-  background-color: #edecf2;
-  color: #4a4963; }
-  .index-projects h2 {
-    margin-top: 30px;
-    margin-bottom: 0;
-    padding-left: 5px;
-    font-family: "Noto Serif JP", serif; }
-  .index-projects h3 {
-    font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 0;
-    text-align: center; }
-    @media screen and (max-width: 1000px) {
-      .index-projects h3 {
-        font-size: 14px; } }
-  .index-projects p {
-    margin-top: 0;
-    text-align: center;
-    font-size: 14px; }
-
-.index-page {
-  width: 98%;
-  max-width: 1050px;
-  margin: 0 auto;
-  padding-left: 2%;
-  padding-bottom: 40px; }
-
-.index-item {
-  margin-top: 10px;
+.index-left {
   display: inline-block;
-  vertical-align: top;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  width: calc(100%/3 - 2%); }
-  @media screen and (max-width: 500px) {
-    .index-item {
-      width: calc(100%/2 - 2%);
-      margin-left: 0; } }
-
-.index-outer {
-  background-color: #fdfdfd;
-  border-radius: 3px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   position: relative;
-  width: 100%;
-  padding-top: 62.5%;
-  cursor: pointer; }
-  .index-outer a {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0; }
+  top: 0px;
+  width: 30%;
+  text-align: center;
+  vertical-align: middle; }
+  @media screen and (max-width: 500px) {
+    .index-left {
+      width: 100%; } }
 
-.index-inner {
-  margin: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #fdfdfd;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat; }
+.index-right {
+  display: inline-block;
+  position: relative;
+  width: 68%;
+  vertical-align: middle; }
+  @media screen and (max-width: 500px) {
+    .index-right {
+      width: 100%; } }
+
+.index-title {
+  margin-bottom: 0; }
+
+.index-icon {
+  width: 80%;
+  padding-top: 20px; }
+  @media screen and (max-width: 500px) {
+    .index-icon {
+      width: 50%;
+      padding-top: 0; } }
+
+.index-image {
+  width: 90%;
+  padding: 5px; }
+
+.text-dense {
+  line-height: 1.5; }
+
+@media screen and (max-width: 500px) {
+  .index-intro {
+    font-size: 16px; } }
 
 /* about me */
 .profile-image {
@@ -591,16 +536,15 @@ a:hover .footer-icon {
 /* 404 */
 .error-content {
   padding-top: 150px;
-  padding-bottom: 150px; }
+  padding-bottom: 150px;
+  text-align: center; }
 
 .error-number {
   font-size: 120px;
-  line-height: 0.8;
-  text-align: center; }
+  line-height: 0.8; }
 
 .error-text {
-  font-size: 24px;
-  text-align: center; }
+  font-size: 24px; }
 
 .background {
   background-image: url("/assets/img/background.jpg");
@@ -788,7 +732,6 @@ iframe[id^="twitter-widget-"] {
   background-color: #f8f8f8; }
 
 .social-button-base, .tweet-button, .facebook-button, .hatenabookmark-button {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   float: left;
   line-height: 16px;
   padding: 8px 16px;
@@ -808,6 +751,3 @@ iframe[id^="twitter-widget-"] {
 
 .footnotes {
   font-size: 12px; }
-  .footnotes p {
-    margin-top: 5px;
-    margin-bottom: 5px; }
