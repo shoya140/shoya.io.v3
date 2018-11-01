@@ -13,7 +13,7 @@ eyecatch: /assets/img/blog_memelogger_ios_dev_01.png
 
 ## 背景
 
-センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な**波形のモニタリング**と**ラベル付データの記録**機能を持ったアプリを作って[githubで公開しました](https://github.com/shoya140/MEMELogger-iOS-developers)。READMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。
+センサを使って何か面白いものを作るならデータの観察は欠かせません。そこで、観察に便利な**波形のモニタリング**と**ラベル付データの記録**機能を持ったアプリを作って[GitHub](https://github.com/shoya140/MEMELogger-iOS-developers)と[AppStore](https://itunes.apple.com/us/app/memelogger/id1073074817)で公開しました。GitHub版はREADMEに従ってAPP_IDとAPP_SECRETを書いたKey.hを作成してから実行してみてください。
 
 ## 機能
 
